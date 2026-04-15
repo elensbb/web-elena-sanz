@@ -1,317 +1,122 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Seguros</title>
-
-<style>
-body {
-  font-family: Arial;
-  margin: 0;
-  background: white;
-  color: #333;
-}
-  
-  .volver-inicio {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  color: #b3202e;
-  text-decoration: underline;
-  font-weight: bold;
-  background: transparent;
-}
-
-header {
-  background: #b3202e;
-  color: white;
-  padding: 30px;
-  text-align: center;
-}
-
-section {
-  max-width: 900px;
-  margin: auto;
-  padding: 40px 20px;
-}
-
-h1, h2 {
-  color: #b3202e;
-}
-
-.box {
-  background: #f8f8f8;
-  padding: 20px;
-  margin: 15px 0;
-  border-radius: 8px;
-}
-
-.menu a {
-  display: inline-block;
-  margin: 8px;
-  padding: 10px 14px;
-  background: #b3202e;
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-}
-
-.bloque {
-  margin-top: 50px;
-  padding-top: 20px;
-  border-top: 1px solid #ddd;
-}
-  .cta {
-  display: inline-block;
-  background: #b3202e;
-  color: white;
-  padding: 12px 18px;
-  text-decoration: none;
-  border-radius: 8px;
-  margin-top: 10px;
-}
-  .link-info {
-  color: #b3202e;
-  text-decoration: underline;
-  cursor: pointer;
-  font-weight: bold;
-  display: inline-block;
-  margin-top: 10px;
-}
-</style>
+  <meta charset="UTF-8">
+  <title>Seguros</title>
 </head>
 
-<body>
+<body style="font-family: sans-serif; margin: 0; background-color: #f9f9f9;">
 
-<header>
-<h1>Seguros</h1>
-<p>Soluciones pensadas para tu tranquilidad y la de los tuyos</p>
-</header>
+  <section style="max-width: 900px; margin: auto; padding: 40px 20px;">
 
-<section>
+    <!-- GANCHO -->
+    <h1 style="color: #b91c1c; font-size: 32px;">
+      Proteger lo importante también es una forma de ganar tranquilidad.
+    </h1>
 
-<h2>¿En qué puedo ayudarte?</h2>
+    <!-- INTRO -->
+    <p style="font-size: 18px; line-height: 1.6; margin-top: 20px;">
+      Contar con una buena protección es mucho más que tener un seguro. Se trata de sentirte respaldado ante imprevistos
+      y tomar decisiones con la tranquilidad de saber que tienes una solución adaptada a ti.
+    </p>
 
-<div class="box">
-Te ayudo a encontrar seguros adaptados a tu situación, explicados de forma clara y sin complicaciones.
-</div>
+    <p style="font-size: 18px; line-height: 1.6;">
+      Te ayudo a encontrar coberturas claras, útiles y pensadas para tu situación personal, familiar o profesional,
+      siempre con un enfoque cercano y sin complicaciones innecesarias.
+    </p>
 
-<div class="box">
-Puedes ver información sobre los principales seguros aquí:
-</div>
+    <!-- BLOQUES -->
+    <div style="margin-top: 40px; display: grid; gap: 20px;">
 
-<div class="menu">
-<a href="#auto">Automóviles</a>
-<a href="#multirriesgos">Hogar y negocio</a>
-<a href="#accidentes">Accidentes</a>
-<a href="#rc">Responsabilidad civil</a>
-<a href="#vida">Vida riesgo</a>
-<a href="#decesos">Decesos</a>
-<a href="#salud">Salud</a>
-<a href="#ahorro">Ahorro</a>
-<a href="#inversion">Inversión</a>
-<a href="#pensiones">Pensiones</a>
-</div>
+      <div style="background: white; padding: 20px; border-radius: 10px;">
+        <h3>🏠 Hogar</h3>
+        <p>
+          Protege tu vivienda frente a daños, incidencias e imprevistos que pueden afectar a tu día a día.
+          Una cobertura bien planteada aporta seguridad y tranquilidad en uno de los espacios más importantes.
+        </p>
+      </div>
 
-<div id="auto" class="bloque">
-<h2>Automóviles</h2>
-<div class="box">
-Seguros para coche, moto, patinetes y flotas adaptados a tu uso y necesidades.
-</div>
+      <div style="background: white; padding: 20px; border-radius: 10px;">
+        <h3>🚗 Auto</h3>
+        <p>
+          Soluciones pensadas para proteger tu vehículo y darte respaldo ante accidentes, daños o situaciones inesperadas,
+          adaptando la cobertura a lo que realmente necesitas.
+        </p>
+      </div>
 
-<span onclick="toggle('auto-info')" class="link-info">Más info</span>
+      <div style="background: white; padding: 20px; border-radius: 10px;">
+        <h3>❤️ Vida</h3>
+        <p>
+          Una forma de proteger a quienes más importan y aportar estabilidad económica ante situaciones difíciles.
+          Es una cobertura especialmente importante cuando quieres cuidar de tu familia con previsión.
+        </p>
+      </div>
 
-<div id="auto-info" style="display:none;" class="box">
-Tipos de seguros disponibles:
-<br><br>
-- Coche<br>
-- Moto<br>
-- Patinetes<br>
-- Flotas<br><br>
-Coberturas adaptadas según el uso, el perfil y las necesidades de cada caso.
-</div>
-</div>
+      <div style="background: white; padding: 20px; border-radius: 10px;">
+        <h3>🏥 Salud</h3>
+        <p>
+          Accede a soluciones que te permitan reforzar tu bienestar y el de tu familia, con opciones adaptadas
+          a tus prioridades y a tu momento vital.
+        </p>
+      </div>
 
-<div id="multirriesgos" class="bloque">
-<h2>Hogar y negocio</h2>
-<div class="box">
-Hogar, comunidades, comercios, oficinas y PYMES con coberturas completas y personalizadas.
-</div>
+      <div style="background: white; padding: 20px; border-radius: 10px;">
+        <h3>🛡️ Accidentes</h3>
+        <p>
+          Los imprevistos pueden aparecer en cualquier momento. Contar con una protección adecuada ayuda a afrontar
+          estas situaciones con mayor seguridad y respaldo.
+        </p>
+      </div>
 
-<span onclick="toggle('multirriesgos-info')" class="link-info">Más info</span>
+      <div style="background: white; padding: 20px; border-radius: 10px;">
+        <h3>🏢 Negocios y responsabilidad civil</h3>
+        <p>
+          Si tienes una actividad profesional o un negocio, es importante proteger tanto tu trabajo como tu patrimonio.
+          Analizamos las coberturas que mejor encajan con tu actividad.
+        </p>
+      </div>
 
-<div id="multirriesgos-info" style="display:none;" class="box">
-Opciones para:
-<br><br>
-- Hogar<br>
-- Comunidades<br>
-- Comercios<br>
-- Oficinas<br>
-- PYMES<br><br>
-Soluciones pensadas para proteger los espacios y actividades que más te importan.
-</div>
-</div>
+    </div>
 
-<div id="accidentes" class="bloque">
-<h2>Accidentes</h2>
-<div class="box">
-Seguros individuales, colectivos y de convenio para reforzar tu protección ante imprevistos.
-</div>
+    <!-- CIERRE -->
+    <div style="margin-top: 40px;">
+      <p style="font-size: 18px; line-height: 1.6;">
+        No se trata de contratar por contratar, sino de entender qué necesitas y elegir con criterio.
+      </p>
+      <p style="font-size: 18px; line-height: 1.6;">
+        Mi objetivo es ayudarte a comparar, decidir y contar con una protección clara y adaptada a ti,
+        sin tecnicismos y con un trato cercano.
+      </p>
+    </div>
 
-<span onclick="toggle('accidentes-info')" class="link-info">Más info</span>
+    <!-- CTA -->
+    <div style="margin-top: 40px;">
+      <a href="#contacto" style="
+        display: inline-block;
+        padding: 12px 20px;
+        background-color: #b91c1c;
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+      ">
+        Solicita tu asesoramiento
+      </a>
+    </div>
 
-<div id="accidentes-info" style="display:none;" class="box">
-Tipos disponibles:
-<br><br>
-- Accidentes colectivos<br>
-- Convenios<br><br>
-Pensados para reforzar la protección en el ámbito personal o profesional.
-</div>
-</div>
+  </section>
 
-<div id="rc" class="bloque">
-<h2>Responsabilidad civil</h2>
-<div class="box">
-Coberturas para comercio, cultura y ocio, construcción, industrias, privadas e inmuebles, y profesional.
-</div>
+  <!-- BOTÓN VOLVER -->
+  <a href="index.html" style="
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: red;
+    text-decoration: underline;
+    font-weight: bold;
+  ">
+    Volver
+  </a>
 
-<span onclick="toggle('rc-info')" class="link-info">Más info</span>
-
-<div id="rc-info" style="display:none;" class="box">
-Coberturas para:
-<br><br>
-- Comercio<br>
-- Cultura y ocio<br>
-- Construcción<br>
-- Industrias<br>
-- Privadas e inmuebles<br>
-- Profesional<br><br>
-Una solución importante para desarrollar tu actividad con más tranquilidad.
-</div>
-</div>
-
-<div id="vida" class="bloque">
-<h2>Vida riesgo</h2>
-<div class="box">
-Seguros de vida y vida senior pensados para proteger a tu familia y tu tranquilidad.
-</div>
-
-<span onclick="toggle('vida-info')" class="link-info">Más info</span>
-
-<div id="vida-info" style="display:none;" class="box">
-Opciones disponibles:
-<br><br>
-- Vida<br>
-- Vida senior<br><br>
-Pensados para aportar seguridad en momentos importantes y proteger a quienes más te importan.
-</div>
-</div>
-
-<div id="decesos" class="bloque">
-<h2>Decesos</h2>
-<div class="box">
-Opciones de decesos, decesos senior y repatriación para mayor tranquilidad en momentos importantes.
-</div>
-
-<span onclick="toggle('decesos-info')" class="link-info">Más info</span>
-
-<div id="decesos-info" style="display:none;" class="box">
-Opciones disponibles:
-<br><br>
-- Decesos<br>
-- Decesos senior<br>
-- Decesos repatriación<br><br>
-Soluciones orientadas a aportar apoyo y tranquilidad en situaciones delicadas.
-</div>
-</div>
-
-<div id="salud" class="bloque">
-<h2>Salud</h2>
-<div class="box">
-Asistencia sanitaria, bienestar, reembolso mixto, reembolso prime y subsidio por hospitalización.
-</div>
-
-<span onclick="toggle('salud-info')" class="link-info">Más info</span>
-
-<div id="salud-info" style="display:none;" class="box">
-Opciones disponibles:
-<br><br>
-- Asistencia sanitaria<br>
-- Bienestar<br>
-- Reembolso mixto<br>
-- Reembolso prime<br>
-- Subsidio hospitalización<br><br>
-Para elegir la protección que mejor encaja contigo y con tu situación.
-</div>
-</div>
-
-<div id="ahorro" class="bloque">
-<h2>Vida ahorro</h2>
-<div class="box">
-Soluciones como ahorro creciente prime para construir tranquilidad de cara al futuro.
-</div>
-
-<span onclick="toggle('ahorro-info')" class="link-info">Más info</span>
-
-<div id="ahorro-info" style="display:none;" class="box">
-Opciones disponibles:
-<br><br>
-- Ahorro creciente prime<br><br>
-Pensado para quienes quieren planificar el futuro con más seguridad y claridad.
-</div>
-</div>
-
-<div id="inversion" class="bloque">
-<h2>Fondos de inversión</h2>
-<div class="box">
-Renta fija, renta variable y mixto adaptados a distintos perfiles.
-</div>
-
-<span onclick="toggle('inversion-info')" class="link-info">Más info</span>
-
-<div id="inversion-info" style="display:none;" class="box">
-Opciones disponibles:
-<br><br>
-- Renta fija<br>
-- Renta variable<br>
-- Mixto<br><br>
-Alternativas adaptadas a distintos perfiles y objetivos.
-</div>
-</div>
-
-<div id="pensiones" class="bloque">
-<h2>Planes de pensiones</h2>
-<div class="box">
-Planes de pensiones y fondos de pensiones pensados para complementar tu jubilación.
-</div>
-
-<span onclick="toggle('pensiones-info')" class="link-info">Más info</span>
-
-<div id="pensiones-info" style="display:none;" class="box">
-Opciones disponibles:
-<br><br>
-- Planes de pensiones<br>
-- Fondos de pensiones<br><br>
-Soluciones para planificar con más tranquilidad el futuro.
-</div>
-</div>
-
-<br>
-
-</section>
-
-  <a href="index.html.html" class="volver-inicio">Volver</a>
-  
-  <script>
-function toggle(id) {
-  var x = document.getElementById(id);
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
-</script>
-  
 </body>
 </html>
