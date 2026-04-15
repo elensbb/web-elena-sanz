@@ -60,6 +60,14 @@ h1, h2 {
   border-radius: 8px;
   margin-top: 10px;
 }
+  .link-info {
+  color: #b3202e;
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 10px;
+}
 </style>
 </head>
 
@@ -284,5 +292,16 @@ Soluciones para planificar con más tranquilidad el futuro.
 
 </section>
 
+  <script>
+function toggle(id) {
+  var x = document.getElementById(id);
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+  
 </body>
 </html>
