@@ -64,20 +64,44 @@
       </p>
     </div>
 
-    <!-- CTA -->
-    <div style="margin-top: 40px;">
-      <a href="mailto:tuemail@correo.com" style="
-        display: inline-block;
-        padding: 12px 20px;
-        background-color: #b91c1c;
-        color: white;
-        text-decoration: none;
-        border-radius: 8px;
-        font-weight: bold;
-      ">
-        Contactar conmigo
-      </a>
-    </div>
+   <div style="position: relative; display: inline-block; margin-top: 10px;">
+  
+  <button onclick="toggleMenu()" style="
+    padding: 14px 22px;
+    background-color: #b91c1c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+  ">
+    Contactar conmigo
+  </button>
+
+  <div id="contactMenu" style="
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 220px;
+    border-radius: 8px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+    margin-top: 5px;
+  ">
+
+    <a href="mailto:esanz@occident.com" style="display: block; padding: 12px; text-decoration: none; color: #222;">
+      📧 Email
+    </a>
+
+    <a href="tel:+34917702311" style="display: block; padding: 12px; text-decoration: none; color: #222;">
+      📞 Llamar (oficina)
+    </a>
+
+    <a href="https://wa.me/34606067906" target="_blank" style="display: block; padding: 12px; text-decoration: none; color: #222;">
+      💬 WhatsApp
+    </a>
+
+  </div>
+</div>
 
   </section>
 
@@ -93,5 +117,12 @@
     Volver
   </a>
 
+  <script>
+function toggleMenu() {
+  var menu = document.getElementById("contactMenu");
+  menu.style.display = menu.style.display === "block" ? "none" : "block";
+}
+</script>
+  
 </body>
 </html>
