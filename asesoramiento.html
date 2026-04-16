@@ -79,20 +79,41 @@
       </p>
     </div>
 
-    <!-- CTA -->
-    <div style="margin-top: 40px;">
-      <a href="#contacto" style="
-        display: inline-block;
-        padding: 12px 20px;
-        background-color: #b91c1c;
-        color: white;
-        text-decoration: none;
-        border-radius: 8px;
-        font-weight: bold;
-      ">
-        Solicita tu asesoramiento financiero
-      </a>
-    </div>
+   <!-- CTA -->
+<div style="position: relative; display: inline-block; margin-top: 40px;">
+  
+  <button onclick="toggleMenuAsesoramiento()" style="
+    padding: 12px 20px;
+    background-color: #b91c1c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+  ">
+    Solicita tu asesoramiento financiero
+  </button>
+
+  <div id="contactMenuAsesoramiento" style="
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 240px;
+    border-radius: 8px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+    margin-top: 5px;
+  ">
+
+    <a href="mailto:esanz@occident.com" style="display: block; padding: 12px; text-decoration: none; color: #222;">
+      📧 Email
+    </a>
+
+    <a href="tel:+34606067906" style="display: block; padding: 12px; text-decoration: none; color: #222;">
+      📱 Llamar al móvil
+    </a>
+
+  </div>
+</div>
 
   </section>
 
@@ -108,5 +129,12 @@
     Volver
   </a>
 
+<script>
+function toggleMenuAsesoramiento() {
+  var menu = document.getElementById("contactMenuAsesoramiento");
+  menu.style.display = menu.style.display === "block" ? "none" : "block";
+}
+</script>
+  
 </body>
 </html>
