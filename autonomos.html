@@ -95,19 +95,44 @@
     </div>
 
     <!-- CTA -->
-    <div style="margin-top: 40px;">
-      <a href="#contacto" style="
-        display: inline-block;
-        padding: 12px 20px;
-        background-color: #b91c1c;
-        color: white;
-        text-decoration: none;
-        border-radius: 8px;
-        font-weight: bold;
-      ">
-        Solicita tu asesoramiento personalizado
-      </a>
-    </div>
+  <div style="position: relative; display: inline-block; margin-top: 40px;">
+  
+  <button onclick="toggleMenu()" style="
+    padding: 12px 20px;
+    background-color: #b91c1c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+  ">
+    Resolvamos tus dudas como autónomo
+  </button>
+
+  <div id="contactMenu" style="
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 240px;
+    border-radius: 8px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+    margin-top: 5px;
+  ">
+
+    <a href="tel:+34917702311" style="display: block; padding: 12px; text-decoration: none; color: #222;">
+      ☎️ Llamar (oficina)
+    </a>
+
+    <a href="tel:+34606067906" style="display: block; padding: 12px; text-decoration: none; color: #222;">
+      📱 Llamar (móvil)
+    </a>
+
+    <a href="mailto:esanz@occident.com" style="display: block; padding: 12px; text-decoration: none; color: #222;">
+      📧 Email
+    </a>
+
+  </div>
+</div>
 
   </section>
 
@@ -126,6 +151,13 @@
 </body>
 </html>
   </a>
+
+<script>
+function toggleMenu() {
+  var menu = document.getElementById("contactMenu");
+  menu.style.display = menu.style.display === "block" ? "none" : "block";
+}
+</script>
 
 </body>
 </html>
