@@ -2,7 +2,32 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Sobre mí</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sobre mí</title>
+
+<style>
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 26px !important;
+      line-height: 1.3;
+    }
+
+    h3 {
+      font-size: 20px !important;
+    }
+
+    p {
+      font-size: 16px !important;
+      line-height: 1.6;
+    }
+
+    section {
+      padding-left: 16px !important;
+      padding-right: 16px !important;
+    }
+  }
+</style>
+  
 </head>
 
 <body style="font-family: sans-serif; margin: 0; background-color: #f9f9f9;">
@@ -39,7 +64,7 @@
     <!-- BLOQUES -->
     <div style="margin-top: 40px; display: grid; gap: 20px;">
 
-      <div style="background: white; padding: 20px; border-radius: 10px;">
+      <div style="background: white; padding: 18px; border-radius: 10px;">
         <h3>🤝 Trato cercano</h3>
         <p>
           Cada persona es diferente. Por eso, mi forma de trabajar se basa en escucharte, entender tu situación
@@ -47,7 +72,7 @@
         </p>
       </div>
 
-      <div style="background: white; padding: 20px; border-radius: 10px;">
+      <div style="background: white; padding: 18px; border-radius: 10px;">
         <h3>🧠 Explicaciones claras</h3>
         <p>
           Evito tecnicismos innecesarios. Mi objetivo es que entiendas cada paso y tomes decisiones con seguridad,
@@ -55,7 +80,7 @@
         </p>
       </div>
 
-      <div style="background: white; padding: 20px; border-radius: 10px;">
+      <div style="background: white; padding: 18px; border-radius: 10px;">
         <h3>🎯 Soluciones adaptadas</h3>
         <p>
           No trabajo con soluciones estándar. Analizo cada caso y recomiendo únicamente lo que realmente encaja contigo
@@ -76,27 +101,33 @@
 <div style="margin-top: 40px; display: flex; gap: 10px; flex-wrap: wrap;">
 
   <a href="tel:+34917702311" style="
-    display: inline-block;
-    padding: 12px 20px;
-    background-color: #b91c1c;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-  ">
+  display: inline-block;
+  padding: 14px 20px;
+  background-color: #b91c1c;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+">
     📞 Llamar
   </a>
 
   <a href="mailto:esanz@occident.com" style="
-    display: inline-block;
-    padding: 12px 20px;
-    background-color: white;
-    color: #b91c1c;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-    border: 1px solid #b91c1c;
-  ">
+  display: inline-block;
+  padding: 14px 20px;
+  background-color: white;
+  color: #b91c1c;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  border: 1px solid #b91c1c;
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+">
     📧 Email
   </a>
 
@@ -106,12 +137,12 @@
 
   <!-- BOTÓN VOLVER -->
   <a href="index.html" style="
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    color: red;
-    text-decoration: underline;
-    font-weight: bold;
+    color: #b91c1c;
+background-color: white;
+padding: 10px 14px;
+border-radius: 8px;
+box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+text-decoration: none;
   ">
     Volver
   </a>
