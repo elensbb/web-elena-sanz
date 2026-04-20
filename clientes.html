@@ -53,7 +53,7 @@
     <!-- BLOQUES -->
     <div style="margin-top: 40px; display: grid; gap: 20px;">
 
-      <div style="background: white; padding: 20px; border-radius: 10px;">
+      <div style="background: white; padding: 18px; border-radius: 10px;">
         <h3>📄 Consultas y gestiones</h3>
         <p>
           Si necesitas hacer una consulta, modificar algún dato o revisar tu situación,
@@ -61,7 +61,7 @@
         </p>
       </div>
 
-      <div style="background: white; padding: 20px; border-radius: 10px;">
+      <div style="background: white; padding: 18px; border-radius: 10px;">
         <h3>🛠️ Asistencia y siniestros</h3>
         <p>
           En caso de incidencia o siniestro, te acompaño para que se gestione de forma clara,
@@ -69,7 +69,7 @@
         </p>
       </div>
 
-      <div style="background: white; padding: 20px; border-radius: 10px;">
+      <div style="background: white; padding: 18px; border-radius: 10px;">
         <h3>🔄 Revisión de tus coberturas</h3>
         <p>
           Tu situación puede cambiar con el tiempo. Revisamos tus coberturas para asegurarnos
@@ -92,14 +92,16 @@
    <div style="position: relative; display: inline-block; margin-top: 10px;">
   
   <button onclick="toggleMenu()" style="
-    padding: 14px 22px;
-    background-color: #b91c1c;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-  ">
+  padding: 14px 20px;
+  background-color: #b91c1c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  max-width: 300px;
+">
     Contactar conmigo
   </button>
 
@@ -107,7 +109,8 @@
     display: none;
     position: absolute;
     background-color: white;
-    min-width: 220px;
+    width: 100%;
+max-width: 300px;
     border-radius: 8px;
     box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
     margin-top: 5px;
@@ -133,9 +136,13 @@
   <!-- BOTÓN VOLVER -->
   <a href="index.html" style="
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    color: red;
+bottom: 15px;
+right: 15px;
+color: #b91c1c;
+background-color: white;
+padding: 10px 14px;
+border-radius: 8px;
+box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
     text-decoration: underline;
     font-weight: bold;
   ">
