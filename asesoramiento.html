@@ -2,7 +2,32 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Asesoramiento financiero</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asesoramiento financiero</title>
+
+  <style>
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 26px !important;
+      line-height: 1.3;
+    }
+
+    h3 {
+      font-size: 20px !important;
+    }
+
+    p {
+      font-size: 16px !important;
+      line-height: 1.6;
+    }
+
+    section {
+      padding-left: 16px !important;
+      padding-right: 16px !important;
+    }
+  }
+</style>
+  
 </head>
 
 <body style="font-family: sans-serif; margin: 0; background-color: #f9f9f9;">
@@ -27,7 +52,7 @@
     <!-- BLOQUES -->
     <div style="margin-top: 40px; display: grid; gap: 20px;">
 
-      <div style="background: white; padding: 20px; border-radius: 10px;">
+      <div style="background: white; padding: 18px; border-radius: 10px;">
         <h3>📈 Inversiones</h3>
         <p>
           Diseñamos estrategias adaptadas a tu perfil y nivel de riesgo, buscando un equilibrio entre crecimiento y estabilidad. 
@@ -35,7 +60,7 @@
         </p>
       </div>
 
-      <div style="background: white; padding: 20px; border-radius: 10px;">
+      <div style="background: white; padding: 18px; border-radius: 10px;">
         <h3>🏦 Fondos de inversión</h3>
         <p>
           Accede a una gestión profesional y diversificada, ajustando cada opción a tus necesidades. 
@@ -43,7 +68,7 @@
         </p>
       </div>
 
-      <div style="background: white; padding: 20px; border-radius: 10px;">
+      <div style="background: white; padding: 18px; border-radius: 10px;">
         <h3>👴 Planes de pensiones</h3>
         <p>
           Prepara tu jubilación con soluciones pensadas para complementar tus ingresos futuros, 
@@ -51,7 +76,7 @@
         </p>
       </div>
 
-      <div style="background: white; padding: 20px; border-radius: 10px;">
+      <div style="background: white; padding: 18px; border-radius: 10px;">
         <h3>💼 Planes de ahorro</h3>
         <p>
           Alternativas para construir un ahorro constante, con objetivos definidos y adaptados a tu ritmo. 
@@ -59,7 +84,7 @@
         </p>
       </div>
 
-      <div style="background: white; padding: 20px; border-radius: 10px;">
+      <div style="background: white; padding: 18px; border-radius: 10px;">
         <h3>🧾 Planificación financiera</h3>
         <p>
           Analizamos tu situación global para ayudarte a tomar decisiones coherentes y bien estructuradas, 
@@ -83,14 +108,16 @@
 <div style="position: relative; display: inline-block; margin-top: 40px;">
   
   <button onclick="toggleMenuAsesoramiento()" style="
-    padding: 12px 20px;
-    background-color: #b91c1c;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-  ">
+  padding: 14px 20px;
+  background-color: #b91c1c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  max-width: 300px;
+">
     Solicita tu asesoramiento financiero
   </button>
 
@@ -98,7 +125,8 @@
     display: none;
     position: absolute;
     background-color: white;
-    min-width: 240px;
+    width: 100%;
+max-width: 300px;
     border-radius: 8px;
     box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
     margin-top: 5px;
@@ -120,9 +148,13 @@
   <!-- BOTÓN VOLVER -->
   <a href="index.html" style="
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    color: red;
+bottom: 15px;
+right: 15px;
+color: #b91c1c;
+background-color: white;
+padding: 10px 14px;
+border-radius: 8px;
+box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
     text-decoration: underline;
     font-weight: bold;
   ">
