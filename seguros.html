@@ -2,7 +2,32 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Seguros</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seguros</title>
+
+<style>
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 26px !important;
+      line-height: 1.3;
+    }
+
+    h3 {
+      font-size: 20px !important;
+    }
+
+    p {
+      font-size: 16px !important;
+      line-height: 1.6;
+    }
+
+    section {
+      padding-left: 16px !important;
+      padding-right: 16px !important;
+    }
+  }
+</style>
+  
 </head>
 
 <body style="font-family: sans-serif; margin: 0; background-color: #f9f9f9;">
@@ -28,7 +53,7 @@
     <!-- BLOQUES -->
     <div style="margin-top: 40px; display: grid; gap: 20px;">
 
-      <div style="background: white; padding: 20px; border-radius: 10px;">
+      <div style="background: white; padding: 18px; border-radius: 10px;">
         <h3>🏠 Hogar</h3>
         <p>
           Protege tu vivienda frente a daños, incidencias e imprevistos que pueden afectar a tu día a día.
@@ -36,7 +61,7 @@
         </p>
       </div>
 
-      <div style="background: white; padding: 20px; border-radius: 10px;">
+      <div style="background: white; padding: 18px; border-radius: 10px;">
         <h3>🚗 Auto</h3>
         <p>
           Soluciones pensadas para proteger tu vehículo y darte respaldo ante accidentes, daños o situaciones inesperadas,
@@ -44,7 +69,7 @@
         </p>
       </div>
 
-      <div style="background: white; padding: 20px; border-radius: 10px;">
+      <div style="background: white; padding: 18px; border-radius: 10px;">
         <h3>❤️ Vida</h3>
         <p>
           Una forma de proteger a quienes más importan y aportar estabilidad económica ante situaciones difíciles.
@@ -52,7 +77,7 @@
         </p>
       </div>
 
-      <div style="background: white; padding: 20px; border-radius: 10px;">
+      <div style="background: white; padding: 18px; border-radius: 10px;">
         <h3>🏥 Salud</h3>
         <p>
           Accede a soluciones que te permitan reforzar tu bienestar y el de tu familia, con opciones adaptadas
@@ -60,7 +85,7 @@
         </p>
       </div>
 
-      <div style="background: white; padding: 20px; border-radius: 10px;">
+      <div style="background: white; padding: 18px; border-radius: 10px;">
         <h3>🛡️ Accidentes</h3>
         <p>
           Los imprevistos pueden aparecer en cualquier momento. Contar con una protección adecuada ayuda a afrontar
@@ -68,7 +93,7 @@
         </p>
       </div>
 
-      <div style="background: white; padding: 20px; border-radius: 10px;">
+      <div style="background: white; padding: 18px; border-radius: 10px;">
         <h3>🏢 Negocios y responsabilidad civil</h3>
         <p>
           Si tienes una actividad profesional o un negocio, es importante proteger tanto tu trabajo como tu patrimonio.
@@ -93,39 +118,48 @@
 <div style="margin-top: 40px; display: flex; gap: 10px; flex-wrap: wrap;">
 
   <a href="tel:+34917702311" style="
-    display: inline-block;
-    padding: 12px 20px;
-    background-color: #b91c1c;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-  ">
+  display: inline-block;
+  padding: 14px 20px;
+  background-color: #b91c1c;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+">
     ☎️ Llamar (oficina)
   </a>
 
   <a href="tel:+34606067906" style="
-    display: inline-block;
-    padding: 12px 20px;
-    background-color: #b91c1c;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-  ">
+  display: inline-block;
+  padding: 14px 20px;
+  background-color: #b91c1c;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+">
     📱 Llamar (móvil)
   </a>
 
   <a href="mailto:esanz@occident.com" style="
-    display: inline-block;
-    padding: 12px 20px;
-    background-color: white;
-    color: #b91c1c;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-    border: 1px solid #b91c1c;
-  ">
+  display: inline-block;
+  padding: 14px 20px;
+  background-color: white;
+  color: #b91c1c;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  border: 1px solid #b91c1c;
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+">
     📧 Email
   </a>
 
@@ -136,11 +170,15 @@
   <!-- BOTÓN VOLVER -->
   <a href="index.html" style="
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    color: red;
-    text-decoration: underline;
-    font-weight: bold;
+bottom: 15px;
+right: 15px;
+color: #b91c1c;
+background-color: white;
+padding: 10px 14px;
+border-radius: 8px;
+box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+text-decoration: none;
+font-weight: bold;
   ">
     Volver
   </a>
