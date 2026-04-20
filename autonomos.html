@@ -2,7 +2,32 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Autónomos</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Autónomos</title>
+
+<style>
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 26px !important;
+      line-height: 1.3;
+    }
+
+    h3 {
+      font-size: 20px !important;
+    }
+
+    p {
+      font-size: 16px !important;
+      line-height: 1.6;
+    }
+
+    section {
+      padding-left: 16px !important;
+      padding-right: 16px !important;
+    }
+  }
+</style>
+  
 </head>
 
 <body style="font-family: sans-serif; margin: 0; background-color: #f9f9f9;">
@@ -28,7 +53,7 @@
     <!-- BLOQUES -->
     <div style="margin-top: 40px; display: grid; gap: 20px;">
 
-      <div style="background: white; padding: 20px; border-radius: 10px;">
+      <div style="background: white; padding: 18px; border-radius: 10px;">
         <h3>🏥 Bajas laborales</h3>
         <p>
           Si no puedes trabajar, tu actividad se ve afectada directamente. Las prestaciones públicas no siempre cubren
@@ -40,7 +65,7 @@
         </p>
       </div>
 
-      <div style="background: white; padding: 20px; border-radius: 10px;">
+      <div style="background: white; padding: 18px; border-radius: 10px;">
         <h3>🚑 Accidentes</h3>
         <p>
           Un accidente puede tener consecuencias importantes tanto a nivel personal como profesional. Desde una baja temporal
@@ -51,7 +76,7 @@
         </p>
       </div>
 
-      <div style="background: white; padding: 20px; border-radius: 10px;">
+      <div style="background: white; padding: 18px; border-radius: 10px;">
         <h3>⚖️ Responsabilidad civil</h3>
         <p>
           Un error, un daño a un cliente o a un tercero puede derivar en una reclamación que afecte directamente a tu patrimonio.
@@ -61,7 +86,7 @@
         </p>
       </div>
 
-      <div style="background: white; padding: 20px; border-radius: 10px;">
+      <div style="background: white; padding: 18px; border-radius: 10px;">
         <h3>💶 Complemento de prestaciones</h3>
         <p>
           En muchas ocasiones, lo que se recibe a nivel público no es suficiente para mantener tu nivel de estabilidad.
@@ -71,7 +96,7 @@
         </p>
       </div>
 
-      <div style="background: white; padding: 20px; border-radius: 10px;">
+      <div style="background: white; padding: 18px; border-radius: 10px;">
         <h3>🏪 Comercios y oficinas</h3>
         <p>
           Tu lugar de trabajo también necesita protección. Daños, robos o incidencias pueden afectar directamente a tu actividad.
@@ -98,14 +123,16 @@
   <div style="position: relative; display: inline-block; margin-top: 40px;">
   
   <button onclick="toggleMenu()" style="
-    padding: 12px 20px;
-    background-color: #b91c1c;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-  ">
+  padding: 14px 20px;
+  background-color: #b91c1c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  max-width: 300px;
+">
     Resolvamos tus dudas como autónomo
   </button>
 
@@ -113,7 +140,8 @@
     display: none;
     position: absolute;
     background-color: white;
-    min-width: 240px;
+    width: 100%;
+max-width: 300px;
     border-radius: 8px;
     box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
     margin-top: 5px;
@@ -138,10 +166,14 @@
 
   <!-- BOTÓN VOLVER -->
   <a href="index.html" style="
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    color: red;
+   position: fixed;
+bottom: 15px;
+right: 15px;
+color: #b91c1c;
+background-color: white;
+padding: 10px 14px;
+border-radius: 8px;
+box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
     text-decoration: underline;
     font-weight: bold;
   ">
@@ -150,7 +182,6 @@
 
 </body>
 </html>
-  </a>
 
 <script>
 function toggleMenu() {
