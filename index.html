@@ -3,259 +3,321 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Elena Sanz</title>
+  <title>Elena Sanz | Seguros y asesoramiento</title>
 
   <style>
-    body {
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
       scroll-behavior: smooth;
+    }
+
+    body {
       margin: 0;
-      font-family: sans-serif;
-      background-color: #f9f9f9;
+      font-family: Arial, sans-serif;
+      background: #f8f8f8;
       color: #222;
     }
 
-    .section {
-      max-width: 1100px;
+    a {
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 1120px;
       margin: 0 auto;
-      padding: 0 20px 70px 20px;
+      padding: 0 20px;
     }
 
     .logo-bar {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 28px 20px 18px 20px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       gap: 30px;
+      padding: 26px 20px 14px;
+      max-width: 1120px;
+      margin: 0 auto;
     }
 
     .logo-left img {
-      height: 150px;
+      height: 125px;
       width: auto;
       display: block;
     }
 
     .logo-right img {
-      height: 75px;
+      height: 68px;
       width: auto;
       display: block;
     }
 
+    .logo-note {
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+      margin: 0 20px 14px;
+    }
+
     .logo-divider {
-      max-width: 1100px;
-      margin: 0 auto 10px auto;
+      max-width: 1120px;
+      margin: 0 auto;
       border-bottom: 2px solid #b91c1c;
     }
 
     .hero {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 70px 20px 70px 20px;
+      padding: 72px 0 78px;
+      background: linear-gradient(180deg, #ffffff 0%, #f8f8f8 100%);
     }
 
     .hero-content {
-      max-width: 800px;
+      max-width: 760px;
     }
 
     .eyebrow {
       color: #b91c1c;
-      font-weight: bold;
-      letter-spacing: 0.5px;
-      margin: 0 0 10px 0;
-      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: .6px;
+      font-size: 15px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
     }
 
     h1 {
-      font-size: 42px;
-      line-height: 1.2;
-      margin: 0 0 20px 0;
+      font-size: 46px;
+      line-height: 1.15;
+      margin: 0 0 22px;
     }
 
     h2 {
-      font-size: 30px;
-      line-height: 1.3;
-      margin: 0 0 18px 0;
+      font-size: 32px;
+      line-height: 1.25;
+      margin: 0 0 16px;
     }
 
     h3 {
-      font-size: 22px;
-      line-height: 1.35;
-      margin: 0 0 12px 0;
+      font-size: 21px;
+      margin: 0 0 10px;
+    }
+
+    p {
+      line-height: 1.65;
     }
 
     .text-main {
-      font-size: 18px;
-      line-height: 1.7;
-      margin: 0 0 18px 0;
-    }
-
-    .text-support {
-      font-size: 16px;
-      line-height: 1.6;
-      color: #555;
-      margin: 0;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 16px;
-    }
-
-    .section-intro {
-      text-align: center;
-      max-width: 650px;
-      margin: 0 auto 40px auto;
+      font-size: 19px;
+      color: #444;
+      margin: 0 0 16px;
     }
 
     .hero-buttons {
       display: flex;
-      gap: 15px;
+      gap: 14px;
       flex-wrap: wrap;
-      margin-top: 28px;
+      margin-top: 30px;
     }
 
     .button-primary,
     .button-secondary {
-      display: inline-block;
-      padding: 14px 22px;
-      border-radius: 8px;
-      font-weight: bold;
-      text-align: center;
-      text-decoration: none;
-      width: 100%;
-      max-width: 220px;
-      box-sizing: border-box;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 14px 24px;
+      border-radius: 10px;
+      font-weight: 700;
+      transition: .2s ease;
     }
 
     .button-primary {
-      background-color: #b91c1c;
+      background: #b91c1c;
       color: white;
+      box-shadow: 0 8px 18px rgba(185, 28, 28, .18);
+    }
+
+    .button-primary:hover {
+      transform: translateY(-2px);
+      background: #991b1b;
     }
 
     .button-secondary {
-      background-color: white;
+      background: white;
       color: #222;
-      border: 1px solid #d9d9d9;
+      border: 1px solid #ddd;
+    }
+
+    .button-secondary:hover {
+      transform: translateY(-2px);
+      border-color: #b91c1c;
+    }
+
+    .mini-trust {
+      font-size: 14px;
+      color: #666;
+      margin-top: 14px;
+    }
+
+    .section {
+      padding: 72px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 14px;
+    }
+
+    .section-intro {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 42px;
+      color: #555;
+      font-size: 17px;
     }
 
     .cards-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-      align-items: stretch;
-    }
-
-    .three-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
-      align-items: stretch;
-    }
-
-    .review-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      align-items: stretch;
+      grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+      gap: 22px;
     }
 
     .card-link {
-      text-decoration: none;
       color: #222;
       display: flex;
       height: 100%;
     }
 
     .card {
-      background-color: white;
-      padding: 24px;
-      border-radius: 12px;
-      box-shadow: 0px 4px 12px rgba(0,0,0,0.05);
+      background: white;
+      border-radius: 16px;
+      padding: 26px;
+      width: 100%;
+      min-height: 210px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.06);
+      border: 1px solid #eee;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      min-height: 190px;
-      width: 100%;
-      box-sizing: border-box;
+      transition: .2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 30px rgba(0,0,0,.09);
+      border-color: #f0caca;
     }
 
     .card p {
-      font-size: 17px;
-      line-height: 1.6;
       margin: 0;
+      color: #555;
+      font-size: 16px;
+    }
+
+    .card-icon {
+      font-size: 28px;
+      margin-bottom: 14px;
     }
 
     .ver-mas {
       display: inline-block;
-      margin-top: 18px;
+      margin-top: 20px;
       color: #b91c1c;
-      font-weight: bold;
-      text-decoration: underline;
+      font-weight: 700;
     }
 
     .about-box {
-      background-color: white;
-      padding: 35px;
-      border-radius: 12px;
-      box-shadow: 0px 4px 12px rgba(0,0,0,0.05);
+      background: white;
+      border-radius: 18px;
+      padding: 42px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.06);
+      border-left: 5px solid #b91c1c;
     }
 
-    .about-box h2 {
-      color: #222;
+    .about-box p {
+      font-size: 18px;
+      color: #444;
+      margin-bottom: 16px;
     }
 
     .about-box a {
       color: #b91c1c;
-      font-weight: bold;
+      font-weight: 700;
       text-decoration: underline;
     }
 
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 22px;
+    }
+
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+    }
+
     .review-name {
-      font-size: 15px !important;
-      color: #777;
-      margin-top: 14px !important;
+      margin-top: 16px !important;
+      font-size: 14px !important;
+      color: #777 !important;
+    }
+
+    .cta-section {
+      padding: 72px 0 100px;
     }
 
     .cta-box {
-      background-color: #b91c1c;
+      background: #b91c1c;
       color: white;
-      padding: 32px 24px;
-      border-radius: 12px;
+      border-radius: 20px;
+      padding: 44px 28px;
       text-align: center;
-      max-width: 700px;
+      max-width: 780px;
       margin: 0 auto;
-      box-shadow: 0px 4px 12px rgba(0,0,0,0.08);
+      box-shadow: 0 12px 28px rgba(185,28,28,.22);
+    }
+
+    .cta-box p {
+      font-size: 18px;
+      max-width: 620px;
+      margin: 0 auto 12px;
     }
 
     .cta-button {
-      display: inline-block;
-      margin-top: 22px;
-      padding: 14px 22px;
-      background-color: white;
+      display: inline-flex;
+      margin-top: 24px;
+      background: white;
       color: #b91c1c;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-      width: 100%;
-      max-width: 220px;
-      box-sizing: border-box;
+      padding: 14px 24px;
+      border-radius: 10px;
+      font-weight: 700;
+      transition: .2s ease;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
     }
 
     .whatsapp-fijo {
       position: fixed;
-      bottom: 80px;
-      right: 15px;
-      width: 60px;
-      height: 60px;
+      right: 18px;
+      bottom: 82px;
+      width: 62px;
+      height: 62px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       z-index: 9999;
+      box-shadow: 0 8px 22px rgba(0,0,0,.25);
+      animation: latido 1.8s infinite;
     }
 
-    .whatsapp-fijo img {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+    .whatsapp-fijo:hover {
+      transform: scale(1.08);
     }
 
     @keyframes latido {
@@ -264,83 +326,50 @@
       100% { transform: scale(1); }
     }
 
-    .whatsapp-latido {
-      animation: latido 1.8s infinite;
-    }
-
     @media (max-width: 768px) {
       .logo-bar {
         flex-direction: column;
-        justify-content: center;
         text-align: center;
-        padding: 24px 16px 12px 16px;
-        gap: 18px;
+        gap: 16px;
       }
 
       .logo-left img {
-        height: 120px;
+        height: 112px;
       }
 
       .logo-right img {
-        height: 44px;
-      }
-
-      .logo-divider {
-        margin: 0 16px 10px 16px;
-      }
-
-      .section,
-      .hero {
-        padding-left: 16px !important;
-        padding-right: 16px !important;
+        height: 48px;
       }
 
       .hero {
-        padding-top: 55px;
-        padding-bottom: 55px;
+        padding: 52px 0 60px;
       }
 
       h1 {
-        font-size: 32px !important;
-        line-height: 1.25 !important;
+        font-size: 34px;
       }
 
       h2 {
-        font-size: 26px !important;
-        line-height: 1.3 !important;
+        font-size: 27px;
       }
 
-      h3 {
-        font-size: 21px !important;
+      .text-main {
+        font-size: 17px;
       }
 
-      .text-main,
-      .card p {
-        font-size: 16px !important;
-        line-height: 1.6 !important;
+      .button-primary,
+      .button-secondary {
+        width: 100%;
       }
 
-      .card {
-        min-height: auto;
-      }
-    }
-
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 28px !important;
-      }
-
-      h2 {
-        font-size: 24px !important;
-      }
-
-      h3 {
-        font-size: 20px !important;
+      .about-box {
+        padding: 30px 24px;
       }
 
       .whatsapp-fijo {
         width: 56px;
         height: 56px;
+        right: 15px;
         bottom: 75px;
       }
     }
@@ -360,219 +389,224 @@
     </div>
   </section>
 
+  <p class="logo-note">Agencia vinculada a Occident · Asesoramiento personalizado</p>
   <div class="logo-divider"></div>
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-content">
-      <p class="eyebrow">FINANZAS, SEGUROS Y PLANIFICACIÓN</p>
+    <div class="container">
+      <div class="hero-content">
+        <p class="eyebrow">Finanzas, seguros y planificación</p>
 
-      <h1>Seguros claros, cercanos y adaptados a ti</h1>
+        <h1>Seguros claros y sin complicaciones para familias y autónomos</h1>
 
-      <p class="text-main">
-        Te ayudamos a proteger lo que más te importa y a tomar decisiones con tranquilidad, de forma clara y sin complicaciones.
-      </p>
+        <p class="text-main">
+          Te ayudamos a entender qué necesitas realmente y a proteger lo importante sin líos ni tecnicismos.
+        </p>
 
-      <p class="text-main">
-        Revisamos tu situación y te ayudamos a entender qué necesitas realmente, sin tecnicismos y con un trato cercano.
-      </p>
+        <p class="text-main">
+          Asesoramiento cercano, personalizado y pensado para que tomes decisiones con tranquilidad.
+        </p>
 
-      <div class="hero-buttons">
-  <a href="https://wa.me/34606067906" class="button-primary">Escríbenos por WhatsApp</a>
-  <a href="#servicios" class="button-secondary">Ver servicios</a>
-</div>
+        <div class="hero-buttons">
+          <a href="https://wa.me/34606067906" target="_blank" class="button-primary">Escríbenos por WhatsApp</a>
+          <a href="#servicios" class="button-secondary">Ver servicios</a>
+        </div>
 
-<p style="font-size:14px; color:#666; margin-top:15px;">
-  Respuesta rápida · Sin compromiso
-</p>
+        <p class="mini-trust">Respuesta rápida · Sin compromiso · Te explicamos todo de forma sencilla</p>
+      </div>
     </div>
   </section>
 
   <!-- SERVICIOS -->
   <section id="servicios" class="section">
-    <h2 class="section-title">Soluciones para proteger lo que más te importa</h2>
+    <div class="container">
+      <h2 class="section-title">Soluciones para proteger lo que más te importa</h2>
 
-    <p class="text-support section-intro">
-      Te acompañamos con un asesoramiento claro y cercano para ayudarte a tomar decisiones con tranquilidad.
-    </p>
+      <p class="section-intro">
+        Te acompañamos con un asesoramiento claro y cercano para ayudarte a elegir la protección que mejor encaja contigo.
+      </p>
 
-    <div class="cards-grid">
-      <a href="sobre-mi.html" class="card-link">
-        <div class="card">
-          <div>
-            <h3>Sobre mí</h3>
-            <p>Descubre cómo trabajamos y por qué apostamos por un trato claro, cercano y personalizado.</p>
+      <div class="cards-grid">
+
+        <a href="sobre-mi.html" class="card-link">
+          <div class="card">
+            <div>
+              <div class="card-icon">👩‍💼</div>
+              <h3>Sobre mí</h3>
+              <p>Conoce nuestra forma de trabajar: cercana, clara y personalizada.</p>
+            </div>
+            <span class="ver-mas">Ver más</span>
           </div>
-          <span class="ver-mas">Ver más<div class="hero-buttons">
-        </div>
-      </a>
+        </a>
 
-      <a href="seguros.html" class="card-link">
-        <div class="card">
-          <div>
-            <h3>Seguros</h3>
-            <p>Encuentra la protección que mejor encaja contigo, con tu familia y con tu día a día.</p>
+        <a href="seguros.html" class="card-link">
+          <div class="card">
+            <div>
+              <div class="card-icon">🛡️</div>
+              <h3>Seguros</h3>
+              <p>Protección para tu hogar, familia, salud, coche y tranquilidad diaria.</p>
+            </div>
+            <span class="ver-mas">Ver más</span>
           </div>
-          <span class="ver-mas">Ver más</span>
-        </div>
-      </a>
+        </a>
 
-      <a href="autonomos.html" class="card-link">
-        <div class="card">
-          <div>
-            <h3>Autónomos</h3>
-            <p>Protege tu actividad profesional con soluciones pensadas para tu trabajo y tu tranquilidad.</p>
+        <a href="autonomos.html" class="card-link">
+          <div class="card">
+            <div>
+              <div class="card-icon">💼</div>
+              <h3>Autónomos</h3>
+              <p>Soluciones pensadas para proteger tu actividad profesional.</p>
+            </div>
+            <span class="ver-mas">Ver más</span>
           </div>
-          <span class="ver-mas">Ver más</span>
-        </div>
-      </a>
+        </a>
 
-      <a href="asesoramiento.html" class="card-link">
-        <div class="card">
-          <div>
-            <h3>Asesoramiento financiero</h3>
-            <p>Te ayudamos a planificar mejor y a tomar decisiones con seguridad según tus objetivos.</p>
+        <a href="asesoramiento.html" class="card-link">
+          <div class="card">
+            <div>
+              <div class="card-icon">📈</div>
+              <h3>Asesoramiento financiero</h3>
+              <p>Planificación sencilla para ayudarte a tomar mejores decisiones.</p>
+            </div>
+            <span class="ver-mas">Ver más</span>
           </div>
-          <span class="ver-mas">Ver más</span>
-        </div>
-      </a>
+        </a>
 
-      <a href="clientes.html" class="card-link">
-        <div class="card">
-          <div>
-            <h3>¿Ya eres cliente?</h3>
-            <p>Encuentra apoyo, información y atención rápida siempre que lo necesites.</p>
+        <a href="clientes.html" class="card-link">
+          <div class="card">
+            <div>
+              <div class="card-icon">🤝</div>
+              <h3>¿Ya eres cliente?</h3>
+              <p>Atención rápida, apoyo y ayuda cuando lo necesites.</p>
+            </div>
+            <span class="ver-mas">Ver más</span>
           </div>
-          <span class="ver-mas">Ver más</span>
-        </div>
-      </a>
+        </a>
+
+      </div>
     </div>
   </section>
 
   <!-- SOBRE MÍ -->
   <section class="section">
-    <div class="about-box">
-      <h2>Una forma de trabajar basada en la cercanía y la confianza</h2>
+    <div class="container">
+      <div class="about-box">
+        <h2>Una forma de trabajar basada en la cercanía y la confianza</h2>
 
-      <p class="text-main">
-        Soy Elena Sanz, agente mediador de seguros de Occident y asesora financiera. Trabajo para ofrecerte un asesoramiento cercano, claro y adaptado a tu situación, ayudándote a encontrar soluciones que realmente encajen contigo.
-      </p>
+        <p>
+          Soy Elena Sanz, agente mediador de seguros de Occident y asesora financiera. Trabajo para ofrecerte un asesoramiento cercano, claro y adaptado a tu situación.
+        </p>
 
-      <p class="text-main">
-        Creo en un asesoramiento sencillo, honesto y adaptado a cada persona, porque cada situación necesita atención real y soluciones bien pensadas.
-      </p>
+        <p>
+          Mi objetivo es que entiendas tus opciones sin tecnicismos y puedas elegir con seguridad lo que realmente encaja contigo.
+        </p>
 
-      <a href="sobre-mi.html">Saber más</a>
+        <a href="sobre-mi.html">Saber más</a>
+      </div>
     </div>
   </section>
 
   <!-- POR QUÉ CONFIAR -->
   <section class="section">
-    <h2 style="margin-bottom: 35px;">¿Por qué confiar en nosotras?</h2>
+    <div class="container">
+      <h2 class="section-title">¿Por qué confiar en nosotras?</h2>
 
-    <div class="three-grid">
-      <div class="card">
-        <div>
-          <h3>Cercanía real</h3>
-          <p>Te acompañamos de forma cercana y personal desde el primer momento.</p>
-        </div>
-      </div>
+      <p class="section-intro">
+        Porque no se trata solo de contratar un seguro, sino de sentir que estás bien acompañado.
+      </p>
 
-      <div class="card">
-        <div>
-          <h3>Explicaciones claras</h3>
-          <p>Queremos que entiendas cada opción con claridad y tomes decisiones con tranquilidad.</p>
-        </div>
-      </div>
+      <div class="trust-grid">
 
-      <div class="card">
-        <div>
-          <h3>Soluciones a medida</h3>
-          <p>Cada persona necesita algo distinto, por eso buscamos lo que realmente encaja contigo.</p>
+        <div class="card">
+          <div>
+            <div class="card-icon">❤️</div>
+            <h3>Cercanía real</h3>
+            <p>Te acompañamos de forma personal desde el primer momento.</p>
+          </div>
         </div>
+
+        <div class="card">
+          <div>
+            <div class="card-icon">💬</div>
+            <h3>Explicaciones claras</h3>
+            <p>Sin tecnicismos, sin líos y con información fácil de entender.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div>
+            <div class="card-icon">🎯</div>
+            <h3>Soluciones a medida</h3>
+            <p>Buscamos lo que realmente encaja con tu vida o tu negocio.</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
   <!-- OPINIONES -->
   <section class="section">
-    <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+    <div class="container">
+      <h2 class="section-title">Lo que dicen nuestros clientes</h2>
 
-    <p class="text-support section-intro" style="max-width: 700px;">
-      La confianza de nuestros clientes es lo más importante. Estas son algunas de las experiencias que mejor reflejan nuestro trato cercano y profesional.
-    </p>
+      <p class="section-intro">
+        La confianza de nuestros clientes refleja nuestra forma de trabajar: cercana, clara y profesional.
+      </p>
 
-    <div class="review-grid">
-      <div class="card">
-        <div>
-          <p>“Me explicaron todo de forma muy clara y sin complicaciones. Ahora tengo mucha más tranquilidad.”</p>
-          <p class="review-name">— M.G. · Cliente desde hace años</p>
+      <div class="review-grid">
+
+        <div class="card">
+          <div>
+            <p>“Me explicaron todo de forma muy clara y sin complicaciones. Ahora tengo mucha más tranquilidad.”</p>
+            <p class="review-name">— M.G. · Cliente desde hace años</p>
+          </div>
         </div>
-      </div>
 
-      <div class="card">
-        <div>
-          <p>“El trato es cercano y siempre están disponibles cuando lo necesitas. Eso da mucha confianza.”</p>
-          <p class="review-name">— J.R. · Autónomo</p>
+        <div class="card">
+          <div>
+            <p>“El trato es cercano y siempre están disponibles cuando lo necesitas. Eso da mucha confianza.”</p>
+            <p class="review-name">— J.R. · Autónomo</p>
+          </div>
         </div>
-      </div>
 
-      <div class="card">
-        <div>
-          <p>“Por fin alguien que te explica las cosas de forma sencilla y te ayuda a tomar decisiones con seguridad.”</p>
-          <p class="review-name">— A.L. · Cliente familiar</p>
+        <div class="card">
+          <div>
+            <p>“Por fin alguien que te explica las cosas de forma sencilla y te ayuda a tomar decisiones con seguridad.”</p>
+            <p class="review-name">— A.L. · Cliente familiar</p>
+          </div>
         </div>
+
       </div>
     </div>
   </section>
 
   <!-- CONTACTO -->
-  <section id="contacto" class="section" style="padding-bottom: 80px;">
-    <div class="cta-box">
-      <h2>¿Hablamos?</h2>
+  <section id="contacto" class="cta-section">
+    <div class="container">
+      <div class="cta-box">
+        <h2>¿Hablamos?</h2>
 
-      <p class="text-main">
-        Si quieres resolver dudas, entender mejor tus opciones o encontrar la solución que mejor encaja contigo, estaremos encantadas de ayudarte.
-      </p>
+        <p>
+          Si quieres resolver dudas o encontrar la solución que mejor encaja contigo, estaremos encantadas de ayudarte.
+        </p>
 
-      <p style="font-size: 17px; line-height: 1.6; margin-top: 15px;">
-        Dar el primer paso es más sencillo de lo que parece.
-      </p>
+        <p>
+          Respuesta rápida y sin compromiso.
+        </p>
 
-      <p style="font-size: 17px; line-height: 1.6; margin-top: 15px;">
-        Respuesta rápida y sin compromiso.
-      </p>
-
-      <a href="mailto:esanz@occident.com" class="cta-button">Habla con nosotras</a>
+        <a href="https://wa.me/34606067906" target="_blank" class="cta-button">Escríbenos por WhatsApp</a>
+      </div>
     </div>
   </section>
 
- <!-- BOTÓN FIJO WHATSAPP -->
-<a href="https://wa.me/34606067906" target="_blank" aria-label="WhatsApp" style="
-  position: fixed;
-  bottom: 80px;
-  right: 15px;
-  width: 56px;
-  height: 56px;
-  background-color: #25D366;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  box-shadow: 0px 4px 10px rgba(0,0,0,0.18);
-  z-index: 999;
-  transition: transform 0.2s ease;
-"
-onmouseover="this.style.transform='scale(1.1)'"
-onmouseout="this.style.transform='scale(1)'"
->
+  <!-- BOTÓN FIJO WHATSAPP -->
+  <a href="https://wa.me/34606067906" target="_blank" class="whatsapp-fijo" aria-label="WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="white">
+      <path d="M16.001 2.667c-7.363 0-13.334 5.97-13.334 13.334 0 2.35.615 4.648 1.782 6.68L2.667 29.333l6.85-1.748a13.25 13.25 0 0 0 6.484 1.672h.001c7.363 0 13.334-5.97 13.334-13.334S23.365 2.667 16.001 2.667zm0 24.334h-.001a10.95 10.95 0 0 1-5.58-1.523l-.4-.237-4.066 1.038 1.084-3.963-.26-.41a10.97 10.97 0 0 1-1.693-5.883c0-6.058 4.933-10.99 10.993-10.99 2.937 0 5.694 1.143 7.77 3.217a10.95 10.95 0 0 1 3.218 7.773c-.001 6.058-4.934 10.99-10.992 10.99zm6.06-8.24c-.33-.166-1.953-.963-2.255-1.073-.302-.11-.522-.166-.742.166-.22.33-.852 1.073-1.044 1.293-.193.22-.386.247-.715.083-.33-.166-1.39-.513-2.65-1.635-.98-.872-1.64-1.95-1.833-2.28-.193-.33-.02-.508.146-.674.15-.15.33-.386.495-.58.166-.193.22-.33.33-.55.11-.22.055-.413-.028-.58-.083-.166-.742-1.79-1.016-2.455-.267-.64-.538-.553-.742-.563l-.633-.01c-.22 0-.58.083-.883.413-.302.33-1.155 1.13-1.155 2.753 0 1.623 1.182 3.19 1.347 3.41.166.22 2.327 3.553 5.64 4.98.789.34 1.404.543 1.883.695.791.252 1.512.216 2.082.131.635-.095 1.953-.798 2.23-1.57.275-.77.275-1.43.193-1.57-.083-.14-.302-.22-.633-.386z"/>
+    </svg>
+  </a>
 
-  <!-- ICONO REAL WHATSAPP (SVG) -->
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28" fill="white">
-    <path d="M16.001 2.667c-7.363 0-13.334 5.97-13.334 13.334 0 2.35.615 4.648 1.782 6.68L2.667 29.333l6.85-1.748a13.25 13.25 0 0 0 6.484 1.672h.001c7.363 0 13.334-5.97 13.334-13.334S23.365 2.667 16.001 2.667zm0 24.334h-.001a10.95 10.95 0 0 1-5.58-1.523l-.4-.237-4.066 1.038 1.084-3.963-.26-.41a10.97 10.97 0 0 1-1.693-5.883c0-6.058 4.933-10.99 10.993-10.99 2.937 0 5.694 1.143 7.77 3.217a10.95 10.95 0 0 1 3.218 7.773c-.001 6.058-4.934 10.99-10.992 10.99zm6.06-8.24c-.33-.166-1.953-.963-2.255-1.073-.302-.11-.522-.166-.742.166-.22.33-.852 1.073-1.044 1.293-.193.22-.386.247-.715.083-.33-.166-1.39-.513-2.65-1.635-.98-.872-1.64-1.95-1.833-2.28-.193-.33-.02-.508.146-.674.15-.15.33-.386.495-.58.166-.193.22-.33.33-.55.11-.22.055-.413-.028-.58-.083-.166-.742-1.79-1.016-2.455-.267-.64-.538-.553-.742-.563l-.633-.01c-.22 0-.58.083-.883.413-.302.33-1.155 1.13-1.155 2.753 0 1.623 1.182 3.19 1.347 3.41.166.22 2.327 3.553 5.64 4.98.789.34 1.404.543 1.883.695.791.252 1.512.216 2.082.131.635-.095 1.953-.798 2.23-1.57.275-.77.275-1.43.193-1.57-.083-.14-.302-.22-.633-.386z"/>
-  </svg>
-
-</a>
 </body>
 </html>
