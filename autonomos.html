@@ -2,208 +2,538 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Autónomos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autónomos | Elena Sanz</title>
 
-<style>
-  @media (max-width: 768px) {
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f8f8f8;
+      color: #222;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .page-hero {
+      background: linear-gradient(180deg, #ffffff 0%, #f8f8f8 100%);
+      padding: 70px 0 50px;
+    }
+
+    .eyebrow {
+      color: #b91c1c;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .6px;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
     h1 {
-      font-size: 26px !important;
-      line-height: 1.3;
+      font-size: 44px;
+      line-height: 1.15;
+      margin: 0 0 20px;
+      max-width: 820px;
+    }
+
+    h2 {
+      font-size: 30px;
+      line-height: 1.25;
+      margin: 0 0 18px;
     }
 
     h3 {
-      font-size: 20px !important;
+      font-size: 21px;
+      margin: 0 0 10px;
     }
 
     p {
-      font-size: 16px !important;
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
-    section {
-      padding-left: 16px !important;
-      padding-right: 16px !important;
+    .hero-text {
+      font-size: 19px;
+      color: #444;
+      max-width: 780px;
+      margin: 0 0 16px;
     }
-  }
-</style>
-  
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    .hero-primary,
+    .hero-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 14px 24px;
+      border-radius: 10px;
+      font-weight: 700;
+      transition: .2s ease;
+    }
+
+    .hero-primary {
+      background: #b91c1c;
+      color: white;
+      box-shadow: 0 8px 18px rgba(185,28,28,.18);
+    }
+
+    .hero-secondary {
+      background: white;
+      color: #222;
+      border: 1px solid #ddd;
+    }
+
+    .hero-primary:hover,
+    .hero-secondary:hover {
+      transform: translateY(-2px);
+    }
+
+    .mini-trust {
+      font-size: 14px;
+      color: #666;
+      margin-top: 14px;
+    }
+
+    .section {
+      padding: 55px 0;
+    }
+
+    .intro-card {
+      background: white;
+      border-radius: 18px;
+      padding: 38px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.06);
+      border-left: 5px solid #b91c1c;
+    }
+
+    .intro-card p {
+      font-size: 18px;
+      color: #444;
+      margin: 0 0 16px;
+    }
+
+    .section-intro {
+      max-width: 760px;
+      color: #555;
+      font-size: 17px;
+      margin: 0 0 32px;
+    }
+
+    .autonomos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 26px;
+      min-height: 250px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.06);
+      border: 1px solid #eee;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: .2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 30px rgba(0,0,0,.09);
+      border-color: #f0caca;
+    }
+
+    .card-icon {
+      font-size: 30px;
+      margin-bottom: 14px;
+    }
+
+    .card p {
+      margin: 0 0 10px;
+      color: #555;
+      font-size: 16px;
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .highlight-box {
+      background: #fff3f3;
+      border-radius: 16px;
+      padding: 30px;
+      margin-top: 30px;
+      border: 1px solid #f4cccc;
+    }
+
+    .highlight-box p {
+      font-size: 18px;
+      color: #444;
+      margin: 0;
+    }
+
+    .closing-box {
+      background: white;
+      border-radius: 18px;
+      padding: 34px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.06);
+    }
+
+    .closing-box p {
+      font-size: 18px;
+      color: #444;
+      margin: 0 0 14px;
+    }
+
+    .cta-box {
+      background: #b91c1c;
+      color: white;
+      border-radius: 20px;
+      padding: 44px 28px;
+      text-align: center;
+      max-width: 820px;
+      margin: 0 auto;
+      box-shadow: 0 12px 28px rgba(185,28,28,.22);
+    }
+
+    .cta-box p {
+      font-size: 18px;
+      max-width: 620px;
+      margin: 0 auto 12px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 26px;
+    }
+
+    .cta-primary,
+    .cta-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 14px 24px;
+      border-radius: 10px;
+      font-weight: 700;
+      transition: .2s ease;
+      min-width: 210px;
+    }
+
+    .cta-primary {
+      background: white;
+      color: #b91c1c;
+    }
+
+    .cta-secondary {
+      background: transparent;
+      color: white;
+      border: 1px solid rgba(255,255,255,.7);
+    }
+
+    .cta-primary:hover,
+    .cta-secondary:hover {
+      transform: translateY(-2px);
+    }
+
+    .back-button {
+      position: fixed;
+      bottom: 15px;
+      right: 15px;
+      color: #b91c1c;
+      background: white;
+      padding: 10px 14px;
+      border-radius: 9px;
+      box-shadow: 0 4px 12px rgba(0,0,0,.12);
+      font-weight: 700;
+      z-index: 998;
+      font-size: 14px;
+    }
+
+    .whatsapp-fijo {
+      position: fixed;
+      right: 18px;
+      bottom: 82px;
+      width: 62px;
+      height: 62px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      box-shadow: 0 8px 22px rgba(0,0,0,.25);
+      animation: latido 1.8s infinite;
+    }
+
+    .whatsapp-fijo:hover {
+      transform: scale(1.08);
+    }
+
+    @keyframes latido {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+      100% { transform: scale(1); }
+    }
+
+    @media (max-width: 768px) {
+      .page-hero {
+        padding: 50px 0 35px;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
+
+      h2 {
+        font-size: 27px;
+      }
+
+      .hero-text,
+      .intro-card p,
+      .highlight-box p,
+      .closing-box p,
+      .cta-box p {
+        font-size: 17px;
+      }
+
+      .intro-card,
+      .closing-box {
+        padding: 28px 24px;
+      }
+
+      .hero-primary,
+      .hero-secondary,
+      .cta-primary,
+      .cta-secondary {
+        width: 100%;
+      }
+
+      .back-button {
+        left: 15px;
+        right: auto;
+        bottom: 15px;
+        font-size: 13px;
+      }
+
+      .whatsapp-fijo {
+        width: 56px;
+        height: 56px;
+        right: 15px;
+        bottom: 75px;
+      }
+    }
+  </style>
 </head>
 
-<body style="font-family: sans-serif; margin: 0; background-color: #f9f9f9;">
+<body>
 
-  <section style="max-width: 900px; margin: auto; padding: 40px 20px;">
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">Autónomos</p>
 
-    <!-- GANCHO -->
-    <h1 style="color: #b91c1c; font-size: 32px;">
-      Protección pensada para autónomos y su actividad
-    </h1>
+      <h1>Protección pensada para autónomos y su actividad</h1>
 
-<p style="font-size: 18px; line-height: 1.6; margin-top: 12px;">
-  Te ayudamos a encontrar soluciones claras para proteger tu trabajo, tus ingresos y tu tranquilidad.
-</p>
-    
-    <!-- INTRO -->
-    <p style="font-size: 18px; line-height: 1.6; margin-top: 20px;">
-  Ser autónomo implica asumir responsabilidades y enfrentarse a imprevistos que pueden afectar directamente a tu actividad y a tus ingresos.
-  Una baja médica, un accidente o una reclamación pueden cambiar tu situación en muy poco tiempo.
-</p>
+      <p class="hero-text">
+        Te ayudamos a encontrar soluciones claras para proteger tu trabajo, tus ingresos y tu tranquilidad.
+      </p>
 
-<p style="font-size: 18px; line-height: 1.6;">
-  Por eso, contar con una protección adecuada no es solo prevención: es una forma de trabajar con más seguridad, estabilidad y tranquilidad en el día a día.
-</p>
+      <p class="hero-text">
+        Porque cuando trabajas por tu cuenta, un imprevisto puede afectar directamente a tu actividad y a tu estabilidad.
+      </p>
 
-<p style="font-size: 18px; line-height: 1.6; margin-top: 25px;">
-  Podemos ayudarte si trabajas por tu cuenta, tienes un comercio, una oficina o quieres proteger mejor tus ingresos ante cualquier imprevisto.
-</p>
-    
-    <!-- BLOQUES -->
-    <div style="margin-top: 40px; display: grid; gap: 20px;">
-
-      <div style="background: white; padding: 18px; border-radius: 10px;">
-        <h3>🏥 Protección ante bajas laborales</h3>
-       <p>
-  Si no puedes trabajar, tu actividad y tus ingresos se ven afectados directamente. Las prestaciones públicas no siempre cubren tus necesidades reales.
-</p>
-<p>
-  Por eso es importante contar con soluciones que complementen esos ingresos y te permitan mantener estabilidad mientras te recuperas.
-</p>
+      <div class="hero-buttons">
+        <a href="https://wa.me/34606067906" target="_blank" class="hero-primary">Escríbenos por WhatsApp</a>
+        <a href="#soluciones" class="hero-secondary">Ver soluciones</a>
       </div>
 
-      <div style="background: white; padding: 18px; border-radius: 10px;">
-        <h3>🚑 Protección ante accidentes</h3>
-        <p>
-          Un accidente puede tener consecuencias importantes tanto a nivel personal como profesional. Desde una baja temporal
-          hasta situaciones más complejas.
-        </p>
-        <p>
-          Contar con una cobertura adecuada te permite afrontar estos momentos con respaldo y centrarte en lo más importante.
-        </p>
-      </div>
-
-      <div style="background: white; padding: 18px; border-radius: 10px;">
-        <h3>⚖️ Responsabilidad civil</h3>
-        <p>
-          Un error, un daño a un cliente o a un tercero puede derivar en una reclamación que afecte directamente a tu patrimonio.
-        </p>
-        <p>
-          Este tipo de protección te aporta seguridad para desarrollar tu actividad con tranquilidad.
-        </p>
-      </div>
-
-      <div style="background: white; padding: 18px; border-radius: 10px;">
-        <h3>💶 Refuerzo de ingresos</h3>
-        <p>
-          En muchas ocasiones, lo que se recibe a nivel público no es suficiente para mantener tu nivel de estabilidad.
-        </p>
-        <p>
-          Analizamos opciones que refuercen esa protección y te permitan mantener equilibrio ante cualquier imprevisto.
-        </p>
-      </div>
-
-      <div style="background: white; padding: 18px; border-radius: 10px;">
-        <h3>🏪 Protección para comercios y oficinas</h3>
-        <p>
-          Tu lugar de trabajo también necesita protección. Daños, robos o incidencias pueden afectar directamente a tu actividad.
-        </p>
-        <p>
-          Contar con coberturas adecuadas te ayuda a proteger tu negocio y garantizar su continuidad.
-        </p>
-      </div>
-
+      <p class="mini-trust">Respuesta rápida · Sin compromiso · Asesoramiento claro</p>
     </div>
+  </section>
 
-<div style="background-color: #fff3f3; padding: 22px; border-radius: 10px; margin-top: 35px;">
-  <p style="font-size: 17px; line-height: 1.6; margin: 0;">
-    Cada actividad tiene riesgos distintos. Por eso te ayudamos a valorar qué necesitas realmente y qué opciones encajan mejor contigo como autónomo.
-  </p>
-</div>
-    
-    <!-- DIFERENCIAL -->
-    <div style="margin-top: 40px;">
-      <p style="font-size: 18px; line-height: 1.6;">
-  No se trata de contratar coberturas sin más, sino de entender qué necesitas de verdad.
-</p>
-<p style="font-size: 18px; line-height: 1.6;">
-  Analizamos tu actividad y tu situación para proponerte soluciones claras, útiles y adaptadas a ti, sin complicaciones ni tecnicismos.
-</p>
+  <!-- INTRO -->
+  <section class="section">
+    <div class="container">
+      <div class="intro-card">
+        <h2>Trabaja con más seguridad y estabilidad</h2>
+
+        <p>
+          Ser autónomo implica asumir responsabilidades y enfrentarse a imprevistos que pueden afectar directamente a tu actividad y a tus ingresos.
+        </p>
+
+        <p>
+          Una baja médica, un accidente o una reclamación pueden cambiar tu situación en muy poco tiempo.
+        </p>
+
+        <p>
+          Por eso, contar con una protección adecuada no es solo prevención: es una forma de trabajar con más tranquilidad en el día a día.
+        </p>
+      </div>
     </div>
+  </section>
 
-    <!-- CTA -->
-  <div style="position: relative; display: inline-block; margin-top: 40px;">
+  <!-- SOLUCIONES -->
+  <section id="soluciones" class="section">
+    <div class="container">
+      <h2>¿Qué podemos revisar contigo?</h2>
 
-<p style="font-size: 17px; margin-bottom: 10px;">
-  Elige cómo prefieres contactar:
-</p>
-    
-  <button onclick="toggleMenu()" style="
-  padding: 14px 20px;
-  background-color: #b91c1c;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-  width: 100%;
-  max-width: 300px;
-">
-    Habla con nosotras
-  </button>
+      <p class="section-intro">
+        Podemos ayudarte si trabajas por tu cuenta, tienes un comercio, una oficina o quieres proteger mejor tus ingresos ante cualquier imprevisto.
+      </p>
 
-  <div id="contactMenu" style="
-    display: none;
-    position: absolute;
-    background-color: white;
-    width: 100%;
-max-width: 300px;
-    border-radius: 8px;
-    box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
-    margin-top: 5px;
-  ">
+      <div class="autonomos-grid">
 
-    <a href="tel:+34917702311" style="display: block; padding: 12px; text-decoration: none; color: #222;">
-      ☎️ Llamar (oficina)
-    </a>
+        <div class="card">
+          <div>
+            <div class="card-icon">🏥</div>
+            <h3>Protección ante bajas laborales</h3>
+            <p>
+              Si no puedes trabajar, tu actividad y tus ingresos se ven afectados directamente.
+            </p>
+            <p>
+              Revisamos opciones que ayuden a complementar tus ingresos mientras te recuperas.
+            </p>
+          </div>
+        </div>
 
-    <a href="tel:+34606067906" style="display: block; padding: 12px; text-decoration: none; color: #222;">
-      📱 Llamar (móvil)
-    </a>
+        <div class="card">
+          <div>
+            <div class="card-icon">🚑</div>
+            <h3>Protección ante accidentes</h3>
+            <p>
+              Un accidente puede tener consecuencias importantes tanto a nivel personal como profesional.
+            </p>
+            <p>
+              Una cobertura adecuada te permite afrontar estos momentos con mayor respaldo.
+            </p>
+          </div>
+        </div>
 
-    <a href="mailto:esanz@occident.com" style="display: block; padding: 12px; text-decoration: none; color: #222;">
-      📧 Email
-    </a>
+        <div class="card">
+          <div>
+            <div class="card-icon">⚖️</div>
+            <h3>Responsabilidad civil</h3>
+            <p>
+              Un error, un daño a un cliente o una reclamación puede afectar directamente a tu patrimonio.
+            </p>
+            <p>
+              Esta protección te aporta seguridad para desarrollar tu actividad con tranquilidad.
+            </p>
+          </div>
+        </div>
 
-    <a href="https://wa.me/34606067906" target="_blank" style="display: block; padding: 12px; text-decoration: none; color: #222;">
-      💬 WhatsApp
-    </a>
-    
-  </div>
-</div>
+        <div class="card">
+          <div>
+            <div class="card-icon">💶</div>
+            <h3>Refuerzo de ingresos</h3>
+            <p>
+              En muchas ocasiones, lo que se recibe a nivel público no es suficiente para mantener estabilidad.
+            </p>
+            <p>
+              Analizamos opciones para reforzar tu protección ante imprevistos.
+            </p>
+          </div>
+        </div>
 
+        <div class="card">
+          <div>
+            <div class="card-icon">🏪</div>
+            <h3>Comercios y oficinas</h3>
+            <p>
+              Tu lugar de trabajo también necesita protección ante daños, robos o incidencias.
+            </p>
+            <p>
+              Contar con coberturas adecuadas ayuda a garantizar la continuidad de tu actividad.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="highlight-box">
+        <p>
+          Cada actividad tiene riesgos distintos. Por eso te ayudamos a valorar qué necesitas realmente y qué opciones encajan mejor contigo como autónomo.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFERENCIAL -->
+  <section class="section">
+    <div class="container">
+      <div class="closing-box">
+        <h2>No se trata de contratar por contratar</h2>
+
+        <p>
+          Se trata de entender qué necesitas de verdad y qué riesgos pueden afectar a tu actividad.
+        </p>
+
+        <p>
+          Analizamos tu situación para proponerte soluciones claras, útiles y adaptadas a ti, sin complicaciones ni tecnicismos.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-box">
+        <h2>¿Quieres revisar tu protección como autónomo?</h2>
+
+        <p>
+          Cuéntanos tu actividad y te ayudamos a ver qué opciones pueden encajar contigo.
+        </p>
+
+        <p>
+          Respuesta rápida · Sin compromiso
+        </p>
+
+        <div class="cta-buttons">
+          <a href="https://wa.me/34606067906" target="_blank" class="cta-primary">WhatsApp</a>
+          <a href="tel:+34917702311" class="cta-secondary">Llamar oficina</a>
+          <a href="mailto:esanz@occident.com" class="cta-secondary">Email</a>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- BOTÓN VOLVER -->
-  <a href="index.html" style="
-   position: fixed;
-bottom: 15px;
-right: 15px;
-color: #b91c1c;
-background-color: white;
-padding: 10px 14px;
-border-radius: 8px;
-box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
-    text-decoration: none;
-    font-weight: bold;
-  ">
-    Volver a la página principal
-  </a>
+  <a href="index.html" class="back-button">Volver al inicio</a>
 
-<script>
-function toggleMenu() {
-  var menu = document.getElementById("contactMenu");
-  menu.style.display = menu.style.display === "block" ? "none" : "block";
-}
-</script>
+  <!-- BOTÓN FIJO WHATSAPP -->
+  <a href="https://wa.me/34606067906" target="_blank" class="whatsapp-fijo" aria-label="WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="white">
+      <path d="M16.001 2.667c-7.363 0-13.334 5.97-13.334 13.334 0 2.35.615 4.648 1.782 6.68L2.667 29.333l6.85-1.748a13.25 13.25 0 0 0 6.484 1.672h.001c7.363 0 13.334-5.97 13.334-13.334S23.365 2.667 16.001 2.667zm0 24.334h-.001a10.95 10.95 0 0 1-5.58-1.523l-.4-.237-4.066 1.038 1.084-3.963-.26-.41a10.97 10.97 0 0 1-1.693-5.883c0-6.058 4.933-10.99 10.993-10.99 2.937 0 5.694 1.143 7.77 3.217a10.95 10.95 0 0 1 3.218 7.773c-.001 6.058-4.934 10.99-10.992 10.99zm6.06-8.24c-.33-.166-1.953-.963-2.255-1.073-.302-.11-.522-.166-.742.166-.22.33-.852 1.073-1.044 1.293-.193.22-.386.247-.715.083-.33-.166-1.39-.513-2.65-1.635-.98-.872-1.64-1.95-1.833-2.28-.193-.33-.02-.508.146-.674.15-.15.33-.386.495-.58.166-.193.22-.33.33-.55.11-.22.055-.413-.028-.58-.083-.166-.742-1.79-1.016-2.455-.267-.64-.538-.553-.742-.563l-.633-.01c-.22 0-.58.083-.883.413-.302.33-1.155 1.13-1.155 2.753 0 1.623 1.182 3.19 1.347 3.41.166.22 2.327 3.553 5.64 4.98.789.34 1.404.543 1.883.695.791.252 1.512.216 2.082.131.635-.095 1.953-.798 2.23-1.57.275-.77.275-1.43.193-1.57-.083-.14-.302-.22-.633-.386z"/>
+    </svg>
+  </a>
 
 </body>
 </html>
