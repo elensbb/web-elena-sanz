@@ -141,47 +141,166 @@
       margin: 0 0 32px;
     }
 
+    .insurance-block {
+      margin-top: 38px;
+    }
+
+    .insurance-block-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .insurance-block-title span {
+      width: 36px;
+      height: 36px;
+      background: #fff3f3;
+      color: #b91c1c;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      border: 1px solid #f4cccc;
+    }
+
+    .insurance-block-title h3 {
+      margin: 0;
+      font-size: 24px;
+    }
+
     .insurance-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
       gap: 22px;
     }
 
-    .card {
+    .insurance-card {
       background: white;
-      border-radius: 16px;
-      padding: 26px;
-      min-height: 235px;
+      border-radius: 18px;
+      padding: 0;
       box-shadow: 0 8px 24px rgba(0,0,0,.06);
       border: 1px solid #eee;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      overflow: hidden;
       transition: .2s ease;
     }
 
-    .card:hover {
+    .insurance-card:hover {
       transform: translateY(-4px);
       box-shadow: 0 14px 30px rgba(0,0,0,.09);
       border-color: #f0caca;
     }
 
+    .insurance-top {
+      padding: 26px 26px 20px;
+    }
+
     .card-icon {
-      font-size: 30px;
+      font-size: 32px;
       margin-bottom: 14px;
     }
 
-    .card p {
+    .insurance-top p {
       margin: 0;
       color: #555;
       font-size: 16px;
+    }
+
+    details {
+      border-top: 1px solid #f0f0f0;
+    }
+
+    summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 17px 26px;
+      color: #b91c1c;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #fffafa;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: "+";
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    details[open] summary::after {
+      content: "−";
+    }
+
+    .coverage-content {
+      padding: 22px 26px 26px;
+      background: white;
+    }
+
+    .coverage-content ul {
+      margin: 0 0 18px;
+      padding-left: 20px;
+      color: #444;
+      line-height: 1.65;
+    }
+
+    .ideal-box {
+      background: #f8f8f8;
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 18px;
+      color: #444;
+      font-size: 15px;
+      border-left: 4px solid #b91c1c;
+    }
+
+    .call-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .call-office,
+    .call-mobile {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 14px;
+      border-radius: 10px;
+      font-weight: 800;
+      font-size: 14px;
+      min-height: 44px;
+      flex: 1;
+      transition: .2s ease;
+      text-align: center;
+    }
+
+    .call-office {
+      background: #b91c1c;
+      color: white;
+    }
+
+    .call-mobile {
+      background: white;
+      color: #b91c1c;
+      border: 1px solid #f0caca;
+    }
+
+    .call-office:hover,
+    .call-mobile:hover {
+      transform: translateY(-2px);
     }
 
     .highlight-box {
       background: #fff3f3;
       border-radius: 16px;
       padding: 30px;
-      margin-top: 30px;
+      margin-top: 34px;
       border: 1px solid #f4cccc;
     }
 
@@ -331,6 +450,12 @@
         width: 100%;
       }
 
+      .call-office,
+      .call-mobile {
+        width: 100%;
+        flex: auto;
+      }
+
       .back-button {
         left: 15px;
         right: auto;
@@ -350,7 +475,6 @@
 
 <body>
 
-  <!-- HERO -->
   <section class="page-hero">
     <div class="container">
       <p class="eyebrow">Seguros</p>
@@ -374,7 +498,6 @@
     </div>
   </section>
 
-  <!-- INTRO -->
   <section class="section">
     <div class="container">
       <div class="intro-card">
@@ -395,77 +518,266 @@
     </div>
   </section>
 
-  <!-- TIPOS DE SEGUROS -->
   <section id="tipos-seguros" class="section">
     <div class="container">
       <h2>¿Qué seguros podemos revisar contigo?</h2>
 
       <p class="section-intro">
-        Analizamos tu caso y te ayudamos a entender qué coberturas tienen sentido para ti.
+        Analizamos tu caso y te ayudamos a entender qué coberturas tienen sentido para ti. Puedes consultar las coberturas principales de cada seguro y llamarnos directamente para resolver cualquier duda.
       </p>
 
-      <div class="insurance-grid">
-
-        <div class="card">
-          <div>
-            <div class="card-icon">🏠</div>
-            <h3>Hogar</h3>
-            <p>
-              Protege tu vivienda frente a daños, incidencias e imprevistos que pueden afectar a tu día a día.
-            </p>
-          </div>
+      <div class="insurance-block">
+        <div class="insurance-block-title">
+          <span>👨‍👩‍👧</span>
+          <h3>Seguros para ti y tu familia</h3>
         </div>
 
-        <div class="card">
-          <div>
-            <div class="card-icon">🚗</div>
-            <h3>Coche</h3>
-            <p>
-              Coberturas adaptadas para proteger tu vehículo ante accidentes, daños o situaciones inesperadas.
-            </p>
+        <div class="insurance-grid">
+
+          <div class="insurance-card">
+            <div class="insurance-top">
+              <div class="card-icon">🏠</div>
+              <h3>Hogar</h3>
+              <p>Protección para tu vivienda y para los imprevistos que pueden afectar a tu día a día.</p>
+            </div>
+
+            <details>
+              <summary>Ver coberturas</summary>
+              <div class="coverage-content">
+                <ul>
+                  <li>Daños por agua, incendio, robo u otros imprevistos.</li>
+                  <li>Responsabilidad civil familiar.</li>
+                  <li>Protección para vivienda habitual o segunda residencia.</li>
+                  <li>Revisión de coberturas para evitar duplicidades o carencias.</li>
+                </ul>
+
+                <div class="ideal-box">
+                  <strong>Ideal si...</strong> quieres proteger tu casa y tener claro qué cubre realmente tu seguro.
+                </div>
+
+                <div class="call-actions">
+                  <a href="tel:+34917702311" class="call-office">Llamar oficina</a>
+                  <a href="tel:+34606067906" class="call-mobile">Llamar móvil</a>
+                </div>
+              </div>
+            </details>
           </div>
+
+          <div class="insurance-card">
+            <div class="insurance-top">
+              <div class="card-icon">🚗</div>
+              <h3>Coche</h3>
+              <p>Coberturas adaptadas para circular con tranquilidad y proteger tu vehículo.</p>
+            </div>
+
+            <details>
+              <summary>Ver coberturas</summary>
+              <div class="coverage-content">
+                <ul>
+                  <li>Seguro a terceros, terceros ampliado o todo riesgo.</li>
+                  <li>Asistencia en carretera según necesidades.</li>
+                  <li>Protección ante daños, robo, lunas o accidentes.</li>
+                  <li>Revisión de precio y coberturas para ajustarlo a tu uso real.</li>
+                </ul>
+
+                <div class="ideal-box">
+                  <strong>Ideal si...</strong> quieres revisar tu póliza actual o asegurar un vehículo nuevo.
+                </div>
+
+                <div class="call-actions">
+                  <a href="tel:+34917702311" class="call-office">Llamar oficina</a>
+                  <a href="tel:+34606067906" class="call-mobile">Llamar móvil</a>
+                </div>
+              </div>
+            </details>
+          </div>
+
+          <div class="insurance-card">
+            <div class="insurance-top">
+              <div class="card-icon">❤️</div>
+              <h3>Seguro de vida</h3>
+              <p>Una forma de proteger a quienes más importan ante situaciones difíciles.</p>
+            </div>
+
+            <details>
+              <summary>Ver coberturas</summary>
+              <div class="coverage-content">
+                <ul>
+                  <li>Protección económica para tu familia.</li>
+                  <li>Apoyo ante fallecimiento o invalidez, según modalidad.</li>
+                  <li>Opciones vinculadas o no a hipoteca.</li>
+                  <li>Revisión de capital asegurado según tu situación personal.</li>
+                </ul>
+
+                <div class="ideal-box">
+                  <strong>Ideal si...</strong> tienes familia, hipoteca o personas que dependen económicamente de ti.
+                </div>
+
+                <div class="call-actions">
+                  <a href="tel:+34917702311" class="call-office">Llamar oficina</a>
+                  <a href="tel:+34606067906" class="call-mobile">Llamar móvil</a>
+                </div>
+              </div>
+            </details>
+          </div>
+
+          <div class="insurance-card">
+            <div class="insurance-top">
+              <div class="card-icon">🏥</div>
+              <h3>Salud</h3>
+              <p>Opciones para cuidar tu bienestar y el de tu familia con mayor tranquilidad.</p>
+            </div>
+
+            <details>
+              <summary>Ver coberturas</summary>
+              <div class="coverage-content">
+                <ul>
+                  <li>Acceso a servicios médicos privados según modalidad.</li>
+                  <li>Opciones para particulares, familias o profesionales.</li>
+                  <li>Posibilidad de adaptar coberturas según prioridades.</li>
+                  <li>Orientación para elegir una opción clara y útil.</li>
+                </ul>
+
+                <div class="ideal-box">
+                  <strong>Ideal si...</strong> quieres reforzar tu atención médica y reducir tiempos de espera.
+                </div>
+
+                <div class="call-actions">
+                  <a href="tel:+34917702311" class="call-office">Llamar oficina</a>
+                  <a href="tel:+34606067906" class="call-mobile">Llamar móvil</a>
+                </div>
+              </div>
+            </details>
+          </div>
+
+          <div class="insurance-card">
+            <div class="insurance-top">
+              <div class="card-icon">🛡️</div>
+              <h3>Accidentes</h3>
+              <p>Protección para afrontar imprevistos personales con mayor respaldo.</p>
+            </div>
+
+            <details>
+              <summary>Ver coberturas</summary>
+              <div class="coverage-content">
+                <ul>
+                  <li>Protección ante accidentes personales.</li>
+                  <li>Apoyo económico según las garantías contratadas.</li>
+                  <li>Opciones adaptadas a tu actividad y estilo de vida.</li>
+                  <li>Revisión para complementar otros seguros que ya tengas.</li>
+                </ul>
+
+                <div class="ideal-box">
+                  <strong>Ideal si...</strong> quieres una protección extra ante imprevistos del día a día.
+                </div>
+
+                <div class="call-actions">
+                  <a href="tel:+34917702311" class="call-office">Llamar oficina</a>
+                  <a href="tel:+34606067906" class="call-mobile">Llamar móvil</a>
+                </div>
+              </div>
+            </details>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="insurance-block">
+        <div class="insurance-block-title">
+          <span>🏢</span>
+          <h3>Seguros para tu negocio</h3>
         </div>
 
-        <div class="card">
-          <div>
-            <div class="card-icon">❤️</div>
-            <h3>Seguro de vida</h3>
-            <p>
-              Una forma de proteger a quienes más importan y aportar estabilidad ante situaciones difíciles.
-            </p>
-          </div>
-        </div>
+        <div class="insurance-grid">
 
-        <div class="card">
-          <div>
-            <div class="card-icon">🏥</div>
-            <h3>Salud</h3>
-            <p>
-              Refuerza tu bienestar y el de tu familia con opciones adaptadas a tus prioridades.
-            </p>
-          </div>
-        </div>
+          <div class="insurance-card">
+            <div class="insurance-top">
+              <div class="card-icon">🏪</div>
+              <h3>Negocios</h3>
+              <p>Soluciones para proteger tu local, tu actividad y la continuidad de tu negocio.</p>
+            </div>
 
-        <div class="card">
-          <div>
-            <div class="card-icon">🛡️</div>
-            <h3>Accidentes</h3>
-            <p>
-              Protección para afrontar imprevistos con mayor seguridad y respaldo.
-            </p>
-          </div>
-        </div>
+            <details>
+              <summary>Ver coberturas</summary>
+              <div class="coverage-content">
+                <ul>
+                  <li>Protección del local, mobiliario, mercancía o equipos.</li>
+                  <li>Coberturas ante daños, robo o imprevistos.</li>
+                  <li>Opciones adaptadas según tipo de actividad.</li>
+                  <li>Revisión de riesgos reales del negocio.</li>
+                </ul>
 
-        <div class="card">
-          <div>
-            <div class="card-icon">🏢</div>
-            <h3>Negocios y responsabilidad civil</h3>
-            <p>
-              Soluciones para proteger tu actividad profesional, tu patrimonio y tu tranquilidad.
-            </p>
-          </div>
-        </div>
+                <div class="ideal-box">
+                  <strong>Ideal si...</strong> tienes un comercio, oficina, local o actividad abierta al público.
+                </div>
 
+                <div class="call-actions">
+                  <a href="tel:+34917702311" class="call-office">Llamar oficina</a>
+                  <a href="tel:+34606067906" class="call-mobile">Llamar móvil</a>
+                </div>
+              </div>
+            </details>
+          </div>
+
+          <div class="insurance-card">
+            <div class="insurance-top">
+              <div class="card-icon">⚖️</div>
+              <h3>Responsabilidad civil</h3>
+              <p>Protección frente a daños que puedas causar a terceros en tu actividad profesional.</p>
+            </div>
+
+            <details>
+              <summary>Ver coberturas</summary>
+              <div class="coverage-content">
+                <ul>
+                  <li>Daños personales o materiales a terceros.</li>
+                  <li>Coberturas adaptadas a diferentes profesiones.</li>
+                  <li>Protección para autónomos, empresas o actividades concretas.</li>
+                  <li>Revisión de límites y garantías necesarias.</li>
+                </ul>
+
+                <div class="ideal-box">
+                  <strong>Ideal si...</strong> trabajas con clientes, proveedores, instalaciones o servicios profesionales.
+                </div>
+
+                <div class="call-actions">
+                  <a href="tel:+34917702311" class="call-office">Llamar oficina</a>
+                  <a href="tel:+34606067906" class="call-mobile">Llamar móvil</a>
+                </div>
+              </div>
+            </details>
+          </div>
+
+          <div class="insurance-card">
+            <div class="insurance-top">
+              <div class="card-icon">👩‍💼</div>
+              <h3>Autónomos</h3>
+              <p>Protección pensada para quienes trabajan por cuenta propia y necesitan respaldo.</p>
+            </div>
+
+            <details>
+              <summary>Ver coberturas</summary>
+              <div class="coverage-content">
+                <ul>
+                  <li>Opciones para proteger tu actividad profesional.</li>
+                  <li>Coberturas complementarias según tu trabajo.</li>
+                  <li>Protección personal y profesional en un mismo análisis.</li>
+                  <li>Asesoramiento para no contratar de más ni quedarte corto.</li>
+                </ul>
+
+                <div class="ideal-box">
+                  <strong>Ideal si...</strong> eres autónomo y quieres proteger tu trabajo, ingresos y tranquilidad.
+                </div>
+
+                <div class="call-actions">
+                  <a href="tel:+34917702311" class="call-office">Llamar oficina</a>
+                  <a href="tel:+34606067906" class="call-mobile">Llamar móvil</a>
+                </div>
+              </div>
+            </details>
+          </div>
+
+        </div>
       </div>
 
       <div class="highlight-box">
@@ -476,7 +788,6 @@
     </div>
   </section>
 
-  <!-- CIERRE -->
   <section class="section">
     <div class="container">
       <div class="closing-box">
@@ -493,7 +804,6 @@
     </div>
   </section>
 
-  <!-- CTA -->
   <section class="section">
     <div class="container">
       <div class="cta-box">
@@ -516,10 +826,8 @@
     </div>
   </section>
 
-  <!-- BOTÓN VOLVER -->
   <a href="index.html" class="back-button">Volver al inicio</a>
 
-  <!-- BOTÓN FIJO WHATSAPP -->
   <a href="https://wa.me/34606067906" target="_blank" class="whatsapp-fijo" aria-label="WhatsApp">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="white">
       <path d="M16.001 2.667c-7.363 0-13.334 5.97-13.334 13.334 0 2.35.615 4.648 1.782 6.68L2.667 29.333l6.85-1.748a13.25 13.25 0 0 0 6.484 1.672h.001c7.363 0 13.334-5.97 13.334-13.334S23.365 2.667 16.001 2.667zm0 24.334h-.001a10.95 10.95 0 0 1-5.58-1.523l-.4-.237-4.066 1.038 1.084-3.963-.26-.41a10.97 10.97 0 0 1-1.693-5.883c0-6.058 4.933-10.99 10.993-10.99 2.937 0 5.694 1.143 7.77 3.217a10.95 10.95 0 0 1 3.218 7.773c-.001 6.058-4.934 10.99-10.992 10.99zm6.06-8.24c-.33-.166-1.953-.963-2.255-1.073-.302-.11-.522-.166-.742.166-.22.33-.852 1.073-1.044 1.293-.193.22-.386.247-.715.083-.33-.166-1.39-.513-2.65-1.635-.98-.872-1.64-1.95-1.833-2.28-.193-.33-.02-.508.146-.674.15-.15.33-.386.495-.58.166-.193.22-.33.33-.55.11-.22.055-.413-.028-.58-.083-.166-.742-1.79-1.016-2.455-.267-.64-.538-.553-.742-.563l-.633-.01c-.22 0-.58.083-.883.413-.302.33-1.155 1.13-1.155 2.753 0 1.623 1.182 3.19 1.347 3.41.166.22 2.327 3.553 5.64 4.98.789.34 1.404.543 1.883.695.791.252 1.512.216 2.082.131.635-.095 1.953-.798 2.23-1.57.275-.77.275-1.43.193-1.57-.083-.14-.302-.22-.633-.386z"/>
