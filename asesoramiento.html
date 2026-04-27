@@ -177,6 +177,35 @@
       font-size: 16px;
     }
 
+.card-action {
+  margin: 24px -26px -26px;
+  padding: 18px 26px;
+  border-top: 1px solid #eee;
+  background: #fff8f8;
+  color: #b91c1c;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  font-size: 16px;
+}
+
+.card-action::-webkit-details-marker {
+  display: none;
+}
+
+.card-extra {
+  padding-top: 16px;
+}
+
+.card-extra p {
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 10px;
+}
+    
     .highlight-box {
       background: #fff3f3;
       border-radius: 16px;
@@ -491,54 +520,114 @@
       <div class="finance-grid">
 
         <div class="card">
-          <div>
-            <div class="card-icon">📈</div>
-            <h3>Inversiones</h3>
-            <p>
-              Estrategias adaptadas a tu perfil y nivel de riesgo, buscando equilibrio entre crecimiento y estabilidad.
-            </p>
-          </div>
-        </div>
+  <div>
+    <div class="card-icon">📈</div>
+    <h3>Inversiones</h3>
+    <p>
+      Te ayudamos a valorar opciones de inversión según tu perfil, tus objetivos y el plazo en el que quieres conseguirlos.
+    </p>
+  </div>
+
+  <details>
+    <summary class="card-action">Ver coberturas <span>+</span></summary>
+    <div class="card-extra">
+      <p>
+        Analizamos contigo qué opciones pueden encajar mejor según tu situación, tu tolerancia al riesgo y el tiempo que quieres mantener la inversión.
+      </p>
+      <p>
+        La idea es ayudarte a invertir con más seguridad, pensando sobre todo en objetivos a medio y largo plazo.
+      </p>
+    </div>
+  </details>
+</div>
+
+      <div class="card">
+  <div>
+    <div class="card-icon">🏦</div>
+    <h3>Fondos de inversión</h3>
+    <p>
+      Una forma de invertir con una visión más amplia, buscando crecimiento a medio y largo plazo.
+    </p>
+  </div>
+
+  <details>
+    <summary class="card-action">Ver coberturas <span>+</span></summary>
+    <div class="card-extra">
+      <p>
+        Te explicamos cómo funcionan y qué tipo de fondo puede tener más sentido según tus objetivos.
+      </p>
+      <p>
+        Pueden ayudarte a diversificar tu inversión y a construir una estrategia más estable en el tiempo.
+      </p>
+    </div>
+  </details>
+</div>
 
         <div class="card">
-          <div>
-            <div class="card-icon">🏦</div>
-            <h3>Fondos de inversión</h3>
-            <p>
-              Opciones de gestión profesional y diversificada para planificar a corto, a medio y a largo plazo.
-            </p>
-          </div>
-        </div>
+  <div>
+    <div class="card-icon">👴</div>
+    <h3>Planes de pensiones</h3>
+    <p>
+      Te ayudamos a preparar tu jubilación para que puedas mirar al futuro con más tranquilidad.
+    </p>
+  </div>
+
+  <details>
+    <summary class="card-action">Ver coberturas <span>+</span></summary>
+    <div class="card-extra">
+      <p>
+        Valoramos contigo opciones para complementar tus ingresos futuros y planificar la jubilación con tiempo.
+      </p>
+      <p>
+        Cuanto antes se empieza, más fácil suele ser construir un ahorro pensado para el largo plazo.
+      </p>
+    </div>
+  </details>
+</div>
 
         <div class="card">
-          <div>
-            <div class="card-icon">👴</div>
-            <h3>Planes de pensiones</h3>
-            <p>
-              Soluciones pensadas para complementar tus ingresos futuros y preparar tu jubilación.
-            </p>
-          </div>
-        </div>
+  <div>
+    <div class="card-icon">💼</div>
+    <h3>Planes de ahorro</h3>
+    <p>
+      Opciones para ahorrar poco a poco, con una planificación adaptada a tus posibilidades y objetivos.
+    </p>
+  </div>
+
+  <details>
+    <summary class="card-action">Ver coberturas <span>+</span></summary>
+    <div class="card-extra">
+      <p>
+        Te ayudamos a crear una estrategia de ahorro realista, pensada para objetivos concretos.
+      </p>
+      <p>
+        Puede ser útil para preparar proyectos futuros, crear estabilidad económica o planificar a medio y largo plazo.
+      </p>
+    </div>
+  </details>
+</div>
 
         <div class="card">
-          <div>
-            <div class="card-icon">💼</div>
-            <h3>Planes de ahorro</h3>
-            <p>
-              Alternativas para construir un ahorro constante, con objetivos definidos y adaptados a tu ritmo.
-            </p>
-          </div>
-        </div>
+  <div>
+    <div class="card-icon">🧾</div>
+    <h3>Planificación financiera</h3>
+    <p>
+      Vemos contigo tu situación actual y te ayudamos a ordenar tus objetivos financieros de forma clara.
+    </p>
+  </div>
 
-        <div class="card">
-          <div>
-            <div class="card-icon">🧾</div>
-            <h3>Planificación financiera</h3>
-            <p>
-              Analizamos tu situación global para ayudarte a tomar decisiones coherentes y bien estructuradas.
-            </p>
-          </div>
-        </div>
+  <details>
+    <summary class="card-action">Ver coberturas <span>+</span></summary>
+    <div class="card-extra">
+      <p>
+        Revisamos tus objetivos, tus plazos y tus prioridades para ayudarte a tomar mejores decisiones.
+      </p>
+      <p>
+        La planificación te permite tener una visión más clara de tu futuro financiero y avanzar con más tranquilidad.
+      </p>
+    </div>
+  </details>
+</div>
 
       </div>
 
