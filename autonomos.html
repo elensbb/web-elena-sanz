@@ -32,8 +32,28 @@
     }
 
     .page-hero {
-      background: linear-gradient(180deg, #ffffff 0%, #f8f8f8 100%);
-      padding: 70px 0 50px;
+      position: relative;
+      padding: 86px 0 66px;
+      color: white;
+      background:
+        linear-gradient(90deg, rgba(30,30,30,.82), rgba(185,28,28,.58)),
+        url("autonomos-fondo.jpg");
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+    }
+
+    .page-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(255,255,255,.16), transparent 34%);
+      pointer-events: none;
+    }
+
+    .page-hero .container {
+      position: relative;
+      z-index: 1;
     }
 
     .eyebrow {
@@ -45,11 +65,15 @@
       margin-bottom: 12px;
     }
 
+    .page-hero .eyebrow {
+      color: white;
+    }
+
     h1 {
-      font-size: 44px;
-      line-height: 1.15;
+      font-size: 46px;
+      line-height: 1.12;
       margin: 0 0 20px;
-      max-width: 820px;
+      max-width: 840px;
     }
 
     h2 {
@@ -69,8 +93,8 @@
 
     .hero-text {
       font-size: 19px;
-      color: #444;
-      max-width: 780px;
+      color: rgba(255,255,255,.94);
+      max-width: 760px;
       margin: 0 0 16px;
     }
 
@@ -78,7 +102,7 @@
       display: flex;
       gap: 14px;
       flex-wrap: wrap;
-      margin-top: 28px;
+      margin-top: 30px;
     }
 
     .hero-primary,
@@ -86,34 +110,35 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 50px;
-      padding: 14px 24px;
-      border-radius: 10px;
-      font-weight: 700;
-      transition: .2s ease;
+      min-height: 54px;
+      padding: 15px 26px;
+      border-radius: 12px;
+      font-weight: 800;
+      transition: .25s ease;
     }
 
     .hero-primary {
-      background: #b91c1c;
-      color: white;
-      box-shadow: 0 8px 18px rgba(185,28,28,.18);
+      background: white;
+      color: #b91c1c;
+      box-shadow: 0 10px 24px rgba(0,0,0,.22);
     }
 
     .hero-secondary {
-      background: white;
-      color: #222;
-      border: 1px solid #ddd;
+      background: rgba(255,255,255,.10);
+      color: white;
+      border: 1px solid rgba(255,255,255,.65);
+      backdrop-filter: blur(6px);
     }
 
     .hero-primary:hover,
     .hero-secondary:hover {
-      transform: translateY(-2px);
+      transform: translateY(-3px);
     }
 
     .mini-trust {
       font-size: 14px;
-      color: #666;
-      margin-top: 14px;
+      color: rgba(255,255,255,.88);
+      margin-top: 15px;
     }
 
     .section {
@@ -122,10 +147,11 @@
 
     .intro-card {
       background: white;
-      border-radius: 18px;
+      border-radius: 22px;
       padding: 38px;
-      box-shadow: 0 8px 24px rgba(0,0,0,.06);
+      box-shadow: 0 10px 28px rgba(0,0,0,.06);
       border-left: 5px solid #b91c1c;
+      animation: fadeUp .7s ease both;
     }
 
     .intro-card p {
@@ -141,6 +167,48 @@
       margin: 0 0 32px;
     }
 
+    .examples-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 28px;
+    }
+
+    .example-card {
+      background: white;
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 10px 28px rgba(0,0,0,.06);
+      border: 1px solid #eee;
+      transition: .25s ease;
+      animation: fadeUp .7s ease both;
+    }
+
+    .example-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 34px rgba(0,0,0,.10);
+      border-color: #f0caca;
+    }
+
+    .example-icon {
+      width: 54px;
+      height: 54px;
+      background: #fff3f3;
+      color: #b91c1c;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+
+    .example-card p {
+      color: #555;
+      margin: 0;
+      font-size: 16px;
+    }
+
     .autonomos-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
@@ -149,26 +217,35 @@
 
     .card {
       background: white;
-      border-radius: 16px;
-      padding: 26px;
+      border-radius: 20px;
+      padding: 28px;
       min-height: 250px;
-      box-shadow: 0 8px 24px rgba(0,0,0,.06);
+      box-shadow: 0 10px 28px rgba(0,0,0,.06);
       border: 1px solid #eee;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      transition: .2s ease;
+      transition: .25s ease;
+      animation: fadeUp .7s ease both;
     }
 
     .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 14px 30px rgba(0,0,0,.09);
+      transform: translateY(-6px);
+      box-shadow: 0 16px 34px rgba(0,0,0,.10);
       border-color: #f0caca;
     }
 
     .card-icon {
-      font-size: 30px;
-      margin-bottom: 14px;
+      width: 54px;
+      height: 54px;
+      background: #fff3f3;
+      color: #b91c1c;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin-bottom: 16px;
     }
 
     .card p {
@@ -183,10 +260,11 @@
 
     .highlight-box {
       background: #fff3f3;
-      border-radius: 16px;
+      border-radius: 18px;
       padding: 30px;
       margin-top: 30px;
       border: 1px solid #f4cccc;
+      animation: fadeUp .7s ease both;
     }
 
     .highlight-box p {
@@ -195,11 +273,33 @@
       margin: 0;
     }
 
+    .emotional-box {
+      background:
+        radial-gradient(circle at top right, rgba(255,255,255,.20), transparent 30%),
+        linear-gradient(135deg, #b91c1c 0%, #7f1d1d 100%);
+      color: white;
+      border-radius: 26px;
+      padding: 42px;
+      box-shadow: 0 16px 40px rgba(185,28,28,.24);
+      animation: fadeUp .7s ease both;
+    }
+
+    .emotional-box p {
+      color: rgba(255,255,255,.92);
+      font-size: 18px;
+      margin: 0 0 14px;
+    }
+
+    .emotional-box p:last-child {
+      margin-bottom: 0;
+    }
+
     .closing-box {
       background: white;
-      border-radius: 18px;
+      border-radius: 22px;
       padding: 34px;
-      box-shadow: 0 8px 24px rgba(0,0,0,.06);
+      box-shadow: 0 10px 28px rgba(0,0,0,.06);
+      animation: fadeUp .7s ease both;
     }
 
     .closing-box p {
@@ -211,17 +311,17 @@
     .cta-box {
       background: #b91c1c;
       color: white;
-      border-radius: 20px;
+      border-radius: 24px;
       padding: 44px 28px;
       text-align: center;
-      max-width: 820px;
+      max-width: 860px;
       margin: 0 auto;
-      box-shadow: 0 12px 28px rgba(185,28,28,.22);
+      box-shadow: 0 14px 32px rgba(185,28,28,.24);
     }
 
     .cta-box p {
       font-size: 18px;
-      max-width: 620px;
+      max-width: 640px;
       margin: 0 auto 12px;
     }
 
@@ -238,12 +338,12 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 50px;
-      padding: 14px 24px;
-      border-radius: 10px;
-      font-weight: 700;
+      min-height: 54px;
+      padding: 15px 26px;
+      border-radius: 12px;
+      font-weight: 800;
       transition: .2s ease;
-      min-width: 210px;
+      min-width: 230px;
     }
 
     .cta-primary {
@@ -302,13 +402,25 @@
       100% { transform: scale(1); }
     }
 
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     @media (max-width: 768px) {
       .container {
         padding: 0 18px;
       }
 
       .page-hero {
-        padding: 42px 0 38px;
+        padding: 56px 0 44px;
+        background-position: center;
       }
 
       .eyebrow {
@@ -317,8 +429,8 @@
       }
 
       h1 {
-        font-size: 32px;
-        line-height: 1.18;
+        font-size: 34px;
+        line-height: 1.16;
         margin-bottom: 18px;
       }
 
@@ -345,7 +457,7 @@
       .hero-primary,
       .hero-secondary {
         width: 100%;
-        min-height: 52px;
+        min-height: 54px;
         font-size: 16px;
         padding: 14px 18px;
         text-align: center;
@@ -368,7 +480,8 @@
       .intro-card p,
       .highlight-box p,
       .closing-box p,
-      .cta-box p {
+      .cta-box p,
+      .emotional-box p {
         font-size: 16px;
       }
 
@@ -377,21 +490,27 @@
         margin-bottom: 28px;
       }
 
+      .examples-grid,
       .autonomos-grid {
         grid-template-columns: 1fr;
         gap: 18px;
       }
 
+      .example-card,
       .card {
-        padding: 22px;
+        padding: 24px 22px;
         min-height: auto;
       }
 
+      .example-icon,
       .card-icon {
+        width: 50px;
+        height: 50px;
         font-size: 26px;
-        margin-bottom: 12px;
+        margin-bottom: 14px;
       }
 
+      .example-card p,
       .card p {
         font-size: 15px;
       }
@@ -399,6 +518,11 @@
       .highlight-box {
         padding: 24px 20px;
         margin-top: 24px;
+      }
+
+      .emotional-box {
+        padding: 30px 22px;
+        border-radius: 22px;
       }
 
       .cta-box {
@@ -415,7 +539,7 @@
       .cta-secondary {
         width: 100%;
         min-width: auto;
-        min-height: 52px;
+        min-height: 54px;
         font-size: 16px;
       }
 
@@ -443,18 +567,20 @@
     <div class="container">
       <p class="eyebrow">Autónomos</p>
 
-      <h1>Protección pensada para autónomos y su actividad</h1>
+      <h1>Si eres autónomo, tu tranquilidad también forma parte de tu negocio</h1>
 
       <p class="hero-text">
-        Te ayudamos a encontrar soluciones claras para proteger tu trabajo, tus ingresos y tu tranquilidad.
+        Cuando trabajas por tu cuenta, parar no siempre es una opción. Te ayudamos a proteger tu actividad, tus ingresos y tu estabilidad.
       </p>
 
       <p class="hero-text">
-        Porque cuando trabajas por tu cuenta, un imprevisto puede afectar directamente a tu actividad y a tu estabilidad.
+        Porque un imprevisto no solo afecta a tu trabajo: también puede afectar a tu día a día y a las personas que dependen de ti.
       </p>
 
       <div class="hero-buttons">
-        <a href="https://wa.me/34606067906" target="_blank" class="hero-primary">Escríbenos por WhatsApp</a>
+        <a href="https://wa.me/34606067906?text=Hola,%20quiero%20revisar%20mi%20protecci%C3%B3n%20como%20aut%C3%B3nomo" target="_blank" class="hero-primary">
+          Revisar mi protección como autónomo
+        </a>
         <a href="#soluciones" class="hero-secondary">Ver soluciones</a>
       </div>
 
@@ -466,19 +592,58 @@
   <section class="section">
     <div class="container">
       <div class="intro-card">
-        <h2>Trabaja con más seguridad y estabilidad</h2>
+        <h2>Tu negocio depende de ti. Tu protección también debería estar a la altura.</h2>
 
         <p>
-          Ser autónomo implica asumir responsabilidades y enfrentarse a imprevistos que pueden afectar directamente a tu actividad y a tus ingresos.
+          Ser autónomo implica sacar adelante tu actividad cada día, asumir responsabilidades y resolver problemas sin que nadie lo haga por ti.
         </p>
 
         <p>
-          Una baja médica, un accidente o una reclamación pueden cambiar tu situación en muy poco tiempo.
+          Una baja médica, un accidente o una reclamación de un cliente pueden cambiar tu situación en muy poco tiempo.
         </p>
 
         <p>
-          Por eso, contar con una protección adecuada no es solo prevención: es una forma de trabajar con más tranquilidad en el día a día.
+          Por eso, contar con una protección adecuada no es solo prevención: es una forma de cuidar tu trabajo, tus ingresos y tu tranquilidad.
         </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EJEMPLOS -->
+  <section class="section">
+    <div class="container">
+      <h2>Imprevistos que pueden afectar a tu actividad</h2>
+
+      <p class="section-intro">
+        A veces no se trata de grandes problemas, sino de situaciones reales que pueden frenar tu negocio justo cuando más necesitas estabilidad.
+      </p>
+
+      <div class="examples-grid">
+
+        <div class="example-card">
+          <div class="example-icon">🏥</div>
+          <h3>Baja médica</h3>
+          <p>
+            Si no puedes trabajar durante un tiempo, tus ingresos pueden verse afectados desde el primer momento.
+          </p>
+        </div>
+
+        <div class="example-card">
+          <div class="example-icon">🚑</div>
+          <h3>Accidente</h3>
+          <p>
+            Un accidente puede impedirte continuar con tu actividad y generar gastos o pérdidas inesperadas.
+          </p>
+        </div>
+
+        <div class="example-card">
+          <div class="example-icon">⚖️</div>
+          <h3>Reclamación de cliente</h3>
+          <p>
+            Una reclamación o un daño a terceros puede afectar a tu patrimonio y a la continuidad de tu trabajo.
+          </p>
+        </div>
+
       </div>
     </div>
   </section>
@@ -569,6 +734,23 @@
     </div>
   </section>
 
+  <!-- BLOQUE EMOCIONAL -->
+  <section class="section">
+    <div class="container">
+      <div class="emotional-box">
+        <h2>No esperes a necesitarlo para revisar tu protección</h2>
+
+        <p>
+          Muchas veces pensamos en los seguros cuando ya ha pasado algo. Pero para un autónomo, anticiparse puede marcar la diferencia entre parar con preocupación o contar con un respaldo.
+        </p>
+
+        <p>
+          Revisar tu protección no significa contratar más, sino entender si lo que tienes hoy encaja con tu realidad, tu actividad y tus ingresos.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- DIFERENCIAL -->
   <section class="section">
     <div class="container">
@@ -580,7 +762,7 @@
         </p>
 
         <p>
-          Analizamos tu situación para proponerte soluciones claras, útiles y adaptadas a ti, sin complicaciones ni tecnicismos.
+          Analizamos tu situación para proponerte soluciones claras, útiles y adaptadas a ti, sin complicaciones.
         </p>
       </div>
     </div>
@@ -601,7 +783,9 @@
         </p>
 
         <div class="cta-buttons">
-          <a href="https://wa.me/34606067906" target="_blank" class="cta-primary">WhatsApp</a>
+          <a href="https://wa.me/34606067906?text=Hola,%20quiero%20revisar%20mi%20protecci%C3%B3n%20como%20aut%C3%B3nomo" target="_blank" class="cta-primary">
+            Revisar mi protección como autónomo
+          </a>
           <a href="tel:+34917702311" class="cta-secondary">Llamar oficina</a>
           <a href="mailto:esanz@occident.com" class="cta-secondary">Email</a>
         </div>
@@ -615,7 +799,7 @@
   <!-- BOTÓN FIJO WHATSAPP -->
   <a href="https://wa.me/34606067906" target="_blank" class="whatsapp-fijo" aria-label="WhatsApp">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="white">
-      <path d="M16.001 2.667c-7.363 0-13.334 5.97-13.334 13.334 0 2.35.615 4.648 1.782 6.68L2.667 29.333l6.85-1.748a13.25 13.25 0 0 0 6.484 1.672h.001c7.363 0 13.334-5.97 13.334-13.334S23.365 2.667 16.001 2.667zm0 24.334h-.001a10.95 10.95 0 0 1-5.58-1.523l-.4-.237-4.066 1.038 1.084-3.963-.26-.41a10.97 10.97 0 0 1-1.693-5.883c0-6.058 4.933-10.99 10.993-10.99 2.937 0 5.694 1.143 7.77 3.217a10.95 10.95 0 0 1 3.218 7.773c-.001 6.058-4.934 10.99-10.992 10.99zm6.06-8.24c-.33-.166-1.953-.963-2.255-1.073-.302-.11-.522-.166-.742.166-.22.33-.852 1.073-1.044 1.293-.193.22-.386.247-.715.083-.33-.166-1.39-.513-2.65-1.635-.98-.872-1.64-1.95-1.833-2.28-.193-.33-.02-.508.146-.674.15-.15.33-.386.495-.58.166-.193.22-.33.33-.55.11-.22.055-.413-.028-.58-.083-.166-.742-1.79-1.016-2.455-.267-.64-.538-.553-.742-.563l-.633-.01c-.22 0-.58.083-.883.413-.302.33-1.155 1.13-1.155 2.753 0 1.623 1.182 3.19 1.347 3.41.166.22 2.327 3.553 5.64 4.98.789.34 1.404.543 1.883.695.791.252 1.512.216 2.082.131.635-.095 1.953-.798 2.23-1.57.275-.77.275-1.43.193-1.57-.083-.14-.302-.22-.633-.386z"/>
+      <path d="M16.001 2.667c-7.363 0-13.334 5.97-13.334 13.334 0 2.35.615 4.648 1.782 6.68L2.667 29.333l6.85-1.748a13.25 13.25 0 0 0 6.484 1.672h.001c7.363 0 13.334-5.97 13.334-13.334S23.365 2.667 16.001 2.667zm0 24.334h-.001a10.95 10.95 0 0 1-5.58-1.523l-.4-.237-4.066 1.038 1.084-3.963-.26-.41a10.97 10.97 0 0 1-1.693-5.883c0-6.058 4.933-10.99 10.993-10.99 2.937 0 5.694 1.143 7.77 3.217a10.95 10.95 0 0 1 3.218 7.773c-.001 6.058-4.934 10.99-10.992 10.99zm6.06-8.24c-.33-.166-1.953-.963-2.255-1.073-.302-.11-.522-.166-.742.166-.22.33-.852 1.073-1.044 1.293-.193.22-.386.247-.715.083-.33-.166-1.39-.513-2.65-1.635-.98-.872-1.64-1.95-1.833-2.28-.193-.33-.02-.508.146-.674.15-.15.33-.386.495-.58.166-.193.22-.33.330-.55.11-.22.055-.413-.028-.58-.083-.166-.742-1.79-1.016-2.455-.267-.64-.538-.553-.742-.563l-.633-.01c-.22 0-.58.083-.883.413-.302.33-1.155 1.13-1.155 2.753 0 1.623 1.182 3.19 1.347 3.41.166.22 2.327 3.553 5.64 4.98.789.34 1.404.543 1.883.695.791.252 1.512.216 2.082.131.635-.095 1.953-.798 2.23-1.57.275-.77.275-1.43.193-1.57-.083-.14-.302-.22-.633-.386z"/>
     </svg>
   </a>
 
