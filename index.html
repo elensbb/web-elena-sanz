@@ -83,21 +83,46 @@
       font-weight: 700;
       font-size: 14px;
       box-shadow: 0 4px 12px rgba(0,0,0,.06);
-      transition: .2s ease;
+      transition: .25s ease;
     }
 
     .social-links a:hover {
-      transform: translateY(-2px);
+      transform: translateY(-3px);
       border-color: #b91c1c;
     }
-    
+
     .hero {
-      padding: 72px 0 78px;
-      background: linear-gradient(180deg, #ffffff 0%, #f8f8f8 100%);
+      position: relative;
+      overflow: hidden;
+      min-height: 620px;
+      display: flex;
+      align-items: center;
+      color: white;
+      background:
+        linear-gradient(90deg, rgba(20,20,20,.78), rgba(185,28,28,.48)),
+        url("ayuda.png");
+      background-size: cover;
+      background-position: center;
+      animation: heroZoom 14s ease-in-out infinite alternate;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(255,255,255,.18), transparent 34%);
+      pointer-events: none;
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 2;
     }
 
     .hero-content {
-      max-width: 760px;
+      max-width: 780px;
+      padding: 78px 0;
+      animation: fadeUp .8s ease both;
     }
 
     .eyebrow {
@@ -109,9 +134,13 @@
       text-transform: uppercase;
     }
 
+    .hero .eyebrow {
+      color: white;
+    }
+
     h1 {
-      font-size: 46px;
-      line-height: 1.15;
+      font-size: 50px;
+      line-height: 1.12;
       margin: 0 0 22px;
     }
 
@@ -131,16 +160,17 @@
     }
 
     .text-main {
-      font-size: 19px;
-      color: #444;
+      font-size: 20px;
+      color: rgba(255,255,255,.94);
       margin: 0 0 16px;
+      max-width: 720px;
     }
 
     .hero-buttons {
       display: flex;
       gap: 14px;
       flex-wrap: wrap;
-      margin-top: 30px;
+      margin-top: 32px;
     }
 
     .button-primary,
@@ -148,39 +178,73 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 50px;
-      padding: 14px 24px;
-      border-radius: 10px;
-      font-weight: 700;
-      transition: .2s ease;
+      min-height: 56px;
+      padding: 16px 28px;
+      border-radius: 14px;
+      font-weight: 800;
+      transition: .25s ease;
+      font-size: 17px;
     }
 
     .button-primary {
-      background: #b91c1c;
+      background: #25D366;
       color: white;
-      box-shadow: 0 8px 18px rgba(185, 28, 28, .18);
-    }
-
-    .button-primary:hover {
-      transform: translateY(-2px);
-      background: #991b1b;
+      box-shadow: 0 12px 28px rgba(37,211,102,.32);
+      animation: pulseGreen 2.4s ease-in-out infinite;
     }
 
     .button-secondary {
-      background: white;
-      color: #222;
-      border: 1px solid #ddd;
+      background: rgba(255,255,255,.12);
+      color: white;
+      border: 1px solid rgba(255,255,255,.7);
+      backdrop-filter: blur(6px);
     }
 
+    .button-primary:hover,
     .button-secondary:hover {
-      transform: translateY(-2px);
-      border-color: #b91c1c;
+      transform: translateY(-3px);
     }
 
     .mini-trust {
       font-size: 14px;
-      color: #666;
-      margin-top: 14px;
+      color: rgba(255,255,255,.9);
+      margin-top: 16px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 34px;
+    }
+
+    .hero-stat {
+      background: rgba(255,255,255,.13);
+      border: 1px solid rgba(255,255,255,.24);
+      backdrop-filter: blur(6px);
+      padding: 14px 18px;
+      border-radius: 16px;
+      min-width: 150px;
+      animation: floatCard 4s ease-in-out infinite;
+    }
+
+    .hero-stat:nth-child(2) {
+      animation-delay: .5s;
+    }
+
+    .hero-stat:nth-child(3) {
+      animation-delay: 1s;
+    }
+
+    .hero-stat strong {
+      display: block;
+      font-size: 22px;
+      margin-bottom: 4px;
+    }
+
+    .hero-stat span {
+      font-size: 14px;
+      color: rgba(255,255,255,.9);
     }
 
     .section {
@@ -201,6 +265,31 @@
       font-size: 17px;
     }
 
+    .emotion-box {
+      max-width: 840px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 24px;
+      padding: 42px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.07);
+      border-left: 5px solid #b91c1c;
+      animation: fadeUp .7s ease both;
+    }
+
+    .emotion-box p {
+      font-size: 20px;
+      line-height: 1.6;
+      text-align: center;
+      color: #444;
+      margin: 0 0 14px;
+    }
+
+    .emotion-box p:last-child {
+      color: #b91c1c;
+      font-weight: 800;
+      margin-bottom: 0;
+    }
+
     .cards-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
@@ -215,22 +304,27 @@
 
     .card {
       background: white;
-      border-radius: 16px;
-      padding: 26px;
+      border-radius: 20px;
+      padding: 28px;
       width: 100%;
-      min-height: 210px;
-      box-shadow: 0 8px 24px rgba(0,0,0,.06);
+      min-height: 220px;
+      box-shadow: 0 10px 28px rgba(0,0,0,.06);
       border: 1px solid #eee;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      transition: .2s ease;
+      transition: .25s ease;
+      animation: fadeUp .7s ease both;
     }
 
     .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 14px 30px rgba(0,0,0,.09);
+      transform: translateY(-7px);
+      box-shadow: 0 18px 40px rgba(0,0,0,.10);
       border-color: #f0caca;
+    }
+
+    .card:hover .card-icon {
+      transform: scale(1.08) rotate(-2deg);
     }
 
     .card p {
@@ -240,23 +334,33 @@
     }
 
     .card-icon {
+      width: 54px;
+      height: 54px;
+      background: #fff3f3;
+      color: #b91c1c;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 28px;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
+      transition: .25s ease;
     }
 
     .ver-mas {
       display: inline-block;
       margin-top: 20px;
       color: #b91c1c;
-      font-weight: 700;
+      font-weight: 800;
     }
 
     .about-box {
       background: white;
-      border-radius: 18px;
+      border-radius: 22px;
       padding: 42px;
-      box-shadow: 0 8px 24px rgba(0,0,0,.06);
+      box-shadow: 0 10px 28px rgba(0,0,0,.06);
       border-left: 5px solid #b91c1c;
+      animation: fadeUp .7s ease both;
     }
 
     .about-box p {
@@ -267,16 +371,11 @@
 
     .about-box a {
       color: #b91c1c;
-      font-weight: 700;
+      font-weight: 800;
       text-decoration: underline;
     }
 
-    .trust-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 22px;
-    }
-
+    .trust-grid,
     .review-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -294,14 +393,17 @@
     }
 
     .cta-box {
-      background: #b91c1c;
+      background:
+        radial-gradient(circle at top right, rgba(255,255,255,.20), transparent 30%),
+        linear-gradient(135deg, #b91c1c 0%, #7f1d1d 100%);
       color: white;
-      border-radius: 20px;
-      padding: 44px 28px;
+      border-radius: 26px;
+      padding: 48px 30px;
       text-align: center;
-      max-width: 780px;
+      max-width: 840px;
       margin: 0 auto;
-      box-shadow: 0 12px 28px rgba(185,28,28,.22);
+      box-shadow: 0 16px 40px rgba(185,28,28,.26);
+      animation: fadeUp .7s ease both;
     }
 
     .cta-box p {
@@ -312,33 +414,39 @@
 
     .cta-button {
       display: inline-flex;
-      margin-top: 24px;
-      background: white;
-      color: #b91c1c;
-      padding: 14px 24px;
-      border-radius: 10px;
-      font-weight: 700;
-      transition: .2s ease;
+      align-items: center;
+      justify-content: center;
+      margin-top: 26px;
+      background: #25D366;
+      color: white;
+      padding: 16px 28px;
+      min-height: 56px;
+      border-radius: 14px;
+      font-weight: 800;
+      font-size: 17px;
+      transition: .25s ease;
+      box-shadow: 0 12px 28px rgba(37,211,102,.28);
     }
 
     .cta-button:hover {
-      transform: translateY(-2px);
+      transform: translateY(-3px);
     }
 
     .whatsapp-fijo {
       position: fixed;
       right: 18px;
       bottom: 82px;
-      width: 62px;
-      height: 62px;
+      width: 68px;
+      height: 68px;
       background: #25D366;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       z-index: 9999;
-      box-shadow: 0 8px 22px rgba(0,0,0,.25);
+      box-shadow: 0 10px 28px rgba(37,211,102,.42);
       animation: latido 1.8s infinite;
+      border: 4px solid white;
     }
 
     .whatsapp-fijo:hover {
@@ -349,6 +457,34 @@
       0% { transform: scale(1); }
       50% { transform: scale(1.08); }
       100% { transform: scale(1); }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes floatCard {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+      100% { transform: translateY(0); }
+    }
+
+    @keyframes pulseGreen {
+      0% { box-shadow: 0 12px 28px rgba(37,211,102,.28); }
+      50% { box-shadow: 0 16px 38px rgba(37,211,102,.44); }
+      100% { box-shadow: 0 12px 28px rgba(37,211,102,.28); }
+    }
+
+    @keyframes heroZoom {
+      from { background-size: 100%; }
+      to { background-size: 108%; }
     }
 
     @media (max-width: 768px) {
@@ -391,11 +527,13 @@
       }
 
       .hero {
-        padding: 42px 0 46px;
+        min-height: auto;
+        background-position: center;
+        animation: none;
       }
 
       .hero-content {
-        max-width: 100%;
+        padding: 56px 0 52px;
       }
 
       .eyebrow {
@@ -404,8 +542,8 @@
       }
 
       h1 {
-        font-size: 32px;
-        line-height: 1.18;
+        font-size: 34px;
+        line-height: 1.16;
         margin-bottom: 18px;
       }
 
@@ -432,10 +570,20 @@
       .button-primary,
       .button-secondary {
         width: 100%;
-        min-height: 52px;
+        min-height: 54px;
         font-size: 16px;
         padding: 14px 18px;
         text-align: center;
+      }
+
+      .hero-stats {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 26px;
+      }
+
+      .hero-stat {
+        width: 100%;
       }
 
       .mini-trust {
@@ -458,6 +606,15 @@
         margin: 0 0 28px;
       }
 
+      .emotion-box {
+        padding: 28px 22px;
+      }
+
+      .emotion-box p {
+        font-size: 17px;
+        text-align: left;
+      }
+
       .cards-grid,
       .trust-grid,
       .review-grid {
@@ -466,13 +623,15 @@
       }
 
       .card {
-        padding: 22px;
+        padding: 24px 22px;
         min-height: auto;
       }
 
       .card-icon {
+        width: 50px;
+        height: 50px;
         font-size: 26px;
-        margin-bottom: 12px;
+        margin-bottom: 14px;
       }
 
       .card p {
@@ -496,8 +655,8 @@
       }
 
       .cta-box {
-        padding: 32px 20px;
-        border-radius: 18px;
+        padding: 34px 20px;
+        border-radius: 20px;
       }
 
       .cta-box p {
@@ -507,13 +666,13 @@
       .cta-button {
         width: 100%;
         justify-content: center;
-        min-height: 52px;
+        min-height: 54px;
         font-size: 16px;
       }
 
       .whatsapp-fijo {
-        width: 56px;
-        height: 56px;
+        width: 58px;
+        height: 58px;
         right: 15px;
         bottom: 75px;
       }
@@ -547,42 +706,61 @@
   <section class="hero">
     <div class="container">
       <div class="hero-content">
-        <p class="eyebrow">Finanzas, seguros y planificación</p>
+        <p class="eyebrow">Seguros, finanzas y planificación</p>
 
-        <h1>Si mañana pasa algo, ¿tienes claro que estás bien protegido?</h1>
+        <h1>Seguros y asesoramiento financiero explicados de forma sencilla</h1>
 
         <p class="text-main">
-          Te ayudamos a entender tus seguros de verdad, sin tecnicismos, para que tomes decisiones con tranquilidad.
+          Para que tomes decisiones con tranquilidad, entiendas lo que firmas y sepas qué opción encaja realmente contigo.
         </p>
 
         <p class="text-main">
-          Protege lo importante hoy y evita problemas mañana.
+          Te acompañamos paso a paso, sin tecnicismos y con un trato cercano.
         </p>
 
         <div class="hero-buttons">
-          <a href="tel:+34917702311" class="button-primary">📞 Llamar ahora</a>
-          <a href="https://wa.me/34606067906" target="_blank" class="button-secondary">💬 WhatsApp</a>
+          <a href="https://wa.me/34606067906" target="_blank" class="button-primary">💬 Hablar por WhatsApp</a>
+          <a href="tel:+34917702311" class="button-secondary">📞 Llamar a la oficina</a>
         </div>
 
         <p class="mini-trust">Primera consulta sin compromiso · Te respondemos rápido</p>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <strong>+25 años</strong>
+            <span>de experiencia</span>
+          </div>
+
+          <div class="hero-stat">
+            <strong>Sin líos</strong>
+            <span>explicado claro</span>
+          </div>
+
+          <div class="hero-stat">
+            <strong>A tu lado</strong>
+            <span>antes y después</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- BLOQUE EMOCIONAL -->
   <section class="section">
-    <div class="container" style="max-width:800px;">
-      <p style="font-size:20px; line-height:1.6; text-align:center;">
-        La mayoría de las personas no revisa sus seguros hasta que pasa algo.
-      </p>
+    <div class="container">
+      <div class="emotion-box">
+        <p>
+          La mayoría de las personas no revisa sus seguros hasta que pasa algo.
+        </p>
 
-      <p style="font-size:20px; line-height:1.6; text-align:center;">
-        Y cuando pasa… ya es tarde.
-      </p>
+        <p>
+          Y cuando pasa… muchas veces ya es tarde.
+        </p>
 
-      <p style="font-size:20px; line-height:1.6; text-align:center; font-weight:bold;">
-        Nuestro trabajo es evitarte ese problema.
-      </p>
+        <p>
+          Nuestro trabajo es ayudarte a evitar ese problema.
+        </p>
+      </div>
     </div>
   </section>
 
@@ -764,9 +942,9 @@
           Sin compromiso. Sin tecnicismos. Sin presión.
         </p>
 
-        <a href="https://wa.me/34606067906" target="_blank" class="cta-button">Escríbenos por WhatsApp</a>
+        <a href="https://wa.me/34606067906" target="_blank" class="cta-button">💬 Escríbenos por WhatsApp</a>
 
-        <p style="font-size:14px; margin-top:10px;">
+        <p style="font-size:14px; margin-top:12px;">
           Te respondemos lo antes posible
         </p>
       </div>
@@ -777,11 +955,11 @@
     <a href="https://www.linkedin.com/in/elena-sanz-burgos-b052b6140/" target="_blank">LinkedIn</a>
     <a href="https://www.instagram.com/esanz.seguros/" target="_blank">Instagram</a>
   </div>
-  
+
   <!-- BOTÓN FIJO WHATSAPP -->
   <a href="https://wa.me/34606067906" target="_blank" class="whatsapp-fijo" aria-label="WhatsApp">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="white">
-      <path d="M16.001 2.667c-7.363 0-13.334 5.97-13.334 13.334 0 2.35.615 4.648 1.782 6.68L2.667 29.333l6.85-1.748a13.25 13.334 0 0 0 6.484 1.672h.001c7.363 0 13.334-5.97 13.334-13.334S23.365 2.667 16.001 2.667zm0 24.334h-.001a10.95 10.95 0 0 1-5.58-1.523l-.4-.237-4.066 1.038 1.084-3.963-.26-.41a10.97 10.97 0 0 1-1.693-5.883c0-6.058 4.933-10.99 10.993-10.99 2.937 0 5.694 1.143 7.77 3.217a10.95 10.95 0 0 1 3.218 7.773c-.001 6.058-4.934 10.99-10.992 10.99zm6.06-8.24c-.33-.166-1.953-.963-2.255-1.073-.302-.11-.522-.166-.742.166-.22.33-.852 1.073-1.044 1.293-.193.22-.386.247-.715.083-.33-.166-1.39-.513-2.65-1.635-.98-.872-1.64-1.95-1.833-2.28-.193-.33-.02-.508.146-.674.15-.15.33-.386.495-.58.166-.193.22-.33.33-.55.11-.22.055-.413-.028-.58-.083-.166-.742-1.79-1.016-2.455-.267-.64-.538-.553-.742-.563l-.633-.01c-.22 0-.58.083-.883.413-.302.33-1.155 1.13-1.155 2.753 0 1.623 1.182 3.19 1.347 3.41.166.22 2.327 3.553 5.64 4.98.789.34 1.404.543 1.883.695.791.252 1.512.216 2.082.131.635-.095 1.953-.798 2.23-1.57.275-.77.275-1.43.193-1.57-.083-.14-.302-.22-.633-.386z"/>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="34" height="34" fill="white">
+      <path d="M16.001 2.667c-7.363 0-13.334 5.97-13.334 13.334 0 2.35.615 4.648 1.782 6.68L2.667 29.333l6.85-1.748a13.25 13.25 0 0 0 6.484 1.672h.001c7.363 0 13.334-5.97 13.334-13.334S23.365 2.667 16.001 2.667zm0 24.334h-.001a10.95 10.95 0 0 1-5.58-1.523l-.4-.237-4.066 1.038 1.084-3.963-.26-.41a10.97 10.97 0 0 1-1.693-5.883c0-6.058 4.933-10.99 10.993-10.99 2.937 0 5.694 1.143 7.77 3.217a10.95 10.95 0 0 1 3.218 7.773c-.001 6.058-4.934 10.99-10.992 10.99zm6.06-8.24c-.33-.166-1.953-.963-2.255-1.073-.302-.11-.522-.166-.742.166-.22.33-.852 1.073-1.044 1.293-.193.22-.386.247-.715.083-.33-.166-1.39-.513-2.65-1.635-.98-.872-1.64-1.95-1.833-2.28-.193-.33-.02-.508.146-.674.15-.15.33-.386.495-.58.166-.193.22-.33.33-.55.11-.22.055-.413-.028-.58-.083-.166-.742-1.79-1.016-2.455-.267-.64-.538-.553-.742-.563l-.633-.01c-.22 0-.58.083-.883.413-.302.33-1.155 1.13-1.155 2.753 0 1.623 1.182 3.19 1.347 3.41.166.22 2.327 3.553 5.64 4.98.789.34 1.404.543 1.883.695.791.252 1.512.216 2.082.131.635-.095 1.953-.798 2.23-1.57.275-.77.275-1.43.193-1.57-.083-.14-.302-.22-.633-.386z"/>
     </svg>
   </a>
 
