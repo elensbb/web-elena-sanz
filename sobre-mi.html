@@ -136,7 +136,6 @@
     }
 
     .person-card:nth-child(2) { animation-delay: .12s; }
-    .person-card:nth-child(3) { animation-delay: .24s; }
 
     .person-card:hover,
     .card:hover {
@@ -166,7 +165,16 @@
       margin-bottom: 12px;
     }
 
-    .person-card p,
+    .person-card p {
+      margin: 0 0 12px;
+      color: #555;
+      font-size: 16px;
+    }
+
+    .person-card p:last-child {
+      margin-bottom: 0;
+    }
+
     .card p {
       margin: 0;
       color: #555;
@@ -188,7 +196,11 @@
     .emotional-box p {
       color: rgba(255,255,255,.94);
       font-size: 19px;
-      margin: 0;
+      margin: 0 0 12px;
+    }
+
+    .emotional-box p:last-child {
+      margin-bottom: 0;
     }
 
     .highlight-box {
@@ -436,8 +448,21 @@
             <div class="person-icon">👩‍💼</div>
             <h3>Elena</h3>
             <div class="person-role">Agente mediador de seguros y asesora financiera</div>
+
             <p>
-              Te acompaña en la toma de decisiones importantes, revisando tu situación y buscando soluciones claras y adaptadas a ti.
+              Me encargo de asesorarte y ayudarte a tomar decisiones sobre tus seguros y tu planificación financiera.
+            </p>
+
+            <p>
+              Analizo cada caso de forma personalizada y te explico las opciones de forma clara, para que entiendas lo que estás contratando y elijas con seguridad.
+            </p>
+
+            <p>
+              Me gusta trabajar con cercanía, escuchando cada situación y acompañándote en el proceso, porque sé que cuando entiendes lo que haces, tomas mejores decisiones.
+            </p>
+
+            <p>
+              Mi objetivo es que tomes decisiones con tranquilidad y con la seguridad de que realmente encajan contigo.
             </p>
           </div>
         </div>
@@ -446,20 +471,22 @@
           <div>
             <div class="person-icon">📋</div>
             <h3>Olga</h3>
-            <div class="person-role">Gestión administrativa y atención al cliente</div>
-            <p>
-              Te ayuda con gestiones, dudas, seguimiento y trámites para que todo sea más sencillo y cercano.
-            </p>
-          </div>
-        </div>
+            <div class="person-role">Atención al cliente y gestión de siniestros</div>
 
-        <div class="person-card">
-          <div>
-            <div class="person-icon">✨</div>
-            <h3>Alma</h3>
-            <div class="person-role">Apoyo digital y comunicación</div>
             <p>
-              Aporta una visión actual para mejorar la comunicación, la web y la forma de acercar el asesoramiento a cada cliente.
+              Soy la primera persona que te atiende cuando contactas. Escucho lo que necesitas y te ayudo directamente o te pongo en contacto con Elena si necesitas algo más específico.
+            </p>
+
+            <p>
+              También me encargo de gestionar los siniestros, acompañándote paso a paso para que todo sea más sencillo y tengas siempre a alguien al otro lado.
+            </p>
+
+            <p>
+              El trato cercano es muy importante para mí, porque al final lo que buscamos es que te sientas cómodo, confíes en nosotras y sepas que puedes contar con ayuda cuando lo necesites.
+            </p>
+
+            <p>
+              Mi objetivo es que cualquier duda o gestión tenga una respuesta rápida, clara y cercana.
             </p>
           </div>
         </div>
@@ -468,7 +495,15 @@
 
       <div class="emotional-box">
         <p>
-          Nos gusta que el cliente entienda lo que firma, pregunte con confianza y sienta que tiene a alguien al lado antes, durante y después.
+          Aquí no hablas con una empresa, hablas con personas.
+        </p>
+
+        <p>
+          Me gusta que entiendas lo que firmas, que preguntes con confianza y que sientas que tienes a alguien a tu lado antes, durante y después.
+        </p>
+
+        <p>
+          Porque cuando hay cercanía y confianza, todo es mucho más fácil.
         </p>
       </div>
     </div>
