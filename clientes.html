@@ -17,7 +17,7 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f8f8f8;
+      background: #f5f5f5;
       color: #222;
     }
 
@@ -32,7 +32,7 @@
     }
 
     .page-hero {
-      background: linear-gradient(180deg, #ffffff 0%, #f8f8f8 100%);
+      background: linear-gradient(180deg, #ffffff 0%, #f5f5f5 100%);
       padding: 70px 0 50px;
       text-align: center;
     }
@@ -136,41 +136,95 @@
       margin: 0 0 16px;
     }
 
-    .support-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
-      gap: 22px;
-      margin-top: 28px;
+    .client-panel {
+      background: white;
+      border-radius: 24px;
+      padding: 42px;
+      box-shadow: 0 14px 38px rgba(0,0,0,.08);
+      border: 1px solid #eee;
     }
 
-    .card {
-      background: white;
-      border-radius: 16px;
-      padding: 26px;
-      min-height: 220px;
-      box-shadow: 0 8px 24px rgba(0,0,0,.06);
+    .panel-header {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 34px;
+    }
+
+    .panel-header p {
+      color: #555;
+      font-size: 17px;
+      margin: 0;
+    }
+
+    .quick-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .quick-card {
+      background: #fafafa;
       border: 1px solid #eee;
+      border-radius: 20px;
+      padding: 30px;
+      min-height: 230px;
+      color: #222;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      transition: .2s ease;
+      transition: .25s ease;
+      position: relative;
+      overflow: hidden;
     }
 
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 14px 30px rgba(0,0,0,.09);
+    .quick-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 34px rgba(0,0,0,.1);
       border-color: #f0caca;
+      background: white;
     }
 
-    .card-icon {
-      font-size: 30px;
+    .quick-icon {
+      font-size: 34px;
       margin-bottom: 14px;
     }
 
-    .card p {
-      margin: 0;
+    .quick-card h3 {
+      font-size: 23px;
+      margin-bottom: 10px;
+    }
+
+    .quick-card p {
       color: #555;
       font-size: 16px;
+      margin-bottom: 22px;
+    }
+
+    .quick-card span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #b91c1c;
+      color: white;
+      padding: 13px 18px;
+      border-radius: 12px;
+      font-weight: 700;
+      margin-top: auto;
+    }
+
+    .panel-note {
+      margin-top: 30px;
+      background: #fff3f3;
+      border: 1px solid #f4cccc;
+      border-radius: 18px;
+      padding: 24px;
+      text-align: center;
+    }
+
+    .panel-note p {
+      margin: 0;
+      color: #444;
+      font-size: 18px;
     }
 
     .review-box {
@@ -195,32 +249,20 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 50px;
-      padding: 14px 24px;
-      border-radius: 10px;
+      min-height: 58px;
+      padding: 17px 34px;
+      border-radius: 14px;
       background: #b91c1c;
       color: white;
-      font-weight: 700;
+      font-weight: 800;
+      font-size: 18px;
       transition: .2s ease;
+      box-shadow: 0 10px 24px rgba(185,28,28,.25);
     }
 
     .review-button:hover {
       transform: translateY(-2px);
       background: #991b1b;
-    }
-
-    .highlight-box {
-      background: #fff3f3;
-      border-radius: 16px;
-      padding: 30px;
-      margin-top: 30px;
-      border: 1px solid #f4cccc;
-    }
-
-    .highlight-box p {
-      font-size: 18px;
-      color: #444;
-      margin: 0;
     }
 
     .cta-box {
@@ -382,34 +424,49 @@
 
       .intro-card p,
       .review-box p,
-      .highlight-box p,
       .cta-box p {
         font-size: 16px;
       }
 
-      .support-grid {
-        grid-template-columns: 1fr;
-        gap: 18px;
-        margin-top: 22px;
+      .client-panel {
+        padding: 26px 18px;
+        border-radius: 20px;
       }
 
-      .card {
-        padding: 22px;
+      .panel-header {
+        text-align: left;
+        margin-bottom: 24px;
+      }
+
+      .panel-header p {
+        font-size: 16px;
+      }
+
+      .quick-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .quick-card {
+        padding: 24px 20px;
         min-height: auto;
       }
 
-      .card-icon {
-        font-size: 26px;
-        margin-bottom: 12px;
+      .quick-card h3 {
+        font-size: 21px;
       }
 
-      .card p {
-        font-size: 15px;
+      .quick-card span {
+        width: 100%;
       }
 
-      .highlight-box {
-        padding: 24px 20px;
-        margin-top: 24px;
+      .panel-note {
+        text-align: left;
+        padding: 20px;
+      }
+
+      .panel-note p {
+        font-size: 16px;
       }
 
       .review-box {
@@ -420,8 +477,8 @@
 
       .review-button {
         width: 100%;
-        min-height: 52px;
-        font-size: 16px;
+        min-height: 56px;
+        font-size: 17px;
         text-align: center;
       }
 
@@ -467,14 +524,14 @@
     <div class="container">
       <p class="eyebrow">Área de clientes</p>
 
-      <h1>¿Ya eres cliente?</h1>
+      <h1>Tu panel de acceso rápido</h1>
 
       <p class="hero-text">
         Un espacio pensado para ayudarte en todo lo que necesites, de forma rápida y sencilla.
       </p>
 
       <p class="hero-text">
-        Aquí puedes resolver dudas, gestionar tus seguros y tener siempre a mano nuestro apoyo.
+        Gestiona tus seguros, resuelve dudas o contacta con nosotras en pocos segundos.
       </p>
 
       <div class="hero-buttons">
@@ -490,63 +547,79 @@
   <section class="section">
     <div class="container">
       <div class="intro-card">
-        <h2>Seguimos contigo después de contratar</h2>
+        <h2>No desaparecemos después de contratar</h2>
 
         <p>
-          Si ya has trabajado con nosotras, este espacio está pensado para ti. Aquí podrás resolver dudas, gestionar tus seguros y tener siempre a mano el apoyo que necesites.
+          Sabemos que cuando surge una duda, un cambio o un siniestro, necesitas sentir que hay alguien al otro lado.
         </p>
 
         <p>
-          Nuestro objetivo es acompañarte en todo momento, no solo cuando contratas, sino también durante todo el proceso.
+          Por eso seguimos cerca de ti después de contratar: para ayudarte, orientarte y acompañarte siempre que lo necesites.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- GESTIONES -->
+  <!-- PANEL DE ACCESO RÁPIDO -->
   <section id="gestiones" class="section">
     <div class="container">
-      <h2>¿En qué podemos ayudarte?</h2>
 
-      <div class="support-grid">
-
-        <div class="card">
-          <div>
-            <div class="card-icon">📄</div>
-            <h3>Consultas y gestiones</h3>
-            <p>
-              Si necesitas hacer una consulta, modificar algún dato o revisar tu situación, puedes hacerlo de forma rápida y directa.
-            </p>
-          </div>
+      <div class="client-panel">
+        <div class="panel-header">
+          <p class="eyebrow">Panel de cliente</p>
+          <h2>¿Qué necesitas gestionar?</h2>
+          <p>
+            Elige una opción y contacta con nosotras de forma rápida. Te ayudaremos a resolverlo de manera clara y sencilla.
+          </p>
         </div>
 
-        <div class="card">
-          <div>
-            <div class="card-icon">🛠️</div>
-            <h3>Siniestros y asistencia</h3>
-            <p>
-              En caso de incidencia o siniestro, te acompañamos para que se gestione de forma clara, ágil y sin complicaciones.
-            </p>
-          </div>
+        <div class="quick-grid">
+
+          <a href="https://wa.me/34606067906?text=Hola,%20necesito%20ayuda%20con%20un%20siniestro" target="_blank" class="quick-card">
+            <div>
+              <div class="quick-icon">🚨</div>
+              <h3>Siniestro</h3>
+              <p>Te acompañamos paso a paso si has tenido una incidencia.</p>
+            </div>
+            <span>Gestionar siniestro</span>
+          </a>
+
+          <a href="https://wa.me/34606067906?text=Hola,%20quiero%20hacer%20una%20revisi%C3%B3n%20de%20mi%20p%C3%B3liza" target="_blank" class="quick-card">
+            <div>
+              <div class="quick-icon">🔎</div>
+              <h3>Revisión de póliza</h3>
+              <p>Revisamos tus coberturas para comprobar que siguen encajando contigo.</p>
+            </div>
+            <span>Solicitar revisión</span>
+          </a>
+
+          <a href="https://wa.me/34606067906?text=Hola,%20tengo%20una%20consulta%20sobre%20mi%20seguro" target="_blank" class="quick-card">
+            <div>
+              <div class="quick-icon">💬</div>
+              <h3>Consulta</h3>
+              <p>Resolvemos tus dudas de forma cercana, clara y sin complicaciones.</p>
+            </div>
+            <span>Hacer consulta</span>
+          </a>
+
+          <a href="https://wa.me/34606067906?text=Hola,%20necesito%20modificar%20mis%20datos" target="_blank" class="quick-card">
+            <div>
+              <div class="quick-icon">✏️</div>
+              <h3>Modificar datos</h3>
+              <p>Te ayudamos si necesitas actualizar datos personales o información de contacto.</p>
+            </div>
+            <span>Modificar datos</span>
+          </a>
+
         </div>
 
-        <div class="card">
-          <div>
-            <div class="card-icon">🔄</div>
-            <h3>Revisión de seguros</h3>
-            <p>
-              Revisamos tus coberturas para asegurarnos de que siguen siendo adecuadas y ajustadas a lo que necesitas.
-            </p>
-          </div>
+        <div class="panel-note">
+          <p>
+            Tu tranquilidad no termina cuando firmas una póliza. Seguimos aquí para ayudarte cuando lo necesites.
+          </p>
         </div>
-
       </div>
 
-      <div class="highlight-box">
-        <p>
-          Queremos que tengas la tranquilidad de saber que cuentas con un apoyo cercano y de confianza en todo momento.
-        </p>
-      </div>
     </div>
   </section>
 
@@ -557,11 +630,11 @@
         <h2>Si ya has trabajado con nosotras…</h2>
 
         <p>
-          Nos encantaría conocer tu experiencia. Tu opinión nos ayuda a seguir mejorando y a que otras personas puedan confiar en nosotras.
+          Tu opinión nos ayuda a seguir mejorando y también ayuda a otras personas a confiar.
         </p>
 
         <a href="mailto:esanz@occident.com?subject=Mi experiencia como cliente" class="review-button">
-          Dejar mi opinión
+          ⭐ Dejar mi reseña
         </a>
       </div>
     </div>
