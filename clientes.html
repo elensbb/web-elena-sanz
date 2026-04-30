@@ -11,14 +11,14 @@
     html { scroll-behavior: smooth; }
 
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background:
-        radial-gradient(circle at top right, rgba(185,28,28,0.06), transparent 38%),
-        radial-gradient(circle at bottom left, rgba(185,28,28,0.04), transparent 45%),
-        linear-gradient(135deg, #ffffff 0%, #fff6f6 100%);
-      color: #222;
-    }
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background:
+    radial-gradient(circle at top right, rgba(185,28,28,0.10), transparent 35%),
+    radial-gradient(circle at bottom left, rgba(185,28,28,0.08), transparent 45%),
+    linear-gradient(135deg, #fdfbfb 0%, #f7eaea 100%);
+  color: #222;
+}
 
     a { text-decoration: none; }
 
@@ -115,6 +115,20 @@
       margin-top: 14px;
     }
 
+.private-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff3f3;
+  color: #b91c1c;
+  border: 1px solid #f4cccc;
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 800;
+  margin: 0 auto 18px;
+}
+    
     .section { padding: 55px 0; }
 
     .intro-card {
@@ -133,13 +147,13 @@
     }
 
     .client-panel {
-      background: rgba(255,255,255,.96);
-      backdrop-filter: blur(6px);
-      border-radius: 24px;
-      padding: 42px;
-      box-shadow: 0 14px 38px rgba(0,0,0,.08);
-      border: 1px solid rgba(240,202,202,.75);
-    }
+  background: rgba(255,255,255,.98);
+  backdrop-filter: blur(8px);
+  border-radius: 28px;
+  padding: 42px;
+  box-shadow: 0 20px 50px rgba(0,0,0,.12);
+  border: 1px solid rgba(240,202,202,.9);
+}
 
     .panel-header {
       text-align: center;
@@ -153,6 +167,12 @@
       margin: 0;
     }
 
+.panel-subtitle {
+  font-weight: 700;
+  color: #b91c1c !important;
+  margin-top: 12px !important;
+}
+    
     .quick-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -160,20 +180,32 @@
     }
 
     .quick-card {
-      background: rgba(255,255,255,.9);
-      border: 1px solid rgba(238,238,238,.95);
-      border-radius: 20px;
-      padding: 30px;
-      min-height: 230px;
-      color: #222;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: .25s ease;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 8px 22px rgba(0,0,0,.04);
-    }
+  background: white;
+  border: 1px solid rgba(240,202,202,.9);
+  border-radius: 22px;
+  padding: 30px;
+  min-height: 230px;
+  color: #222;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: .25s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0,0,0,.08);
+}
+
+    .quick-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(185,28,28,0.05), transparent 60%);
+  transform: rotate(25deg);
+  pointer-events: none;
+}
 
     .quick-card:hover {
       transform: translateY(-5px);
@@ -199,16 +231,17 @@
     }
 
     .quick-card span {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: #b91c1c;
-      color: white;
-      padding: 13px 18px;
-      border-radius: 12px;
-      font-weight: 700;
-      margin-top: auto;
-    }
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #b91c1c;
+  color: white;
+  padding: 14px 20px;
+  border-radius: 14px;
+  font-weight: 800;
+  margin-top: auto;
+  box-shadow: 0 8px 18px rgba(185,28,28,.25);
+}
 
     .panel-note {
       margin-top: 30px;
@@ -558,6 +591,8 @@
 
       <h1>Tu panel de acceso rápido</h1>
 
+<p class="private-badge">Acceso exclusivo para clientes</p>
+      
       <p class="hero-text">
         Un espacio pensado para ayudarte en todo lo que necesites, de forma rápida y sencilla.
       </p>
@@ -605,6 +640,10 @@
           </p>
         </div>
 
+<p class="panel-subtitle">
+  Accede a tus gestiones de forma rápida, directa y sin esperas.
+</p>
+        
         <div class="quick-grid">
 
           <a href="https://wa.me/34606067906?text=Hola,%20necesito%20ayuda%20con%20un%20siniestro" target="_blank" class="quick-card">
