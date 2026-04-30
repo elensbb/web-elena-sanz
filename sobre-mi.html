@@ -13,8 +13,12 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f8f8f8;
+      background:
+        radial-gradient(circle at top right, rgba(185,28,28,0.10), transparent 34%),
+        radial-gradient(circle at bottom left, rgba(185,28,28,0.06), transparent 44%),
+        linear-gradient(135deg, #ffffff 0%, #fff4f4 52%, #f8eeee 100%);
       color: #222;
+      overflow-x: hidden;
     }
 
     a { text-decoration: none; }
@@ -27,27 +31,82 @@
 
     .page-hero {
       position: relative;
-      padding: 86px 0 66px;
+      padding: 100px 0 78px;
       color: white;
       background:
-        linear-gradient(90deg, rgba(25,25,25,.78), rgba(185,28,28,.50)),
+        linear-gradient(90deg, rgba(20,20,20,.86), rgba(185,28,28,.62)),
         url("chicas-trabajando.png");
       background-size: cover;
       background-position: center;
       overflow: hidden;
     }
 
+    .page-hero::before {
+      content: "";
+      position: absolute;
+      width: 330px;
+      height: 330px;
+      right: -110px;
+      top: 35px;
+      background: rgba(255,255,255,.10);
+      border-radius: 50%;
+      animation: floatShape 7s ease-in-out infinite;
+      pointer-events: none;
+    }
+
     .page-hero::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at top right, rgba(255,255,255,.18), transparent 34%);
+      background:
+        radial-gradient(circle at top right, rgba(255,255,255,.20), transparent 34%),
+        linear-gradient(180deg, transparent 0%, rgba(0,0,0,.20) 100%);
       pointer-events: none;
     }
 
     .page-hero .container {
       position: relative;
+      z-index: 2;
+    }
+
+    .hero-visual {
+      position: absolute;
+      right: 80px;
+      bottom: 55px;
+      width: 260px;
+      height: 190px;
       z-index: 1;
+      opacity: .95;
+    }
+
+    .visual-card {
+      position: absolute;
+      background: rgba(255,255,255,.94);
+      color: #b91c1c;
+      border: 1px solid rgba(255,255,255,.65);
+      border-radius: 18px;
+      padding: 14px 18px;
+      font-weight: 900;
+      box-shadow: 0 14px 34px rgba(0,0,0,.18);
+      backdrop-filter: blur(8px);
+      animation: floatCard 4s ease-in-out infinite;
+    }
+
+    .visual-card:nth-child(1) {
+      top: 0;
+      right: 0;
+    }
+
+    .visual-card:nth-child(2) {
+      top: 70px;
+      left: 0;
+      animation-delay: .8s;
+    }
+
+    .visual-card:nth-child(3) {
+      bottom: 0;
+      right: 30px;
+      animation-delay: 1.4s;
     }
 
     .eyebrow {
@@ -62,10 +121,10 @@
     .page-hero .eyebrow { color: white; }
 
     h1 {
-      font-size: 46px;
-      line-height: 1.12;
+      font-size: 50px;
+      line-height: 1.10;
       margin: 0 0 20px;
-      max-width: 820px;
+      max-width: 850px;
     }
 
     h2 {
@@ -82,20 +141,42 @@
     p { line-height: 1.65; }
 
     .hero-text {
-      font-size: 19px;
+      font-size: 20px;
       color: rgba(255,255,255,.94);
       max-width: 760px;
       margin: 0 0 16px;
     }
 
-    .section { padding: 55px 0; }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,.14);
+      color: white;
+      border: 1px solid rgba(255,255,255,.45);
+      border-radius: 999px;
+      padding: 10px 18px;
+      font-weight: 800;
+      font-size: 14px;
+      backdrop-filter: blur(6px);
+      margin-top: 12px;
+    }
+
+    .section {
+      padding: 58px 0;
+      position: relative;
+    }
 
     .intro-card {
-      background: white;
-      border-radius: 22px;
+      background: rgba(255,255,255,.94);
+      backdrop-filter: blur(8px);
+      border-radius: 24px;
       padding: 38px;
-      box-shadow: 0 10px 28px rgba(0,0,0,.06);
+      box-shadow: 0 14px 34px rgba(0,0,0,.08);
       border-left: 5px solid #b91c1c;
+      border-top: 1px solid rgba(240,202,202,.7);
+      border-right: 1px solid rgba(240,202,202,.7);
+      border-bottom: 1px solid rgba(240,202,202,.7);
       animation: fadeUp .7s ease both;
     }
 
@@ -112,36 +193,130 @@
       margin: 0 0 32px;
     }
 
+    .visual-feature {
+      background:
+        radial-gradient(circle at top right, rgba(255,255,255,.22), transparent 30%),
+        radial-gradient(circle at bottom left, rgba(255,255,255,.12), transparent 35%),
+        linear-gradient(135deg, #b91c1c 0%, #7f1d1d 100%);
+      color: white;
+      border-radius: 28px;
+      padding: 42px;
+      margin-bottom: 38px;
+      box-shadow: 0 18px 46px rgba(185,28,28,.28);
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 28px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      animation: fadeUp .7s ease both;
+    }
+
+    .visual-feature::before {
+      content: "";
+      position: absolute;
+      width: 210px;
+      height: 210px;
+      right: -70px;
+      top: -80px;
+      background: rgba(255,255,255,.12);
+      border-radius: 50%;
+      animation: floatShape 6s ease-in-out infinite;
+    }
+
+    .visual-feature h2,
+    .visual-feature p,
+    .visual-feature-grid {
+      position: relative;
+      z-index: 1;
+    }
+
+    .visual-feature p {
+      color: rgba(255,255,255,.92);
+      font-size: 18px;
+      margin: 0;
+    }
+
+    .visual-feature-grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .mini-feature {
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 18px;
+      padding: 18px;
+      backdrop-filter: blur(8px);
+      font-weight: 800;
+      animation: softFloat 4s ease-in-out infinite;
+    }
+
+    .mini-feature:nth-child(2) {
+      animation-delay: .8s;
+    }
+
+    .mini-feature:nth-child(3) {
+      animation-delay: 1.4s;
+    }
+
     .team-grid,
     .values-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 22px;
+      gap: 24px;
       margin-top: 28px;
     }
 
     .person-card,
     .card {
-      background: white;
-      border-radius: 22px;
+      background: rgba(255,255,255,.96);
+      backdrop-filter: blur(8px);
+      border-radius: 24px;
       padding: 28px;
       min-height: 230px;
-      box-shadow: 0 10px 28px rgba(0,0,0,.06);
-      border: 1px solid #eee;
+      box-shadow: 0 14px 34px rgba(0,0,0,.08);
+      border: 1px solid rgba(244,204,204,.9);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       transition: .25s ease;
       animation: fadeUp .7s ease both;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .person-card::before,
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at top right, rgba(185,28,28,.07), transparent 42%),
+        linear-gradient(135deg, rgba(255,255,255,.4), transparent);
+      pointer-events: none;
+    }
+
+    .person-card > div,
+    .card > div {
+      position: relative;
+      z-index: 1;
     }
 
     .person-card:nth-child(2) { animation-delay: .12s; }
 
     .person-card:hover,
     .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 16px 34px rgba(0,0,0,.10);
-      border-color: #f0caca;
+      transform: translateY(-8px);
+      box-shadow: 0 22px 48px rgba(0,0,0,.13);
+      border-color: #eebcbc;
+      background: white;
+    }
+
+    .person-card:hover .person-icon,
+    .card:hover .card-icon {
+      transform: scale(1.08) rotate(-2deg);
+      box-shadow: 0 10px 22px rgba(185,28,28,.16);
     }
 
     .person-icon,
@@ -156,6 +331,8 @@
       justify-content: center;
       font-size: 28px;
       margin-bottom: 16px;
+      border: 1px solid #f4cccc;
+      transition: .25s ease;
     }
 
     .person-role {
@@ -175,6 +352,60 @@
       margin-bottom: 0;
     }
 
+    .person-summary {
+      font-weight: 700;
+      color: #444 !important;
+    }
+
+    .person-details {
+      margin-top: 20px;
+      border-top: 1px solid #f0caca;
+      position: relative;
+      z-index: 1;
+    }
+
+    .person-details summary {
+      list-style: none;
+      cursor: pointer;
+      color: #b91c1c;
+      font-weight: 900;
+      padding: 18px 0 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: .2s ease;
+    }
+
+    .person-details summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .person-details summary::after {
+      content: "+";
+      width: 28px;
+      height: 28px;
+      background: #b91c1c;
+      color: white;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      margin-left: 12px;
+      transition: .2s ease;
+    }
+
+    .person-details[open] summary::after {
+      content: "−";
+      background: #991b1b;
+      transform: rotate(180deg);
+    }
+
+    .person-extra {
+      padding-top: 16px;
+      animation: openDetails .25s ease both;
+    }
+
     .card p {
       margin: 0;
       color: #555;
@@ -184,16 +415,33 @@
     .emotional-box {
       background:
         radial-gradient(circle at top right, rgba(255,255,255,.22), transparent 30%),
+        radial-gradient(circle at bottom left, rgba(255,255,255,.12), transparent 35%),
         linear-gradient(135deg, #b91c1c 0%, #7f1d1d 100%);
       color: white;
-      border-radius: 26px;
-      padding: 38px;
-      margin-top: 34px;
-      box-shadow: 0 16px 40px rgba(185,28,28,.24);
+      border-radius: 28px;
+      padding: 42px;
+      margin-top: 38px;
+      box-shadow: 0 18px 46px rgba(185,28,28,.28);
       animation: fadeUp .7s ease both;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .emotional-box::before {
+      content: "";
+      position: absolute;
+      width: 190px;
+      height: 190px;
+      border-radius: 50%;
+      right: -60px;
+      top: -70px;
+      background: rgba(255,255,255,.12);
+      animation: softFloat 5s ease-in-out infinite;
     }
 
     .emotional-box p {
+      position: relative;
+      z-index: 1;
       color: rgba(255,255,255,.94);
       font-size: 19px;
       margin: 0 0 12px;
@@ -204,11 +452,14 @@
     }
 
     .highlight-box {
-      background: #fff3f3;
-      border-radius: 18px;
-      padding: 30px;
-      margin-top: 30px;
+      background:
+        radial-gradient(circle at top right, rgba(185,28,28,.08), transparent 34%),
+        linear-gradient(135deg, #fff3f3 0%, #ffffff 100%);
+      border-radius: 20px;
+      padding: 32px;
+      margin-top: 34px;
       border: 1px solid #f4cccc;
+      box-shadow: 0 12px 28px rgba(0,0,0,.06);
       animation: fadeUp .7s ease both;
     }
 
@@ -219,14 +470,38 @@
     }
 
     .cta-box {
-      background: #b91c1c;
+      background:
+        radial-gradient(circle at top right, rgba(255,255,255,.20), transparent 30%),
+        radial-gradient(circle at bottom left, rgba(255,255,255,.10), transparent 34%),
+        linear-gradient(135deg, #b91c1c 0%, #7f1d1d 100%);
       color: white;
-      border-radius: 24px;
-      padding: 44px 28px;
+      border-radius: 28px;
+      padding: 50px 30px;
       text-align: center;
-      max-width: 820px;
+      max-width: 860px;
       margin: 0 auto;
-      box-shadow: 0 14px 32px rgba(185,28,28,.24);
+      box-shadow: 0 20px 48px rgba(185,28,28,.32);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-box::before {
+      content: "";
+      position: absolute;
+      width: 210px;
+      height: 210px;
+      right: -70px;
+      top: -80px;
+      background: rgba(255,255,255,.12);
+      border-radius: 50%;
+      animation: floatShape 6s ease-in-out infinite;
+    }
+
+    .cta-box h2,
+    .cta-box p,
+    .cta-buttons {
+      position: relative;
+      z-index: 1;
     }
 
     .cta-box p {
@@ -248,17 +523,18 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 52px;
-      padding: 14px 24px;
-      border-radius: 12px;
-      font-weight: 800;
+      min-height: 54px;
+      padding: 16px 30px;
+      border-radius: 15px;
+      font-weight: 900;
       transition: .2s ease;
-      min-width: 210px;
+      min-width: 220px;
     }
 
     .cta-primary {
       background: white;
       color: #b91c1c;
+      box-shadow: 0 12px 28px rgba(0,0,0,.18);
     }
 
     .cta-secondary {
@@ -269,7 +545,7 @@
 
     .cta-primary:hover,
     .cta-secondary:hover {
-      transform: translateY(-2px);
+      transform: translateY(-3px);
     }
 
     .back-button {
@@ -319,12 +595,45 @@
       }
     }
 
+    @keyframes openDetails {
+      from {
+        opacity: 0;
+        transform: translateY(-8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes floatShape {
+      0% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-12px) scale(1.03); }
+      100% { transform: translateY(0) scale(1); }
+    }
+
+    @keyframes floatCard {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+
+    @keyframes softFloat {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+      100% { transform: translateY(0); }
+    }
+
     @media (max-width: 768px) {
       .container { padding: 0 18px; }
 
       .page-hero {
-        padding: 56px 0 44px;
+        padding: 62px 0 48px;
         background-position: center;
+      }
+
+      .hero-visual {
+        display: none;
       }
 
       h1 {
@@ -338,15 +647,22 @@
       .intro-card p,
       .highlight-box p,
       .cta-box p,
-      .emotional-box p {
+      .emotional-box p,
+      .visual-feature p {
         font-size: 16px;
       }
 
       .section { padding: 48px 0; }
 
       .intro-card,
-      .emotional-box {
+      .emotional-box,
+      .visual-feature {
         padding: 28px 22px;
+      }
+
+      .visual-feature {
+        grid-template-columns: 1fr;
+        gap: 22px;
       }
 
       .team-grid,
@@ -362,8 +678,8 @@
       }
 
       .cta-box {
-        padding: 32px 20px;
-        border-radius: 18px;
+        padding: 34px 20px;
+        border-radius: 20px;
       }
 
       .cta-buttons {
@@ -400,15 +716,23 @@
     <div class="container">
       <p class="eyebrow">Sobre nosotras</p>
 
-      <h1>Un acompañamiento cercano, claro y profesional</h1>
+      <h1>Personas cercanas para ayudarte a decidir con tranquilidad</h1>
 
       <p class="hero-text">
-        Te ayudamos a entender tus opciones y a tomar decisiones con tranquilidad, cercanía y experiencia.
+        Te ayudamos a entender tus opciones y a tomar decisiones con cercanía, claridad y experiencia.
       </p>
 
       <p class="hero-text">
         Nuestro objetivo es que sientas que tienes un equipo de confianza al lado, antes, durante y después.
       </p>
+
+      <div class="hero-badge">Trato cercano · Explicaciones claras · Acompañamiento real</div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="visual-card">Confianza</div>
+      <div class="visual-card">Cercanía</div>
+      <div class="visual-card">Claridad</div>
     </div>
   </section>
 
@@ -434,6 +758,23 @@
 
   <section class="section">
     <div class="container">
+
+      <div class="visual-feature">
+        <div>
+          <p class="eyebrow" style="color:white;">Nuestra forma de atenderte</p>
+          <h2>Un trato humano sin necesidad de enseñar caras</h2>
+          <p>
+            No hace falta aparecer en fotos para transmitir confianza. Lo importante es que cuando contactes, sepas que hay personas que escuchan, explican y te acompañan.
+          </p>
+        </div>
+
+        <div class="visual-feature-grid">
+          <div class="mini-feature">🤝 Atención cercana</div>
+          <div class="mini-feature">💬 Explicaciones sencillas</div>
+          <div class="mini-feature">🛡️ Acompañamiento continuo</div>
+        </div>
+      </div>
+
       <p class="eyebrow">Nuestro equipo</p>
       <h2>¿Quién te va a atender?</h2>
 
@@ -449,21 +790,27 @@
             <h3>Elena</h3>
             <div class="person-role">Agente mediador de seguros y asesora financiera</div>
 
-            <p>
+            <p class="person-summary">
               Me encargo de asesorarte y ayudarte a tomar decisiones sobre tus seguros y tu planificación financiera.
             </p>
 
-            <p>
-              Analizo cada caso de forma personalizada y te explico las opciones de forma clara, para que entiendas lo que estás contratando y elijas con seguridad.
-            </p>
+            <details class="person-details">
+              <summary>Saber más sobre Elena</summary>
 
-            <p>
-              Me gusta trabajar con cercanía, escuchando cada situación y acompañándote en el proceso, porque sé que cuando entiendes lo que haces, tomas mejores decisiones.
-            </p>
+              <div class="person-extra">
+                <p>
+                  Analizo cada caso de forma personalizada y te explico las opciones de forma clara, para que entiendas lo que estás contratando y elijas con seguridad.
+                </p>
 
-            <p>
-              Mi objetivo es que tomes decisiones con tranquilidad y con la seguridad de que realmente encajan contigo.
-            </p>
+                <p>
+                  Me gusta trabajar con cercanía, escuchando cada situación y acompañándote en el proceso, porque sé que cuando entiendes lo que haces, tomas mejores decisiones.
+                </p>
+
+                <p>
+                  Mi objetivo es que tomes decisiones con tranquilidad y con la seguridad de que realmente encajan contigo.
+                </p>
+              </div>
+            </details>
           </div>
         </div>
 
@@ -473,21 +820,31 @@
             <h3>Olga</h3>
             <div class="person-role">Atención al cliente y gestión de siniestros</div>
 
-            <p>
-              Soy la primera persona que te atiende cuando contactas. Escucho lo que necesitas y te ayudo directamente o te pongo en contacto con Elena si necesitas algo más específico.
+            <p class="person-summary">
+              Soy la primera persona que te atiende cuando contactas y te ayudo a dirigir tu consulta de forma rápida y sencilla.
             </p>
 
-            <p>
-              También me encargo de gestionar los siniestros, acompañándote paso a paso para que todo sea más sencillo y tengas siempre a alguien al otro lado.
-            </p>
+            <details class="person-details">
+              <summary>Saber más sobre Olga</summary>
 
-            <p>
-              El trato cercano es muy importante para mí, porque al final lo que buscamos es que te sientas cómodo, confíes en nosotras y sepas que puedes contar con ayuda cuando lo necesites.
-            </p>
+              <div class="person-extra">
+                <p>
+                  Escucho lo que necesitas y te ayudo directamente o te pongo en contacto con Elena si necesitas algo más específico.
+                </p>
 
-            <p>
-              Mi objetivo es que cualquier duda o gestión tenga una respuesta rápida, clara y cercana.
-            </p>
+                <p>
+                  También me encargo de gestionar los siniestros, acompañándote paso a paso para que todo sea más sencillo y tengas siempre a alguien al otro lado.
+                </p>
+
+                <p>
+                  El trato cercano es muy importante para mí, porque al final lo que buscamos es que te sientas cómodo, confíes en nosotras y sepas que puedes contar con ayuda cuando lo necesites.
+                </p>
+
+                <p>
+                  Mi objetivo es que cualquier duda o gestión tenga una respuesta rápida, clara y cercana.
+                </p>
+              </div>
+            </details>
           </div>
         </div>
 
@@ -581,7 +938,7 @@
 
   <a href="https://wa.me/34606067906" target="_blank" class="whatsapp-fijo" aria-label="WhatsApp">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="white">
-      <path d="M16.001 2.667c-7.363 0-13.334 5.97-13.334 13.334 0 2.35.615 4.648 1.782 6.68L2.667 29.333l6.85-1.748a13.25 13.25 0 0 0 6.484 1.672h.001c7.363 0 13.334-5.97 13.334-13.334S23.365 2.667 16.001 2.667zm0 24.334h-.001a10.95 10.95 0 0 1-5.58-1.523l-.4-.237-4.066 1.038 1.084-3.963-.26-.41a10.97 10.97 0 0 1-1.693-5.883c0-6.058 4.933-10.99 10.993-10.99 2.937 0 5.694 1.143 7.77 3.217a10.95 10.95 0 0 1 3.218 7.773c-.001 6.058-4.934 10.99-10.992 10.99zm6.06-8.24c-.33-.166-1.953-.963-2.255-1.073-.302-.11-.522-.166-.742.166-.22.33-.852 1.073-1.044 1.293-.193.22-.386.247-.715.083-.33-.166-1.39-.513-2.65-1.635-.98-.872-1.64-1.95-1.833-2.28-.193-.33-.02-.508.146-.674.15-.15.33-.386.495-.58.166-.193.22-.33.330-.55.11-.22.055-.413-.028-.58-.083-.166-.742-1.79-1.016-2.455-.267-.64-.538-.553-.742-.563l-.633-.01c-.22 0-.58.083-.883.413-.302.33-1.155 1.13-1.155 2.753 0 1.623 1.182 3.19 1.347 3.41.166.22 2.327 3.553 5.64 4.98.789.34 1.404.543 1.883.695.791.252 1.512.216 2.082.131.635-.095 1.953-.798 2.23-1.57.275-.77.275-1.43.193-1.57-.083-.14-.302-.22-.633-.386z"/>
+      <path d="M16.001 2.667c-7.363 0-13.334 5.97-13.334 13.334 0 2.35.615 4.648 1.782 6.68L2.667 29.333l6.85-1.748a13.25 13.25 0 0 0 6.484 1.672h.001c7.363 0 13.334-5.97 13.334-13.334S23.365 2.667 16.001 2.667zm0 24.334h-.001a10.95 10.95 0 0 1-5.58-1.523l-.4-.237-4.066 1.038 1.084-3.963-.260-.410a10.97 10.97 0 0 1-1.693-5.883c0-6.058 4.933-10.990 10.993-10.990 2.937 0 5.694 1.143 7.770 3.217a10.95 10.95 0 0 1 3.218 7.773c-.001 6.058-4.934 10.990-10.992 10.990zm6.060-8.240c-.330-.166-1.953-.963-2.255-1.073-.302-.110-.522-.166-.742.166-.220.330-.852 1.073-1.044 1.293-.193.220-.386.247-.715.083-.330-.166-1.390-.513-2.650-1.635-.980-.872-1.640-1.950-1.833-2.280-.193-.330-.020-.508.146-.674.150-.150.330-.386.495-.580.166-.193.220-.330.330-.550.110-.220.055-.413-.028-.580-.083-.166-.742-1.790-1.016-2.455-.267-.640-.538-.553-.742-.563l-.633-.010c-.220 0-.580.083-.883.413-.302.330-1.155 1.130-1.155 2.753 0 1.623 1.182 3.190 1.347 3.410.166.220 2.327 3.553 5.640 4.980.789.340 1.404.543 1.883.695.791.252 1.512.216 2.082.131.635-.095 1.953-.798 2.230-1.570.275-.770.275-1.430.193-1.570-.083-.140-.302-.220-.633-.386z"/>
     </svg>
   </a>
 
