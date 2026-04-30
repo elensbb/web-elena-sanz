@@ -13,7 +13,10 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f5f5f5;
+      background:
+        radial-gradient(circle at top right, rgba(185,28,28,0.06), transparent 38%),
+        radial-gradient(circle at bottom left, rgba(185,28,28,0.04), transparent 45%),
+        linear-gradient(135deg, #ffffff 0%, #fff6f6 100%);
       color: #222;
     }
 
@@ -26,7 +29,9 @@
     }
 
     .page-hero {
-      background: linear-gradient(180deg, #ffffff 0%, #f5f5f5 100%);
+      background:
+        radial-gradient(circle at top right, rgba(185,28,28,.10), transparent 30%),
+        linear-gradient(180deg, #ffffff 0%, #fff5f5 100%);
       padding: 70px 0 50px;
       text-align: center;
     }
@@ -113,7 +118,8 @@
     .section { padding: 55px 0; }
 
     .intro-card {
-      background: white;
+      background: rgba(255,255,255,.94);
+      backdrop-filter: blur(6px);
       border-radius: 18px;
       padding: 38px;
       box-shadow: 0 8px 24px rgba(0,0,0,.06);
@@ -127,11 +133,12 @@
     }
 
     .client-panel {
-      background: white;
+      background: rgba(255,255,255,.96);
+      backdrop-filter: blur(6px);
       border-radius: 24px;
       padding: 42px;
       box-shadow: 0 14px 38px rgba(0,0,0,.08);
-      border: 1px solid #eee;
+      border: 1px solid rgba(240,202,202,.75);
     }
 
     .panel-header {
@@ -153,8 +160,8 @@
     }
 
     .quick-card {
-      background: #fafafa;
-      border: 1px solid #eee;
+      background: rgba(255,255,255,.9);
+      border: 1px solid rgba(238,238,238,.95);
       border-radius: 20px;
       padding: 30px;
       min-height: 230px;
@@ -165,6 +172,7 @@
       transition: .25s ease;
       position: relative;
       overflow: hidden;
+      box-shadow: 0 8px 22px rgba(0,0,0,.04);
     }
 
     .quick-card:hover {
@@ -665,7 +673,7 @@
           Si ya has trabajado con nosotras, nos encantará conocer tu experiencia. Solo te llevará 1 minuto.
         </p>
 
-        <a href="https://g.page/r/CSvgKd1502pqEBM/review" target="_blank" target="_blank" rel="noopener" class="review-button">
+        <a href="https://g.page/r/CSvgKd1502pqEBM/review" target="_blank" rel="noopener" class="review-button">
           ⭐ Dejar reseña en Google (1 min)
         </a>
 
