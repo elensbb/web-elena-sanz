@@ -50,6 +50,71 @@
       margin: 0 auto;
     }
 
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes softFloat {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-6px);
+      }
+    }
+
+    .hero .eyebrow,
+    .hero h1,
+    .hero .lead,
+    .hero-actions,
+    .trust-line {
+      animation: fadeUp 0.7s ease both;
+    }
+
+    .hero h1 {
+      animation-delay: 0.08s;
+    }
+
+    .hero .lead {
+      animation-delay: 0.16s;
+    }
+
+    .hero-actions {
+      animation-delay: 0.24s;
+    }
+
+    .trust-line {
+      animation-delay: 0.32s;
+    }
+
+    .hero-card {
+      animation: fadeUp 0.8s ease 0.18s both;
+    }
+
+    .hero-card-icon {
+      animation: softFloat 4.5s ease-in-out infinite;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+
+    .reveal.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     .topbar {
       background: var(--white);
       border-bottom: 1px solid var(--border);
@@ -345,6 +410,13 @@
       padding: 24px;
       box-shadow: 0 10px 24px rgba(31, 41, 51, 0.04);
       height: 100%;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 36px rgba(31, 41, 51, 0.09);
+      border-color: rgba(195, 0, 47, 0.22);
     }
 
     .card-icon {
@@ -376,6 +448,13 @@
       display: flex;
       gap: 16px;
       align-items: flex-start;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    }
+
+    .coverage-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 32px rgba(31, 41, 51, 0.08);
+      border-color: rgba(195, 0, 47, 0.22);
     }
 
     .coverage-card .mini-icon {
@@ -457,7 +536,7 @@
     }
 
     .highlight .pill {
-      background: rgba(255,255,255,.14);
+      background: rgba(255, 255, 255, 0.14);
       color: var(--white);
     }
 
@@ -466,6 +545,13 @@
       border: 1px solid var(--border);
       border-radius: var(--radius-sm);
       padding: 22px;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    }
+
+    .level-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 32px rgba(31, 41, 51, 0.08);
+      border-color: rgba(195, 0, 47, 0.22);
     }
 
     .level-card strong {
@@ -479,80 +565,242 @@
       font-size: 0.98rem;
     }
 
-    .checklist {
+    .review-block {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-      margin-top: 8px;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 34px;
+      align-items: start;
     }
 
-    .check-item {
+    .review-intro {
+      color: var(--muted);
+      font-size: 1.04rem;
+      margin-top: 10px;
+    }
+
+    .review-list {
+      list-style: none;
+      display: grid;
+      gap: 0;
+      background: var(--white);
+      border-radius: calc(var(--radius) + 4px);
+      border: 1px solid var(--border);
+      padding: 30px;
+      box-shadow: 0 14px 34px rgba(31, 41, 51, 0.06);
+    }
+
+    .review-item {
+      display: grid;
+      grid-template-columns: 46px 1fr;
+      gap: 16px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .review-item:first-child {
+      padding-top: 0;
+    }
+
+    .review-item:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .review-number {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(195, 0, 47, 0.08);
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 0.9rem;
+    }
+
+    .review-item strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 4px;
+      font-size: 1.02rem;
+    }
+
+    .review-item p {
+      color: var(--muted);
+      font-size: 0.97rem;
+    }
+
+    .review-note {
+      margin-top: 24px;
+      padding: 18px 20px;
+      border-radius: var(--radius-sm);
+      background: rgba(195, 0, 47, 0.06);
+      color: #455363;
+      font-size: 0.98rem;
+    }
+
+    .review-note strong {
+      color: var(--primary);
+    }
+
+    .mistakes-block {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .mistakes-layout {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .mistakes-side {
+      position: sticky;
+      top: 104px;
+    }
+
+    .mistakes-side p {
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .mistakes-list {
+      list-style: none;
+      display: grid;
+      gap: 0;
       background: var(--white);
       border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: 18px;
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      color: #455363;
+      border-radius: calc(var(--radius) + 4px);
+      padding: 30px;
+      box-shadow: 0 14px 34px rgba(31, 41, 51, 0.06);
     }
 
-    .check-item::before {
-      content: "✓";
+    .mistake-item {
+      display: grid;
+      grid-template-columns: 38px 1fr;
+      gap: 16px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .mistake-item:first-child {
+      padding-top: 0;
+    }
+
+    .mistake-item:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .mistake-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(195, 0, 47, 0.08);
       color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 1rem;
+    }
+
+    .mistake-item strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 4px;
+      font-size: 1.02rem;
+    }
+
+    .mistake-item p {
+      color: var(--muted);
+      font-size: 0.97rem;
+    }
+
+    .faq-carousel-wrap {
+      position: relative;
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+
+    .faq-carousel {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(290px, 360px);
+      gap: 18px;
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      scroll-snap-type: x mandatory;
+      scroll-padding: 4px;
+      padding: 6px 4px 18px;
+      scrollbar-width: thin;
+    }
+
+    .faq-card {
+      min-height: 290px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 10px 24px rgba(31, 41, 51, 0.04);
+      scroll-snap-align: start;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    }
+
+    .faq-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 42px rgba(31, 41, 51, 0.1);
+      border-color: rgba(195, 0, 47, 0.22);
+    }
+
+    .faq-number {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(195, 0, 47, 0.08);
+      color: var(--primary);
+      display: grid;
+      place-items: center;
       font-weight: 900;
       flex: 0 0 auto;
     }
 
-    .accordion {
-      display: grid;
-      gap: 12px;
-      max-width: 900px;
-      margin: 0 auto;
+    .faq-card h3 {
+      margin-bottom: 0;
     }
 
-    .accordion-item {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      overflow: hidden;
-    }
-
-    .accordion-button {
-      width: 100%;
-      border: 0;
-      background: transparent;
-      padding: 20px 22px;
-      text-align: left;
-      font-size: 1.02rem;
-      font-weight: 800;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 18px;
-      cursor: pointer;
-      color: var(--text);
-    }
-
-    .accordion-button span {
-      color: var(--primary);
-      font-size: 1.4rem;
-      line-height: 1;
-      transition: transform 0.2s ease;
-    }
-
-    .accordion-content {
-      display: none;
-      padding: 0 22px 22px;
+    .faq-card p {
       color: var(--muted);
+      font-size: 0.98rem;
     }
 
-    .accordion-item.active .accordion-content {
-      display: block;
+    .faq-controls {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 12px;
     }
 
-    .accordion-item.active .accordion-button span {
-      transform: rotate(45deg);
+    .faq-arrow {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid rgba(195, 0, 47, 0.28);
+      background: var(--white);
+      color: var(--primary);
+      font-size: 1.2rem;
+      font-weight: 900;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .faq-arrow:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(31, 41, 51, 0.12);
+      background: rgba(195, 0, 47, 0.06);
     }
 
     .cta-final {
@@ -596,6 +844,14 @@
       .grid-4 {
         grid-template-columns: repeat(2, 1fr);
       }
+
+      .mistakes-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .mistakes-side {
+        position: static;
+      }
     }
 
     @media (max-width: 900px) {
@@ -626,15 +882,19 @@
 
       .hero-grid,
       .highlight-grid,
-      .grid-2 {
+      .grid-2,
+      .review-block {
         grid-template-columns: 1fr;
       }
 
       .grid-3,
       .grid-4,
-      .coverages,
-      .checklist {
+      .coverages {
         grid-template-columns: 1fr;
+      }
+
+      .faq-carousel {
+        grid-auto-columns: minmax(260px, 86vw);
       }
 
       .hero {
@@ -643,6 +903,22 @@
 
       section {
         padding: 56px 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
       }
     }
 
@@ -663,6 +939,17 @@
       .highlight,
       .cta-final {
         padding: 28px 20px;
+      }
+
+      .review-list,
+      .mistakes-list {
+        padding: 24px 20px;
+      }
+
+      .review-item,
+      .mistake-item {
+        grid-template-columns: 38px 1fr;
+        gap: 12px;
       }
 
       h1 {
@@ -1094,66 +1381,152 @@
 
     <section class="section-soft">
       <div class="container">
-        <div class="grid-2">
+        <div class="review-block">
           <div class="section-title">
             <span>Antes de contratar</span>
             <h2>Qué conviene revisar</h2>
             <p>
               Antes de contratar o renovar, merece la pena revisar estos puntos para no pagar por coberturas que no necesitas ni quedarte corto en las que sí son importantes.
             </p>
+
+            <p class="review-intro">
+              La clave es adaptar el seguro al vehículo real, al uso que le das y a las coberturas que de verdad pueden ayudarte si ocurre algo.
+            </p>
+
+            <div class="review-note">
+              <strong>Consejo:</strong> no te quedes solo con el precio. En automóvil, las diferencias suelen estar en la asistencia, los límites, la franquicia y las coberturas especiales.
+            </div>
           </div>
 
-          <div class="checklist">
-            <div class="check-item">Tipo de vehículo: turismo, eléctrico, furgón, camper, autocaravana o patinete.</div>
-            <div class="check-item">Uso real: diario, trabajo, viajes, ocio, reparto o segunda residencia móvil.</div>
-            <div class="check-item">Conductores habituales y posibles conductores jóvenes.</div>
-            <div class="check-item">Antigüedad y valor actual del vehículo.</div>
-            <div class="check-item">Equipamiento opcional, accesorios o material transportado.</div>
-            <div class="check-item">Asistencia en viaje y necesidad de vehículo de sustitución.</div>
-            <div class="check-item">Franquicia en caso de todo riesgo.</div>
-            <div class="check-item">Coberturas especiales si es eléctrico, camper o vehículo profesional.</div>
-          </div>
+          <ol class="review-list">
+            <li class="review-item">
+              <span class="review-number">01</span>
+              <div>
+                <strong>Tipo de vehículo</strong>
+                <p>Conviene diferenciar si es turismo, eléctrico, furgón, camper, autocaravana o patinete, porque cada uno puede necesitar coberturas distintas.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">02</span>
+              <div>
+                <strong>Uso real</strong>
+                <p>No es lo mismo un vehículo de diario que uno de trabajo, reparto, ocio, viajes largos o segunda residencia móvil.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">03</span>
+              <div>
+                <strong>Conductores habituales</strong>
+                <p>Es importante revisar quién conduce el vehículo y si hay conductores jóvenes o con poca antigüedad de carnet.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">04</span>
+              <div>
+                <strong>Antigüedad y valor actual</strong>
+                <p>El valor del vehículo y sus años pueden influir en si interesa terceros, terceros ampliado o todo riesgo.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">05</span>
+              <div>
+                <strong>Equipamiento, accesorios y material transportado</strong>
+                <p>Extras, accesorios, carga, material deportivo o equipamiento especial pueden necesitar declaración o revisión concreta.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">06</span>
+              <div>
+                <strong>Asistencia y vehículo de sustitución</strong>
+                <p>La asistencia en viaje y la posibilidad de disponer de otro vehículo pueden ser clave si dependes del coche a diario.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">07</span>
+              <div>
+                <strong>Franquicia</strong>
+                <p>Si eliges todo riesgo con franquicia, conviene saber cuánto asumirías tú en cada siniestro.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">08</span>
+              <div>
+                <strong>Coberturas especiales</strong>
+                <p>Eléctricos, campers, furgones profesionales o patinetes pueden necesitar garantías específicas que no siempre vienen incluidas.</p>
+              </div>
+            </li>
+          </ol>
         </div>
       </div>
     </section>
 
     <section>
-      <div class="container">
-        <div class="section-title center">
-          <span>Errores frecuentes</span>
-          <h2>Errores habituales al contratar un seguro de automóvil</h2>
-        </div>
+      <div class="container mistakes-block">
+        <div class="mistakes-layout">
+          <div class="mistakes-side section-title">
+            <span>Errores frecuentes</span>
+            <h2>Errores habituales al contratar un seguro de automóvil</h2>
+            <p>
+              Estos son los puntos donde más suele fallar la elección de una póliza: parecen detalles pequeños, pero pueden marcar mucho la diferencia cuando aparece un siniestro.
+            </p>
+          </div>
 
-        <div class="grid-3">
-          <article class="card">
-            <h3>Elegir solo por precio</h3>
-            <p>El seguro más barato puede quedarse corto si no cubre lo que realmente necesitas.</p>
-          </article>
+          <ol class="mistakes-list">
+            <li class="mistake-item">
+              <span class="mistake-mark">!</span>
+              <div>
+                <strong>Elegir solo por precio</strong>
+                <p>El seguro más barato puede quedarse corto si no cubre lo que realmente necesitas.</p>
+              </div>
+            </li>
 
-          <article class="card">
-            <h3>No revisar la asistencia</h3>
-            <p>La asistencia en viaje puede ser clave si haces trayectos largos o dependes del vehículo a diario.</p>
-          </article>
+            <li class="mistake-item">
+              <span class="mistake-mark">!</span>
+              <div>
+                <strong>No revisar la asistencia</strong>
+                <p>La asistencia en viaje puede ser clave si haces trayectos largos o dependes del vehículo a diario.</p>
+              </div>
+            </li>
 
-          <article class="card">
-            <h3>No declarar bien conductores</h3>
-            <p>Si hay conductores jóvenes o con poca antigüedad de carnet, conviene revisarlo correctamente.</p>
-          </article>
+            <li class="mistake-item">
+              <span class="mistake-mark">!</span>
+              <div>
+                <strong>No declarar bien conductores</strong>
+                <p>Si hay conductores jóvenes o con poca antigüedad de carnet, conviene revisarlo correctamente.</p>
+              </div>
+            </li>
 
-          <article class="card">
-            <h3>Olvidar accesorios</h3>
-            <p>Extras, equipamiento opcional o accesorios relevantes pueden necesitar declaración específica.</p>
-          </article>
+            <li class="mistake-item">
+              <span class="mistake-mark">!</span>
+              <div>
+                <strong>Olvidar accesorios</strong>
+                <p>Extras, equipamiento opcional o accesorios relevantes pueden necesitar declaración específica.</p>
+              </div>
+            </li>
 
-          <article class="card">
-            <h3>Pensar que todos son iguales</h3>
-            <p>Dos terceros ampliados pueden tener diferencias importantes en lunas, robo, incendio o asistencia.</p>
-          </article>
+            <li class="mistake-item">
+              <span class="mistake-mark">!</span>
+              <div>
+                <strong>Pensar que todos son iguales</strong>
+                <p>Dos terceros ampliados pueden tener diferencias importantes en lunas, robo, incendio o asistencia.</p>
+              </div>
+            </li>
 
-          <article class="card">
-            <h3>No adaptar la póliza</h3>
-            <p>Un eléctrico, una camper o un furgón de trabajo pueden necesitar coberturas distintas a un turismo normal.</p>
-          </article>
+            <li class="mistake-item">
+              <span class="mistake-mark">!</span>
+              <div>
+                <strong>No adaptar la póliza</strong>
+                <p>Un eléctrico, una camper o un furgón de trabajo pueden necesitar coberturas distintas a un turismo normal.</p>
+              </div>
+            </li>
+          </ol>
         </div>
       </div>
     </section>
@@ -1165,86 +1538,61 @@
           <h2>Dudas habituales sobre seguros de automóviles</h2>
         </div>
 
-        <div class="accordion">
-          <article class="accordion-item active">
-            <button class="accordion-button" type="button">
-              ¿Qué diferencia hay entre terceros, terceros ampliado y todo riesgo?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+        <div class="faq-carousel-wrap">
+          <div class="faq-carousel" id="faqCarousel" aria-label="Carrusel de preguntas frecuentes">
+            <article class="faq-card">
+              <div class="faq-number">01</div>
+              <h3>¿Qué diferencia hay entre terceros, terceros ampliado y todo riesgo?</h3>
               <p>Terceros cubre principalmente la responsabilidad civil. Terceros ampliado añade garantías como lunas, robo o incendio, según modalidad. Todo riesgo puede cubrir también los daños propios del vehículo.</p>
-            </div>
-          </article>
+            </article>
 
-          <article class="accordion-item">
-            <button class="accordion-button" type="button">
-              ¿Me conviene un todo riesgo con franquicia?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+            <article class="faq-card">
+              <div class="faq-number">02</div>
+              <h3>¿Me conviene un todo riesgo con franquicia?</h3>
               <p>Puede interesarte si quieres proteger el vehículo frente a daños propios, pero aceptas asumir una parte del coste en cada siniestro para ajustar la prima.</p>
-            </div>
-          </article>
+            </article>
 
-          <article class="accordion-item">
-            <button class="accordion-button" type="button">
-              ¿La asistencia en viaje es importante?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+            <article class="faq-card">
+              <div class="faq-number">03</div>
+              <h3>¿La asistencia en viaje es importante?</h3>
               <p>Sí. Es una de las coberturas más útiles si tienes una avería, accidente o incidencia en carretera, especialmente si haces viajes largos o dependes del vehículo.</p>
-            </div>
-          </article>
+            </article>
 
-          <article class="accordion-item">
-            <button class="accordion-button" type="button">
-              ¿Qué debo revisar si tengo un coche eléctrico?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+            <article class="faq-card">
+              <div class="faq-number">04</div>
+              <h3>¿Qué debo revisar si tengo un coche eléctrico?</h3>
               <p>Batería, cable de carga, estación de carga, asistencia por falta de carga, posibilidad de recarga, información de puntos de recarga y vehículo de sustitución.</p>
-            </div>
-          </article>
+            </article>
 
-          <article class="accordion-item">
-            <button class="accordion-button" type="button">
-              ¿Una camper y un furgón camperizado se aseguran igual?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+            <article class="faq-card">
+              <div class="faq-number">05</div>
+              <h3>¿Una camper y un furgón camperizado se aseguran igual?</h3>
               <p>No necesariamente. Una camper pertenece al segmento de autocaravanas, mientras que un furgón camperizado es un furgón comercial adaptado como vivienda. Esa diferencia puede influir en la modalidad adecuada.</p>
-            </div>
-          </article>
+            </article>
 
-          <article class="accordion-item">
-            <button class="accordion-button" type="button">
-              ¿Puedo asegurar un patinete eléctrico?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+            <article class="faq-card">
+              <div class="faq-number">06</div>
+              <h3>¿Puedo asegurar un patinete eléctrico?</h3>
               <p>Sí. Existen soluciones orientadas a patinetes eléctricos o vehículos personales ligeros, especialmente para responsabilidad civil y defensa jurídica, según características del vehículo.</p>
-            </div>
-          </article>
+            </article>
 
-          <article class="accordion-item">
-            <button class="accordion-button" type="button">
-              ¿Qué pasa si tengo un siniestro?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+            <article class="faq-card">
+              <div class="faq-number">07</div>
+              <h3>¿Qué pasa si tengo un siniestro?</h3>
               <p>Conviene comunicarlo lo antes posible, aportar la información del accidente y, en caso de robo, incendio o actos vandálicos, denunciar los hechos ante las autoridades.</p>
-            </div>
-          </article>
+            </article>
 
-          <article class="accordion-item">
-            <button class="accordion-button" type="button">
-              ¿Puedo revisar mi póliza actual?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+            <article class="faq-card">
+              <div class="faq-number">08</div>
+              <h3>¿Puedo revisar mi póliza actual?</h3>
               <p>Sí. Es recomendable revisar si el seguro sigue encajando con el uso actual del vehículo, su antigüedad, conductores, asistencia y coberturas contratadas.</p>
-            </div>
-          </article>
+            </article>
+          </div>
+
+          <div class="faq-controls" aria-label="Controles del carrusel de preguntas frecuentes">
+            <button class="faq-arrow" type="button" data-faq-prev aria-label="Pregunta anterior">‹</button>
+            <button class="faq-arrow" type="button" data-faq-next aria-label="Pregunta siguiente">›</button>
+          </div>
         </div>
       </div>
     </section>
@@ -1294,15 +1642,48 @@
       });
     }
 
-    const accordionItems = document.querySelectorAll(".accordion-item");
+    const faqCarousel = document.querySelector("#faqCarousel");
+    const faqPrev = document.querySelector("[data-faq-prev]");
+    const faqNext = document.querySelector("[data-faq-next]");
 
-    accordionItems.forEach((item) => {
-      const button = item.querySelector(".accordion-button");
+    if (faqCarousel && faqPrev && faqNext) {
+      const moveFaqCarousel = (direction) => {
+        const card = faqCarousel.querySelector(".faq-card");
+        const gap = 18;
+        const distance = card ? card.offsetWidth + gap : 340;
 
-      button.addEventListener("click", () => {
-        item.classList.toggle("active");
+        faqCarousel.scrollBy({
+          left: direction * distance,
+          behavior: "smooth"
+        });
+      };
+
+      faqPrev.addEventListener("click", () => moveFaqCarousel(-1));
+      faqNext.addEventListener("click", () => moveFaqCarousel(1));
+    }
+
+    const revealElements = document.querySelectorAll(
+      ".section-title, .card, .coverage-card, .highlight, .level-card, .review-list, .mistakes-list, .faq-card, .cta-final"
+    );
+
+    if ("IntersectionObserver" in window) {
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      revealElements.forEach((element, index) => {
+        element.classList.add("reveal");
+        element.style.transitionDelay = `${Math.min(index % 6, 5) * 70}ms`;
+        revealObserver.observe(element);
       });
-    });
+    } else {
+      revealElements.forEach((element) => element.classList.add("in-view"));
+    }
   </script>
 
 </body>
