@@ -1,0 +1,1394 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Seguro de responsabilidad civil | Elena Sanz Burgos</title>
+  <meta name="description" content="Seguro de responsabilidad civil para particulares, familias, inquilinos, inmuebles, empleados del hogar, caza, pesca, bicicletas y actividades personales." />
+
+  <style>
+    :root {
+      --bg: #fbf7f1;
+      --bg-soft: #fffaf4;
+      --white: #ffffff;
+      --text: #1f2933;
+      --muted: #64748b;
+      --primary: #c3002f;
+      --primary-dark: #9f0027;
+      --border: rgba(31, 41, 51, 0.12);
+      --shadow: 0 18px 45px rgba(31, 41, 51, 0.08);
+      --radius: 24px;
+      --radius-sm: 16px;
+      --max: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(100% - 32px, var(--max));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: var(--white);
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-text strong {
+      display: block;
+      font-size: 1rem;
+      line-height: 1.1;
+    }
+
+    .brand-text span {
+      display: block;
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 0;
+      background: transparent;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: var(--text);
+    }
+
+    .mobile-menu {
+      display: none;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border-radius: 999px;
+      padding: 13px 20px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border: 1px solid transparent;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(31, 41, 51, 0.12);
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--primary);
+      border-color: rgba(195, 0, 47, 0.35);
+    }
+
+    .hero {
+      padding: 84px 0 56px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 560px;
+      height: 560px;
+      border-radius: 50%;
+      background: rgba(195, 0, 47, 0.08);
+      right: -220px;
+      top: -220px;
+      z-index: -1;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: rgba(195, 0, 47, 0.08);
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(2.45rem, 5vw, 4.7rem);
+      line-height: 0.98;
+      letter-spacing: -0.06em;
+      max-width: 850px;
+      margin-bottom: 22px;
+    }
+
+    .lead {
+      font-size: clamp(1.08rem, 2vw, 1.25rem);
+      color: #455363;
+      max-width: 690px;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .trust-line {
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .hero-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 26px;
+    }
+
+    .hero-card-icon {
+      width: 74px;
+      height: 74px;
+      border-radius: 22px;
+      background: rgba(195, 0, 47, 0.08);
+      display: grid;
+      place-items: center;
+      font-size: 2rem;
+      margin-bottom: 18px;
+    }
+
+    .hero-card h2 {
+      font-size: 1.45rem;
+      margin-bottom: 12px;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-card ul {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      color: #455363;
+    }
+
+    .hero-card li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .hero-card li::before {
+      content: "✓";
+      color: var(--primary);
+      font-weight: 900;
+      flex: 0 0 auto;
+    }
+
+    section {
+      padding: 72px 0;
+    }
+
+    .section-soft {
+      background: var(--bg-soft);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-title {
+      max-width: 780px;
+      margin-bottom: 34px;
+    }
+
+    .section-title.center {
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    .section-title span {
+      color: var(--primary);
+      font-weight: 800;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 3vw, 3rem);
+      line-height: 1.08;
+      letter-spacing: -0.045em;
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+
+    .section-title p,
+    .text-muted {
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 24px;
+      box-shadow: 0 10px 24px rgba(31, 41, 51, 0.04);
+      height: 100%;
+    }
+
+    .card-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 16px;
+      background: rgba(195, 0, 47, 0.08);
+      display: grid;
+      place-items: center;
+      font-size: 1.45rem;
+      margin-bottom: 18px;
+    }
+
+    .card p {
+      color: var(--muted);
+    }
+
+    .coverages {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .coverage-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 22px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .coverage-card .mini-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: rgba(195, 0, 47, 0.08);
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+    }
+
+    .coverage-card p {
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .highlight {
+      background: linear-gradient(135deg, var(--primary), #8f0023);
+      color: var(--white);
+      border-radius: calc(var(--radius) + 6px);
+      padding: 38px;
+      box-shadow: var(--shadow);
+    }
+
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .highlight p {
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .highlight .eyebrow {
+      background: rgba(255, 255, 255, 0.12);
+      color: var(--white);
+      margin-bottom: 14px;
+    }
+
+    .feature-list {
+      list-style: none;
+      display: grid;
+      gap: 11px;
+      margin-top: 20px;
+    }
+
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    .feature-list li::before {
+      content: "✓";
+      font-weight: 900;
+      color: var(--white);
+    }
+
+    .pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 9px 13px;
+      background: rgba(195, 0, 47, 0.08);
+      color: var(--primary);
+      font-weight: 800;
+      font-size: 0.9rem;
+    }
+
+    .highlight .pill {
+      background: rgba(255,255,255,.14);
+      color: var(--white);
+    }
+
+    .checklist {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .check-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 18px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: #455363;
+    }
+
+    .check-item::before {
+      content: "✓";
+      color: var(--primary);
+      font-weight: 900;
+      flex: 0 0 auto;
+    }
+
+    .accordion {
+      display: grid;
+      gap: 12px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .accordion-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+    }
+
+    .accordion-button {
+      width: 100%;
+      border: 0;
+      background: transparent;
+      padding: 20px 22px;
+      text-align: left;
+      font-size: 1.02rem;
+      font-weight: 800;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      cursor: pointer;
+      color: var(--text);
+    }
+
+    .accordion-button span {
+      color: var(--primary);
+      font-size: 1.4rem;
+      line-height: 1;
+      transition: transform 0.2s ease;
+    }
+
+    .accordion-content {
+      display: none;
+      padding: 0 22px 22px;
+      color: var(--muted);
+    }
+
+    .accordion-item.active .accordion-content {
+      display: block;
+    }
+
+    .accordion-item.active .accordion-button span {
+      transform: rotate(45deg);
+    }
+
+    .cta-final {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) + 8px);
+      padding: 42px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-final p {
+      max-width: 720px;
+      margin: 0 auto 24px;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .footer {
+      padding: 34px 0;
+      border-top: 1px solid var(--border);
+      background: var(--white);
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 900px) {
+      .nav-links,
+      .nav-actions {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .mobile-menu {
+        display: none;
+        border-top: 1px solid var(--border);
+        padding: 16px 0 22px;
+      }
+
+      .mobile-menu.active {
+        display: grid;
+        gap: 12px;
+      }
+
+      .mobile-menu a {
+        padding: 10px 0;
+        color: var(--muted);
+      }
+
+      .hero-grid,
+      .highlight-grid,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-3,
+      .coverages,
+      .checklist {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 54px;
+      }
+
+      section {
+        padding: 56px 0;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .container {
+        width: min(100% - 24px, var(--max));
+      }
+
+      .hero-actions,
+      .cta-final .hero-actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .highlight,
+      .cta-final {
+        padding: 28px 20px;
+      }
+
+      h1 {
+        font-size: 2.45rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="topbar">
+    <div class="container">
+      <nav class="nav" aria-label="Navegación principal">
+        <a href="index.html" class="brand" aria-label="Volver al inicio">
+          <div class="brand-mark">ES</div>
+          <div class="brand-text">
+            <strong>Elena Sanz Burgos</strong>
+            <span>Seguros y asesoramiento</span>
+          </div>
+        </a>
+
+        <div class="nav-links">
+          <a href="index.html">Inicio</a>
+          <a href="seguros.html">Seguros</a>
+          <a href="autonomos.html">Autónomos</a>
+          <a href="asesoramiento-financiero.html">Finanzas</a>
+          <a href="clientes.html">Clientes</a>
+        </div>
+
+        <div class="nav-actions">
+          <a class="btn btn-outline" href="tel:+34917702311">Llamar oficina</a>
+          <a class="btn btn-primary" href="https://wa.me/34606067906?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20seguro%20de%20responsabilidad%20civil" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+
+        <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      </nav>
+
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Inicio</a>
+        <a href="seguros.html">Seguros</a>
+        <a href="autonomos.html">Autónomos</a>
+        <a href="asesoramiento-financiero.html">Finanzas</a>
+        <a href="clientes.html">Clientes</a>
+        <a class="btn btn-primary" href="https://wa.me/34606067906?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20seguro%20de%20responsabilidad%20civil" target="_blank" rel="noopener">Hablar por WhatsApp</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">⚖️ Seguro de responsabilidad civil</div>
+
+          <h1>Responsabilidad civil para protegerte frente a daños a terceros</h1>
+
+          <p class="lead">
+            En el día a día pueden ocurrir situaciones en las que, sin querer, causes daños a otra persona, a su vivienda, a sus bienes o a una comunidad. Te ayudamos a revisar qué responsabilidad civil necesitas según tu vida privada, tu vivienda, tu papel como inquilino, propietario o tus actividades personales.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/34606067906?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20seguro%20de%20responsabilidad%20civil" target="_blank" rel="noopener">Hablar por WhatsApp</a>
+            <a class="btn btn-outline" href="tel:+34917702311">Llamar a la oficina</a>
+            <a class="btn btn-outline" href="#coberturas">Ver coberturas</a>
+          </div>
+
+          <p class="trust-line">Respuesta rápida · Sin compromiso · Te explicamos todo de forma sencilla</p>
+        </div>
+
+        <aside class="hero-card" aria-label="Resumen del seguro de responsabilidad civil">
+          <div class="hero-card-icon">🛡️</div>
+          <h2>¿Qué puede proteger?</h2>
+          <ul>
+            <li>Daños personales o materiales causados involuntariamente a terceros.</li>
+            <li>Responsabilidad civil familiar en tu vida privada.</li>
+            <li>Responsabilidad como inquilino, propietario o usuario de vivienda.</li>
+            <li>Responsabilidad relacionada con inmuebles, garajes o comunidades.</li>
+            <li>Defensa penal, reclamación de daños y fianzas judiciales.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <span>Protección ante reclamaciones</span>
+          <h2>¿Qué es la responsabilidad civil?</h2>
+          <p>
+            La responsabilidad civil es la obligación de responder por los daños que puedas causar a otra persona. Puede tratarse de daños personales, materiales o perjuicios derivados de esos daños. Un seguro de responsabilidad civil ayuda a cubrir indemnizaciones, defensa jurídica y otros gastos relacionados con una reclamación cubierta.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="card-icon">👨‍👩‍👧‍👦</div>
+            <h3>Vida privada</h3>
+            <p>Para situaciones cotidianas relacionadas con tu familia, tu vivienda habitual, actividades personales o convivencia diaria.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🏠</div>
+            <h3>Vivienda e inmuebles</h3>
+            <p>Para daños que puedan derivarse de una vivienda, garaje, comunidad, terreno, solar o instalación declarada.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">⚖️</div>
+            <h3>Defensa y reclamación</h3>
+            <p>Para contar con defensa penal, reclamación de daños, costas, gastos judiciales y fianzas según condiciones.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-soft">
+      <div class="container">
+        <div class="section-title center">
+          <span>Para particulares</span>
+          <h2>¿Para quién es recomendable?</h2>
+          <p>
+            Esta página está enfocada a responsabilidad civil de particulares. Para autónomos, negocios, comercios, construcción o responsabilidad civil profesional haremos páginas específicas.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="card-icon">👪</div>
+            <h3>Familias</h3>
+            <p>Para proteger situaciones de la vida privada, convivencia familiar, vivienda habitual y daños involuntarios a terceros.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🔑</div>
+            <h3>Inquilinos</h3>
+            <p>Para quienes viven en una vivienda alquilada y quieren revisar su responsabilidad frente al propietario, vecinos o terceros.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🏘️</div>
+            <h3>Propietarios</h3>
+            <p>Para viviendas individuales, segundas residencias, garajes, comunidades o inmuebles que puedan generar daños a terceros.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🧹</div>
+            <h3>Empleados del hogar</h3>
+            <p>Para situaciones relacionadas con limpieza, cuidado de personas o cuidado de perros dentro del ámbito doméstico.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🚲</div>
+            <h3>Ciclistas y movilidad sin motor</h3>
+            <p>Para quienes usan bicicleta, silla de ruedas, carros u otros vehículos terrestres sin motor en su vida privada.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🎣</div>
+            <h3>Actividades personales</h3>
+            <p>Para actividades como caza, pesca deportiva o pesca submarina, siempre revisando modalidad y condiciones.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-title center">
+          <span>Tipos de responsabilidad civil</span>
+          <h2>Opciones que puedes necesitar según tu situación</h2>
+          <p>
+            La responsabilidad civil no es igual para todo el mundo. Depende de si quieres proteger tu vida privada, una vivienda alquilada, un inmueble, una actividad concreta o una situación familiar.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="card-icon">👨‍👩‍👧‍👦</div>
+            <h3>RC familiar</h3>
+            <p>Protección en el ámbito de la vida familiar y privada por daños involuntarios causados a terceros.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🏠</div>
+            <h3>RC inquilino</h3>
+            <p>Para quienes viven de alquiler y quieren cubrir determinadas responsabilidades derivadas del uso de la vivienda.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🏢</div>
+            <h3>RC de inmuebles</h3>
+            <p>Para viviendas, edificios, garajes, comunidades, terrenos, solares, urbanizaciones o instalaciones declaradas.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🧹</div>
+            <h3>Empleados del hogar</h3>
+            <p>Responsabilidad relacionada con personas que trabajan en el hogar, según funciones declaradas.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🐾</div>
+            <h3>Animales domésticos</h3>
+            <p>Si necesitas RC para perro, gato u otra mascota, puede revisarse también desde la página específica de mascotas.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🚲</div>
+            <h3>Bicicletas y actividades</h3>
+            <p>Para ciclistas, pesca, caza u otras actividades personales que puedan requerir cobertura propia.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="coberturas" class="section-soft">
+      <div class="container">
+        <div class="section-title">
+          <span>Coberturas principales</span>
+          <h2>Qué puede cubrir un seguro de responsabilidad civil</h2>
+          <p>
+            Las coberturas exactas dependen de la modalidad contratada y de las condiciones de la póliza. Estas son algunas garantías habituales que conviene revisar.
+          </p>
+        </div>
+
+        <div class="coverages">
+          <article class="coverage-card">
+            <div class="mini-icon">🤝</div>
+            <div>
+              <h3>Indemnizaciones a terceros</h3>
+              <p>Pago de indemnizaciones por daños personales o materiales causados involuntariamente a terceros, según límites contratados.</p>
+            </div>
+          </article>
+
+          <article class="coverage-card">
+            <div class="mini-icon">⚖️</div>
+            <div>
+              <h3>Defensa jurídica</h3>
+              <p>Gastos de defensa, costas judiciales, honorarios de abogado o procurador cuando proceda.</p>
+            </div>
+          </article>
+
+          <article class="coverage-card">
+            <div class="mini-icon">📄</div>
+            <div>
+              <h3>Fianzas judiciales</h3>
+              <p>Constitución de fianzas exigidas judicialmente para garantizar la responsabilidad civil cubierta.</p>
+            </div>
+          </article>
+
+          <article class="coverage-card">
+            <div class="mini-icon">🏠</div>
+            <div>
+              <h3>Vivienda habitual</h3>
+              <p>Responsabilidad como propietario, inquilino o usuario de la vivienda habitual declarada.</p>
+            </div>
+          </article>
+
+          <article class="coverage-card">
+            <div class="mini-icon">🏡</div>
+            <div>
+              <h3>Segunda residencia</h3>
+              <p>Puede incluirse si está declarada en la póliza y la modalidad lo contempla.</p>
+            </div>
+          </article>
+
+          <article class="coverage-card">
+            <div class="mini-icon">💧</div>
+            <div>
+              <h3>Daños por agua, incendio o explosión</h3>
+              <p>Responsabilidad frente a terceros por determinados daños derivados de agua, incendio o explosión.</p>
+            </div>
+          </article>
+
+          <article class="coverage-card">
+            <div class="mini-icon">🏗️</div>
+            <div>
+              <h3>Pequeñas obras domésticas</h3>
+              <p>Responsabilidad por pequeñas obras de reforma, mantenimiento o decoración realizadas en la vivienda, según límites.</p>
+            </div>
+          </article>
+
+          <article class="coverage-card">
+            <div class="mini-icon">🏢</div>
+            <div>
+              <h3>Elementos comunes</h3>
+              <p>Daños ocasionados a elementos comunes de una comunidad de propietarios, con las limitaciones que correspondan.</p>
+            </div>
+          </article>
+
+          <article class="coverage-card">
+            <div class="mini-icon">🏃</div>
+            <div>
+              <h3>Deporte no profesional</h3>
+              <p>Puede contemplar responsabilidad como deportista no profesional, excluyendo actividades de riesgo o profesionales.</p>
+            </div>
+          </article>
+
+          <article class="coverage-card">
+            <div class="mini-icon">🚲</div>
+            <div>
+              <h3>Bicicletas y vehículos sin motor</h3>
+              <p>Responsabilidad como ciclista o usuario de determinados vehículos terrestres sin motor, según modalidad.</p>
+            </div>
+          </article>
+
+          <article class="coverage-card">
+            <div class="mini-icon">🧹</div>
+            <div>
+              <h3>Empleados del hogar</h3>
+              <p>Cobertura relacionada con empleados del hogar durante el cumplimiento de sus funciones, según modalidad contratada.</p>
+            </div>
+          </article>
+
+          <article class="coverage-card">
+            <div class="mini-icon">🎣</div>
+            <div>
+              <h3>Caza y pesca</h3>
+              <p>Opciones específicas para caza, pesca deportiva o pesca submarina, con coberturas y exclusiones propias.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container highlight">
+        <div class="highlight-grid">
+          <div>
+            <div class="eyebrow">RC familiar</div>
+            <h2>Protección para situaciones de tu vida privada</h2>
+            <p>
+              La responsabilidad civil familiar puede ayudarte si, en tu vida privada, tú o tu familia causáis involuntariamente daños a terceros. Es una cobertura pensada para situaciones cotidianas, no para actividades profesionales, comerciales o empresariales.
+            </p>
+
+            <ul class="feature-list">
+              <li>Daños causados por miembros de la familia incluidos en la póliza.</li>
+              <li>Responsabilidad como usuario de la vivienda habitual.</li>
+              <li>Pequeñas obras domésticas, mantenimiento o decoración.</li>
+              <li>Daños a elementos comunes de la comunidad.</li>
+              <li>Deporte no profesional y actividades privadas, según condiciones.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">👨‍👩‍👧‍👦</div>
+            <h3>Puede interesarte si...</h3>
+            <p>
+              Quieres proteger tu vida privada, tu familia, tu vivienda y situaciones cotidianas en las que puedas causar un daño a otra persona sin intención.
+            </p>
+
+            <div class="pills">
+              <span class="pill">Familia</span>
+              <span class="pill">Vida privada</span>
+              <span class="pill">Vivienda</span>
+              <span class="pill">Terceros</span>
+            </div>
+
+            <br />
+            <a class="btn btn-primary" href="https://wa.me/34606067906?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20responsabilidad%20civil%20familiar" target="_blank" rel="noopener">Preguntar por RC familiar</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-soft">
+      <div class="container">
+        <div class="highlight" style="background: linear-gradient(135deg, #1f2933, #111827);">
+          <div class="highlight-grid">
+            <div>
+              <div class="eyebrow">Inquilinos e inmuebles</div>
+              <h2>Responsabilidad relacionada con viviendas, garajes y comunidades</h2>
+              <p>
+                Si vives de alquiler, tienes una vivienda, un garaje, un terreno o formas parte de una comunidad de propietarios, puede ser importante revisar qué responsabilidad civil tienes cubierta.
+              </p>
+
+              <ul class="feature-list">
+                <li>Responsabilidad como inquilino de una vivienda.</li>
+                <li>Daños derivados de agua, incendio o explosión.</li>
+                <li>Viviendas individuales, edificios y comunidades.</li>
+                <li>Garajes privados o en régimen de comunidad.</li>
+                <li>Terrenos, solares, urbanizaciones e instalaciones declaradas.</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <div class="card-icon">🏢</div>
+              <h3>Conviene revisar...</h3>
+              <p>
+                Si la vivienda es habitual o secundaria, si está alquilada, si hay comunidad, garaje, terreno, instalaciones o elementos que puedan generar daños a terceros.
+              </p>
+
+              <div class="pills">
+                <span class="pill">Inquilino</span>
+                <span class="pill">Propietario</span>
+                <span class="pill">Garaje</span>
+                <span class="pill">Comunidad</span>
+              </div>
+
+              <br />
+              <a class="btn btn-primary" href="https://wa.me/34606067906?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20responsabilidad%20civil%20de%20vivienda%20o%20inmueble" target="_blank" rel="noopener">Consultar RC de inmueble</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <span>Actividades personales</span>
+          <h2>Caza, pesca, bicicleta y movilidad sin motor</h2>
+          <p>
+            Algunas actividades personales pueden requerir una responsabilidad civil específica. No todas quedan cubiertas por una RC familiar general, por lo que conviene revisar el tipo de actividad y la modalidad adecuada.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="card-icon">🦌</div>
+            <h3>Caza</h3>
+            <p>Puede existir responsabilidad civil obligatoria o voluntaria para cazadores, rehalas o jefes de batida, según el caso.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🎣</div>
+            <h3>Pesca deportiva</h3>
+            <p>Opciones para pesca deportiva o pesca submarina, con coberturas y defensa jurídica propias.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🚲</div>
+            <h3>Ciclistas</h3>
+            <p>Responsabilidad civil para ciclistas o bicicletas, con posibilidad de revisar asistencia en viaje, daños o robo según modalidad.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🛴</div>
+            <h3>Movilidad personal</h3>
+            <p>Determinados vehículos de movilidad personal pueden necesitar cobertura específica, según normativa y características.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">♿</div>
+            <h3>Sillas de ruedas</h3>
+            <p>Opciones de responsabilidad civil para usuarios de determinados vehículos terrestres sin motor.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🛒</div>
+            <h3>Carros y otros vehículos</h3>
+            <p>Algunos vehículos sin motor pueden contemplarse dentro de modalidades específicas de responsabilidad civil.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-soft">
+      <div class="container">
+        <div class="highlight">
+          <div class="highlight-grid">
+            <div>
+              <div class="eyebrow">Defensa y reclamación</div>
+              <h2>No solo se trata de pagar una indemnización</h2>
+              <p>
+                Una reclamación puede implicar defensa penal, gastos judiciales, reclamación de daños, intervención de abogados o fianzas. Por eso conviene revisar si la póliza incluye defensa penal y reclamación de daños.
+              </p>
+
+              <ul class="feature-list">
+                <li>Defensa penal por imprudencia, impericia o negligencia.</li>
+                <li>Reclamación de daños sufridos por el asegurado.</li>
+                <li>Gastos de abogado, procurador y peritos, según condiciones.</li>
+                <li>Derechos relativos a la vivienda asegurada.</li>
+                <li>Fianzas judiciales excluyendo multas o sanciones.</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <div class="card-icon">⚖️</div>
+              <h3>Muy importante</h3>
+              <p>
+                La responsabilidad civil no suele cubrir multas, sanciones ni consecuencias de su impago. La defensa jurídica tiene límites, ámbitos y exclusiones que conviene revisar.
+              </p>
+
+              <div class="pills">
+                <span class="pill">Defensa</span>
+                <span class="pill">Reclamación</span>
+                <span class="pill">Abogado</span>
+                <span class="pill">Fianzas</span>
+              </div>
+
+              <br />
+              <a class="btn btn-primary" href="https://wa.me/34606067906?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20defensa%20jur%C3%ADdica%20en%20responsabilidad%20civil" target="_blank" rel="noopener">Preguntar por defensa jurídica</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <span>Mascotas</span>
+          <h2>Responsabilidad civil para perros, gatos y otros animales</h2>
+          <p>
+            La responsabilidad civil por animales domésticos puede requerir una revisión específica. Como ya tenemos una página propia de mascotas, aquí lo tratamos de forma resumida para no duplicar información.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="card-icon">🐶</div>
+            <h3>Perros</h3>
+            <p>Puede revisarse responsabilidad civil para perros, incluyendo razas que necesiten una cobertura más específica.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🐱</div>
+            <h3>Gatos</h3>
+            <p>También puede contemplarse responsabilidad civil por gatos identificados en la póliza.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🐾</div>
+            <h3>Página específica</h3>
+            <p>Si buscas seguro completo de mascotas, con veterinario, robo, extravío o asistencia, revisa la página de mascotas.</p>
+            <br />
+            <a class="btn btn-outline" href="seguro-mascotas.html">Ver seguro de mascotas</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-soft">
+      <div class="container">
+        <div class="grid-2">
+          <div class="section-title">
+            <span>Antes de contratar</span>
+            <h2>Qué conviene revisar</h2>
+            <p>
+              Antes de contratar una responsabilidad civil, conviene saber exactamente qué situación quieres proteger y qué queda fuera de la póliza.
+            </p>
+          </div>
+
+          <div class="checklist">
+            <div class="check-item">Si necesitas RC familiar, inquilino, inmueble o actividad concreta.</div>
+            <div class="check-item">Capital asegurado y sublímites por víctima o siniestro.</div>
+            <div class="check-item">Franquicia aplicable en caso de reclamación.</div>
+            <div class="check-item">Quién tiene la consideración de asegurado.</div>
+            <div class="check-item">Qué personas se consideran terceros.</div>
+            <div class="check-item">Si hay segunda residencia, vivienda alquilada o inmueble declarado.</div>
+            <div class="check-item">Si practicas caza, pesca, ciclismo u otra actividad específica.</div>
+            <div class="check-item">Exclusiones, ámbito geográfico y defensa jurídica.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-title center">
+          <span>Errores frecuentes</span>
+          <h2>Errores habituales al contratar responsabilidad civil</h2>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <h3>Pensar que todo está cubierto</h3>
+            <p>La RC tiene límites y exclusiones. No cubre cualquier daño ni cualquier actividad.</p>
+          </article>
+
+          <article class="card">
+            <h3>No declarar bien la vivienda</h3>
+            <p>Segunda residencia, vivienda alquilada, garaje o inmuebles deben revisarse correctamente.</p>
+          </article>
+
+          <article class="card">
+            <h3>Confundir RC familiar con profesional</h3>
+            <p>La RC familiar no cubre actividades profesionales, comerciales, empresariales o de autónomos.</p>
+          </article>
+
+          <article class="card">
+            <h3>No revisar mascotas</h3>
+            <p>Perros, gatos u otros animales pueden necesitar una cobertura específica.</p>
+          </article>
+
+          <article class="card">
+            <h3>No revisar actividades</h3>
+            <p>Caza, pesca, bicicletas o vehículos sin motor pueden requerir modalidades concretas.</p>
+          </article>
+
+          <article class="card">
+            <h3>Ignorar defensa jurídica</h3>
+            <p>Una reclamación no solo implica indemnización: también puede haber abogados, costas y fianzas.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-soft">
+      <div class="container">
+        <div class="section-title center">
+          <span>Preguntas frecuentes</span>
+          <h2>Dudas habituales sobre responsabilidad civil</h2>
+        </div>
+
+        <div class="accordion">
+          <article class="accordion-item active">
+            <button class="accordion-button" type="button">
+              ¿Qué cubre un seguro de responsabilidad civil?
+              <span>+</span>
+            </button>
+            <div class="accordion-content">
+              <p>Puede cubrir indemnizaciones por daños personales o materiales causados involuntariamente a terceros, además de defensa jurídica, costas y fianzas según modalidad y límites contratados.</p>
+            </div>
+          </article>
+
+          <article class="accordion-item">
+            <button class="accordion-button" type="button">
+              ¿Es lo mismo responsabilidad civil familiar que responsabilidad civil profesional?
+              <span>+</span>
+            </button>
+            <div class="accordion-content">
+              <p>No. La responsabilidad civil familiar está pensada para la vida privada. La profesional o empresarial cubre riesgos derivados de una actividad laboral, negocio o profesión y debe tratarse aparte.</p>
+            </div>
+          </article>
+
+          <article class="accordion-item">
+            <button class="accordion-button" type="button">
+              ¿Cubre daños causados por mi vivienda?
+              <span>+</span>
+            </button>
+            <div class="accordion-content">
+              <p>Puede cubrir determinados daños derivados de la vivienda habitual, segunda residencia declarada, inmuebles, comunidades, garajes o instalaciones, según modalidad contratada.</p>
+            </div>
+          </article>
+
+          <article class="accordion-item">
+            <button class="accordion-button" type="button">
+              ¿Sirve si vivo de alquiler?
+              <span>+</span>
+            </button>
+            <div class="accordion-content">
+              <p>Sí, puede existir responsabilidad civil como inquilino para determinados daños relacionados con el uso de la vivienda alquilada.</p>
+            </div>
+          </article>
+
+          <article class="accordion-item">
+            <button class="accordion-button" type="button">
+              ¿Cubre mascotas?
+              <span>+</span>
+            </button>
+            <div class="accordion-content">
+              <p>Puede cubrir responsabilidad civil por perros, gatos u otros animales si están correctamente incluidos. Para una protección más completa, conviene revisar la página específica de mascotas.</p>
+            </div>
+          </article>
+
+          <article class="accordion-item">
+            <button class="accordion-button" type="button">
+              ¿Cubre deporte?
+              <span>+</span>
+            </button>
+            <div class="accordion-content">
+              <p>Puede contemplar deporte no profesional, pero no todos los deportes se cubren igual. Actividades profesionales, de riesgo o con vehículos a motor pueden quedar fuera.</p>
+            </div>
+          </article>
+
+          <article class="accordion-item">
+            <button class="accordion-button" type="button">
+              ¿Cubre caza o pesca?
+              <span>+</span>
+            </button>
+            <div class="accordion-content">
+              <p>Existen modalidades específicas para caza, pesca deportiva o pesca submarina. Conviene revisarlas por separado porque pueden tener requisitos y coberturas propias.</p>
+            </div>
+          </article>
+
+          <article class="accordion-item">
+            <button class="accordion-button" type="button">
+              ¿Cubre multas o sanciones?
+              <span>+</span>
+            </button>
+            <div class="accordion-content">
+              <p>Normalmente no. La responsabilidad civil puede cubrir indemnizaciones, defensa y fianzas, pero no el pago de multas o sanciones ni las consecuencias de su impago.</p>
+            </div>
+          </article>
+
+          <article class="accordion-item">
+            <button class="accordion-button" type="button">
+              ¿Puedo revisar si ya tengo responsabilidad civil en mi seguro de hogar?
+              <span>+</span>
+            </button>
+            <div class="accordion-content">
+              <p>Sí. Muchas pólizas de hogar incluyen alguna responsabilidad civil, pero conviene revisar límites, personas cubiertas, exclusiones, mascotas, segunda residencia y actividades.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta-final">
+          <h2>¿Quieres saber qué responsabilidad civil necesitas?</h2>
+          <p>
+            Podemos ayudarte a revisar si necesitas responsabilidad civil familiar, de inquilino, de inmueble, de mascotas o para una actividad personal concreta.
+          </p>
+
+          <div class="hero-actions" style="justify-content:center;">
+            <a class="btn btn-primary" href="https://wa.me/34606067906?text=Hola%2C%20quiero%20que%20me%20ayud%C3%A9is%20con%20un%20seguro%20de%20responsabilidad%20civil" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+            <a class="btn btn-outline" href="tel:+34917702311">Llamar oficina</a>
+            <a class="btn btn-outline" href="mailto:esanz@occident.com?subject=Consulta%20seguro%20de%20responsabilidad%20civil">Enviar email</a>
+            <a class="btn btn-outline" href="seguros.html">Volver a seguros</a>
+          </div>
+
+          <p class="trust-line">Sin compromiso · Sin tecnicismos · Sin presión</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© Elena Sanz Burgos · Seguros y asesoramiento</p>
+      <div class="footer-links">
+        <a href="index.html">Inicio</a>
+        <a href="seguros.html">Seguros</a>
+        <a href="clientes.html">Clientes</a>
+        <a href="https://wa.me/34606067906" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.querySelector(".menu-toggle");
+    const mobileMenu = document.querySelector("#mobileMenu");
+
+    if (menuButton && mobileMenu) {
+      menuButton.addEventListener("click", () => {
+        const isOpen = mobileMenu.classList.toggle("active");
+        menuButton.setAttribute("aria-expanded", String(isOpen));
+      });
+    }
+
+    const accordionItems = document.querySelectorAll(".accordion-item");
+
+    accordionItems.forEach((item) => {
+      const button = item.querySelector(".accordion-button");
+
+      button.addEventListener("click", () => {
+        item.classList.toggle("active");
+      });
+    });
+  </script>
+
+</body>
+</html>
