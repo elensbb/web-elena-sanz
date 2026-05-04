@@ -540,36 +540,85 @@
       font-size: 0.98rem;
     }
 
-    .checklist {
+    .review-block {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-      margin-top: 8px;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 34px;
+      align-items: start;
     }
 
-    .check-item {
+    .review-panel {
       background: var(--white);
       border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: 18px;
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      color: #455363;
-      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+      border-radius: calc(var(--radius) + 4px);
+      padding: 30px;
+      box-shadow: 0 14px 34px rgba(31, 41, 51, 0.06);
     }
 
-    .check-item:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 14px 28px rgba(31, 41, 51, 0.07);
-      border-color: rgba(195, 0, 47, 0.22);
+    .review-intro {
+      color: var(--muted);
+      font-size: 1.04rem;
+      margin-top: 10px;
     }
 
-    .check-item::before {
-      content: "✓";
+    .review-list {
+      list-style: none;
+      display: grid;
+      gap: 0;
+    }
+
+    .review-item {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 16px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .review-item:first-child {
+      padding-top: 0;
+    }
+
+    .review-item:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .review-number {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(195, 0, 47, 0.08);
       color: var(--primary);
+      display: grid;
+      place-items: center;
       font-weight: 900;
-      flex: 0 0 auto;
+      font-size: 0.9rem;
+    }
+
+    .review-item strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 4px;
+      font-size: 1.02rem;
+    }
+
+    .review-item p {
+      color: var(--muted);
+      font-size: 0.97rem;
+    }
+
+    .review-note {
+      margin-top: 24px;
+      padding: 18px 20px;
+      border-radius: var(--radius-sm);
+      background: rgba(195, 0, 47, 0.06);
+      color: #455363;
+      font-size: 0.98rem;
+    }
+
+    .review-note strong {
+      color: var(--primary);
     }
 
     .faq-carousel-wrap {
@@ -730,7 +779,7 @@
       .grid-3,
       .levels,
       .coverages,
-      .checklist {
+      .review-block {
         grid-template-columns: 1fr;
       }
 
@@ -780,6 +829,15 @@
       .highlight,
       .cta-final {
         padding: 28px 20px;
+      }
+
+      .review-panel {
+        padding: 24px 20px;
+      }
+
+      .review-item {
+        grid-template-columns: 38px 1fr;
+        gap: 12px;
       }
 
       h1 {
@@ -1141,22 +1199,73 @@
 
     <section>
       <div class="container">
-        <div class="grid-2">
+        <div class="review-block">
           <div class="section-title">
             <span>Antes de contratar</span>
             <h2>Qué conviene revisar</h2>
             <p>
               Dos seguros pueden parecer iguales, pero cambiar mucho en límites, exclusiones y servicios. Por eso es importante revisar los detalles antes de decidir.
             </p>
+
+            <p class="review-intro">
+              La idea no es contratar más coberturas sin sentido, sino comprobar que la póliza protege bien tu vivienda, tus bienes y tu situación real.
+            </p>
           </div>
 
-          <div class="checklist">
-            <div class="check-item">Valor del continente y del contenido.</div>
-            <div class="check-item">Uso de la vivienda: habitual, secundaria, alquilada o turística.</div>
-            <div class="check-item">Responsabilidad civil incluida.</div>
-            <div class="check-item">Límites por siniestro y franquicias.</div>
-            <div class="check-item">Servicios incluidos en la modalidad.</div>
-            <div class="check-item">Si interesa añadir alarma o revisar seguridad.</div>
+          <div class="review-panel">
+            <ol class="review-list">
+              <li class="review-item">
+                <span class="review-number">01</span>
+                <div>
+                  <strong>Valor del continente y del contenido</strong>
+                  <p>Revisamos si las cantidades aseguradas encajan con la vivienda y con lo que realmente tienes dentro.</p>
+                </div>
+              </li>
+
+              <li class="review-item">
+                <span class="review-number">02</span>
+                <div>
+                  <strong>Uso real de la vivienda</strong>
+                  <p>No necesita lo mismo una vivienda habitual, una segunda residencia, una casa alquilada o una vivienda que pasa tiempo vacía.</p>
+                </div>
+              </li>
+
+              <li class="review-item">
+                <span class="review-number">03</span>
+                <div>
+                  <strong>Responsabilidad civil incluida</strong>
+                  <p>Es importante saber qué protección tienes si causas daños a vecinos, terceros o personas relacionadas con la vivienda.</p>
+                </div>
+              </li>
+
+              <li class="review-item">
+                <span class="review-number">04</span>
+                <div>
+                  <strong>Límites, franquicias y exclusiones</strong>
+                  <p>Miramos no solo qué cubre la póliza, sino hasta cuánto cubre y en qué casos podría no responder.</p>
+                </div>
+              </li>
+
+              <li class="review-item">
+                <span class="review-number">05</span>
+                <div>
+                  <strong>Servicios incluidos</strong>
+                  <p>Asistencia, reparaciones, brico hogar, electrodomésticos o ayuda informática pueden marcar la diferencia en el día a día.</p>
+                </div>
+              </li>
+
+              <li class="review-item">
+                <span class="review-number">06</span>
+                <div>
+                  <strong>Seguridad y alarma</strong>
+                  <p>En algunos casos puede tener sentido reforzar la protección con alarma conectada o revisar medidas de seguridad.</p>
+                </div>
+              </li>
+            </ol>
+
+            <div class="review-note">
+              <strong>Consejo:</strong> antes de cambiar o contratar un seguro de hogar, conviene revisar la póliza completa y no quedarse solo con el precio.
+            </div>
           </div>
         </div>
       </div>
@@ -1282,7 +1391,7 @@
     }
 
     const revealElements = document.querySelectorAll(
-      ".section-title, .card, .coverage-card, .highlight, .level-card, .check-item, .faq-card, .cta-final"
+      ".section-title, .card, .coverage-card, .highlight, .level-card, .review-panel, .faq-card, .cta-final"
     );
 
     if ("IntersectionObserver" in window) {
