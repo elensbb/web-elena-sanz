@@ -50,6 +50,69 @@
       margin: 0 auto;
     }
 
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes softFloat {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-6px);
+      }
+    }
+
+    .hero .eyebrow,
+    .hero h1,
+    .hero .lead,
+    .hero-actions,
+    .trust-line {
+      animation: fadeUp 0.7s ease both;
+    }
+
+    .hero h1 {
+      animation-delay: 0.08s;
+    }
+
+    .hero .lead {
+      animation-delay: 0.16s;
+    }
+
+    .hero-actions {
+      animation-delay: 0.24s;
+    }
+
+    .trust-line {
+      animation-delay: 0.32s;
+    }
+
+    .hero-card {
+      animation: fadeUp 0.8s ease 0.18s both;
+    }
+
+    .hero-card-icon {
+      animation: softFloat 4.5s ease-in-out infinite;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+
+    .reveal.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     .topbar {
       background: var(--white);
       border-bottom: 1px solid var(--border);
@@ -339,6 +402,13 @@
       padding: 24px;
       box-shadow: 0 10px 24px rgba(31, 41, 51, 0.04);
       height: 100%;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 36px rgba(31, 41, 51, 0.09);
+      border-color: rgba(195, 0, 47, 0.22);
     }
 
     .card-icon {
@@ -370,6 +440,13 @@
       display: flex;
       gap: 16px;
       align-items: flex-start;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    }
+
+    .coverage-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 32px rgba(31, 41, 51, 0.08);
+      border-color: rgba(195, 0, 47, 0.22);
     }
 
     .coverage-card .mini-icon {
@@ -443,6 +520,13 @@
       border: 1px solid var(--border);
       border-radius: var(--radius-sm);
       padding: 22px;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    }
+
+    .level-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 32px rgba(31, 41, 51, 0.08);
+      border-color: rgba(195, 0, 47, 0.22);
     }
 
     .level-card strong {
@@ -472,6 +556,13 @@
       gap: 12px;
       align-items: flex-start;
       color: #455363;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    }
+
+    .check-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 28px rgba(31, 41, 51, 0.07);
+      border-color: rgba(195, 0, 47, 0.22);
     }
 
     .check-item::before {
@@ -481,55 +572,90 @@
       flex: 0 0 auto;
     }
 
-    .accordion {
-      display: grid;
-      gap: 12px;
-      max-width: 900px;
+    .faq-carousel-wrap {
+      position: relative;
+      max-width: 1040px;
       margin: 0 auto;
     }
 
-    .accordion-item {
+    .faq-carousel {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(290px, 360px);
+      gap: 18px;
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      scroll-snap-type: x mandatory;
+      scroll-padding: 4px;
+      padding: 6px 4px 18px;
+      scrollbar-width: thin;
+    }
+
+    .faq-card {
+      min-height: 265px;
       background: var(--white);
       border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      overflow: hidden;
-    }
-
-    .accordion-button {
-      width: 100%;
-      border: 0;
-      background: transparent;
-      padding: 20px 22px;
-      text-align: left;
-      font-size: 1.02rem;
-      font-weight: 800;
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 10px 24px rgba(31, 41, 51, 0.04);
+      scroll-snap-align: start;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 18px;
-      cursor: pointer;
-      color: var(--text);
+      flex-direction: column;
+      gap: 14px;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
     }
 
-    .accordion-button span {
+    .faq-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 42px rgba(31, 41, 51, 0.1);
+      border-color: rgba(195, 0, 47, 0.22);
+    }
+
+    .faq-number {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(195, 0, 47, 0.08);
       color: var(--primary);
-      font-size: 1.4rem;
-      line-height: 1;
-      transition: transform 0.2s ease;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      flex: 0 0 auto;
     }
 
-    .accordion-content {
-      display: none;
-      padding: 0 22px 22px;
+    .faq-card h3 {
+      margin-bottom: 0;
+    }
+
+    .faq-card p {
       color: var(--muted);
+      font-size: 0.98rem;
     }
 
-    .accordion-item.active .accordion-content {
-      display: block;
+    .faq-controls {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 12px;
     }
 
-    .accordion-item.active .accordion-button span {
-      transform: rotate(45deg);
+    .faq-arrow {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid rgba(195, 0, 47, 0.28);
+      background: var(--white);
+      color: var(--primary);
+      font-size: 1.2rem;
+      font-weight: 900;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .faq-arrow:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(31, 41, 51, 0.12);
+      background: rgba(195, 0, 47, 0.06);
     }
 
     .cta-final {
@@ -608,12 +734,32 @@
         grid-template-columns: 1fr;
       }
 
+      .faq-carousel {
+        grid-auto-columns: minmax(260px, 86vw);
+      }
+
       .hero {
         padding-top: 54px;
       }
 
       section {
         padding: 56px 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
       }
     }
 
@@ -1023,66 +1169,49 @@
           <h2>Dudas habituales sobre el seguro de hogar</h2>
         </div>
 
-        <div class="accordion">
-          <article class="accordion-item active">
-            <button class="accordion-button" type="button">
-              ¿Es obligatorio tener seguro de hogar?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+        <div class="faq-carousel-wrap">
+          <div class="faq-carousel" id="faqCarousel" aria-label="Carrusel de preguntas frecuentes">
+            <article class="faq-card">
+              <div class="faq-number">01</div>
+              <h3>¿Es obligatorio tener seguro de hogar?</h3>
               <p>No siempre es obligatorio, aunque puede ser muy recomendable. Si tienes hipoteca, la entidad puede exigir determinadas coberturas relacionadas con el inmueble.</p>
-            </div>
-          </article>
+            </article>
 
-          <article class="accordion-item">
-            <button class="accordion-button" type="button">
-              ¿Qué diferencia hay entre continente y contenido?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+            <article class="faq-card">
+              <div class="faq-number">02</div>
+              <h3>¿Qué diferencia hay entre continente y contenido?</h3>
               <p>El continente es la vivienda como construcción: paredes, techos, instalaciones o elementos fijos. El contenido son los bienes que tienes dentro: muebles, ropa, electrodomésticos, tecnología u objetos personales.</p>
-            </div>
-          </article>
+            </article>
 
-          <article class="accordion-item">
-            <button class="accordion-button" type="button">
-              ¿El seguro cubre daños por agua?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+            <article class="faq-card">
+              <div class="faq-number">03</div>
+              <h3>¿El seguro cubre daños por agua?</h3>
               <p>Puede cubrirlos, pero depende de la modalidad. Conviene revisar si incluye fugas, escapes, goteras, localización, reparación, exceso de consumo o desatasco.</p>
-            </div>
-          </article>
+            </article>
 
-          <article class="accordion-item">
-            <button class="accordion-button" type="button">
-              ¿Puedo asegurar una vivienda alquilada?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+            <article class="faq-card">
+              <div class="faq-number">04</div>
+              <h3>¿Puedo asegurar una vivienda alquilada?</h3>
               <p>Sí. Puede asegurarse desde el punto de vista del propietario o del inquilino, pero las coberturas necesarias no son las mismas.</p>
-            </div>
-          </article>
+            </article>
 
-          <article class="accordion-item">
-            <button class="accordion-button" type="button">
-              ¿Puedo añadir alarma al seguro de hogar?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+            <article class="faq-card">
+              <div class="faq-number">05</div>
+              <h3>¿Puedo añadir alarma al seguro de hogar?</h3>
               <p>Sí. Existe la posibilidad de combinar seguro de hogar y alarma conectada mediante una propuesta de hogar con alarma, siempre según condiciones de contratación.</p>
-            </div>
-          </article>
+            </article>
 
-          <article class="accordion-item">
-            <button class="accordion-button" type="button">
-              ¿Puedo revisar mi póliza actual?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+            <article class="faq-card">
+              <div class="faq-number">06</div>
+              <h3>¿Puedo revisar mi póliza actual?</h3>
               <p>Sí. De hecho, es recomendable revisar si las coberturas, capitales y servicios siguen encajando con tu vivienda actual.</p>
-            </div>
-          </article>
+            </article>
+          </div>
+
+          <div class="faq-controls" aria-label="Controles del carrusel de preguntas frecuentes">
+            <button class="faq-arrow" type="button" data-faq-prev aria-label="Pregunta anterior">‹</button>
+            <button class="faq-arrow" type="button" data-faq-next aria-label="Pregunta siguiente">›</button>
+          </div>
         </div>
       </div>
     </section>
@@ -1132,15 +1261,48 @@
       });
     }
 
-    const accordionItems = document.querySelectorAll(".accordion-item");
+    const faqCarousel = document.querySelector("#faqCarousel");
+    const faqPrev = document.querySelector("[data-faq-prev]");
+    const faqNext = document.querySelector("[data-faq-next]");
 
-    accordionItems.forEach((item) => {
-      const button = item.querySelector(".accordion-button");
+    if (faqCarousel && faqPrev && faqNext) {
+      const moveFaqCarousel = (direction) => {
+        const card = faqCarousel.querySelector(".faq-card");
+        const gap = 18;
+        const distance = card ? card.offsetWidth + gap : 340;
 
-      button.addEventListener("click", () => {
-        item.classList.toggle("active");
+        faqCarousel.scrollBy({
+          left: direction * distance,
+          behavior: "smooth"
+        });
+      };
+
+      faqPrev.addEventListener("click", () => moveFaqCarousel(-1));
+      faqNext.addEventListener("click", () => moveFaqCarousel(1));
+    }
+
+    const revealElements = document.querySelectorAll(
+      ".section-title, .card, .coverage-card, .highlight, .level-card, .check-item, .faq-card, .cta-final"
+    );
+
+    if ("IntersectionObserver" in window) {
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      revealElements.forEach((element, index) => {
+        element.classList.add("reveal");
+        element.style.transitionDelay = `${Math.min(index % 6, 5) * 70}ms`;
+        revealObserver.observe(element);
       });
-    });
+    } else {
+      revealElements.forEach((element) => element.classList.add("in-view"));
+    }
   </script>
 
 </body>
