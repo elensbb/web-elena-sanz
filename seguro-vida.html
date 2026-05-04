@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Seguro de vida | Elena Sanz Burgos</title>
+  <meta name="description" content="Seguro de vida para proteger a tu familia, tu hipoteca, tus ingresos y tu tranquilidad. Información clara sobre fallecimiento, invalidez, enfermedades graves y vida amortización." />
+
+  <style>
+    :root {
+      --bg: #fbf7f1;
+      --bg-soft: #fffaf4;
+      --white: #ffffff;
+      --text: #1f2933;
+      --muted: #64748b;
+      --primary: #c3002f;
+      --primary-dark: #9f0027;
+      --border: rgba(31, 41, 51, 0.12);
+      --shadow: 0 18px 45px rgba(31, 41, 51, 0.08);
+      --radius: 24px;
+      --radius-sm: 16px;
+      --max: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(100% - 32px, var(--max));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: var(--white);
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-text strong {
+      display: block;
+      font-size: 1rem;
+      line-height: 1.1;
+    }
+
+    .brand-text span {
+      display: block;
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 0;
+      background: transparent;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: var(--text);
+    }
+
+    .mobile-menu {
+      display: none;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border-radius: 999px;
+      padding: 13px 20px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border: 1px solid transparent;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(31, 41, 51, 0.12);
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--primary);
+      border-color: rgba(195, 0, 47, 0.35);
+    }
+
+    .hero {
+      padding: 84px 0 56px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 560px;
+      height: 560px;
+      border-radius: 50%;
+      background: rgba(195, 0, 47, 0.08);
+      right: -220px;
+      top: -220px;
+      z-index: -1;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: rgba(195, 0, 47, 0.08);
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(2.45rem, 5vw, 4.7rem);
+      line-height: 0.98;
+      letter-spacing: -0.06em;
+      max-width: 850px;
+      margin-bottom: 22px;
+    }
+
+    .lead {
+      font-size: clamp(1.08rem, 2vw, 1.25rem);
+      color: #455363;
+      max-width: 690px;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .trust-line {
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .hero-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 26px;
+    }
+
+    .hero-card-icon {
+      width: 74px;
+      height: 74px;
+      border-radius: 22px;
+      background: rgba(195, 0, 47, 0.08);
+      display: grid;
+      place-items: center;
+      font-size: 2rem;
+      margin-bottom: 18px;
+    }
+
+    .hero-card h2 {
+      font-size: 1.45rem;
+      margin-bottom: 12px;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-card ul {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      color: #455363;
+    }
+
+    .hero-card li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .hero-card li::before {
+      content: "✓";
+      color: var(--primary);
+      font-weight: 900;
+      flex: 0 0 auto;
+    }
+
+    section {
+      padding: 72px 0;
+    }
+
+    .section-soft {
+      background: var(--bg-soft);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-title {
+      max-width: 780px;
+      margin-bottom: 34px;
+    }
+
+    .section-title.center {
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    .section-title span {
+      color: var(--primary);
+      font-weight: 800;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 3vw, 3rem);
+      line-height: 1.08;
+      letter-spacing: -0.045em;
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+
+    .section-title p,
+    .text-muted {
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 24px;
+      box-shadow: 0 10px 24px rgba(31, 41, 51, 0.04);
+      height: 100%;
+    }
+
+    .card-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 16px;
+      background: rgba(195, 0, 47, 0.08);
+      display: grid;
+      place-items: center;
+      font-size: 1.45rem;
+      margin-bottom: 18px;
+    }
+
+    .card p {
+      color: var(--muted);
+    }
+
+    .coverages {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .coverage-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 22px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .coverage-card .mini-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: rgba(195, 0, 47, 0.08);
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+    }
+
+    .coverage-card p {
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .highlight {
+      background: linear-gradient(135deg, var(--primary), #8f0023);
+      color: var(--white);
+      border-radius: calc(var(--radius) + 6px);
+      padding: 38px;
+      box-shadow: var(--shadow);
+    }
+
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .highlight p {
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .highlight .eyebrow {
+      background: rgba(255, 255, 255, 0.12);
+      color: var(--white);
+      margin-bottom: 14px;
+    }
+
+    .feature-list {
+      list-style: none;
+      display: grid;
+      gap: 11px;
+      margin-top: 20px;
+    }
+
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    .feature-list li::before {
+      content: "✓";
+      font-weight: 900;
+      color: var(--white);
+    }
+
+    .pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 9px 13px;
+      background: rgba(195, 0, 47, 0.08);
+      color: var(--primary);
+      font-weight: 800;
+      font-size: 0.9rem;
+    }
+
+    .highlight .pill {
+      background: rgba(255,255,255,.14);
+      color: var(--white);
+    }
+
+    .checklist {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .check-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 18px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: #455363;
+    }
+
+    .check-item::before {
+      content: "✓";
+      color: var(--primary);
+      font-weight: 900;
+      flex: 0 0 auto;
+    }
+
+    .accordion {
+      display: grid;
+      gap: 12px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .accordion-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+    }
+
+    .accordion-button {
+      width: 100%;
+      border: 0;
+      background: transparent;
+      padding: 20px 22px;
+      text-align: left;
+      font-size: 1.02rem;
+      font-weight: 800;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      cursor: pointer;
+      color: var(--text);
+    }
+
+    .accordion-button span {
+      color: var(--primary);
+      font-size: 1.4rem;
+      line-height: 1;
+      transition: transform 0.2s ease;
+    }
+
+    .accordion-content {
+      display: none;
+      padding: 0 22px 22px;
+      color: var(--muted);
+    }
+
+    .accordion-item.active .accordion-content {
+      display: block;
+    }
+
+    .accordion-item.active .accordion-button span {
+      transform: rotate(45deg);
+    }
+
+    .cta-final {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) + 8px);
+      padding: 42px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-final p {
+      max-width: 720px;
+      margin: 0 auto 24px;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .footer {
+      padding: 34px 0;
+      border-top: 1px solid var(--border);
+      background: var(--white);
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 980px) {
+      .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .nav-links,
+      .nav-actions {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .mobile-menu {
+        display: none;
+        border-top: 1px solid var(--border);
+        padding: 16px 0 22px;
+      }
+
+      .mobile-menu.active {
+        display: grid;
+        gap: 12px;
+      }
+
+      .mobile-menu a {
+        padding: 10px 0;
+        color: var(--muted);
+      }
+
+      .hero-grid,
+      .highlight-grid,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-3,
+      .grid-4,
+      .coverages,
+      .checklist {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 54px;
+      }
+
+      section {
+        padding: 56px 0;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .container {
+        width: min(100% - 24px, var(--max));
+      }
+
+      .hero-actions,
+      .cta-final .hero-actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .highlight,
+      .cta-final {
+        padding: 28px 20px;
+      }
+
+      h1 {
+        font-size: 2.45rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="topbar">
+    <div class="container">
+      <nav class="nav" aria-label="Navegación principal">
+        <a href="index.html" class="brand" aria-label="Volver al inicio">
+          <div class="brand-mark">ES</div>
+          <div class="brand-text">
+            <strong>Elena Sanz Burgos</strong>
+            <span>Seguros y asesoramiento</span>
+          </div>
+        </a>
+
+        <div class="nav-links">
+          <a href="index.html">Inicio</a>
+          <a href="seguros.html">Seguros</a>
+          <a href="autonomos.html">Autónomos</a>
+          <a href="asesoramiento-financiero.html">Finanzas</a>
+          <a href="clientes.html">Clientes</a>
+        </div>
+
+        <div class="nav-actions">
+          <a class="btn btn-outline" href="tel:+34917702311">Llamar oficina</a>
+          <a class="btn btn-primary" href="https://wa.me/34606067906?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20seguro%20de%20vida" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+
+        <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      </nav>
+
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Inicio</a>
+        <a href="seguros.html">Seguros</a>
+        <a href="autonomos.html">Autónomos</a>
+        <a href="asesoramiento-financiero.html">Finanzas</a>
+        <a href="clientes.html">Clientes</a>
+        <a class="btn btn-primary" href="https://wa.me/34606067906?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20seguro%20de%20vida" target="_blank" rel="noopener">Hablar por WhatsApp</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">❤️ Seguro de vida</div>
+
+          <h1>Seguro de vida para proteger a quienes más quieres</h1>
+
+          <p class="lead">
+            Un seguro de vida ayuda a dejar una protección económica a tu familia, pareja o personas que dependen de ti si ocurre algo grave. También puede servir para proteger una hipoteca, una deuda importante o tus ingresos ante una invalidez.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/34606067906?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20seguro%20de%20vida" target="_blank" rel="noopener">Hablar por WhatsApp</a>
+            <a class="btn btn-outline" href="tel:+34917702311">Llamar a la oficina</a>
+            <a class="btn btn-outline" href="#coberturas">Ver coberturas</a>
+          </div>
+
+          <p class="trust-line">Respuesta rápida · Sin compromiso · Te explicamos todo de forma sencilla</p>
+        </div>
+
+        <aside class="hero-card" aria-label="Resumen del seguro de vida">
+          <div class="hero-card-icon">🛡️</div>
+          <h2>¿Qué puede proteger?</h2>
+          <ul>
+            <li>La estabilidad económica de tu familia.</li>
+            <li>Una hipoteca, préstamo o deuda pendiente.</li>
+            <li>La pérdida de ingresos por invalidez absoluta.</li>
+            <li>Situaciones graves como accidente o enfermedad grave.</li>
+            <li>La planificación personal y familiar.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <span>Protección personal y familiar</span>
+          <h2>Un seguro de vida no es solo para casos extremos</h2>
+          <p>
+            Muchas personas piensan en el seguro de vida solo cuando contratan una hipoteca, pero puede ser útil en muchas más situaciones: si tienes hijos, pareja, gastos compartidos, personas a tu cargo, préstamos o una actividad profesional de la que dependen tus ingresos.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="card-icon">👨‍👩‍👧‍👦</div>
+            <h3>Protección familiar</h3>
+            <p>Para que tus seres queridos tengan un respaldo económico si tú faltas.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">💼</div>
+            <h3>Protección de ingresos</h3>
+            <p>Para reforzar tu estabilidad si una invalidez absoluta te impide seguir trabajando.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🏠</div>
+            <h3>Protección de deudas</h3>
+            <p>Para ayudar a cubrir una hipoteca, préstamo u obligación pendiente.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-soft">
+      <div class="container">
+        <div class="section-title center">
+          <span>Cuándo puede interesarte</span>
+          <h2>¿Para quién es recomendable?</h2>
+          <p>
+            Cada persona tiene una situación diferente. Por eso conviene revisar tu edad, cargas familiares, ingresos, deudas y objetivos antes de elegir un capital asegurado.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="card-icon">👶</div>
+            <h3>Personas con hijos</h3>
+            <p>Para dejar una ayuda económica que pueda cubrir estudios, gastos familiares o necesidades futuras.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">💑</div>
+            <h3>Parejas con gastos compartidos</h3>
+            <p>Para que la otra persona no tenga que asumir sola hipoteca, alquiler, préstamos o gastos comunes.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🏡</div>
+            <h3>Personas con hipoteca</h3>
+            <p>Para proteger una deuda importante y evitar que se convierta en una carga para la familia.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🧾</div>
+            <h3>Autónomos y profesionales</h3>
+            <p>Para quienes dependen directamente de sus ingresos y quieren reforzar su protección personal.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">📉</div>
+            <h3>Familias con un ingreso principal</h3>
+            <p>Para reducir el impacto económico si falta la persona que aporta la mayor parte de los ingresos.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">📋</div>
+            <h3>Personas que quieren dejarlo organizado</h3>
+            <p>Para planificar beneficiarios, capitales y protección familiar con más tranquilidad.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-title center">
+          <span>Modalidades</span>
+          <h2>Tipos de seguro de vida que puedes valorar</h2>
+          <p>
+            No existe una única forma de contratar un seguro de vida. La modalidad adecuada depende de si quieres proteger a tu familia, una deuda concreta o un periodo determinado.
+          </p>
+        </div>
+
+        <div class="grid-4">
+          <article class="card">
+            <div class="card-icon">🕒</div>
+            <h3>Vida temporal</h3>
+            <p>Protección durante un periodo determinado o renovable, con posibilidad de incluir garantías complementarias.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">📆</div>
+            <h3>Vida a plazo</h3>
+            <p>Seguro pensado para una duración concreta, útil cuando se quiere proteger una etapa específica.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🏦</div>
+            <h3>Vida amortización</h3>
+            <p>Orientado a proteger una deuda, como una hipoteca, con un capital que puede adaptarse a la anualidad.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">💳</div>
+            <h3>Amortización prima única</h3>
+            <p>Modalidad de amortización con pago único, pensada para cubrir una deuda durante un plazo determinado.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="coberturas" class="section-soft">
+      <div class="container">
+        <div class="section-title">
+          <span>Coberturas principales</span>
+          <h2>Qué puede cubrir un seguro de vida</h2>
+          <p>
+            Las coberturas concretas dependen de la modalidad contratada y de las condiciones de la póliza. Estas son algunas de las garantías más habituales que conviene revisar.
+          </p>
+        </div>
+
+        <div class="coverages">
+          <article class="coverage-card">
+            <div class="mini-icon">❤️</div>
+            <div>
+              <h3>Fallecimiento</h3>
+              <p>Pago del capital asegurado a los beneficiarios si se produce el fallecimiento del asegurado durante la vigencia del seguro.</p>
+            </div>
+          </article>
+
+          <article class="coverage-card">
+            <div class="mini-icon">⚠️</div>
+            <div>
+              <h3>Muerte por accidente</h3>
+              <p>Puede añadir un capital adicional si el fallecimiento se produce como consecuencia de un accidente cubierto.</p>
+            </div>
+          </article>
+
+          <article class="coverage-card">
+            <div class="mini-icon">🚗</div>
+            <div>
+              <h3>Accidente de circulación</h3>
+              <p>Puede reforzar la indemnización si el fallecimiento o la invalidez se producen por accidente de circulación.</p>
+            </div>
+          </article>
+
+          <article class="coverage-card">
+            <div class="mini-icon">♿</div>
+            <div>
+              <h3>Invalidez absoluta</h3>
+              <p>Puede ofrecer una prestación si el asegurado queda en situación de invalidez absoluta y permanente reconocida según póliza.</p>
+            </div>
+          </article>
+
+          <article class="coverage-card">
+            <div class="mini-icon">🩺</div>
+            <div>
+              <h3>Enfermedades graves</h3>
+              <p>Puede aportar un capital si se diagnostica una enfermedad grave cubierta por la póliza, con límites y condiciones específicas.</p>
+            </div>
+          </article>
+
+          <article class="coverage-card">
+            <div class="mini-icon">📈</div>
+            <div>
+              <h3>Revalorización de capitales</h3>
+              <p>Algunas modalidades pueden contemplar actualización de capitales, según lo pactado en la póliza.</p>
+            </div>
+          </article>
+
+          <article class="coverage-card">
+            <div class="mini-icon">👥</div>
+            <div>
+              <h3>Beneficiarios</h3>
+              <p>Permite designar quién recibirá el capital asegurado, algo clave para dejar bien organizada la protección familiar.</p>
+            </div>
+          </article>
+
+          <article class="coverage-card">
+            <div class="mini-icon">📄</div>
+            <div>
+              <h3>Protección de préstamos</h3>
+              <p>En vida amortización, el capital puede estar pensado para cubrir una deuda pendiente como una hipoteca o préstamo.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container highlight">
+        <div class="highlight-grid">
+          <div>
+            <div class="eyebrow">Protección de hipoteca</div>
+            <h2>Evita que una deuda importante quede en manos de tu familia</h2>
+            <p>
+              Cuando existe una hipoteca o préstamo, el seguro de vida puede ayudar a que esa deuda no se convierta en un problema económico para quienes más quieres.
+            </p>
+
+            <ul class="feature-list">
+              <li>Puede adaptarse a préstamos o hipotecas.</li>
+              <li>Permite valorar capitales según deuda pendiente o necesidades familiares.</li>
+              <li>Puede incluir fallecimiento e invalidez absoluta, según modalidad.</li>
+              <li>Ayuda a proteger la vivienda familiar ante una situación grave.</li>
+              <li>Conviene revisar si interesa prima periódica o prima única.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">🏠</div>
+            <h3>Puede interesarte si...</h3>
+            <p>
+              Tienes hipoteca, préstamo personal, financiación familiar o quieres evitar que una deuda quede pendiente si ocurre algo grave.
+            </p>
+
+            <div class="pills">
+              <span class="pill">Hipoteca</span>
+              <span class="pill">Préstamos</span>
+              <span class="pill">Familia</span>
+              <span class="pill">Invalidez</span>
+            </div>
+
+            <br />
+            <a class="btn btn-primary" href="https://wa.me/34606067906?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20seguro%20de%20vida%20para%20hipoteca" target="_blank" rel="noopener">Preguntar por vida hipoteca</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-soft">
+      <div class="container">
+        <div class="highlight" style="background: linear-gradient(135deg, #1f2933, #111827);">
+          <div class="highlight-grid">
+            <div>
+              <div class="eyebrow">Servicios incluidos</div>
+              <h2>Servicios adicionales que aportan valor</h2>
+              <p>
+                Además de las garantías principales, algunas pólizas de vida pueden incluir servicios de apoyo para el asegurado y su familia.
+              </p>
+
+              <ul class="feature-list">
+                <li>Asesoramiento jurídico telefónico.</li>
+                <li>Orientación médica telefónica o videoconsulta.</li>
+                <li>Segunda opinión médica en casos determinados.</li>
+                <li>Rehabilitación cardíaca según condiciones.</li>
+                <li>Mi testamento + borrado digital.</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <div class="card-icon">📞</div>
+              <h3>Más allá del capital asegurado</h3>
+              <p>
+                Estos servicios pueden ayudarte en cuestiones médicas, jurídicas o de planificación personal, siempre según las condiciones de la póliza contratada.
+              </p>
+
+              <div class="pills">
+                <span class="pill">Jurídico</span>
+                <span class="pill">Médico</span>
+                <span class="pill">Testamento</span>
+                <span class="pill">Borrado digital</span>
+              </div>
+
+              <br />
+              <a class="btn btn-primary" href="https://wa.me/34606067906?text=Hola%2C%20quiero%20saber%20qu%C3%A9%20servicios%20incluye%20el%20seguro%20de%20vida" target="_blank" rel="noopener">Consultar servicios</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="grid-2">
+          <div class="section-title">
+            <span>Antes de contratar</span>
+            <h2>Qué conviene revisar</h2>
+            <p>
+              El capital adecuado no es igual para todo el mundo. Hay que revisar tu situación familiar, tus ingresos, tus deudas y el objetivo real del seguro.
+            </p>
+          </div>
+
+          <div class="checklist">
+            <div class="check-item">Capital asegurado que realmente necesitaría tu familia.</div>
+            <div class="check-item">Edad y estado de salud del asegurado.</div>
+            <div class="check-item">Hipoteca, préstamos o deudas pendientes.</div>
+            <div class="check-item">Ingresos mensuales y gastos familiares.</div>
+            <div class="check-item">Beneficiarios designados en la póliza.</div>
+            <div class="check-item">Si interesa incluir invalidez absoluta.</div>
+            <div class="check-item">Si interesa incluir enfermedades graves.</div>
+            <div class="check-item">Duración del seguro y forma de pago.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-soft">
+      <div class="container">
+        <div class="section-title center">
+          <span>Errores frecuentes</span>
+          <h2>Errores habituales al contratar un seguro de vida</h2>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <h3>Contratar solo por precio</h3>
+            <p>Una prima baja puede quedarse corta si el capital asegurado no cubre las necesidades reales.</p>
+          </article>
+
+          <article class="card">
+            <h3>Poner un capital insuficiente</h3>
+            <p>Conviene calcular gastos, deudas, ingresos necesarios y tiempo durante el que la familia necesitaría apoyo.</p>
+          </article>
+
+          <article class="card">
+            <h3>No revisar beneficiarios</h3>
+            <p>Los beneficiarios deben estar claros y actualizados para evitar problemas cuando más se necesita la protección.</p>
+          </article>
+
+          <article class="card">
+            <h3>No actualizar la póliza</h3>
+            <p>Cambios como hijos, hipoteca, separación, nueva vivienda o cambio laboral pueden hacer necesaria una revisión.</p>
+          </article>
+
+          <article class="card">
+            <h3>No valorar la invalidez</h3>
+            <p>Si tus ingresos son importantes para la familia, la invalidez absoluta puede ser una cobertura clave.</p>
+          </article>
+
+          <article class="card">
+            <h3>No declarar bien el estado de salud</h3>
+            <p>La declaración de salud debe hacerse correctamente para evitar problemas en la valoración del riesgo.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-title center">
+          <span>Preguntas frecuentes</span>
+          <h2>Dudas habituales sobre el seguro de vida</h2>
+        </div>
+
+        <div class="accordion">
+          <article class="accordion-item active">
+            <button class="accordion-button" type="button">
+              ¿Para qué sirve un seguro de vida?
+              <span>+</span>
+            </button>
+            <div class="accordion-content">
+              <p>Sirve para dejar una protección económica a los beneficiarios si falleces o, según la modalidad, si sufres una invalidez absoluta o una enfermedad grave cubierta.</p>
+            </div>
+          </article>
+
+          <article class="accordion-item">
+            <button class="accordion-button" type="button">
+              ¿Quién cobra el seguro de vida?
+              <span>+</span>
+            </button>
+            <div class="accordion-content">
+              <p>Lo cobra el beneficiario o beneficiarios designados en la póliza. Por eso es importante revisar que estén correctamente indicados.</p>
+            </div>
+          </article>
+
+          <article class="accordion-item">
+            <button class="accordion-button" type="button">
+              ¿Puedo cambiar los beneficiarios?
+              <span>+</span>
+            </button>
+            <div class="accordion-content">
+              <p>Sí, normalmente el tomador puede modificar los beneficiarios durante la vigencia de la póliza, salvo que haya renunciado expresamente a esa facultad.</p>
+            </div>
+          </article>
+
+          <article class="accordion-item">
+            <button class="accordion-button" type="button">
+              ¿Es obligatorio contratar un seguro de vida con la hipoteca?
+              <span>+</span>
+            </button>
+            <div class="accordion-content">
+              <p>No tiene por qué ser obligatorio contratarlo con el banco, pero sí puede ser muy recomendable proteger una deuda tan importante como la hipoteca.</p>
+            </div>
+          </article>
+
+          <article class="accordion-item">
+            <button class="accordion-button" type="button">
+              ¿Qué diferencia hay entre vida temporal y vida amortización?
+              <span>+</span>
+            </button>
+            <div class="accordion-content">
+              <p>Vida temporal suele proteger con un capital definido durante un periodo. Vida amortización está más orientado a cubrir una deuda cuyo capital puede variar con el tiempo.</p>
+            </div>
+          </article>
+
+          <article class="accordion-item">
+            <button class="accordion-button" type="button">
+              ¿Qué es la cobertura de invalidez absoluta?
+              <span>+</span>
+            </button>
+            <div class="accordion-content">
+              <p>Es una garantía que puede pagar una prestación si el asegurado queda en una situación de invalidez absoluta y permanente reconocida según las condiciones de la póliza.</p>
+            </div>
+          </article>
+
+          <article class="accordion-item">
+            <button class="accordion-button" type="button">
+              ¿Hay que rellenar un cuestionario de salud?
+              <span>+</span>
+            </button>
+            <div class="accordion-content">
+              <p>Sí, en muchos casos hay que declarar circunstancias relevantes como estado de salud, hábitos, profesión, actividad laboral o práctica de deportes.</p>
+            </div>
+          </article>
+
+          <article class="accordion-item">
+            <button class="accordion-button" type="button">
+              ¿Qué pasa si dejo de pagar?
+              <span>+</span>
+            </button>
+            <div class="accordion-content">
+              <p>La falta de pago puede provocar la suspensión o extinción de la cobertura según los plazos y condiciones de la póliza. Conviene consultarlo antes de tomar una decisión.</p>
+            </div>
+          </article>
+
+          <article class="accordion-item">
+            <button class="accordion-button" type="button">
+              ¿Puedo revisar mi seguro de vida actual?
+              <span>+</span>
+            </button>
+            <div class="accordion-content">
+              <p>Sí. Es recomendable revisar si el capital, las coberturas, los beneficiarios y la duración siguen encajando con tu situación actual.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-soft">
+      <div class="container">
+        <div class="cta-final">
+          <h2>¿Quieres saber qué seguro de vida encaja mejor contigo?</h2>
+          <p>
+            Podemos ayudarte a calcular un capital adecuado, revisar si necesitas proteger una hipoteca, valorar si conviene incluir invalidez o enfermedades graves y dejar una protección clara para tu familia.
+          </p>
+
+          <div class="hero-actions" style="justify-content:center;">
+            <a class="btn btn-primary" href="https://wa.me/34606067906?text=Hola%2C%20quiero%20que%20me%20ayud%C3%A9is%20con%20un%20seguro%20de%20vida" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+            <a class="btn btn-outline" href="tel:+34917702311">Llamar oficina</a>
+            <a class="btn btn-outline" href="mailto:esanz@occident.com?subject=Consulta%20seguro%20de%20vida">Enviar email</a>
+            <a class="btn btn-outline" href="seguros.html">Volver a seguros</a>
+          </div>
+
+          <p class="trust-line">Sin compromiso · Sin tecnicismos · Sin presión</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© Elena Sanz Burgos · Seguros y asesoramiento</p>
+      <div class="footer-links">
+        <a href="index.html">Inicio</a>
+        <a href="seguros.html">Seguros</a>
+        <a href="clientes.html">Clientes</a>
+        <a href="https://wa.me/34606067906" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.querySelector(".menu-toggle");
+    const mobileMenu = document.querySelector("#mobileMenu");
+
+    if (menuButton && mobileMenu) {
+      menuButton.addEventListener("click", () => {
+        const isOpen = mobileMenu.classList.toggle("active");
+        menuButton.setAttribute("aria-expanded", String(isOpen));
+      });
+    }
+
+    const accordionItems = document.querySelectorAll(".accordion-item");
+
+    accordionItems.forEach((item) => {
+      const button = item.querySelector(".accordion-button");
+
+      button.addEventListener("click", () => {
+        item.classList.toggle("active");
+      });
+    });
+  </script>
+
+</body>
+</html>
