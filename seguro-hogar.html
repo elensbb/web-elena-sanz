@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Seguro de hogar | Elena Sanz Burgos</title>
+  <meta name="description" content="Seguro de hogar para proteger tu vivienda, tus bienes y tu tranquilidad. Te ayudamos a entender coberturas, modalidades, servicios y opciones como hogar con alarma." />
+
+  <style>
+    :root {
+      --bg: #fbf7f1;
+      --bg-soft: #fffaf4;
+      --white: #ffffff;
+      --text: #1f2933;
+      --muted: #64748b;
+      --primary: #c3002f;
+      --primary-dark: #9f0027;
+      --border: rgba(31, 41, 51, 0.12);
+      --shadow: 0 18px 45px rgba(31, 41, 51, 0.08);
+      --radius: 24px;
+      --radius-sm: 16px;
+      --max: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(100% - 32px, var(--max));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: var(--white);
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-text strong {
+      display: block;
+      font-size: 1rem;
+      line-height: 1.1;
+    }
+
+    .brand-text span {
+      display: block;
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 0;
+      background: transparent;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: var(--text);
+    }
+
+    .mobile-menu {
+      display: none;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border-radius: 999px;
+      padding: 13px 20px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border: 1px solid transparent;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(31, 41, 51, 0.12);
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--primary);
+      border-color: rgba(195, 0, 47, 0.35);
+    }
+
+    .hero {
+      padding: 84px 0 56px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 560px;
+      height: 560px;
+      border-radius: 50%;
+      background: rgba(195, 0, 47, 0.08);
+      right: -220px;
+      top: -220px;
+      z-index: -1;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: rgba(195, 0, 47, 0.08);
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(2.45rem, 5vw, 4.7rem);
+      line-height: 0.98;
+      letter-spacing: -0.06em;
+      max-width: 850px;
+      margin-bottom: 22px;
+    }
+
+    .lead {
+      font-size: clamp(1.08rem, 2vw, 1.25rem);
+      color: #455363;
+      max-width: 690px;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .trust-line {
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .hero-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 26px;
+    }
+
+    .hero-card-icon {
+      width: 74px;
+      height: 74px;
+      border-radius: 22px;
+      background: rgba(195, 0, 47, 0.08);
+      display: grid;
+      place-items: center;
+      font-size: 2rem;
+      margin-bottom: 18px;
+    }
+
+    .hero-card h2 {
+      font-size: 1.45rem;
+      margin-bottom: 12px;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-card ul {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      color: #455363;
+    }
+
+    .hero-card li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .hero-card li::before {
+      content: "✓";
+      color: var(--primary);
+      font-weight: 900;
+      flex: 0 0 auto;
+    }
+
+    section {
+      padding: 72px 0;
+    }
+
+    .section-soft {
+      background: var(--bg-soft);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-title {
+      max-width: 760px;
+      margin-bottom: 34px;
+    }
+
+    .section-title.center {
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    .section-title span {
+      color: var(--primary);
+      font-weight: 800;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 3vw, 3rem);
+      line-height: 1.08;
+      letter-spacing: -0.045em;
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+
+    .section-title p,
+    .text-muted {
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 24px;
+      box-shadow: 0 10px 24px rgba(31, 41, 51, 0.04);
+      height: 100%;
+    }
+
+    .card-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 16px;
+      background: rgba(195, 0, 47, 0.08);
+      display: grid;
+      place-items: center;
+      font-size: 1.45rem;
+      margin-bottom: 18px;
+    }
+
+    .card p {
+      color: var(--muted);
+    }
+
+    .coverages {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .coverage-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 22px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .coverage-card .mini-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: rgba(195, 0, 47, 0.08);
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+    }
+
+    .coverage-card p {
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .highlight {
+      background: linear-gradient(135deg, var(--primary), #8f0023);
+      color: var(--white);
+      border-radius: calc(var(--radius) + 6px);
+      padding: 38px;
+      box-shadow: var(--shadow);
+    }
+
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .highlight p {
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .highlight .eyebrow {
+      background: rgba(255, 255, 255, 0.12);
+      color: var(--white);
+      margin-bottom: 14px;
+    }
+
+    .feature-list {
+      list-style: none;
+      display: grid;
+      gap: 11px;
+      margin-top: 20px;
+    }
+
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    .feature-list li::before {
+      content: "✓";
+      font-weight: 900;
+      color: var(--white);
+    }
+
+    .levels {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .level-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 22px;
+    }
+
+    .level-card strong {
+      display: inline-flex;
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+
+    .level-card p {
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .checklist {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .check-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 18px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: #455363;
+    }
+
+    .check-item::before {
+      content: "✓";
+      color: var(--primary);
+      font-weight: 900;
+      flex: 0 0 auto;
+    }
+
+    .accordion {
+      display: grid;
+      gap: 12px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .accordion-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+    }
+
+    .accordion-button {
+      width: 100%;
+      border: 0;
+      background: transparent;
+      padding: 20px 22px;
+      text-align: left;
+      font-size: 1.02rem;
+      font-weight: 800;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      cursor: pointer;
+      color: var(--text);
+    }
+
+    .accordion-button span {
+      color: var(--primary);
+      font-size: 1.4rem;
+      line-height: 1;
+      transition: transform 0.2s ease;
+    }
+
+    .accordion-content {
+      display: none;
+      padding: 0 22px 22px;
+      color: var(--muted);
+    }
+
+    .accordion-item.active .accordion-content {
+      display: block;
+    }
+
+    .accordion-item.active .accordion-button span {
+      transform: rotate(45deg);
+    }
+
+    .cta-final {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) + 8px);
+      padding: 42px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-final p {
+      max-width: 720px;
+      margin: 0 auto 24px;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .footer {
+      padding: 34px 0;
+      border-top: 1px solid var(--border);
+      background: var(--white);
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 900px) {
+      .nav-links,
+      .nav-actions {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .mobile-menu {
+        display: none;
+        border-top: 1px solid var(--border);
+        padding: 16px 0 22px;
+      }
+
+      .mobile-menu.active {
+        display: grid;
+        gap: 12px;
+      }
+
+      .mobile-menu a {
+        padding: 10px 0;
+        color: var(--muted);
+      }
+
+      .hero-grid,
+      .highlight-grid,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-3,
+      .levels,
+      .coverages,
+      .checklist {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 54px;
+      }
+
+      section {
+        padding: 56px 0;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .container {
+        width: min(100% - 24px, var(--max));
+      }
+
+      .hero-actions,
+      .cta-final .hero-actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .highlight,
+      .cta-final {
+        padding: 28px 20px;
+      }
+
+      h1 {
+        font-size: 2.45rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="topbar">
+    <div class="container">
+      <nav class="nav" aria-label="Navegación principal">
+        <a href="index.html" class="brand" aria-label="Volver al inicio">
+          <div class="brand-mark">ES</div>
+          <div class="brand-text">
+            <strong>Elena Sanz Burgos</strong>
+            <span>Seguros y asesoramiento</span>
+          </div>
+        </a>
+
+        <div class="nav-links">
+          <a href="index.html">Inicio</a>
+          <a href="seguros.html">Seguros</a>
+          <a href="autonomos.html">Autónomos</a>
+          <a href="asesoramiento-financiero.html">Finanzas</a>
+          <a href="clientes.html">Clientes</a>
+        </div>
+
+        <div class="nav-actions">
+          <a class="btn btn-outline" href="tel:+34XXXXXXXXX">Llamar oficina</a>
+          <a class="btn btn-primary" href="https://wa.me/34606067906?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20seguro%20de%20hogar" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+
+        <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      </nav>
+
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Inicio</a>
+        <a href="seguros.html">Seguros</a>
+        <a href="autonomos.html">Autónomos</a>
+        <a href="asesoramiento-financiero.html">Finanzas</a>
+        <a href="clientes.html">Clientes</a>
+        <a class="btn btn-primary" href="https://wa.me/34606067906?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20seguro%20de%20hogar" target="_blank" rel="noopener">Hablar por WhatsApp</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">🏠 Seguro de hogar</div>
+
+          <h1>Protege tu vivienda, tus bienes y tu tranquilidad</h1>
+
+          <p class="lead">
+            Tu casa es mucho más que cuatro paredes. Te ayudamos a entender qué coberturas pueden encajar contigo para proteger tu vivienda frente a daños por agua, incendio, robo, roturas, responsabilidad civil y otros imprevistos.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/34606067906?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20seguro%20de%20hogar" target="_blank" rel="noopener">Hablar por WhatsApp</a>
+            <a class="btn btn-outline" href="tel:+34XXXXXXXXX">Llamar a la oficina</a>
+            <a class="btn btn-outline" href="#coberturas">Ver coberturas</a>
+          </div>
+
+          <p class="trust-line">Respuesta rápida · Sin compromiso · Te explicamos todo de forma sencilla</p>
+        </div>
+
+        <aside class="hero-card" aria-label="Resumen del seguro de hogar">
+          <div class="hero-card-icon">🛡️</div>
+          <h2>¿Qué puede proteger?</h2>
+          <ul>
+            <li>La vivienda y sus instalaciones.</li>
+            <li>Los muebles, electrodomésticos y objetos personales.</li>
+            <li>Daños por agua, incendio, robo o roturas.</li>
+            <li>La responsabilidad civil frente a terceros.</li>
+            <li>Servicios de asistencia para el día a día.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <span>Protección clara y adaptada</span>
+          <h2>Un seguro de hogar no debería ser difícil de entender</h2>
+          <p>
+            No se trata de contratar por contratar. Se trata de saber qué estás protegiendo, qué límites tiene tu póliza y qué solución tendrías si ocurre un imprevisto en casa.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="card-icon">🏡</div>
+            <h3>Tu vivienda</h3>
+            <p>Protección para paredes, techos, suelos, instalaciones, tuberías, cristales y otros elementos fijos de la casa.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🛋️</div>
+            <h3>Tus bienes</h3>
+            <p>Muebles, ropa, electrodomésticos, tecnología, objetos personales y otros bienes incluidos según la modalidad contratada.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🤝</div>
+            <h3>Tu responsabilidad</h3>
+            <p>Cobertura frente a daños que puedas causar a vecinos, terceros o personas relacionadas con el uso de la vivienda.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-soft">
+      <div class="container">
+        <div class="section-title center">
+          <span>Para cada tipo de hogar</span>
+          <h2>¿Para quién es recomendable?</h2>
+          <p>
+            Cada vivienda tiene necesidades distintas. Por eso conviene revisar el uso real de la casa antes de elegir una modalidad.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <h3>Vivienda habitual</h3>
+            <p>Para proteger la casa donde vives a diario y las pertenencias que forman parte de tu día a día.</p>
+          </article>
+
+          <article class="card">
+            <h3>Segunda residencia</h3>
+            <p>Para viviendas que se usan en vacaciones o pasan temporadas vacías y necesitan una protección adaptada.</p>
+          </article>
+
+          <article class="card">
+            <h3>Vivienda alquilada</h3>
+            <p>Para propietarios que quieren proteger el inmueble o inquilinos que quieren proteger sus pertenencias.</p>
+          </article>
+
+          <article class="card">
+            <h3>Chalet o adosado</h3>
+            <p>Para viviendas con jardín, instalaciones exteriores, tuberías, anexos o más responsabilidad asociada.</p>
+          </article>
+
+          <article class="card">
+            <h3>Vivienda de alto valor</h3>
+            <p>Para hogares que necesitan mayores capitales, objetos especiales o una protección más completa.</p>
+          </article>
+
+          <article class="card">
+            <h3>Revisión de póliza actual</h3>
+            <p>Para comprobar si lo que tienes contratado sigue encajando con tu vivienda y tu situación actual.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="coberturas">
+      <div class="container">
+        <div class="section-title">
+          <span>Coberturas principales</span>
+          <h2>Qué puede cubrir un seguro de hogar</h2>
+          <p>
+            Las coberturas exactas dependen de la modalidad contratada y de las condiciones de la póliza, pero estas son algunas de las garantías más habituales que conviene revisar.
+          </p>
+        </div>
+
+        <div class="coverages">
+          <article class="coverage-card">
+            <div class="mini-icon">💧</div>
+            <div>
+              <h3>Daños por agua</h3>
+              <p>Fugas, roturas de tuberías, escapes, goteras de viviendas colindantes, localización y reparación de averías.</p>
+            </div>
+          </article>
+
+          <article class="coverage-card">
+            <div class="mini-icon">🔥</div>
+            <div>
+              <h3>Incendio</h3>
+              <p>Protección frente a incendio y otros daños complementarios que puedan afectar a la vivienda o a los bienes asegurados.</p>
+            </div>
+          </article>
+
+          <article class="coverage-card">
+            <div class="mini-icon">🌧️</div>
+            <div>
+              <h3>Fenómenos atmosféricos</h3>
+              <p>Lluvia, viento, pedrisco, nieve, inundación, filtraciones u otros daños según límites y modalidad.</p>
+            </div>
+          </article>
+
+          <article class="coverage-card">
+            <div class="mini-icon">🔐</div>
+            <div>
+              <h3>Robo, hurto y atraco</h3>
+              <p>Robo en vivienda, desperfectos por robo, cerraduras, bienes en trasteros o atraco fuera de la vivienda según condiciones.</p>
+            </div>
+          </article>
+
+          <article class="coverage-card">
+            <div class="mini-icon">🪟</div>
+            <div>
+              <h3>Roturas</h3>
+              <p>Cristales, espejos, sanitarios, encimeras o placas vitrocerámicas, dependiendo de la modalidad elegida.</p>
+            </div>
+          </article>
+
+          <article class="coverage-card">
+            <div class="mini-icon">⚡</div>
+            <div>
+              <h3>Daños eléctricos</h3>
+              <p>Daños en instalaciones eléctricas y averías de equipos eléctricos o electrónicos, según lo contratado.</p>
+            </div>
+          </article>
+
+          <article class="coverage-card">
+            <div class="mini-icon">⚖️</div>
+            <div>
+              <h3>Responsabilidad civil</h3>
+              <p>Protección ante reclamaciones de terceros por daños relacionados con la vivienda, la familia o el inmueble.</p>
+            </div>
+          </article>
+
+          <article class="coverage-card">
+            <div class="mini-icon">🚪</div>
+            <div>
+              <h3>Ocupación ilegal</h3>
+              <p>Coberturas frente a determinados daños, cerraduras, defensa jurídica, suministros o limpieza, según póliza.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-soft">
+      <div class="container">
+        <div class="section-title">
+          <span>Servicios útiles</span>
+          <h2>Más que coberturas ante grandes siniestros</h2>
+          <p>
+            Además de protegerte ante imprevistos importantes, algunas modalidades pueden incluir servicios prácticos para pequeñas incidencias del día a día.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="card-icon">🧰</div>
+            <h3>Asistencia en el hogar</h3>
+            <p>Ayuda ante determinadas urgencias o reparaciones relacionadas con la vivienda.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🔧</div>
+            <h3>BricoHogar</h3>
+            <p>Servicio para pequeños trabajos o reparaciones sencillas en casa, según modalidad.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🧊</div>
+            <h3>Electrodomésticos</h3>
+            <p>Reparación de determinados electrodomésticos con límites de servicios según la póliza.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">💻</div>
+            <h3>Asistencia informática</h3>
+            <p>Soporte para incidencias tecnológicas o informáticas cuando la modalidad lo incluye.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">📞</div>
+            <h3>Orientación médica</h3>
+            <p>Servicio de orientación médica por teléfono o videollamada, según condiciones.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🚿</div>
+            <h3>Desatasco preventivo</h3>
+            <p>Limpieza preventiva de conducciones privadas de evacuación para ayudar a evitar problemas de agua, si la cobertura está disponible.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container highlight">
+        <div class="highlight-grid">
+          <div>
+            <div class="eyebrow">Hogar doble protección</div>
+            <h2>Seguro de hogar + alarma conectada</h2>
+            <p>
+              Para quienes quieren reforzar la prevención, existe la posibilidad de combinar el seguro de hogar con una alarma conectada. Una opción pensada para proteger antes, durante y después de un posible incidente.
+            </p>
+
+            <ul class="feature-list">
+              <li>Seguro de hogar y alarma en una propuesta conjunta.</li>
+              <li>Alarma conectada 24/7.</li>
+              <li>Instalación y mantenimiento incluidos según condiciones.</li>
+              <li>Posibilidad de añadir dispositivos según la vivienda.</li>
+              <li>Coberturas ampliadas de anti-ocupación mientras la alarma esté activa.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">🚨</div>
+            <h3>Puede interesarte si...</h3>
+            <p>
+              Pasas tiempo fuera de casa, tienes una segunda residencia, te preocupan los robos cercanos, quieres más prevención o buscas una solución combinada de seguro y alarma.
+            </p>
+            <br />
+            <a class="btn btn-primary" href="https://wa.me/34606067906?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Hogar%20Doble%20Protecci%C3%B3n" target="_blank" rel="noopener">Preguntar por hogar + alarma</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-soft">
+      <div class="container">
+        <div class="section-title center">
+          <span>Modalidades</span>
+          <h2>Diferentes niveles de protección</h2>
+          <p>
+            No todos los hogares necesitan lo mismo. Revisamos tu caso para ayudarte a elegir una protección básica, completa o superior según tu vivienda.
+          </p>
+        </div>
+
+        <div class="levels">
+          <article class="level-card">
+            <strong>Protección esencial</strong>
+            <h3>Para lo principal</h3>
+            <p>Una base para cubrir riesgos importantes sin añadir coberturas que no necesitas.</p>
+          </article>
+
+          <article class="level-card">
+            <strong>Protección confort</strong>
+            <h3>Más completa</h3>
+            <p>Para quienes quieren reforzar garantías y servicios del día a día.</p>
+          </article>
+
+          <article class="level-card">
+            <strong>Protección óptima</strong>
+            <h3>Más amplitud</h3>
+            <p>Con mayores límites y una cobertura más completa para viviendas con más necesidades.</p>
+          </article>
+
+          <article class="level-card">
+            <strong>Hogar exclusivo</strong>
+            <h3>Protección superior</h3>
+            <p>Para viviendas de mayor valor o personas que necesitan coberturas y capitales más amplios.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="grid-2">
+          <div class="section-title">
+            <span>Antes de contratar</span>
+            <h2>Qué conviene revisar</h2>
+            <p>
+              Dos seguros pueden parecer iguales, pero cambiar mucho en límites, exclusiones y servicios. Por eso es importante revisar los detalles antes de decidir.
+            </p>
+          </div>
+
+          <div class="checklist">
+            <div class="check-item">Valor del continente y del contenido.</div>
+            <div class="check-item">Uso de la vivienda: habitual, secundaria, alquilada o turística.</div>
+            <div class="check-item">Responsabilidad civil incluida.</div>
+            <div class="check-item">Límites por siniestro y franquicias.</div>
+            <div class="check-item">Servicios incluidos en la modalidad.</div>
+            <div class="check-item">Si interesa añadir alarma o revisar seguridad.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-soft">
+      <div class="container">
+        <div class="section-title center">
+          <span>Preguntas frecuentes</span>
+          <h2>Dudas habituales sobre el seguro de hogar</h2>
+        </div>
+
+        <div class="accordion">
+          <article class="accordion-item active">
+            <button class="accordion-button" type="button">
+              ¿Es obligatorio tener seguro de hogar?
+              <span>+</span>
+            </button>
+            <div class="accordion-content">
+              <p>No siempre es obligatorio, aunque puede ser muy recomendable. Si tienes hipoteca, la entidad puede exigir determinadas coberturas relacionadas con el inmueble.</p>
+            </div>
+          </article>
+
+          <article class="accordion-item">
+            <button class="accordion-button" type="button">
+              ¿Qué diferencia hay entre continente y contenido?
+              <span>+</span>
+            </button>
+            <div class="accordion-content">
+              <p>El continente es la vivienda como construcción: paredes, techos, instalaciones o elementos fijos. El contenido son los bienes que tienes dentro: muebles, ropa, electrodomésticos, tecnología u objetos personales.</p>
+            </div>
+          </article>
+
+          <article class="accordion-item">
+            <button class="accordion-button" type="button">
+              ¿El seguro cubre daños por agua?
+              <span>+</span>
+            </button>
+            <div class="accordion-content">
+              <p>Puede cubrirlos, pero depende de la modalidad. Conviene revisar si incluye fugas, escapes, goteras, localización, reparación, exceso de consumo o desatasco.</p>
+            </div>
+          </article>
+
+          <article class="accordion-item">
+            <button class="accordion-button" type="button">
+              ¿Puedo asegurar una vivienda alquilada?
+              <span>+</span>
+            </button>
+            <div class="accordion-content">
+              <p>Sí. Puede asegurarse desde el punto de vista del propietario o del inquilino, pero las coberturas necesarias no son las mismas.</p>
+            </div>
+          </article>
+
+          <article class="accordion-item">
+            <button class="accordion-button" type="button">
+              ¿Puedo añadir alarma al seguro de hogar?
+              <span>+</span>
+            </button>
+            <div class="accordion-content">
+              <p>Sí. Existe la posibilidad de combinar seguro de hogar y alarma conectada mediante una propuesta de hogar con alarma, siempre según condiciones de contratación.</p>
+            </div>
+          </article>
+
+          <article class="accordion-item">
+            <button class="accordion-button" type="button">
+              ¿Puedo revisar mi póliza actual?
+              <span>+</span>
+            </button>
+            <div class="accordion-content">
+              <p>Sí. De hecho, es recomendable revisar si las coberturas, capitales y servicios siguen encajando con tu vivienda actual.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta-final">
+          <h2>¿Quieres saber qué seguro de hogar encaja mejor contigo?</h2>
+          <p>
+            No hace falta que tengas claro qué modalidad necesitas. Podemos revisar tu caso, explicarte las opciones y ayudarte a elegir con tranquilidad.
+          </p>
+
+          <div class="hero-actions" style="justify-content:center;">
+            <a class="btn btn-primary" href="https://wa.me/34606067906?text=Hola%2C%20quiero%20que%20me%20ayud%C3%A9is%20con%20un%20seguro%20de%20hogar" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+            <a class="btn btn-outline" href="tel:+34XXXXXXXXX">Llamar oficina</a>
+            <a class="btn btn-outline" href="mailto:esanz@occident.com?subject=Consulta%20seguro%20de%20hogar">Enviar email</a>
+            <a class="btn btn-outline" href="seguros.html">Volver a seguros</a>
+          </div>
+
+          <p class="trust-line">Sin compromiso · Sin tecnicismos · Sin presión</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© Elena Sanz Burgos · Seguros y asesoramiento</p>
+      <div class="footer-links">
+        <a href="index.html">Inicio</a>
+        <a href="seguros.html">Seguros</a>
+        <a href="clientes.html">Clientes</a>
+        <a href="https://wa.me/34606067906" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.querySelector(".menu-toggle");
+    const mobileMenu = document.querySelector("#mobileMenu");
+
+    if (menuButton && mobileMenu) {
+      menuButton.addEventListener("click", () => {
+        const isOpen = mobileMenu.classList.toggle("active");
+        menuButton.setAttribute("aria-expanded", String(isOpen));
+      });
+    }
+
+    const accordionItems = document.querySelectorAll(".accordion-item");
+
+    accordionItems.forEach((item) => {
+      const button = item.querySelector(".accordion-button");
+
+      button.addEventListener("click", () => {
+        item.classList.toggle("active");
+      });
+    });
+  </script>
+
+</body>
+</html>
