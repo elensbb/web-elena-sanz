@@ -50,6 +50,71 @@
       margin: 0 auto;
     }
 
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes softFloat {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-6px);
+      }
+    }
+
+    .hero .eyebrow,
+    .hero h1,
+    .hero .lead,
+    .hero-actions,
+    .trust-line {
+      animation: fadeUp 0.7s ease both;
+    }
+
+    .hero h1 {
+      animation-delay: 0.08s;
+    }
+
+    .hero .lead {
+      animation-delay: 0.16s;
+    }
+
+    .hero-actions {
+      animation-delay: 0.24s;
+    }
+
+    .trust-line {
+      animation-delay: 0.32s;
+    }
+
+    .hero-card {
+      animation: fadeUp 0.8s ease 0.18s both;
+    }
+
+    .hero-card-icon {
+      animation: softFloat 4.5s ease-in-out infinite;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+
+    .reveal.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     .topbar {
       background: var(--white);
       border-bottom: 1px solid var(--border);
@@ -345,6 +410,13 @@
       padding: 24px;
       box-shadow: 0 10px 24px rgba(31, 41, 51, 0.04);
       height: 100%;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 36px rgba(31, 41, 51, 0.09);
+      border-color: rgba(195, 0, 47, 0.22);
     }
 
     .card-icon {
@@ -376,6 +448,13 @@
       display: flex;
       gap: 16px;
       align-items: flex-start;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    }
+
+    .coverage-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 32px rgba(31, 41, 51, 0.08);
+      border-color: rgba(195, 0, 47, 0.22);
     }
 
     .coverage-card .mini-icon {
@@ -457,84 +536,246 @@
     }
 
     .highlight .pill {
-      background: rgba(255,255,255,.14);
+      background: rgba(255, 255, 255, 0.14);
       color: var(--white);
     }
 
-    .checklist {
+    .review-block {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-      margin-top: 8px;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 34px;
+      align-items: start;
     }
 
-    .check-item {
+    .review-intro {
+      color: var(--muted);
+      font-size: 1.04rem;
+      margin-top: 10px;
+    }
+
+    .review-list {
+      list-style: none;
+      display: grid;
+      gap: 0;
+      background: var(--white);
+      border-radius: calc(var(--radius) + 4px);
+      border: 1px solid var(--border);
+      padding: 30px;
+      box-shadow: 0 14px 34px rgba(31, 41, 51, 0.06);
+    }
+
+    .review-item {
+      display: grid;
+      grid-template-columns: 46px 1fr;
+      gap: 16px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .review-item:first-child {
+      padding-top: 0;
+    }
+
+    .review-item:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .review-number {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(195, 0, 47, 0.08);
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 0.9rem;
+    }
+
+    .review-item strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 4px;
+      font-size: 1.02rem;
+    }
+
+    .review-item p {
+      color: var(--muted);
+      font-size: 0.97rem;
+    }
+
+    .review-note {
+      margin-top: 24px;
+      padding: 18px 20px;
+      border-radius: var(--radius-sm);
+      background: rgba(195, 0, 47, 0.06);
+      color: #455363;
+      font-size: 0.98rem;
+    }
+
+    .review-note strong {
+      color: var(--primary);
+    }
+
+    .mistakes-block {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .mistakes-layout {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .mistakes-side {
+      position: sticky;
+      top: 104px;
+    }
+
+    .mistakes-side p {
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .mistakes-list {
+      list-style: none;
+      display: grid;
+      gap: 0;
       background: var(--white);
       border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: 18px;
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      color: #455363;
+      border-radius: calc(var(--radius) + 4px);
+      padding: 30px;
+      box-shadow: 0 14px 34px rgba(31, 41, 51, 0.06);
     }
 
-    .check-item::before {
-      content: "✓";
+    .mistake-item {
+      display: grid;
+      grid-template-columns: 38px 1fr;
+      gap: 16px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .mistake-item:first-child {
+      padding-top: 0;
+    }
+
+    .mistake-item:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .mistake-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(195, 0, 47, 0.08);
       color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 1rem;
+    }
+
+    .mistake-item strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 4px;
+      font-size: 1.02rem;
+    }
+
+    .mistake-item p {
+      color: var(--muted);
+      font-size: 0.97rem;
+    }
+
+    .faq-carousel-wrap {
+      position: relative;
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+
+    .faq-carousel {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(290px, 360px);
+      gap: 18px;
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      scroll-snap-type: x mandatory;
+      scroll-padding: 4px;
+      padding: 6px 4px 18px;
+      scrollbar-width: thin;
+    }
+
+    .faq-card {
+      min-height: 285px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 10px 24px rgba(31, 41, 51, 0.04);
+      scroll-snap-align: start;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    }
+
+    .faq-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 42px rgba(31, 41, 51, 0.1);
+      border-color: rgba(195, 0, 47, 0.22);
+    }
+
+    .faq-number {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(195, 0, 47, 0.08);
+      color: var(--primary);
+      display: grid;
+      place-items: center;
       font-weight: 900;
       flex: 0 0 auto;
     }
 
-    .accordion {
-      display: grid;
-      gap: 12px;
-      max-width: 900px;
-      margin: 0 auto;
+    .faq-card h3 {
+      margin-bottom: 0;
     }
 
-    .accordion-item {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      overflow: hidden;
-    }
-
-    .accordion-button {
-      width: 100%;
-      border: 0;
-      background: transparent;
-      padding: 20px 22px;
-      text-align: left;
-      font-size: 1.02rem;
-      font-weight: 800;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 18px;
-      cursor: pointer;
-      color: var(--text);
-    }
-
-    .accordion-button span {
-      color: var(--primary);
-      font-size: 1.4rem;
-      line-height: 1;
-      transition: transform 0.2s ease;
-    }
-
-    .accordion-content {
-      display: none;
-      padding: 0 22px 22px;
+    .faq-card p {
       color: var(--muted);
+      font-size: 0.98rem;
     }
 
-    .accordion-item.active .accordion-content {
-      display: block;
+    .faq-controls {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 12px;
     }
 
-    .accordion-item.active .accordion-button span {
-      transform: rotate(45deg);
+    .faq-arrow {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid rgba(195, 0, 47, 0.28);
+      background: var(--white);
+      color: var(--primary);
+      font-size: 1.2rem;
+      font-weight: 900;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .faq-arrow:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(31, 41, 51, 0.12);
+      background: rgba(195, 0, 47, 0.06);
     }
 
     .cta-final {
@@ -578,6 +819,14 @@
       .grid-4 {
         grid-template-columns: repeat(2, 1fr);
       }
+
+      .mistakes-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .mistakes-side {
+        position: static;
+      }
     }
 
     @media (max-width: 900px) {
@@ -608,15 +857,19 @@
 
       .hero-grid,
       .highlight-grid,
-      .grid-2 {
+      .grid-2,
+      .review-block {
         grid-template-columns: 1fr;
       }
 
       .grid-3,
       .grid-4,
-      .coverages,
-      .checklist {
+      .coverages {
         grid-template-columns: 1fr;
+      }
+
+      .faq-carousel {
+        grid-auto-columns: minmax(260px, 86vw);
       }
 
       .hero {
@@ -625,6 +878,22 @@
 
       section {
         padding: 56px 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
       }
     }
 
@@ -645,6 +914,17 @@
       .highlight,
       .cta-final {
         padding: 28px 20px;
+      }
+
+      .review-list,
+      .mistakes-list {
+        padding: 24px 20px;
+      }
+
+      .review-item,
+      .mistake-item {
+        grid-template-columns: 38px 1fr;
+        gap: 12px;
       }
 
       h1 {
@@ -1012,66 +1292,152 @@
 
     <section>
       <div class="container">
-        <div class="grid-2">
+        <div class="review-block">
           <div class="section-title">
             <span>Antes de contratar</span>
             <h2>Qué conviene revisar</h2>
             <p>
               El capital adecuado no es igual para todo el mundo. Hay que revisar tu situación familiar, tus ingresos, tus deudas y el objetivo real del seguro.
             </p>
+
+            <p class="review-intro">
+              La clave es calcular una protección coherente: ni quedarte corto en lo importante, ni contratar capitales o garantías que no encajan con tu situación.
+            </p>
+
+            <div class="review-note">
+              <strong>Consejo:</strong> revisa el seguro cuando cambie tu vida: hipoteca, hijos, separación, nuevo trabajo, nuevas deudas o cambios importantes de ingresos.
+            </div>
           </div>
 
-          <div class="checklist">
-            <div class="check-item">Capital asegurado que realmente necesitaría tu familia.</div>
-            <div class="check-item">Edad y estado de salud del asegurado.</div>
-            <div class="check-item">Hipoteca, préstamos o deudas pendientes.</div>
-            <div class="check-item">Ingresos mensuales y gastos familiares.</div>
-            <div class="check-item">Beneficiarios designados en la póliza.</div>
-            <div class="check-item">Si interesa incluir invalidez absoluta.</div>
-            <div class="check-item">Si interesa incluir enfermedades graves.</div>
-            <div class="check-item">Duración del seguro y forma de pago.</div>
-          </div>
+          <ol class="review-list">
+            <li class="review-item">
+              <span class="review-number">01</span>
+              <div>
+                <strong>Capital asegurado necesario</strong>
+                <p>Conviene calcular qué cantidad necesitaría realmente tu familia para cubrir gastos, deudas y estabilidad económica.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">02</span>
+              <div>
+                <strong>Edad y estado de salud</strong>
+                <p>La edad, la salud, la profesión y algunos hábitos pueden influir en la valoración del riesgo y en las condiciones del seguro.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">03</span>
+              <div>
+                <strong>Hipoteca, préstamos o deudas</strong>
+                <p>Si tienes una deuda importante, puede ser recomendable protegerla para que no recaiga sobre tu familia.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">04</span>
+              <div>
+                <strong>Ingresos y gastos familiares</strong>
+                <p>Hay que revisar cuánto entra cada mes en casa y qué gastos deberían mantenerse si ocurre algo grave.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">05</span>
+              <div>
+                <strong>Beneficiarios designados</strong>
+                <p>Es importante dejar claro quién cobraría el capital asegurado y mantenerlo actualizado con el paso del tiempo.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">06</span>
+              <div>
+                <strong>Invalidez absoluta</strong>
+                <p>Si tus ingresos son importantes para tu familia, esta cobertura puede ayudarte si una invalidez te impide seguir trabajando.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">07</span>
+              <div>
+                <strong>Enfermedades graves</strong>
+                <p>Puede interesarte valorar si quieres una ayuda económica adicional ante determinados diagnósticos cubiertos por la póliza.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">08</span>
+              <div>
+                <strong>Duración y forma de pago</strong>
+                <p>Hay que revisar durante cuánto tiempo necesitas protección y si te interesa prima periódica, prima única u otra modalidad.</p>
+              </div>
+            </li>
+          </ol>
         </div>
       </div>
     </section>
 
     <section class="section-soft">
-      <div class="container">
-        <div class="section-title center">
-          <span>Errores frecuentes</span>
-          <h2>Errores habituales al contratar un seguro de vida</h2>
-        </div>
+      <div class="container mistakes-block">
+        <div class="mistakes-layout">
+          <div class="mistakes-side section-title">
+            <span>Errores frecuentes</span>
+            <h2>Errores habituales al contratar un seguro de vida</h2>
+            <p>
+              En un seguro de vida, los errores no siempre se ven al contratar. Muchas veces aparecen cuando la familia necesita usar la póliza. Por eso conviene revisar estos puntos antes.
+            </p>
+          </div>
 
-        <div class="grid-3">
-          <article class="card">
-            <h3>Contratar solo por precio</h3>
-            <p>Una prima baja puede quedarse corta si el capital asegurado no cubre las necesidades reales.</p>
-          </article>
+          <ol class="mistakes-list">
+            <li class="mistake-item">
+              <span class="mistake-mark">!</span>
+              <div>
+                <strong>Contratar solo por precio</strong>
+                <p>Una prima baja puede quedarse corta si el capital asegurado no cubre las necesidades reales.</p>
+              </div>
+            </li>
 
-          <article class="card">
-            <h3>Poner un capital insuficiente</h3>
-            <p>Conviene calcular gastos, deudas, ingresos necesarios y tiempo durante el que la familia necesitaría apoyo.</p>
-          </article>
+            <li class="mistake-item">
+              <span class="mistake-mark">!</span>
+              <div>
+                <strong>Poner un capital insuficiente</strong>
+                <p>Conviene calcular gastos, deudas, ingresos necesarios y tiempo durante el que la familia necesitaría apoyo.</p>
+              </div>
+            </li>
 
-          <article class="card">
-            <h3>No revisar beneficiarios</h3>
-            <p>Los beneficiarios deben estar claros y actualizados para evitar problemas cuando más se necesita la protección.</p>
-          </article>
+            <li class="mistake-item">
+              <span class="mistake-mark">!</span>
+              <div>
+                <strong>No revisar beneficiarios</strong>
+                <p>Los beneficiarios deben estar claros y actualizados para evitar problemas cuando más se necesita la protección.</p>
+              </div>
+            </li>
 
-          <article class="card">
-            <h3>No actualizar la póliza</h3>
-            <p>Cambios como hijos, hipoteca, separación, nueva vivienda o cambio laboral pueden hacer necesaria una revisión.</p>
-          </article>
+            <li class="mistake-item">
+              <span class="mistake-mark">!</span>
+              <div>
+                <strong>No actualizar la póliza</strong>
+                <p>Cambios como hijos, hipoteca, separación, nueva vivienda o cambio laboral pueden hacer necesaria una revisión.</p>
+              </div>
+            </li>
 
-          <article class="card">
-            <h3>No valorar la invalidez</h3>
-            <p>Si tus ingresos son importantes para la familia, la invalidez absoluta puede ser una cobertura clave.</p>
-          </article>
+            <li class="mistake-item">
+              <span class="mistake-mark">!</span>
+              <div>
+                <strong>No valorar la invalidez</strong>
+                <p>Si tus ingresos son importantes para la familia, la invalidez absoluta puede ser una cobertura clave.</p>
+              </div>
+            </li>
 
-          <article class="card">
-            <h3>No declarar bien el estado de salud</h3>
-            <p>La declaración de salud debe hacerse correctamente para evitar problemas en la valoración del riesgo.</p>
-          </article>
+            <li class="mistake-item">
+              <span class="mistake-mark">!</span>
+              <div>
+                <strong>No declarar bien el estado de salud</strong>
+                <p>La declaración de salud debe hacerse correctamente para evitar problemas en la valoración del riesgo.</p>
+              </div>
+            </li>
+          </ol>
         </div>
       </div>
     </section>
@@ -1083,96 +1449,67 @@
           <h2>Dudas habituales sobre el seguro de vida</h2>
         </div>
 
-        <div class="accordion">
-          <article class="accordion-item active">
-            <button class="accordion-button" type="button">
-              ¿Para qué sirve un seguro de vida?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+        <div class="faq-carousel-wrap">
+          <div class="faq-carousel" id="faqCarousel" aria-label="Carrusel de preguntas frecuentes">
+            <article class="faq-card">
+              <div class="faq-number">01</div>
+              <h3>¿Para qué sirve un seguro de vida?</h3>
               <p>Sirve para dejar una protección económica a los beneficiarios si falleces o, según la modalidad, si sufres una invalidez absoluta o una enfermedad grave cubierta.</p>
-            </div>
-          </article>
+            </article>
 
-          <article class="accordion-item">
-            <button class="accordion-button" type="button">
-              ¿Quién cobra el seguro de vida?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+            <article class="faq-card">
+              <div class="faq-number">02</div>
+              <h3>¿Quién cobra el seguro de vida?</h3>
               <p>Lo cobra el beneficiario o beneficiarios designados en la póliza. Por eso es importante revisar que estén correctamente indicados.</p>
-            </div>
-          </article>
+            </article>
 
-          <article class="accordion-item">
-            <button class="accordion-button" type="button">
-              ¿Puedo cambiar los beneficiarios?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+            <article class="faq-card">
+              <div class="faq-number">03</div>
+              <h3>¿Puedo cambiar los beneficiarios?</h3>
               <p>Sí, normalmente el tomador puede modificar los beneficiarios durante la vigencia de la póliza, salvo que haya renunciado expresamente a esa facultad.</p>
-            </div>
-          </article>
+            </article>
 
-          <article class="accordion-item">
-            <button class="accordion-button" type="button">
-              ¿Es obligatorio contratar un seguro de vida con la hipoteca?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+            <article class="faq-card">
+              <div class="faq-number">04</div>
+              <h3>¿Es obligatorio contratar un seguro de vida con la hipoteca?</h3>
               <p>No tiene por qué ser obligatorio contratarlo con el banco, pero sí puede ser muy recomendable proteger una deuda tan importante como la hipoteca.</p>
-            </div>
-          </article>
+            </article>
 
-          <article class="accordion-item">
-            <button class="accordion-button" type="button">
-              ¿Qué diferencia hay entre vida temporal y vida amortización?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+            <article class="faq-card">
+              <div class="faq-number">05</div>
+              <h3>¿Qué diferencia hay entre vida temporal y vida amortización?</h3>
               <p>Vida temporal suele proteger con un capital definido durante un periodo. Vida amortización está más orientado a cubrir una deuda cuyo capital puede variar con el tiempo.</p>
-            </div>
-          </article>
+            </article>
 
-          <article class="accordion-item">
-            <button class="accordion-button" type="button">
-              ¿Qué es la cobertura de invalidez absoluta?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+            <article class="faq-card">
+              <div class="faq-number">06</div>
+              <h3>¿Qué es la cobertura de invalidez absoluta?</h3>
               <p>Es una garantía que puede pagar una prestación si el asegurado queda en una situación de invalidez absoluta y permanente reconocida según las condiciones de la póliza.</p>
-            </div>
-          </article>
+            </article>
 
-          <article class="accordion-item">
-            <button class="accordion-button" type="button">
-              ¿Hay que rellenar un cuestionario de salud?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+            <article class="faq-card">
+              <div class="faq-number">07</div>
+              <h3>¿Hay que rellenar un cuestionario de salud?</h3>
               <p>Sí, en muchos casos hay que declarar circunstancias relevantes como estado de salud, hábitos, profesión, actividad laboral o práctica de deportes.</p>
-            </div>
-          </article>
+            </article>
 
-          <article class="accordion-item">
-            <button class="accordion-button" type="button">
-              ¿Qué pasa si dejo de pagar?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+            <article class="faq-card">
+              <div class="faq-number">08</div>
+              <h3>¿Qué pasa si dejo de pagar?</h3>
               <p>La falta de pago puede provocar la suspensión o extinción de la cobertura según los plazos y condiciones de la póliza. Conviene consultarlo antes de tomar una decisión.</p>
-            </div>
-          </article>
+            </article>
 
-          <article class="accordion-item">
-            <button class="accordion-button" type="button">
-              ¿Puedo revisar mi seguro de vida actual?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+            <article class="faq-card">
+              <div class="faq-number">09</div>
+              <h3>¿Puedo revisar mi seguro de vida actual?</h3>
               <p>Sí. Es recomendable revisar si el capital, las coberturas, los beneficiarios y la duración siguen encajando con tu situación actual.</p>
-            </div>
-          </article>
+            </article>
+          </div>
+
+          <div class="faq-controls" aria-label="Controles del carrusel de preguntas frecuentes">
+            <button class="faq-arrow" type="button" data-faq-prev aria-label="Pregunta anterior">‹</button>
+            <button class="faq-arrow" type="button" data-faq-next aria-label="Pregunta siguiente">›</button>
+          </div>
         </div>
       </div>
     </section>
@@ -1222,15 +1559,48 @@
       });
     }
 
-    const accordionItems = document.querySelectorAll(".accordion-item");
+    const faqCarousel = document.querySelector("#faqCarousel");
+    const faqPrev = document.querySelector("[data-faq-prev]");
+    const faqNext = document.querySelector("[data-faq-next]");
 
-    accordionItems.forEach((item) => {
-      const button = item.querySelector(".accordion-button");
+    if (faqCarousel && faqPrev && faqNext) {
+      const moveFaqCarousel = (direction) => {
+        const card = faqCarousel.querySelector(".faq-card");
+        const gap = 18;
+        const distance = card ? card.offsetWidth + gap : 340;
 
-      button.addEventListener("click", () => {
-        item.classList.toggle("active");
+        faqCarousel.scrollBy({
+          left: direction * distance,
+          behavior: "smooth"
+        });
+      };
+
+      faqPrev.addEventListener("click", () => moveFaqCarousel(-1));
+      faqNext.addEventListener("click", () => moveFaqCarousel(1));
+    }
+
+    const revealElements = document.querySelectorAll(
+      ".section-title, .card, .coverage-card, .highlight, .review-list, .mistakes-list, .faq-card, .cta-final"
+    );
+
+    if ("IntersectionObserver" in window) {
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      revealElements.forEach((element, index) => {
+        element.classList.add("reveal");
+        element.style.transitionDelay = `${Math.min(index % 6, 5) * 70}ms`;
+        revealObserver.observe(element);
       });
-    });
+    } else {
+      revealElements.forEach((element) => element.classList.add("in-view"));
+    }
   </script>
 
 </body>
