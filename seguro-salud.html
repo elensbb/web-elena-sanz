@@ -50,6 +50,71 @@
       margin: 0 auto;
     }
 
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes softFloat {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-6px);
+      }
+    }
+
+    .hero .eyebrow,
+    .hero h1,
+    .hero .lead,
+    .hero-actions,
+    .trust-line {
+      animation: fadeUp 0.7s ease both;
+    }
+
+    .hero h1 {
+      animation-delay: 0.08s;
+    }
+
+    .hero .lead {
+      animation-delay: 0.16s;
+    }
+
+    .hero-actions {
+      animation-delay: 0.24s;
+    }
+
+    .trust-line {
+      animation-delay: 0.32s;
+    }
+
+    .hero-card {
+      animation: fadeUp 0.8s ease 0.18s both;
+    }
+
+    .hero-card-icon {
+      animation: softFloat 4.5s ease-in-out infinite;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+
+    .reveal.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     .topbar {
       background: var(--white);
       border-bottom: 1px solid var(--border);
@@ -345,6 +410,13 @@
       padding: 24px;
       box-shadow: 0 10px 24px rgba(31, 41, 51, 0.04);
       height: 100%;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 36px rgba(31, 41, 51, 0.09);
+      border-color: rgba(195, 0, 47, 0.22);
     }
 
     .card-icon {
@@ -376,6 +448,13 @@
       display: flex;
       gap: 16px;
       align-items: flex-start;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    }
+
+    .coverage-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 32px rgba(31, 41, 51, 0.08);
+      border-color: rgba(195, 0, 47, 0.22);
     }
 
     .coverage-card .mini-icon {
@@ -457,84 +536,246 @@
     }
 
     .highlight .pill {
-      background: rgba(255,255,255,.14);
+      background: rgba(255, 255, 255, 0.14);
       color: var(--white);
     }
 
-    .checklist {
+    .review-block {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-      margin-top: 8px;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 34px;
+      align-items: start;
     }
 
-    .check-item {
+    .review-intro {
+      color: var(--muted);
+      font-size: 1.04rem;
+      margin-top: 10px;
+    }
+
+    .review-list {
+      list-style: none;
+      display: grid;
+      gap: 0;
+      background: var(--white);
+      border-radius: calc(var(--radius) + 4px);
+      border: 1px solid var(--border);
+      padding: 30px;
+      box-shadow: 0 14px 34px rgba(31, 41, 51, 0.06);
+    }
+
+    .review-item {
+      display: grid;
+      grid-template-columns: 46px 1fr;
+      gap: 16px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .review-item:first-child {
+      padding-top: 0;
+    }
+
+    .review-item:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .review-number {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(195, 0, 47, 0.08);
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 0.9rem;
+    }
+
+    .review-item strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 4px;
+      font-size: 1.02rem;
+    }
+
+    .review-item p {
+      color: var(--muted);
+      font-size: 0.97rem;
+    }
+
+    .review-note {
+      margin-top: 24px;
+      padding: 18px 20px;
+      border-radius: var(--radius-sm);
+      background: rgba(195, 0, 47, 0.06);
+      color: #455363;
+      font-size: 0.98rem;
+    }
+
+    .review-note strong {
+      color: var(--primary);
+    }
+
+    .mistakes-block {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .mistakes-layout {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .mistakes-side {
+      position: sticky;
+      top: 104px;
+    }
+
+    .mistakes-side p {
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .mistakes-list {
+      list-style: none;
+      display: grid;
+      gap: 0;
       background: var(--white);
       border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: 18px;
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      color: #455363;
+      border-radius: calc(var(--radius) + 4px);
+      padding: 30px;
+      box-shadow: 0 14px 34px rgba(31, 41, 51, 0.06);
     }
 
-    .check-item::before {
-      content: "✓";
+    .mistake-item {
+      display: grid;
+      grid-template-columns: 38px 1fr;
+      gap: 16px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .mistake-item:first-child {
+      padding-top: 0;
+    }
+
+    .mistake-item:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .mistake-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(195, 0, 47, 0.08);
       color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 1rem;
+    }
+
+    .mistake-item strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 4px;
+      font-size: 1.02rem;
+    }
+
+    .mistake-item p {
+      color: var(--muted);
+      font-size: 0.97rem;
+    }
+
+    .faq-carousel-wrap {
+      position: relative;
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+
+    .faq-carousel {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(290px, 360px);
+      gap: 18px;
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      scroll-snap-type: x mandatory;
+      scroll-padding: 4px;
+      padding: 6px 4px 18px;
+      scrollbar-width: thin;
+    }
+
+    .faq-card {
+      min-height: 285px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 10px 24px rgba(31, 41, 51, 0.04);
+      scroll-snap-align: start;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    }
+
+    .faq-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 42px rgba(31, 41, 51, 0.1);
+      border-color: rgba(195, 0, 47, 0.22);
+    }
+
+    .faq-number {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(195, 0, 47, 0.08);
+      color: var(--primary);
+      display: grid;
+      place-items: center;
       font-weight: 900;
       flex: 0 0 auto;
     }
 
-    .accordion {
-      display: grid;
-      gap: 12px;
-      max-width: 900px;
-      margin: 0 auto;
+    .faq-card h3 {
+      margin-bottom: 0;
     }
 
-    .accordion-item {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      overflow: hidden;
-    }
-
-    .accordion-button {
-      width: 100%;
-      border: 0;
-      background: transparent;
-      padding: 20px 22px;
-      text-align: left;
-      font-size: 1.02rem;
-      font-weight: 800;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 18px;
-      cursor: pointer;
-      color: var(--text);
-    }
-
-    .accordion-button span {
-      color: var(--primary);
-      font-size: 1.4rem;
-      line-height: 1;
-      transition: transform 0.2s ease;
-    }
-
-    .accordion-content {
-      display: none;
-      padding: 0 22px 22px;
+    .faq-card p {
       color: var(--muted);
+      font-size: 0.98rem;
     }
 
-    .accordion-item.active .accordion-content {
-      display: block;
+    .faq-controls {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 12px;
     }
 
-    .accordion-item.active .accordion-button span {
-      transform: rotate(45deg);
+    .faq-arrow {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid rgba(195, 0, 47, 0.28);
+      background: var(--white);
+      color: var(--primary);
+      font-size: 1.2rem;
+      font-weight: 900;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .faq-arrow:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(31, 41, 51, 0.12);
+      background: rgba(195, 0, 47, 0.06);
     }
 
     .cta-final {
@@ -578,6 +819,14 @@
       .grid-4 {
         grid-template-columns: repeat(2, 1fr);
       }
+
+      .mistakes-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .mistakes-side {
+        position: static;
+      }
     }
 
     @media (max-width: 900px) {
@@ -608,15 +857,19 @@
 
       .hero-grid,
       .highlight-grid,
-      .grid-2 {
+      .grid-2,
+      .review-block {
         grid-template-columns: 1fr;
       }
 
       .grid-3,
       .grid-4,
-      .coverages,
-      .checklist {
+      .coverages {
         grid-template-columns: 1fr;
+      }
+
+      .faq-carousel {
+        grid-auto-columns: minmax(260px, 86vw);
       }
 
       .hero {
@@ -625,6 +878,22 @@
 
       section {
         padding: 56px 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
       }
     }
 
@@ -645,6 +914,17 @@
       .highlight,
       .cta-final {
         padding: 28px 20px;
+      }
+
+      .review-list,
+      .mistakes-list {
+        padding: 24px 20px;
+      }
+
+      .review-item,
+      .mistake-item {
+        grid-template-columns: 38px 1fr;
+        gap: 12px;
       }
 
       h1 {
@@ -1088,7 +1368,11 @@
             </div>
 
             <br />
-            <a class="btn btn-primary" href="https://wa.me/34606067906?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20seguro%20de%20salud%20con%20reembolso" target="_blank" rel="noopener">Preguntar por reembolso</a>
+            <a class="btn btn-primary"">Especialistas</span>
+            </div>
+
+            <br />
+            <a class="btn href="https://wa.me/34606067906?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20seguro%20de%20salud%20con%20reembolso" target="_blank" rel="noopener">Preguntar por reembolso</a>
           </div>
         </div>
       </div>
@@ -1188,66 +1472,152 @@
 
     <section class="section-soft">
       <div class="container">
-        <div class="grid-2">
+        <div class="review-block">
           <div class="section-title">
             <span>Antes de contratar</span>
             <h2>Qué conviene revisar</h2>
             <p>
               Antes de elegir un seguro de salud, conviene revisar cómo lo vas a utilizar, qué médicos o centros te interesan, si quieres copago y qué límites tiene cada modalidad.
             </p>
+
+            <p class="review-intro">
+              La mejor opción no siempre es la más barata ni la más completa: es la que encaja con tus médicos, tu zona, tu frecuencia de uso y tu presupuesto.
+            </p>
+
+            <div class="review-note">
+              <strong>Consejo:</strong> antes de contratar, revisa el cuadro médico, los copagos, las carencias y las autorizaciones. Ahí suelen estar las diferencias importantes.
+            </div>
           </div>
 
-          <div class="checklist">
-            <div class="check-item">Edad de los asegurados y si es póliza individual o familiar.</div>
-            <div class="check-item">Si prefieres cuadro médico o libertad de elección.</div>
-            <div class="check-item">Modalidad con copago, sin copago o Advance.</div>
-            <div class="check-item">Hospitales, clínicas y especialistas disponibles en tu zona.</div>
-            <div class="check-item">Periodos de carencia y preexistencias.</div>
-            <div class="check-item">Límites de reembolso y documentación necesaria.</div>
-            <div class="check-item">Pruebas diagnósticas avanzadas y autorizaciones.</div>
-            <div class="check-item">Salud dental, psicología, fisioterapia, embarazo o asistencia en viaje.</div>
-          </div>
+          <ol class="review-list">
+            <li class="review-item">
+              <span class="review-number">01</span>
+              <div>
+                <strong>Edad de los asegurados</strong>
+                <p>Conviene revisar si la póliza será individual, de pareja o familiar, y cómo afecta la edad de cada asegurado.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">02</span>
+              <div>
+                <strong>Cuadro médico o libertad de elección</strong>
+                <p>Si quieres elegir médicos concretos fuera del cuadro, puede interesarte una modalidad con reembolso.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">03</span>
+              <div>
+                <strong>Copago, sin copago o Advance</strong>
+                <p>La modalidad cambia mucho según prefieras pagar más prima fija o pagar una parte cuando usas servicios médicos.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">04</span>
+              <div>
+                <strong>Hospitales, clínicas y especialistas</strong>
+                <p>Antes de contratar, es importante comprobar qué centros y profesionales están disponibles en tu zona.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">05</span>
+              <div>
+                <strong>Carencias y preexistencias</strong>
+                <p>Algunas coberturas no se pueden usar desde el primer día y ciertas situaciones médicas previas pueden tener condiciones.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">06</span>
+              <div>
+                <strong>Límites de reembolso</strong>
+                <p>Si eliges reembolso, hay que revisar porcentajes, importes máximos, facturas y documentación necesaria.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">07</span>
+              <div>
+                <strong>Pruebas y autorizaciones</strong>
+                <p>Algunas pruebas diagnósticas, ingresos, cirugías o tratamientos pueden necesitar autorización previa.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">08</span>
+              <div>
+                <strong>Servicios complementarios</strong>
+                <p>Salud dental, psicología, fisioterapia, embarazo, videoconsulta o asistencia en viaje pueden marcar la diferencia.</p>
+              </div>
+            </li>
+          </ol>
         </div>
       </div>
     </section>
 
     <section>
-      <div class="container">
-        <div class="section-title center">
-          <span>Errores frecuentes</span>
-          <h2>Errores habituales al contratar un seguro de salud</h2>
-        </div>
+      <div class="container mistakes-block">
+        <div class="mistakes-layout">
+          <div class="mistakes-side section-title">
+            <span>Errores frecuentes</span>
+            <h2>Errores habituales al contratar un seguro de salud</h2>
+            <p>
+              En salud, muchas diferencias se descubren cuando necesitas usar el seguro. Por eso conviene revisar bien estas cuestiones antes de decidir.
+            </p>
+          </div>
 
-        <div class="grid-3">
-          <article class="card">
-            <h3>Elegir solo por precio</h3>
-            <p>Un seguro más barato puede tener más copagos, límites, carencias o menos servicios incluidos.</p>
-          </article>
+          <ol class="mistakes-list">
+            <li class="mistake-item">
+              <span class="mistake-mark">!</span>
+              <div>
+                <strong>Elegir solo por precio</strong>
+                <p>Un seguro más barato puede tener más copagos, límites, carencias o menos servicios incluidos.</p>
+              </div>
+            </li>
 
-          <article class="card">
-            <h3>No revisar el cuadro médico</h3>
-            <p>Antes de contratar conviene comprobar médicos, clínicas y hospitales disponibles en tu zona.</p>
-          </article>
+            <li class="mistake-item">
+              <span class="mistake-mark">!</span>
+              <div>
+                <strong>No revisar el cuadro médico</strong>
+                <p>Antes de contratar conviene comprobar médicos, clínicas y hospitales disponibles en tu zona.</p>
+              </div>
+            </li>
 
-          <article class="card">
-            <h3>No entender los copagos</h3>
-            <p>Hay que saber cuánto se paga por consulta, prueba, urgencia, hospitalización o tratamiento.</p>
-          </article>
+            <li class="mistake-item">
+              <span class="mistake-mark">!</span>
+              <div>
+                <strong>No entender los copagos</strong>
+                <p>Hay que saber cuánto se paga por consulta, prueba, urgencia, hospitalización o tratamiento.</p>
+              </div>
+            </li>
 
-          <article class="card">
-            <h3>Olvidar las carencias</h3>
-            <p>Algunas coberturas pueden no estar disponibles desde el primer día.</p>
-          </article>
+            <li class="mistake-item">
+              <span class="mistake-mark">!</span>
+              <div>
+                <strong>Olvidar las carencias</strong>
+                <p>Algunas coberturas pueden no estar disponibles desde el primer día.</p>
+              </div>
+            </li>
 
-          <article class="card">
-            <h3>Confundir asistencia y reembolso</h3>
-            <p>La asistencia funciona con cuadro médico. El reembolso permite más libertad, pero con porcentajes y límites.</p>
-          </article>
+            <li class="mistake-item">
+              <span class="mistake-mark">!</span>
+              <div>
+                <strong>Confundir asistencia y reembolso</strong>
+                <p>La asistencia funciona con cuadro médico. El reembolso permite más libertad, pero con porcentajes y límites.</p>
+              </div>
+            </li>
 
-          <article class="card">
-            <h3>Pensar que todo está incluido</h3>
-            <p>Estética, preexistencias, fertilidad, prótesis externas o ciertos tratamientos pueden estar excluidos o limitados.</p>
-          </article>
+            <li class="mistake-item">
+              <span class="mistake-mark">!</span>
+              <div>
+                <strong>Pensar que todo está incluido</strong>
+                <p>Estética, preexistencias, fertilidad, prótesis externas o ciertos tratamientos pueden estar excluidos o limitados.</p>
+              </div>
+            </li>
+          </ol>
         </div>
       </div>
     </section>
@@ -1259,96 +1629,67 @@
           <h2>Dudas habituales sobre el seguro de salud</h2>
         </div>
 
-        <div class="accordion">
-          <article class="accordion-item active">
-            <button class="accordion-button" type="button">
-              ¿Qué diferencia hay entre cuadro médico y reembolso?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+        <div class="faq-carousel-wrap">
+          <div class="faq-carousel" id="faqCarousel" aria-label="Carrusel de preguntas frecuentes">
+            <article class="faq-card">
+              <div class="faq-number">01</div>
+              <h3>¿Qué diferencia hay entre cuadro médico y reembolso?</h3>
               <p>El cuadro médico te permite acudir a profesionales y centros concertados. El reembolso permite acudir a médicos u hospitales fuera del cuadro y recuperar parte del gasto, según porcentaje y límites.</p>
-            </div>
-          </article>
+            </article>
 
-          <article class="accordion-item">
-            <button class="accordion-button" type="button">
-              ¿Qué es el copago?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+            <article class="faq-card">
+              <div class="faq-number">02</div>
+              <h3>¿Qué es el copago?</h3>
               <p>Es una cantidad que paga el asegurado cuando utiliza determinados servicios médicos. Puede variar según la modalidad contratada y el tipo de acto médico.</p>
-            </div>
-          </article>
+            </article>
 
-          <article class="accordion-item">
-            <button class="accordion-button" type="button">
-              ¿Qué es una carencia?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+            <article class="faq-card">
+              <div class="faq-number">03</div>
+              <h3>¿Qué es una carencia?</h3>
               <p>Es el tiempo que debe pasar desde el alta en la póliza hasta poder usar determinadas coberturas. No todas las coberturas tienen la misma carencia.</p>
-            </div>
-          </article>
+            </article>
 
-          <article class="accordion-item">
-            <button class="accordion-button" type="button">
-              ¿Puedo ir directamente al especialista?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+            <article class="faq-card">
+              <div class="faq-number">04</div>
+              <h3>¿Puedo ir directamente al especialista?</h3>
               <p>En muchas especialidades dentro del cuadro médico puedes elegir profesional y pedir cita directamente. Algunas pruebas o tratamientos sí pueden necesitar prescripción o autorización.</p>
-            </div>
-          </article>
+            </article>
 
-          <article class="accordion-item">
-            <button class="accordion-button" type="button">
-              ¿Cuándo necesito autorización?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+            <article class="faq-card">
+              <div class="faq-number">05</div>
+              <h3>¿Cuándo necesito autorización?</h3>
               <p>Puede ser necesaria para pruebas diagnósticas avanzadas, tratamientos especiales, ingresos hospitalarios, intervenciones quirúrgicas o sesiones con límite anual.</p>
-            </div>
-          </article>
+            </article>
 
-          <article class="accordion-item">
-            <button class="accordion-button" type="button">
-              ¿Incluye salud dental?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+            <article class="faq-card">
+              <div class="faq-number">06</div>
+              <h3>¿Incluye salud dental?</h3>
               <p>Puede incluir salud dental con actos gratuitos y servicios franquiciados, dependiendo de la modalidad contratada.</p>
-            </div>
-          </article>
+            </article>
 
-          <article class="accordion-item">
-            <button class="accordion-button" type="button">
-              ¿Incluye videoconsulta?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+            <article class="faq-card">
+              <div class="faq-number">07</div>
+              <h3>¿Incluye videoconsulta?</h3>
               <p>Sí, algunas modalidades incluyen videoconsulta y chat médico en distintas especialidades, según disponibilidad y condiciones.</p>
-            </div>
-          </article>
+            </article>
 
-          <article class="accordion-item">
-            <button class="accordion-button" type="button">
-              ¿Qué es el subsidio por hospitalización?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+            <article class="faq-card">
+              <div class="faq-number">08</div>
+              <h3>¿Qué es el subsidio por hospitalización?</h3>
               <p>Es una cantidad pactada que se recibe por cada noche de ingreso hospitalario o por determinadas intervenciones quirúrgicas ambulatorias, según la póliza.</p>
-            </div>
-          </article>
+            </article>
 
-          <article class="accordion-item">
-            <button class="accordion-button" type="button">
-              ¿Puedo asegurar a mi familia?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+            <article class="faq-card">
+              <div class="faq-number">09</div>
+              <h3>¿Puedo asegurar a mi familia?</h3>
               <p>Sí. Se puede estudiar una opción individual, de pareja o familiar, revisando edades, necesidades médicas, copagos y modalidad más adecuada.</p>
-            </div>
-          </article>
+            </article>
+          </div>
+
+          <div class="faq-controls" aria-label="Controles del carrusel de preguntas frecuentes">
+            <button class="faq-arrow" type="button" data-faq-prev aria-label="Pregunta anterior">‹</button>
+            <button class="faq-arrow" type="button" data-faq-next aria-label="Pregunta siguiente">›</button>
+          </div>
         </div>
       </div>
     </section>
@@ -1398,15 +1739,48 @@
       });
     }
 
-    const accordionItems = document.querySelectorAll(".accordion-item");
+    const faqCarousel = document.querySelector("#faqCarousel");
+    const faqPrev = document.querySelector("[data-faq-prev]");
+    const faqNext = document.querySelector("[data-faq-next]");
 
-    accordionItems.forEach((item) => {
-      const button = item.querySelector(".accordion-button");
+    if (faqCarousel && faqPrev && faqNext) {
+      const moveFaqCarousel = (direction) => {
+        const card = faqCarousel.querySelector(".faq-card");
+        const gap = 18;
+        const distance = card ? card.offsetWidth + gap : 340;
 
-      button.addEventListener("click", () => {
-        item.classList.toggle("active");
+        faqCarousel.scrollBy({
+          left: direction * distance,
+          behavior: "smooth"
+        });
+      };
+
+      faqPrev.addEventListener("click", () => moveFaqCarousel(-1));
+      faqNext.addEventListener("click", () => moveFaqCarousel(1));
+    }
+
+    const revealElements = document.querySelectorAll(
+      ".section-title, .card, .coverage-card, .highlight, .review-list, .mistakes-list, .faq-card, .cta-final"
+    );
+
+    if ("IntersectionObserver" in window) {
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      revealElements.forEach((element, index) => {
+        element.classList.add("reveal");
+        element.style.transitionDelay = `${Math.min(index % 6, 5) * 70}ms`;
+        revealObserver.observe(element);
       });
-    });
+    } else {
+      revealElements.forEach((element) => element.classList.add("in-view"));
+    }
   </script>
 
 </body>
