@@ -1,0 +1,1423 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Seguros para autónomos | Elena Sanz Burgos</title>
+  <meta name="description" content="Seguros para autónomos: responsabilidad civil, baja laboral, incapacidad temporal, accidentes, salud, vida, hogar profesional, furgonetas, equipos y protección jurídica." />
+
+  <style>
+    :root {
+      --bg: #fbf7f1;
+      --bg-soft: #fffaf4;
+      --white: #ffffff;
+      --text: #1f2933;
+      --muted: #64748b;
+      --primary: #c3002f;
+      --primary-dark: #9f0027;
+      --border: rgba(31, 41, 51, 0.12);
+      --shadow: 0 18px 45px rgba(31, 41, 51, 0.08);
+      --radius: 24px;
+      --radius-sm: 16px;
+      --max: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(100% - 32px, var(--max));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: var(--white);
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-text strong {
+      display: block;
+      font-size: 1rem;
+      line-height: 1.1;
+    }
+
+    .brand-text span {
+      display: block;
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 0;
+      background: transparent;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: var(--text);
+    }
+
+    .mobile-menu {
+      display: none;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border-radius: 999px;
+      padding: 13px 20px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border: 1px solid transparent;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(31, 41, 51, 0.12);
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--primary);
+      border-color: rgba(195, 0, 47, 0.35);
+    }
+
+    .hero {
+      padding: 84px 0 56px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 560px;
+      height: 560px;
+      border-radius: 50%;
+      background: rgba(195, 0, 47, 0.08);
+      right: -220px;
+      top: -220px;
+      z-index: -1;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: rgba(195, 0, 47, 0.08);
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(2.45rem, 5vw, 4.7rem);
+      line-height: 0.98;
+      letter-spacing: -0.06em;
+      max-width: 850px;
+      margin-bottom: 22px;
+    }
+
+    .lead {
+      font-size: clamp(1.08rem, 2vw, 1.25rem);
+      color: #455363;
+      max-width: 690px;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .trust-line {
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .hero-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 26px;
+    }
+
+    .hero-card-icon {
+      width: 74px;
+      height: 74px;
+      border-radius: 22px;
+      background: rgba(195, 0, 47, 0.08);
+      display: grid;
+      place-items: center;
+      font-size: 2rem;
+      margin-bottom: 18px;
+    }
+
+    .hero-card h2 {
+      font-size: 1.45rem;
+      margin-bottom: 12px;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-card ul {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      color: #455363;
+    }
+
+    .hero-card li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .hero-card li::before {
+      content: "✓";
+      color: var(--primary);
+      font-weight: 900;
+      flex: 0 0 auto;
+    }
+
+    section {
+      padding: 72px 0;
+    }
+
+    .section-soft {
+      background: var(--bg-soft);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-title {
+      max-width: 780px;
+      margin-bottom: 34px;
+    }
+
+    .section-title.center {
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    .section-title span {
+      color: var(--primary);
+      font-weight: 800;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 3vw, 3rem);
+      line-height: 1.08;
+      letter-spacing: -0.045em;
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+
+    .section-title p,
+    .text-muted {
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 24px;
+      box-shadow: 0 10px 24px rgba(31, 41, 51, 0.04);
+      height: 100%;
+    }
+
+    .card-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 16px;
+      background: rgba(195, 0, 47, 0.08);
+      display: grid;
+      place-items: center;
+      font-size: 1.45rem;
+      margin-bottom: 18px;
+    }
+
+    .card p {
+      color: var(--muted);
+    }
+
+    .coverages {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .coverage-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 22px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .coverage-card .mini-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: rgba(195, 0, 47, 0.08);
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+    }
+
+    .coverage-card p {
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .highlight {
+      background: linear-gradient(135deg, var(--primary), #8f0023);
+      color: var(--white);
+      border-radius: calc(var(--radius) + 6px);
+      padding: 38px;
+      box-shadow: var(--shadow);
+    }
+
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .highlight p {
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .highlight .eyebrow {
+      background: rgba(255, 255, 255, 0.12);
+      color: var(--white);
+      margin-bottom: 14px;
+    }
+
+    .feature-list {
+      list-style: none;
+      display: grid;
+      gap: 11px;
+      margin-top: 20px;
+    }
+
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    .feature-list li::before {
+      content: "✓";
+      font-weight: 900;
+      color: var(--white);
+    }
+
+    .pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 9px 13px;
+      background: rgba(195, 0, 47, 0.08);
+      color: var(--primary);
+      font-weight: 800;
+      font-size: 0.9rem;
+    }
+
+    .highlight .pill {
+      background: rgba(255,255,255,.14);
+      color: var(--white);
+    }
+
+    .checklist {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .check-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 18px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: #455363;
+    }
+
+    .check-item::before {
+      content: "✓";
+      color: var(--primary);
+      font-weight: 900;
+      flex: 0 0 auto;
+    }
+
+    .accordion {
+      display: grid;
+      gap: 12px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .accordion-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+    }
+
+    .accordion-button {
+      width: 100%;
+      border: 0;
+      background: transparent;
+      padding: 20px 22px;
+      text-align: left;
+      font-size: 1.02rem;
+      font-weight: 800;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      cursor: pointer;
+      color: var(--text);
+    }
+
+    .accordion-button span {
+      color: var(--primary);
+      font-size: 1.4rem;
+      line-height: 1;
+      transition: transform 0.2s ease;
+    }
+
+    .accordion-content {
+      display: none;
+      padding: 0 22px 22px;
+      color: var(--muted);
+    }
+
+    .accordion-item.active .accordion-content {
+      display: block;
+    }
+
+    .accordion-item.active .accordion-button span {
+      transform: rotate(45deg);
+    }
+
+    .cta-final {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) + 8px);
+      padding: 42px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-final p {
+      max-width: 720px;
+      margin: 0 auto 24px;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .footer {
+      padding: 34px 0;
+      border-top: 1px solid var(--border);
+      background: var(--white);
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 980px) {
+      .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .nav-links,
+      .nav-actions {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .mobile-menu {
+        display: none;
+        border-top: 1px solid var(--border);
+        padding: 16px 0 22px;
+      }
+
+      .mobile-menu.active {
+        display: grid;
+        gap: 12px;
+      }
+
+      .mobile-menu a {
+        padding: 10px 0;
+        color: var(--muted);
+      }
+
+      .hero-grid,
+      .highlight-grid,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-3,
+      .grid-4,
+      .coverages,
+      .checklist {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 54px;
+      }
+
+      section {
+        padding: 56px 0;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .container {
+        width: min(100% - 24px, var(--max));
+      }
+
+      .hero-actions,
+      .cta-final .hero-actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .highlight,
+      .cta-final {
+        padding: 28px 20px;
+      }
+
+      h1 {
+        font-size: 2.45rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="topbar">
+    <div class="container">
+      <nav class="nav" aria-label="Navegación principal">
+        <a href="index.html" class="brand" aria-label="Volver al inicio">
+          <div class="brand-mark">ES</div>
+          <div class="brand-text">
+            <strong>Elena Sanz Burgos</strong>
+            <span>Seguros y asesoramiento</span>
+          </div>
+        </a>
+
+        <div class="nav-links">
+          <a href="index.html">Inicio</a>
+          <a href="seguros.html">Seguros</a>
+          <a href="autonomos.html">Autónomos</a>
+          <a href="asesoramiento-financiero.html">Finanzas</a>
+          <a href="clientes.html">Clientes</a>
+        </div>
+
+        <div class="nav-actions">
+          <a class="btn btn-outline" href="tel:+34917702311">Llamar oficina</a>
+          <a class="btn btn-primary" href="https://wa.me/34606067906?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20seguros%20para%20aut%C3%B3nomos" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+
+        <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      </nav>
+
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Inicio</a>
+        <a href="seguros.html">Seguros</a>
+        <a href="autonomos.html">Autónomos</a>
+        <a href="asesoramiento-financiero.html">Finanzas</a>
+        <a href="clientes.html">Clientes</a>
+        <a class="btn btn-primary" href="https://wa.me/34606067906?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20seguros%20para%20aut%C3%B3nomos" target="_blank" rel="noopener">Hablar por WhatsApp</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">👩‍💼 Seguros para autónomos</div>
+
+          <h1>Protege tu trabajo, tus ingresos y tu tranquilidad</h1>
+
+          <p class="lead">
+            Si eres autónomo, tu actividad depende directamente de ti. Te ayudamos a revisar qué seguros pueden protegerte frente a una baja laboral, una reclamación de un cliente, un accidente, un problema de salud, tu vehículo de trabajo, tus herramientas o tu oficina en casa.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/34606067906?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20seguros%20para%20aut%C3%B3nomos" target="_blank" rel="noopener">Hablar por WhatsApp</a>
+            <a class="btn btn-outline" href="tel:+34917702311">Llamar a la oficina</a>
+            <a class="btn btn-outline" href="#coberturas">Ver opciones</a>
+          </div>
+
+          <p class="trust-line">Respuesta rápida · Sin compromiso · Te explicamos todo de forma sencilla</p>
+        </div>
+
+        <aside class="hero-card" aria-label="Resumen de seguros para autónomos">
+          <div class="hero-card-icon">🛡️</div>
+          <h2>¿Qué puedes proteger?</h2>
+          <ul>
+            <li>Tu actividad profesional y tus ingresos.</li>
+            <li>Responsabilidad civil frente a terceros.</li>
+            <li>Baja laboral, incapacidad temporal o accidentes.</li>
+            <li>Salud, vida, vehículo profesional y hogar profesional.</li>
+            <li>Protección jurídica, equipos, herramientas y ahorro.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <span>Protección para trabajar con más seguridad</span>
+          <h2>Cuando trabajas por cuenta propia, conviene revisar todo en conjunto</h2>
+          <p>
+            Un autónomo no siempre necesita contratar muchos seguros, pero sí necesita saber qué riesgos pueden afectar a su actividad. Una baja, una reclamación, un accidente, una avería del vehículo o un problema en el lugar desde donde trabajas pueden tener impacto directo en tus ingresos.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="card-icon">💶</div>
+            <h3>Tus ingresos</h3>
+            <p>Protección ante situaciones que pueden impedirte trabajar temporalmente, como una baja por accidente o enfermedad.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">⚖️</div>
+            <h3>Tu responsabilidad</h3>
+            <p>Cobertura ante reclamaciones de terceros por daños personales, materiales o perjuicios derivados de tu actividad.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🧰</div>
+            <h3>Tu medio de trabajo</h3>
+            <p>Vehículo profesional, herramientas, equipos, oficina en casa o local desde el que desarrollas tu actividad.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-soft">
+      <div class="container">
+        <div class="section-title center">
+          <span>Para distintos tipos de autónomos</span>
+          <h2>¿Para quién es recomendable esta revisión?</h2>
+          <p>
+            No necesita lo mismo un profesional que trabaja desde casa, un instalador, un repartidor, un consultor, un autónomo con furgoneta o alguien que atiende clientes de forma presencial.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="card-icon">💻</div>
+            <h3>Profesionales que trabajan desde casa</h3>
+            <p>Para quienes tienen oficina en casa, ordenador, equipos profesionales o reciben clientes puntualmente.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🧑‍🔧</div>
+            <h3>Instaladores y oficios</h3>
+            <p>Para profesionales que trabajan en viviendas, locales u obras y pueden causar daños a terceros durante su actividad.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🚐</div>
+            <h3>Autónomos con vehículo</h3>
+            <p>Para quienes dependen de una furgoneta, vehículo profesional o herramienta móvil para trabajar a diario.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🧾</div>
+            <h3>Profesionales con clientes</h3>
+            <p>Para asesores, técnicos, consultores o profesionales que pueden recibir reclamaciones por errores, daños o perjuicios.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🏠</div>
+            <h3>Actividad en vivienda habitual</h3>
+            <p>Para quienes desarrollan parte de su actividad profesional en su lugar de residencia.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">👥</div>
+            <h3>Autónomos con colaboradores</h3>
+            <p>Para quienes trabajan con empleados, subcontratas o colaboradores y necesitan revisar responsabilidades adicionales.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="coberturas">
+      <div class="container">
+        <div class="section-title center">
+          <span>Opciones principales</span>
+          <h2>Seguros que puede necesitar un autónomo</h2>
+          <p>
+            Esta página reúne las opciones más habituales para autónomos. Después podemos ampliar cada una en páginas específicas si quieres desarrollar más contenido.
+          </p>
+        </div>
+
+        <div class="grid-4">
+          <article class="card">
+            <div class="card-icon">⚖️</div>
+            <h3>Responsabilidad civil</h3>
+            <p>Para protegerte ante reclamaciones por daños causados a terceros durante el desarrollo de tu actividad.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🛏️</div>
+            <h3>Baja laboral</h3>
+            <p>Ayuda económica si una enfermedad o accidente te impide trabajar temporalmente.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🩹</div>
+            <h3>Accidentes autónomos</h3>
+            <p>Protección ante fallecimiento, invalidez, hospitalización o lesiones derivadas de un accidente.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🩺</div>
+            <h3>Salud autónomos</h3>
+            <p>Asistencia sanitaria privada, reembolso, hospitalización, salud dental y servicios digitales.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">❤️</div>
+            <h3>Vida autónomos</h3>
+            <p>Para proteger a tu familia, tus deudas o tu estabilidad económica si ocurre algo grave.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🏠</div>
+            <h3>Hogar profesional</h3>
+            <p>Para autónomos que realizan su actividad desde su vivienda y necesitan proteger casa y actividad.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🚐</div>
+            <h3>Furgonetas y vehículos</h3>
+            <p>Para quienes dependen de un vehículo profesional para desplazarse, transportar herramientas o trabajar.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">📄</div>
+            <h3>Protección jurídica</h3>
+            <p>Asesoramiento jurídico y defensa ante conflictos relacionados con tu actividad o tu permiso de conducir.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-soft">
+      <div class="container highlight">
+        <div class="highlight-grid">
+          <div>
+            <div class="eyebrow">Responsabilidad civil autónomos</div>
+            <h2>Para que una reclamación no frene tu actividad</h2>
+            <p>
+              La responsabilidad civil para autónomos puede ayudarte si, durante el desarrollo de tu actividad, causas daños personales o materiales a terceros y recibes una reclamación.
+            </p>
+
+            <ul class="feature-list">
+              <li>Responsabilidad civil general o de explotación.</li>
+              <li>Daños causados a terceros durante tu actividad habitual.</li>
+              <li>Actuación de empleados o colaboradores, según modalidad.</li>
+              <li>Defensa jurídica, costas y gastos judiciales.</li>
+              <li>Fianzas judiciales exigidas para garantizar tu responsabilidad civil.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">⚖️</div>
+            <h3>Puede interesarte si...</h3>
+            <p>
+              Trabajas en casa de clientes, manipulas bienes de terceros, prestas servicios técnicos, tienes empleados, haces instalaciones o tu actividad puede generar daños a otras personas.
+            </p>
+
+            <div class="pills">
+              <span class="pill">RC explotación</span>
+              <span class="pill">Defensa</span>
+              <span class="pill">Fianzas</span>
+              <span class="pill">Terceros</span>
+            </div>
+
+            <br />
+            <a class="btn btn-primary" href="https://wa.me/34606067906?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20responsabilidad%20civil%20para%20aut%C3%B3nomos" target="_blank" rel="noopener">Preguntar por RC autónomos</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container highlight" style="background: linear-gradient(135deg, #1f2933, #111827);">
+        <div class="highlight-grid">
+          <div>
+            <div class="eyebrow">Baja laboral e incapacidad temporal</div>
+            <h2>Si no puedes trabajar, tus ingresos pueden resentirse</h2>
+            <p>
+              La baja laboral para autónomos está pensada para ayudarte cuando una enfermedad o accidente te impide desarrollar tu actividad. Puede plantearse mediante baja diaria por baremo o baja real y efectiva, según modalidad.
+            </p>
+
+            <ul class="feature-list">
+              <li>Ayuda económica por incapacidad temporal.</li>
+              <li>Opciones por accidente o enfermedad.</li>
+              <li>Posibilidad de baja diaria por baremo.</li>
+              <li>Posibilidad de baja real y efectiva.</li>
+              <li>Revisión de carencias, límites y documentación necesaria.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">🛏️</div>
+            <h3>Cuota de autónomo</h3>
+            <p>
+              Algunas coberturas pueden contemplar el reembolso de la cuota mensual del RETA o régimen asimilado por periodos de incapacidad temporal, siempre según condiciones, límites, carencias y documentación acreditativa.
+            </p>
+
+            <div class="pills">
+              <span class="pill">RETA</span>
+              <span class="pill">Baja</span>
+              <span class="pill">Accidente</span>
+              <span class="pill">Enfermedad</span>
+            </div>
+
+            <br />
+            <a class="btn btn-primary" href="https://wa.me/34606067906?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20baja%20laboral%20para%20aut%C3%B3nomos" target="_blank" rel="noopener">Consultar baja laboral</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-soft">
+      <div class="container">
+        <div class="section-title">
+          <span>Coberturas que conviene revisar</span>
+          <h2>Qué puede incluir una protección para autónomos</h2>
+          <p>
+            Las coberturas concretas dependen de la modalidad contratada, tu actividad, los límites, franquicias, carencias y condiciones de cada póliza.
+          </p>
+        </div>
+
+        <div class="coverages">
+          <article class="coverage-card">
+            <div class="mini-icon">⚖️</div>
+            <div>
+              <h3>Indemnizaciones a terceros</h3>
+              <p>Pago de indemnizaciones por daños personales o materiales causados durante tu actividad profesional.</p>
+            </div>
+          </article>
+
+          <article class="coverage-card">
+            <div class="mini-icon">📄</div>
+            <div>
+              <h3>Defensa jurídica y fianzas</h3>
+              <p>Defensa civil o penal, costas, gastos judiciales y constitución de fianzas según modalidad.</p>
+            </div>
+          </article>
+
+          <article class="coverage-card">
+            <div class="mini-icon">🛏️</div>
+            <div>
+              <h3>Incapacidad temporal</h3>
+              <p>Ayuda económica si una baja por accidente o enfermedad te impide trabajar temporalmente.</p>
+            </div>
+          </article>
+
+          <article class="coverage-card">
+            <div class="mini-icon">💶</div>
+            <div>
+              <h3>Cuota de autónomo</h3>
+              <p>Reembolso de la cuota mensual del RETA o régimen asimilado en determinados supuestos cubiertos.</p>
+            </div>
+          </article>
+
+          <article class="coverage-card">
+            <div class="mini-icon">♿</div>
+            <div>
+              <h3>Invalidez permanente</h3>
+              <p>Indemnización si un accidente deja secuelas permanentes, según baremo y capital contratado.</p>
+            </div>
+          </article>
+
+          <article class="coverage-card">
+            <div class="mini-icon">❤️</div>
+            <div>
+              <h3>Fallecimiento o vida riesgo</h3>
+              <p>Protección económica para beneficiarios, familia, préstamos o hipoteca si ocurre una situación grave.</p>
+            </div>
+          </article>
+
+          <article class="coverage-card">
+            <div class="mini-icon">🩺</div>
+            <div>
+              <h3>Salud privada</h3>
+              <p>Asistencia médica privada, especialistas, hospitalización, videoconsulta, segunda opinión médica y salud dental.</p>
+            </div>
+          </article>
+
+          <article class="coverage-card">
+            <div class="mini-icon">🛏️</div>
+            <div>
+              <h3>Subsidio por hospitalización</h3>
+              <p>Cantidad pactada por ingreso hospitalario o intervención, según condiciones contratadas.</p>
+            </div>
+          </article>
+
+          <article class="coverage-card">
+            <div class="mini-icon">🏠</div>
+            <div>
+              <h3>Hogar profesional</h3>
+              <p>Protección para autónomos que desarrollan su actividad profesional desde su vivienda.</p>
+            </div>
+          </article>
+
+          <article class="coverage-card">
+            <div class="mini-icon">💻</div>
+            <div>
+              <h3>Equipos profesionales</h3>
+              <p>Ordenadores, herramientas, material profesional o equipos necesarios para tu actividad.</p>
+            </div>
+          </article>
+
+          <article class="coverage-card">
+            <div class="mini-icon">🚐</div>
+            <div>
+              <h3>Vehículo profesional</h3>
+              <p>Furgonetas, asistencia en carretera, defensa en multas y servicios relacionados con el vehículo de trabajo.</p>
+            </div>
+          </article>
+
+          <article class="coverage-card">
+            <div class="mini-icon">📈</div>
+            <div>
+              <h3>Ahorro y jubilación</h3>
+              <p>Opciones de previsión para complementar tu planificación futura como trabajador por cuenta propia.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container highlight">
+        <div class="highlight-grid">
+          <div>
+            <div class="eyebrow">Salud para autónomos</div>
+            <h2>Cuidar tu salud también es proteger tu actividad</h2>
+            <p>
+              Cuando eres autónomo, una consulta, una prueba o una hospitalización pueden afectar directamente a tu ritmo de trabajo. Por eso conviene valorar seguros de salud, reembolso, subsidio por hospitalización o servicios digitales.
+            </p>
+
+            <ul class="feature-list">
+              <li>Asistencia sanitaria privada y especialistas.</li>
+              <li>Opciones con cuadro médico o reembolso.</li>
+              <li>Subsidio por hospitalización.</li>
+              <li>Salud dental, videoconsulta y orientación médica.</li>
+              <li>Posibles ventajas fiscales en estimación directa, según normativa.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">🧾</div>
+            <h3>Fiscalidad del seguro de salud</h3>
+            <p>
+              De forma general, si tributas en estimación directa, las primas del seguro de enfermedad pueden tener consideración de gasto deducible para tu propia cobertura, la de tu cónyuge y la de hijos menores de 25 años que convivan contigo, con límites legales.
+            </p>
+
+            <div class="pills">
+              <span class="pill">Salud</span>
+              <span class="pill">Fiscalidad</span>
+              <span class="pill">Familia</span>
+              <span class="pill">Estimación directa</span>
+            </div>
+
+            <br />
+            <a class="btn btn-primary" href="https://wa.me/34606067906?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20seguro%20de%20salud%20para%20aut%C3%B3nomos" target="_blank" rel="noopener">Preguntar por salud autónomos</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-soft">
+      <div class="container">
+        <div class="highlight" style="background: linear-gradient(135deg, #1f2933, #111827);">
+          <div class="highlight-grid">
+            <div>
+              <div class="eyebrow">Hogar profesional y equipos</div>
+              <h2>Si trabajas desde casa, tu vivienda también puede ser tu oficina</h2>
+              <p>
+                Muchos autónomos desarrollan su actividad desde su vivienda habitual. En esos casos, conviene revisar si el seguro de hogar tradicional cubre correctamente la actividad profesional, los equipos y los riesgos asociados.
+              </p>
+
+              <ul class="feature-list">
+                <li>Actividad profesional realizada desde la vivienda.</li>
+                <li>Equipos informáticos y material profesional.</li>
+                <li>Asistencia informática online.</li>
+                <li>Asistencia en hogar y servicios de reparación.</li>
+                <li>Revisión de si necesitas seguro de hogar profesional o cobertura adicional.</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <div class="card-icon">🏠</div>
+              <h3>Puede interesarte si...</h3>
+              <p>
+                Tienes despacho en casa, trabajas con ordenador, atiendes clientes, guardas material profesional o dependes de tus equipos para poder facturar.
+              </p>
+
+              <div class="pills">
+                <span class="pill">Despacho</span>
+                <span class="pill">Equipos</span>
+                <span class="pill">Ordenador</span>
+                <span class="pill">Hogar profesional</span>
+              </div>
+
+              <br />
+              <a class="btn btn-primary" href="https://wa.me/34606067906?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20hogar%20profesional%20para%20aut%C3%B3nomos" target="_blank" rel="noopener">Consultar hogar profesional</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <span>Vehículos y movilidad</span>
+          <h2>Si tu vehículo es parte de tu trabajo, también conviene revisarlo</h2>
+          <p>
+            Algunos autónomos dependen de una furgoneta o vehículo profesional para acudir a clientes, transportar herramientas, repartir productos o realizar servicios. En esos casos, la asistencia en carretera, la defensa en multas y la cobertura adecuada del vehículo pueden ser clave.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="card-icon">🚐</div>
+            <h3>Furgonetas</h3>
+            <p>Para autónomos que usan una furgoneta como herramienta principal de trabajo.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🧰</div>
+            <h3>Herramientas y material</h3>
+            <p>Conviene revisar si transportas herramientas, maquinaria, mercancía o equipos profesionales.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🧭</div>
+            <h3>Asistencia en carretera</h3>
+            <p>Servicio importante si dependes del vehículo para llegar a clientes o prestar tus servicios.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">📩</div>
+            <h3>Defensa en multas</h3>
+            <p>Puede ayudarte a gestionar sanciones relacionadas con la conducción profesional.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🚜</div>
+            <h3>Vehículos agrarios</h3>
+            <p>Para actividades que utilizan maquinaria o vehículos vinculados al entorno agrario.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🪪</div>
+            <h3>Retirada de carnet</h3>
+            <p>Puede ser importante si tu permiso de conducir es imprescindible para trabajar.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-soft">
+      <div class="container">
+        <div class="section-title">
+          <span>Antes de contratar</span>
+          <h2>Qué conviene revisar si eres autónomo</h2>
+          <p>
+            La clave no es contratarlo todo, sino revisar qué riesgos reales tiene tu actividad y qué seguros pueden encajar contigo.
+          </p>
+        </div>
+
+        <div class="checklist">
+          <div class="check-item">Actividad concreta que realizas y dónde la realizas.</div>
+          <div class="check-item">Si trabajas en tu casa, en casa de clientes, en obra, en local o en carretera.</div>
+          <div class="check-item">Si tienes empleados, colaboradores o subcontratas.</div>
+          <div class="check-item">Ingresos mensuales que necesitas proteger si no puedes trabajar.</div>
+          <div class="check-item">Cuota de autónomo y gastos fijos de tu actividad.</div>
+          <div class="check-item">Herramientas, equipos, ordenador, material o mercancía.</div>
+          <div class="check-item">Vehículo profesional, furgoneta o permiso de conducir.</div>
+          <div class="check-item">Responsabilidad civil exigida por clientes, contratos, licencias o normativa.</div>
+          <div class="check-item">Carencias, franquicias, capitales, límites y exclusiones.</div>
+          <div class="check-item">Si el seguro de salud puede tener tratamiento fiscal favorable en tu caso.</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-title center">
+          <span>Errores frecuentes</span>
+          <h2>Errores habituales al elegir seguros para autónomos</h2>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <h3>Contratar solo por precio</h3>
+            <p>Un seguro barato puede quedarse corto si no cubre bien tu actividad o tiene límites insuficientes.</p>
+          </article>
+
+          <article class="card">
+            <h3>No revisar la responsabilidad civil</h3>
+            <p>Una reclamación de un cliente o tercero puede afectar directamente a tu patrimonio y continuidad profesional.</p>
+          </article>
+
+          <article class="card">
+            <h3>No proteger la baja laboral</h3>
+            <p>Si no puedes trabajar, los gastos fijos pueden seguir llegando aunque tus ingresos bajen.</p>
+          </article>
+
+          <article class="card">
+            <h3>No declarar bien la actividad</h3>
+            <p>Es importante que la póliza refleje correctamente lo que haces, dónde trabajas y qué riesgos tienes.</p>
+          </article>
+
+          <article class="card">
+            <h3>Olvidar herramientas o equipos</h3>
+            <p>Ordenadores, maquinaria, herramientas o material profesional pueden ser esenciales para poder trabajar.</p>
+          </article>
+
+          <article class="card">
+            <h3>No revisar el vehículo</h3>
+            <p>Si tu vehículo es herramienta de trabajo, la asistencia, uso declarado y coberturas pueden ser decisivas.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-soft">
+      <div class="container">
+        <div class="section-title center">
+          <span>Preguntas frecuentes</span>
+          <h2>Dudas habituales sobre seguros para autónomos</h2>
+        </div>
+
+        <div class="accordion">
+          <article class="accordion-item active">
+            <button class="accordion-button" type="button">
+              ¿Qué seguros necesita un autónomo?
+              <span>+</span>
+            </button>
+            <div class="accordion-content">
+              <p>Depende de tu actividad. Los más habituales son responsabilidad civil, baja laboral, accidentes, salud, vida, vehículo profesional, hogar profesional, protección jurídica y previsión para jubilación.</p>
+            </div>
+          </article>
+
+          <article class="accordion-item">
+            <button class="accordion-button" type="button">
+              ¿La responsabilidad civil es obligatoria para autónomos?
+              <span>+</span>
+            </button>
+            <div class="accordion-content">
+              <p>No siempre es obligatoria para todos los autónomos, pero algunas actividades, licencias, contratos, colegios profesionales o administraciones pueden exigirla. Aunque no sea obligatoria, puede ser muy recomendable.</p>
+            </div>
+          </article>
+
+          <article class="accordion-item">
+            <button class="accordion-button" type="button">
+              ¿Qué es la baja laboral para autónomos?
+              <span>+</span>
+            </button>
+            <div class="accordion-content">
+              <p>Es una cobertura pensada para aportar una ayuda económica si una enfermedad o accidente te impide trabajar temporalmente. Puede plantearse como baja diaria por baremo o baja real y efectiva, según modalidad.</p>
+            </div>
+          </article>
+
+          <article class="accordion-item">
+            <button class="accordion-button" type="button">
+              ¿Se puede cubrir la cuota de autónomo?
+              <span>+</span>
+            </button>
+            <div class="accordion-content">
+              <p>Algunas coberturas pueden contemplar el reembolso de la cuota mensual del RETA o régimen asimilado en caso de incapacidad temporal por accidente o enfermedad, siempre con límites, carencias y condiciones concretas.</p>
+            </div>
+          </article>
+
+          <article class="accordion-item">
+            <button class="accordion-button" type="button">
+              ¿El seguro de salud desgrava si soy autónomo?
+              <span>+</span>
+            </button>
+            <div class="accordion-content">
+              <p>De forma general, si tributas en estimación directa, las primas del seguro de enfermedad pueden ser gasto deducible para tu propia cobertura, la de tu cónyuge y la de hijos menores de 25 años que convivan contigo, dentro de los límites legales. Conviene confirmarlo con tu asesor fiscal.</p>
+            </div>
+          </article>
+
+          <article class="accordion-item">
+            <button class="accordion-button" type="button">
+              ¿Necesito un seguro distinto si trabajo desde casa?
+              <span>+</span>
+            </button>
+            <div class="accordion-content">
+              <p>Puede ser recomendable revisar hogar profesional, equipos, responsabilidad civil y si tu actividad está correctamente contemplada en la póliza.</p>
+            </div>
+          </article>
+
+          <article class="accordion-item">
+            <button class="accordion-button" type="button">
+              ¿Qué pasa si uso una furgoneta para trabajar?
+              <span>+</span>
+            </button>
+            <div class="accordion-content">
+              <p>Conviene revisar el uso profesional del vehículo, asistencia en carretera, herramientas transportadas, defensa en multas y si el vehículo está correctamente asegurado para tu actividad.</p>
+            </div>
+          </article>
+
+          <article class="accordion-item">
+            <button class="accordion-button" type="button">
+              ¿Puedo contratar solo una parte?
+              <span>+</span>
+            </button>
+            <div class="accordion-content">
+              <p>Sí. No todos los autónomos necesitan lo mismo. Podemos revisar tu actividad y priorizar lo más importante: responsabilidad civil, baja laboral, salud, vehículo, equipos o protección familiar.</p>
+            </div>
+          </article>
+
+          <article class="accordion-item">
+            <button class="accordion-button" type="button">
+              ¿Podéis revisar lo que ya tengo contratado?
+              <span>+</span>
+            </button>
+            <div class="accordion-content">
+              <p>Sí. Podemos revisar tus pólizas actuales para ver si hay coberturas repetidas, límites bajos, riesgos sin cubrir o seguros que ya no encajan con tu actividad.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta-final">
+          <h2>¿Quieres saber qué seguros encajan con tu actividad como autónomo?</h2>
+          <p>
+            Podemos revisar tu caso, tu actividad, tus gastos fijos, tus ingresos, si trabajas desde casa, si usas vehículo profesional y qué responsabilidad civil necesitas. Sin tecnicismos y sin contratar de más.
+          </p>
+
+          <div class="hero-actions" style="justify-content:center;">
+            <a class="btn btn-primary" href="https://wa.me/34606067906?text=Hola%2C%20quiero%20que%20me%20ayud%C3%A9is%20con%20seguros%20para%20aut%C3%B3nomos" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+            <a class="btn btn-outline" href="tel:+34917702311">Llamar oficina</a>
+            <a class="btn btn-outline" href="mailto:esanz@occident.com?subject=Consulta%20seguros%20para%20aut%C3%B3nomos">Enviar email</a>
+            <a class="btn btn-outline" href="seguros.html">Volver a seguros</a>
+          </div>
+
+          <p class="trust-line">Sin compromiso · Sin tecnicismos · Sin presión</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© Elena Sanz Burgos · Seguros y asesoramiento</p>
+      <div class="footer-links">
+        <a href="index.html">Inicio</a>
+        <a href="seguros.html">Seguros</a>
+        <a href="clientes.html">Clientes</a>
+        <a href="https://wa.me/34606067906" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.querySelector(".menu-toggle");
+    const mobileMenu = document.querySelector("#mobileMenu");
+
+    if (menuButton && mobileMenu) {
+      menuButton.addEventListener("click", () => {
+        const isOpen = mobileMenu.classList.toggle("active");
+        menuButton.setAttribute("aria-expanded", String(isOpen));
+      });
+    }
+
+    const accordionItems = document.querySelectorAll(".accordion-item");
+
+    accordionItems.forEach((item) => {
+      const button = item.querySelector(".accordion-button");
+
+      button.addEventListener("click", () => {
+        item.classList.toggle("active");
+      });
+    });
+  </script>
+
+</body>
+</html>
