@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Seguro de automóviles | Elena Sanz Burgos</title>
+  <meta name="description" content="Seguro de automóviles para coche, vehículo eléctrico, furgón, autocaravana, camper y patinete eléctrico. Te ayudamos a elegir coberturas claras y adaptadas a tu forma de moverte." />
+
+  <style>
+    :root {
+      --bg: #fbf7f1;
+      --bg-soft: #fffaf4;
+      --white: #ffffff;
+      --text: #1f2933;
+      --muted: #64748b;
+      --primary: #c3002f;
+      --primary-dark: #9f0027;
+      --border: rgba(31, 41, 51, 0.12);
+      --shadow: 0 18px 45px rgba(31, 41, 51, 0.08);
+      --radius: 24px;
+      --radius-sm: 16px;
+      --max: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(100% - 32px, var(--max));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: var(--white);
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-text strong {
+      display: block;
+      font-size: 1rem;
+      line-height: 1.1;
+    }
+
+    .brand-text span {
+      display: block;
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 0;
+      background: transparent;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: var(--text);
+    }
+
+    .mobile-menu {
+      display: none;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border-radius: 999px;
+      padding: 13px 20px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border: 1px solid transparent;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(31, 41, 51, 0.12);
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--primary);
+      border-color: rgba(195, 0, 47, 0.35);
+    }
+
+    .hero {
+      padding: 84px 0 56px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 560px;
+      height: 560px;
+      border-radius: 50%;
+      background: rgba(195, 0, 47, 0.08);
+      right: -220px;
+      top: -220px;
+      z-index: -1;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: rgba(195, 0, 47, 0.08);
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(2.45rem, 5vw, 4.7rem);
+      line-height: 0.98;
+      letter-spacing: -0.06em;
+      max-width: 850px;
+      margin-bottom: 22px;
+    }
+
+    .lead {
+      font-size: clamp(1.08rem, 2vw, 1.25rem);
+      color: #455363;
+      max-width: 690px;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .trust-line {
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .hero-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 26px;
+    }
+
+    .hero-card-icon {
+      width: 74px;
+      height: 74px;
+      border-radius: 22px;
+      background: rgba(195, 0, 47, 0.08);
+      display: grid;
+      place-items: center;
+      font-size: 2rem;
+      margin-bottom: 18px;
+    }
+
+    .hero-card h2 {
+      font-size: 1.45rem;
+      margin-bottom: 12px;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-card ul {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      color: #455363;
+    }
+
+    .hero-card li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .hero-card li::before {
+      content: "✓";
+      color: var(--primary);
+      font-weight: 900;
+      flex: 0 0 auto;
+    }
+
+    section {
+      padding: 72px 0;
+    }
+
+    .section-soft {
+      background: var(--bg-soft);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-title {
+      max-width: 780px;
+      margin-bottom: 34px;
+    }
+
+    .section-title.center {
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    .section-title span {
+      color: var(--primary);
+      font-weight: 800;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 3vw, 3rem);
+      line-height: 1.08;
+      letter-spacing: -0.045em;
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+
+    .section-title p,
+    .text-muted {
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 24px;
+      box-shadow: 0 10px 24px rgba(31, 41, 51, 0.04);
+      height: 100%;
+    }
+
+    .card-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 16px;
+      background: rgba(195, 0, 47, 0.08);
+      display: grid;
+      place-items: center;
+      font-size: 1.45rem;
+      margin-bottom: 18px;
+    }
+
+    .card p {
+      color: var(--muted);
+    }
+
+    .coverages {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .coverage-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 22px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .coverage-card .mini-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: rgba(195, 0, 47, 0.08);
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+    }
+
+    .coverage-card p {
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .highlight {
+      background: linear-gradient(135deg, var(--primary), #8f0023);
+      color: var(--white);
+      border-radius: calc(var(--radius) + 6px);
+      padding: 38px;
+      box-shadow: var(--shadow);
+    }
+
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .highlight p {
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .highlight .eyebrow {
+      background: rgba(255, 255, 255, 0.12);
+      color: var(--white);
+      margin-bottom: 14px;
+    }
+
+    .feature-list {
+      list-style: none;
+      display: grid;
+      gap: 11px;
+      margin-top: 20px;
+    }
+
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    .feature-list li::before {
+      content: "✓";
+      font-weight: 900;
+      color: var(--white);
+    }
+
+    .pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 9px 13px;
+      background: rgba(195, 0, 47, 0.08);
+      color: var(--primary);
+      font-weight: 800;
+      font-size: 0.9rem;
+    }
+
+    .highlight .pill {
+      background: rgba(255,255,255,.14);
+      color: var(--white);
+    }
+
+    .level-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 22px;
+    }
+
+    .level-card strong {
+      display: inline-flex;
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+
+    .level-card p {
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .checklist {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .check-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 18px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: #455363;
+    }
+
+    .check-item::before {
+      content: "✓";
+      color: var(--primary);
+      font-weight: 900;
+      flex: 0 0 auto;
+    }
+
+    .accordion {
+      display: grid;
+      gap: 12px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .accordion-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+    }
+
+    .accordion-button {
+      width: 100%;
+      border: 0;
+      background: transparent;
+      padding: 20px 22px;
+      text-align: left;
+      font-size: 1.02rem;
+      font-weight: 800;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      cursor: pointer;
+      color: var(--text);
+    }
+
+    .accordion-button span {
+      color: var(--primary);
+      font-size: 1.4rem;
+      line-height: 1;
+      transition: transform 0.2s ease;
+    }
+
+    .accordion-content {
+      display: none;
+      padding: 0 22px 22px;
+      color: var(--muted);
+    }
+
+    .accordion-item.active .accordion-content {
+      display: block;
+    }
+
+    .accordion-item.active .accordion-button span {
+      transform: rotate(45deg);
+    }
+
+    .cta-final {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) + 8px);
+      padding: 42px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-final p {
+      max-width: 720px;
+      margin: 0 auto 24px;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .footer {
+      padding: 34px 0;
+      border-top: 1px solid var(--border);
+      background: var(--white);
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 980px) {
+      .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .nav-links,
+      .nav-actions {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .mobile-menu {
+        display: none;
+        border-top: 1px solid var(--border);
+        padding: 16px 0 22px;
+      }
+
+      .mobile-menu.active {
+        display: grid;
+        gap: 12px;
+      }
+
+      .mobile-menu a {
+        padding: 10px 0;
+        color: var(--muted);
+      }
+
+      .hero-grid,
+      .highlight-grid,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-3,
+      .grid-4,
+      .coverages,
+      .checklist {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 54px;
+      }
+
+      section {
+        padding: 56px 0;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .container {
+        width: min(100% - 24px, var(--max));
+      }
+
+      .hero-actions,
+      .cta-final .hero-actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .highlight,
+      .cta-final {
+        padding: 28px 20px;
+      }
+
+      h1 {
+        font-size: 2.45rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="topbar">
+    <div class="container">
+      <nav class="nav" aria-label="Navegación principal">
+        <a href="index.html" class="brand" aria-label="Volver al inicio">
+          <div class="brand-mark">ES</div>
+          <div class="brand-text">
+            <strong>Elena Sanz Burgos</strong>
+            <span>Seguros y asesoramiento</span>
+          </div>
+        </a>
+
+        <div class="nav-links">
+          <a href="index.html">Inicio</a>
+          <a href="seguros.html">Seguros</a>
+          <a href="autonomos.html">Autónomos</a>
+          <a href="asesoramiento-financiero.html">Finanzas</a>
+          <a href="clientes.html">Clientes</a>
+        </div>
+
+        <div class="nav-actions">
+          <a class="btn btn-outline" href="tel:+34917702311">Llamar oficina</a>
+          <a class="btn btn-primary" href="https://wa.me/34606067906?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20seguro%20de%20autom%C3%B3viles" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+
+        <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      </nav>
+
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Inicio</a>
+        <a href="seguros.html">Seguros</a>
+        <a href="autonomos.html">Autónomos</a>
+        <a href="asesoramiento-financiero.html">Finanzas</a>
+        <a href="clientes.html">Clientes</a>
+        <a class="btn btn-primary" href="https://wa.me/34606067906?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20seguro%20de%20autom%C3%B3viles" target="_blank" rel="noopener">Hablar por WhatsApp</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">🚗 Seguro de automóviles</div>
+
+          <h1>Seguro de automóviles para circular con tranquilidad</h1>
+
+          <p class="lead">
+            No todos los vehículos se aseguran igual. Te ayudamos a revisar qué protección encaja mejor con tu coche, vehículo eléctrico, furgón, autocaravana, camper o patinete eléctrico.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/34606067906?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20seguro%20de%20autom%C3%B3viles" target="_blank" rel="noopener">Hablar por WhatsApp</a>
+            <a class="btn btn-outline" href="tel:+34917702311">Llamar a la oficina</a>
+            <a class="btn btn-outline" href="#coberturas">Ver coberturas</a>
+          </div>
+
+          <p class="trust-line">Respuesta rápida · Sin compromiso · Te explicamos todo de forma sencilla</p>
+        </div>
+
+        <aside class="hero-card" aria-label="Resumen del seguro de automóviles">
+          <div class="hero-card-icon">🛡️</div>
+          <h2>¿Qué puedes proteger?</h2>
+          <ul>
+            <li>Tu responsabilidad frente a terceros.</li>
+            <li>Tu vehículo ante robo, incendio, lunas o daños propios.</li>
+            <li>Tu tranquilidad en carretera con asistencia en viaje.</li>
+            <li>La defensa jurídica y reclamación de daños.</li>
+            <li>Coberturas especiales para eléctricos, campers o patinetes.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <span>Protección clara y adaptada</span>
+          <h2>Un seguro adaptado a tu forma de moverte</h2>
+          <p>
+            Elegir un seguro de automóvil no debería depender solo del precio. Es importante revisar el tipo de vehículo, el uso que le das, quién lo conduce, si haces viajes largos, si lo usas para trabajar o si necesitas coberturas especiales.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="card-icon">🤝</div>
+            <h3>Tu responsabilidad</h3>
+            <p>Protección frente a daños personales o materiales que puedas causar a terceros con el vehículo asegurado.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🚘</div>
+            <h3>Tu vehículo</h3>
+            <p>Coberturas como lunas, robo, incendio, daños propios, pérdida total o fenómenos atmosféricos, según modalidad.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🧭</div>
+            <h3>Tu tranquilidad</h3>
+            <p>Asistencia en viaje, defensa jurídica, reclamación de daños, recuperación de puntos, alertas de multas o vehículo de sustitución.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-soft">
+      <div class="container">
+        <div class="section-title center">
+          <span>Para cada vehículo</span>
+          <h2>Seguros para distintos tipos de vehículos</h2>
+          <p>
+            No se asegura igual un coche de uso diario que una furgoneta de trabajo, un vehículo eléctrico, una camper o un patinete eléctrico.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="card-icon">🚗</div>
+            <h3>Coches particulares</h3>
+            <p>Para vehículos de uso diario, familiar o personal. Podemos revisar si te interesa terceros, terceros ampliado o todo riesgo.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🔌</div>
+            <h3>Vehículos eléctricos</h3>
+            <p>Para eléctricos e híbridos enchufables, con coberturas pensadas para batería, cable de carga, asistencia por falta de carga o recarga.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🚐</div>
+            <h3>Furgones</h3>
+            <p>Para vehículos de trabajo, transporte o uso profesional, donde conviene revisar bien el uso, la carga y las coberturas necesarias.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🏕️</div>
+            <h3>Autocaravanas y campers</h3>
+            <p>Para quienes viajan con su casa a cuestas y necesitan coberturas adaptadas a este tipo de vehículo y forma de uso.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🧳</div>
+            <h3>Furgón camperizado</h3>
+            <p>Un furgón comercial adaptado como vivienda puede necesitar un tratamiento distinto al de una camper o autocaravana.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🛴</div>
+            <h3>Patinetes eléctricos</h3>
+            <p>Para vehículos personales ligeros o vehículos a motor, según características, uso y normativa aplicable.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-title center">
+          <span>Modalidades</span>
+          <h2>Elige la protección según tu vehículo y tu uso</h2>
+          <p>
+            Las modalidades pueden variar según el tipo de vehículo, pero estas son las opciones más habituales que conviene entender antes de decidir.
+          </p>
+        </div>
+
+        <div class="grid-4">
+          <article class="level-card">
+            <strong>Terceros</strong>
+            <h3>Lo esencial</h3>
+            <p>La opción más básica para cubrir la responsabilidad civil necesaria para circular.</p>
+          </article>
+
+          <article class="level-card">
+            <strong>Terceros ampliado</strong>
+            <h3>Más protección</h3>
+            <p>Añade garantías como lunas, robo, incendio u otras coberturas según modalidad.</p>
+          </article>
+
+          <article class="level-card">
+            <strong>Todo riesgo con franquicia</strong>
+            <h3>Protección equilibrada</h3>
+            <p>Cubre daños propios del vehículo, asumiendo una parte del coste en cada siniestro.</p>
+          </article>
+
+          <article class="level-card">
+            <strong>Todo riesgo sin franquicia</strong>
+            <h3>Protección completa</h3>
+            <p>Una opción más amplia para proteger el vehículo frente a daños propios, según condiciones.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="coberturas" class="section-soft">
+      <div class="container">
+        <div class="section-title">
+          <span>Coberturas principales</span>
+          <h2>Coberturas que conviene revisar</h2>
+          <p>
+            Cada póliza puede tener límites, condiciones y exclusiones diferentes. Estas son algunas garantías habituales que pueden marcar la diferencia.
+          </p>
+        </div>
+
+        <div class="coverages">
+          <article class="coverage-card">
+            <div class="mini-icon">🤝</div>
+            <div>
+              <h3>Responsabilidad civil</h3>
+              <p>Cubre daños personales o materiales causados a terceros con el vehículo asegurado.</p>
+            </div>
+          </article>
+
+          <article class="coverage-card">
+            <div class="mini-icon">⚖️</div>
+            <div>
+              <h3>Defensa jurídica</h3>
+              <p>Ayuda en reclamaciones, defensa y procedimientos derivados de un accidente de circulación.</p>
+            </div>
+          </article>
+
+          <article class="coverage-card">
+            <div class="mini-icon">🪟</div>
+            <div>
+              <h3>Lunas</h3>
+              <p>Reparación o reposición de lunas, cristales o elementos incluidos según modalidad.</p>
+            </div>
+          </article>
+
+          <article class="coverage-card">
+            <div class="mini-icon">🔐</div>
+            <div>
+              <h3>Robo</h3>
+              <p>Protección ante sustracción del vehículo o daños derivados del robo, según póliza.</p>
+            </div>
+          </article>
+
+          <article class="coverage-card">
+            <div class="mini-icon">🔥</div>
+            <div>
+              <h3>Incendio</h3>
+              <p>Cobertura frente a incendio, explosión, caída de rayo y daños relacionados según condiciones.</p>
+            </div>
+          </article>
+
+          <article class="coverage-card">
+            <div class="mini-icon">🛠️</div>
+            <div>
+              <h3>Daños propios</h3>
+              <p>Protección para daños materiales del vehículo asegurado, con o sin franquicia.</p>
+            </div>
+          </article>
+
+          <article class="coverage-card">
+            <div class="mini-icon">🧭</div>
+            <div>
+              <h3>Asistencia en viaje</h3>
+              <p>Ayuda en carretera ante averías, accidentes o incidencias durante tus desplazamientos.</p>
+            </div>
+          </article>
+
+          <article class="coverage-card">
+            <div class="mini-icon">🚘</div>
+            <div>
+              <h3>Vehículo de sustitución</h3>
+              <p>Posibilidad de disponer de otro vehículo mientras no puedes utilizar el tuyo, según modalidad.</p>
+            </div>
+          </article>
+
+          <article class="coverage-card">
+            <div class="mini-icon">🪪</div>
+            <div>
+              <h3>Recuperación de puntos</h3>
+              <p>Ayuda con determinados gastos relacionados con cursos, tasas o recuperación del permiso.</p>
+            </div>
+          </article>
+
+          <article class="coverage-card">
+            <div class="mini-icon">📩</div>
+            <div>
+              <h3>Alertas de multas</h3>
+              <p>Servicio de aviso de posibles sanciones de tráfico asociadas al vehículo asegurado.</p>
+            </div>
+          </article>
+
+          <article class="coverage-card">
+            <div class="mini-icon">🌧️</div>
+            <div>
+              <h3>Fenómenos atmosféricos</h3>
+              <p>Cobertura ante determinados daños ocasionados por fenómenos meteorológicos.</p>
+            </div>
+          </article>
+
+          <article class="coverage-card">
+            <div class="mini-icon">🧍</div>
+            <div>
+              <h3>Accidentes personales</h3>
+              <p>Protección para conductor u ocupantes, según garantías y límites contratados.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container highlight">
+        <div class="highlight-grid">
+          <div>
+            <div class="eyebrow">Vehículos eléctricos</div>
+            <h2>Seguro para eléctricos e híbridos enchufables</h2>
+            <p>
+              Un vehículo eléctrico tiene necesidades distintas a un vehículo tradicional. Por eso conviene revisar coberturas relacionadas con la batería, el cable de carga, la estación de carga, la asistencia por falta de batería y la recarga.
+            </p>
+
+            <ul class="feature-list">
+              <li>Cobertura para cable de carga y estación de carga particular por determinados daños.</li>
+              <li>Asistencia en viaje por falta de carga de batería desde kilómetro 0.</li>
+              <li>Posibilidad de recarga in situ, según disponibilidad y condiciones.</li>
+              <li>Información sobre puntos de recarga al solicitar asistencia.</li>
+              <li>Vehículo de sustitución preferentemente con etiqueta ECO o 0, según modalidad.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">🔌</div>
+            <h3>Puede interesarte si...</h3>
+            <p>
+              Tienes un coche eléctrico o híbrido enchufable y quieres revisar si tu póliza contempla correctamente la batería, la carga, la asistencia y el uso real del vehículo.
+            </p>
+
+            <div class="pills">
+              <span class="pill">Batería</span>
+              <span class="pill">Cable de carga</span>
+              <span class="pill">Recarga</span>
+              <span class="pill">Asistencia</span>
+            </div>
+
+            <br />
+            <a class="btn btn-primary" href="https://wa.me/34606067906?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20seguro%20para%20veh%C3%ADculo%20el%C3%A9ctrico" target="_blank" rel="noopener">Preguntar por eléctricos</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-soft">
+      <div class="container">
+        <div class="highlight" style="background: linear-gradient(135deg, #1f2933, #111827);">
+          <div class="highlight-grid">
+            <div>
+              <div class="eyebrow">Autocaravanas, campers y furgones</div>
+              <h2>Si viajas con tu casa a cuestas, revisa bien tu seguro</h2>
+              <p>
+                Una autocaravana, una camper y un furgón camperizado no tienen exactamente el mismo tratamiento. Conviene diferenciar bien el tipo de vehículo y su uso para elegir la modalidad adecuada.
+              </p>
+
+              <ul class="feature-list">
+                <li>Una camper pertenece al segmento de autocaravanas.</li>
+                <li>Un furgón camperizado es un furgón comercial adaptado como vivienda.</li>
+                <li>Puede interesar revisar responsabilidad civil del campista.</li>
+                <li>También pueden ser importantes el material deportivo y las roturas interiores.</li>
+                <li>La valoración en caso de siniestro total puede variar según el tipo de vehículo.</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <div class="card-icon">🏕️</div>
+              <h3>Especialmente útil para...</h3>
+              <p>
+                Personas que viajan con frecuencia, usan el vehículo como alojamiento, transportan material deportivo o tienen una camper, autocaravana o furgón adaptado.
+              </p>
+
+              <div class="pills">
+                <span class="pill">Camper</span>
+                <span class="pill">Autocaravana</span>
+                <span class="pill">Furgón</span>
+                <span class="pill">Material deportivo</span>
+              </div>
+
+              <br />
+              <a class="btn btn-primary" href="https://wa.me/34606067906?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20seguro%20para%20autocaravana%2C%20camper%20o%20furg%C3%B3n" target="_blank" rel="noopener">Consultar este seguro</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <span>Movilidad personal</span>
+          <h2>Seguro para patinetes eléctricos</h2>
+          <p>
+            Cada vez más personas se mueven en patinete eléctrico. En estos casos es importante revisar si el vehículo se considera vehículo personal ligero o vehículo a motor, porque eso puede influir en el tipo de seguro necesario.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="card-icon">🛴</div>
+            <h3>Vehículo personal ligero</h3>
+            <p>Patinetes y vehículos eléctricos de movilidad personal con características concretas de peso, velocidad y uso.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🤝</div>
+            <h3>Responsabilidad civil</h3>
+            <p>Protección frente a daños que puedas causar a terceros durante la circulación.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">⚖️</div>
+            <h3>Defensa jurídica</h3>
+            <p>Ayuda ante reclamaciones o situaciones legales relacionadas con el uso del patinete.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-soft">
+      <div class="container">
+        <div class="grid-2">
+          <div class="section-title">
+            <span>Antes de contratar</span>
+            <h2>Qué conviene revisar</h2>
+            <p>
+              Antes de contratar o renovar, merece la pena revisar estos puntos para no pagar por coberturas que no necesitas ni quedarte corto en las que sí son importantes.
+            </p>
+          </div>
+
+          <div class="checklist">
+            <div class="check-item">Tipo de vehículo: turismo, eléctrico, furgón, camper, autocaravana o patinete.</div>
+            <div class="check-item">Uso real: diario, trabajo, viajes, ocio, reparto o segunda residencia móvil.</div>
+            <div class="check-item">Conductores habituales y posibles conductores jóvenes.</div>
+            <div class="check-item">Antigüedad y valor actual del vehículo.</div>
+            <div class="check-item">Equipamiento opcional, accesorios o material transportado.</div>
+            <div class="check-item">Asistencia en viaje y necesidad de vehículo de sustitución.</div>
+            <div class="check-item">Franquicia en caso de todo riesgo.</div>
+            <div class="check-item">Coberturas especiales si es eléctrico, camper o vehículo profesional.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-title center">
+          <span>Errores frecuentes</span>
+          <h2>Errores habituales al contratar un seguro de automóvil</h2>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <h3>Elegir solo por precio</h3>
+            <p>El seguro más barato puede quedarse corto si no cubre lo que realmente necesitas.</p>
+          </article>
+
+          <article class="card">
+            <h3>No revisar la asistencia</h3>
+            <p>La asistencia en viaje puede ser clave si haces trayectos largos o dependes del vehículo a diario.</p>
+          </article>
+
+          <article class="card">
+            <h3>No declarar bien conductores</h3>
+            <p>Si hay conductores jóvenes o con poca antigüedad de carnet, conviene revisarlo correctamente.</p>
+          </article>
+
+          <article class="card">
+            <h3>Olvidar accesorios</h3>
+            <p>Extras, equipamiento opcional o accesorios relevantes pueden necesitar declaración específica.</p>
+          </article>
+
+          <article class="card">
+            <h3>Pensar que todos son iguales</h3>
+            <p>Dos terceros ampliados pueden tener diferencias importantes en lunas, robo, incendio o asistencia.</p>
+          </article>
+
+          <article class="card">
+            <h3>No adaptar la póliza</h3>
+            <p>Un eléctrico, una camper o un furgón de trabajo pueden necesitar coberturas distintas a un turismo normal.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-soft">
+      <div class="container">
+        <div class="section-title center">
+          <span>Preguntas frecuentes</span>
+          <h2>Dudas habituales sobre seguros de automóviles</h2>
+        </div>
+
+        <div class="accordion">
+          <article class="accordion-item active">
+            <button class="accordion-button" type="button">
+              ¿Qué diferencia hay entre terceros, terceros ampliado y todo riesgo?
+              <span>+</span>
+            </button>
+            <div class="accordion-content">
+              <p>Terceros cubre principalmente la responsabilidad civil. Terceros ampliado añade garantías como lunas, robo o incendio, según modalidad. Todo riesgo puede cubrir también los daños propios del vehículo.</p>
+            </div>
+          </article>
+
+          <article class="accordion-item">
+            <button class="accordion-button" type="button">
+              ¿Me conviene un todo riesgo con franquicia?
+              <span>+</span>
+            </button>
+            <div class="accordion-content">
+              <p>Puede interesarte si quieres proteger el vehículo frente a daños propios, pero aceptas asumir una parte del coste en cada siniestro para ajustar la prima.</p>
+            </div>
+          </article>
+
+          <article class="accordion-item">
+            <button class="accordion-button" type="button">
+              ¿La asistencia en viaje es importante?
+              <span>+</span>
+            </button>
+            <div class="accordion-content">
+              <p>Sí. Es una de las coberturas más útiles si tienes una avería, accidente o incidencia en carretera, especialmente si haces viajes largos o dependes del vehículo.</p>
+            </div>
+          </article>
+
+          <article class="accordion-item">
+            <button class="accordion-button" type="button">
+              ¿Qué debo revisar si tengo un coche eléctrico?
+              <span>+</span>
+            </button>
+            <div class="accordion-content">
+              <p>Batería, cable de carga, estación de carga, asistencia por falta de carga, posibilidad de recarga, información de puntos de recarga y vehículo de sustitución.</p>
+            </div>
+          </article>
+
+          <article class="accordion-item">
+            <button class="accordion-button" type="button">
+              ¿Una camper y un furgón camperizado se aseguran igual?
+              <span>+</span>
+            </button>
+            <div class="accordion-content">
+              <p>No necesariamente. Una camper pertenece al segmento de autocaravanas, mientras que un furgón camperizado es un furgón comercial adaptado como vivienda. Esa diferencia puede influir en la modalidad adecuada.</p>
+            </div>
+          </article>
+
+          <article class="accordion-item">
+            <button class="accordion-button" type="button">
+              ¿Puedo asegurar un patinete eléctrico?
+              <span>+</span>
+            </button>
+            <div class="accordion-content">
+              <p>Sí. Existen soluciones orientadas a patinetes eléctricos o vehículos personales ligeros, especialmente para responsabilidad civil y defensa jurídica, según características del vehículo.</p>
+            </div>
+          </article>
+
+          <article class="accordion-item">
+            <button class="accordion-button" type="button">
+              ¿Qué pasa si tengo un siniestro?
+              <span>+</span>
+            </button>
+            <div class="accordion-content">
+              <p>Conviene comunicarlo lo antes posible, aportar la información del accidente y, en caso de robo, incendio o actos vandálicos, denunciar los hechos ante las autoridades.</p>
+            </div>
+          </article>
+
+          <article class="accordion-item">
+            <button class="accordion-button" type="button">
+              ¿Puedo revisar mi póliza actual?
+              <span>+</span>
+            </button>
+            <div class="accordion-content">
+              <p>Sí. Es recomendable revisar si el seguro sigue encajando con el uso actual del vehículo, su antigüedad, conductores, asistencia y coberturas contratadas.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta-final">
+          <h2>¿Quieres saber qué seguro encaja mejor con tu vehículo?</h2>
+          <p>
+            No todos los vehículos necesitan la misma protección. Podemos ayudarte a comparar opciones, revisar tus coberturas actuales y elegir una modalidad adaptada a tu forma de conducir.
+          </p>
+
+          <div class="hero-actions" style="justify-content:center;">
+            <a class="btn btn-primary" href="https://wa.me/34606067906?text=Hola%2C%20quiero%20que%20me%20ayud%C3%A9is%20con%20un%20seguro%20de%20autom%C3%B3viles" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+            <a class="btn btn-outline" href="tel:+34917702311">Llamar oficina</a>
+            <a class="btn btn-outline" href="mailto:esanz@occident.com?subject=Consulta%20seguro%20de%20autom%C3%B3viles">Enviar email</a>
+            <a class="btn btn-outline" href="seguros.html">Volver a seguros</a>
+          </div>
+
+          <p class="trust-line">Sin compromiso · Sin tecnicismos · Sin presión</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© Elena Sanz Burgos · Seguros y asesoramiento</p>
+      <div class="footer-links">
+        <a href="index.html">Inicio</a>
+        <a href="seguros.html">Seguros</a>
+        <a href="clientes.html">Clientes</a>
+        <a href="https://wa.me/34606067906" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.querySelector(".menu-toggle");
+    const mobileMenu = document.querySelector("#mobileMenu");
+
+    if (menuButton && mobileMenu) {
+      menuButton.addEventListener("click", () => {
+        const isOpen = mobileMenu.classList.toggle("active");
+        menuButton.setAttribute("aria-expanded", String(isOpen));
+      });
+    }
+
+    const accordionItems = document.querySelectorAll(".accordion-item");
+
+    accordionItems.forEach((item) => {
+      const button = item.querySelector(".accordion-button");
+
+      button.addEventListener("click", () => {
+        item.classList.toggle("active");
+      });
+    });
+  </script>
+
+</body>
+</html>
