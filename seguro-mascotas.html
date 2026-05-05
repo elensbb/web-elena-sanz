@@ -50,6 +50,71 @@
       margin: 0 auto;
     }
 
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes softFloat {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-6px);
+      }
+    }
+
+    .hero .eyebrow,
+    .hero h1,
+    .hero .lead,
+    .hero-actions,
+    .trust-line {
+      animation: fadeUp 0.7s ease both;
+    }
+
+    .hero h1 {
+      animation-delay: 0.08s;
+    }
+
+    .hero .lead {
+      animation-delay: 0.16s;
+    }
+
+    .hero-actions {
+      animation-delay: 0.24s;
+    }
+
+    .trust-line {
+      animation-delay: 0.32s;
+    }
+
+    .hero-card {
+      animation: fadeUp 0.8s ease 0.18s both;
+    }
+
+    .hero-card-icon {
+      animation: softFloat 4.5s ease-in-out infinite;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+
+    .reveal.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     .topbar {
       background: var(--white);
       border-bottom: 1px solid var(--border);
@@ -339,6 +404,13 @@
       padding: 24px;
       box-shadow: 0 10px 24px rgba(31, 41, 51, 0.04);
       height: 100%;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 36px rgba(31, 41, 51, 0.09);
+      border-color: rgba(195, 0, 47, 0.22);
     }
 
     .card-icon {
@@ -370,6 +442,13 @@
       display: flex;
       gap: 16px;
       align-items: flex-start;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    }
+
+    .coverage-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 32px rgba(31, 41, 51, 0.08);
+      border-color: rgba(195, 0, 47, 0.22);
     }
 
     .coverage-card .mini-icon {
@@ -451,84 +530,246 @@
     }
 
     .highlight .pill {
-      background: rgba(255,255,255,.14);
+      background: rgba(255, 255, 255, 0.14);
       color: var(--white);
     }
 
-    .checklist {
+    .review-block {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-      margin-top: 8px;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 34px;
+      align-items: start;
     }
 
-    .check-item {
+    .review-intro {
+      color: var(--muted);
+      font-size: 1.04rem;
+      margin-top: 10px;
+    }
+
+    .review-list {
+      list-style: none;
+      display: grid;
+      gap: 0;
+      background: var(--white);
+      border-radius: calc(var(--radius) + 4px);
+      border: 1px solid var(--border);
+      padding: 30px;
+      box-shadow: 0 14px 34px rgba(31, 41, 51, 0.06);
+    }
+
+    .review-item {
+      display: grid;
+      grid-template-columns: 46px 1fr;
+      gap: 16px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .review-item:first-child {
+      padding-top: 0;
+    }
+
+    .review-item:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .review-number {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(195, 0, 47, 0.08);
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 0.9rem;
+    }
+
+    .review-item strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 4px;
+      font-size: 1.02rem;
+    }
+
+    .review-item p {
+      color: var(--muted);
+      font-size: 0.97rem;
+    }
+
+    .review-note {
+      margin-top: 24px;
+      padding: 18px 20px;
+      border-radius: var(--radius-sm);
+      background: rgba(195, 0, 47, 0.06);
+      color: #455363;
+      font-size: 0.98rem;
+    }
+
+    .review-note strong {
+      color: var(--primary);
+    }
+
+    .mistakes-block {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .mistakes-layout {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .mistakes-side {
+      position: sticky;
+      top: 104px;
+    }
+
+    .mistakes-side p {
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .mistakes-list {
+      list-style: none;
+      display: grid;
+      gap: 0;
       background: var(--white);
       border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: 18px;
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      color: #455363;
+      border-radius: calc(var(--radius) + 4px);
+      padding: 30px;
+      box-shadow: 0 14px 34px rgba(31, 41, 51, 0.06);
     }
 
-    .check-item::before {
-      content: "✓";
+    .mistake-item {
+      display: grid;
+      grid-template-columns: 38px 1fr;
+      gap: 16px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .mistake-item:first-child {
+      padding-top: 0;
+    }
+
+    .mistake-item:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .mistake-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(195, 0, 47, 0.08);
       color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 1rem;
+    }
+
+    .mistake-item strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 4px;
+      font-size: 1.02rem;
+    }
+
+    .mistake-item p {
+      color: var(--muted);
+      font-size: 0.97rem;
+    }
+
+    .faq-carousel-wrap {
+      position: relative;
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+
+    .faq-carousel {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(290px, 360px);
+      gap: 18px;
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      scroll-snap-type: x mandatory;
+      scroll-padding: 4px;
+      padding: 6px 4px 18px;
+      scrollbar-width: thin;
+    }
+
+    .faq-card {
+      min-height: 285px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 10px 24px rgba(31, 41, 51, 0.04);
+      scroll-snap-align: start;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    }
+
+    .faq-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 42px rgba(31, 41, 51, 0.1);
+      border-color: rgba(195, 0, 47, 0.22);
+    }
+
+    .faq-number {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(195, 0, 47, 0.08);
+      color: var(--primary);
+      display: grid;
+      place-items: center;
       font-weight: 900;
       flex: 0 0 auto;
     }
 
-    .accordion {
-      display: grid;
-      gap: 12px;
-      max-width: 900px;
-      margin: 0 auto;
+    .faq-card h3 {
+      margin-bottom: 0;
     }
 
-    .accordion-item {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      overflow: hidden;
-    }
-
-    .accordion-button {
-      width: 100%;
-      border: 0;
-      background: transparent;
-      padding: 20px 22px;
-      text-align: left;
-      font-size: 1.02rem;
-      font-weight: 800;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 18px;
-      cursor: pointer;
-      color: var(--text);
-    }
-
-    .accordion-button span {
-      color: var(--primary);
-      font-size: 1.4rem;
-      line-height: 1;
-      transition: transform 0.2s ease;
-    }
-
-    .accordion-content {
-      display: none;
-      padding: 0 22px 22px;
+    .faq-card p {
       color: var(--muted);
+      font-size: 0.98rem;
     }
 
-    .accordion-item.active .accordion-content {
-      display: block;
+    .faq-controls {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 12px;
     }
 
-    .accordion-item.active .accordion-button span {
-      transform: rotate(45deg);
+    .faq-arrow {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid rgba(195, 0, 47, 0.28);
+      background: var(--white);
+      color: var(--primary);
+      font-size: 1.2rem;
+      font-weight: 900;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .faq-arrow:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(31, 41, 51, 0.12);
+      background: rgba(195, 0, 47, 0.06);
     }
 
     .cta-final {
@@ -568,6 +809,16 @@
       flex-wrap: wrap;
     }
 
+    @media (max-width: 980px) {
+      .mistakes-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .mistakes-side {
+        position: static;
+      }
+    }
+
     @media (max-width: 900px) {
       .nav-links,
       .nav-actions {
@@ -596,14 +847,18 @@
 
       .hero-grid,
       .highlight-grid,
-      .grid-2 {
+      .grid-2,
+      .review-block {
         grid-template-columns: 1fr;
       }
 
       .grid-3,
-      .coverages,
-      .checklist {
+      .coverages {
         grid-template-columns: 1fr;
+      }
+
+      .faq-carousel {
+        grid-auto-columns: minmax(260px, 86vw);
       }
 
       .hero {
@@ -612,6 +867,22 @@
 
       section {
         padding: 56px 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
       }
     }
 
@@ -632,6 +903,17 @@
       .highlight,
       .cta-final {
         padding: 28px 20px;
+      }
+
+      .review-list,
+      .mistakes-list {
+        padding: 24px 20px;
+      }
+
+      .review-item,
+      .mistake-item {
+        grid-template-columns: 38px 1fr;
+        gap: 12px;
       }
 
       h1 {
@@ -991,66 +1273,152 @@
 
     <section class="section-soft">
       <div class="container">
-        <div class="grid-2">
+        <div class="review-block">
           <div class="section-title">
             <span>Antes de contratar</span>
             <h2>Qué conviene revisar</h2>
             <p>
               Antes de contratar un seguro de mascotas, conviene revisar algunos datos para evitar sorpresas y elegir una protección que encaje bien con tu perro o gato.
             </p>
+
+            <p class="review-intro">
+              La clave es no quedarse solo en si “cubre veterinario” o “cubre responsabilidad civil”, sino mirar límites, carencias, exclusiones y datos reales de la mascota.
+            </p>
+
+            <div class="review-note">
+              <strong>Consejo:</strong> antes de contratar, revisa edad, raza, microchip, carencias, límites veterinarios y si ya tienes alguna responsabilidad civil incluida en el seguro de hogar.
+            </div>
           </div>
 
-          <div class="checklist">
-            <div class="check-item">Si la mascota es perro o gato.</div>
-            <div class="check-item">Edad, raza, estado de salud y antecedentes.</div>
-            <div class="check-item">Identificación mediante microchip o documentación sanitaria.</div>
-            <div class="check-item">Coberturas con carencia y fecha real de efecto.</div>
-            <div class="check-item">Límites anuales de gastos veterinarios.</div>
-            <div class="check-item">Exclusiones por enfermedades preexistentes o congénitas.</div>
-            <div class="check-item">Responsabilidad civil y certificado si procede.</div>
-            <div class="check-item">Uso de la mascota: compañía, no caza, trabajo o deporte.</div>
-          </div>
+          <ol class="review-list">
+            <li class="review-item">
+              <span class="review-number">01</span>
+              <div>
+                <strong>Tipo de mascota</strong>
+                <p>Conviene confirmar si la mascota es perro o gato y si cumple las condiciones de contratación de la modalidad elegida.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">02</span>
+              <div>
+                <strong>Edad, raza y estado de salud</strong>
+                <p>La edad, la raza, los antecedentes y el estado de salud pueden influir en coberturas, límites o exclusiones.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">03</span>
+              <div>
+                <strong>Identificación y documentación</strong>
+                <p>Es importante revisar microchip, cartilla sanitaria, vacunas y documentación necesaria para contratar correctamente.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">04</span>
+              <div>
+                <strong>Carencias y fecha de efecto</strong>
+                <p>Algunas coberturas no empiezan desde el primer día. Conviene saber cuándo entra en vigor cada garantía.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">05</span>
+              <div>
+                <strong>Límites veterinarios</strong>
+                <p>Hay que revisar importes máximos, límites anuales, porcentajes de reembolso y servicios incluidos.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">06</span>
+              <div>
+                <strong>Exclusiones</strong>
+                <p>Enfermedades preexistentes, congénitas, vacunas, revisiones preventivas o tratamientos concretos pueden quedar fuera.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">07</span>
+              <div>
+                <strong>Responsabilidad civil</strong>
+                <p>Especialmente si tienes perro, conviene comprobar si necesitas certificado y si ya tienes alguna cobertura en otra póliza.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">08</span>
+              <div>
+                <strong>Uso de la mascota</strong>
+                <p>Hay que diferenciar mascota de compañía de usos como caza, trabajo, deporte o actividades especiales.</p>
+              </div>
+            </li>
+          </ol>
         </div>
       </div>
     </section>
 
     <section>
-      <div class="container">
-        <div class="section-title center">
-          <span>Errores frecuentes</span>
-          <h2>Errores habituales al contratar un seguro de mascotas</h2>
-        </div>
+      <div class="container mistakes-block">
+        <div class="mistakes-layout">
+          <div class="mistakes-side section-title">
+            <span>Errores frecuentes</span>
+            <h2>Errores habituales al contratar un seguro de mascotas</h2>
+            <p>
+              En mascotas, muchos problemas aparecen cuando se necesita usar el seguro. Por eso conviene revisar bien carencias, límites, exclusiones y responsabilidad civil antes de decidir.
+            </p>
+          </div>
 
-        <div class="grid-3">
-          <article class="card">
-            <h3>Fijarse solo en el precio</h3>
-            <p>La diferencia importante suele estar en los límites, carencias, exclusiones y coberturas veterinarias reales.</p>
-          </article>
+          <ol class="mistakes-list">
+            <li class="mistake-item">
+              <span class="mistake-mark">!</span>
+              <div>
+                <strong>Fijarse solo en el precio</strong>
+                <p>La diferencia importante suele estar en los límites, carencias, exclusiones y coberturas veterinarias reales.</p>
+              </div>
+            </li>
 
-          <article class="card">
-            <h3>No revisar las carencias</h3>
-            <p>Algunas coberturas no entran en vigor desde el primer día, por lo que conviene saber cuándo empiezan.</p>
-          </article>
+            <li class="mistake-item">
+              <span class="mistake-mark">!</span>
+              <div>
+                <strong>No revisar las carencias</strong>
+                <p>Algunas coberturas no entran en vigor desde el primer día, por lo que conviene saber cuándo empiezan.</p>
+              </div>
+            </li>
 
-          <article class="card">
-            <h3>No declarar bien la mascota</h3>
-            <p>Edad, raza, identificación y estado de salud son datos importantes para contratar correctamente.</p>
-          </article>
+            <li class="mistake-item">
+              <span class="mistake-mark">!</span>
+              <div>
+                <strong>No declarar bien la mascota</strong>
+                <p>Edad, raza, identificación y estado de salud son datos importantes para contratar correctamente.</p>
+              </div>
+            </li>
 
-          <article class="card">
-            <h3>Confundir robo y extravío</h3>
-            <p>Robo y pérdida no son lo mismo. Cada cobertura puede tener requisitos distintos.</p>
-          </article>
+            <li class="mistake-item">
+              <span class="mistake-mark">!</span>
+              <div>
+                <strong>Confundir robo y extravío</strong>
+                <p>Robo y pérdida no son lo mismo. Cada cobertura puede tener requisitos distintos.</p>
+              </div>
+            </li>
 
-          <article class="card">
-            <h3>Pensar que cubre todo</h3>
-            <p>Vacunas, revisiones preventivas, enfermedades preexistentes o tratamientos no incluidos pueden quedar fuera.</p>
-          </article>
+            <li class="mistake-item">
+              <span class="mistake-mark">!</span>
+              <div>
+                <strong>Pensar que cubre todo</strong>
+                <p>Vacunas, revisiones preventivas, enfermedades preexistentes o tratamientos no incluidos pueden quedar fuera.</p>
+              </div>
+            </li>
 
-          <article class="card">
-            <h3>No revisar la responsabilidad civil</h3>
-            <p>Especialmente si tienes perro, es importante comprobar si cuentas con cobertura suficiente y documentación adecuada.</p>
-          </article>
+            <li class="mistake-item">
+              <span class="mistake-mark">!</span>
+              <div>
+                <strong>No revisar la responsabilidad civil</strong>
+                <p>Especialmente si tienes perro, es importante comprobar si cuentas con cobertura suficiente y documentación adecuada.</p>
+              </div>
+            </li>
+          </ol>
         </div>
       </div>
     </section>
@@ -1062,96 +1430,67 @@
           <h2>Dudas habituales sobre el seguro de mascotas</h2>
         </div>
 
-        <div class="accordion">
-          <article class="accordion-item active">
-            <button class="accordion-button" type="button">
-              ¿Qué animales se pueden asegurar?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+        <div class="faq-carousel-wrap">
+          <div class="faq-carousel" id="faqCarousel" aria-label="Carrusel de preguntas frecuentes">
+            <article class="faq-card">
+              <div class="faq-number">01</div>
+              <h3>¿Qué animales se pueden asegurar?</h3>
               <p>Está pensado para perros y gatos de compañía, siempre según las condiciones de contratación y la identificación del animal.</p>
-            </div>
-          </article>
+            </article>
 
-          <article class="accordion-item">
-            <button class="accordion-button" type="button">
-              ¿Incluye responsabilidad civil?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+            <article class="faq-card">
+              <div class="faq-number">02</div>
+              <h3>¿Incluye responsabilidad civil?</h3>
               <p>Puede incluir responsabilidad civil frente a terceros, una cobertura muy importante si tu mascota causa daños personales o materiales a otra persona.</p>
-            </div>
-          </article>
+            </article>
 
-          <article class="accordion-item">
-            <button class="accordion-button" type="button">
-              ¿Cubre gastos veterinarios?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+            <article class="faq-card">
+              <div class="faq-number">03</div>
+              <h3>¿Cubre gastos veterinarios?</h3>
               <p>Sí, puede cubrir determinados gastos veterinarios por accidente o enfermedad, según modalidad, límites, carencias y exclusiones.</p>
-            </div>
-          </article>
+            </article>
 
-          <article class="accordion-item">
-            <button class="accordion-button" type="button">
-              ¿Hay carencias?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+            <article class="faq-card">
+              <div class="faq-number">04</div>
+              <h3>¿Hay carencias?</h3>
               <p>Sí. Algunas coberturas pueden tener un plazo de carencia antes de entrar en vigor. Conviene revisarlo antes de contratar.</p>
-            </div>
-          </article>
+            </article>
 
-          <article class="accordion-item">
-            <button class="accordion-button" type="button">
-              ¿Se pueden asegurar razas antes consideradas peligrosas?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+            <article class="faq-card">
+              <div class="faq-number">05</div>
+              <h3>¿Se pueden asegurar razas antes consideradas peligrosas?</h3>
               <p>Se puede estudiar la contratación para distintas razas, incluidas razas que antes tenían tratamiento específico, siempre según condiciones de la póliza.</p>
-            </div>
-          </article>
+            </article>
 
-          <article class="accordion-item">
-            <button class="accordion-button" type="button">
-              ¿Qué pasa si mi mascota se pierde?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+            <article class="faq-card">
+              <div class="faq-number">06</div>
+              <h3>¿Qué pasa si mi mascota se pierde?</h3>
               <p>Puede haber cobertura para gastos de localización por extravío, como anuncios o acciones para localizarla, según modalidad y condiciones contratadas.</p>
-            </div>
-          </article>
+            </article>
 
-          <article class="accordion-item">
-            <button class="accordion-button" type="button">
-              ¿Qué diferencia hay entre robo y extravío?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+            <article class="faq-card">
+              <div class="faq-number">07</div>
+              <h3>¿Qué diferencia hay entre robo y extravío?</h3>
               <p>El robo implica apoderamiento ilegítimo con fuerza, violencia o intimidación. El extravío es la pérdida de la mascota. Cada caso tiene requisitos distintos.</p>
-            </div>
-          </article>
+            </article>
 
-          <article class="accordion-item">
-            <button class="accordion-button" type="button">
-              ¿Cubre si tengo que cancelar unas vacaciones?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+            <article class="faq-card">
+              <div class="faq-number">08</div>
+              <h3>¿Cubre si tengo que cancelar unas vacaciones?</h3>
               <p>Puede incluir gastos por cancelación total o parcial de vacaciones por enfermedad grave o extravío de la mascota, según condiciones contratadas.</p>
-            </div>
-          </article>
+            </article>
 
-          <article class="accordion-item">
-            <button class="accordion-button" type="button">
-              ¿Puedo revisar si ya tengo responsabilidad civil en mi seguro de hogar?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+            <article class="faq-card">
+              <div class="faq-number">09</div>
+              <h3>¿Puedo revisar si ya tengo responsabilidad civil en mi seguro de hogar?</h3>
               <p>Sí. Podemos ayudarte a revisar si ya tienes alguna cobertura relacionada con mascotas en tu seguro de hogar o si necesitas un seguro específico.</p>
-            </div>
-          </article>
+            </article>
+          </div>
+
+          <div class="faq-controls" aria-label="Controles del carrusel de preguntas frecuentes">
+            <button class="faq-arrow" type="button" data-faq-prev aria-label="Pregunta anterior">‹</button>
+            <button class="faq-arrow" type="button" data-faq-next aria-label="Pregunta siguiente">›</button>
+          </div>
         </div>
       </div>
     </section>
@@ -1201,15 +1540,48 @@
       });
     }
 
-    const accordionItems = document.querySelectorAll(".accordion-item");
+    const faqCarousel = document.querySelector("#faqCarousel");
+    const faqPrev = document.querySelector("[data-faq-prev]");
+    const faqNext = document.querySelector("[data-faq-next]");
 
-    accordionItems.forEach((item) => {
-      const button = item.querySelector(".accordion-button");
+    if (faqCarousel && faqPrev && faqNext) {
+      const moveFaqCarousel = (direction) => {
+        const card = faqCarousel.querySelector(".faq-card");
+        const gap = 18;
+        const distance = card ? card.offsetWidth + gap : 340;
 
-      button.addEventListener("click", () => {
-        item.classList.toggle("active");
+        faqCarousel.scrollBy({
+          left: direction * distance,
+          behavior: "smooth"
+        });
+      };
+
+      faqPrev.addEventListener("click", () => moveFaqCarousel(-1));
+      faqNext.addEventListener("click", () => moveFaqCarousel(1));
+    }
+
+    const revealElements = document.querySelectorAll(
+      ".section-title, .card, .coverage-card, .highlight, .review-list, .mistakes-list, .faq-card, .cta-final"
+    );
+
+    if ("IntersectionObserver" in window) {
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      revealElements.forEach((element, index) => {
+        element.classList.add("reveal");
+        element.style.transitionDelay = `${Math.min(index % 6, 5) * 70}ms`;
+        revealObserver.observe(element);
       });
-    });
+    } else {
+      revealElements.forEach((element) => element.classList.add("in-view"));
+    }
   </script>
 
 </body>
