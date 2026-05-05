@@ -50,6 +50,71 @@
       margin: 0 auto;
     }
 
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes softFloat {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-6px);
+      }
+    }
+
+    .hero .eyebrow,
+    .hero h1,
+    .hero .lead,
+    .hero-actions,
+    .trust-line {
+      animation: fadeUp 0.7s ease both;
+    }
+
+    .hero h1 {
+      animation-delay: 0.08s;
+    }
+
+    .hero .lead {
+      animation-delay: 0.16s;
+    }
+
+    .hero-actions {
+      animation-delay: 0.24s;
+    }
+
+    .trust-line {
+      animation-delay: 0.32s;
+    }
+
+    .hero-card {
+      animation: fadeUp 0.8s ease 0.18s both;
+    }
+
+    .hero-card-icon {
+      animation: softFloat 4.5s ease-in-out infinite;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+
+    .reveal.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     .topbar {
       background: var(--white);
       border-bottom: 1px solid var(--border);
@@ -345,6 +410,13 @@
       padding: 24px;
       box-shadow: 0 10px 24px rgba(31, 41, 51, 0.04);
       height: 100%;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 36px rgba(31, 41, 51, 0.09);
+      border-color: rgba(195, 0, 47, 0.22);
     }
 
     .card-icon {
@@ -376,6 +448,13 @@
       display: flex;
       gap: 16px;
       align-items: flex-start;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    }
+
+    .coverage-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 32px rgba(31, 41, 51, 0.08);
+      border-color: rgba(195, 0, 47, 0.22);
     }
 
     .coverage-card .mini-icon {
@@ -457,7 +536,7 @@
     }
 
     .highlight .pill {
-      background: rgba(255,255,255,.14);
+      background: rgba(255, 255, 255, 0.14);
       color: var(--white);
     }
 
@@ -477,6 +556,13 @@
       gap: 12px;
       align-items: flex-start;
       color: #455363;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    }
+
+    .check-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 28px rgba(31, 41, 51, 0.07);
+      border-color: rgba(195, 0, 47, 0.22);
     }
 
     .check-item::before {
@@ -486,55 +572,242 @@
       flex: 0 0 auto;
     }
 
-    .accordion {
+    .review-block {
       display: grid;
-      gap: 12px;
-      max-width: 900px;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .review-intro {
+      color: var(--muted);
+      font-size: 1.04rem;
+      margin-top: 10px;
+    }
+
+    .review-list {
+      list-style: none;
+      display: grid;
+      gap: 0;
+      background: var(--white);
+      border-radius: calc(var(--radius) + 4px);
+      border: 1px solid var(--border);
+      padding: 30px;
+      box-shadow: 0 14px 34px rgba(31, 41, 51, 0.06);
+    }
+
+    .review-item {
+      display: grid;
+      grid-template-columns: 46px 1fr;
+      gap: 16px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .review-item:first-child {
+      padding-top: 0;
+    }
+
+    .review-item:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .review-number {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(195, 0, 47, 0.08);
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 0.9rem;
+    }
+
+    .review-item strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 4px;
+      font-size: 1.02rem;
+    }
+
+    .review-item p {
+      color: var(--muted);
+      font-size: 0.97rem;
+    }
+
+    .review-note {
+      margin-top: 24px;
+      padding: 18px 20px;
+      border-radius: var(--radius-sm);
+      background: rgba(195, 0, 47, 0.06);
+      color: #455363;
+      font-size: 0.98rem;
+    }
+
+    .review-note strong {
+      color: var(--primary);
+    }
+
+    .mistakes-block {
+      max-width: 980px;
       margin: 0 auto;
     }
 
-    .accordion-item {
+    .mistakes-layout {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .mistakes-side {
+      position: sticky;
+      top: 104px;
+    }
+
+    .mistakes-side p {
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .mistakes-list {
+      list-style: none;
+      display: grid;
+      gap: 0;
       background: var(--white);
       border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      overflow: hidden;
+      border-radius: calc(var(--radius) + 4px);
+      padding: 30px;
+      box-shadow: 0 14px 34px rgba(31, 41, 51, 0.06);
     }
 
-    .accordion-button {
-      width: 100%;
-      border: 0;
-      background: transparent;
-      padding: 20px 22px;
-      text-align: left;
-      font-size: 1.02rem;
-      font-weight: 800;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 18px;
-      cursor: pointer;
-      color: var(--text);
+    .mistake-item {
+      display: grid;
+      grid-template-columns: 38px 1fr;
+      gap: 16px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
     }
 
-    .accordion-button span {
+    .mistake-item:first-child {
+      padding-top: 0;
+    }
+
+    .mistake-item:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .mistake-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(195, 0, 47, 0.08);
       color: var(--primary);
-      font-size: 1.4rem;
-      line-height: 1;
-      transition: transform 0.2s ease;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 1rem;
     }
 
-    .accordion-content {
-      display: none;
-      padding: 0 22px 22px;
-      color: var(--muted);
-    }
-
-    .accordion-item.active .accordion-content {
+    .mistake-item strong {
       display: block;
+      color: var(--text);
+      margin-bottom: 4px;
+      font-size: 1.02rem;
     }
 
-    .accordion-item.active .accordion-button span {
-      transform: rotate(45deg);
+    .mistake-item p {
+      color: var(--muted);
+      font-size: 0.97rem;
+    }
+
+    .faq-carousel-wrap {
+      position: relative;
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+
+    .faq-carousel {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(290px, 360px);
+      gap: 18px;
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      scroll-snap-type: x mandatory;
+      scroll-padding: 4px;
+      padding: 6px 4px 18px;
+      scrollbar-width: thin;
+    }
+
+    .faq-card {
+      min-height: 285px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 10px 24px rgba(31, 41, 51, 0.04);
+      scroll-snap-align: start;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    }
+
+    .faq-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 42px rgba(31, 41, 51, 0.1);
+      border-color: rgba(195, 0, 47, 0.22);
+    }
+
+    .faq-number {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(195, 0, 47, 0.08);
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      flex: 0 0 auto;
+    }
+
+    .faq-card h3 {
+      margin-bottom: 0;
+    }
+
+    .faq-card p {
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .faq-controls {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .faq-arrow {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid rgba(195, 0, 47, 0.28);
+      background: var(--white);
+      color: var(--primary);
+      font-size: 1.2rem;
+      font-weight: 900;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .faq-arrow:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(31, 41, 51, 0.12);
+      background: rgba(195, 0, 47, 0.06);
     }
 
     .cta-final {
@@ -578,6 +851,14 @@
       .grid-4 {
         grid-template-columns: repeat(2, 1fr);
       }
+
+      .mistakes-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .mistakes-side {
+        position: static;
+      }
     }
 
     @media (max-width: 900px) {
@@ -608,7 +889,8 @@
 
       .hero-grid,
       .highlight-grid,
-      .grid-2 {
+      .grid-2,
+      .review-block {
         grid-template-columns: 1fr;
       }
 
@@ -619,12 +901,32 @@
         grid-template-columns: 1fr;
       }
 
+      .faq-carousel {
+        grid-auto-columns: minmax(260px, 86vw);
+      }
+
       .hero {
         padding-top: 54px;
       }
 
       section {
         padding: 56px 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
       }
     }
 
@@ -645,6 +947,17 @@
       .highlight,
       .cta-final {
         padding: 28px 20px;
+      }
+
+      .review-list,
+      .mistakes-list {
+        padding: 24px 20px;
+      }
+
+      .review-item,
+      .mistake-item {
+        grid-template-columns: 38px 1fr;
+        gap: 12px;
       }
 
       h1 {
@@ -1093,66 +1406,152 @@
 
     <section>
       <div class="container">
-        <div class="grid-2">
+        <div class="review-block">
           <div class="section-title">
             <span>Antes de contratar</span>
             <h2>Qué conviene revisar</h2>
             <p>
               Antes de contratar un seguro de accidentes, merece la pena revisar bien qué capitales, límites, garantías y exclusiones tiene la modalidad elegida.
             </p>
+
+            <p class="review-intro">
+              La clave no es contratar muchas garantías, sino entender qué consecuencias cubre el seguro y cómo respondería ante un accidente real.
+            </p>
+
+            <div class="review-note">
+              <strong>Consejo:</strong> revisa especialmente el capital de invalidez, el baremo, las exclusiones deportivas y la documentación necesaria para comunicar un siniestro.
+            </div>
           </div>
 
-          <div class="checklist">
-            <div class="check-item">Capital asegurado para fallecimiento e invalidez.</div>
-            <div class="check-item">Si la cobertura es 24 horas o tiene un ámbito concreto.</div>
-            <div class="check-item">Si incluye accidente de circulación.</div>
-            <div class="check-item">Si incluye hospitalización o asistencia sanitaria.</div>
-            <div class="check-item">Si contempla salud dental o accidentes dentales.</div>
-            <div class="check-item">Exclusiones, carencias y límites máximos.</div>
-            <div class="check-item">Cómo se calcula la indemnización por baremo.</div>
-            <div class="check-item">Documentación necesaria en caso de siniestro.</div>
-          </div>
+          <ol class="review-list">
+            <li class="review-item">
+              <span class="review-number">01</span>
+              <div>
+                <strong>Capital asegurado</strong>
+                <p>Conviene revisar el capital para fallecimiento e invalidez, porque marcará la indemnización en caso de accidente cubierto.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">02</span>
+              <div>
+                <strong>Ámbito de cobertura</strong>
+                <p>Es importante saber si la protección es 24 horas o si se limita a un ámbito concreto, actividad o situación determinada.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">03</span>
+              <div>
+                <strong>Accidente de circulación</strong>
+                <p>Si conduces o te desplazas con frecuencia, conviene comprobar si incluye garantías relacionadas con accidentes de tráfico.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">04</span>
+              <div>
+                <strong>Hospitalización y asistencia sanitaria</strong>
+                <p>Puede ser importante revisar si incluye gastos médicos, rehabilitación, traslados, hospitalización o asistencia domiciliaria.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">05</span>
+              <div>
+                <strong>Salud dental</strong>
+                <p>Algunas modalidades contemplan servicios dentales o cobertura ante accidentes dentales graves.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">06</span>
+              <div>
+                <strong>Exclusiones y límites</strong>
+                <p>Hay actividades, situaciones o importes máximos que pueden estar excluidos o limitados según la póliza.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">07</span>
+              <div>
+                <strong>Baremo de indemnización</strong>
+                <p>En invalidez, la indemnización suele calcularse según un baremo. Conviene entender cómo se aplica.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">08</span>
+              <div>
+                <strong>Documentación en caso de siniestro</strong>
+                <p>Es recomendable saber qué informes, partes médicos, justificantes o documentación pueden ser necesarios si ocurre un accidente.</p>
+              </div>
+            </li>
+          </ol>
         </div>
       </div>
     </section>
 
     <section class="section-soft">
-      <div class="container">
-        <div class="section-title center">
-          <span>Errores frecuentes</span>
-          <h2>Errores habituales al contratar un seguro de accidentes</h2>
-        </div>
+      <div class="container mistakes-block">
+        <div class="mistakes-layout">
+          <div class="mistakes-side section-title">
+            <span>Errores frecuentes</span>
+            <h2>Errores habituales al contratar un seguro de accidentes</h2>
+            <p>
+              En accidentes, los detalles importan mucho: capitales, baremos, exclusiones, deporte, asistencia sanitaria y documentación pueden cambiar por completo la utilidad de la póliza.
+            </p>
+          </div>
 
-        <div class="grid-3">
-          <article class="card">
-            <h3>Pensar que todo accidente está cubierto</h3>
-            <p>Hay exclusiones, límites y actividades que pueden necesitar declaración expresa.</p>
-          </article>
+          <ol class="mistakes-list">
+            <li class="mistake-item">
+              <span class="mistake-mark">!</span>
+              <div>
+                <strong>Pensar que todo accidente está cubierto</strong>
+                <p>Hay exclusiones, límites y actividades que pueden necesitar declaración expresa.</p>
+              </div>
+            </li>
 
-          <article class="card">
-            <h3>No revisar el deporte</h3>
-            <p>Los deportes federados, profesionales o peligrosos pueden tener condiciones especiales.</p>
-          </article>
+            <li class="mistake-item">
+              <span class="mistake-mark">!</span>
+              <div>
+                <strong>No revisar el deporte</strong>
+                <p>Los deportes federados, profesionales o peligrosos pueden tener condiciones especiales.</p>
+              </div>
+            </li>
 
-          <article class="card">
-            <h3>Elegir solo por precio</h3>
-            <p>Lo importante es saber qué capitales tienes y qué consecuencias están realmente cubiertas.</p>
-          </article>
+            <li class="mistake-item">
+              <span class="mistake-mark">!</span>
+              <div>
+                <strong>Elegir solo por precio</strong>
+                <p>Lo importante es saber qué capitales tienes y qué consecuencias están realmente cubiertas.</p>
+              </div>
+            </li>
 
-          <article class="card">
-            <h3>No revisar la invalidez</h3>
-            <p>La invalidez puede ser una de las coberturas más importantes de este tipo de seguro.</p>
-          </article>
+            <li class="mistake-item">
+              <span class="mistake-mark">!</span>
+              <div>
+                <strong>No revisar la invalidez</strong>
+                <p>La invalidez puede ser una de las coberturas más importantes de este tipo de seguro.</p>
+              </div>
+            </li>
 
-          <article class="card">
-            <h3>Confundirlo con salud</h3>
-            <p>Un seguro de salud se centra en asistencia médica. El de accidentes se centra en consecuencias económicas y garantías derivadas del accidente.</p>
-          </article>
+            <li class="mistake-item">
+              <span class="mistake-mark">!</span>
+              <div>
+                <strong>Confundirlo con salud</strong>
+                <p>Un seguro de salud se centra en asistencia médica. El de accidentes se centra en consecuencias económicas y garantías derivadas del accidente.</p>
+              </div>
+            </li>
 
-          <article class="card">
-            <h3>No mirar servicios adicionales</h3>
-            <p>Asistencia sanitaria, hospitalización, salud dental o bienestar pueden aportar valor según tu situación.</p>
-          </article>
+            <li class="mistake-item">
+              <span class="mistake-mark">!</span>
+              <div>
+                <strong>No mirar servicios adicionales</strong>
+                <p>Asistencia sanitaria, hospitalización, salud dental o bienestar pueden aportar valor según tu situación.</p>
+              </div>
+            </li>
+          </ol>
         </div>
       </div>
     </section>
@@ -1164,96 +1563,67 @@
           <h2>Dudas habituales sobre el seguro de accidentes</h2>
         </div>
 
-        <div class="accordion">
-          <article class="accordion-item active">
-            <button class="accordion-button" type="button">
-              ¿Qué cubre un seguro de accidentes?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+        <div class="faq-carousel-wrap">
+          <div class="faq-carousel" id="faqCarousel" aria-label="Carrusel de preguntas frecuentes">
+            <article class="faq-card">
+              <div class="faq-number">01</div>
+              <h3>¿Qué cubre un seguro de accidentes?</h3>
               <p>Puede cubrir fallecimiento por accidente, invalidez, hospitalización, asistencia sanitaria y otras garantías complementarias según la modalidad contratada.</p>
-            </div>
-          </article>
+            </article>
 
-          <article class="accordion-item">
-            <button class="accordion-button" type="button">
-              ¿Es lo mismo que un seguro de vida?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+            <article class="faq-card">
+              <div class="faq-number">02</div>
+              <h3>¿Es lo mismo que un seguro de vida?</h3>
               <p>No. El seguro de vida puede cubrir fallecimiento por distintas causas, según modalidad. El seguro de accidentes se centra en hechos accidentales.</p>
-            </div>
-          </article>
+            </article>
 
-          <article class="accordion-item">
-            <button class="accordion-button" type="button">
-              ¿Es lo mismo que un seguro de salud?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+            <article class="faq-card">
+              <div class="faq-number">03</div>
+              <h3>¿Es lo mismo que un seguro de salud?</h3>
               <p>No. El seguro de salud está pensado para asistencia médica. El seguro de accidentes puede incluir indemnizaciones económicas y asistencia derivada de un accidente.</p>
-            </div>
-          </article>
+            </article>
 
-          <article class="accordion-item">
-            <button class="accordion-button" type="button">
-              ¿Cubre accidentes de tráfico?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+            <article class="faq-card">
+              <div class="faq-number">04</div>
+              <h3>¿Cubre accidentes de tráfico?</h3>
               <p>Puede cubrirlos si la modalidad contratada incluye accidente de circulación o garantías relacionadas con la circulación.</p>
-            </div>
-          </article>
+            </article>
 
-          <article class="accordion-item">
-            <button class="accordion-button" type="button">
-              ¿Cubre deportes?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+            <article class="faq-card">
+              <div class="faq-number">05</div>
+              <h3>¿Cubre deportes?</h3>
               <p>Puede cubrir deporte aficionado, pero los deportes federados, profesionales o peligrosos deben revisarse antes de contratar.</p>
-            </div>
-          </article>
+            </article>
 
-          <article class="accordion-item">
-            <button class="accordion-button" type="button">
-              ¿Qué es la invalidez permanente?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+            <article class="faq-card">
+              <div class="faq-number">06</div>
+              <h3>¿Qué es la invalidez permanente?</h3>
               <p>Es una secuela estable y definitiva derivada de un accidente, que puede dar derecho a indemnización según el baremo y el capital contratado.</p>
-            </div>
-          </article>
+            </article>
 
-          <article class="accordion-item">
-            <button class="accordion-button" type="button">
-              ¿Qué es un baremo?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+            <article class="faq-card">
+              <div class="faq-number">07</div>
+              <h3>¿Qué es un baremo?</h3>
               <p>Es una tabla que permite calcular la indemnización según el tipo de lesión o secuela, aplicando porcentajes o importes según la póliza.</p>
-            </div>
-          </article>
+            </article>
 
-          <article class="accordion-item">
-            <button class="accordion-button" type="button">
-              ¿Puedo añadir salud dental?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+            <article class="faq-card">
+              <div class="faq-number">08</div>
+              <h3>¿Puedo añadir salud dental?</h3>
               <p>Sí, existen opciones vinculadas a salud dental, actos gratuitos, precios baremados y accidentes dentales graves, según modalidad.</p>
-            </div>
-          </article>
+            </article>
 
-          <article class="accordion-item">
-            <button class="accordion-button" type="button">
-              ¿Puedo revisar qué modalidad encaja conmigo?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+            <article class="faq-card">
+              <div class="faq-number">09</div>
+              <h3>¿Puedo revisar qué modalidad encaja conmigo?</h3>
               <p>Sí. Es recomendable revisar edad, actividad diaria, deporte, capitales y coberturas antes de contratar.</p>
-            </div>
-          </article>
+            </article>
+          </div>
+
+          <div class="faq-controls" aria-label="Controles del carrusel de preguntas frecuentes">
+            <button class="faq-arrow" type="button" data-faq-prev aria-label="Pregunta anterior">‹</button>
+            <button class="faq-arrow" type="button" data-faq-next aria-label="Pregunta siguiente">›</button>
+          </div>
         </div>
       </div>
     </section>
@@ -1303,15 +1673,48 @@
       });
     }
 
-    const accordionItems = document.querySelectorAll(".accordion-item");
+    const faqCarousel = document.querySelector("#faqCarousel");
+    const faqPrev = document.querySelector("[data-faq-prev]");
+    const faqNext = document.querySelector("[data-faq-next]");
 
-    accordionItems.forEach((item) => {
-      const button = item.querySelector(".accordion-button");
+    if (faqCarousel && faqPrev && faqNext) {
+      const moveFaqCarousel = (direction) => {
+        const card = faqCarousel.querySelector(".faq-card");
+        const gap = 18;
+        const distance = card ? card.offsetWidth + gap : 340;
 
-      button.addEventListener("click", () => {
-        item.classList.toggle("active");
+        faqCarousel.scrollBy({
+          left: direction * distance,
+          behavior: "smooth"
+        });
+      };
+
+      faqPrev.addEventListener("click", () => moveFaqCarousel(-1));
+      faqNext.addEventListener("click", () => moveFaqCarousel(1));
+    }
+
+    const revealElements = document.querySelectorAll(
+      ".section-title, .card, .coverage-card, .highlight, .check-item, .review-list, .mistakes-list, .faq-card, .cta-final"
+    );
+
+    if ("IntersectionObserver" in window) {
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      revealElements.forEach((element, index) => {
+        element.classList.add("reveal");
+        element.style.transitionDelay = `${Math.min(index % 6, 5) * 70}ms`;
+        revealObserver.observe(element);
       });
-    });
+    } else {
+      revealElements.forEach((element) => element.classList.add("in-view"));
+    }
   </script>
 
 </body>
