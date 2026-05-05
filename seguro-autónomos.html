@@ -50,6 +50,71 @@
       margin: 0 auto;
     }
 
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes softFloat {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-6px);
+      }
+    }
+
+    .hero .eyebrow,
+    .hero h1,
+    .hero .lead,
+    .hero-actions,
+    .trust-line {
+      animation: fadeUp 0.7s ease both;
+    }
+
+    .hero h1 {
+      animation-delay: 0.08s;
+    }
+
+    .hero .lead {
+      animation-delay: 0.16s;
+    }
+
+    .hero-actions {
+      animation-delay: 0.24s;
+    }
+
+    .trust-line {
+      animation-delay: 0.32s;
+    }
+
+    .hero-card {
+      animation: fadeUp 0.8s ease 0.18s both;
+    }
+
+    .hero-card-icon {
+      animation: softFloat 4.5s ease-in-out infinite;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+
+    .reveal.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     .topbar {
       background: var(--white);
       border-bottom: 1px solid var(--border);
@@ -345,6 +410,13 @@
       padding: 24px;
       box-shadow: 0 10px 24px rgba(31, 41, 51, 0.04);
       height: 100%;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 36px rgba(31, 41, 51, 0.09);
+      border-color: rgba(195, 0, 47, 0.22);
     }
 
     .card-icon {
@@ -376,6 +448,13 @@
       display: flex;
       gap: 16px;
       align-items: flex-start;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    }
+
+    .coverage-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 32px rgba(31, 41, 51, 0.08);
+      border-color: rgba(195, 0, 47, 0.22);
     }
 
     .coverage-card .mini-icon {
@@ -457,84 +536,246 @@
     }
 
     .highlight .pill {
-      background: rgba(255,255,255,.14);
+      background: rgba(255, 255, 255, 0.14);
       color: var(--white);
     }
 
-    .checklist {
+    .review-block {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-      margin-top: 8px;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 34px;
+      align-items: start;
     }
 
-    .check-item {
+    .review-intro {
+      color: var(--muted);
+      font-size: 1.04rem;
+      margin-top: 10px;
+    }
+
+    .review-list {
+      list-style: none;
+      display: grid;
+      gap: 0;
+      background: var(--white);
+      border-radius: calc(var(--radius) + 4px);
+      border: 1px solid var(--border);
+      padding: 30px;
+      box-shadow: 0 14px 34px rgba(31, 41, 51, 0.06);
+    }
+
+    .review-item {
+      display: grid;
+      grid-template-columns: 46px 1fr;
+      gap: 16px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .review-item:first-child {
+      padding-top: 0;
+    }
+
+    .review-item:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .review-number {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(195, 0, 47, 0.08);
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 0.9rem;
+    }
+
+    .review-item strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 4px;
+      font-size: 1.02rem;
+    }
+
+    .review-item p {
+      color: var(--muted);
+      font-size: 0.97rem;
+    }
+
+    .review-note {
+      margin-top: 24px;
+      padding: 18px 20px;
+      border-radius: var(--radius-sm);
+      background: rgba(195, 0, 47, 0.06);
+      color: #455363;
+      font-size: 0.98rem;
+    }
+
+    .review-note strong {
+      color: var(--primary);
+    }
+
+    .mistakes-block {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .mistakes-layout {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .mistakes-side {
+      position: sticky;
+      top: 104px;
+    }
+
+    .mistakes-side p {
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .mistakes-list {
+      list-style: none;
+      display: grid;
+      gap: 0;
       background: var(--white);
       border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: 18px;
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      color: #455363;
+      border-radius: calc(var(--radius) + 4px);
+      padding: 30px;
+      box-shadow: 0 14px 34px rgba(31, 41, 51, 0.06);
     }
 
-    .check-item::before {
-      content: "✓";
+    .mistake-item {
+      display: grid;
+      grid-template-columns: 38px 1fr;
+      gap: 16px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .mistake-item:first-child {
+      padding-top: 0;
+    }
+
+    .mistake-item:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .mistake-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(195, 0, 47, 0.08);
       color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 1rem;
+    }
+
+    .mistake-item strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 4px;
+      font-size: 1.02rem;
+    }
+
+    .mistake-item p {
+      color: var(--muted);
+      font-size: 0.97rem;
+    }
+
+    .faq-carousel-wrap {
+      position: relative;
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+
+    .faq-carousel {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(290px, 360px);
+      gap: 18px;
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      scroll-snap-type: x mandatory;
+      scroll-padding: 4px;
+      padding: 6px 4px 18px;
+      scrollbar-width: thin;
+    }
+
+    .faq-card {
+      min-height: 310px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 10px 24px rgba(31, 41, 51, 0.04);
+      scroll-snap-align: start;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    }
+
+    .faq-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 42px rgba(31, 41, 51, 0.1);
+      border-color: rgba(195, 0, 47, 0.22);
+    }
+
+    .faq-number {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(195, 0, 47, 0.08);
+      color: var(--primary);
+      display: grid;
+      place-items: center;
       font-weight: 900;
       flex: 0 0 auto;
     }
 
-    .accordion {
-      display: grid;
-      gap: 12px;
-      max-width: 900px;
-      margin: 0 auto;
+    .faq-card h3 {
+      margin-bottom: 0;
     }
 
-    .accordion-item {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      overflow: hidden;
-    }
-
-    .accordion-button {
-      width: 100%;
-      border: 0;
-      background: transparent;
-      padding: 20px 22px;
-      text-align: left;
-      font-size: 1.02rem;
-      font-weight: 800;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 18px;
-      cursor: pointer;
-      color: var(--text);
-    }
-
-    .accordion-button span {
-      color: var(--primary);
-      font-size: 1.4rem;
-      line-height: 1;
-      transition: transform 0.2s ease;
-    }
-
-    .accordion-content {
-      display: none;
-      padding: 0 22px 22px;
+    .faq-card p {
       color: var(--muted);
+      font-size: 0.98rem;
     }
 
-    .accordion-item.active .accordion-content {
-      display: block;
+    .faq-controls {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 12px;
     }
 
-    .accordion-item.active .accordion-button span {
-      transform: rotate(45deg);
+    .faq-arrow {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid rgba(195, 0, 47, 0.28);
+      background: var(--white);
+      color: var(--primary);
+      font-size: 1.2rem;
+      font-weight: 900;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .faq-arrow:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(31, 41, 51, 0.12);
+      background: rgba(195, 0, 47, 0.06);
     }
 
     .cta-final {
@@ -578,6 +819,14 @@
       .grid-4 {
         grid-template-columns: repeat(2, 1fr);
       }
+
+      .mistakes-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .mistakes-side {
+        position: static;
+      }
     }
 
     @media (max-width: 900px) {
@@ -608,15 +857,19 @@
 
       .hero-grid,
       .highlight-grid,
-      .grid-2 {
+      .grid-2,
+      .review-block {
         grid-template-columns: 1fr;
       }
 
       .grid-3,
       .grid-4,
-      .coverages,
-      .checklist {
+      .coverages {
         grid-template-columns: 1fr;
+      }
+
+      .faq-carousel {
+        grid-auto-columns: minmax(260px, 86vw);
       }
 
       .hero {
@@ -625,6 +878,22 @@
 
       section {
         padding: 56px 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
       }
     }
 
@@ -645,6 +914,17 @@
       .highlight,
       .cta-final {
         padding: 28px 20px;
+      }
+
+      .review-list,
+      .mistakes-list {
+        padding: 24px 20px;
+      }
+
+      .review-item,
+      .mistake-item {
+        grid-template-columns: 38px 1fr;
+        gap: 12px;
       }
 
       h1 {
@@ -1198,66 +1478,168 @@
 
     <section class="section-soft">
       <div class="container">
-        <div class="section-title">
-          <span>Antes de contratar</span>
-          <h2>Qué conviene revisar si eres autónomo</h2>
-          <p>
-            La clave no es contratarlo todo, sino revisar qué riesgos reales tiene tu actividad y qué seguros pueden encajar contigo.
-          </p>
-        </div>
+        <div class="review-block">
+          <div class="section-title">
+            <span>Antes de contratar</span>
+            <h2>Qué conviene revisar si eres autónomo</h2>
+            <p>
+              La clave no es contratarlo todo, sino revisar qué riesgos reales tiene tu actividad y qué seguros pueden encajar contigo.
+            </p>
 
-        <div class="checklist">
-          <div class="check-item">Actividad concreta que realizas y dónde la realizas.</div>
-          <div class="check-item">Si trabajas en tu casa, en casa de clientes, en obra, en local o en carretera.</div>
-          <div class="check-item">Si tienes empleados, colaboradores o subcontratas.</div>
-          <div class="check-item">Ingresos mensuales que necesitas proteger si no puedes trabajar.</div>
-          <div class="check-item">Cuota de autónomo y gastos fijos de tu actividad.</div>
-          <div class="check-item">Herramientas, equipos, ordenador, material o mercancía.</div>
-          <div class="check-item">Vehículo profesional, furgoneta o permiso de conducir.</div>
-          <div class="check-item">Responsabilidad civil exigida por clientes, contratos, licencias o normativa.</div>
-          <div class="check-item">Carencias, franquicias, capitales, límites y exclusiones.</div>
-          <div class="check-item">Si el seguro de salud puede tener tratamiento fiscal favorable en tu caso.</div>
+            <p class="review-intro">
+              Lo importante es ordenar bien tus prioridades: ingresos, responsabilidad civil, salud, vehículo, equipos, lugar de trabajo y gastos fijos.
+            </p>
+
+            <div class="review-note">
+              <strong>Consejo:</strong> revisa tu actividad real y no solo tu epígrafe. Dos autónomos pueden estar dados de alta parecido, pero tener riesgos totalmente distintos.
+            </div>
+          </div>
+
+          <ol class="review-list">
+            <li class="review-item">
+              <span class="review-number">01</span>
+              <div>
+                <strong>Actividad concreta que realizas</strong>
+                <p>Conviene revisar qué haces exactamente y dónde lo haces: casa, clientes, obra, local, carretera o entorno digital.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">02</span>
+              <div>
+                <strong>Lugar de trabajo</strong>
+                <p>No es igual trabajar desde casa que en casa de clientes, en obra, en un local propio o desplazándote a diario.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">03</span>
+              <div>
+                <strong>Empleados, colaboradores o subcontratas</strong>
+                <p>Si trabajas con otras personas, puede ser necesario revisar responsabilidades adicionales.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">04</span>
+              <div>
+                <strong>Ingresos y gastos fijos</strong>
+                <p>Hay que calcular qué ingresos necesitas proteger si una baja te impide trabajar temporalmente.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">05</span>
+              <div>
+                <strong>Cuota de autónomo</strong>
+                <p>Conviene revisar tu cuota, gastos recurrentes y si necesitas una ayuda económica en caso de incapacidad temporal.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">06</span>
+              <div>
+                <strong>Herramientas, equipos y material</strong>
+                <p>Ordenadores, maquinaria, herramientas o mercancía pueden ser imprescindibles para seguir trabajando.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">07</span>
+              <div>
+                <strong>Vehículo profesional</strong>
+                <p>Si dependes de una furgoneta o vehículo para trabajar, conviene revisar uso, asistencia, coberturas y permiso de conducir.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">08</span>
+              <div>
+                <strong>Responsabilidad civil exigida</strong>
+                <p>Algunos clientes, contratos, licencias, administraciones o normativas pueden pedir una RC concreta.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">09</span>
+              <div>
+                <strong>Carencias, franquicias y límites</strong>
+                <p>Antes de contratar hay que entender qué entra, desde cuándo entra, cuánto cubre y qué parte asumirías tú.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">10</span>
+              <div>
+                <strong>Fiscalidad del seguro de salud</strong>
+                <p>Puede haber tratamiento fiscal favorable en algunos casos, pero conviene confirmarlo con tu asesor fiscal.</p>
+              </div>
+            </li>
+          </ol>
         </div>
       </div>
     </section>
 
     <section>
-      <div class="container">
-        <div class="section-title center">
-          <span>Errores frecuentes</span>
-          <h2>Errores habituales al elegir seguros para autónomos</h2>
-        </div>
+      <div class="container mistakes-block">
+        <div class="mistakes-layout">
+          <div class="mistakes-side section-title">
+            <span>Errores frecuentes</span>
+            <h2>Errores habituales al elegir seguros para autónomos</h2>
+            <p>
+              Muchos autónomos se dan cuenta de que una póliza no encaja cuando ya tienen una baja, una reclamación o un problema con su vehículo o equipos. Estos puntos conviene revisarlos antes.
+            </p>
+          </div>
 
-        <div class="grid-3">
-          <article class="card">
-            <h3>Contratar solo por precio</h3>
-            <p>Un seguro barato puede quedarse corto si no cubre bien tu actividad o tiene límites insuficientes.</p>
-          </article>
+          <ol class="mistakes-list">
+            <li class="mistake-item">
+              <span class="mistake-mark">!</span>
+              <div>
+                <strong>Contratar solo por precio</strong>
+                <p>Un seguro barato puede quedarse corto si no cubre bien tu actividad o tiene límites insuficientes.</p>
+              </div>
+            </li>
 
-          <article class="card">
-            <h3>No revisar la responsabilidad civil</h3>
-            <p>Una reclamación de un cliente o tercero puede afectar directamente a tu patrimonio y continuidad profesional.</p>
-          </article>
+            <li class="mistake-item">
+              <span class="mistake-mark">!</span>
+              <div>
+                <strong>No revisar la responsabilidad civil</strong>
+                <p>Una reclamación de un cliente o tercero puede afectar directamente a tu patrimonio y continuidad profesional.</p>
+              </div>
+            </li>
 
-          <article class="card">
-            <h3>No proteger la baja laboral</h3>
-            <p>Si no puedes trabajar, los gastos fijos pueden seguir llegando aunque tus ingresos bajen.</p>
-          </article>
+            <li class="mistake-item">
+              <span class="mistake-mark">!</span>
+              <div>
+                <strong>No proteger la baja laboral</strong>
+                <p>Si no puedes trabajar, los gastos fijos pueden seguir llegando aunque tus ingresos bajen.</p>
+              </div>
+            </li>
 
-          <article class="card">
-            <h3>No declarar bien la actividad</h3>
-            <p>Es importante que la póliza refleje correctamente lo que haces, dónde trabajas y qué riesgos tienes.</p>
-          </article>
+            <li class="mistake-item">
+              <span class="mistake-mark">!</span>
+              <div>
+                <strong>No declarar bien la actividad</strong>
+                <p>Es importante que la póliza refleje correctamente lo que haces, dónde trabajas y qué riesgos tienes.</p>
+              </div>
+            </li>
 
-          <article class="card">
-            <h3>Olvidar herramientas o equipos</h3>
-            <p>Ordenadores, maquinaria, herramientas o material profesional pueden ser esenciales para poder trabajar.</p>
-          </article>
+            <li class="mistake-item">
+              <span class="mistake-mark">!</span>
+              <div>
+                <strong>Olvidar herramientas o equipos</strong>
+                <p>Ordenadores, maquinaria, herramientas o material profesional pueden ser esenciales para poder trabajar.</p>
+              </div>
+            </li>
 
-          <article class="card">
-            <h3>No revisar el vehículo</h3>
-            <p>Si tu vehículo es herramienta de trabajo, la asistencia, uso declarado y coberturas pueden ser decisivas.</p>
-          </article>
+            <li class="mistake-item">
+              <span class="mistake-mark">!</span>
+              <div>
+                <strong>No revisar el vehículo</strong>
+                <p>Si tu vehículo es herramienta de trabajo, la asistencia, uso declarado y coberturas pueden ser decisivas.</p>
+              </div>
+            </li>
+          </ol>
         </div>
       </div>
     </section>
@@ -1269,96 +1651,67 @@
           <h2>Dudas habituales sobre seguros para autónomos</h2>
         </div>
 
-        <div class="accordion">
-          <article class="accordion-item active">
-            <button class="accordion-button" type="button">
-              ¿Qué seguros necesita un autónomo?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+        <div class="faq-carousel-wrap">
+          <div class="faq-carousel" id="faqCarousel" aria-label="Carrusel de preguntas frecuentes">
+            <article class="faq-card">
+              <div class="faq-number">01</div>
+              <h3>¿Qué seguros necesita un autónomo?</h3>
               <p>Depende de tu actividad. Los más habituales son responsabilidad civil, baja laboral, accidentes, salud, vida, vehículo profesional, hogar profesional, protección jurídica y previsión para jubilación.</p>
-            </div>
-          </article>
+            </article>
 
-          <article class="accordion-item">
-            <button class="accordion-button" type="button">
-              ¿La responsabilidad civil es obligatoria para autónomos?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+            <article class="faq-card">
+              <div class="faq-number">02</div>
+              <h3>¿La responsabilidad civil es obligatoria para autónomos?</h3>
               <p>No siempre es obligatoria para todos los autónomos, pero algunas actividades, licencias, contratos, colegios profesionales o administraciones pueden exigirla. Aunque no sea obligatoria, puede ser muy recomendable.</p>
-            </div>
-          </article>
+            </article>
 
-          <article class="accordion-item">
-            <button class="accordion-button" type="button">
-              ¿Qué es la baja laboral para autónomos?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+            <article class="faq-card">
+              <div class="faq-number">03</div>
+              <h3>¿Qué es la baja laboral para autónomos?</h3>
               <p>Es una cobertura pensada para aportar una ayuda económica si una enfermedad o accidente te impide trabajar temporalmente. Puede plantearse como baja diaria por baremo o baja real y efectiva, según modalidad.</p>
-            </div>
-          </article>
+            </article>
 
-          <article class="accordion-item">
-            <button class="accordion-button" type="button">
-              ¿Se puede cubrir la cuota de autónomo?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+            <article class="faq-card">
+              <div class="faq-number">04</div>
+              <h3>¿Se puede cubrir la cuota de autónomo?</h3>
               <p>Algunas coberturas pueden contemplar el reembolso de la cuota mensual del RETA o régimen asimilado en caso de incapacidad temporal por accidente o enfermedad, siempre con límites, carencias y condiciones concretas.</p>
-            </div>
-          </article>
+            </article>
 
-          <article class="accordion-item">
-            <button class="accordion-button" type="button">
-              ¿El seguro de salud desgrava si soy autónomo?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+            <article class="faq-card">
+              <div class="faq-number">05</div>
+              <h3>¿El seguro de salud desgrava si soy autónomo?</h3>
               <p>De forma general, si tributas en estimación directa, las primas del seguro de enfermedad pueden ser gasto deducible para tu propia cobertura, la de tu cónyuge y la de hijos menores de 25 años que convivan contigo, dentro de los límites legales. Conviene confirmarlo con tu asesor fiscal.</p>
-            </div>
-          </article>
+            </article>
 
-          <article class="accordion-item">
-            <button class="accordion-button" type="button">
-              ¿Necesito un seguro distinto si trabajo desde casa?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+            <article class="faq-card">
+              <div class="faq-number">06</div>
+              <h3>¿Necesito un seguro distinto si trabajo desde casa?</h3>
               <p>Puede ser recomendable revisar hogar profesional, equipos, responsabilidad civil y si tu actividad está correctamente contemplada en la póliza.</p>
-            </div>
-          </article>
+            </article>
 
-          <article class="accordion-item">
-            <button class="accordion-button" type="button">
-              ¿Qué pasa si uso una furgoneta para trabajar?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+            <article class="faq-card">
+              <div class="faq-number">07</div>
+              <h3>¿Qué pasa si uso una furgoneta para trabajar?</h3>
               <p>Conviene revisar el uso profesional del vehículo, asistencia en carretera, herramientas transportadas, defensa en multas y si el vehículo está correctamente asegurado para tu actividad.</p>
-            </div>
-          </article>
+            </article>
 
-          <article class="accordion-item">
-            <button class="accordion-button" type="button">
-              ¿Puedo contratar solo una parte?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+            <article class="faq-card">
+              <div class="faq-number">08</div>
+              <h3>¿Puedo contratar solo una parte?</h3>
               <p>Sí. No todos los autónomos necesitan lo mismo. Podemos revisar tu actividad y priorizar lo más importante: responsabilidad civil, baja laboral, salud, vehículo, equipos o protección familiar.</p>
-            </div>
-          </article>
+            </article>
 
-          <article class="accordion-item">
-            <button class="accordion-button" type="button">
-              ¿Podéis revisar lo que ya tengo contratado?
-              <span>+</span>
-            </button>
-            <div class="accordion-content">
+            <article class="faq-card">
+              <div class="faq-number">09</div>
+              <h3>¿Podéis revisar lo que ya tengo contratado?</h3>
               <p>Sí. Podemos revisar tus pólizas actuales para ver si hay coberturas repetidas, límites bajos, riesgos sin cubrir o seguros que ya no encajan con tu actividad.</p>
-            </div>
-          </article>
+            </article>
+          </div>
+
+          <div class="faq-controls" aria-label="Controles del carrusel de preguntas frecuentes">
+            <button class="faq-arrow" type="button" data-faq-prev aria-label="Pregunta anterior">‹</button>
+            <button class="faq-arrow" type="button" data-faq-next aria-label="Pregunta siguiente">›</button>
+          </div>
         </div>
       </div>
     </section>
@@ -1408,15 +1761,48 @@
       });
     }
 
-    const accordionItems = document.querySelectorAll(".accordion-item");
+    const faqCarousel = document.querySelector("#faqCarousel");
+    const faqPrev = document.querySelector("[data-faq-prev]");
+    const faqNext = document.querySelector("[data-faq-next]");
 
-    accordionItems.forEach((item) => {
-      const button = item.querySelector(".accordion-button");
+    if (faqCarousel && faqPrev && faqNext) {
+      const moveFaqCarousel = (direction) => {
+        const card = faqCarousel.querySelector(".faq-card");
+        const gap = 18;
+        const distance = card ? card.offsetWidth + gap : 340;
 
-      button.addEventListener("click", () => {
-        item.classList.toggle("active");
+        faqCarousel.scrollBy({
+          left: direction * distance,
+          behavior: "smooth"
+        });
+      };
+
+      faqPrev.addEventListener("click", () => moveFaqCarousel(-1));
+      faqNext.addEventListener("click", () => moveFaqCarousel(1));
+    }
+
+    const revealElements = document.querySelectorAll(
+      ".section-title, .card, .coverage-card, .highlight, .review-list, .mistakes-list, .faq-card, .cta-final"
+    );
+
+    if ("IntersectionObserver" in window) {
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      revealElements.forEach((element, index) => {
+        element.classList.add("reveal");
+        element.style.transitionDelay = `${Math.min(index % 6, 5) * 70}ms`;
+        revealObserver.observe(element);
       });
-    });
+    } else {
+      revealElements.forEach((element) => element.classList.add("in-view"));
+    }
   </script>
 
 </body>
