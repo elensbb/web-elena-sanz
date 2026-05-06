@@ -189,7 +189,6 @@
       }
     }
 
-
     .container {
       max-width: 1050px;
       margin: 0 auto;
@@ -549,13 +548,18 @@
     .person-details summary {
       list-style: none;
       cursor: pointer;
-      color: #b91c1c;
-      font-weight: 900;
+      color: #991b1b;
+      font-weight: 700;
       padding: 18px 0 0;
       display: flex;
       align-items: center;
       justify-content: space-between;
       transition: .2s ease;
+      opacity: .82;
+    }
+
+    .person-details summary:hover {
+      opacity: 1;
     }
 
     .person-details summary::-webkit-details-marker {
@@ -680,17 +684,18 @@
     }
 
     .location-card {
-      background: #fff3f3;
+      background: transparent;
       border-radius: 18px;
-      padding: 20px;
-      border: 1px solid #f4cccc;
+      padding: 12px 0;
+      border: none;
       transition: .25s ease;
+      box-shadow: none;
     }
 
     .location-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 14px 30px rgba(0,0,0,.08);
-      background: white;
+      transform: none;
+      box-shadow: none;
+      background: transparent;
     }
 
     .location-card h3 {
@@ -728,13 +733,14 @@
     }
 
     .map-embed {
-      margin-top: 16px;
+      margin-top: 12px;
       width: 100%;
-      height: 190px;
-      border-radius: 14px;
+      height: 160px;
+      border-radius: 12px;
       overflow: hidden;
-      border: 1px solid #f4cccc;
-      box-shadow: 0 8px 20px rgba(0,0,0,.08);
+      border: 1px solid rgba(0,0,0,.06);
+      box-shadow: none;
+      opacity: .88;
     }
 
     .map-embed iframe {
@@ -813,15 +819,27 @@
     }
 
     .cta-primary {
-      background: white;
-      color: #b91c1c;
-      box-shadow: 0 12px 28px rgba(0,0,0,.18);
+      background: #d6003d;
+      color: white;
+      border: 1px solid #d6003d;
+      box-shadow: 0 12px 28px rgba(214,0,61,.22);
+      min-height: 58px;
+      padding: 0 34px;
+      font-size: 17px;
     }
 
     .cta-secondary {
-      background: transparent;
-      color: white;
-      border: 1px solid rgba(255,255,255,.7);
+      background: rgba(255,255,255,.08);
+      color: rgba(255,255,255,.88);
+      border: 1px solid rgba(255,255,255,.18);
+      backdrop-filter: blur(8px);
+      min-height: 58px;
+      padding: 0 30px;
+      font-size: 16px;
+    }
+
+    .cta-secondary:hover {
+      background: rgba(255,255,255,.14);
     }
 
     .cta-primary:hover,
@@ -980,8 +998,6 @@
         min-width: auto;
       }
 
-
-
       .topbar-container {
         padding: 14px 18px;
       }
@@ -1129,7 +1145,7 @@
             </p>
 
             <details class="person-details">
-              <summary>Saber más sobre Elena</summary>
+              <summary>Conocer a Elena</summary>
 
               <div class="person-extra">
                 <p>
@@ -1159,7 +1175,7 @@
             </p>
 
             <details class="person-details">
-              <summary>Saber más sobre Olga</summary>
+              <summary>Conocer a Olga</summary>
 
               <div class="person-extra">
                 <p>
@@ -1319,9 +1335,9 @@
         </p>
 
         <div class="cta-buttons">
-          <a href="https://wa.me/34606067906" target="_blank" class="cta-primary">WhatsApp</a>
+          <a href="https://wa.me/34606067906" target="_blank" class="cta-primary">Escríbenos por WhatsApp</a>
           <a href="mailto:esanz@occident.com" class="cta-secondary">Email</a>
-          <a href="tel:+34917702311" class="cta-secondary">Llamar</a>
+          <a href="tel:+34917702311" class="cta-secondary">Llamar oficina</a>
         </div>
       </div>
     </div>
