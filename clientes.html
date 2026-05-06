@@ -22,6 +22,133 @@
 
     a { text-decoration: none; }
 
+
+    /* NAVBAR */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 9999;
+      background: rgba(255,255,255,.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0,0,0,.06);
+    }
+
+    .topbar-container {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 14px 26px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: #222;
+    }
+
+    .brand-logo {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: #d6003d;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 22px;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+    }
+
+    .brand-text strong {
+      font-size: 18px;
+    }
+
+    .brand-text span {
+      font-size: 14px;
+      color: #666;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+    }
+
+    .nav-links a {
+      color: #555;
+      font-size: 17px;
+      transition: .2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #b91c1c;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .nav-phone,
+    .nav-whatsapp {
+      min-height: 56px;
+      padding: 0 30px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 17px;
+      transition: .2s ease;
+    }
+
+    .nav-phone {
+      background: white;
+      border: 1px solid #efcaca;
+      color: #b91c1c;
+    }
+
+    .nav-whatsapp {
+      background: #d6003d;
+      color: white;
+    }
+
+    .nav-phone:hover,
+    .nav-whatsapp:hover {
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 1050px) {
+      .topbar-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 18px;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 18px;
+      }
+
+      .nav-actions {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
     .container {
       max-width: 1050px;
       margin: 0 auto;
@@ -93,15 +220,26 @@
     }
 
     .hero-primary {
-      background: #b91c1c;
+      background: #d6003d;
       color: white;
-      box-shadow: 0 8px 18px rgba(185,28,28,.18);
+      border: 1px solid #d6003d;
+      box-shadow: 0 12px 28px rgba(214,0,61,.22);
+      min-height: 58px;
+      padding: 0 34px;
+      font-size: 17px;
+      font-weight: 900;
     }
 
     .hero-secondary {
-      background: white;
-      color: #222;
-      border: 1px solid #ddd;
+      background: rgba(255,255,255,.62);
+      color: #991b1b;
+      border: 1px solid rgba(185,28,28,.18);
+      box-shadow: none;
+      backdrop-filter: blur(8px);
+      min-height: 58px;
+      padding: 0 30px;
+      font-size: 16px;
+      font-weight: 800;
     }
 
     .hero-primary:hover,
@@ -234,13 +372,35 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: #b91c1c;
-  color: white;
   padding: 14px 20px;
   border-radius: 14px;
   font-weight: 800;
   margin-top: auto;
-  box-shadow: 0 8px 18px rgba(185,28,28,.25);
+  transition: .2s ease;
+}
+
+    .quick-card.primary-action span {
+  background: #d6003d;
+  color: white;
+  border: 1px solid #d6003d;
+  box-shadow: 0 12px 28px rgba(214,0,61,.22);
+}
+
+    .quick-card.secondary-action span {
+  background: rgba(185,28,28,.06);
+  color: #991b1b;
+  border: 1px solid rgba(185,28,28,.18);
+  box-shadow: none;
+}
+
+    .quick-card.tertiary-action span {
+  background: transparent;
+  color: #7f1d1d;
+  border: none;
+  box-shadow: none;
+  padding: 8px 0;
+  justify-content: flex-start;
+  font-size: 14px;
 }
 
     .panel-note {
@@ -310,22 +470,24 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 60px;
-      padding: 18px 36px;
-      border-radius: 16px;
-      background: #b91c1c;
-      color: white;
-      font-weight: 900;
-      font-size: 18px;
+      gap: 8px;
+      min-height: auto;
+      padding: 8px 0;
+      border-radius: 0;
+      background: transparent;
+      color: #7f1d1d;
+      font-weight: 800;
+      font-size: 14px;
       transition: .25s ease;
-      box-shadow: 0 12px 28px rgba(185,28,28,.28);
+      box-shadow: none;
       margin-top: 8px;
     }
 
     .review-button:hover {
-      transform: translateY(-3px);
-      background: #991b1b;
-      box-shadow: 0 16px 34px rgba(185,28,28,.34);
+      transform: none;
+      background: transparent;
+      box-shadow: none;
+      color: #b91c1c;
     }
 
     .review-mini {
@@ -374,14 +536,45 @@
     }
 
     .cta-primary {
-      background: white;
-      color: #b91c1c;
+      background: #d6003d;
+      color: white;
+      border: 1px solid #d6003d;
+      box-shadow: 0 12px 28px rgba(214,0,61,.22);
+      min-height: 58px;
+      padding: 0 34px;
+      font-size: 17px;
+      font-weight: 900;
     }
 
     .cta-secondary {
-      background: transparent;
+      background: rgba(255,255,255,.08);
+      color: rgba(255,255,255,.88);
+      border: 1px solid rgba(255,255,255,.18);
+      backdrop-filter: blur(8px);
+      min-height: 58px;
+      padding: 0 30px;
+      font-size: 16px;
+      font-weight: 800;
+    }
+
+    .cta-secondary:hover {
+      background: rgba(255,255,255,.14);
+    }
+
+    .cta-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: rgba(255,255,255,.82);
+      font-size: 14px;
+      font-weight: 700;
+      transition: .2s ease;
+      min-height: 58px;
+    }
+
+    .cta-link:hover {
       color: white;
-      border: 1px solid rgba(255,255,255,.7);
     }
 
     .cta-primary:hover,
@@ -389,19 +582,6 @@
       transform: translateY(-2px);
     }
 
-    .back-button {
-      position: fixed;
-      bottom: 15px;
-      right: 15px;
-      color: #b91c1c;
-      background: white;
-      padding: 10px 14px;
-      border-radius: 9px;
-      box-shadow: 0 4px 12px rgba(0,0,0,.12);
-      font-weight: 700;
-      z-index: 998;
-      font-size: 14px;
-    }
 
     .whatsapp-fijo {
       position: fixed;
@@ -565,12 +745,6 @@
         font-size: 16px;
       }
 
-      .back-button {
-        left: 15px;
-        right: auto;
-        bottom: 15px;
-        font-size: 13px;
-      }
 
       .whatsapp-fijo {
         width: 56px;
@@ -583,6 +757,34 @@
 </head>
 
 <body>
+
+  <header class="topbar">
+    <div class="topbar-container">
+
+      <a href="index.html" class="brand">
+        <div class="brand-logo">ES</div>
+
+        <div class="brand-text">
+          <strong>Elena Sanz Burgos</strong>
+          <span>Seguros y asesoramiento</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="seguros.html">Seguros</a>
+        <a href="autonomos.html">Autónomos</a>
+        <a href="asesoramiento.html">Finanzas</a>
+        <a href="clientes.html">Clientes</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="tel:+34917702311" class="nav-phone">Llamar oficina</a>
+        <a href="https://wa.me/34606067906" target="_blank" class="nav-whatsapp">WhatsApp</a>
+      </div>
+
+    </div>
+  </header>
 
   <!-- HERO -->
   <section class="page-hero">
@@ -646,7 +848,7 @@
         
         <div class="quick-grid">
 
-          <a href="https://wa.me/34606067906?text=Hola,%20necesito%20ayuda%20con%20un%20siniestro" target="_blank" class="quick-card">
+          <a href="https://wa.me/34606067906?text=Hola,%20necesito%20ayuda%20con%20un%20siniestro" target="_blank" class="quick-card secondary-action">
             <div>
               <div class="quick-icon">🚨</div>
               <h3>Siniestro</h3>
@@ -655,7 +857,7 @@
             <span>Gestionar siniestro</span>
           </a>
 
-          <a href="https://wa.me/34606067906?text=Hola,%20quiero%20hacer%20una%20revisi%C3%B3n%20de%20mi%20p%C3%B3liza" target="_blank" class="quick-card">
+          <a href="https://wa.me/34606067906?text=Hola,%20quiero%20hacer%20una%20revisi%C3%B3n%20de%20mi%20p%C3%B3liza" target="_blank" class="quick-card primary-action">
             <div>
               <div class="quick-icon">🔎</div>
               <h3>Revisión de póliza</h3>
@@ -664,16 +866,16 @@
             <span>Solicitar revisión</span>
           </a>
 
-          <a href="https://wa.me/34606067906?text=Hola,%20tengo%20una%20consulta%20sobre%20mi%20seguro" target="_blank" class="quick-card">
+          <a href="https://wa.me/34606067906?text=Hola,%20tengo%20una%20consulta%20sobre%20mi%20seguro" target="_blank" class="quick-card secondary-action">
             <div>
               <div class="quick-icon">💬</div>
               <h3>Consulta</h3>
               <p>Resolvemos tus dudas de forma cercana, clara y sin complicaciones.</p>
             </div>
-            <span>Hacer consulta</span>
+            <span>Hacer una consulta</span>
           </a>
 
-          <a href="https://wa.me/34606067906?text=Hola,%20necesito%20modificar%20mis%20datos" target="_blank" class="quick-card">
+          <a href="https://wa.me/34606067906?text=Hola,%20necesito%20modificar%20mis%20datos" target="_blank" class="quick-card tertiary-action">
             <div>
               <div class="quick-icon">✏️</div>
               <h3>Modificar datos</h3>
@@ -738,16 +940,13 @@
         </p>
 
         <div class="cta-buttons">
-          <a href="https://wa.me/34606067906" target="_blank" class="cta-primary">WhatsApp</a>
-          <a href="tel:+34917702311" class="cta-secondary">Llamar oficina</a>
-          <a href="mailto:esanz@occident.com" class="cta-secondary">Email</a>
+          <a href="https://wa.me/34606067906" target="_blank" class="cta-primary">Escríbenos por WhatsApp</a>
+          <a href="tel:+34917702311" class="cta-link">📞 Llamar oficina</a>
+          <a href="mailto:esanz@occident.com" class="cta-link">✉️ Email</a>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- BOTÓN VOLVER -->
-  <a href="index.html" class="back-button">Volver al inicio</a>
 
   <!-- BOTÓN FIJO WHATSAPP -->
   <a href="https://wa.me/34606067906" target="_blank" class="whatsapp-fijo" aria-label="WhatsApp">
