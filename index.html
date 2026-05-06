@@ -30,6 +30,133 @@
       text-decoration: none;
     }
 
+    /* NAVBAR */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 9999;
+      background: rgba(255,255,255,.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0,0,0,.06);
+    }
+
+    .topbar-container {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 14px 26px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: #222;
+    }
+
+    .brand-logo {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: #d6003d;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 22px;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+    }
+
+    .brand-text strong {
+      font-size: 18px;
+    }
+
+    .brand-text span {
+      font-size: 14px;
+      color: #666;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+    }
+
+    .nav-links a {
+      color: #555;
+      font-size: 17px;
+      transition: .2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #b91c1c;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .nav-phone,
+    .nav-whatsapp {
+      min-height: 56px;
+      padding: 0 30px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 17px;
+      transition: .2s ease;
+    }
+
+    .nav-phone {
+      background: white;
+      border: 1px solid #efcaca;
+      color: #b91c1c;
+    }
+
+    .nav-whatsapp {
+      background: #d6003d;
+      color: white;
+    }
+
+    .nav-phone:hover,
+    .nav-whatsapp:hover {
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 1050px) {
+      .topbar-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 18px;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 18px;
+      }
+
+      .nav-actions {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+
     .container {
       max-width: 1120px;
       margin: 0 auto;
@@ -251,22 +378,30 @@
     }
 
     .button-primary {
-      background: #25D366;
+      background: #d6003d;
       color: white;
-      box-shadow: 0 14px 34px rgba(37,211,102,.36);
-      animation: pulseGreen 2.4s ease-in-out infinite;
+      border: 1px solid #d6003d;
+      box-shadow: 0 12px 28px rgba(214,0,61,.22);
+      min-height: 58px;
+      padding: 0 34px;
+      font-size: 17px;
     }
 
     .button-secondary {
-      background: white;
-      color: #b91c1c;
-      box-shadow: 0 12px 28px rgba(0,0,0,.18);
+      background: rgba(255,255,255,.10);
+      color: rgba(255,255,255,.92);
+      border: 1px solid rgba(255,255,255,.38);
+      box-shadow: none;
+      backdrop-filter: blur(8px);
+      min-height: 58px;
+      padding: 0 30px;
+      font-size: 16px;
     }
 
     .button-third {
-      background: white;
-      color: #b91c1c;
-      box-shadow: 0 12px 28px rgba(0,0,0,.18);
+      background: transparent;
+      color: #991b1b;
+      box-shadow: none;
     }
 
     .button-primary:hover,
@@ -454,10 +589,19 @@
     }
 
     .ver-mas {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
       margin-top: 20px;
-      color: #b91c1c;
-      font-weight: 900;
+      color: #991b1b;
+      font-weight: 700;
+      font-size: 14px;
+      opacity: .82;
+      transition: .2s ease;
+    }
+
+    .ver-mas:hover {
+      opacity: 1;
     }
 
     .about-box {
@@ -549,15 +693,16 @@
       align-items: center;
       justify-content: center;
       margin-top: 26px;
-      background: #25D366;
+      background: #d6003d;
       color: white;
-      padding: 16px 28px;
-      min-height: 56px;
+      border: 1px solid #d6003d;
+      padding: 0 34px;
+      min-height: 58px;
       border-radius: 15px;
       font-weight: 900;
       font-size: 17px;
       transition: .25s ease;
-      box-shadow: 0 14px 34px rgba(37,211,102,.34);
+      box-shadow: 0 12px 28px rgba(214,0,61,.22);
     }
 
     .cta-button:hover {
@@ -573,20 +718,21 @@
     }
 
     .social-links a {
-      background: white;
-      color: #b91c1c;
-      border: 1px solid rgba(240,202,202,.8);
-      padding: 10px 16px;
+      background: transparent;
+      color: #991b1b;
+      border: none;
+      padding: 8px 10px;
       border-radius: 999px;
       font-weight: 700;
       font-size: 14px;
-      box-shadow: 0 6px 16px rgba(0,0,0,.07);
+      box-shadow: none;
       transition: .25s ease;
+      opacity: .82;
     }
 
     .social-links a:hover {
-      transform: translateY(-3px);
-      border-color: #b91c1c;
+      transform: translateY(-2px);
+      opacity: 1;
     }
 
     .whatsapp-fijo {
@@ -841,6 +987,30 @@
         font-size: 16px;
       }
 
+      .topbar-container {
+        padding: 14px 18px;
+      }
+
+      .brand {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .brand-text strong {
+        font-size: 16px;
+      }
+
+      .nav-links a {
+        font-size: 15px;
+      }
+
+      .nav-phone,
+      .nav-whatsapp {
+        min-height: 48px;
+        padding: 0 20px;
+        font-size: 15px;
+      }
+
       .whatsapp-fijo {
         width: 56px;
         height: 56px;
@@ -852,6 +1022,34 @@
 </head>
 
 <body>
+
+  <header class="topbar">
+    <div class="topbar-container">
+
+      <a href="index.html" class="brand">
+        <div class="brand-logo">ES</div>
+
+        <div class="brand-text">
+          <strong>Elena Sanz Burgos</strong>
+          <span>Seguros y asesoramiento</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="seguros.html">Seguros</a>
+        <a href="autonomos.html">Autónomos</a>
+        <a href="asesoramiento.html">Finanzas</a>
+        <a href="clientes.html">Clientes</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="tel:+34917702311" class="nav-phone">Llamar oficina</a>
+        <a href="https://wa.me/34606067906" target="_blank" class="nav-whatsapp">WhatsApp</a>
+      </div>
+
+    </div>
+  </header>
 
   <!-- HERO -->
   <section class="hero">
@@ -871,7 +1069,7 @@
           </p>
 
           <div class="hero-buttons">
-            <a href="https://wa.me/34606067906" target="_blank" class="button-primary">💬 Hablar por WhatsApp</a>
+            <a href="https://wa.me/34606067906" target="_blank" class="button-primary">Escríbenos por WhatsApp</a>
             <a href="#servicios" class="button-secondary">Ver seguros y gestiones</a>
           </div>
 
@@ -941,7 +1139,7 @@
               <h3>Sobre mí</h3>
               <p>Conoce nuestra forma de trabajar: cercana, clara y personalizada.</p>
             </div>
-            <span class="ver-mas">Ver más</span>
+            <span class="ver-mas">Conocer más</span>
           </div>
         </a>
 
@@ -952,7 +1150,7 @@
               <h3>Seguros</h3>
               <p>Protección para tu hogar, familia, salud, coche y tranquilidad diaria.</p>
             </div>
-            <span class="ver-mas">Ver más</span>
+            <span class="ver-mas">Ver seguros</span>
           </div>
         </a>
 
@@ -963,7 +1161,7 @@
               <h3>Autónomos</h3>
               <p>Soluciones pensadas para proteger tu actividad profesional.</p>
             </div>
-            <span class="ver-mas">Ver más</span>
+            <span class="ver-mas">Ver soluciones</span>
           </div>
         </a>
 
@@ -974,7 +1172,7 @@
               <h3>Asesoramiento financiero</h3>
               <p>Planificación sencilla para ayudarte a tomar mejores decisiones.</p>
             </div>
-            <span class="ver-mas">Ver más</span>
+            <span class="ver-mas">Conocer más</span>
           </div>
         </a>
 
@@ -985,7 +1183,7 @@
               <h3>¿Ya eres cliente?</h3>
               <p>Atención rápida, apoyo y ayuda cuando lo necesites.</p>
             </div>
-            <span class="ver-mas">Ver más</span>
+            <span class="ver-mas">Conocer más</span>
           </div>
         </a>
 
@@ -1101,7 +1299,7 @@
           Sin compromiso. Sin tecnicismos. Sin presión.
         </p>
 
-        <a href="https://wa.me/34606067906" target="_blank" class="cta-button">💬 Escríbenos por WhatsApp</a>
+        <a href="https://wa.me/34606067906" target="_blank" class="cta-button">Escríbenos por WhatsApp</a>
 
         <p style="font-size:14px; margin-top:12px;">
           Te respondemos lo antes posible
@@ -1111,8 +1309,8 @@
   </section>
 
   <div class="social-links" style="margin-bottom: 35px;">
-    <a href="https://www.linkedin.com/in/elena-sanz-burgos-b052b6140/" target="_blank">LinkedIn</a>
-    <a href="https://www.instagram.com/esanz.seguros/" target="_blank">Instagram</a>
+    <a href="https://www.linkedin.com/in/elena-sanz-burgos-b052b6140/" target="_blank">↗ LinkedIn</a>
+    <a href="https://www.instagram.com/esanz.seguros/" target="_blank">↗ Instagram</a>
   </div>
 
   <!-- BOTÓN FIJO WHATSAPP -->
