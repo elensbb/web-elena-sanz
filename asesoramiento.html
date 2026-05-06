@@ -1102,6 +1102,121 @@
         bottom: 75px;
       }
     }
+    .card-open{
+  margin:24px -28px -28px;
+  border-top:1px solid #f0dede;
+  background:white;
+}
+
+.card-open-header{
+  background:#f9f4f4;
+  color:#b13a3a;
+  padding:22px 34px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-weight:900;
+  font-size:18px;
+}
+
+.card-open-header span{
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  background:#b13a3a;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:26px;
+}
+
+.card-open-body{
+  padding:34px;
+}
+
+.card-open-body ul{
+  margin-left:22px;
+  margin-bottom:30px;
+}
+
+.card-open-body li{
+  margin-bottom:12px;
+  font-size:17px;
+  line-height:1.6;
+}
+
+.ideal-box{
+  border-left:5px solid #c1121f;
+  background:#fff7f7;
+  border-radius:18px;
+  padding:22px;
+  margin-bottom:24px;
+  border-top:1px solid #f0dede;
+  border-right:1px solid #f0dede;
+  border-bottom:1px solid #f0dede;
+  font-size:17px;
+  line-height:1.5;
+}
+
+.ideal-box strong{
+  font-weight:900;
+}
+
+.more-info-btn{
+  width:100%;
+  min-height:58px;
+  border-radius:16px;
+  border:1px solid #f0caca;
+  color:#9f0000;
+  background:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:17px;
+  font-weight:900;
+  transition:.2s ease;
+  text-decoration:none;
+}
+
+.more-info-btn:hover{
+  background:#fff2f2;
+  transform:translateY(-2px);
+}
+
+.card-calls{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  margin-top:20px;
+  flex-wrap:wrap;
+}
+
+.card-calls a{
+  color:#666;
+  text-decoration:underline;
+  font-weight:700;
+}
+
+@media(max-width:768px){
+
+  .card-open{
+    margin:22px -22px -22px;
+  }
+
+  .card-open-header{
+    padding:18px 22px;
+  }
+
+  .card-open-body{
+    padding:24px 22px;
+  }
+
+  .card-open-body li{
+    font-size:16px;
+  }
+
+}
   </style>
 </head>
 
@@ -1214,121 +1329,195 @@
 
       <div class="finance-grid">
 
-        <div class="card">
-          <div>
-            <div class="card-icon">↗</div>
-            <h3>Inversiones</h3>
-            <p>
-              Te ayudamos a valorar opciones de inversión según tu perfil, tus objetivos y el plazo en el que quieres conseguirlos.
-            </p>
-          </div>
+  <!-- INVERSIONES -->
+  <div class="card">
 
-          <details>
-            <summary class="card-action">Más información <span>+</span></summary>
-            <div class="card-extra">
-              <p>
-                Analizamos contigo qué opciones pueden encajar mejor según tu situación, tu tolerancia al riesgo y el tiempo que quieres mantener la inversión.
-              </p>
-              <p>
-                La idea es ayudarte a invertir con más seguridad, pensando sobre todo en objetivos a medio y largo plazo.
-              </p>
-              <a href="inversiones.html" class="page-link">Ver página de inversiones</a>
-            </div>
-          </details>
+    <div>
+      <div class="card-icon">↗</div>
+
+      <h3>Inversiones</h3>
+
+      <p>
+        Te ayudamos a valorar opciones de inversión según tu perfil, tus objetivos y el plazo en el que quieres conseguirlos.
+      </p>
+    </div>
+
+    <div class="card-open">
+
+      <div class="card-open-header">
+        <strong>Ver detalles</strong>
+        <span>−</span>
+      </div>
+
+      <div class="card-open-body">
+
+        <ul>
+          <li>Revisión de tu perfil de riesgo.</li>
+          <li>Opciones de inversión según plazo y objetivo.</li>
+          <li>Planificación fiscal y patrimonial.</li>
+          <li>Acompañamiento para tomar decisiones con criterio.</li>
+        </ul>
+
+        <div class="ideal-box">
+          <strong>Ideal si...</strong>
+          quieres invertir con más claridad y evitar decisiones improvisadas.
         </div>
 
-        <div class="card">
-          <div>
-            <div class="card-icon">🏦</div>
-            <h3>Fondos de inversión</h3>
-            <p>
-              Una forma de invertir con una visión más amplia, buscando crecimiento a medio y largo plazo.
-            </p>
-          </div>
+        <a href="inversiones.html" class="more-info-btn">
+          Más información
+        </a>
 
-          <details>
-            <summary class="card-action">Más información <span>+</span></summary>
-            <div class="card-extra">
-              <p>
-                Te explicamos cómo funcionan y qué tipo de fondo puede tener más sentido según tus objetivos.
-              </p>
-              <p>
-                Pueden ayudarte a diversificar tu inversión y a construir una estrategia más estable en el tiempo.
-              </p>
-              <a href="fondos-de-inversion.html" class="page-link">Ver página de fondos de inversión</a>
-            </div>
-          </details>
-        </div>
-
-        <div class="card">
-          <div>
-            <div class="card-icon">◎</div>
-            <h3>Planes de pensiones</h3>
-            <p>
-              Te ayudamos a preparar tu jubilación para que puedas mirar al futuro con más tranquilidad.
-            </p>
-          </div>
-
-          <details>
-            <summary class="card-action">Más información <span>+</span></summary>
-            <div class="card-extra">
-              <p>
-                Valoramos contigo opciones para complementar tus ingresos futuros y planificar la jubilación con tiempo.
-              </p>
-              <p>
-                Cuanto antes se empieza, más fácil suele ser construir un ahorro pensado para el largo plazo.
-              </p>
-              <a href="planes-de-pensiones.html" class="page-link">Ver página de planes de pensiones</a>
-            </div>
-          </details>
-        </div>
-
-        <div class="card">
-          <div>
-            <div class="card-icon">💼</div>
-            <h3>Planes de ahorro</h3>
-            <p>
-              Opciones para ahorrar poco a poco, con una planificación adaptada a tus posibilidades y objetivos.
-            </p>
-          </div>
-
-          <details>
-            <summary class="card-action">Más información <span>+</span></summary>
-            <div class="card-extra">
-              <p>
-                Te ayudamos a crear una estrategia de ahorro realista, pensada para objetivos concretos.
-              </p>
-              <p>
-                Puede ser útil para preparar proyectos futuros, crear estabilidad económica o planificar a medio y largo plazo.
-              </p>
-              <a href="planes-de-ahorro.html" class="page-link">Ver página de planes de ahorro</a>
-            </div>
-          </details>
-        </div>
-
-        <div class="card">
-          <div>
-            <div class="card-icon">◷</div>
-            <h3>Planificación financiera</h3>
-            <p>
-              Vemos contigo tu situación actual y te ayudamos a ordenar tus objetivos financieros de forma clara.
-            </p>
-          </div>
-
-          <details>
-            <summary class="card-action">Más información <span>+</span></summary>
-            <div class="card-extra">
-              <p>
-                Revisamos tus objetivos, tus plazos y tus prioridades para ayudarte a tomar mejores decisiones.
-              </p>
-              <p>
-                La planificación te permite tener una visión más clara de tu futuro financiero y avanzar con más tranquilidad.
-              </p>
-            </div>
-          </details>
+        <div class="card-calls">
+          <a href="tel:+34917702311">☎ Llamar oficina</a>
+          <a href="tel:+34606067906">☎ Llamar móvil</a>
         </div>
 
       </div>
+    </div>
+  </div>
+
+  <!-- FONDOS -->
+  <div class="card">
+
+    <div>
+      <div class="card-icon">🏦</div>
+
+      <h3>Fondos de inversión</h3>
+
+      <p>
+        Una forma de invertir con una visión más amplia, buscando crecimiento a medio y largo plazo.
+      </p>
+    </div>
+
+    <div class="card-open">
+
+      <div class="card-open-header">
+        <strong>Ver detalles</strong>
+        <span>−</span>
+      </div>
+
+      <div class="card-open-body">
+
+        <ul>
+          <li>Fondos conservadores, mixtos y de renta variable.</li>
+          <li>Diversificación por mercados, sectores y activos.</li>
+          <li>Traspasos entre fondos sin tributar hasta el reembolso.</li>
+          <li>Revisión de riesgo, costes y horizonte recomendado.</li>
+        </ul>
+
+        <div class="ideal-box">
+          <strong>Ideal si...</strong>
+          quieres invertir de forma diversificada y con fiscalidad eficiente.
+        </div>
+
+        <a href="fondos-de-inversion.html" class="more-info-btn">
+          Más información
+        </a>
+
+        <div class="card-calls">
+          <a href="tel:+34917702311">☎ Llamar oficina</a>
+          <a href="tel:+34606067906">☎ Llamar móvil</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- PLANES DE PENSIONES -->
+  <div class="card">
+
+    <div>
+      <div class="card-icon">◎</div>
+
+      <h3>Planes de pensiones</h3>
+
+      <p>
+        Te ayudamos a preparar tu jubilación para que puedas mirar al futuro con más tranquilidad.
+      </p>
+    </div>
+
+    <div class="card-open">
+
+      <div class="card-open-header">
+        <strong>Ver detalles</strong>
+        <span>−</span>
+      </div>
+
+      <div class="card-open-body">
+
+        <ul>
+          <li>Planificación para complementar la jubilación.</li>
+          <li>PPA y fondos de pensiones según perfil.</li>
+          <li>Ventajas fiscales dentro de los límites legales.</li>
+          <li>Revisión de liquidez, rescate y forma de cobro.</li>
+        </ul>
+
+        <div class="ideal-box">
+          <strong>Ideal si...</strong>
+          quieres preparar tu jubilación con tiempo y ordenar tu previsión.
+        </div>
+
+        <a href="planes-de-pensiones.html" class="more-info-btn">
+          Más información
+        </a>
+
+        <div class="card-calls">
+          <a href="tel:+34917702311">☎ Llamar oficina</a>
+          <a href="tel:+34606067906">☎ Llamar móvil</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- PLANES DE AHORRO -->
+  <div class="card">
+
+    <div>
+      <div class="card-icon">💼</div>
+
+      <h3>Planes de ahorro</h3>
+
+      <p>
+        Opciones para ahorrar poco a poco, con una planificación adaptada a tus posibilidades y objetivos.
+      </p>
+    </div>
+
+    <div class="card-open">
+
+      <div class="card-open-header">
+        <strong>Ver detalles</strong>
+        <span>−</span>
+      </div>
+
+      <div class="card-open-body">
+
+        <ul>
+          <li>PIAS, SIALP, rentas y seguros de ahorro.</li>
+          <li>Ahorro periódico o mediante prima única.</li>
+          <li>Planificación fiscal según la forma de cobro.</li>
+          <li>Opciones para rentas vitalicias o temporales.</li>
+        </ul>
+
+        <div class="ideal-box">
+          <strong>Ideal si...</strong>
+          quieres ahorrar con orden y preparar objetivos futuros.
+        </div>
+
+        <a href="planes-de-ahorro.html" class="more-info-btn">
+          Más información
+        </a>
+
+        <div class="card-calls">
+          <a href="tel:+34917702311">☎ Llamar oficina</a>
+          <a href="tel:+34606067906">☎ Llamar móvil</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
 
       <div class="highlight-box">
         <p>
