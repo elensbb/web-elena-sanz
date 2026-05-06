@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Planes de pensiones | Elena Sanz Burgos</title>
+  <meta name="description" content="Planes de pensiones, PPA y fondos de pensiones para preparar la jubilación, aprovechar ventajas fiscales y planificar el ahorro a largo plazo." />
+
+  <style>
+    :root {
+      --bg: #fbf7f1;
+      --bg-soft: #fffaf4;
+      --white: #ffffff;
+      --text: #1f2933;
+      --muted: #64748b;
+      --primary: #c3002f;
+      --primary-dark: #9f0027;
+      --border: rgba(31, 41, 51, 0.12);
+      --shadow: 0 18px 45px rgba(31, 41, 51, 0.08);
+      --radius: 24px;
+      --radius-sm: 16px;
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(100% - 32px, var(--max));
+      margin: 0 auto;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes softFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    .hero .eyebrow,
+    .hero h1,
+    .hero .lead,
+    .hero-actions,
+    .trust-line {
+      animation: fadeUp 0.7s ease both;
+    }
+
+    .hero h1 { animation-delay: 0.08s; }
+    .hero .lead { animation-delay: 0.16s; }
+    .hero-actions { animation-delay: 0.24s; }
+    .trust-line { animation-delay: 0.32s; }
+    .hero-card { animation: fadeUp 0.8s ease 0.18s both; }
+    .hero-card-icon { animation: softFloat 4.5s ease-in-out infinite; }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+
+    .reveal.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .topbar {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: var(--white);
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-text strong {
+      display: block;
+      font-size: 1rem;
+      line-height: 1.1;
+    }
+
+    .brand-text span {
+      display: block;
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover { color: var(--primary); }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 0;
+      background: transparent;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: var(--text);
+    }
+
+    .mobile-menu { display: none; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border-radius: 999px;
+      padding: 13px 20px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border: 1px solid transparent;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(31, 41, 51, 0.12);
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    .btn-primary:hover { background: var(--primary-dark); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--primary);
+      border-color: rgba(195, 0, 47, 0.35);
+    }
+
+    .hero {
+      padding: 84px 0 56px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 560px;
+      height: 560px;
+      border-radius: 50%;
+      background: rgba(195, 0, 47, 0.08);
+      right: -220px;
+      top: -220px;
+      z-index: -1;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: rgba(195, 0, 47, 0.08);
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(2.45rem, 5vw, 4.7rem);
+      line-height: 0.98;
+      letter-spacing: -0.06em;
+      max-width: 850px;
+      margin-bottom: 22px;
+    }
+
+    .lead {
+      font-size: clamp(1.08rem, 2vw, 1.25rem);
+      color: #455363;
+      max-width: 690px;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .trust-line {
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .hero-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 26px;
+    }
+
+    .hero-card-icon {
+      width: 74px;
+      height: 74px;
+      border-radius: 22px;
+      background: rgba(195, 0, 47, 0.08);
+      display: grid;
+      place-items: center;
+      font-size: 2rem;
+      margin-bottom: 18px;
+    }
+
+    .hero-card h2 {
+      font-size: 1.45rem;
+      margin-bottom: 12px;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-card ul {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      color: #455363;
+    }
+
+    .hero-card li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .hero-card li::before {
+      content: "✓";
+      color: var(--primary);
+      font-weight: 900;
+      flex: 0 0 auto;
+    }
+
+    section { padding: 72px 0; }
+
+    .section-soft {
+      background: var(--bg-soft);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-title {
+      max-width: 780px;
+      margin-bottom: 34px;
+    }
+
+    .section-title.center {
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    .section-title span {
+      color: var(--primary);
+      font-weight: 800;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 3vw, 3rem);
+      line-height: 1.08;
+      letter-spacing: -0.045em;
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+
+    .section-title p,
+    .text-muted {
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 24px;
+      box-shadow: 0 10px 24px rgba(31, 41, 51, 0.04);
+      height: 100%;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 36px rgba(31, 41, 51, 0.09);
+      border-color: rgba(195, 0, 47, 0.22);
+    }
+
+    .card-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 16px;
+      background: rgba(195, 0, 47, 0.08);
+      display: grid;
+      place-items: center;
+      font-size: 1.45rem;
+      margin-bottom: 18px;
+    }
+
+    .card p { color: var(--muted); }
+
+    .highlight {
+      background: linear-gradient(135deg, var(--primary), #8f0023);
+      color: var(--white);
+      border-radius: calc(var(--radius) + 6px);
+      padding: 38px;
+      box-shadow: var(--shadow);
+    }
+
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .highlight p { color: rgba(255, 255, 255, 0.85); }
+
+    .highlight .eyebrow {
+      background: rgba(255, 255, 255, 0.12);
+      color: var(--white);
+      margin-bottom: 14px;
+    }
+
+    .feature-list {
+      list-style: none;
+      display: grid;
+      gap: 11px;
+      margin-top: 20px;
+    }
+
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    .feature-list li::before {
+      content: "✓";
+      font-weight: 900;
+      color: var(--white);
+    }
+
+    .pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 9px 13px;
+      background: rgba(195, 0, 47, 0.08);
+      color: var(--primary);
+      font-weight: 800;
+      font-size: 0.9rem;
+    }
+
+    .highlight .pill {
+      background: rgba(255, 255, 255, 0.14);
+      color: var(--white);
+    }
+
+    .fund-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 14px 34px rgba(31, 41, 51, 0.06);
+      border: 1px solid var(--border);
+    }
+
+    .fund-table th,
+    .fund-table td {
+      text-align: left;
+      padding: 18px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    .fund-table th {
+      background: rgba(195, 0, 47, 0.06);
+      color: var(--primary);
+      font-size: 0.92rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .fund-table tr:last-child td { border-bottom: 0; }
+
+    .risk {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 46px;
+      height: 34px;
+      border-radius: 999px;
+      background: rgba(195, 0, 47, 0.08);
+      color: var(--primary);
+      font-weight: 900;
+    }
+
+    .review-block {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .review-list {
+      list-style: none;
+      display: grid;
+      gap: 0;
+      background: var(--white);
+      border-radius: calc(var(--radius) + 4px);
+      border: 1px solid var(--border);
+      padding: 30px;
+      box-shadow: 0 14px 34px rgba(31, 41, 51, 0.06);
+    }
+
+    .review-item {
+      display: grid;
+      grid-template-columns: 46px 1fr;
+      gap: 16px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .review-item:first-child { padding-top: 0; }
+    .review-item:last-child { padding-bottom: 0; border-bottom: 0; }
+
+    .review-number {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(195, 0, 47, 0.08);
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 0.9rem;
+    }
+
+    .review-item strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 4px;
+      font-size: 1.02rem;
+    }
+
+    .review-item p {
+      color: var(--muted);
+      font-size: 0.97rem;
+    }
+
+    .faq-carousel {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(290px, 360px);
+      gap: 18px;
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      scroll-snap-type: x mandatory;
+      scroll-padding: 4px;
+      padding: 6px 4px 18px;
+      scrollbar-width: thin;
+    }
+
+    .faq-card {
+      min-height: 260px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 10px 24px rgba(31, 41, 51, 0.04);
+      scroll-snap-align: start;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    }
+
+    .faq-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 42px rgba(31, 41, 51, 0.1);
+      border-color: rgba(195, 0, 47, 0.22);
+    }
+
+    .faq-number {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(195, 0, 47, 0.08);
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      flex: 0 0 auto;
+    }
+
+    .faq-card h3 { margin-bottom: 0; }
+    .faq-card p { color: var(--muted); font-size: 0.98rem; }
+
+    .faq-controls {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .faq-arrow {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid rgba(195, 0, 47, 0.28);
+      background: var(--white);
+      color: var(--primary);
+      font-size: 1.2rem;
+      font-weight: 900;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .faq-arrow:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(31, 41, 51, 0.12);
+      background: rgba(195, 0, 47, 0.06);
+    }
+
+    .cta-final {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) + 8px);
+      padding: 42px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-final p {
+      max-width: 720px;
+      margin: 0 auto 24px;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .footer {
+      padding: 34px 0;
+      border-top: 1px solid var(--border);
+      background: var(--white);
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 980px) {
+      .grid-4 { grid-template-columns: repeat(2, 1fr); }
+      .fund-table { display: block; overflow-x: auto; white-space: nowrap; }
+    }
+
+    @media (max-width: 900px) {
+      .nav-links,
+      .nav-actions { display: none; }
+
+      .menu-toggle { display: block; }
+
+      .mobile-menu {
+        display: none;
+        border-top: 1px solid var(--border);
+        padding: 16px 0 22px;
+      }
+
+      .mobile-menu.active {
+        display: grid;
+        gap: 12px;
+      }
+
+      .mobile-menu a {
+        padding: 10px 0;
+        color: var(--muted);
+      }
+
+      .hero-grid,
+      .highlight-grid,
+      .review-block {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-3,
+      .grid-4 {
+        grid-template-columns: 1fr;
+      }
+
+      .faq-carousel {
+        grid-auto-columns: minmax(260px, 86vw);
+      }
+
+      .hero { padding-top: 54px; }
+
+      section { padding: 56px 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .container { width: min(100% - 24px, var(--max)); }
+
+      .hero-actions,
+      .cta-final .hero-actions {
+        flex-direction: column;
+      }
+
+      .btn { width: 100%; }
+
+      .highlight,
+      .cta-final {
+        padding: 28px 20px;
+      }
+
+      .review-list { padding: 24px 20px; }
+
+      .review-item {
+        grid-template-columns: 38px 1fr;
+        gap: 12px;
+      }
+
+      h1 { font-size: 2.45rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="topbar">
+    <div class="container">
+      <nav class="nav" aria-label="Navegación principal">
+        <a href="index.html" class="brand" aria-label="Volver al inicio">
+          <div class="brand-mark">ES</div>
+          <div class="brand-text">
+            <strong>Elena Sanz Burgos</strong>
+            <span>Seguros y asesoramiento</span>
+          </div>
+        </a>
+
+        <div class="nav-links">
+          <a href="index.html">Inicio</a>
+          <a href="seguros.html">Seguros</a>
+          <a href="autonomos.html">Autónomos</a>
+          <a href="asesoramiento-financiero.html">Finanzas</a>
+          <a href="clientes.html">Clientes</a>
+        </div>
+
+        <div class="nav-actions">
+          <a class="btn btn-outline" href="tel:+34917702311">Llamar oficina</a>
+          <a class="btn btn-primary" href="https://wa.me/34606067906?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20planes%20de%20pensiones" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+
+        <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      </nav>
+
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Inicio</a>
+        <a href="seguros.html">Seguros</a>
+        <a href="autonomos.html">Autónomos</a>
+        <a href="asesoramiento-financiero.html">Finanzas</a>
+        <a href="clientes.html">Clientes</a>
+        <a class="btn btn-primary" href="https://wa.me/34606067906?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20planes%20de%20pensiones" target="_blank" rel="noopener">Hablar por WhatsApp</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">🏦 Planes de pensiones</div>
+
+          <h1>Prepara tu jubilación con planificación y ventajas fiscales</h1>
+
+          <p class="lead">
+            Los planes de pensiones y los planes de previsión asegurados ayudan a construir un ahorro para la jubilación, con una fiscalidad específica y distintos perfiles de inversión.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/34606067906?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20planes%20de%20pensiones" target="_blank" rel="noopener">Hablar por WhatsApp</a>
+            <a class="btn btn-outline" href="tel:+34917702311">Llamar a la oficina</a>
+            <a class="btn btn-outline" href="#planes">Ver planes</a>
+          </div>
+
+          <p class="trust-line">Jubilación · Fiscalidad · Previsión a largo plazo</p>
+        </div>
+
+        <aside class="hero-card" aria-label="Resumen de planes de pensiones">
+          <div class="hero-card-icon">👵</div>
+          <h2>¿Para qué sirven?</h2>
+          <ul>
+            <li>Complementar la pensión pública en el futuro.</li>
+            <li>Ahorrar con horizonte de jubilación.</li>
+            <li>Aprovechar posibles ventajas fiscales en IRPF.</li>
+            <li>Elegir entre perfiles conservadores o dinámicos.</li>
+            <li>Planificar contingencias como jubilación, incapacidad o fallecimiento.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <span>Previsión a largo plazo</span>
+          <h2>Un producto pensado para la jubilación, no para el corto plazo</h2>
+          <p>
+            Los planes de pensiones están diseñados para ahorrar a largo plazo. Su principal objetivo es acumular capital para la jubilación, aunque existen supuestos concretos de liquidez.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="card-icon">🎯</div>
+            <h3>Objetivo jubilación</h3>
+            <p>Sirven para construir un ahorro destinado principalmente a complementar ingresos futuros.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🧾</div>
+            <h3>Fiscalidad específica</h3>
+            <p>Las aportaciones pueden reducir la base imponible del IRPF dentro de los límites legales.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🔒</div>
+            <h3>Liquidez limitada</h3>
+            <p>No son productos pensados para retirar el dinero en cualquier momento, salvo supuestos permitidos.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-soft">
+      <div class="container">
+        <div class="section-title center">
+          <span>Modalidades</span>
+          <h2>Tipos de productos dentro de este bloque</h2>
+          <p>
+            Dentro de planes de pensiones incluimos tanto fondos de pensiones como PPA, porque ambos están orientados a previsión y jubilación.
+          </p>
+        </div>
+
+        <div class="grid-4">
+          <article class="card">
+            <div class="card-icon">📈</div>
+            <h3>Fondos de pensiones</h3>
+            <p>Invierten en mercados financieros según una política de inversión y un perfil de riesgo.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🛡️</div>
+            <h3>PPA</h3>
+            <p>Plan de Previsión Asegurado, con garantía de tipo de interés y enfoque de jubilación.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">👥</div>
+            <h3>Planes de empleo</h3>
+            <p>Planes promovidos por empresas para sus trabajadores, dentro del sistema de empleo.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🧑‍💼</div>
+            <h3>Autónomos</h3>
+            <p>Soluciones de previsión para autónomos, especialmente cuando existe planificación a largo plazo.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="planes">
+      <div class="container">
+        <div class="section-title">
+          <span>Productos incluidos</span>
+          <h2>Planes y fondos que encajan en este bloque</h2>
+          <p>
+            Estos son los documentos/productos que has separado dentro del grupo de planes de pensiones y previsión.
+          </p>
+        </div>
+
+        <table class="fund-table">
+          <thead>
+            <tr>
+              <th>Producto</th>
+              <th>Tipo</th>
+              <th>Perfil</th>
+              <th>Liquidez</th>
+              <th>Uso principal</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Ahorro PPA Prime</strong></td>
+              <td>Plan de Previsión Asegurado</td>
+              <td><span class="risk">Garantizado</span></td>
+              <td>Limitada por ley</td>
+              <td>Jubilación y previsión asegurada</td>
+            </tr>
+            <tr>
+              <td><strong>GCO Pensiones Colectivo</strong></td>
+              <td>Plan de pensiones de empleo</td>
+              <td><span class="risk">Empresa</span></td>
+              <td>Según normativa</td>
+              <td>Previsión para empleados</td>
+            </tr>
+            <tr>
+              <td><strong>Occident Pensiones Autónomos FP</strong></td>
+              <td>Fondo de pensiones</td>
+              <td><span class="risk">Moderado</span></td>
+              <td>Limitada por ley</td>
+              <td>Previsión autónomos</td>
+            </tr>
+            <tr>
+              <td><strong>Occident Pensiones Renta Fija FP</strong></td>
+              <td>Fondo de pensiones renta fija</td>
+              <td><span class="risk">Conservador</span></td>
+              <td>Limitada por ley</td>
+              <td>Jubilación con menor volatilidad</td>
+            </tr>
+            <tr>
+              <td><strong>Occident Pensiones Mixto Fijo FP</strong></td>
+              <td>Fondo mixto conservador</td>
+              <td><span class="risk">Conservador</span></td>
+              <td>Limitada por ley</td>
+              <td>Equilibrio prudente</td>
+            </tr>
+            <tr>
+              <td><strong>Occident Pensiones Mixto Variable FP</strong></td>
+              <td>Fondo mixto variable</td>
+              <td><span class="risk">Moderado</span></td>
+              <td>Limitada por ley</td>
+              <td>Crecimiento con riesgo medio</td>
+            </tr>
+            <tr>
+              <td><strong>Occident Pensiones Renta Variable FP</strong></td>
+              <td>Fondo renta variable</td>
+              <td><span class="risk">Dinámico</span></td>
+              <td>Limitada por ley</td>
+              <td>Crecimiento a largo plazo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section-soft">
+      <div class="container highlight">
+        <div class="highlight-grid">
+          <div>
+            <div class="eyebrow">Fiscalidad</div>
+            <h2>La fiscalidad es una de sus claves</h2>
+            <p>
+              Las aportaciones a planes de pensiones y PPA pueden reducir la base imponible del IRPF, siempre dentro de los límites legales vigentes. La prestación tributará cuando se cobre.
+            </p>
+
+            <ul class="feature-list">
+              <li>Las aportaciones pueden reducir la base imponible.</li>
+              <li>La prestación tributa como rendimiento del trabajo.</li>
+              <li>Conviene planificar cómo y cuándo cobrarlo.</li>
+              <li>Puede cobrarse en capital, renta o forma mixta, según producto.</li>
+              <li>Es importante revisar límites, edad y situación fiscal.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">🧾</div>
+            <h3>Importante</h3>
+            <p>
+              La ventaja fiscal al aportar no significa que no se tribute nunca. Normalmente se difiere la tributación hasta el momento del cobro.
+            </p>
+
+            <div class="pills">
+              <span class="pill">IRPF</span>
+              <span class="pill">Jubilación</span>
+              <span class="pill">Aportación</span>
+              <span class="pill">Rescate</span>
+            </div>
+
+            <br />
+            <a class="btn btn-primary" href="https://wa.me/34606067906?text=Hola%2C%20quiero%20revisar%20la%20fiscalidad%20de%20mi%20plan%20de%20pensiones" target="_blank" rel="noopener">Consultar fiscalidad</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="review-block">
+          <div class="section-title">
+            <span>Liquidez</span>
+            <h2>Cuándo se puede disponer del dinero</h2>
+            <p>
+              Los planes de pensiones y PPA tienen una liquidez restringida. Es fundamental entender cuándo puede recuperarse el dinero antes de aportar.
+            </p>
+          </div>
+
+          <ol class="review-list">
+            <li class="review-item">
+              <span class="review-number">01</span>
+              <div>
+                <strong>Jubilación</strong>
+                <p>Es la contingencia principal para la que se diseñan estos productos.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">02</span>
+              <div>
+                <strong>Incapacidad</strong>
+                <p>Puede permitir el cobro si se reconoce una incapacidad según normativa aplicable.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">03</span>
+              <div>
+                <strong>Fallecimiento</strong>
+                <p>Los beneficiarios pueden tener derecho a la prestación acumulada.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">04</span>
+              <div>
+                <strong>Dependencia</strong>
+                <p>La dependencia severa o gran dependencia puede ser contingencia cubierta.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">05</span>
+              <div>
+                <strong>Desempleo de larga duración</strong>
+                <p>Puede permitir disponer del ahorro si se cumplen los requisitos legales.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">06</span>
+              <div>
+                <strong>Enfermedad grave</strong>
+                <p>Puede ser un supuesto excepcional de liquidez cuando se acredita correctamente.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">07</span>
+              <div>
+                <strong>Aportaciones con antigüedad</strong>
+                <p>La normativa permite disponer de determinadas aportaciones con al menos diez años, según condiciones legales.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-soft">
+      <div class="container">
+        <div class="highlight" style="background: linear-gradient(135deg, #1f2933, #111827);">
+          <div class="highlight-grid">
+            <div>
+              <div class="eyebrow">Antes de contratar</div>
+              <h2>Errores habituales con planes de pensiones</h2>
+              <p>
+                El error más frecuente es aportar solo por la deducción fiscal sin pensar en el cobro futuro, la liquidez o el perfil de inversión.
+              </p>
+
+              <ul class="feature-list">
+                <li>No revisar si la aportación fiscalmente compensa.</li>
+                <li>No tener claro cuándo se podrá rescatar.</li>
+                <li>Elegir un perfil demasiado conservador o demasiado arriesgado.</li>
+                <li>No planificar la forma de cobro en la jubilación.</li>
+                <li>Olvidar que el rescate tributa como rendimiento del trabajo.</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <div class="card-icon">⚠️</div>
+              <h3>La forma de cobro importa</h3>
+              <p>
+                Cobrar todo de golpe o hacerlo en renta puede tener impactos fiscales muy distintos. Conviene planificarlo antes de jubilarse.
+              </p>
+
+              <div class="pills">
+                <span class="pill">Capital</span>
+                <span class="pill">Renta</span>
+                <span class="pill">Mixto</span>
+                <span class="pill">IRPF</span>
+              </div>
+
+              <br />
+              <a class="btn btn-primary" href="https://wa.me/34606067906?text=Hola%2C%20quiero%20revisar%20mi%20plan%20de%20pensiones" target="_blank" rel="noopener">Revisar mi plan</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-title center">
+          <span>Preguntas frecuentes</span>
+          <h2>Dudas habituales sobre planes de pensiones</h2>
+        </div>
+
+        <div class="faq-carousel-wrap">
+          <div class="faq-carousel" id="faqCarousel" aria-label="Carrusel de preguntas frecuentes">
+            <article class="faq-card">
+              <div class="faq-number">01</div>
+              <h3>¿Para qué sirve un plan de pensiones?</h3>
+              <p>Sirve para ahorrar a largo plazo con el objetivo principal de complementar la jubilación.</p>
+            </article>
+
+            <article class="faq-card">
+              <div class="faq-number">02</div>
+              <h3>¿Puedo sacar el dinero cuando quiera?</h3>
+              <p>No. La liquidez está limitada a contingencias y supuestos concretos previstos por la normativa.</p>
+            </article>
+
+            <article class="faq-card">
+              <div class="faq-number">03</div>
+              <h3>¿Qué diferencia hay entre PPA y plan de pensiones?</h3>
+              <p>El PPA es un seguro de previsión asegurado con garantía de interés. El plan de pensiones invierte mediante un fondo de pensiones.</p>
+            </article>
+
+            <article class="faq-card">
+              <div class="faq-number">04</div>
+              <h3>¿Desgrava en la renta?</h3>
+              <p>Las aportaciones pueden reducir la base imponible del IRPF dentro de los límites legales aplicables.</p>
+            </article>
+
+            <article class="faq-card">
+              <div class="faq-number">05</div>
+              <h3>¿Cómo tributa al rescatarlo?</h3>
+              <p>La prestación suele tributar como rendimiento del trabajo, tanto si se cobra en capital como en renta.</p>
+            </article>
+
+            <article class="faq-card">
+              <div class="faq-number">06</div>
+              <h3>¿Qué perfil elegir?</h3>
+              <p>Depende de tu edad, años hasta la jubilación, tolerancia al riesgo y objetivo de ahorro.</p>
+            </article>
+          </div>
+
+          <div class="faq-controls" aria-label="Controles del carrusel de preguntas frecuentes">
+            <button class="faq-arrow" type="button" data-faq-prev aria-label="Pregunta anterior">‹</button>
+            <button class="faq-arrow" type="button" data-faq-next aria-label="Pregunta siguiente">›</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-soft">
+      <div class="container">
+        <div class="cta-final">
+          <h2>¿Quieres revisar tu planificación de jubilación?</h2>
+          <p>
+            Podemos ayudarte a comparar PPA, fondos de pensiones, planes de empleo y alternativas de ahorro para preparar tu jubilación con sentido.
+          </p>
+
+          <div class="hero-actions" style="justify-content:center;">
+            <a class="btn btn-primary" href="https://wa.me/34606067906?text=Hola%2C%20quiero%20asesoramiento%20sobre%20planes%20de%20pensiones" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+            <a class="btn btn-outline" href="tel:+34917702311">Llamar oficina</a>
+            <a class="btn btn-outline" href="mailto:esanz@occident.com?subject=Consulta%20planes%20de%20pensiones">Enviar email</a>
+            <a class="btn btn-outline" href="asesoramiento-financiero.html">Volver a finanzas</a>
+          </div>
+
+          <p class="trust-line">Sin compromiso · Información clara · Asesoramiento personalizado</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© Elena Sanz Burgos · Seguros y asesoramiento</p>
+      <div class="footer-links">
+        <a href="index.html">Inicio</a>
+        <a href="seguros.html">Seguros</a>
+        <a href="clientes.html">Clientes</a>
+        <a href="https://wa.me/34606067906" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.querySelector(".menu-toggle");
+    const mobileMenu = document.querySelector("#mobileMenu");
+
+    if (menuButton && mobileMenu) {
+      menuButton.addEventListener("click", () => {
+        const isOpen = mobileMenu.classList.toggle("active");
+        menuButton.setAttribute("aria-expanded", String(isOpen));
+      });
+    }
+
+    const faqCarousel = document.querySelector("#faqCarousel");
+    const faqPrev = document.querySelector("[data-faq-prev]");
+    const faqNext = document.querySelector("[data-faq-next]");
+
+    if (faqCarousel && faqPrev && faqNext) {
+      const moveFaqCarousel = (direction) => {
+        const card = faqCarousel.querySelector(".faq-card");
+        const gap = 18;
+        const distance = card ? card.offsetWidth + gap : 340;
+
+        faqCarousel.scrollBy({
+          left: direction * distance,
+          behavior: "smooth"
+        });
+      };
+
+      faqPrev.addEventListener("click", () => moveFaqCarousel(-1));
+      faqNext.addEventListener("click", () => moveFaqCarousel(1));
+    }
+
+    const revealElements = document.querySelectorAll(
+      ".section-title, .card, .highlight, .review-list, .faq-card, .cta-final, .fund-table"
+    );
+
+    if ("IntersectionObserver" in window) {
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      revealElements.forEach((element, index) => {
+        element.classList.add("reveal");
+        element.style.transitionDelay = `${Math.min(index % 6, 5) * 70}ms`;
+        revealObserver.observe(element);
+      });
+    } else {
+      revealElements.forEach((element) => element.classList.add("in-view"));
+    }
+  </script>
+
+</body>
+</html>
