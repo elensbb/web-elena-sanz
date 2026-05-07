@@ -1102,6 +1102,24 @@
         bottom: 75px;
       }
     }
+
+    details.card-open summary {
+      list-style: none;
+      cursor: pointer;
+    }
+
+    details.card-open summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details.card-open .card-open-header span {
+      transition: transform .2s ease;
+    }
+
+    details.card-open[open] .card-open-header span {
+      transform: rotate(45deg);
+    }
+
     .card-open{
   margin:24px -28px -28px;
   border-top:1px solid #f0dede;
@@ -1342,12 +1360,12 @@
       </p>
     </div>
 
-    <div class="card-open">
+    <details class="card-open">
 
-      <div class="card-open-header">
-        <strong>Ver detalles</strong>
-        <span>−</span>
-      </div>
+      <summary class="card-open-header">
+        <strong>Ver coberturas</strong>
+        <span>+</span>
+      </summary>
 
       <div class="card-open-body">
 
@@ -1373,7 +1391,7 @@
         </div>
 
       </div>
-    </div>
+    </details>
   </div>
 
   <!-- FONDOS -->
@@ -1389,12 +1407,12 @@
       </p>
     </div>
 
-    <div class="card-open">
+    <details class="card-open">
 
-      <div class="card-open-header">
-        <strong>Ver detalles</strong>
-        <span>−</span>
-      </div>
+      <summary class="card-open-header">
+        <strong>Ver coberturas</strong>
+        <span>+</span>
+      </summary>
 
       <div class="card-open-body">
 
@@ -1420,7 +1438,7 @@
         </div>
 
       </div>
-    </div>
+    </details>
   </div>
 
   <!-- PLANES DE PENSIONES -->
@@ -1436,12 +1454,12 @@
       </p>
     </div>
 
-    <div class="card-open">
+    <details class="card-open">
 
-      <div class="card-open-header">
-        <strong>Ver detalles</strong>
-        <span>−</span>
-      </div>
+      <summary class="card-open-header">
+        <strong>Ver coberturas</strong>
+        <span>+</span>
+      </summary>
 
       <div class="card-open-body">
 
@@ -1467,7 +1485,7 @@
         </div>
 
       </div>
-    </div>
+    </details>
   </div>
 
   <!-- PLANES DE AHORRO -->
@@ -1483,12 +1501,12 @@
       </p>
     </div>
 
-    <div class="card-open">
+    <details class="card-open">
 
-      <div class="card-open-header">
-        <strong>Ver detalles</strong>
-        <span>−</span>
-      </div>
+      <summary class="card-open-header">
+        <strong>Ver coberturas</strong>
+        <span>+</span>
+      </summary>
 
       <div class="card-open-body">
 
@@ -1514,7 +1532,7 @@
         </div>
 
       </div>
-    </div>
+    </details>
   </div>
 
 </div>
