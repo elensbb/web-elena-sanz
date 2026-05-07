@@ -53,13 +53,43 @@
     .brand {
       display: flex;
       align-items: center;
+      gap: 14px;
       color: #222;
     }
 
-    .brand-image {
+    .brand-logo {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: #d6003d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .brand-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       display: block;
-      height: 58px;
-      width: auto;
+      border-radius: 50%;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+    }
+
+    .brand-text strong {
+      font-size: 18px;
+    }
+
+    .brand-text span {
+      font-size: 14px;
+      color: #666;
     }
 
     .nav-links {
@@ -133,6 +163,7 @@
       }
     }
 
+
     .container {
       max-width: 1120px;
       margin: 0 auto;
@@ -185,13 +216,103 @@
     }
 
     .hero-layout {
-      display: block;
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      align-items: center;
+      gap: 48px;
       padding: 82px 0;
     }
 
     .hero-content {
       max-width: 680px;
       animation: fadeUp .8s ease both;
+    }
+
+    .hero-image-area {
+      animation: fadeUp .9s ease both;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      min-height: 520px;
+      padding-top: 190px;
+      position: relative;
+    }
+
+    .hero-image-area::before {
+      content: "";
+      position: absolute;
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.08);
+      filter: blur(2px);
+      animation: softFloat 6s ease-in-out infinite;
+      z-index: -1;
+    }
+
+    .hero-logos-card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 44px;
+      width: 100%;
+      animation: logoFloat 5s ease-in-out infinite;
+    }
+
+    .hero-logos-card img {
+      display: block;
+      width: auto;
+      filter: drop-shadow(0 14px 28px rgba(0,0,0,.26));
+      transition: .25s ease;
+    }
+
+    .hero-logos-card img:hover {
+      transform: translateY(-4px) scale(1.03);
+    }
+
+    .hero-logos-card img:first-child {
+      height: 142px;
+    }
+
+    .hero-logos-card img:last-child {
+      height: 72px;
+    }
+
+    .hero-logo-note {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 6px;
+      text-shadow: 0 4px 14px rgba(0,0,0,.35);
+    }
+
+    .hero-logo-note .main {
+      font-size: 15px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .hero-logo-note .secondary {
+      font-size: 14px;
+      font-weight: 600;
+      color: rgba(255,255,255,.9);
+    }
+
+    .hero-logo-note .final {
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255,255,255,.75);
+    }
+
+    .line {
+      width: 42px;
+      height: 2px;
+      background: rgba(255,255,255,.5);
+      margin: 8px 0 6px;
+      border-radius: 2px;
     }
 
     .eyebrow {
@@ -664,6 +785,12 @@
       100% { transform: translateY(0); }
     }
 
+    @keyframes logoFloat {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+
     @keyframes floatShape {
       0% { transform: translateY(0) scale(1); }
       50% { transform: translateY(-12px) scale(1.03); }
@@ -687,12 +814,42 @@
       }
 
       .hero-layout {
-        display: block;
+        grid-template-columns: 1fr;
+        gap: 32px;
         padding: 56px 0 52px;
       }
 
       .hero-content {
         max-width: 100%;
+      }
+
+      .hero-image-area {
+        min-height: auto;
+        padding-top: 70px;
+      }
+
+      .hero-image-area::before {
+        width: 260px;
+        height: 260px;
+      }
+
+      .hero-logos-card {
+        gap: 24px;
+        flex-direction: column;
+      }
+
+      .hero-logos-card img:first-child {
+        height: 105px;
+      }
+
+      .hero-logos-card img:last-child {
+        height: 50px;
+      }
+
+      .hero-logo-note {
+        font-size: 13px;
+        line-height: 1.45;
+        margin-top: 18px;
       }
 
       .eyebrow {
@@ -846,8 +1003,8 @@
         justify-content: center;
       }
 
-      .brand-image {
-        height: 52px;
+      .brand-text strong {
+        font-size: 16px;
       }
 
       .nav-links a {
@@ -877,7 +1034,14 @@
     <div class="topbar-container">
 
       <a href="index.html" class="brand">
-        <img src="marcapersonal.png" alt="Elena Sanz Burgos" class="brand-image">
+        <div class="brand-logo">
+          <img src="marcapersonal.png" alt="Marca personal Elena Sanz Burgos">
+        </div>
+
+        <div class="brand-text">
+          <strong>Elena Sanz Burgos</strong>
+          <span>Seguros y asesoramiento</span>
+        </div>
       </a>
 
       <nav class="nav-links">
@@ -922,6 +1086,20 @@
             <div class="trust-badge">✔ +25 años de experiencia</div>
             <div class="trust-badge">✔ Atención personal</div>
             <div class="trust-badge">✔ Primera consulta sin compromiso</div>
+          </div>
+        </div>
+
+        <div class="hero-image-area">
+          <div class="hero-logos-card">
+            <img src="marcapersonal.png" alt="Marca personal Elena Sanz Burgos">
+            <img src="logooccident.png" alt="Occident">
+          </div>
+
+          <div class="hero-logo-note">
+            <span class="main">Agencia vinculada a Occident</span>
+            <span class="secondary">Asesoramiento financiero</span>
+            <div class="line"></div>
+            <span class="final">Nos adaptamos a tus necesidades</span>
           </div>
         </div>
 
