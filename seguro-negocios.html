@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Seguro para negocios, comercios y pymes | Elena Sanz Burgos</title>
-  <meta name="description" content="Seguro para negocios, comercios y pymes. Protección para locales, mercancía, responsabilidad civil, robo, incendio, daños por agua, pérdida de actividad, defensa jurídica y asistencia urgente." />
+  <meta name="description" content="Seguro para negocios, comercios, oficinas, clínicas, bares, restaurantes y almacenes. Protección para local, mercancía, responsabilidad civil, robo, incendio y continuidad de actividad." />
 
   <style>
     :root {
@@ -72,38 +72,6 @@
       }
     }
 
-    .hero .eyebrow,
-    .hero h1,
-    .hero .lead,
-    .hero-actions,
-    .trust-line {
-      animation: fadeUp 0.7s ease both;
-    }
-
-    .hero h1 {
-      animation-delay: 0.08s;
-    }
-
-    .hero .lead {
-      animation-delay: 0.16s;
-    }
-
-    .hero-actions {
-      animation-delay: 0.24s;
-    }
-
-    .trust-line {
-      animation-delay: 0.32s;
-    }
-
-    .hero-card {
-      animation: fadeUp 0.8s ease 0.18s both;
-    }
-
-    .hero-card-icon {
-      animation: softFloat 4.5s ease-in-out infinite;
-    }
-
     .reveal {
       opacity: 0;
       transform: translateY(24px);
@@ -147,6 +115,7 @@
       place-items: center;
       font-weight: 800;
       letter-spacing: -0.03em;
+      flex-shrink: 0;
     }
 
     .brand-text strong {
@@ -200,12 +169,13 @@
       gap: 8px;
       border-radius: 999px;
       padding: 13px 20px;
-      font-weight: 700;
+      font-weight: 800;
       font-size: 0.95rem;
       border: 1px solid transparent;
       transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
       cursor: pointer;
       white-space: nowrap;
+      text-align: center;
     }
 
     .btn:hover {
@@ -229,7 +199,7 @@
     }
 
     .hero {
-      padding: 84px 0 56px;
+      padding: 78px 0 56px;
       position: relative;
       overflow: hidden;
     }
@@ -261,21 +231,35 @@
       border-radius: 999px;
       background: rgba(195, 0, 47, 0.08);
       color: var(--primary);
-      font-weight: 700;
+      font-weight: 800;
       font-size: 0.9rem;
       margin-bottom: 20px;
     }
 
     h1 {
-      font-size: clamp(2.45rem, 5vw, 4.7rem);
-      line-height: 0.98;
+      font-size: clamp(2.3rem, 5vw, 4.3rem);
+      line-height: 1;
       letter-spacing: -0.06em;
       max-width: 850px;
       margin-bottom: 22px;
     }
 
+    h2 {
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      line-height: 1.1;
+      letter-spacing: -0.045em;
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+
     .lead {
-      font-size: clamp(1.08rem, 2vw, 1.25rem);
+      font-size: clamp(1.05rem, 2vw, 1.22rem);
       color: #455363;
       max-width: 690px;
       margin-bottom: 28px;
@@ -298,7 +282,8 @@
       border: 1px solid var(--border);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      padding: 26px;
+      padding: 28px;
+      animation: fadeUp 0.8s ease both;
     }
 
     .hero-card-icon {
@@ -310,12 +295,12 @@
       place-items: center;
       font-size: 2rem;
       margin-bottom: 18px;
+      animation: softFloat 4.5s ease-in-out infinite;
     }
 
     .hero-card h2 {
       font-size: 1.45rem;
       margin-bottom: 12px;
-      letter-spacing: -0.03em;
     }
 
     .hero-card ul {
@@ -339,7 +324,7 @@
     }
 
     section {
-      padding: 72px 0;
+      padding: 66px 0;
     }
 
     .section-soft {
@@ -365,20 +350,6 @@
       margin-bottom: 8px;
     }
 
-    h2 {
-      font-size: clamp(2rem, 3vw, 3rem);
-      line-height: 1.08;
-      letter-spacing: -0.045em;
-      margin-bottom: 16px;
-    }
-
-    h3 {
-      font-size: 1.25rem;
-      line-height: 1.25;
-      letter-spacing: -0.02em;
-      margin-bottom: 10px;
-    }
-
     .section-title p,
     .text-muted {
       color: var(--muted);
@@ -397,13 +368,14 @@
       gap: 18px;
     }
 
-    .grid-4 {
+    .business-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 16px;
     }
 
-    .card {
+    .card,
+    .business-card {
       background: var(--white);
       border: 1px solid var(--border);
       border-radius: var(--radius-sm);
@@ -413,13 +385,15 @@
       transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
     }
 
-    .card:hover {
+    .card:hover,
+    .business-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 18px 36px rgba(31, 41, 51, 0.09);
       border-color: rgba(195, 0, 47, 0.22);
     }
 
-    .card-icon {
+    .card-icon,
+    .business-icon {
       width: 50px;
       height: 50px;
       border-radius: 16px;
@@ -430,8 +404,17 @@
       margin-bottom: 18px;
     }
 
-    .card p {
+    .card p,
+    .business-card p {
       color: var(--muted);
+    }
+
+    .business-card h3 {
+      font-size: 1.08rem;
+    }
+
+    .business-card p {
+      font-size: 0.96rem;
     }
 
     .coverages {
@@ -465,6 +448,7 @@
       display: grid;
       place-items: center;
       flex: 0 0 auto;
+      font-size: 1.2rem;
     }
 
     .coverage-card p {
@@ -472,7 +456,7 @@
       font-size: 0.98rem;
     }
 
-    .highlight {
+    .data-box {
       background: linear-gradient(135deg, var(--primary), #8f0023);
       color: var(--white);
       border-radius: calc(var(--radius) + 6px);
@@ -480,302 +464,65 @@
       box-shadow: var(--shadow);
     }
 
-    .highlight-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 28px;
-      align-items: center;
+    .data-box h2 {
+      margin-bottom: 12px;
     }
 
-    .highlight p {
-      color: rgba(255, 255, 255, 0.85);
+    .data-box p {
+      color: rgba(255,255,255,.9);
+      max-width: 840px;
+      margin-bottom: 22px;
+      font-size: 1.05rem;
     }
 
-    .highlight .eyebrow {
-      background: rgba(255, 255, 255, 0.12);
-      color: var(--white);
-      margin-bottom: 14px;
-    }
-
-    .feature-list {
+    .data-list {
       list-style: none;
       display: grid;
-      gap: 11px;
-      margin-top: 20px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px 20px;
     }
 
-    .feature-list li {
+    .data-list li {
       display: flex;
+      gap: 10px;
       align-items: flex-start;
-      gap: 10px;
-      color: rgba(255, 255, 255, 0.92);
+      color: rgba(255,255,255,.94);
+      font-size: 0.98rem;
     }
 
-    .feature-list li::before {
+    .data-list li::before {
       content: "✓";
+      color: var(--white);
       font-weight: 900;
-      color: var(--white);
+      flex: 0 0 auto;
     }
 
-    .pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 20px;
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      border-radius: 999px;
-      padding: 9px 13px;
-      background: rgba(195, 0, 47, 0.08);
-      color: var(--primary);
-      font-weight: 800;
-      font-size: 0.9rem;
-    }
-
-    .highlight .pill {
-      background: rgba(255, 255, 255, 0.14);
-      color: var(--white);
-    }
-
-    .review-block {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 34px;
-      align-items: start;
-    }
-
-    .review-intro {
-      color: var(--muted);
-      font-size: 1.04rem;
-      margin-top: 10px;
+    .review-box {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) + 4px);
+      padding: 34px;
+      box-shadow: 0 14px 34px rgba(31, 41, 51, 0.06);
     }
 
     .review-list {
       list-style: none;
       display: grid;
-      gap: 0;
-      background: var(--white);
-      border-radius: calc(var(--radius) + 4px);
-      border: 1px solid var(--border);
-      padding: 30px;
-      box-shadow: 0 14px 34px rgba(31, 41, 51, 0.06);
-    }
-
-    .review-item {
-      display: grid;
-      grid-template-columns: 46px 1fr;
       gap: 16px;
-      padding: 20px 0;
-      border-bottom: 1px solid var(--border);
     }
 
-    .review-item:first-child {
-      padding-top: 0;
-    }
-
-    .review-item:last-child {
-      padding-bottom: 0;
-      border-bottom: 0;
-    }
-
-    .review-number {
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      background: rgba(195, 0, 47, 0.08);
-      color: var(--primary);
-      display: grid;
-      place-items: center;
-      font-weight: 900;
-      font-size: 0.9rem;
-    }
-
-    .review-item strong {
-      display: block;
-      color: var(--text);
-      margin-bottom: 4px;
-      font-size: 1.02rem;
-    }
-
-    .review-item p {
-      color: var(--muted);
-      font-size: 0.97rem;
-    }
-
-    .review-note {
-      margin-top: 24px;
-      padding: 18px 20px;
-      border-radius: var(--radius-sm);
-      background: rgba(195, 0, 47, 0.06);
-      color: #455363;
-      font-size: 0.98rem;
-    }
-
-    .review-note strong {
-      color: var(--primary);
-    }
-
-    .mistakes-block {
-      max-width: 980px;
-      margin: 0 auto;
-    }
-
-    .mistakes-layout {
-      display: grid;
-      grid-template-columns: 0.85fr 1.15fr;
-      gap: 34px;
-      align-items: start;
-    }
-
-    .mistakes-side {
-      position: sticky;
-      top: 104px;
-    }
-
-    .mistakes-side p {
-      color: var(--muted);
-      font-size: 1.04rem;
-    }
-
-    .mistakes-list {
-      list-style: none;
-      display: grid;
-      gap: 0;
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: calc(var(--radius) + 4px);
-      padding: 30px;
-      box-shadow: 0 14px 34px rgba(31, 41, 51, 0.06);
-    }
-
-    .mistake-item {
-      display: grid;
-      grid-template-columns: 38px 1fr;
-      gap: 16px;
-      padding: 20px 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .mistake-item:first-child {
-      padding-top: 0;
-    }
-
-    .mistake-item:last-child {
-      padding-bottom: 0;
-      border-bottom: 0;
-    }
-
-    .mistake-mark {
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      background: rgba(195, 0, 47, 0.08);
-      color: var(--primary);
-      display: grid;
-      place-items: center;
-      font-weight: 900;
-      font-size: 1rem;
-    }
-
-    .mistake-item strong {
-      display: block;
-      color: var(--text);
-      margin-bottom: 4px;
-      font-size: 1.02rem;
-    }
-
-    .mistake-item p {
-      color: var(--muted);
-      font-size: 0.97rem;
-    }
-
-    .faq-carousel-wrap {
-      position: relative;
-      max-width: 1040px;
-      margin: 0 auto;
-    }
-
-    .faq-carousel {
-      display: grid;
-      grid-auto-flow: column;
-      grid-auto-columns: minmax(290px, 360px);
-      gap: 18px;
-      overflow-x: auto;
-      overscroll-behavior-x: contain;
-      scroll-snap-type: x mandatory;
-      scroll-padding: 4px;
-      padding: 6px 4px 18px;
-      scrollbar-width: thin;
-    }
-
-    .faq-card {
-      min-height: 310px;
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 24px;
-      box-shadow: 0 10px 24px rgba(31, 41, 51, 0.04);
-      scroll-snap-align: start;
+    .review-list li {
       display: flex;
-      flex-direction: column;
-      gap: 14px;
-      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+      gap: 12px;
+      align-items: flex-start;
+      color: #455363;
     }
 
-    .faq-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 42px rgba(31, 41, 51, 0.1);
-      border-color: rgba(195, 0, 47, 0.22);
-    }
-
-    .faq-number {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      background: rgba(195, 0, 47, 0.08);
+    .review-list li::before {
+      content: "✓";
       color: var(--primary);
-      display: grid;
-      place-items: center;
       font-weight: 900;
       flex: 0 0 auto;
-    }
-
-    .faq-card h3 {
-      margin-bottom: 0;
-    }
-
-    .faq-card p {
-      color: var(--muted);
-      font-size: 0.98rem;
-    }
-
-    .faq-controls {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 12px;
-    }
-
-    .faq-arrow {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      border: 1px solid rgba(195, 0, 47, 0.28);
-      background: var(--white);
-      color: var(--primary);
-      font-size: 1.2rem;
-      font-weight: 900;
-      cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-    }
-
-    .faq-arrow:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 28px rgba(31, 41, 51, 0.12);
-      background: rgba(195, 0, 47, 0.06);
     }
 
     .cta-final {
@@ -815,17 +562,9 @@
       flex-wrap: wrap;
     }
 
-    @media (max-width: 980px) {
-      .grid-4 {
+    @media (max-width: 1000px) {
+      .business-grid {
         grid-template-columns: repeat(2, 1fr);
-      }
-
-      .mistakes-layout {
-        grid-template-columns: 1fr;
-      }
-
-      .mistakes-side {
-        position: static;
       }
     }
 
@@ -856,28 +595,69 @@
       }
 
       .hero-grid,
-      .highlight-grid,
-      .grid-2,
-      .review-block {
+      .grid-2 {
         grid-template-columns: 1fr;
       }
 
       .grid-3,
-      .grid-4,
-      .coverages {
+      .coverages,
+      .data-list {
         grid-template-columns: 1fr;
       }
 
-      .faq-carousel {
-        grid-auto-columns: minmax(260px, 86vw);
-      }
-
       .hero {
-        padding-top: 54px;
+        padding: 54px 0 48px;
       }
 
       section {
-        padding: 56px 0;
+        padding: 54px 0;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .container {
+        width: min(100% - 24px, var(--max));
+      }
+
+      h1 {
+        font-size: 2.35rem;
+        letter-spacing: -0.05em;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+      }
+
+      .hero-actions,
+      .cta-final .hero-actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+        min-height: 52px;
+      }
+
+      .business-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card,
+      .data-box,
+      .review-box,
+      .cta-final {
+        padding: 26px 20px;
+        border-radius: 20px;
+      }
+
+      .card,
+      .business-card,
+      .coverage-card {
+        padding: 20px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
       }
     }
 
@@ -894,41 +674,6 @@
       .reveal {
         opacity: 1;
         transform: none;
-      }
-    }
-
-    @media (max-width: 520px) {
-      .container {
-        width: min(100% - 24px, var(--max));
-      }
-
-      .hero-actions,
-      .cta-final .hero-actions {
-        flex-direction: column;
-      }
-
-      .btn {
-        width: 100%;
-      }
-
-      .highlight,
-      .cta-final {
-        padding: 28px 20px;
-      }
-
-      .review-list,
-      .mistakes-list {
-        padding: 24px 20px;
-      }
-
-      .review-item,
-      .mistake-item {
-        grid-template-columns: 38px 1fr;
-        gap: 12px;
-      }
-
-      h1 {
-        font-size: 2.45rem;
       }
     }
   </style>
@@ -981,30 +726,30 @@
         <div>
           <div class="eyebrow">🏪 Seguro para negocios</div>
 
-          <h1>Protege tu comercio, tu local y la continuidad de tu actividad</h1>
+          <h1>Protege tu local, tu actividad y lo que necesitas para trabajar</h1>
 
           <p class="lead">
-            Cada negocio tiene riesgos distintos. No necesita lo mismo una tienda, un bar, una peluquería, una clínica, un taller, una oficina, una pyme industrial o un local de hostelería. Te ayudamos a revisar qué coberturas encajan con tu actividad real.
+            Te ayudamos a revisar qué coberturas necesita tu negocio según tu actividad, tu local, tu mercancía, tus empleados y los riesgos que pueden impedirte abrir con normalidad.
           </p>
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="https://wa.me/34606067906?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20seguros%20para%20negocios%20y%20comercios" target="_blank" rel="noopener">Hablar por WhatsApp</a>
             <a class="btn btn-outline" href="tel:+34917702311">Llamar a la oficina</a>
-            <a class="btn btn-outline" href="#coberturas">Ver coberturas</a>
+            <a class="btn btn-outline" href="#presupuesto">Datos para presupuesto</a>
           </div>
 
-          <p class="trust-line">Respuesta rápida · Sin compromiso · Te explicamos todo de forma sencilla</p>
+          <p class="trust-line">Respuesta rápida · Sin compromiso · Te lo explicamos claro</p>
         </div>
 
         <aside class="hero-card" aria-label="Resumen del seguro para negocios">
           <div class="hero-card-icon">🛡️</div>
           <h2>¿Qué puede proteger?</h2>
           <ul>
-            <li>El local, instalaciones, mobiliario, maquinaria y mercancía.</li>
-            <li>Daños por incendio, agua, robo, roturas o fenómenos imprevistos.</li>
-            <li>Responsabilidad civil frente a clientes, proveedores o terceros.</li>
-            <li>Pérdidas por interrupción de la actividad, si se contrata.</li>
-            <li>Defensa jurídica, asistencia urgente y servicios para el negocio.</li>
+            <li>Local, instalaciones, mobiliario y maquinaria.</li>
+            <li>Mercancía, stock, herramientas o equipos.</li>
+            <li>Robo, incendio, agua, roturas y daños eléctricos.</li>
+            <li>Responsabilidad civil frente a clientes o terceros.</li>
+            <li>Paralización de actividad, si se contrata.</li>
           </ul>
         </aside>
       </div>
@@ -1013,30 +758,30 @@
     <section>
       <div class="container">
         <div class="section-title">
-          <span>Protección para tu actividad</span>
-          <h2>Un seguro de negocio no debería ser igual para todos</h2>
+          <span>Directo y sencillo</span>
+          <h2>Cada negocio tiene riesgos diferentes</h2>
           <p>
-            Un comercio, un taller o una pyme pueden enfrentarse a imprevistos que afectan directamente a su actividad: un incendio, una fuga de agua, un robo, una rotura, un daño a un cliente, una reclamación o una avería que impida abrir con normalidad.
+            No necesita lo mismo una peluquería que una oficina, una clínica, un bar o un almacén. Lo importante es adaptar la póliza a tu actividad real.
           </p>
         </div>
 
         <div class="grid-3">
           <article class="card">
             <div class="card-icon">🏢</div>
-            <h3>Tu local</h3>
-            <p>Protección para edificio, instalaciones, cristales, rótulos, toldos, cámaras, maquinaria, mobiliario y mejoras realizadas.</p>
+            <h3>Local</h3>
+            <p>Instalaciones, cristales, rótulos, mobiliario, maquinaria, mejoras y elementos necesarios para trabajar.</p>
           </article>
 
           <article class="card">
             <div class="card-icon">📦</div>
-            <h3>Tu mercancía</h3>
-            <p>Stock, productos, alimentos, bienes en cámaras, mercancías en depósito o material necesario para el funcionamiento del negocio.</p>
+            <h3>Contenido y mercancía</h3>
+            <p>Stock, productos, herramientas, equipos informáticos, maquinaria o bienes almacenados.</p>
           </article>
 
           <article class="card">
             <div class="card-icon">⚖️</div>
-            <h3>Tu responsabilidad</h3>
-            <p>Reclamaciones por daños personales o materiales causados a clientes, proveedores, empleados o terceros, según modalidad.</p>
+            <h3>Responsabilidad civil</h3>
+            <p>Daños a clientes, proveedores, empleados o terceros relacionados con tu actividad.</p>
           </article>
         </div>
       </div>
@@ -1045,48 +790,60 @@
     <section class="section-soft">
       <div class="container">
         <div class="section-title center">
-          <span>Para diferentes actividades</span>
-          <h2>¿Para qué negocios puede servir?</h2>
+          <span>Ejemplos por tipo de negocio</span>
+          <h2>¿Qué puede necesitar tu negocio?</h2>
           <p>
-            La protección debe adaptarse a la actividad real. No basta con asegurar “un local”: hay que revisar qué haces, qué bienes tienes, quién entra en el negocio y qué riesgos pueden interrumpir tu actividad.
+            Estos ejemplos sirven para que el cliente se identifique rápido con su actividad.
           </p>
         </div>
 
-        <div class="grid-3">
-          <article class="card">
-            <div class="card-icon">🛍️</div>
-            <h3>Tiendas y comercios</h3>
-            <p>Ropa, alimentación, bazares, herboristerías, ópticas, farmacias, estancos, librerías, floristerías y comercios minoristas.</p>
+        <div class="business-grid">
+          <article class="business-card">
+            <div class="business-icon">💇</div>
+            <h3>Peluquería o estética</h3>
+            <p>Local, mobiliario, aparatología, daños a clientes, robo, incendio, agua y responsabilidad civil.</p>
           </article>
 
-          <article class="card">
-            <div class="card-icon">☕</div>
-            <h3>Hostelería y restauración</h3>
-            <p>Bares, restaurantes, cafeterías, terrazas, hoteles, alojamientos y negocios vinculados a turismo o restauración.</p>
+          <article class="business-card">
+            <div class="business-icon">🛍️</div>
+            <h3>Tienda o comercio</h3>
+            <p>Mercancía, escaparate, rótulo, robo, daños por agua, incendio y paralización de actividad.</p>
           </article>
 
-          <article class="card">
-            <div class="card-icon">💇</div>
-            <h3>Belleza y salud</h3>
-            <p>Peluquerías, centros de estética, clínicas, ópticas, farmacias, centros de bienestar y actividades de servicios personales.</p>
+          <article class="business-card">
+            <div class="business-icon">💼</div>
+            <h3>Oficina</h3>
+            <p>Equipos informáticos, mobiliario, responsabilidad civil, daños eléctricos y protección del local.</p>
           </article>
 
-          <article class="card">
-            <div class="card-icon">🔧</div>
-            <h3>Talleres y servicios técnicos</h3>
-            <p>Talleres mecánicos, reparación, mantenimiento, maquinaria, vehículos de clientes, herramientas y trabajos técnicos.</p>
+          <article class="business-card">
+            <div class="business-icon">🩺</div>
+            <h3>Clínica o centro sanitario</h3>
+            <p>Aparatos, camillas, equipos, responsabilidad civil, daños en el local y continuidad del servicio.</p>
           </article>
 
-          <article class="card">
-            <div class="card-icon">🏭</div>
-            <h3>Pymes industriales</h3>
-            <p>Pequeñas y medianas empresas con maquinaria, procesos productivos, almacenes, producto, transporte o actividad industrial.</p>
+          <article class="business-card">
+            <div class="business-icon">🍽️</div>
+            <h3>Bar o restaurante</h3>
+            <p>Cocina, cámaras, alimentos, terraza, responsabilidad civil, incendio, agua, robo y asistencia urgente.</p>
           </article>
 
-          <article class="card">
-            <div class="card-icon">🎭</div>
-            <h3>Cultura, ocio y eventos</h3>
-            <p>Asociaciones, instalaciones deportivas, ferias, exposiciones, espectáculos, cursos, agencias de viaje o actividades recreativas.</p>
+          <article class="business-card">
+            <div class="business-icon">📦</div>
+            <h3>Almacén</h3>
+            <p>Mercancía, existencias, maquinaria, incendios, robos, daños por agua y sistemas de seguridad.</p>
+          </article>
+
+          <article class="business-card">
+            <div class="business-icon">🔧</div>
+            <h3>Taller o servicio técnico</h3>
+            <p>Herramientas, maquinaria, vehículos o bienes de clientes, responsabilidad civil y robo.</p>
+          </article>
+
+          <article class="business-card">
+            <div class="business-icon">🏭</div>
+            <h3>Pyme o actividad industrial</h3>
+            <p>Maquinaria, producto, almacén, empleados, responsabilidad civil y paralización de actividad.</p>
           </article>
         </div>
       </div>
@@ -1094,11 +851,11 @@
 
     <section id="coberturas">
       <div class="container">
-        <div class="section-title center">
+        <div class="section-title">
           <span>Coberturas principales</span>
-          <h2>Qué puede cubrir un seguro para negocios</h2>
+          <h2>Qué conviene revisar en un seguro de negocio</h2>
           <p>
-            Las coberturas concretas dependen de la actividad, del local, de los bienes asegurados y de las garantías contratadas. Estas son las más habituales que conviene revisar.
+            Las coberturas exactas dependen de la actividad, del local y de los capitales asegurados.
           </p>
         </div>
 
@@ -1106,8 +863,8 @@
           <article class="coverage-card">
             <div class="mini-icon">🔥</div>
             <div>
-              <h3>Incendio, rayo o explosión</h3>
-              <p>Protección frente a daños en el local, instalaciones, mobiliario, maquinaria o mercancía por incendio, rayo o explosión.</p>
+              <h3>Incendio y explosión</h3>
+              <p>Daños en local, mobiliario, maquinaria o mercancía por incendio, rayo o explosión.</p>
             </div>
           </article>
 
@@ -1115,23 +872,23 @@
             <div class="mini-icon">💧</div>
             <div>
               <h3>Daños por agua</h3>
-              <p>Fugas, roturas, escapes, derrames accidentales u otros daños por agua según condiciones de la póliza.</p>
+              <p>Fugas, escapes, roturas o daños por agua que afecten al local o contenido.</p>
             </div>
           </article>
 
           <article class="coverage-card">
             <div class="mini-icon">🔐</div>
             <div>
-              <h3>Robo y expoliación</h3>
-              <p>Robo de mercancía, mobiliario, maquinaria, dinero o desperfectos derivados del robo, según límites contratados.</p>
+              <h3>Robo</h3>
+              <p>Robo de mercancía, mobiliario, maquinaria, dinero o desperfectos derivados.</p>
             </div>
           </article>
 
           <article class="coverage-card">
             <div class="mini-icon">🪟</div>
             <div>
-              <h3>Roturas y desperfectos</h3>
-              <p>Cristales, rótulos, lunas, escaparates, sanitarios, encimeras u otros elementos asegurados.</p>
+              <h3>Roturas</h3>
+              <p>Cristales, escaparates, rótulos, lunas, sanitarios u otros elementos asegurados.</p>
             </div>
           </article>
 
@@ -1139,31 +896,15 @@
             <div class="mini-icon">⚡</div>
             <div>
               <h3>Daños eléctricos</h3>
-              <p>Daños en instalaciones eléctricas, maquinaria, equipos informáticos, cámaras o aparatos conectados.</p>
+              <p>Instalaciones, equipos informáticos, cámaras, maquinaria o aparatos conectados.</p>
             </div>
           </article>
 
           <article class="coverage-card">
-            <div class="mini-icon">📦</div>
+            <div class="mini-icon">⚖️</div>
             <div>
-              <h3>Mercancías y existencias</h3>
-              <p>Protección para productos, stock, materias primas, alimentos en cámaras, bienes almacenados o productos listos para venta.</p>
-            </div>
-          </article>
-
-          <article class="coverage-card">
-            <div class="mini-icon">🏪</div>
-            <div>
-              <h3>Rótulos, toldos y marquesinas</h3>
-              <p>Elementos exteriores del negocio que pueden dañarse por accidentes, fenómenos atmosféricos o actos vandálicos.</p>
-            </div>
-          </article>
-
-          <article class="coverage-card">
-            <div class="mini-icon">🧰</div>
-            <div>
-              <h3>Maquinaria y equipos</h3>
-              <p>Herramientas, maquinaria, equipos informáticos, terminales, instalaciones y elementos necesarios para trabajar.</p>
+              <h3>Responsabilidad civil</h3>
+              <p>Reclamaciones de clientes, proveedores, empleados o terceros por daños causados.</p>
             </div>
           </article>
 
@@ -1171,7 +912,7 @@
             <div class="mini-icon">⏸️</div>
             <div>
               <h3>Paralización de actividad</h3>
-              <p>Ayuda si un siniestro cubierto impide abrir o trabajar con normalidad, siempre que la cobertura esté contratada.</p>
+              <p>Ayuda si un siniestro cubierto te impide abrir o trabajar con normalidad.</p>
             </div>
           </article>
 
@@ -1179,451 +920,58 @@
             <div class="mini-icon">🚨</div>
             <div>
               <h3>Asistencia urgente</h3>
-              <p>Servicio de asistencia para incidencias urgentes en el local, reparaciones o actuaciones necesarias para continuar la actividad.</p>
-            </div>
-          </article>
-
-          <article class="coverage-card">
-            <div class="mini-icon">📄</div>
-            <div>
-              <h3>Defensa jurídica</h3>
-              <p>Reclamación y defensa ante conflictos relacionados con la actividad, el local, clientes, proveedores o terceros.</p>
-            </div>
-          </article>
-
-          <article class="coverage-card">
-            <div class="mini-icon">💶</div>
-            <div>
-              <h3>Recuperación de deudas</h3>
-              <p>Puede incluirse en determinados seguros de empresa para ayudar en la reclamación de importes pendientes.</p>
+              <p>Servicios para resolver incidencias urgentes en el local o negocio.</p>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section-soft">
-      <div class="container highlight">
-        <div class="highlight-grid">
-          <div>
-            <div class="eyebrow">Responsabilidad civil de explotación</div>
-            <h2>Una reclamación puede afectar al patrimonio del negocio</h2>
-            <p>
-              La responsabilidad civil de explotación protege frente a reclamaciones de terceros por daños personales o materiales causados accidentalmente durante el desarrollo de la actividad asegurada.
-            </p>
-
-            <ul class="feature-list">
-              <li>Daños a clientes o terceros dentro del local.</li>
-              <li>Daños derivados de la actividad habitual del negocio.</li>
-              <li>Actuación del personal propio en el desempeño de su trabajo.</li>
-              <li>Gastos de defensa, costas y gastos judiciales o extrajudiciales.</li>
-              <li>Constitución de fianzas judiciales exigidas para garantizar la responsabilidad civil.</li>
-            </ul>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container highlight" style="background: linear-gradient(135deg, #1f2933, #111827);">
-        <div class="highlight-grid">
-          <div>
-            <div class="eyebrow">Comercios y locales</div>
-            <h2>Protección para tiendas, bares, oficinas y locales abiertos al público</h2>
-            <p>
-              Un local comercial necesita proteger tanto el continente como el contenido: instalaciones, mobiliario, mercancía, escaparates, rótulos, cámaras, equipos y responsabilidad frente a clientes.
-            </p>
-
-            <ul class="feature-list">
-              <li>Incendio, daños por agua, robo y roturas.</li>
-              <li>Escaparates, cristales, rótulos, toldos y marquesinas.</li>
-              <li>Alimentos o productos almacenados en cámaras.</li>
-              <li>Responsabilidad civil por daños a clientes.</li>
-              <li>Asistencia urgente para resolver incidencias en el local.</li>
-            </ul>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <section class="section-soft">
+    <section id="presupuesto" class="section-soft">
       <div class="container">
-        <div class="section-title">
-          <span>Garantías adicionales</span>
-          <h2>Coberturas que pueden marcar la diferencia</h2>
+        <div class="data-box">
+          <h2>Datos necesarios para darte presupuesto</h2>
           <p>
-            Además de las coberturas básicas, muchos negocios necesitan garantías adicionales según su actividad, su local, sus clientes, sus empleados o los bienes que manipulan.
+            Para preparar una propuesta ajustada, necesitaremos conocer algunos datos básicos del negocio.
           </p>
-        </div>
 
-        <div class="grid-3">
-          <article class="card">
-            <div class="card-icon">🏠</div>
-            <h3>Locales arrendados</h3>
-            <p>Daños al inmueble arrendado para el desarrollo de la actividad, si la garantía está contratada.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">📦</div>
-            <h3>Bienes en depósito</h3>
-            <p>Daños a bienes de terceros que estén bajo control o custodia del negocio por motivo de la actividad.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">🧰</div>
-            <h3>Bienes manipulados</h3>
-            <p>Daños a bienes de terceros sobre los que se esté trabajando, reparando o manipulando.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">👥</div>
-            <h3>Bienes de empleados</h3>
-            <p>Daños, pérdida o desaparición de bienes propiedad del personal del negocio, según garantía.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">🧑‍🏭</div>
-            <h3>RC patronal</h3>
-            <p>Reclamaciones derivadas de accidentes de trabajo sufridos por empleados, si se contrata esta cobertura.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">📦</div>
-            <h3>Producto y post-trabajos</h3>
-            <p>Daños causados por productos entregados o trabajos realizados una vez terminados o prestados.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">🌿</div>
-            <h3>Contaminación accidental</h3>
-            <p>Responsabilidad por contaminación causada de forma accidental y repentina, según actividad y modalidad.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">🔐</div>
-            <h3>Protección de datos</h3>
-            <p>Gastos complementarios o responsabilidad vinculada a incumplimientos de protección de datos, según cobertura.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">🚗</div>
-            <h3>Vehículos de clientes</h3>
-            <p>Coberturas específicas para talleres, aparcamientos, túneles de lavado o negocios que custodian vehículos.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container highlight">
-        <div class="highlight-grid">
-          <div>
-            <div class="eyebrow">Pymes e industria</div>
-            <h2>Si tu empresa produce, almacena o transforma, los riesgos cambian</h2>
-            <p>
-              Una pyme industrial puede necesitar una protección más amplia que un comercio: maquinaria, producto, almacén, responsabilidad por producto, contaminación accidental, empleados, proveedores y continuidad de actividad.
-            </p>
-
-            <ul class="feature-list">
-              <li>Maquinaria, instalaciones, almacenes y equipos productivos.</li>
-              <li>Responsabilidad civil de explotación.</li>
-              <li>Responsabilidad civil de producto y post-trabajos.</li>
-              <li>RC patronal y cruzada, si hay empleados o trabajos compartidos.</li>
-              <li>Contaminación accidental y defensa penal/reclamación de daños.</li>
-            </ul>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <section class="section-soft">
-      <div class="container">
-        <div class="section-title">
-          <span>Actividades especiales</span>
-          <h2>Algunos negocios necesitan coberturas muy concretas</h2>
-          <p>
-            Hay actividades que requieren revisar garantías específicas: hostelería, lavanderías, agencias de viaje, eventos, instalaciones deportivas, talleres, puntos de recogida, vending o negocios con bienes de clientes.
-          </p>
-        </div>
-
-        <div class="grid-3">
-          <article class="card">
-            <div class="card-icon">🍽️</div>
-            <h3>Restauración y hostelería</h3>
-            <p>Terrazas, toldos, marquesinas, cámaras frigoríficas, alimentos, responsabilidad frente a clientes y daños en el local.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">🧺</div>
-            <h3>Lavanderías y tintorerías</h3>
-            <p>Daños a prendas, bienes en custodia, maquinaria, local, responsabilidad civil y servicios al cliente.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">🎟️</div>
-            <h3>Eventos, ocio y cultura</h3>
-            <p>Ferias, exposiciones, cursos, asociaciones, instalaciones deportivas, espectáculos o actividades de corta duración.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">✈️</div>
-            <h3>Agencias de viaje</h3>
-            <p>Responsabilidad directa, subsidiaria, daños patrimoniales, reclamaciones y defensa según actividad.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">📦</div>
-            <h3>Puntos de recogida</h3>
-            <p>Negocios que custodian productos de terceros o actúan como punto de entrega de venta a distancia.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">🤖</div>
-            <h3>Vending y máquinas</h3>
-            <p>Máquinas de venta automática, responsabilidad por uso, ubicación, mantenimiento y actividad asociada.</p>
-          </article>
+          <ul class="data-list">
+            <li>Actividad exacta del negocio.</li>
+            <li>Metros del local, almacén u oficina.</li>
+            <li>Ubicación del negocio.</li>
+            <li>Facturación aproximada.</li>
+            <li>Si hay empleados a tu cargo.</li>
+            <li>Cuántos empleados tienes.</li>
+            <li>Valor del contenido, mobiliario, maquinaria o mercancía.</li>
+            <li>Si tienes póliza actual.</li>
+            <li>Si no la tienes con Occident, con qué aseguradora está contratada.</li>
+            <li>Si actualmente no tienes seguro contratado.</li>
+          </ul>
         </div>
       </div>
     </section>
 
     <section>
       <div class="container">
-        <div class="review-block">
+        <div class="grid-2">
           <div class="section-title">
-            <span>Antes de contratar</span>
-            <h2>Qué conviene revisar en un seguro de negocio</h2>
+            <span>Antes de contratar o renovar</span>
+            <h2>Lo importante no es solo el precio</h2>
             <p>
-              Antes de contratar o renovar, conviene revisar bien el tipo de actividad, el valor real del local, la mercancía, los equipos, el personal y los riesgos específicos del negocio.
-            </p>
-
-            <p class="review-intro">
-              La clave es adaptar la póliza al negocio real: qué haces, dónde trabajas, qué bienes tienes, qué clientes entran y qué pasaría si un siniestro te impide abrir.
-            </p>
-
-            <div class="review-note">
-              <strong>Consejo:</strong> no revises solo la prima. En negocios importan mucho los capitales, franquicias, responsabilidad civil, paralización y garantías específicas de la actividad.
-            </div>
-          </div>
-
-          <ol class="review-list">
-            <li class="review-item">
-              <span class="review-number">01</span>
-              <div>
-                <strong>Actividad exacta y epígrafe real</strong>
-                <p>Un bar, una tienda, una clínica, un taller o una pyme industrial tienen riesgos distintos y deben declararse correctamente.</p>
-              </div>
-            </li>
-
-            <li class="review-item">
-              <span class="review-number">02</span>
-              <div>
-                <strong>Tipo de local</strong>
-                <p>Conviene revisar si el local es propio, alquilado o cedido, y qué obligaciones tienes frente al propietario o terceros.</p>
-              </div>
-            </li>
-
-            <li class="review-item">
-              <span class="review-number">03</span>
-              <div>
-                <strong>Continente, contenido, maquinaria y mercancía</strong>
-                <p>Hay que ajustar los capitales al valor real de instalaciones, mobiliario, equipos, herramientas, stock y existencias.</p>
-              </div>
-            </li>
-
-            <li class="review-item">
-              <span class="review-number">04</span>
-              <div>
-                <strong>Existencias máximas</strong>
-                <p>En campañas, rebajas o temporadas altas puede haber más mercancía de la habitual y conviene tenerlo previsto.</p>
-              </div>
-            </li>
-
-            <li class="review-item">
-              <span class="review-number">05</span>
-              <div>
-                <strong>Sistemas de seguridad</strong>
-                <p>Alarma, persianas, cierres, cámaras, cajas fuertes o protecciones pueden influir en condiciones y garantías.</p>
-              </div>
-            </li>
-
-            <li class="review-item">
-              <span class="review-number">06</span>
-              <div>
-                <strong>Responsabilidad civil</strong>
-                <p>Es fundamental revisar daños a clientes, terceros, empleados, bienes en depósito, producto o trabajos terminados.</p>
-              </div>
-            </li>
-
-            <li class="review-item">
-              <span class="review-number">07</span>
-              <div>
-                <strong>Empleados, subcontratas o colaboradores</strong>
-                <p>Si hay personal, subcontratas o trabajos compartidos, puede ser necesario revisar garantías como RC patronal o cruzada.</p>
-              </div>
-            </li>
-
-            <li class="review-item">
-              <span class="review-number">08</span>
-              <div>
-                <strong>Bienes de clientes o productos en custodia</strong>
-                <p>Si reparas, limpias, manipulas, guardas o transportas bienes de terceros, pueden hacer falta coberturas específicas.</p>
-              </div>
-            </li>
-
-            <li class="review-item">
-              <span class="review-number">09</span>
-              <div>
-                <strong>Producto propio y post-trabajos</strong>
-                <p>Si vendes producto propio o prestas servicios con efectos posteriores, conviene revisar producto y trabajos terminados.</p>
-              </div>
-            </li>
-
-            <li class="review-item">
-              <span class="review-number">10</span>
-              <div>
-                <strong>Franquicias, límites y paralización</strong>
-                <p>Después de un siniestro, no solo importa reparar: también puede importar cuánto tiempo no puedes abrir ni facturar.</p>
-              </div>
-            </li>
-          </ol>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-soft">
-      <div class="container mistakes-block">
-        <div class="mistakes-layout">
-          <div class="mistakes-side section-title">
-            <span>Errores frecuentes</span>
-            <h2>Errores habituales al asegurar un negocio</h2>
-            <p>
-              En negocios, muchas diferencias entre pólizas aparecen justo cuando hay un siniestro: capitales mal calculados, actividad incorrecta, falta de responsabilidad civil o ausencia de paralización.
+              En un seguro de negocio hay que revisar bien la actividad, los capitales, la responsabilidad civil, las franquicias y si la póliza cubre lo que realmente necesitas.
             </p>
           </div>
 
-          <ol class="mistakes-list">
-            <li class="mistake-item">
-              <span class="mistake-mark">!</span>
-              <div>
-                <strong>Asegurar menos mercancía de la real</strong>
-                <p>En campañas, rebajas o temporadas altas puede haber más stock del habitual. Conviene revisar los capitales.</p>
-              </div>
-            </li>
-
-            <li class="mistake-item">
-              <span class="mistake-mark">!</span>
-              <div>
-                <strong>No declarar bien la actividad</strong>
-                <p>Un bar, una tienda, una clínica, un taller o una pyme industrial tienen riesgos distintos.</p>
-              </div>
-            </li>
-
-            <li class="mistake-item">
-              <span class="mistake-mark">!</span>
-              <div>
-                <strong>Olvidar la responsabilidad civil</strong>
-                <p>Una caída de un cliente, un daño por agua o una reclamación puede afectar al patrimonio del negocio.</p>
-              </div>
-            </li>
-
-            <li class="mistake-item">
-              <span class="mistake-mark">!</span>
-              <div>
-                <strong>No revisar bienes de terceros</strong>
-                <p>Si custodia, repara, limpia o manipula bienes de clientes, el negocio puede necesitar garantías específicas.</p>
-              </div>
-            </li>
-
-            <li class="mistake-item">
-              <span class="mistake-mark">!</span>
-              <div>
-                <strong>No proteger la paralización</strong>
-                <p>Después de un siniestro, el problema no es solo reparar: también puede ser no poder abrir ni facturar.</p>
-              </div>
-            </li>
-
-            <li class="mistake-item">
-              <span class="mistake-mark">!</span>
-              <div>
-                <strong>Contratar solo por precio</strong>
-                <p>Dos pólizas pueden parecer parecidas, pero cambiar mucho en límites, franquicias, exclusiones y servicios.</p>
-              </div>
-            </li>
-          </ol>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <div class="section-title center">
-          <span>Preguntas frecuentes</span>
-          <h2>Dudas habituales sobre seguros para negocios</h2>
-        </div>
-
-        <div class="faq-carousel-wrap">
-          <div class="faq-carousel" id="faqCarousel" aria-label="Carrusel de preguntas frecuentes">
-            <article class="faq-card">
-              <div class="faq-number">01</div>
-              <h3>¿Qué cubre un seguro para negocios?</h3>
-              <p>Puede cubrir daños en el local, mobiliario, maquinaria, mercancía, robo, incendio, daños por agua, roturas, responsabilidad civil, defensa jurídica, asistencia urgente y paralización de actividad si está contratada.</p>
-            </article>
-
-            <article class="faq-card">
-              <div class="faq-number">02</div>
-              <h3>¿Es lo mismo un seguro de comercio que uno de pyme industrial?</h3>
-              <p>No. Un comercio suele centrarse en local, mercancía, robo, incendio, agua y responsabilidad frente a clientes. Una pyme industrial puede necesitar maquinaria, producto, post-trabajos, contaminación accidental, RC patronal o garantías específicas.</p>
-            </article>
-
-            <article class="faq-card">
-              <div class="faq-number">03</div>
-              <h3>¿Qué es la responsabilidad civil de explotación?</h3>
-              <p>Es la cobertura que protege frente a reclamaciones de terceros por daños personales o materiales causados accidentalmente durante el desarrollo de la actividad asegurada.</p>
-            </article>
-
-            <article class="faq-card">
-              <div class="faq-number">04</div>
-              <h3>¿Cubre los bienes de mis clientes?</h3>
-              <p>Puede cubrirlos si se contratan garantías como bienes en depósito, bienes manipulados, bienes en custodia, lavandería, guardarropía o vehículos de clientes, según el tipo de negocio.</p>
-            </article>
-
-            <article class="faq-card">
-              <div class="faq-number">05</div>
-              <h3>¿Cubre la pérdida de ingresos si tengo que cerrar?</h3>
-              <p>Puede existir cobertura de paralización o pérdida de beneficios si se contrata y el cierre deriva de un siniestro cubierto. Conviene revisar límites, periodo indemnizable y condiciones.</p>
-            </article>
-
-            <article class="faq-card">
-              <div class="faq-number">06</div>
-              <h3>¿Qué pasa si el local es alquilado?</h3>
-              <p>Conviene revisar la responsabilidad frente al propietario, daños al local arrendado, mejoras realizadas, contenido propio, mercancía y obligaciones del contrato de alquiler.</p>
-            </article>
-
-            <article class="faq-card">
-              <div class="faq-number">07</div>
-              <h3>¿Necesito seguro si ya tengo alarma?</h3>
-              <p>Sí. La alarma ayuda a prevenir o reducir riesgos, pero no sustituye a un seguro que cubra daños, robo, responsabilidad civil o pérdida de actividad.</p>
-            </article>
-
-            <article class="faq-card">
-              <div class="faq-number">08</div>
-              <h3>¿Puedo asegurar un evento puntual o actividad temporal?</h3>
-              <p>Existen soluciones para determinados riesgos de corta duración, eventos, cursos, conciertos, ferias o actividades temporales. Hay que revisar actividad, asistentes, lugar y duración.</p>
-            </article>
-
-            <article class="faq-card">
-              <div class="faq-number">09</div>
-              <h3>¿Podéis revisar una póliza que ya tengo?</h3>
-              <p>Sí. Podemos revisar capitales, franquicias, límites, mercancía, responsabilidad civil, paralización, garantías adicionales y si la póliza actual encaja con la actividad real.</p>
-            </article>
-          </div>
-
-          <div class="faq-controls" aria-label="Controles del carrusel de preguntas frecuentes">
-            <button class="faq-arrow" type="button" data-faq-prev aria-label="Pregunta anterior">‹</button>
-            <button class="faq-arrow" type="button" data-faq-next aria-label="Pregunta siguiente">›</button>
+          <div class="review-box">
+            <h3>Nos fijamos en lo importante:</h3>
+            <ul class="review-list">
+              <li>Actividad real del negocio.</li>
+              <li>Tipo de local: propio, alquilado, almacén u oficina.</li>
+              <li>Valor real de contenido y mercancía.</li>
+              <li>Responsabilidad civil frente a clientes o terceros.</li>
+              <li>Empleados, proveedores o bienes de clientes.</li>
+              <li>Paralización de actividad, límites y franquicias.</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -1632,9 +980,9 @@
     <section class="section-soft">
       <div class="container">
         <div class="cta-final">
-          <h2>¿Quieres saber qué seguro encaja mejor con tu negocio?</h2>
+          <h2>¿Quieres revisar el seguro de tu negocio?</h2>
           <p>
-            Podemos revisar tu actividad, tu local, tus mercancías, tus equipos, tus empleados y tu responsabilidad civil para ayudarte a elegir una protección adaptada, sin contratar de más ni quedarte corto.
+            Podemos ayudarte a ver qué protección encaja con tu actividad, tu local, tu mercancía y tu forma de trabajar.
           </p>
 
           <div class="hero-actions" style="justify-content:center;">
@@ -1654,6 +1002,7 @@
   <footer class="footer">
     <div class="container footer-inner">
       <p>© Elena Sanz Burgos · Seguros y asesoramiento</p>
+
       <div class="footer-links">
         <a href="index.html">Inicio</a>
         <a href="seguros.html">Seguros</a>
@@ -1674,28 +1023,8 @@
       });
     }
 
-    const faqCarousel = document.querySelector("#faqCarousel");
-    const faqPrev = document.querySelector("[data-faq-prev]");
-    const faqNext = document.querySelector("[data-faq-next]");
-
-    if (faqCarousel && faqPrev && faqNext) {
-      const moveFaqCarousel = (direction) => {
-        const card = faqCarousel.querySelector(".faq-card");
-        const gap = 18;
-        const distance = card ? card.offsetWidth + gap : 340;
-
-        faqCarousel.scrollBy({
-          left: direction * distance,
-          behavior: "smooth"
-        });
-      };
-
-      faqPrev.addEventListener("click", () => moveFaqCarousel(-1));
-      faqNext.addEventListener("click", () => moveFaqCarousel(1));
-    }
-
     const revealElements = document.querySelectorAll(
-      ".section-title, .card, .coverage-card, .highlight, .review-list, .mistakes-list, .faq-card, .cta-final"
+      ".section-title, .card, .business-card, .coverage-card, .data-box, .review-box, .cta-final"
     );
 
     if ("IntersectionObserver" in window) {
