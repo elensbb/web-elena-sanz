@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Fondos de inversión | Elena Sanz Burgos</title>
-  <meta name="description" content="Fondos de inversión para diversificar, planificar fiscalmente y adaptar el ahorro a distintos perfiles de riesgo y horizontes temporales." />
+  <meta name="description" content="Fondos de inversión explicados de forma clara: fondos monetarios, renta fija, mixtos, renta variable, globales y sectoriales. Asesoramiento financiero adaptado a perfil, plazo y riesgo." />
 
   <style>
     :root {
@@ -23,8 +23,15 @@
       --max: 1120px;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -33,7 +40,10 @@
       line-height: 1.6;
     }
 
-    a { color: inherit; text-decoration: none; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
     .container {
       width: min(100% - 32px, var(--max));
@@ -41,29 +51,26 @@
     }
 
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(22px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     @keyframes softFloat {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-6px); }
-    }
+      0%, 100% {
+        transform: translateY(0);
+      }
 
-    .hero .eyebrow,
-    .hero h1,
-    .hero .lead,
-    .hero-actions,
-    .trust-line {
-      animation: fadeUp 0.7s ease both;
+      50% {
+        transform: translateY(-6px);
+      }
     }
-
-    .hero h1 { animation-delay: 0.08s; }
-    .hero .lead { animation-delay: 0.16s; }
-    .hero-actions { animation-delay: 0.24s; }
-    .trust-line { animation-delay: 0.32s; }
-    .hero-card { animation: fadeUp 0.8s ease 0.18s both; }
-    .hero-card-icon { animation: softFloat 4.5s ease-in-out infinite; }
 
     .reveal {
       opacity: 0;
@@ -108,6 +115,7 @@
       place-items: center;
       font-weight: 800;
       letter-spacing: -0.03em;
+      flex-shrink: 0;
     }
 
     .brand-text strong {
@@ -131,7 +139,9 @@
       color: var(--muted);
     }
 
-    .nav-links a:hover { color: var(--primary); }
+    .nav-links a:hover {
+      color: var(--primary);
+    }
 
     .nav-actions {
       display: flex;
@@ -148,7 +158,9 @@
       color: var(--text);
     }
 
-    .mobile-menu { display: none; }
+    .mobile-menu {
+      display: none;
+    }
 
     .btn {
       display: inline-flex;
@@ -157,12 +169,13 @@
       gap: 8px;
       border-radius: 999px;
       padding: 13px 20px;
-      font-weight: 700;
+      font-weight: 800;
       font-size: 0.95rem;
       border: 1px solid transparent;
       transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
       cursor: pointer;
       white-space: nowrap;
+      text-align: center;
     }
 
     .btn:hover {
@@ -175,7 +188,9 @@
       color: var(--white);
     }
 
-    .btn-primary:hover { background: var(--primary-dark); }
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
 
     .btn-outline {
       background: transparent;
@@ -184,7 +199,7 @@
     }
 
     .hero {
-      padding: 84px 0 56px;
+      padding: 78px 0 54px;
       position: relative;
       overflow: hidden;
     }
@@ -216,21 +231,35 @@
       border-radius: 999px;
       background: rgba(195, 0, 47, 0.08);
       color: var(--primary);
-      font-weight: 700;
+      font-weight: 800;
       font-size: 0.9rem;
       margin-bottom: 20px;
     }
 
     h1 {
-      font-size: clamp(2.45rem, 5vw, 4.7rem);
-      line-height: 0.98;
+      font-size: clamp(2.35rem, 5vw, 4.4rem);
+      line-height: 1;
       letter-spacing: -0.06em;
       max-width: 850px;
       margin-bottom: 22px;
     }
 
+    h2 {
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      line-height: 1.1;
+      letter-spacing: -0.045em;
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+
     .lead {
-      font-size: clamp(1.08rem, 2vw, 1.25rem);
+      font-size: clamp(1.05rem, 2vw, 1.22rem);
       color: #455363;
       max-width: 690px;
       margin-bottom: 28px;
@@ -253,7 +282,8 @@
       border: 1px solid var(--border);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      padding: 26px;
+      padding: 28px;
+      animation: fadeUp 0.8s ease both;
     }
 
     .hero-card-icon {
@@ -265,12 +295,12 @@
       place-items: center;
       font-size: 2rem;
       margin-bottom: 18px;
+      animation: softFloat 4.5s ease-in-out infinite;
     }
 
     .hero-card h2 {
       font-size: 1.45rem;
       margin-bottom: 12px;
-      letter-spacing: -0.03em;
     }
 
     .hero-card ul {
@@ -293,7 +323,9 @@
       flex: 0 0 auto;
     }
 
-    section { padding: 72px 0; }
+    section {
+      padding: 64px 0;
+    }
 
     .section-soft {
       background: var(--bg-soft);
@@ -318,20 +350,6 @@
       margin-bottom: 8px;
     }
 
-    h2 {
-      font-size: clamp(2rem, 3vw, 3rem);
-      line-height: 1.08;
-      letter-spacing: -0.045em;
-      margin-bottom: 16px;
-    }
-
-    h3 {
-      font-size: 1.25rem;
-      line-height: 1.25;
-      letter-spacing: -0.02em;
-      margin-bottom: 10px;
-    }
-
     .section-title p,
     .text-muted {
       color: var(--muted);
@@ -344,19 +362,20 @@
       gap: 18px;
     }
 
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-    }
-
     .grid-4 {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 16px;
     }
 
-    .card {
+    .grid-6 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .card,
+    .fund-type-card {
       background: var(--white);
       border: 1px solid var(--border);
       border-radius: var(--radius-sm);
@@ -366,13 +385,15 @@
       transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
     }
 
-    .card:hover {
+    .card:hover,
+    .fund-type-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 18px 36px rgba(31, 41, 51, 0.09);
       border-color: rgba(195, 0, 47, 0.22);
     }
 
-    .card-icon {
+    .card-icon,
+    .fund-type-icon {
       width: 50px;
       height: 50px;
       border-radius: 16px;
@@ -383,7 +404,42 @@
       margin-bottom: 18px;
     }
 
-    .card p { color: var(--muted); }
+    .card p,
+    .fund-type-card p {
+      color: var(--muted);
+    }
+
+    .example-line {
+      margin-top: 14px;
+      background: rgba(195, 0, 47, 0.06);
+      border: 1px solid rgba(195, 0, 47, 0.12);
+      border-radius: 14px;
+      padding: 12px 14px;
+      color: #455363;
+      font-size: 0.94rem;
+    }
+
+    .example-line strong {
+      color: var(--primary);
+    }
+
+    .warning-box {
+      background: linear-gradient(135deg, var(--primary), #8f0023);
+      color: var(--white);
+      border-radius: calc(var(--radius) + 6px);
+      padding: 34px;
+      box-shadow: var(--shadow);
+    }
+
+    .warning-box h2 {
+      margin-bottom: 12px;
+    }
+
+    .warning-box p {
+      color: rgba(255,255,255,.92);
+      font-size: 1.08rem;
+      max-width: 900px;
+    }
 
     .highlight {
       background: linear-gradient(135deg, var(--primary), #8f0023);
@@ -393,14 +449,9 @@
       box-shadow: var(--shadow);
     }
 
-    .highlight-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 28px;
-      align-items: center;
+    .highlight p {
+      color: rgba(255, 255, 255, 0.86);
     }
-
-    .highlight p { color: rgba(255, 255, 255, 0.85); }
 
     .highlight .eyebrow {
       background: rgba(255, 255, 255, 0.12);
@@ -426,39 +477,20 @@
       content: "✓";
       font-weight: 900;
       color: var(--white);
+      flex: 0 0 auto;
     }
 
-    .pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 20px;
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      border-radius: 999px;
-      padding: 9px 13px;
-      background: rgba(195, 0, 47, 0.08);
-      color: var(--primary);
-      font-weight: 800;
-      font-size: 0.9rem;
-    }
-
-    .highlight .pill {
-      background: rgba(255, 255, 255, 0.14);
-      color: var(--white);
+    .fund-table-wrap {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
     }
 
     .fund-table {
       width: 100%;
       border-collapse: collapse;
-      background: var(--white);
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: 0 14px 34px rgba(31, 41, 51, 0.06);
-      border: 1px solid var(--border);
     }
 
     .fund-table th,
@@ -470,14 +502,20 @@
     }
 
     .fund-table th {
-      background: rgba(195, 0, 47, 0.06);
+      background: rgba(195, 0, 47, 0.08);
       color: var(--primary);
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       text-transform: uppercase;
       letter-spacing: 0.04em;
     }
 
-    .fund-table tr:last-child td { border-bottom: 0; }
+    .fund-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .fund-table strong {
+      color: var(--text);
+    }
 
     .risk {
       display: inline-flex;
@@ -517,8 +555,14 @@
       border-bottom: 1px solid var(--border);
     }
 
-    .review-item:first-child { padding-top: 0; }
-    .review-item:last-child { padding-bottom: 0; border-bottom: 0; }
+    .review-item:first-child {
+      padding-top: 0;
+    }
+
+    .review-item:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
 
     .review-number {
       width: 38px;
@@ -558,7 +602,7 @@
     }
 
     .faq-card {
-      min-height: 260px;
+      min-height: 245px;
       background: var(--white);
       border: 1px solid var(--border);
       border-radius: var(--radius);
@@ -589,8 +633,14 @@
       flex: 0 0 auto;
     }
 
-    .faq-card h3 { margin-bottom: 0; }
-    .faq-card p { color: var(--muted); font-size: 0.98rem; }
+    .faq-card h3 {
+      margin-bottom: 0;
+    }
+
+    .faq-card p {
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
 
     .faq-controls {
       display: flex;
@@ -655,16 +705,27 @@
       flex-wrap: wrap;
     }
 
+    @media (max-width: 1000px) {
+      .grid-6 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
     @media (max-width: 980px) {
-      .grid-4 { grid-template-columns: repeat(2, 1fr); }
-      .fund-table { display: block; overflow-x: auto; white-space: nowrap; }
+      .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
     @media (max-width: 900px) {
       .nav-links,
-      .nav-actions { display: none; }
+      .nav-actions {
+        display: none;
+      }
 
-      .menu-toggle { display: block; }
+      .menu-toggle {
+        display: block;
+      }
 
       .mobile-menu {
         display: none;
@@ -683,14 +744,13 @@
       }
 
       .hero-grid,
-      .highlight-grid,
-      .grid-2,
       .review-block {
         grid-template-columns: 1fr;
       }
 
       .grid-3,
-      .grid-4 {
+      .grid-4,
+      .grid-6 {
         grid-template-columns: 1fr;
       }
 
@@ -698,9 +758,123 @@
         grid-auto-columns: minmax(260px, 86vw);
       }
 
-      .hero { padding-top: 54px; }
+      .hero {
+        padding-top: 54px;
+      }
 
-      section { padding: 56px 0; }
+      section {
+        padding: 54px 0;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .fund-table,
+      .fund-table thead,
+      .fund-table tbody,
+      .fund-table th,
+      .fund-table td,
+      .fund-table tr {
+        display: block;
+        width: 100%;
+      }
+
+      .fund-table thead {
+        display: none;
+      }
+
+      .fund-table tr {
+        padding: 18px 20px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .fund-table tr:last-child {
+        border-bottom: 0;
+      }
+
+      .fund-table td {
+        border-bottom: 0;
+        padding: 0;
+      }
+
+      .fund-table td + td {
+        margin-top: 10px;
+      }
+
+      .fund-table td::before {
+        display: block;
+        font-size: 0.78rem;
+        font-weight: 900;
+        color: var(--primary);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        margin-bottom: 4px;
+      }
+
+      .fund-table td:nth-child(1)::before {
+        content: "Fondo";
+      }
+
+      .fund-table td:nth-child(2)::before {
+        content: "Tipo";
+      }
+
+      .fund-table td:nth-child(3)::before {
+        content: "Riesgo";
+      }
+
+      .fund-table td:nth-child(4)::before {
+        content: "Horizonte";
+      }
+
+      .fund-table td:nth-child(5)::before {
+        content: "Perfil";
+      }
+    }
+
+    @media (max-width: 520px) {
+      .container {
+        width: min(100% - 24px, var(--max));
+      }
+
+      .hero-actions,
+      .cta-final .hero-actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+        min-height: 52px;
+      }
+
+      .hero-card,
+      .highlight,
+      .warning-box,
+      .cta-final {
+        padding: 26px 20px;
+        border-radius: 20px;
+      }
+
+      .review-list {
+        padding: 24px 20px;
+      }
+
+      .review-item {
+        grid-template-columns: 38px 1fr;
+        gap: 12px;
+      }
+
+      h1 {
+        font-size: 2.35rem;
+        letter-spacing: -0.05em;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -717,31 +891,6 @@
         opacity: 1;
         transform: none;
       }
-    }
-
-    @media (max-width: 520px) {
-      .container { width: min(100% - 24px, var(--max)); }
-
-      .hero-actions,
-      .cta-final .hero-actions {
-        flex-direction: column;
-      }
-
-      .btn { width: 100%; }
-
-      .highlight,
-      .cta-final {
-        padding: 28px 20px;
-      }
-
-      .review-list { padding: 24px 20px; }
-
-      .review-item {
-        grid-template-columns: 38px 1fr;
-        gap: 12px;
-      }
-
-      h1 { font-size: 2.45rem; }
     }
   </style>
 </head>
@@ -793,16 +942,16 @@
         <div>
           <div class="eyebrow">📊 Fondos de inversión</div>
 
-          <h1>Fondos de inversión para diversificar tu dinero</h1>
+          <h1>Fondos de inversión explicados de forma sencilla</h1>
 
           <p class="lead">
-            Los fondos de inversión permiten acceder a carteras diversificadas, gestionadas por profesionales y adaptadas a distintos perfiles: conservador, moderado o más dinámico.
+            Te ayudamos a entender qué tipo de fondo puede encajar con tu objetivo, tu plazo y tu perfil de riesgo.
           </p>
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="https://wa.me/34606067906?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20fondos%20de%20inversi%C3%B3n" target="_blank" rel="noopener">Hablar por WhatsApp</a>
             <a class="btn btn-outline" href="tel:+34917702311">Llamar a la oficina</a>
-            <a class="btn btn-outline" href="#fondos">Ver fondos</a>
+            <a class="btn btn-outline" href="#tipos-fondos">Ver tipos de fondos</a>
           </div>
 
           <p class="trust-line">Diversificación · Fiscalidad eficiente · Distintos niveles de riesgo</p>
@@ -810,13 +959,13 @@
 
         <aside class="hero-card" aria-label="Resumen de fondos de inversión">
           <div class="hero-card-icon">📈</div>
-          <h2>¿Por qué fondos?</h2>
+          <h2>Antes de elegir un fondo revisamos</h2>
           <ul>
-            <li>Permiten diversificar desde importes pequeños.</li>
-            <li>Pueden traspasarse sin tributar hasta el reembolso.</li>
-            <li>Existen opciones conservadoras, mixtas y de bolsa.</li>
-            <li>La liquidez suele ser mayor que en otros productos.</li>
-            <li>El riesgo depende del fondo elegido.</li>
+            <li>Para qué quieres invertir.</li>
+            <li>Cuándo puedes necesitar el dinero.</li>
+            <li>Qué riesgo puedes asumir.</li>
+            <li>Qué costes y comisiones tiene.</li>
+            <li>Si encaja con tu situación actual.</li>
           </ul>
         </aside>
       </div>
@@ -824,11 +973,22 @@
 
     <section>
       <div class="container">
+        <div class="warning-box">
+          <h2>Un fondo no se elige por la rentabilidad obtenida en el último año</h2>
+          <p>
+            Se elige por objetivo, plazo, riesgo, comisiones y, lo más importante, porque encaje con tu situación. La rentabilidad pasada no garantiza resultados futuros.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
         <div class="section-title">
           <span>Qué son</span>
-          <h2>Un fondo permite invertir de forma colectiva y diversificada</h2>
+          <h2>Un fondo permite invertir de forma diversificada</h2>
           <p>
-            Un fondo de inversión reúne el dinero de muchos inversores y lo invierte siguiendo una política concreta: renta fija, bolsa, mixtos, mercados internacionales o estrategias más conservadoras.
+            Un fondo reúne el dinero de muchos inversores y lo invierte siguiendo una estrategia concreta. Puede invertir en activos más prudentes, en bonos, en bolsa o combinar varias opciones.
           </p>
         </div>
 
@@ -836,57 +996,87 @@
           <article class="card">
             <div class="card-icon">🌍</div>
             <h3>Diversificación</h3>
-            <p>El fondo reparte la inversión entre distintos activos, países, sectores o emisores.</p>
+            <p>Reparte la inversión entre distintos activos, países, sectores o empresas.</p>
           </article>
 
           <article class="card">
             <div class="card-icon">👨‍💼</div>
             <h3>Gestión profesional</h3>
-            <p>La cartera está gestionada por profesionales siguiendo una política de inversión definida.</p>
+            <p>La cartera la gestiona un equipo profesional siguiendo una política de inversión.</p>
           </article>
 
           <article class="card">
             <div class="card-icon">💧</div>
             <h3>Liquidez</h3>
-            <p>Generalmente permiten reembolsar o traspasar, aunque el valor puede subir o bajar.</p>
+            <p>Normalmente permiten reembolsar o traspasar, aunque el valor puede subir o bajar.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section-soft">
+    <section id="tipos-fondos" class="section-soft">
       <div class="container">
         <div class="section-title center">
           <span>Tipos de fondos</span>
-          <h2>Fondos para distintos perfiles</h2>
+          <h2>Diferencias con ejemplos claros</h2>
           <p>
-            La elección del fondo depende de tu horizonte temporal, tu tolerancia al riesgo y el objetivo que quieras conseguir.
+            No todos los fondos sirven para lo mismo. La clave está en saber qué hay dentro y qué riesgo asumes.
           </p>
         </div>
 
-        <div class="grid-4">
-          <article class="card">
-            <div class="card-icon">🛡️</div>
-            <h3>Fondos conservadores</h3>
-            <p>Orientados a perfiles prudentes, normalmente con más peso en activos de menor volatilidad.</p>
+        <div class="grid-6">
+          <article class="fund-type-card">
+            <div class="fund-type-icon">💶</div>
+            <h3>Fondo monetario</h3>
+            <p>Invierte en activos muy cortos y suele buscar estabilidad.</p>
+            <div class="example-line">
+              <strong>Ejemplo:</strong> dinero que quieres tener relativamente disponible, sabiendo que no es una cuenta corriente.
+            </div>
           </article>
 
-          <article class="card">
-            <div class="card-icon">⚖️</div>
-            <h3>Fondos mixtos</h3>
-            <p>Combinan renta fija y renta variable para equilibrar riesgo y potencial de rentabilidad.</p>
+          <article class="fund-type-card">
+            <div class="fund-type-icon">🏦</div>
+            <h3>Renta fija</h3>
+            <p>Invierte en deuda o bonos de gobiernos y empresas. Puede subir o bajar, aunque suele ser menos volátil que la bolsa.</p>
+            <div class="example-line">
+              <strong>Ejemplo:</strong> perfil prudente que busca algo más de estabilidad y un plazo razonable.
+            </div>
           </article>
 
-          <article class="card">
-            <div class="card-icon">📈</div>
-            <h3>Fondos de acciones</h3>
-            <p>Invierten principalmente en bolsa y requieren mayor tolerancia a las fluctuaciones.</p>
+          <article class="fund-type-card">
+            <div class="fund-type-icon">⚖️</div>
+            <h3>Mixta</h3>
+            <p>Combina renta fija y renta variable para equilibrar prudencia y crecimiento.</p>
+            <div class="example-line">
+              <strong>Ejemplo:</strong> persona que no quiere todo en bolsa, pero tampoco quiere quedarse solo en opciones defensivas.
+            </div>
           </article>
 
-          <article class="card">
-            <div class="card-icon">🌐</div>
-            <h3>Fondos internacionales</h3>
-            <p>Permiten invertir en mercados globales y diversificar geográficamente.</p>
+          <article class="fund-type-card">
+            <div class="fund-type-icon">📈</div>
+            <h3>Renta variable</h3>
+            <p>Invierte principalmente en bolsa. Puede tener más potencial, pero también más subidas y bajadas.</p>
+            <div class="example-line">
+              <strong>Ejemplo:</strong> inversión a largo plazo para alguien que tolera caídas temporales.
+            </div>
+          </article>
+
+          <article class="fund-type-card">
+            <div class="fund-type-icon">🌐</div>
+            <h3>Global</h3>
+            <p>Invierte en distintos países, sectores y zonas geográficas para diversificar más.</p>
+            <div class="example-line">
+              <strong>Ejemplo:</strong> no depender solo de España, Europa o Estados Unidos.
+            </div>
+          </article>
+
+          <article class="fund-type-card">
+            <div class="fund-type-icon">🔬</div>
+            <h3>Sectorial</h3>
+            <p>Se centra en un sector concreto, como tecnología, salud, energía o infraestructuras.</p>
+            <div class="example-line">
+              <strong>Ejemplo:</strong> invertir en una temática concreta, sabiendo que puede concentrar más riesgo.
+            </div>
           </article>
         </div>
       </div>
@@ -896,97 +1086,101 @@
       <div class="container">
         <div class="section-title">
           <span>Fondos incluidos</span>
-          <h2>Fondos de inversión que encajan en este bloque</h2>
+          <h2>Ejemplos de fondos por perfil y horizonte</h2>
           <p>
-            Estos son los fondos que has separado dentro del grupo de fondos de inversión.
+            Esta tabla es orientativa. Antes de contratar, conviene revisar ficha, riesgo, costes, plazo recomendado y si encaja contigo.
           </p>
         </div>
 
-        <table class="fund-table">
-          <thead>
-            <tr>
-              <th>Fondo</th>
-              <th>Tipo</th>
-              <th>Riesgo orientativo</th>
-              <th>Horizonte</th>
-              <th>Perfil</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>GCO Ahorro FI</strong></td>
-              <td>Fondo conservador / renta fija corto plazo</td>
-              <td><span class="risk">2/7</span></td>
-              <td>1 año</td>
-              <td>Conservador</td>
-            </tr>
-            <tr>
-              <td><strong>GCO Mixto FI</strong></td>
-              <td>Fondo mixto</td>
-              <td><span class="risk">2/7</span></td>
-              <td>3 años</td>
-              <td>Conservador / moderado</td>
-            </tr>
-            <tr>
-              <td><strong>GCO Global 50 FI</strong></td>
-              <td>Fondo mixto global</td>
-              <td><span class="risk">3/7</span></td>
-              <td>3 años</td>
-              <td>Moderado</td>
-            </tr>
-            <tr>
-              <td><strong>GCO Acciones FI</strong></td>
-              <td>Renta variable</td>
-              <td><span class="risk">4/7</span></td>
-              <td>5 años</td>
-              <td>Dinámico</td>
-            </tr>
-            <tr>
-              <td><strong>GCO Eurobolsa FI</strong></td>
-              <td>Renta variable europea</td>
-              <td><span class="risk">4/7</span></td>
-              <td>5 años</td>
-              <td>Dinámico</td>
-            </tr>
-            <tr>
-              <td><strong>GCO Bolsa USA FI</strong></td>
-              <td>Renta variable USA</td>
-              <td><span class="risk">4/7</span></td>
-              <td>5 años</td>
-              <td>Dinámico</td>
-            </tr>
-            <tr>
-              <td><strong>GCO Internacional FI</strong></td>
-              <td>Renta variable internacional</td>
-              <td><span class="risk">4/7</span></td>
-              <td>5 años</td>
-              <td>Dinámico / global</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="fund-table-wrap">
+          <table class="fund-table">
+            <thead>
+              <tr>
+                <th>Fondo</th>
+                <th>Tipo</th>
+                <th>Riesgo orientativo</th>
+                <th>Horizonte</th>
+                <th>Perfil</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td><strong>GCO Ahorro FI</strong></td>
+                <td>Conservador / renta fija corto plazo</td>
+                <td><span class="risk">2/7</span></td>
+                <td>1 año</td>
+                <td>Conservador</td>
+              </tr>
+
+              <tr>
+                <td><strong>GCO Mixto FI</strong></td>
+                <td>Fondo mixto</td>
+                <td><span class="risk">2/7</span></td>
+                <td>3 años</td>
+                <td>Conservador / moderado</td>
+              </tr>
+
+              <tr>
+                <td><strong>GCO Global 50 FI</strong></td>
+                <td>Fondo mixto global</td>
+                <td><span class="risk">3/7</span></td>
+                <td>3 años</td>
+                <td>Moderado</td>
+              </tr>
+
+              <tr>
+                <td><strong>GCO Acciones FI</strong></td>
+                <td>Renta variable</td>
+                <td><span class="risk">4/7</span></td>
+                <td>5 años</td>
+                <td>Dinámico</td>
+              </tr>
+
+              <tr>
+                <td><strong>GCO Eurobolsa FI</strong></td>
+                <td>Renta variable europea</td>
+                <td><span class="risk">4/7</span></td>
+                <td>5 años</td>
+                <td>Dinámico</td>
+              </tr>
+
+              <tr>
+                <td><strong>GCO Bolsa USA FI</strong></td>
+                <td>Renta variable USA</td>
+                <td><span class="risk">4/7</span></td>
+                <td>5 años</td>
+                <td>Dinámico</td>
+              </tr>
+
+              <tr>
+                <td><strong>GCO Internacional FI</strong></td>
+                <td>Renta variable internacional</td>
+                <td><span class="risk">4/7</span></td>
+                <td>5 años</td>
+                <td>Dinámico / global</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </section>
 
     <section class="section-soft">
-      <div class="container highlight">
-        <div class="highlight-grid">
-          <div>
-            <div class="eyebrow">Fiscalidad</div>
-            <h2>Una ventaja importante: traspasar sin tributar</h2>
-            <p>
-              Una de las grandes ventajas de los fondos de inversión es que puedes cambiar de un fondo a otro mediante traspaso sin tributar en ese momento. Se tributa cuando se reembolsa.
-            </p>
+      <div class="container">
+        <div class="highlight">
+          <div class="eyebrow">Fiscalidad</div>
+          <h2>Una ventaja importante: traspasar sin tributar</h2>
+          <p>
+            En fondos de inversión, puedes cambiar de un fondo a otro mediante traspaso sin tributar en ese momento. Se tributa cuando se reembolsa.
+          </p>
 
-            <ul class="feature-list">
-              <li>No tributas por las ganancias hasta el reembolso.</li>
-              <li>Puedes adaptar la cartera con el paso del tiempo.</li>
-              <li>Permiten diferir impuestos legalmente.</li>
-              <li>Son útiles para planificación a medio y largo plazo.</li>
-              <li>También pueden tener ventajas en planificación hereditaria.</li>
-            </ul>
-          </div>
-
-
+          <ul class="feature-list">
+            <li>No tributas por las ganancias hasta el reembolso.</li>
+            <li>Puedes adaptar la cartera con el paso del tiempo.</li>
+            <li>Permiten diferir impuestos legalmente.</li>
+            <li>Son útiles para planificación a medio y largo plazo.</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -1006,32 +1200,32 @@
             <li class="review-item">
               <span class="review-number">01</span>
               <div>
-                <strong>Riesgo del fondo</strong>
-                <p>Los fondos con más bolsa pueden tener más potencial, pero también más caídas.</p>
+                <strong>Objetivo</strong>
+                <p>No se elige igual un fondo para conservar ahorro que para buscar crecimiento.</p>
               </div>
             </li>
 
             <li class="review-item">
               <span class="review-number">02</span>
               <div>
-                <strong>Horizonte recomendado</strong>
-                <p>Un fondo de renta variable no debería usarse para dinero que puedas necesitar pronto.</p>
+                <strong>Horizonte temporal</strong>
+                <p>Un fondo con más riesgo necesita más plazo para tener sentido.</p>
               </div>
             </li>
 
             <li class="review-item">
               <span class="review-number">03</span>
               <div>
-                <strong>Costes</strong>
-                <p>Las comisiones y gastos reducen la rentabilidad final, por eso conviene conocerlos.</p>
+                <strong>Riesgo</strong>
+                <p>Los fondos pueden subir o bajar. Hay que saber qué caídas puedes asumir.</p>
               </div>
             </li>
 
             <li class="review-item">
               <span class="review-number">04</span>
               <div>
-                <strong>Objetivo</strong>
-                <p>No se elige igual un fondo para conservar ahorro que para buscar crecimiento a largo plazo.</p>
+                <strong>Comisiones</strong>
+                <p>Los costes reducen la rentabilidad final. Conviene conocerlos antes.</p>
               </div>
             </li>
 
@@ -1039,7 +1233,7 @@
               <span class="review-number">05</span>
               <div>
                 <strong>Diversificación</strong>
-                <p>Conviene evitar concentrar todo en una única zona, sector o tipo de activo.</p>
+                <p>Evita concentrar todo en un único sector, país o tipo de activo.</p>
               </div>
             </li>
 
@@ -1058,25 +1252,19 @@
     <section class="section-soft">
       <div class="container">
         <div class="highlight" style="background: linear-gradient(135deg, #1f2933, #111827);">
-          <div class="highlight-grid">
-            <div>
-              <div class="eyebrow">Errores habituales</div>
-              <h2>Errores frecuentes con fondos de inversión</h2>
-              <p>
-                El mayor error no suele ser elegir un fondo concreto, sino invertir sin estrategia o cambiar constantemente por miedo.
-              </p>
+          <div class="eyebrow">Errores habituales</div>
+          <h2>Errores frecuentes con fondos de inversión</h2>
+          <p>
+            El mayor error suele ser invertir sin estrategia, elegir por modas o cambiar constantemente por miedo.
+          </p>
 
-              <ul class="feature-list">
-                <li>Comprar solo por la rentabilidad pasada.</li>
-                <li>No respetar el horizonte temporal recomendado.</li>
-                <li>Vender después de una caída sin analizar la situación.</li>
-                <li>No diversificar entre tipos de fondos.</li>
-                <li>No revisar los costes ni la fiscalidad.</li>
-              </ul>
-            </div>
-
-
-          </div>
+          <ul class="feature-list">
+            <li>Comprar solo por la rentabilidad del último año.</li>
+            <li>No respetar el horizonte temporal recomendado.</li>
+            <li>Vender después de una caída sin analizar la situación.</li>
+            <li>No diversificar entre tipos de fondos.</li>
+            <li>No revisar costes, riesgo ni fiscalidad.</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -1093,13 +1281,13 @@
             <article class="faq-card">
               <div class="faq-number">01</div>
               <h3>¿Un fondo garantiza el capital?</h3>
-              <p>No necesariamente. Muchos fondos no garantizan capital y su valor puede subir o bajar según mercado.</p>
+              <p>No necesariamente. Muchos fondos no garantizan capital y su valor puede subir o bajar.</p>
             </article>
 
             <article class="faq-card">
               <div class="faq-number">02</div>
               <h3>¿Qué significa riesgo 2/7 o 4/7?</h3>
-              <p>Es un indicador orientativo del nivel de riesgo. Cuanto más alto, mayor volatilidad potencial.</p>
+              <p>Es un indicador orientativo. Cuanto más alto, mayor volatilidad potencial.</p>
             </article>
 
             <article class="faq-card">
@@ -1111,7 +1299,7 @@
             <article class="faq-card">
               <div class="faq-number">04</div>
               <h3>¿Cuándo tributan los fondos?</h3>
-              <p>Tributan cuando se reembolsa y existe ganancia. Mientras se traspasa entre fondos, se difiere la tributación.</p>
+              <p>Tributan cuando se reembolsa y existe ganancia. Mientras se traspasa, se difiere la tributación.</p>
             </article>
 
             <article class="faq-card">
@@ -1201,7 +1389,7 @@
     }
 
     const revealElements = document.querySelectorAll(
-      ".section-title, .card, .highlight, .review-list, .faq-card, .cta-final, .fund-table"
+      ".section-title, .card, .fund-type-card, .highlight, .warning-box, .review-list, .faq-card, .cta-final, .fund-table-wrap"
     );
 
     if ("IntersectionObserver" in window) {
