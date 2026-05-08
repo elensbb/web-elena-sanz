@@ -427,6 +427,122 @@
       font-size: 16px;
     }
 
+    .profiles-section {
+      background:
+        radial-gradient(circle at top right, rgba(185,28,28,.08), transparent 34%),
+        linear-gradient(135deg, #fffafa 0%, #ffffff 100%);
+      border-radius: 28px;
+      padding: 42px;
+      border: 1px solid rgba(240,202,202,.8);
+      box-shadow: 0 16px 38px rgba(0,0,0,.08);
+      animation: fadeUp .7s ease both;
+    }
+
+    .profiles-header {
+      max-width: 780px;
+      margin-bottom: 30px;
+    }
+
+    .profiles-header p {
+      color: #555;
+      font-size: 17px;
+      margin: 0;
+    }
+
+    .profiles-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+    }
+
+    .profile-card {
+      background: white;
+      border: 1px solid rgba(244,204,204,.9);
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: 0 10px 24px rgba(0,0,0,.06);
+      transition: .25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .profile-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(185,28,28,.06), transparent 42%);
+      pointer-events: none;
+    }
+
+    .profile-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 38px rgba(0,0,0,.11);
+      border-color: #eebcbc;
+    }
+
+    .profile-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      background: #fff3f3;
+      color: #b91c1c;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 25px;
+      margin-bottom: 14px;
+      border: 1px solid #f4cccc;
+      position: relative;
+      z-index: 1;
+    }
+
+    .profile-card h3,
+    .profile-card p,
+    .risk-label {
+      position: relative;
+      z-index: 1;
+    }
+
+    .profile-card h3 {
+      font-size: 19px;
+      margin-bottom: 10px;
+    }
+
+    .risk-label {
+      display: inline-flex;
+      margin-bottom: 8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(185,28,28,.08);
+      color: #b91c1c;
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .4px;
+    }
+
+    .profile-card p {
+      color: #555;
+      font-size: 15px;
+      margin: 0;
+      line-height: 1.55;
+    }
+
+    .profiles-note {
+      margin-top: 24px;
+      background: #fff3f3;
+      border: 1px solid #f4cccc;
+      border-radius: 18px;
+      padding: 20px;
+    }
+
+    .profiles-note p {
+      margin: 0;
+      color: #444;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
     .autonomos-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
@@ -844,6 +960,25 @@
         font-size: 15px;
       }
 
+      .profiles-section {
+        padding: 28px 20px;
+        border-radius: 22px;
+      }
+
+      .profiles-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .profile-card {
+        padding: 22px 20px;
+      }
+
+      .profiles-header p,
+      .profiles-note p {
+        font-size: 16px;
+      }
+
       .highlight-box {
         padding: 24px 20px;
         margin-top: 24px;
@@ -1035,6 +1170,78 @@
     </div>
   </section>
 
+  <!-- PERFILES DE AUTÓNOMOS -->
+  <section class="section">
+    <div class="container">
+      <div class="profiles-section">
+
+        <div class="profiles-header">
+          <p class="eyebrow">Perfiles de autónomos</p>
+          <h2>¿Qué riesgo principal puede tener cada autónomo?</h2>
+          <p>
+            No todos los autónomos necesitan la misma protección. Depende mucho de tu actividad, de si trabajas con clientes, tienes local, haces trabajos físicos o dependes directamente de tus ingresos.
+          </p>
+        </div>
+
+        <div class="profiles-grid">
+
+          <article class="profile-card">
+            <div class="profile-icon">🧑‍💼</div>
+            <h3>Consultor o asesor</h3>
+            <span class="risk-label">Riesgo principal</span>
+            <p>
+              Reclamaciones profesionales por errores, asesoramientos, informes, gestiones o decisiones tomadas por el cliente.
+            </p>
+          </article>
+
+          <article class="profile-card">
+            <div class="profile-icon">🩺</div>
+            <h3>Fisioterapeuta o sanitario</h3>
+            <span class="risk-label">Riesgo principal</span>
+            <p>
+              Responsabilidad civil profesional y protección ante baja laboral si no puedes atender pacientes.
+            </p>
+          </article>
+
+          <article class="profile-card">
+            <div class="profile-icon">🏪</div>
+            <h3>Comercio</h3>
+            <span class="risk-label">Riesgo principal</span>
+            <p>
+              Local, mercancía, incendio, robo, daños eléctricos, responsabilidad civil y continuidad del negocio.
+            </p>
+          </article>
+
+          <article class="profile-card">
+            <div class="profile-icon">🛠️</div>
+            <h3>Reformas o instalaciones</h3>
+            <span class="risk-label">Riesgo principal</span>
+            <p>
+              Daños a terceros durante trabajos en casa de clientes, locales, comunidades o instalaciones.
+            </p>
+          </article>
+
+          <article class="profile-card">
+            <div class="profile-icon">💻</div>
+            <h3>Freelancer</h3>
+            <span class="risk-label">Riesgo principal</span>
+            <p>
+              Baja laboral, protección de ingresos y responsabilidad por errores o incumplimientos en servicios.
+            </p>
+          </article>
+
+        </div>
+
+        <div class="profiles-note">
+          <p>
+            Esta guía es orientativa. Lo ideal es revisar tu actividad concreta para saber si necesitas baja laboral, responsabilidad civil, protección del local, mercancía, accidentes o protección de ingresos.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- SOLUCIONES -->
   <section id="soluciones" class="section">
     <div class="container">
@@ -1192,7 +1399,7 @@
   <!-- BOTÓN FIJO WHATSAPP -->
   <a href="https://wa.me/34606067906" target="_blank" class="whatsapp-fijo" aria-label="WhatsApp">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="white">
-      <path d="M16.001 2.667c-7.363 0-13.334 5.97-13.334 13.334 0 2.35.615 4.648 1.782 6.68L2.667 29.333l6.85-1.748a13.25 13.25 0 0 0 6.484 1.672h.001c7.363 0 13.334-5.97 13.334-13.334S23.365 2.667 16.001 2.667zm0 24.334h-.001a10.95 10.95 0 0 1-5.58-1.523l-.4-.237-4.066 1.038 1.084-3.963-.26-.41a10.97 10.97 0 0 1-1.693-5.883c0-6.058 4.933-10.99 10.993-10.99 2.937 0 5.694 1.143 7.77 3.217a10.95 10.95 0 0 1 3.218 7.773c-.001 6.058-4.934 10.99-10.992 10.99zm6.06-8.24c-.33-.166-1.953-.963-2.255-1.073-.302-.11-.522-.166-.742.166-.22.33-.852 1.073-1.044 1.293-.193.22-.386.247-.715.083-.33-.166-1.39-.513-2.65-1.635-.98-.872-1.64-1.95-1.833-2.28-.193-.33-.02-.508.146-.674.15-.15.33-.386.495-.58.166-.193.22-.33.330-.55.11-.22.055-.413-.028-.58-.083-.166-.742-1.79-1.016-2.455-.267-.640-.538-.553-.742-.563l-.633-.010c-.220 0-.580.083-.883.413-.302.330-1.155 1.130-1.155 2.753 0 1.623 1.182 3.190 1.347 3.410.166.220 2.327 3.553 5.640 4.980.789.340 1.404.543 1.883.695.791.252 1.512.216 2.082.131.635-.095 1.953-.798 2.230-1.570.275-.770.275-1.430.193-1.570-.083-.140-.302-.220-.633-.386z"/>
+      <path d="M16.001 2.667c-7.363 0-13.334 5.97-13.334 13.334 0 2.35.615 4.648 1.782 6.68L2.667 29.333l6.85-1.748a13.25 13.25 0 0 0 6.484 1.672h.001c7.363 0 13.334-5.97 13.334-13.334S23.365 2.667 16.001 2.667zm0 24.334h-.001a10.95 10.95 0 0 1-5.58-1.523l-.4-.237-4.066 1.038 1.084-3.963-.260-.410a10.97 10.97 0 0 1-1.693-5.883c0-6.058 4.933-10.99 10.993-10.99 2.937 0 5.694 1.143 7.770 3.217a10.95 10.95 0 0 1 3.218 7.773c-.001 6.058-4.934 10.99-10.992 10.99zm6.060-8.240c-.330-.166-1.953-.963-2.255-1.073-.302-.110-.522-.166-.742.166-.220.330-.852 1.073-1.044 1.293-.193.220-.386.247-.715.083-.330-.166-1.390-.513-2.650-1.635-.980-.872-1.640-1.950-1.833-2.280-.193-.330-.020-.508.146-.674.150-.150.330-.386.495-.580.166-.193.220-.330.330-.550.110-.220.055-.413-.028-.580-.083-.166-.742-1.790-1.016-2.455-.267-.640-.538-.553-.742-.563l-.633-.010c-.220 0-.580.083-.883.413-.302.330-1.155 1.130-1.155 2.753 0 1.623 1.182 3.190 1.347 3.410.166.220 2.327 3.553 5.640 4.980.789.340 1.404.543 1.883.695.791.252 1.512.216 2.082.131.635-.095 1.953-.798 2.230-1.570.275-.770.275-1.430.193-1.570-.083-.140-.302-.220-.633-.386z"/>
     </svg>
   </a>
 
