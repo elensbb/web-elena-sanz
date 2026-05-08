@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Planes de ahorro | Elena Sanz Burgos</title>
-  <meta name="description" content="Planes de ahorro, PIAS, SIALP, rentas vitalicias, rentas temporales y seguros de ahorro para planificar tu dinero con tranquilidad." />
+  <meta name="description" content="Planes de ahorro, PIAS, SIALP, rentas vitalicias, rentas temporales y seguros de ahorro para organizar objetivos futuros con claridad." />
 
   <style>
     :root {
@@ -23,8 +23,15 @@
       --max: 1120px;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -33,7 +40,10 @@
       line-height: 1.6;
     }
 
-    a { color: inherit; text-decoration: none; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
     .container {
       width: min(100% - 32px, var(--max));
@@ -41,29 +51,26 @@
     }
 
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(22px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     @keyframes softFloat {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-6px); }
-    }
+      0%, 100% {
+        transform: translateY(0);
+      }
 
-    .hero .eyebrow,
-    .hero h1,
-    .hero .lead,
-    .hero-actions,
-    .trust-line {
-      animation: fadeUp 0.7s ease both;
+      50% {
+        transform: translateY(-6px);
+      }
     }
-
-    .hero h1 { animation-delay: 0.08s; }
-    .hero .lead { animation-delay: 0.16s; }
-    .hero-actions { animation-delay: 0.24s; }
-    .trust-line { animation-delay: 0.32s; }
-    .hero-card { animation: fadeUp 0.8s ease 0.18s both; }
-    .hero-card-icon { animation: softFloat 4.5s ease-in-out infinite; }
 
     .reveal {
       opacity: 0;
@@ -108,6 +115,7 @@
       place-items: center;
       font-weight: 800;
       letter-spacing: -0.03em;
+      flex-shrink: 0;
     }
 
     .brand-text strong {
@@ -131,7 +139,9 @@
       color: var(--muted);
     }
 
-    .nav-links a:hover { color: var(--primary); }
+    .nav-links a:hover {
+      color: var(--primary);
+    }
 
     .nav-actions {
       display: flex;
@@ -148,7 +158,9 @@
       color: var(--text);
     }
 
-    .mobile-menu { display: none; }
+    .mobile-menu {
+      display: none;
+    }
 
     .btn {
       display: inline-flex;
@@ -157,12 +169,13 @@
       gap: 8px;
       border-radius: 999px;
       padding: 13px 20px;
-      font-weight: 700;
+      font-weight: 800;
       font-size: 0.95rem;
       border: 1px solid transparent;
       transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
       cursor: pointer;
       white-space: nowrap;
+      text-align: center;
     }
 
     .btn:hover {
@@ -175,7 +188,9 @@
       color: var(--white);
     }
 
-    .btn-primary:hover { background: var(--primary-dark); }
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
 
     .btn-outline {
       background: transparent;
@@ -184,7 +199,7 @@
     }
 
     .hero {
-      padding: 84px 0 56px;
+      padding: 78px 0 54px;
       position: relative;
       overflow: hidden;
     }
@@ -216,21 +231,35 @@
       border-radius: 999px;
       background: rgba(195, 0, 47, 0.08);
       color: var(--primary);
-      font-weight: 700;
+      font-weight: 800;
       font-size: 0.9rem;
       margin-bottom: 20px;
     }
 
     h1 {
-      font-size: clamp(2.45rem, 5vw, 4.7rem);
-      line-height: 0.98;
+      font-size: clamp(2.35rem, 5vw, 4.4rem);
+      line-height: 1;
       letter-spacing: -0.06em;
       max-width: 850px;
       margin-bottom: 22px;
     }
 
+    h2 {
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      line-height: 1.1;
+      letter-spacing: -0.045em;
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+
     .lead {
-      font-size: clamp(1.08rem, 2vw, 1.25rem);
+      font-size: clamp(1.05rem, 2vw, 1.22rem);
       color: #455363;
       max-width: 690px;
       margin-bottom: 28px;
@@ -253,7 +282,8 @@
       border: 1px solid var(--border);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      padding: 26px;
+      padding: 28px;
+      animation: fadeUp 0.8s ease both;
     }
 
     .hero-card-icon {
@@ -265,12 +295,12 @@
       place-items: center;
       font-size: 2rem;
       margin-bottom: 18px;
+      animation: softFloat 4.5s ease-in-out infinite;
     }
 
     .hero-card h2 {
       font-size: 1.45rem;
       margin-bottom: 12px;
-      letter-spacing: -0.03em;
     }
 
     .hero-card ul {
@@ -293,7 +323,9 @@
       flex: 0 0 auto;
     }
 
-    section { padding: 72px 0; }
+    section {
+      padding: 64px 0;
+    }
 
     .section-soft {
       background: var(--bg-soft);
@@ -316,20 +348,6 @@
       font-weight: 800;
       display: block;
       margin-bottom: 8px;
-    }
-
-    h2 {
-      font-size: clamp(2rem, 3vw, 3rem);
-      line-height: 1.08;
-      letter-spacing: -0.045em;
-      margin-bottom: 16px;
-    }
-
-    h3 {
-      font-size: 1.25rem;
-      line-height: 1.25;
-      letter-spacing: -0.02em;
-      margin-bottom: 10px;
     }
 
     .section-title p,
@@ -377,7 +395,108 @@
       margin-bottom: 18px;
     }
 
-    .card p { color: var(--muted); }
+    .card p {
+      color: var(--muted);
+    }
+
+    .key-box {
+      background: linear-gradient(135deg, var(--primary), #8f0023);
+      color: var(--white);
+      border-radius: calc(var(--radius) + 6px);
+      padding: 36px;
+      box-shadow: var(--shadow);
+    }
+
+    .key-box h2 {
+      margin-bottom: 12px;
+    }
+
+    .key-box p {
+      color: rgba(255,255,255,.92);
+      max-width: 900px;
+      font-size: 1.08rem;
+    }
+
+    .key-tags {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .key-tags li {
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 16px;
+      padding: 16px;
+      color: rgba(255,255,255,.94);
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .table-wrap {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .simple-table,
+    .fund-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .simple-table th,
+    .simple-table td,
+    .fund-table th,
+    .fund-table td {
+      text-align: left;
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    .simple-table th,
+    .fund-table th {
+      background: rgba(195, 0, 47, 0.08);
+      color: var(--primary);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .simple-table tr:last-child td,
+    .fund-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .simple-table strong,
+    .fund-table strong {
+      color: var(--text);
+    }
+
+    .simple-table td,
+    .fund-table td {
+      color: #455363;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 46px;
+      min-height: 34px;
+      border-radius: 999px;
+      padding: 7px 12px;
+      background: rgba(195, 0, 47, 0.08);
+      color: var(--primary);
+      font-weight: 900;
+      font-size: 0.86rem;
+      white-space: nowrap;
+    }
 
     .highlight {
       background: linear-gradient(135deg, var(--primary), #8f0023);
@@ -387,14 +506,9 @@
       box-shadow: var(--shadow);
     }
 
-    .highlight-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 28px;
-      align-items: center;
+    .highlight p {
+      color: rgba(255, 255, 255, 0.86);
     }
-
-    .highlight p { color: rgba(255, 255, 255, 0.85); }
 
     .highlight .eyebrow {
       background: rgba(255, 255, 255, 0.12);
@@ -420,71 +534,7 @@
       content: "✓";
       font-weight: 900;
       color: var(--white);
-    }
-
-    .pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 20px;
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      border-radius: 999px;
-      padding: 9px 13px;
-      background: rgba(195, 0, 47, 0.08);
-      color: var(--primary);
-      font-weight: 800;
-      font-size: 0.9rem;
-    }
-
-    .highlight .pill {
-      background: rgba(255, 255, 255, 0.14);
-      color: var(--white);
-    }
-
-    .fund-table {
-      width: 100%;
-      border-collapse: collapse;
-      background: var(--white);
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: 0 14px 34px rgba(31, 41, 51, 0.06);
-      border: 1px solid var(--border);
-    }
-
-    .fund-table th,
-    .fund-table td {
-      text-align: left;
-      padding: 18px;
-      border-bottom: 1px solid var(--border);
-      vertical-align: top;
-    }
-
-    .fund-table th {
-      background: rgba(195, 0, 47, 0.06);
-      color: var(--primary);
-      font-size: 0.92rem;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-
-    .fund-table tr:last-child td { border-bottom: 0; }
-
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 46px;
-      height: 34px;
-      border-radius: 999px;
-      padding: 0 12px;
-      background: rgba(195, 0, 47, 0.08);
-      color: var(--primary);
-      font-weight: 900;
-      white-space: nowrap;
+      flex: 0 0 auto;
     }
 
     .review-block {
@@ -513,8 +563,14 @@
       border-bottom: 1px solid var(--border);
     }
 
-    .review-item:first-child { padding-top: 0; }
-    .review-item:last-child { padding-bottom: 0; border-bottom: 0; }
+    .review-item:first-child {
+      padding-top: 0;
+    }
+
+    .review-item:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
 
     .review-number {
       width: 38px;
@@ -540,36 +596,24 @@
       font-size: 0.97rem;
     }
 
-    .faq-carousel {
+    .faq-grid {
       display: grid;
-      grid-auto-flow: column;
-      grid-auto-columns: minmax(290px, 360px);
-      gap: 18px;
-      overflow-x: auto;
-      overscroll-behavior-x: contain;
-      scroll-snap-type: x mandatory;
-      scroll-padding: 4px;
-      padding: 6px 4px 18px;
-      scrollbar-width: thin;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
     }
 
     .faq-card {
-      min-height: 260px;
       background: var(--white);
       border: 1px solid var(--border);
-      border-radius: var(--radius);
+      border-radius: var(--radius-sm);
       padding: 24px;
       box-shadow: 0 10px 24px rgba(31, 41, 51, 0.04);
-      scroll-snap-align: start;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
       transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
     }
 
     .faq-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 42px rgba(31, 41, 51, 0.1);
+      transform: translateY(-5px);
+      box-shadow: 0 18px 36px rgba(31, 41, 51, 0.09);
       border-color: rgba(195, 0, 47, 0.22);
     }
 
@@ -582,36 +626,12 @@
       display: grid;
       place-items: center;
       font-weight: 900;
-      flex: 0 0 auto;
+      margin-bottom: 14px;
     }
 
-    .faq-card h3 { margin-bottom: 0; }
-    .faq-card p { color: var(--muted); font-size: 0.98rem; }
-
-    .faq-controls {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 12px;
-    }
-
-    .faq-arrow {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      border: 1px solid rgba(195, 0, 47, 0.28);
-      background: var(--white);
-      color: var(--primary);
-      font-size: 1.2rem;
-      font-weight: 900;
-      cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-    }
-
-    .faq-arrow:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 28px rgba(31, 41, 51, 0.12);
-      background: rgba(195, 0, 47, 0.06);
+    .faq-card p {
+      color: var(--muted);
+      font-size: 0.98rem;
     }
 
     .cta-final {
@@ -652,15 +672,22 @@
     }
 
     @media (max-width: 980px) {
-      .grid-4 { grid-template-columns: repeat(2, 1fr); }
-      .fund-table { display: block; overflow-x: auto; white-space: nowrap; }
+      .grid-4,
+      .key-tags,
+      .faq-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
     @media (max-width: 900px) {
       .nav-links,
-      .nav-actions { display: none; }
+      .nav-actions {
+        display: none;
+      }
 
-      .menu-toggle { display: block; }
+      .menu-toggle {
+        display: block;
+      }
 
       .mobile-menu {
         display: none;
@@ -679,23 +706,154 @@
       }
 
       .hero-grid,
-      .highlight-grid,
       .review-block {
         grid-template-columns: 1fr;
       }
 
       .grid-3,
-      .grid-4 {
+      .grid-4,
+      .key-tags,
+      .faq-grid {
         grid-template-columns: 1fr;
       }
 
-      .faq-carousel {
-        grid-auto-columns: minmax(260px, 86vw);
+      .hero {
+        padding-top: 54px;
       }
 
-      .hero { padding-top: 54px; }
+      section {
+        padding: 54px 0;
+      }
+    }
 
-      section { padding: 56px 0; }
+    @media (max-width: 760px) {
+      .simple-table,
+      .simple-table thead,
+      .simple-table tbody,
+      .simple-table th,
+      .simple-table td,
+      .simple-table tr,
+      .fund-table,
+      .fund-table thead,
+      .fund-table tbody,
+      .fund-table th,
+      .fund-table td,
+      .fund-table tr {
+        display: block;
+        width: 100%;
+      }
+
+      .simple-table thead,
+      .fund-table thead {
+        display: none;
+      }
+
+      .simple-table tr,
+      .fund-table tr {
+        padding: 18px 20px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .simple-table tr:last-child,
+      .fund-table tr:last-child {
+        border-bottom: 0;
+      }
+
+      .simple-table td,
+      .fund-table td {
+        border-bottom: 0;
+        padding: 0;
+      }
+
+      .simple-table td + td,
+      .fund-table td + td {
+        margin-top: 10px;
+      }
+
+      .simple-table td::before,
+      .fund-table td::before {
+        display: block;
+        font-size: 0.78rem;
+        font-weight: 900;
+        color: var(--primary);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        margin-bottom: 4px;
+      }
+
+      .simple-table td:nth-child(1)::before {
+        content: "Objetivo";
+      }
+
+      .simple-table td:nth-child(2)::before {
+        content: "Producto / enfoque";
+      }
+
+      .fund-table td:nth-child(1)::before {
+        content: "Producto";
+      }
+
+      .fund-table td:nth-child(2)::before {
+        content: "Tipo";
+      }
+
+      .fund-table td:nth-child(3)::before {
+        content: "Fiscalidad";
+      }
+
+      .fund-table td:nth-child(4)::before {
+        content: "Liquidez";
+      }
+
+      .fund-table td:nth-child(5)::before {
+        content: "Uso principal";
+      }
+    }
+
+    @media (max-width: 520px) {
+      .container {
+        width: min(100% - 24px, var(--max));
+      }
+
+      .hero-actions,
+      .cta-final .hero-actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+        min-height: 52px;
+      }
+
+      .hero-card,
+      .highlight,
+      .key-box,
+      .cta-final {
+        padding: 26px 20px;
+        border-radius: 20px;
+      }
+
+      .review-list {
+        padding: 24px 20px;
+      }
+
+      .review-item {
+        grid-template-columns: 38px 1fr;
+        gap: 12px;
+      }
+
+      h1 {
+        font-size: 2.35rem;
+        letter-spacing: -0.05em;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -712,31 +870,6 @@
         opacity: 1;
         transform: none;
       }
-    }
-
-    @media (max-width: 520px) {
-      .container { width: min(100% - 24px, var(--max)); }
-
-      .hero-actions,
-      .cta-final .hero-actions {
-        flex-direction: column;
-      }
-
-      .btn { width: 100%; }
-
-      .highlight,
-      .cta-final {
-        padding: 28px 20px;
-      }
-
-      .review-list { padding: 24px 20px; }
-
-      .review-item {
-        grid-template-columns: 38px 1fr;
-        gap: 12px;
-      }
-
-      h1 { font-size: 2.45rem; }
     }
   </style>
 </head>
@@ -788,30 +921,30 @@
         <div>
           <div class="eyebrow">💰 Planes de ahorro</div>
 
-          <h1>Planes de ahorro para organizar tu futuro con tranquilidad</h1>
+          <h1>Planes de ahorro para organizar objetivos futuros</h1>
 
           <p class="lead">
-            Los planes de ahorro ayudan a crear un capital, generar rentas o planificar objetivos futuros con soluciones como PIAS, SIALP, seguros de ahorro y rentas vitalicias o temporales.
+            Te ayudamos a entender qué tipo de ahorro puede encajar según tu objetivo, plazo, liquidez y nivel de seguridad.
           </p>
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="https://wa.me/34606067906?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20planes%20de%20ahorro" target="_blank" rel="noopener">Hablar por WhatsApp</a>
             <a class="btn btn-outline" href="tel:+34917702311">Llamar a la oficina</a>
-            <a class="btn btn-outline" href="#productos">Ver productos</a>
+            <a class="btn btn-outline" href="#objetivos">Ver objetivos</a>
           </div>
 
-          <p class="trust-line">Ahorro garantizado · Rentas · Fiscalidad · Planificación personal</p>
+          <p class="trust-line">Ahorro · Rentas · Fiscalidad · Planificación personal</p>
         </div>
 
         <aside class="hero-card" aria-label="Resumen de planes de ahorro">
           <div class="hero-card-icon">🏦</div>
-          <h2>¿Qué puedes conseguir?</h2>
+          <h2>¿Qué puedes planificar?</h2>
           <ul>
-            <li>Crear un ahorro periódico o mediante prima única.</li>
-            <li>Complementar ingresos futuros con rentas.</li>
-            <li>Aprovechar ventajas fiscales en PIAS o SIALP.</li>
-            <li>Planificar una jubilación más tranquila.</li>
-            <li>Ordenar el ahorro según plazo, riesgo y liquidez.</li>
+            <li>Crear un colchón de emergencia.</li>
+            <li>Ahorrar poco a poco con aportaciones periódicas.</li>
+            <li>Preparar educación, jubilación o patrimonio familiar.</li>
+            <li>Transformar un capital en ingresos periódicos.</li>
+            <li>Revisar liquidez, seguridad, fiscalidad y plazo.</li>
           </ul>
         </aside>
       </div>
@@ -819,11 +952,79 @@
 
     <section>
       <div class="container">
-        <div class="section-title">
-          <span>Ahorro planificado</span>
+        <div class="key-box">
           <h2>No todos los planes de ahorro sirven para lo mismo</h2>
           <p>
-            Algunos productos están pensados para acumular capital poco a poco, otros para obtener una renta mensual y otros para aprovechar ventajas fiscales si se cumplen determinadas condiciones.
+            Algunos priorizan la seguridad, otros la rentabilidad, otros la fiscalidad y otros la liquidez. Por eso la clave es saber primero para qué quieres ahorrar y cuándo podrías necesitar el dinero.
+          </p>
+
+          <ul class="key-tags">
+            <li>Seguridad</li>
+            <li>Rentabilidad</li>
+            <li>Fiscalidad</li>
+            <li>Liquidez</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="objetivos" class="section-soft">
+      <div class="container">
+        <div class="section-title center">
+          <span>Objetivos de ahorro</span>
+          <h2>Qué enfoque puede encajar según tu objetivo</h2>
+          <p>
+            Esta tabla es orientativa. Lo importante es adaptar el producto al plazo, riesgo y disponibilidad que necesitas.
+          </p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="simple-table">
+            <thead>
+              <tr>
+                <th>Objetivo</th>
+                <th>Producto / enfoque</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td><strong>Colchón de emergencia</strong></td>
+                <td>Liquidez y bajo riesgo.</td>
+              </tr>
+
+              <tr>
+                <td><strong>Educación de los hijos</strong></td>
+                <td>Plazo definido.</td>
+              </tr>
+
+              <tr>
+                <td><strong>Jubilación</strong></td>
+                <td>Largo plazo.</td>
+              </tr>
+
+              <tr>
+                <td><strong>Ahorro periódico</strong></td>
+                <td>Aportaciones mensuales.</td>
+              </tr>
+
+              <tr>
+                <td><strong>Patrimonio familiar</strong></td>
+                <td>Planificación global.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <span>Ahorro planificado</span>
+          <h2>Antes de elegir, conviene saber qué necesitas</h2>
+          <p>
+            No es lo mismo ahorrar para disponer del dinero pronto que preparar una renta futura o aprovechar una ventaja fiscal.
           </p>
         </div>
 
@@ -831,19 +1032,19 @@
           <article class="card">
             <div class="card-icon">📆</div>
             <h3>Ahorro periódico</h3>
-            <p>Para ir creando capital con aportaciones mensuales, trimestrales o anuales.</p>
+            <p>Para crear capital poco a poco con aportaciones mensuales, trimestrales o anuales.</p>
           </article>
 
           <article class="card">
             <div class="card-icon">💶</div>
             <h3>Prima única</h3>
-            <p>Para transformar un capital ya disponible en una renta o en una solución de ahorro.</p>
+            <p>Para colocar un capital ya disponible y darle un objetivo concreto.</p>
           </article>
 
           <article class="card">
             <div class="card-icon">🧾</div>
             <h3>Fiscalidad</h3>
-            <p>PIAS y SIALP pueden tener ventajas fiscales si se cumplen los requisitos legales.</p>
+            <p>PIAS, SIALP y rentas pueden tener ventajas fiscales si se cumplen requisitos.</p>
           </article>
         </div>
       </div>
@@ -863,25 +1064,25 @@
           <article class="card">
             <div class="card-icon">🛡️</div>
             <h3>Ahorro garantizado</h3>
-            <p>Productos con componente asegurador y revalorización o capital más estable.</p>
+            <p>Para quien prioriza estabilidad, seguridad y planificación sencilla.</p>
           </article>
 
           <article class="card">
             <div class="card-icon">🌱</div>
             <h3>PIAS</h3>
-            <p>Plan Individual de Ahorro Sistemático, con ventaja fiscal si se cobra como renta vitalicia y se cumplen requisitos.</p>
+            <p>Ahorro sistemático con ventaja fiscal si se cobra como renta vitalicia y se cumplen requisitos.</p>
           </article>
 
           <article class="card">
             <div class="card-icon">🔒</div>
             <h3>SIALP</h3>
-            <p>Seguro Individual de Ahorro a Largo Plazo, con ventaja fiscal si se mantiene el plazo legal y se cobra en capital.</p>
+            <p>Ahorro a largo plazo con ventaja fiscal si se mantiene el plazo legal.</p>
           </article>
 
           <article class="card">
             <div class="card-icon">👵</div>
             <h3>Rentas</h3>
-            <p>Rentas vitalicias o temporales para transformar un capital en ingresos periódicos.</p>
+            <p>Para transformar un capital en ingresos periódicos, vitalicios o temporales.</p>
           </article>
         </div>
       </div>
@@ -893,109 +1094,116 @@
           <span>Productos incluidos</span>
           <h2>Planes de ahorro que encajan en este bloque</h2>
           <p>
-            Estos son los documentos/productos que has separado dentro del grupo de planes de ahorro.
+            Antes de contratar, conviene revisar liquidez, garantías, fiscalidad, forma de cobro y beneficiarios.
           </p>
         </div>
 
-        <table class="fund-table">
-          <thead>
-            <tr>
-              <th>Producto</th>
-              <th>Tipo</th>
-              <th>Fiscalidad</th>
-              <th>Liquidez</th>
-              <th>Uso principal</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Ahorro Creciente Prime</strong></td>
-              <td>Seguro de ahorro garantizado</td>
-              <td><span class="tag">Ahorro</span></td>
-              <td>Rescate según condiciones</td>
-              <td>Crear capital con estabilidad</td>
-            </tr>
-            <tr>
-              <td><strong>Ahorro PIAS Prime</strong></td>
-              <td>PIAS</td>
-              <td><span class="tag">Renta vitalicia</span></td>
-              <td>Rescate según condiciones</td>
-              <td>Ahorro sistemático con ventaja fiscal</td>
-            </tr>
-            <tr>
-              <td><strong>Ahorro SIALP Prime</strong></td>
-              <td>SIALP</td>
-              <td><span class="tag">5 años</span></td>
-              <td>Sin rescates parciales en algunas modalidades</td>
-              <td>Ahorro a largo plazo con ventaja fiscal</td>
-            </tr>
-            <tr>
-              <td><strong>Renta Prime / Renta Élite</strong></td>
-              <td>Renta vitalicia inmediata</td>
-              <td><span class="tag">IRPF renta</span></td>
-              <td>Rescate según modalidad</td>
-              <td>Complementar ingresos mensuales</td>
-            </tr>
-            <tr>
-              <td><strong>Renta Vitalicia Esencial</strong></td>
-              <td>Renta vitalicia</td>
-              <td><span class="tag">Renta</span></td>
-              <td>Según condicionado</td>
-              <td>Ingresos de por vida</td>
-            </tr>
-            <tr>
-              <td><strong>Renta Vitalicia Reversible</strong></td>
-              <td>Renta vitalicia con reversión</td>
-              <td><span class="tag">Renta</span></td>
-              <td>Según condicionado</td>
-              <td>Proteger también a otra persona</td>
-            </tr>
-            <tr>
-              <td><strong>Renta Temporal Esencial</strong></td>
-              <td>Renta temporal</td>
-              <td><span class="tag">Renta</span></td>
-              <td>Normalmente limitada</td>
-              <td>Cobrar durante un plazo concreto</td>
-            </tr>
-            <tr>
-              <td><strong>Hipoteca Inversa Vitalicia</strong></td>
-              <td>Crédito hipotecario + renta vitalicia diferida</td>
-              <td><span class="tag">Especial</span></td>
-              <td>No es ahorro líquido tradicional</td>
-              <td>Convertir vivienda en renta sin venderla</td>
-            </tr>
-            <tr>
-              <td><strong>Ahorro Futuro</strong></td>
-              <td>Seguro de vida ahorro</td>
-              <td><span class="tag">Ahorro</span></td>
-              <td>Rescate según condiciones</td>
-              <td>Ahorro con cobertura de fallecimiento</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="table-wrap">
+          <table class="fund-table">
+            <thead>
+              <tr>
+                <th>Producto</th>
+                <th>Tipo</th>
+                <th>Fiscalidad</th>
+                <th>Liquidez</th>
+                <th>Uso principal</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td><strong>Ahorro Creciente Prime</strong></td>
+                <td>Seguro de ahorro garantizado</td>
+                <td><span class="tag">Ahorro</span></td>
+                <td>Rescate según condiciones</td>
+                <td>Crear capital con estabilidad</td>
+              </tr>
+
+              <tr>
+                <td><strong>Ahorro PIAS Prime</strong></td>
+                <td>PIAS</td>
+                <td><span class="tag">Renta vitalicia</span></td>
+                <td>Rescate según condiciones</td>
+                <td>Ahorro sistemático con ventaja fiscal</td>
+              </tr>
+
+              <tr>
+                <td><strong>Ahorro SIALP Prime</strong></td>
+                <td>SIALP</td>
+                <td><span class="tag">5 años</span></td>
+                <td>Según modalidad</td>
+                <td>Ahorro a largo plazo con ventaja fiscal</td>
+              </tr>
+
+              <tr>
+                <td><strong>Renta Prime / Renta Élite</strong></td>
+                <td>Renta vitalicia inmediata</td>
+                <td><span class="tag">IRPF renta</span></td>
+                <td>Según modalidad</td>
+                <td>Complementar ingresos mensuales</td>
+              </tr>
+
+              <tr>
+                <td><strong>Renta Vitalicia Esencial</strong></td>
+                <td>Renta vitalicia</td>
+                <td><span class="tag">Renta</span></td>
+                <td>Según condicionado</td>
+                <td>Ingresos de por vida</td>
+              </tr>
+
+              <tr>
+                <td><strong>Renta Vitalicia Reversible</strong></td>
+                <td>Renta vitalicia con reversión</td>
+                <td><span class="tag">Renta</span></td>
+                <td>Según condicionado</td>
+                <td>Proteger también a otra persona</td>
+              </tr>
+
+              <tr>
+                <td><strong>Renta Temporal Esencial</strong></td>
+                <td>Renta temporal</td>
+                <td><span class="tag">Renta</span></td>
+                <td>Normalmente limitada</td>
+                <td>Cobrar durante un plazo concreto</td>
+              </tr>
+
+              <tr>
+                <td><strong>Hipoteca Inversa Vitalicia</strong></td>
+                <td>Crédito hipotecario + renta vitalicia diferida</td>
+                <td><span class="tag">Especial</span></td>
+                <td>No es ahorro líquido tradicional</td>
+                <td>Convertir vivienda en renta sin venderla</td>
+              </tr>
+
+              <tr>
+                <td><strong>Ahorro Futuro</strong></td>
+                <td>Seguro de vida ahorro</td>
+                <td><span class="tag">Ahorro</span></td>
+                <td>Rescate según condiciones</td>
+                <td>Ahorro con cobertura de fallecimiento</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </section>
 
     <section class="section-soft">
-      <div class="container highlight">
-        <div class="highlight-grid">
-          <div>
-            <div class="eyebrow">Fiscalidad</div>
-            <h2>La ventaja fiscal depende del producto y de cómo se cobre</h2>
-            <p>
-              PIAS, SIALP y rentas vitalicias tienen tratamientos fiscales diferentes. Por eso es importante saber si el objetivo es cobrar en capital, en renta vitalicia o recibir ingresos periódicos.
-            </p>
+      <div class="container">
+        <div class="highlight">
+          <div class="eyebrow">Fiscalidad</div>
+          <h2>La ventaja fiscal depende del producto y de cómo se cobre</h2>
+          <p>
+            PIAS, SIALP y rentas vitalicias tienen tratamientos fiscales diferentes. Por eso es importante saber si el objetivo es cobrar en capital, renta vitalicia o ingresos periódicos.
+          </p>
 
-            <ul class="feature-list">
-              <li>PIAS: ventaja fiscal si se cobra como renta vitalicia y se cumplen requisitos.</li>
-              <li>SIALP: ventaja fiscal si se mantiene el plazo legal y se cobra en capital.</li>
-              <li>Rentas vitalicias: solo tributa una parte de la renta según la edad.</li>
-              <li>Rentas temporales: fiscalidad distinta según duración y modalidad.</li>
-              <li>Conviene revisar el impacto fiscal antes de rescatar.</li>
-            </ul>
-          </div>
-
-
+          <ul class="feature-list">
+            <li>PIAS: ventaja fiscal si se cobra como renta vitalicia y se cumplen requisitos.</li>
+            <li>SIALP: ventaja fiscal si se mantiene el plazo legal y se cobra en capital.</li>
+            <li>Rentas vitalicias: solo tributa una parte de la renta según la edad.</li>
+            <li>Rentas temporales: fiscalidad distinta según duración y modalidad.</li>
+            <li>Conviene revisar el impacto fiscal antes de rescatar.</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -1067,25 +1275,19 @@
     <section class="section-soft">
       <div class="container">
         <div class="highlight" style="background: linear-gradient(135deg, #1f2933, #111827);">
-          <div class="highlight-grid">
-            <div>
-              <div class="eyebrow">Errores frecuentes</div>
-              <h2>Errores habituales con planes de ahorro</h2>
-              <p>
-                En productos de ahorro asegurado, el error más habitual es fijarse solo en la rentabilidad sin revisar liquidez, fiscalidad y condiciones de rescate.
-              </p>
+          <div class="eyebrow">Errores frecuentes</div>
+          <h2>Errores habituales con planes de ahorro</h2>
+          <p>
+            El error más habitual es fijarse solo en la rentabilidad sin revisar liquidez, fiscalidad y condiciones de rescate.
+          </p>
 
-              <ul class="feature-list">
-                <li>Contratar sin entender cuándo se puede rescatar.</li>
-                <li>No revisar penalizaciones o gastos.</li>
-                <li>Confundir ahorro garantizado con inversión sin riesgo total.</li>
-                <li>No cumplir los requisitos fiscales de PIAS o SIALP.</li>
-                <li>No valorar si interesa renta o capital.</li>
-              </ul>
-            </div>
-
-
-          </div>
+          <ul class="feature-list">
+            <li>Contratar sin entender cuándo se puede rescatar.</li>
+            <li>No revisar penalizaciones o gastos.</li>
+            <li>Confundir ahorro garantizado con inversión sin riesgo total.</li>
+            <li>No cumplir los requisitos fiscales de PIAS o SIALP.</li>
+            <li>No valorar si interesa más renta, capital o liquidez.</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -1097,49 +1299,42 @@
           <h2>Dudas habituales sobre planes de ahorro</h2>
         </div>
 
-        <div class="faq-carousel-wrap">
-          <div class="faq-carousel" id="faqCarousel" aria-label="Carrusel de preguntas frecuentes">
-            <article class="faq-card">
-              <div class="faq-number">01</div>
-              <h3>¿Qué es un plan de ahorro?</h3>
-              <p>Es una solución para acumular capital o transformar un capital en ingresos futuros, normalmente con componente asegurador.</p>
-            </article>
+        <div class="faq-grid">
+          <article class="faq-card">
+            <div class="faq-number">01</div>
+            <h3>¿Qué es un plan de ahorro?</h3>
+            <p>Es una solución para acumular capital o transformar un capital en ingresos futuros, normalmente con componente asegurador.</p>
+          </article>
 
-            <article class="faq-card">
-              <div class="faq-number">02</div>
-              <h3>¿Qué diferencia hay entre PIAS y SIALP?</h3>
-              <p>El PIAS tiene ventaja fiscal si se cobra como renta vitalicia. El SIALP puede tener ventaja fiscal si se mantiene el plazo legal y se cobra en capital.</p>
-            </article>
+          <article class="faq-card">
+            <div class="faq-number">02</div>
+            <h3>¿Qué diferencia hay entre PIAS y SIALP?</h3>
+            <p>El PIAS tiene ventaja fiscal si se cobra como renta vitalicia. El SIALP puede tener ventaja fiscal si se mantiene el plazo legal y se cobra en capital.</p>
+          </article>
 
-            <article class="faq-card">
-              <div class="faq-number">03</div>
-              <h3>¿Puedo rescatar el dinero?</h3>
-              <p>Depende del producto. Algunos permiten rescate total o parcial; otros tienen más limitaciones.</p>
-            </article>
+          <article class="faq-card">
+            <div class="faq-number">03</div>
+            <h3>¿Puedo rescatar el dinero?</h3>
+            <p>Depende del producto. Algunos permiten rescate total o parcial; otros tienen más limitaciones.</p>
+          </article>
 
-            <article class="faq-card">
-              <div class="faq-number">04</div>
-              <h3>¿Qué es una renta vitalicia?</h3>
-              <p>Es una renta que se cobra durante toda la vida del asegurado, según las condiciones pactadas.</p>
-            </article>
+          <article class="faq-card">
+            <div class="faq-number">04</div>
+            <h3>¿Qué es una renta vitalicia?</h3>
+            <p>Es una renta que se cobra durante toda la vida del asegurado, según las condiciones pactadas.</p>
+          </article>
 
-            <article class="faq-card">
-              <div class="faq-number">05</div>
-              <h3>¿Qué es una renta temporal?</h3>
-              <p>Es una renta que se cobra durante un plazo concreto, por ejemplo 10 años, según la modalidad contratada.</p>
-            </article>
+          <article class="faq-card">
+            <div class="faq-number">05</div>
+            <h3>¿Qué es una renta temporal?</h3>
+            <p>Es una renta que se cobra durante un plazo concreto, por ejemplo 10 años, según la modalidad contratada.</p>
+          </article>
 
-            <article class="faq-card">
-              <div class="faq-number">06</div>
-              <h3>¿Son productos garantizados?</h3>
-              <p>Algunos sí tienen garantías; otros pueden estar vinculados a activos. Hay que revisar cada condicionado.</p>
-            </article>
-          </div>
-
-          <div class="faq-controls" aria-label="Controles del carrusel de preguntas frecuentes">
-            <button class="faq-arrow" type="button" data-faq-prev aria-label="Pregunta anterior">‹</button>
-            <button class="faq-arrow" type="button" data-faq-next aria-label="Pregunta siguiente">›</button>
-          </div>
+          <article class="faq-card">
+            <div class="faq-number">06</div>
+            <h3>¿Son productos garantizados?</h3>
+            <p>Algunos sí tienen garantías; otros pueden estar vinculados a activos. Hay que revisar cada condicionado.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -1149,7 +1344,7 @@
         <div class="cta-final">
           <h2>¿Quieres saber qué plan de ahorro encaja contigo?</h2>
           <p>
-            Podemos ayudarte a comparar PIAS, SIALP, rentas vitalicias, rentas temporales y seguros de ahorro para elegir una solución coherente con tu situación.
+            Podemos ayudarte a comparar PIAS, SIALP, rentas vitalicias, rentas temporales y seguros de ahorro según tu objetivo.
           </p>
 
           <div class="hero-actions" style="justify-content:center;">
@@ -1169,6 +1364,7 @@
   <footer class="footer">
     <div class="container footer-inner">
       <p>© Elena Sanz Burgos · Seguros y asesoramiento</p>
+
       <div class="footer-links">
         <a href="index.html">Inicio</a>
         <a href="seguros.html">Seguros</a>
@@ -1189,28 +1385,8 @@
       });
     }
 
-    const faqCarousel = document.querySelector("#faqCarousel");
-    const faqPrev = document.querySelector("[data-faq-prev]");
-    const faqNext = document.querySelector("[data-faq-next]");
-
-    if (faqCarousel && faqPrev && faqNext) {
-      const moveFaqCarousel = (direction) => {
-        const card = faqCarousel.querySelector(".faq-card");
-        const gap = 18;
-        const distance = card ? card.offsetWidth + gap : 340;
-
-        faqCarousel.scrollBy({
-          left: direction * distance,
-          behavior: "smooth"
-        });
-      };
-
-      faqPrev.addEventListener("click", () => moveFaqCarousel(-1));
-      faqNext.addEventListener("click", () => moveFaqCarousel(1));
-    }
-
     const revealElements = document.querySelectorAll(
-      ".section-title, .card, .highlight, .review-list, .faq-card, .cta-final, .fund-table"
+      ".section-title, .card, .key-box, .highlight, .review-list, .faq-card, .cta-final, .table-wrap"
     );
 
     if ("IntersectionObserver" in window) {
