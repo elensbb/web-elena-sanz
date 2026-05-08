@@ -217,7 +217,7 @@
 
     .hero-layout {
       display: grid;
-      grid-template-columns: 1.08fr .92fr;
+      grid-template-columns: 1fr;
       align-items: center;
       gap: 48px;
       padding: 82px 0;
@@ -226,93 +226,6 @@
     .hero-content {
       max-width: 680px;
       animation: fadeUp .8s ease both;
-    }
-
-    .hero-image-area {
-      animation: fadeUp .9s ease both;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-end;
-      min-height: 520px;
-      padding-top: 190px;
-      position: relative;
-    }
-
-    .hero-image-area::before {
-      content: "";
-      position: absolute;
-      width: 360px;
-      height: 360px;
-      border-radius: 50%;
-      background: rgba(255,255,255,.08);
-      filter: blur(2px);
-      animation: softFloat 6s ease-in-out infinite;
-      z-index: -1;
-    }
-
-    .hero-logos-card {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 44px;
-      width: 100%;
-      animation: logoFloat 5s ease-in-out infinite;
-    }
-
-    .hero-logos-card img {
-      display: block;
-      width: auto;
-      filter: drop-shadow(0 14px 28px rgba(0,0,0,.26));
-      transition: .25s ease;
-    }
-
-    .hero-logos-card img:hover {
-      transform: translateY(-4px) scale(1.03);
-    }
-
-    .hero-logos-card img:first-child {
-      height: 142px;
-    }
-
-    .hero-logos-card img:last-child {
-      height: 72px;
-    }
-
-    .hero-logo-note {
-      margin-top: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 6px;
-      text-shadow: 0 4px 14px rgba(0,0,0,.35);
-    }
-
-    .hero-logo-note .main {
-      font-size: 15px;
-      font-weight: 700;
-      color: #ffffff;
-    }
-
-    .hero-logo-note .secondary {
-      font-size: 14px;
-      font-weight: 600;
-      color: rgba(255,255,255,.9);
-    }
-
-    .hero-logo-note .final {
-      font-size: 13px;
-      font-weight: 500;
-      color: rgba(255,255,255,.75);
-    }
-
-    .line {
-      width: 42px;
-      height: 2px;
-      background: rgba(255,255,255,.5);
-      margin: 8px 0 6px;
-      border-radius: 2px;
     }
 
     .eyebrow {
@@ -785,12 +698,6 @@
       100% { transform: translateY(0); }
     }
 
-    @keyframes logoFloat {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-      100% { transform: translateY(0); }
-    }
-
     @keyframes floatShape {
       0% { transform: translateY(0) scale(1); }
       50% { transform: translateY(-12px) scale(1.03); }
@@ -821,35 +728,6 @@
 
       .hero-content {
         max-width: 100%;
-      }
-
-      .hero-image-area {
-        min-height: auto;
-        padding-top: 70px;
-      }
-
-      .hero-image-area::before {
-        width: 260px;
-        height: 260px;
-      }
-
-      .hero-logos-card {
-        gap: 24px;
-        flex-direction: column;
-      }
-
-      .hero-logos-card img:first-child {
-        height: 105px;
-      }
-
-      .hero-logos-card img:last-child {
-        height: 50px;
-      }
-
-      .hero-logo-note {
-        font-size: 13px;
-        line-height: 1.45;
-        margin-top: 18px;
       }
 
       .eyebrow {
@@ -1089,20 +967,6 @@
           </div>
         </div>
 
-        <div class="hero-image-area">
-          <div class="hero-logos-card">
-            <img src="marcapersonal.png" alt="Marca personal Elena Sanz Burgos">
-            <img src="logooccident.png" alt="Occident">
-          </div>
-
-          <div class="hero-logo-note">
-            <span class="main">Agencia vinculada a Occident</span>
-            <span class="secondary">Asesoramiento financiero</span>
-            <div class="line"></div>
-            <span class="final">Nos adaptamos a tus necesidades</span>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
@@ -1325,7 +1189,7 @@
   <!-- BOTÓN FIJO WHATSAPP -->
   <a href="https://wa.me/34606067906" target="_blank" class="whatsapp-fijo" aria-label="WhatsApp">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="34" height="34" fill="white">
-      <path d="M16.001 2.667c-7.363 0-13.334 5.97-13.334 13.334 0 2.35.615 4.648 1.782 6.68L2.667 29.333l6.85-1.748a13.25 13.25 0 0 0 6.484 1.672h.001c7.363 0 13.334-5.97 13.334-13.334S23.365 2.667 16.001 2.667zm0 24.334h-.001a10.95 10.95 0 0 1-5.58-1.523l-.4-.237-4.066 1.038 1.084-3.963-.26-.41a10.97 10.97 0 0 1-1.693-5.883c0-6.058 4.933-10.99 10.993-10.99 2.937 0 5.694 1.143 7.77 3.217a10.95 10.95 0 0 1 3.218 7.773c-.001 6.058-4.934 10.99-10.992 10.99zm6.06-8.24c-.33-.166-1.953-.963-2.255-1.073-.302-.11-.522-.166-.742.166-.22.33-.852 1.073-1.044 1.293-.193.22-.386.247-.715.083-.33-.166-1.39-.513-2.65-1.635-.98-.872-1.64-1.95-1.833-2.28-.193-.33-.02-.508.146-.674.15-.15.33-.386.495-.58.166-.193.22-.330.33-.550.11-.220.055-.413-.028-.580-.083-.166-.742-1.790-1.016-2.455-.267-.640-.538-.553-.742-.563l-.633-.010c-.220 0-.580.083-.883.413-.302.330-1.155 1.130-1.155 2.753 0 1.623 1.182 3.190 1.347 3.410.166.220 2.327 3.553 5.640 4.980.789.340 1.404.543 1.883.695.791.252 1.512.216 2.082.131.635-.095 1.953-.798 2.230-1.570.275-.770.275-1.430.193-1.570-.083-.140-.302-.220-.633-.386z"/>
+      <path d="M16.001 2.667c-7.363 0-13.334 5.97-13.334 13.334 0 2.35.615 4.648 1.782 6.68L2.667 29.333l6.85-1.748a13.25 13.334 0 0 0 6.484 1.672h.001c7.363 0 13.334-5.97 13.334-13.334S23.365 2.667 16.001 2.667zm0 24.334h-.001a10.95 10.95 0 0 1-5.58-1.523l-.4-.237-4.066 1.038 1.084-3.963-.26-.41a10.97 10.97 0 0 1-1.693-5.883c0-6.058 4.933-10.99 10.993-10.99 2.937 0 5.694 1.143 7.77 3.217a10.95 10.95 0 0 1 3.218 7.773c-.001 6.058-4.934 10.99-10.992 10.99zm6.06-8.24c-.33-.166-1.953-.963-2.255-1.073-.302-.11-.522-.166-.742.166-.22.33-.852 1.073-1.044 1.293-.193.22-.386.247-.715.083-.33-.166-1.39-.513-2.65-1.635-.98-.872-1.64-1.95-1.833-2.28-.193-.33-.02-.508.146-.674.15-.15.33-.386.495-.58.166-.193.22-.33.33-.550.11-.220.055-.413-.028-.580-.083-.166-.742-1.790-1.016-2.455-.267-.640-.538-.553-.742-.563l-.633-.010c-.220 0-.580.083-.883.413-.302.33-1.155 1.13-1.155 2.753 0 1.623 1.182 3.190 1.347 3.410.166.220 2.327 3.553 5.640 4.980.789.340 1.404.543 1.883.695.791.252 1.512.216 2.082.131.635-.095 1.953-.798 2.230-1.570.275-.770.275-1.430.193-1.570-.083-.140-.302-.220-.633-.386z"/>
     </svg>
   </a>
 
