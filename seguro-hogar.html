@@ -363,47 +363,10 @@
       max-width: 900px;
     }
 
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
     .grid-2 {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 18px;
-    }
-
-    .card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: 24px;
-      box-shadow: 0 10px 24px rgba(31, 41, 51, 0.04);
-      height: 100%;
-      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 18px 36px rgba(31, 41, 51, 0.09);
-      border-color: rgba(195, 0, 47, 0.22);
-    }
-
-    .card-icon {
-      width: 50px;
-      height: 50px;
-      border-radius: 16px;
-      background: rgba(195, 0, 47, 0.08);
-      display: grid;
-      place-items: center;
-      font-size: 1.45rem;
-      margin-bottom: 18px;
-    }
-
-    .card p {
-      color: var(--muted);
     }
 
     .examples-grid {
@@ -436,6 +399,65 @@
       color: var(--text);
       font-weight: 700;
       line-height: 1.45;
+    }
+
+    .home-help-box {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .home-help-column {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 28px;
+      box-shadow: 0 10px 24px rgba(31, 41, 51, 0.04);
+    }
+
+    .home-help-label {
+      display: inline-flex;
+      align-items: center;
+      margin-bottom: 12px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(195, 0, 47, 0.08);
+      color: var(--primary);
+      font-size: 0.86rem;
+      font-weight: 800;
+    }
+
+    .home-help-list {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .home-help-list li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      color: #455363;
+      font-size: 0.98rem;
+    }
+
+    .home-help-list li::before {
+      content: "✓";
+      color: var(--primary);
+      font-weight: 900;
+      flex: 0 0 auto;
+    }
+
+    .home-help-note {
+      margin-top: 20px;
+      background: rgba(195, 0, 47, 0.06);
+      border: 1px solid rgba(195, 0, 47, 0.14);
+      border-radius: var(--radius-sm);
+      padding: 18px 20px;
+      color: #455363;
+      font-size: 0.98rem;
     }
 
     .coverages {
@@ -590,11 +612,11 @@
       }
 
       .hero-grid,
-      .grid-2 {
+      .grid-2,
+      .home-help-box {
         grid-template-columns: 1fr;
       }
 
-      .grid-3,
       .coverages {
         grid-template-columns: 1fr;
       }
@@ -650,6 +672,14 @@
 
       .examples-grid .example-card:last-child {
         grid-column: auto;
+      }
+
+      .home-help-column {
+        padding: 22px 20px;
+      }
+
+      .home-help-note {
+        padding: 16px 18px;
       }
 
       .coverage-card {
@@ -809,6 +839,42 @@
             <p>Se ha roto una tubería y tengo daños por agua.</p>
           </article>
         </div>
+
+        <div class="home-help-box">
+          <div class="home-help-column">
+            <span class="home-help-label">Coberturas habituales</span>
+            <h3>Qué puede cubrir la póliza de hogar</h3>
+
+            <ul class="home-help-list">
+              <li>Daños por agua: fugas, escapes, roturas de tuberías o goteras.</li>
+              <li>Robo en la vivienda y daños causados durante el robo.</li>
+              <li>Roturas de cristales, espejos, sanitarios, encimeras o vitrocerámica.</li>
+              <li>Daños eléctricos por subidas de tensión o problemas en la instalación.</li>
+              <li>Incendio, explosión, humo y otros daños graves en la vivienda.</li>
+              <li>Responsabilidad civil frente a vecinos o terceros.</li>
+              <li>Fenómenos atmosféricos como lluvia, viento o pedrisco, según condiciones.</li>
+            </ul>
+          </div>
+
+          <div class="home-help-column">
+            <span class="home-help-label">Servicios útiles</span>
+            <h3>Servicios que pueden estar incluidos</h3>
+
+            <ul class="home-help-list">
+              <li>Asistencia urgente en el hogar.</li>
+              <li>Fontanería, electricidad, cerrajería o cristalería urgente.</li>
+              <li>Reparación de electrodomésticos, según modalidad.</li>
+              <li>Servicio de bricolaje o pequeños trabajos en casa.</li>
+              <li>Asistencia informática o soporte tecnológico.</li>
+              <li>Orientación médica telefónica o por videollamada, según póliza.</li>
+              <li>Defensa jurídica relacionada con la vivienda.</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="home-help-note">
+          Las coberturas y servicios concretos dependen de la modalidad contratada y de las condiciones de la póliza. Por eso es importante revisar cada caso antes de contratar o renovar.
+        </p>
       </div>
     </section>
 
@@ -818,7 +884,7 @@
           <span>Coberturas principales</span>
           <h2>Qué conviene revisar en tu seguro de hogar</h2>
           <p>
-            Las coberturas exactas dependen de la modalidad contratada, pero estas son algunas de las más importantes.
+            Antes de contratar o renovar, conviene comprobar que la póliza protege bien tu vivienda, tus bienes y tu responsabilidad frente a terceros.
           </p>
         </div>
 
@@ -945,7 +1011,7 @@
     }
 
     const revealElements = document.querySelectorAll(
-      ".section-title, .card, .coverage-card, .ideal-box, .example-card, .review-box, .cta-final"
+      ".section-title, .coverage-card, .ideal-box, .example-card, .home-help-column, .review-box, .cta-final"
     );
 
     if ("IntersectionObserver" in window) {
