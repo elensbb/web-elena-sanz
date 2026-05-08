@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Seguro de accidentes | Elena Sanz Burgos</title>
-  <meta name="description" content="Seguro de accidentes para protegerte ante fallecimiento por accidente, invalidez, hospitalización, asistencia sanitaria, accidentes de circulación y salud dental." />
+  <meta name="description" content="Seguro de accidentes para protegerte ante caídas, invalidez, hospitalización, asistencia sanitaria y accidentes que puedan afectar a tu trabajo, ingresos o familia." />
 
   <style>
     :root {
@@ -72,38 +72,6 @@
       }
     }
 
-    .hero .eyebrow,
-    .hero h1,
-    .hero .lead,
-    .hero-actions,
-    .trust-line {
-      animation: fadeUp 0.7s ease both;
-    }
-
-    .hero h1 {
-      animation-delay: 0.08s;
-    }
-
-    .hero .lead {
-      animation-delay: 0.16s;
-    }
-
-    .hero-actions {
-      animation-delay: 0.24s;
-    }
-
-    .trust-line {
-      animation-delay: 0.32s;
-    }
-
-    .hero-card {
-      animation: fadeUp 0.8s ease 0.18s both;
-    }
-
-    .hero-card-icon {
-      animation: softFloat 4.5s ease-in-out infinite;
-    }
-
     .reveal {
       opacity: 0;
       transform: translateY(24px);
@@ -147,6 +115,7 @@
       place-items: center;
       font-weight: 800;
       letter-spacing: -0.03em;
+      flex-shrink: 0;
     }
 
     .brand-text strong {
@@ -200,12 +169,13 @@
       gap: 8px;
       border-radius: 999px;
       padding: 13px 20px;
-      font-weight: 700;
+      font-weight: 800;
       font-size: 0.95rem;
       border: 1px solid transparent;
       transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
       cursor: pointer;
       white-space: nowrap;
+      text-align: center;
     }
 
     .btn:hover {
@@ -229,7 +199,7 @@
     }
 
     .hero {
-      padding: 84px 0 56px;
+      padding: 78px 0 56px;
       position: relative;
       overflow: hidden;
     }
@@ -261,21 +231,35 @@
       border-radius: 999px;
       background: rgba(195, 0, 47, 0.08);
       color: var(--primary);
-      font-weight: 700;
+      font-weight: 800;
       font-size: 0.9rem;
       margin-bottom: 20px;
     }
 
     h1 {
-      font-size: clamp(2.45rem, 5vw, 4.7rem);
-      line-height: 0.98;
+      font-size: clamp(2.3rem, 5vw, 4.3rem);
+      line-height: 1;
       letter-spacing: -0.06em;
       max-width: 850px;
       margin-bottom: 22px;
     }
 
+    h2 {
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      line-height: 1.1;
+      letter-spacing: -0.045em;
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+
     .lead {
-      font-size: clamp(1.08rem, 2vw, 1.25rem);
+      font-size: clamp(1.05rem, 2vw, 1.22rem);
       color: #455363;
       max-width: 690px;
       margin-bottom: 28px;
@@ -298,7 +282,8 @@
       border: 1px solid var(--border);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      padding: 26px;
+      padding: 28px;
+      animation: fadeUp 0.8s ease both;
     }
 
     .hero-card-icon {
@@ -310,12 +295,12 @@
       place-items: center;
       font-size: 2rem;
       margin-bottom: 18px;
+      animation: softFloat 4.5s ease-in-out infinite;
     }
 
     .hero-card h2 {
       font-size: 1.45rem;
       margin-bottom: 12px;
-      letter-spacing: -0.03em;
     }
 
     .hero-card ul {
@@ -339,7 +324,7 @@
     }
 
     section {
-      padding: 72px 0;
+      padding: 66px 0;
     }
 
     .section-soft {
@@ -365,20 +350,6 @@
       margin-bottom: 8px;
     }
 
-    h2 {
-      font-size: clamp(2rem, 3vw, 3rem);
-      line-height: 1.08;
-      letter-spacing: -0.045em;
-      margin-bottom: 16px;
-    }
-
-    h3 {
-      font-size: 1.25rem;
-      line-height: 1.25;
-      letter-spacing: -0.02em;
-      margin-bottom: 10px;
-    }
-
     .section-title p,
     .text-muted {
       color: var(--muted);
@@ -395,12 +366,6 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 18px;
-    }
-
-    .grid-4 {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
     }
 
     .card {
@@ -434,6 +399,79 @@
       color: var(--muted);
     }
 
+    .examples-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+    }
+
+    .example-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 22px;
+      box-shadow: 0 10px 24px rgba(31, 41, 51, 0.04);
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    }
+
+    .example-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 36px rgba(31, 41, 51, 0.09);
+      border-color: rgba(195, 0, 47, 0.22);
+    }
+
+    .example-icon {
+      font-size: 1.7rem;
+      margin-bottom: 12px;
+    }
+
+    .example-card p {
+      color: var(--text);
+      font-weight: 750;
+      line-height: 1.45;
+    }
+
+    .profile-box {
+      margin-top: 28px;
+      background: linear-gradient(135deg, var(--primary), #8f0023);
+      color: var(--white);
+      border-radius: calc(var(--radius) + 6px);
+      padding: 34px;
+      box-shadow: var(--shadow);
+    }
+
+    .profile-box h3 {
+      font-size: 1.55rem;
+      margin-bottom: 12px;
+    }
+
+    .profile-box p {
+      color: rgba(255,255,255,.9);
+      margin-bottom: 18px;
+      max-width: 850px;
+    }
+
+    .profile-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px 18px;
+    }
+
+    .profile-list li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      color: rgba(255,255,255,.94);
+    }
+
+    .profile-list li::before {
+      content: "✓";
+      font-weight: 900;
+      color: var(--white);
+      flex: 0 0 auto;
+    }
+
     .coverages {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -465,6 +503,7 @@
       display: grid;
       place-items: center;
       flex: 0 0 auto;
+      font-size: 1.2rem;
     }
 
     .coverage-card p {
@@ -472,342 +511,32 @@
       font-size: 0.98rem;
     }
 
-    .highlight {
-      background: linear-gradient(135deg, var(--primary), #8f0023);
-      color: var(--white);
-      border-radius: calc(var(--radius) + 6px);
-      padding: 38px;
-      box-shadow: var(--shadow);
-    }
-
-    .highlight-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 28px;
-      align-items: center;
-    }
-
-    .highlight p {
-      color: rgba(255, 255, 255, 0.85);
-    }
-
-    .highlight .eyebrow {
-      background: rgba(255, 255, 255, 0.12);
-      color: var(--white);
-      margin-bottom: 14px;
-    }
-
-    .feature-list {
-      list-style: none;
-      display: grid;
-      gap: 11px;
-      margin-top: 20px;
-    }
-
-    .feature-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      color: rgba(255, 255, 255, 0.92);
-    }
-
-    .feature-list li::before {
-      content: "✓";
-      font-weight: 900;
-      color: var(--white);
-    }
-
-    .pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 20px;
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      border-radius: 999px;
-      padding: 9px 13px;
-      background: rgba(195, 0, 47, 0.08);
-      color: var(--primary);
-      font-weight: 800;
-      font-size: 0.9rem;
-    }
-
-    .highlight .pill {
-      background: rgba(255, 255, 255, 0.14);
-      color: var(--white);
-    }
-
-    .checklist {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-      margin-top: 8px;
-    }
-
-    .check-item {
+    .review-box {
       background: var(--white);
       border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: 18px;
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      color: #455363;
-      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
-    }
-
-    .check-item:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 14px 28px rgba(31, 41, 51, 0.07);
-      border-color: rgba(195, 0, 47, 0.22);
-    }
-
-    .check-item::before {
-      content: "✓";
-      color: var(--primary);
-      font-weight: 900;
-      flex: 0 0 auto;
-    }
-
-    .review-block {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 34px;
-      align-items: start;
-    }
-
-    .review-intro {
-      color: var(--muted);
-      font-size: 1.04rem;
-      margin-top: 10px;
+      border-radius: calc(var(--radius) + 4px);
+      padding: 34px;
+      box-shadow: 0 14px 34px rgba(31, 41, 51, 0.06);
     }
 
     .review-list {
       list-style: none;
       display: grid;
-      gap: 0;
-      background: var(--white);
-      border-radius: calc(var(--radius) + 4px);
-      border: 1px solid var(--border);
-      padding: 30px;
-      box-shadow: 0 14px 34px rgba(31, 41, 51, 0.06);
-    }
-
-    .review-item {
-      display: grid;
-      grid-template-columns: 46px 1fr;
       gap: 16px;
-      padding: 20px 0;
-      border-bottom: 1px solid var(--border);
     }
 
-    .review-item:first-child {
-      padding-top: 0;
-    }
-
-    .review-item:last-child {
-      padding-bottom: 0;
-      border-bottom: 0;
-    }
-
-    .review-number {
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      background: rgba(195, 0, 47, 0.08);
-      color: var(--primary);
-      display: grid;
-      place-items: center;
-      font-weight: 900;
-      font-size: 0.9rem;
-    }
-
-    .review-item strong {
-      display: block;
-      color: var(--text);
-      margin-bottom: 4px;
-      font-size: 1.02rem;
-    }
-
-    .review-item p {
-      color: var(--muted);
-      font-size: 0.97rem;
-    }
-
-    .review-note {
-      margin-top: 24px;
-      padding: 18px 20px;
-      border-radius: var(--radius-sm);
-      background: rgba(195, 0, 47, 0.06);
-      color: #455363;
-      font-size: 0.98rem;
-    }
-
-    .review-note strong {
-      color: var(--primary);
-    }
-
-    .mistakes-block {
-      max-width: 980px;
-      margin: 0 auto;
-    }
-
-    .mistakes-layout {
-      display: grid;
-      grid-template-columns: 0.85fr 1.15fr;
-      gap: 34px;
-      align-items: start;
-    }
-
-    .mistakes-side {
-      position: sticky;
-      top: 104px;
-    }
-
-    .mistakes-side p {
-      color: var(--muted);
-      font-size: 1.04rem;
-    }
-
-    .mistakes-list {
-      list-style: none;
-      display: grid;
-      gap: 0;
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: calc(var(--radius) + 4px);
-      padding: 30px;
-      box-shadow: 0 14px 34px rgba(31, 41, 51, 0.06);
-    }
-
-    .mistake-item {
-      display: grid;
-      grid-template-columns: 38px 1fr;
-      gap: 16px;
-      padding: 20px 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .mistake-item:first-child {
-      padding-top: 0;
-    }
-
-    .mistake-item:last-child {
-      padding-bottom: 0;
-      border-bottom: 0;
-    }
-
-    .mistake-mark {
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      background: rgba(195, 0, 47, 0.08);
-      color: var(--primary);
-      display: grid;
-      place-items: center;
-      font-weight: 900;
-      font-size: 1rem;
-    }
-
-    .mistake-item strong {
-      display: block;
-      color: var(--text);
-      margin-bottom: 4px;
-      font-size: 1.02rem;
-    }
-
-    .mistake-item p {
-      color: var(--muted);
-      font-size: 0.97rem;
-    }
-
-    .faq-carousel-wrap {
-      position: relative;
-      max-width: 1040px;
-      margin: 0 auto;
-    }
-
-    .faq-carousel {
-      display: grid;
-      grid-auto-flow: column;
-      grid-auto-columns: minmax(290px, 360px);
-      gap: 18px;
-      overflow-x: auto;
-      overscroll-behavior-x: contain;
-      scroll-snap-type: x mandatory;
-      scroll-padding: 4px;
-      padding: 6px 4px 18px;
-      scrollbar-width: thin;
-    }
-
-    .faq-card {
-      min-height: 285px;
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 24px;
-      box-shadow: 0 10px 24px rgba(31, 41, 51, 0.04);
-      scroll-snap-align: start;
+    .review-list li {
       display: flex;
-      flex-direction: column;
-      gap: 14px;
-      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+      gap: 12px;
+      align-items: flex-start;
+      color: #455363;
     }
 
-    .faq-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 42px rgba(31, 41, 51, 0.1);
-      border-color: rgba(195, 0, 47, 0.22);
-    }
-
-    .faq-number {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      background: rgba(195, 0, 47, 0.08);
+    .review-list li::before {
+      content: "✓";
       color: var(--primary);
-      display: grid;
-      place-items: center;
       font-weight: 900;
       flex: 0 0 auto;
-    }
-
-    .faq-card h3 {
-      margin-bottom: 0;
-    }
-
-    .faq-card p {
-      color: var(--muted);
-      font-size: 0.98rem;
-    }
-
-    .faq-controls {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 12px;
-    }
-
-    .faq-arrow {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      border: 1px solid rgba(195, 0, 47, 0.28);
-      background: var(--white);
-      color: var(--primary);
-      font-size: 1.2rem;
-      font-weight: 900;
-      cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-    }
-
-    .faq-arrow:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 28px rgba(31, 41, 51, 0.12);
-      background: rgba(195, 0, 47, 0.06);
     }
 
     .cta-final {
@@ -847,17 +576,13 @@
       flex-wrap: wrap;
     }
 
-    @media (max-width: 980px) {
-      .grid-4 {
+    @media (max-width: 1000px) {
+      .examples-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .mistakes-layout {
-        grid-template-columns: 1fr;
-      }
-
-      .mistakes-side {
-        position: static;
+      .examples-grid .example-card:last-child {
+        grid-column: 1 / -1;
       }
     }
 
@@ -888,29 +613,75 @@
       }
 
       .hero-grid,
-      .highlight-grid,
-      .grid-2,
-      .review-block {
+      .grid-2 {
         grid-template-columns: 1fr;
       }
 
       .grid-3,
-      .grid-4,
       .coverages,
-      .checklist {
+      .profile-list {
         grid-template-columns: 1fr;
       }
 
-      .faq-carousel {
-        grid-auto-columns: minmax(260px, 86vw);
-      }
-
       .hero {
-        padding-top: 54px;
+        padding: 54px 0 48px;
       }
 
       section {
-        padding: 56px 0;
+        padding: 54px 0;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .container {
+        width: min(100% - 24px, var(--max));
+      }
+
+      .brand-text span {
+        font-size: 0.78rem;
+      }
+
+      h1 {
+        font-size: 2.35rem;
+        letter-spacing: -0.05em;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+      }
+
+      .hero-actions,
+      .cta-final .hero-actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+        min-height: 52px;
+      }
+
+      .hero-card,
+      .profile-box,
+      .review-box,
+      .cta-final {
+        padding: 26px 20px;
+        border-radius: 20px;
+      }
+
+      .examples-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .examples-grid .example-card:last-child {
+        grid-column: auto;
+      }
+
+      .coverage-card {
+        padding: 20px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
       }
     }
 
@@ -927,41 +698,6 @@
       .reveal {
         opacity: 1;
         transform: none;
-      }
-    }
-
-    @media (max-width: 520px) {
-      .container {
-        width: min(100% - 24px, var(--max));
-      }
-
-      .hero-actions,
-      .cta-final .hero-actions {
-        flex-direction: column;
-      }
-
-      .btn {
-        width: 100%;
-      }
-
-      .highlight,
-      .cta-final {
-        padding: 28px 20px;
-      }
-
-      .review-list,
-      .mistakes-list {
-        padding: 24px 20px;
-      }
-
-      .review-item,
-      .mistake-item {
-        grid-template-columns: 38px 1fr;
-        gap: 12px;
-      }
-
-      h1 {
-        font-size: 2.45rem;
       }
     }
   </style>
@@ -1014,30 +750,30 @@
         <div>
           <div class="eyebrow">🩹 Seguro de accidentes</div>
 
-          <h1>Seguro de accidentes para protegerte ante imprevistos</h1>
+          <h1>Protección si un accidente cambia tu día a día</h1>
 
           <p class="lead">
-            Un accidente puede cambiar tu día a día de forma repentina. Con un seguro de accidentes puedes contar con una protección económica si sufres un accidente con consecuencias importantes, como fallecimiento, invalidez, hospitalización o necesidad de asistencia sanitaria.
+            Un seguro de accidentes puede ayudarte económicamente si sufres una caída, lesión, invalidez, hospitalización o necesitas asistencia sanitaria tras un accidente.
           </p>
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="https://wa.me/34606067906?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20seguro%20de%20accidentes" target="_blank" rel="noopener">Hablar por WhatsApp</a>
             <a class="btn btn-outline" href="tel:+34917702311">Llamar a la oficina</a>
-            <a class="btn btn-outline" href="#coberturas">Ver coberturas</a>
+            <a class="btn btn-outline" href="#ejemplos">Ver ejemplos</a>
           </div>
 
-          <p class="trust-line">Respuesta rápida · Sin compromiso · Te explicamos todo de forma sencilla</p>
+          <p class="trust-line">Respuesta rápida · Sin compromiso · Te lo explicamos claro</p>
         </div>
 
         <aside class="hero-card" aria-label="Resumen del seguro de accidentes">
           <div class="hero-card-icon">🛡️</div>
           <h2>¿Qué puede proteger?</h2>
           <ul>
+            <li>Invalidez por accidente.</li>
+            <li>Hospitalización tras un accidente.</li>
+            <li>Asistencia sanitaria y recuperación.</li>
             <li>Fallecimiento por accidente.</li>
-            <li>Invalidez permanente por accidente.</li>
             <li>Accidentes de circulación.</li>
-            <li>Hospitalización y asistencia sanitaria.</li>
-            <li>Servicios complementarios como salud dental o bienestar.</li>
           </ul>
         </aside>
       </div>
@@ -1046,181 +782,106 @@
     <section>
       <div class="container">
         <div class="section-title">
-          <span>Protección sencilla</span>
-          <h2>Una ayuda para situaciones inesperadas</h2>
+          <span>Directo y sencillo</span>
+          <h2>Una ayuda cuando un accidente afecta a tu vida o a tus ingresos</h2>
           <p>
-            El seguro de accidentes está pensado para ayudarte cuando ocurre algo imprevisto: una caída, un accidente de circulación, una lesión importante, una hospitalización o una secuela permanente.
+            No se trata solo de “tener una lesión”. Se trata de qué pasa si no puedes trabajar, necesitas tratamiento o quedan secuelas.
           </p>
         </div>
 
         <div class="grid-3">
           <article class="card">
-            <div class="card-icon">🧍</div>
-            <h3>Protección para ti</h3>
-            <p>Ayuda económica si sufres un accidente con consecuencias importantes.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">👨‍👩‍👧‍👦</div>
-            <h3>Protección para tu familia</h3>
-            <p>Capital para los beneficiarios si un accidente provoca el fallecimiento del asegurado.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">🏥</div>
-            <h3>Apoyo en la recuperación</h3>
-            <p>Coberturas de hospitalización, asistencia sanitaria, rehabilitación o servicios complementarios.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-soft">
-      <div class="container">
-        <div class="section-title center">
-          <span>Para distintos perfiles</span>
-          <h2>¿Para quién es recomendable?</h2>
-          <p>
-            Puede ser interesante para personas que quieren reforzar su protección personal y familiar ante accidentes, tanto en el día a día como durante desplazamientos o actividades de ocio.
-          </p>
-        </div>
-
-        <div class="grid-3">
-          <article class="card">
-            <div class="card-icon">👤</div>
-            <h3>Protección personal</h3>
-            <p>Para quienes quieren una cobertura sencilla ante accidentes graves o lesiones importantes.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">👨‍👩‍👧</div>
-            <h3>Familias</h3>
-            <p>Para reforzar la tranquilidad familiar ante una situación inesperada.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">🚗</div>
-            <h3>Personas que se desplazan</h3>
-            <p>Para quienes conducen, viajan o se mueven con frecuencia y quieren protección adicional.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">🏃</div>
-            <h3>Personas activas</h3>
-            <p>Para quienes practican deporte aficionado o tienen una vida activa.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">❤️</div>
-            <h3>Complemento a vida o salud</h3>
-            <p>No sustituye a un seguro de vida o salud, pero puede complementarlos muy bien.</p>
+            <div class="card-icon">💼</div>
+            <h3>Ingresos</h3>
+            <p>Si el accidente te impide trabajar o afecta a tu actividad diaria.</p>
           </article>
 
           <article class="card">
             <div class="card-icon">♿</div>
-            <h3>Protección frente a invalidez</h3>
-            <p>Para quienes quieren estar protegidos ante secuelas permanentes derivadas de un accidente.</p>
+            <h3>Invalidez</h3>
+            <p>Si quedan secuelas permanentes tras un accidente cubierto.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🏥</div>
+            <h3>Recuperación</h3>
+            <p>Asistencia sanitaria, hospitalización o rehabilitación según modalidad.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section>
+    <section id="ejemplos" class="section-soft">
       <div class="container">
         <div class="section-title center">
-          <span>Modalidades</span>
-          <h2>Opciones de seguro de accidentes</h2>
+          <span>Ejemplos reales</span>
+          <h2>Situaciones en las que puede ayudarte</h2>
           <p>
-            Según el nivel de protección que busques, puedes valorar una opción sencilla o una más completa con más garantías y servicios.
+            Estos son casos fáciles de entender donde conviene saber qué protección tienes.
           </p>
         </div>
 
-        <div class="grid-3">
-          <article class="card">
-            <div class="card-icon">✅</div>
-            <h3>Accidentes Esencial</h3>
-            <p>Una opción básica para quienes buscan una protección sencilla frente a accidentes, con coberturas principales y fácil contratación.</p>
+        <div class="examples-grid">
+          <article class="example-card">
+            <div class="example-icon">🪜</div>
+            <p>Me he caído por las escaleras y no puedo trabajar.</p>
           </article>
 
-          <article class="card">
-            <div class="card-icon">🛡️</div>
-            <h3>Accidentes Integral</h3>
-            <p>Una opción más completa, con garantías de fallecimiento, invalidez, hospitalización, asistencia sanitaria y servicios adicionales.</p>
+          <article class="example-card">
+            <div class="example-icon">♿</div>
+            <p>Tengo una invalidez por un accidente.</p>
           </article>
 
-          <article class="card">
-            <div class="card-icon">🦷</div>
-            <h3>Accidentes Dental</h3>
-            <p>Una opción relacionada con salud dental, actos gratuitos, precios baremados y coberturas para determinados accidentes dentales.</p>
+          <article class="example-card">
+            <div class="example-icon">🏥</div>
+            <p>Necesito asistencia sanitaria tras un accidente.</p>
           </article>
+
+          <article class="example-card">
+            <div class="example-icon">🚗</div>
+            <p>He tenido un accidente de tráfico y necesito apoyo económico.</p>
+          </article>
+
+          <article class="example-card">
+            <div class="example-icon">🦴</div>
+            <p>Me he fracturado un hueso y necesito recuperación o rehabilitación.</p>
+          </article>
+        </div>
+
+        <div class="profile-box">
+          <h3>Perfiles para los que puede ser especialmente útil</h3>
+          <p>
+            El seguro de accidentes puede encajar con personas que dependen de su cuerpo, su movilidad o sus ingresos para mantener su día a día.
+          </p>
+
+          <ul class="profile-list">
+            <li>Autónomos que necesitan proteger sus ingresos.</li>
+            <li>Deportistas no profesionales o personas activas.</li>
+            <li>Personas con trabajos físicos o manuales.</li>
+            <li>Familias con hijos o personas a cargo.</li>
+            <li>Personas que conducen o se desplazan con frecuencia.</li>
+            <li>Quienes quieren complementar su seguro de vida o salud.</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <section id="coberturas" class="section-soft">
+    <section id="coberturas">
       <div class="container">
         <div class="section-title">
           <span>Coberturas principales</span>
           <h2>Qué puede cubrir un seguro de accidentes</h2>
           <p>
-            Las coberturas concretas dependen de la modalidad contratada y de las condiciones de la póliza. Estas son algunas de las garantías más habituales que conviene revisar.
+            Las coberturas dependen de la modalidad contratada, pero estas son las más importantes que conviene revisar.
           </p>
         </div>
 
         <div class="coverages">
           <article class="coverage-card">
-            <div class="mini-icon">❤️</div>
-            <div>
-              <h3>Fallecimiento por accidente</h3>
-              <p>Capital para los beneficiarios si el asegurado fallece como consecuencia de un accidente cubierto.</p>
-            </div>
-          </article>
-
-          <article class="coverage-card">
-            <div class="mini-icon">🕯️</div>
-            <div>
-              <h3>Gastos de sepelio</h3>
-              <p>Puede anticiparse una parte del capital para afrontar gastos inmediatos relacionados con el fallecimiento por accidente.</p>
-            </div>
-          </article>
-
-          <article class="coverage-card">
-            <div class="mini-icon">📄</div>
-            <div>
-              <h3>Impuesto de sucesiones</h3>
-              <p>Puede contemplar un anticipo para ayudar a afrontar el impuesto de sucesiones, según condiciones.</p>
-            </div>
-          </article>
-
-          <article class="coverage-card">
-            <div class="mini-icon">🚗</div>
-            <div>
-              <h3>Accidente de circulación</h3>
-              <p>Puede reforzar la protección si el accidente ocurre en una situación relacionada con la circulación.</p>
-            </div>
-          </article>
-
-          <article class="coverage-card">
             <div class="mini-icon">♿</div>
             <div>
               <h3>Invalidez permanente</h3>
-              <p>Indemnización si el accidente deja secuelas permanentes, parciales o totales, según baremo y capital contratado.</p>
-            </div>
-          </article>
-
-          <article class="coverage-card">
-            <div class="mini-icon">🧑‍🦽</div>
-            <div>
-              <h3>Gran invalidez</h3>
-              <p>Protección para situaciones especialmente graves en las que se necesita ayuda para actos esenciales de la vida.</p>
-            </div>
-          </article>
-
-          <article class="coverage-card">
-            <div class="mini-icon">🦴</div>
-            <div>
-              <h3>Fracturas graves</h3>
-              <p>Puede incluir una indemnización específica para determinadas fracturas graves derivadas de accidente.</p>
+              <p>Indemnización si el accidente deja secuelas permanentes según baremo y capital contratado.</p>
             </div>
           </article>
 
@@ -1228,7 +889,7 @@
             <div class="mini-icon">🏥</div>
             <div>
               <h3>Hospitalización</h3>
-              <p>Subsidio diario o ayuda económica si el accidente requiere ingreso hospitalario, según modalidad.</p>
+              <p>Ayuda económica si el accidente requiere ingreso hospitalario, según modalidad.</p>
             </div>
           </article>
 
@@ -1236,112 +897,32 @@
             <div class="mini-icon">🩺</div>
             <div>
               <h3>Asistencia sanitaria</h3>
-              <p>Gastos médicos, rehabilitación, traslados, prótesis o asistencia domiciliaria derivados de accidente.</p>
+              <p>Gastos médicos, rehabilitación, traslados o asistencia derivados de un accidente.</p>
+            </div>
+          </article>
+
+          <article class="coverage-card">
+            <div class="mini-icon">🚗</div>
+            <div>
+              <h3>Accidente de circulación</h3>
+              <p>Puede reforzar la protección si el accidente ocurre circulando o en desplazamientos.</p>
+            </div>
+          </article>
+
+          <article class="coverage-card">
+            <div class="mini-icon">❤️</div>
+            <div>
+              <h3>Fallecimiento por accidente</h3>
+              <p>Capital para los beneficiarios si el asegurado fallece por un accidente cubierto.</p>
             </div>
           </article>
 
           <article class="coverage-card">
             <div class="mini-icon">🦷</div>
             <div>
-              <h3>Salud dental</h3>
-              <p>Servicios dentales, actos gratuitos, precios baremados y cobertura para accidentes dentales graves.</p>
+              <h3>Accidente dental</h3>
+              <p>Puede incluir servicios dentales o cobertura ante accidentes dentales graves.</p>
             </div>
-          </article>
-
-          <article class="coverage-card">
-            <div class="mini-icon">🧘</div>
-            <div>
-              <h3>Bienestar y salud</h3>
-              <p>Algunas modalidades pueden incluir servicios complementarios de salud y bienestar.</p>
-            </div>
-          </article>
-
-          <article class="coverage-card">
-            <div class="mini-icon">⚖️</div>
-            <div>
-              <h3>Asistencia jurídica</h3>
-              <p>Puede incluir apoyo jurídico relacionado con determinadas situaciones cubiertas por la póliza.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container highlight">
-        <div class="highlight-grid">
-          <div>
-            <div class="eyebrow">Invalidez por accidente</div>
-            <h2>La cobertura que puede marcar la diferencia</h2>
-            <p>
-              Uno de los puntos más importantes de un seguro de accidentes es la invalidez. Hay accidentes que no solo provocan una lesión temporal, sino secuelas permanentes que pueden afectar a la vida diaria.
-            </p>
-
-            <ul class="feature-list">
-              <li>Invalidez permanente parcial.</li>
-              <li>Invalidez permanente absoluta.</li>
-              <li>Gran invalidez.</li>
-              <li>Secuelas permanentes según baremo.</li>
-              <li>Indemnización según capital contratado y condiciones.</li>
-            </ul>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <section class="section-soft">
-      <div class="container">
-        <div class="highlight" style="background: linear-gradient(135deg, #1f2933, #111827);">
-          <div class="highlight-grid">
-            <div>
-              <div class="eyebrow">Asistencia sanitaria</div>
-              <h2>Apoyo para recuperarte después de un accidente</h2>
-              <p>
-                Dependiendo de la modalidad, el seguro puede ayudar con gastos sanitarios derivados de un accidente: atención médica, tratamiento, traslado, rehabilitación, asistencia domiciliaria o elementos auxiliares.
-              </p>
-
-              <ul class="feature-list">
-                <li>Asistencia sanitaria en centros concertados.</li>
-                <li>Posibilidad de asistencia en centros ajenos, según modalidad.</li>
-                <li>Gastos de transporte sanitario urgente.</li>
-                <li>Rehabilitación o terapia física, según condiciones.</li>
-                <li>Prótesis, elementos ortopédicos o ayudas técnicas en determinados casos.</li>
-              </ul>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <div class="section-title">
-          <span>Salud dental</span>
-          <h2>También puedes añadir protección dental</h2>
-          <p>
-            Algunas modalidades pueden incluir servicios de salud dental, actos gratuitos, precios baremados y coberturas relacionadas con accidentes dentales graves.
-          </p>
-        </div>
-
-        <div class="grid-3">
-          <article class="card">
-            <div class="card-icon">🦷</div>
-            <h3>Salud dental completa</h3>
-            <p>Acceso a servicios dentales y actos gratuitos dentro del cuadro dental, según modalidad.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">💶</div>
-            <h3>Precios baremados</h3>
-            <p>Determinados actos dentales pueden tener precios pactados o condiciones preferentes.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">🩹</div>
-            <h3>Accidente dental grave</h3>
-            <p>Reembolso de determinados gastos odontológicos si se produce un accidente dental grave cubierto.</p>
           </article>
         </div>
       </div>
@@ -1351,245 +932,48 @@
       <div class="container">
         <div class="grid-2">
           <div class="section-title">
-            <span>Deporte y actividades</span>
-            <h2>Si practicas deporte, conviene revisarlo</h2>
-            <p>
-              No todos los deportes se tratan igual. La práctica deportiva puede estar cubierta, condicionada o excluida según el tipo de deporte, si es aficionado, federado, profesional o de riesgo.
-            </p>
-          </div>
-
-          <div class="checklist">
-            <div class="check-item">Indicar si practicas deporte de forma habitual.</div>
-            <div class="check-item">Revisar si el deporte es federado o no federado.</div>
-            <div class="check-item">Comprobar si se considera deporte peligroso o de riesgo.</div>
-            <div class="check-item">Consultar si hay exclusiones o recargo.</div>
-            <div class="check-item">Revisar si el accidente deportivo queda cubierto.</div>
-            <div class="check-item">No asumir que todos los deportes entran por defecto.</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <div class="review-block">
-          <div class="section-title">
             <span>Antes de contratar</span>
-            <h2>Qué conviene revisar</h2>
+            <h2>Lo importante no es solo el precio</h2>
             <p>
-              Antes de contratar un seguro de accidentes, merece la pena revisar bien qué capitales, límites, garantías y exclusiones tiene la modalidad elegida.
-            </p>
-
-            <p class="review-intro">
-              La clave no es contratar muchas garantías, sino entender qué consecuencias cubre el seguro y cómo respondería ante un accidente real.
-            </p>
-
-            <div class="review-note">
-              <strong>Consejo:</strong> revisa especialmente el capital de invalidez, el baremo, las exclusiones deportivas y la documentación necesaria para comunicar un siniestro.
-            </div>
-          </div>
-
-          <ol class="review-list">
-            <li class="review-item">
-              <span class="review-number">01</span>
-              <div>
-                <strong>Capital asegurado</strong>
-                <p>Conviene revisar el capital para fallecimiento e invalidez, porque marcará la indemnización en caso de accidente cubierto.</p>
-              </div>
-            </li>
-
-            <li class="review-item">
-              <span class="review-number">02</span>
-              <div>
-                <strong>Ámbito de cobertura</strong>
-                <p>Es importante saber si la protección es 24 horas o si se limita a un ámbito concreto, actividad o situación determinada.</p>
-              </div>
-            </li>
-
-            <li class="review-item">
-              <span class="review-number">03</span>
-              <div>
-                <strong>Accidente de circulación</strong>
-                <p>Si conduces o te desplazas con frecuencia, conviene comprobar si incluye garantías relacionadas con accidentes de tráfico.</p>
-              </div>
-            </li>
-
-            <li class="review-item">
-              <span class="review-number">04</span>
-              <div>
-                <strong>Hospitalización y asistencia sanitaria</strong>
-                <p>Puede ser importante revisar si incluye gastos médicos, rehabilitación, traslados, hospitalización o asistencia domiciliaria.</p>
-              </div>
-            </li>
-
-            <li class="review-item">
-              <span class="review-number">05</span>
-              <div>
-                <strong>Salud dental</strong>
-                <p>Algunas modalidades contemplan servicios dentales o cobertura ante accidentes dentales graves.</p>
-              </div>
-            </li>
-
-            <li class="review-item">
-              <span class="review-number">06</span>
-              <div>
-                <strong>Exclusiones y límites</strong>
-                <p>Hay actividades, situaciones o importes máximos que pueden estar excluidos o limitados según la póliza.</p>
-              </div>
-            </li>
-
-            <li class="review-item">
-              <span class="review-number">07</span>
-              <div>
-                <strong>Baremo de indemnización</strong>
-                <p>En invalidez, la indemnización suele calcularse según un baremo. Conviene entender cómo se aplica.</p>
-              </div>
-            </li>
-
-            <li class="review-item">
-              <span class="review-number">08</span>
-              <div>
-                <strong>Documentación en caso de siniestro</strong>
-                <p>Es recomendable saber qué informes, partes médicos, justificantes o documentación pueden ser necesarios si ocurre un accidente.</p>
-              </div>
-            </li>
-          </ol>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-soft">
-      <div class="container mistakes-block">
-        <div class="mistakes-layout">
-          <div class="mistakes-side section-title">
-            <span>Errores frecuentes</span>
-            <h2>Errores habituales al contratar un seguro de accidentes</h2>
-            <p>
-              En accidentes, los detalles importan mucho: capitales, baremos, exclusiones, deporte, asistencia sanitaria y documentación pueden cambiar por completo la utilidad de la póliza.
+              Hay que revisar capitales, invalidez, asistencia sanitaria, exclusiones y si tu actividad diaria o deporte queda bien contemplado.
             </p>
           </div>
 
-          <ol class="mistakes-list">
-            <li class="mistake-item">
-              <span class="mistake-mark">!</span>
-              <div>
-                <strong>Pensar que todo accidente está cubierto</strong>
-                <p>Hay exclusiones, límites y actividades que pueden necesitar declaración expresa.</p>
-              </div>
-            </li>
-
-            <li class="mistake-item">
-              <span class="mistake-mark">!</span>
-              <div>
-                <strong>No revisar el deporte</strong>
-                <p>Los deportes federados, profesionales o peligrosos pueden tener condiciones especiales.</p>
-              </div>
-            </li>
-
-            <li class="mistake-item">
-              <span class="mistake-mark">!</span>
-              <div>
-                <strong>Elegir solo por precio</strong>
-                <p>Lo importante es saber qué capitales tienes y qué consecuencias están realmente cubiertas.</p>
-              </div>
-            </li>
-
-            <li class="mistake-item">
-              <span class="mistake-mark">!</span>
-              <div>
-                <strong>No revisar la invalidez</strong>
-                <p>La invalidez puede ser una de las coberturas más importantes de este tipo de seguro.</p>
-              </div>
-            </li>
-
-            <li class="mistake-item">
-              <span class="mistake-mark">!</span>
-              <div>
-                <strong>Confundirlo con salud</strong>
-                <p>Un seguro de salud se centra en asistencia médica. El de accidentes se centra en consecuencias económicas y garantías derivadas del accidente.</p>
-              </div>
-            </li>
-
-            <li class="mistake-item">
-              <span class="mistake-mark">!</span>
-              <div>
-                <strong>No mirar servicios adicionales</strong>
-                <p>Asistencia sanitaria, hospitalización, salud dental o bienestar pueden aportar valor según tu situación.</p>
-              </div>
-            </li>
-          </ol>
+          <div class="review-box">
+            <h3>Nos fijamos en lo importante:</h3>
+            <ul class="review-list">
+              <li>Capital asegurado por fallecimiento o invalidez.</li>
+              <li>Si cubre accidentes de circulación.</li>
+              <li>Asistencia sanitaria y rehabilitación incluida.</li>
+              <li>Hospitalización o ayudas económicas.</li>
+              <li>Deportes, trabajos físicos o actividades especiales.</li>
+              <li>Exclusiones, límites y baremo de indemnización.</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
 
     <section>
       <div class="container">
-        <div class="section-title center">
-          <span>Preguntas frecuentes</span>
-          <h2>Dudas habituales sobre el seguro de accidentes</h2>
-        </div>
+        <div class="grid-3">
+          <article class="card">
+            <div class="card-icon">✅</div>
+            <h3>Accidentes esencial</h3>
+            <p>Para quien busca una protección sencilla ante accidentes importantes.</p>
+          </article>
 
-        <div class="faq-carousel-wrap">
-          <div class="faq-carousel" id="faqCarousel" aria-label="Carrusel de preguntas frecuentes">
-            <article class="faq-card">
-              <div class="faq-number">01</div>
-              <h3>¿Qué cubre un seguro de accidentes?</h3>
-              <p>Puede cubrir fallecimiento por accidente, invalidez, hospitalización, asistencia sanitaria y otras garantías complementarias según la modalidad contratada.</p>
-            </article>
+          <article class="card">
+            <div class="card-icon">🛡️</div>
+            <h3>Accidentes integral</h3>
+            <p>Para quien quiere más garantías, asistencia y protección económica.</p>
+          </article>
 
-            <article class="faq-card">
-              <div class="faq-number">02</div>
-              <h3>¿Es lo mismo que un seguro de vida?</h3>
-              <p>No. El seguro de vida puede cubrir fallecimiento por distintas causas, según modalidad. El seguro de accidentes se centra en hechos accidentales.</p>
-            </article>
-
-            <article class="faq-card">
-              <div class="faq-number">03</div>
-              <h3>¿Es lo mismo que un seguro de salud?</h3>
-              <p>No. El seguro de salud está pensado para asistencia médica. El seguro de accidentes puede incluir indemnizaciones económicas y asistencia derivada de un accidente.</p>
-            </article>
-
-            <article class="faq-card">
-              <div class="faq-number">04</div>
-              <h3>¿Cubre accidentes de tráfico?</h3>
-              <p>Puede cubrirlos si la modalidad contratada incluye accidente de circulación o garantías relacionadas con la circulación.</p>
-            </article>
-
-            <article class="faq-card">
-              <div class="faq-number">05</div>
-              <h3>¿Cubre deportes?</h3>
-              <p>Puede cubrir deporte aficionado, pero los deportes federados, profesionales o peligrosos deben revisarse antes de contratar.</p>
-            </article>
-
-            <article class="faq-card">
-              <div class="faq-number">06</div>
-              <h3>¿Qué es la invalidez permanente?</h3>
-              <p>Es una secuela estable y definitiva derivada de un accidente, que puede dar derecho a indemnización según el baremo y el capital contratado.</p>
-            </article>
-
-            <article class="faq-card">
-              <div class="faq-number">07</div>
-              <h3>¿Qué es un baremo?</h3>
-              <p>Es una tabla que permite calcular la indemnización según el tipo de lesión o secuela, aplicando porcentajes o importes según la póliza.</p>
-            </article>
-
-            <article class="faq-card">
-              <div class="faq-number">08</div>
-              <h3>¿Puedo añadir salud dental?</h3>
-              <p>Sí, existen opciones vinculadas a salud dental, actos gratuitos, precios baremados y accidentes dentales graves, según modalidad.</p>
-            </article>
-
-            <article class="faq-card">
-              <div class="faq-number">09</div>
-              <h3>¿Puedo revisar qué modalidad encaja conmigo?</h3>
-              <p>Sí. Es recomendable revisar edad, actividad diaria, deporte, capitales y coberturas antes de contratar.</p>
-            </article>
-          </div>
-
-          <div class="faq-controls" aria-label="Controles del carrusel de preguntas frecuentes">
-            <button class="faq-arrow" type="button" data-faq-prev aria-label="Pregunta anterior">‹</button>
-            <button class="faq-arrow" type="button" data-faq-next aria-label="Pregunta siguiente">›</button>
-          </div>
+          <article class="card">
+            <div class="card-icon">🦷</div>
+            <h3>Accidentes dental</h3>
+            <p>Para añadir apoyo dental o protección ante determinados accidentes dentales.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -1597,9 +981,9 @@
     <section class="section-soft">
       <div class="container">
         <div class="cta-final">
-          <h2>¿Quieres saber qué seguro de accidentes encaja mejor contigo?</h2>
+          <h2>¿Quieres saber si este seguro encaja contigo?</h2>
           <p>
-            Podemos ayudarte a comparar opciones, revisar coberturas y elegir una protección sencilla o más completa según tu situación personal.
+            Podemos revisar tu situación, tu actividad diaria y qué protección tendría sentido en tu caso.
           </p>
 
           <div class="hero-actions" style="justify-content:center;">
@@ -1619,6 +1003,7 @@
   <footer class="footer">
     <div class="container footer-inner">
       <p>© Elena Sanz Burgos · Seguros y asesoramiento</p>
+
       <div class="footer-links">
         <a href="index.html">Inicio</a>
         <a href="seguros.html">Seguros</a>
@@ -1639,28 +1024,8 @@
       });
     }
 
-    const faqCarousel = document.querySelector("#faqCarousel");
-    const faqPrev = document.querySelector("[data-faq-prev]");
-    const faqNext = document.querySelector("[data-faq-next]");
-
-    if (faqCarousel && faqPrev && faqNext) {
-      const moveFaqCarousel = (direction) => {
-        const card = faqCarousel.querySelector(".faq-card");
-        const gap = 18;
-        const distance = card ? card.offsetWidth + gap : 340;
-
-        faqCarousel.scrollBy({
-          left: direction * distance,
-          behavior: "smooth"
-        });
-      };
-
-      faqPrev.addEventListener("click", () => moveFaqCarousel(-1));
-      faqNext.addEventListener("click", () => moveFaqCarousel(1));
-    }
-
     const revealElements = document.querySelectorAll(
-      ".section-title, .card, .coverage-card, .highlight, .check-item, .review-list, .mistakes-list, .faq-card, .cta-final"
+      ".section-title, .card, .example-card, .profile-box, .coverage-card, .review-box, .cta-final"
     );
 
     if ("IntersectionObserver" in window) {
