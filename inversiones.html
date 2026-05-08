@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Inversiones | Elena Sanz Burgos</title>
-  <meta name="description" content="Información clara sobre inversiones, fiscalidad, fondos, ahorro fiscal, diferimiento, liquidez, planificación y asesoramiento financiero." />
+  <meta name="description" content="Información clara sobre inversiones, perfil de riesgo, horizonte temporal, fiscalidad, fondos, liquidez y asesoramiento financiero." />
 
   <style>
     :root {
@@ -51,21 +51,6 @@
       50% { transform: translateY(-6px); }
     }
 
-    .hero .eyebrow,
-    .hero h1,
-    .hero .lead,
-    .hero-actions,
-    .trust-line {
-      animation: fadeUp 0.7s ease both;
-    }
-
-    .hero h1 { animation-delay: 0.08s; }
-    .hero .lead { animation-delay: 0.16s; }
-    .hero-actions { animation-delay: 0.24s; }
-    .trust-line { animation-delay: 0.32s; }
-    .hero-card { animation: fadeUp 0.8s ease 0.18s both; }
-    .hero-card-icon { animation: softFloat 4.5s ease-in-out infinite; }
-
     .reveal {
       opacity: 0;
       transform: translateY(24px);
@@ -109,6 +94,7 @@
       place-items: center;
       font-weight: 800;
       letter-spacing: -0.03em;
+      flex-shrink: 0;
     }
 
     .brand-text strong {
@@ -158,12 +144,13 @@
       gap: 8px;
       border-radius: 999px;
       padding: 13px 20px;
-      font-weight: 700;
+      font-weight: 800;
       font-size: 0.95rem;
       border: 1px solid transparent;
       transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
       cursor: pointer;
       white-space: nowrap;
+      text-align: center;
     }
 
     .btn:hover {
@@ -185,7 +172,7 @@
     }
 
     .hero {
-      padding: 84px 0 56px;
+      padding: 78px 0 54px;
       position: relative;
       overflow: hidden;
     }
@@ -217,21 +204,35 @@
       border-radius: 999px;
       background: rgba(195, 0, 47, 0.08);
       color: var(--primary);
-      font-weight: 700;
+      font-weight: 800;
       font-size: 0.9rem;
       margin-bottom: 20px;
     }
 
     h1 {
-      font-size: clamp(2.45rem, 5vw, 4.7rem);
-      line-height: 0.98;
+      font-size: clamp(2.35rem, 5vw, 4.4rem);
+      line-height: 1;
       letter-spacing: -0.06em;
       max-width: 850px;
       margin-bottom: 22px;
     }
 
+    h2 {
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      line-height: 1.1;
+      letter-spacing: -0.045em;
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+
     .lead {
-      font-size: clamp(1.08rem, 2vw, 1.25rem);
+      font-size: clamp(1.05rem, 2vw, 1.22rem);
       color: #455363;
       max-width: 690px;
       margin-bottom: 28px;
@@ -254,7 +255,8 @@
       border: 1px solid var(--border);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      padding: 26px;
+      padding: 28px;
+      animation: fadeUp 0.8s ease both;
     }
 
     .hero-card-icon {
@@ -266,12 +268,12 @@
       place-items: center;
       font-size: 2rem;
       margin-bottom: 18px;
+      animation: softFloat 4.5s ease-in-out infinite;
     }
 
     .hero-card h2 {
       font-size: 1.45rem;
       margin-bottom: 12px;
-      letter-spacing: -0.03em;
     }
 
     .hero-card ul {
@@ -294,7 +296,7 @@
       flex: 0 0 auto;
     }
 
-    section { padding: 72px 0; }
+    section { padding: 64px 0; }
 
     .section-soft {
       background: var(--bg-soft);
@@ -319,20 +321,6 @@
       margin-bottom: 8px;
     }
 
-    h2 {
-      font-size: clamp(2rem, 3vw, 3rem);
-      line-height: 1.08;
-      letter-spacing: -0.045em;
-      margin-bottom: 16px;
-    }
-
-    h3 {
-      font-size: 1.25rem;
-      line-height: 1.25;
-      letter-spacing: -0.02em;
-      margin-bottom: 10px;
-    }
-
     .section-title p,
     .text-muted {
       color: var(--muted);
@@ -342,12 +330,6 @@
     .grid-3 {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
       gap: 18px;
     }
 
@@ -386,19 +368,71 @@
 
     .card p { color: var(--muted); }
 
+    .risk-alert {
+      background: linear-gradient(135deg, var(--primary), #8f0023);
+      color: var(--white);
+      border-radius: calc(var(--radius) + 6px);
+      padding: 34px;
+      box-shadow: var(--shadow);
+    }
+
+    .risk-alert h2 {
+      margin-bottom: 12px;
+    }
+
+    .risk-alert p {
+      color: rgba(255,255,255,.9);
+      font-size: 1.08rem;
+      max-width: 880px;
+    }
+
+    .table-wrap {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .simple-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .simple-table th,
+    .simple-table td {
+      padding: 20px 22px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .simple-table th {
+      background: rgba(195, 0, 47, 0.08);
+      color: var(--primary);
+      font-size: 0.92rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .simple-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .simple-table strong {
+      color: var(--text);
+    }
+
+    .simple-table td {
+      color: #455363;
+    }
+
     .highlight {
       background: linear-gradient(135deg, var(--primary), #8f0023);
       color: var(--white);
       border-radius: calc(var(--radius) + 6px);
       padding: 38px;
       box-shadow: var(--shadow);
-    }
-
-    .highlight-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 28px;
-      align-items: center;
     }
 
     .highlight p { color: rgba(255, 255, 255, 0.85); }
@@ -426,29 +460,6 @@
     .feature-list li::before {
       content: "✓";
       font-weight: 900;
-      color: var(--white);
-    }
-
-    .pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 20px;
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      border-radius: 999px;
-      padding: 9px 13px;
-      background: rgba(195, 0, 47, 0.08);
-      color: var(--primary);
-      font-weight: 800;
-      font-size: 0.9rem;
-    }
-
-    .highlight .pill {
-      background: rgba(255, 255, 255, 0.14);
       color: var(--white);
     }
 
@@ -536,7 +547,7 @@
     }
 
     .faq-card {
-      min-height: 260px;
+      min-height: 245px;
       background: var(--white);
       border: 1px solid var(--border);
       border-radius: var(--radius);
@@ -660,8 +671,6 @@
       }
 
       .hero-grid,
-      .highlight-grid,
-      .grid-2,
       .review-block {
         grid-template-columns: 1fr;
       }
@@ -677,7 +686,101 @@
 
       .hero { padding-top: 54px; }
 
-      section { padding: 56px 0; }
+      section { padding: 54px 0; }
+    }
+
+    @media (max-width: 640px) {
+      .simple-table,
+      .simple-table thead,
+      .simple-table tbody,
+      .simple-table th,
+      .simple-table td,
+      .simple-table tr {
+        display: block;
+        width: 100%;
+      }
+
+      .simple-table thead {
+        display: none;
+      }
+
+      .simple-table tr {
+        padding: 18px 20px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .simple-table tr:last-child {
+        border-bottom: 0;
+      }
+
+      .simple-table td {
+        border-bottom: 0;
+        padding: 0;
+      }
+
+      .simple-table td + td {
+        margin-top: 10px;
+      }
+
+      .simple-table td::before {
+        display: block;
+        font-size: 0.78rem;
+        font-weight: 900;
+        color: var(--primary);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        margin-bottom: 4px;
+      }
+
+      .simple-table td:first-child::before {
+        content: "Perfil";
+      }
+
+      .simple-table td:last-child::before {
+        content: "Qué suele necesitar";
+      }
+    }
+
+    @media (max-width: 520px) {
+      .container { width: min(100% - 24px, var(--max)); }
+
+      .hero-actions,
+      .cta-final .hero-actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+        min-height: 52px;
+      }
+
+      .hero-card,
+      .highlight,
+      .risk-alert,
+      .cta-final {
+        padding: 26px 20px;
+        border-radius: 20px;
+      }
+
+      .review-list { padding: 24px 20px; }
+
+      .review-item {
+        grid-template-columns: 38px 1fr;
+        gap: 12px;
+      }
+
+      h1 {
+        font-size: 2.35rem;
+        letter-spacing: -0.05em;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -694,31 +797,6 @@
         opacity: 1;
         transform: none;
       }
-    }
-
-    @media (max-width: 520px) {
-      .container { width: min(100% - 24px, var(--max)); }
-
-      .hero-actions,
-      .cta-final .hero-actions {
-        flex-direction: column;
-      }
-
-      .btn { width: 100%; }
-
-      .highlight,
-      .cta-final {
-        padding: 28px 20px;
-      }
-
-      .review-list { padding: 24px 20px; }
-
-      .review-item {
-        grid-template-columns: 38px 1fr;
-        gap: 12px;
-      }
-
-      h1 { font-size: 2.45rem; }
     }
   </style>
 </head>
@@ -770,16 +848,16 @@
         <div>
           <div class="eyebrow">📈 Inversiones</div>
 
-          <h1>Inversiones para hacer crecer tu dinero con criterio</h1>
+          <h1>Invierte con criterio, no por impulso</h1>
 
           <p class="lead">
-            Invertir no es elegir un producto al azar. Es ordenar tu patrimonio, entender tu perfil de riesgo, aprovechar la fiscalidad y construir una estrategia adaptada a tus objetivos.
+            Te ayudamos a entender tu perfil, tu plazo y tus objetivos antes de elegir una inversión.
           </p>
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="https://wa.me/34606067906?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20inversiones" target="_blank" rel="noopener">Hablar por WhatsApp</a>
             <a class="btn btn-outline" href="tel:+34917702311">Llamar a la oficina</a>
-            <a class="btn btn-outline" href="#fiscalidad">Ver fiscalidad</a>
+            <a class="btn btn-outline" href="#perfiles">Ver perfiles</a>
           </div>
 
           <p class="trust-line">Asesoramiento claro · Sin tecnicismos · Adaptado a tu situación</p>
@@ -787,15 +865,66 @@
 
         <aside class="hero-card" aria-label="Resumen de inversiones">
           <div class="hero-card-icon">💼</div>
-          <h2>¿Qué trabajamos?</h2>
+          <h2>Antes de invertir revisamos</h2>
           <ul>
-            <li>Planificación del ahorro y la inversión.</li>
-            <li>Perfil de riesgo y horizonte temporal.</li>
-            <li>Fiscalidad de fondos e inversiones.</li>
-            <li>Diversificación del patrimonio.</li>
-            <li>Revisión de productos actuales.</li>
+            <li>Tu objetivo.</li>
+            <li>Tu perfil de riesgo.</li>
+            <li>Tu horizonte temporal.</li>
+            <li>Tu liquidez disponible.</li>
+            <li>La fiscalidad y costes.</li>
           </ul>
         </aside>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="risk-alert">
+          <h2>Invertir no es ahorrar en una cuenta corriente</h2>
+          <p>
+            Puede haber pérdidas y el plazo también importa. Por eso no recomendamos lo mismo a todo el mundo: primero entendemos tu situación, tu perfil de riesgo y cuándo puedes necesitar el dinero.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="perfiles" class="section-soft">
+      <div class="container">
+        <div class="section-title center">
+          <span>Perfil de inversión</span>
+          <h2>Qué puede encajar según tu perfil</h2>
+          <p>
+            Esta tabla es orientativa. La recomendación final depende de tus objetivos, plazo, experiencia, patrimonio y tolerancia al riesgo.
+          </p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="simple-table">
+            <thead>
+              <tr>
+                <th>Perfil</th>
+                <th>Qué suele necesitar</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td><strong>Conservador</strong></td>
+                <td>Preservar capital y asumir poca volatilidad.</td>
+              </tr>
+
+              <tr>
+                <td><strong>Moderado</strong></td>
+                <td>Equilibrio entre seguridad y crecimiento.</td>
+              </tr>
+
+              <tr>
+                <td><strong>Dinámico</strong></td>
+                <td>Más plazo y más tolerancia a subidas o bajadas.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </section>
 
@@ -805,7 +934,7 @@
           <span>Planificación financiera</span>
           <h2>Invertir bien empieza por saber para qué inviertes</h2>
           <p>
-            Antes de elegir un fondo, seguro de inversión o producto financiero, conviene saber cuál es el objetivo: mantener el dinero disponible, buscar crecimiento, preparar una compra futura, complementar la jubilación o planificar una herencia.
+            No es lo mismo invertir para comprar una casa, complementar la jubilación, proteger un ahorro o buscar crecimiento a largo plazo.
           </p>
         </div>
 
@@ -813,19 +942,19 @@
           <article class="card">
             <div class="card-icon">🎯</div>
             <h3>Objetivo</h3>
-            <p>Definimos si buscas rentabilidad, liquidez, conservación del capital, planificación fiscal o crecimiento a largo plazo.</p>
+            <p>Definimos qué quieres conseguir y qué papel tiene ese dinero en tu vida.</p>
           </article>
 
           <article class="card">
             <div class="card-icon">⏳</div>
-            <h3>Horizonte temporal</h3>
-            <p>No se invierte igual para dentro de un año que para dentro de diez. El plazo condiciona el riesgo que puedes asumir.</p>
+            <h3>Plazo</h3>
+            <p>El horizonte temporal cambia mucho la recomendación y el riesgo asumible.</p>
           </article>
 
           <article class="card">
             <div class="card-icon">⚖️</div>
             <h3>Riesgo</h3>
-            <p>Revisamos qué nivel de subidas y bajadas puedes tolerar sin tomar malas decisiones en momentos de mercado.</p>
+            <p>Revisamos qué nivel de subidas y bajadas puedes asumir sin tomar malas decisiones.</p>
           </article>
         </div>
       </div>
@@ -834,10 +963,10 @@
     <section class="section-soft">
       <div class="container">
         <div class="section-title center">
-          <span>Tipos de inversión</span>
-          <h2>Principales formas de invertir</h2>
+          <span>Opciones habituales</span>
+          <h2>Formas de invertir que podemos revisar</h2>
           <p>
-            Cada solución tiene ventajas, costes, fiscalidad y riesgos diferentes. Lo importante es que encaje con la persona, no solo con la rentabilidad esperada.
+            Cada opción tiene ventajas, costes, fiscalidad y riesgos diferentes. Lo importante es que encaje contigo.
           </p>
         </div>
 
@@ -845,25 +974,25 @@
           <article class="card">
             <div class="card-icon">📊</div>
             <h3>Fondos de inversión</h3>
-            <p>Permiten invertir de forma diversificada y traspasar entre fondos sin tributar hasta el reembolso.</p>
+            <p>Diversificación, gestión profesional y posibilidad de traspasar sin tributar hasta el reembolso.</p>
           </article>
 
           <article class="card">
             <div class="card-icon">🌍</div>
             <h3>Inversión global</h3>
-            <p>Busca repartir el dinero entre zonas geográficas, sectores y tipos de activos para no depender de una sola inversión.</p>
+            <p>Repartir el dinero entre zonas, sectores y activos para no depender de una sola inversión.</p>
           </article>
 
           <article class="card">
             <div class="card-icon">🛡️</div>
             <h3>Productos asegurados</h3>
-            <p>Pueden aportar estabilidad o garantías, aunque suelen tener menor liquidez y condiciones específicas.</p>
+            <p>Pueden aportar estabilidad o garantías, revisando siempre condiciones y liquidez.</p>
           </article>
 
           <article class="card">
             <div class="card-icon">🏦</div>
-            <h3>Planificación fiscal</h3>
-            <p>La fiscalidad puede marcar una gran diferencia, especialmente en fondos, herencias y decisiones de reembolso.</p>
+            <h3>Fiscalidad</h3>
+            <p>Vender, traspasar o rescatar puede tener consecuencias fiscales diferentes.</p>
           </article>
         </div>
       </div>
@@ -871,74 +1000,19 @@
 
     <section id="fiscalidad">
       <div class="container highlight">
-        <div class="highlight-grid">
-          <div>
-            <div class="eyebrow">Fiscalidad de la inversión</div>
-            <h2>La fiscalidad también forma parte de la rentabilidad</h2>
-            <p>
-              En los fondos de inversión, una de las principales ventajas es el diferimiento fiscal: no se tributa mientras no se reembolsa. Además, el traspaso entre fondos permite cambiar de estrategia sin tributar en ese momento.
-            </p>
-
-            <ul class="feature-list">
-              <li>Diferir: retrasar el pago del impuesto hasta el reembolso.</li>
-              <li>Ahorrar fiscalmente: aplicar bien las ventajas legales de cada producto.</li>
-              <li>Traspasar fondos sin tributar en ese momento.</li>
-              <li>Planificar la herencia y la plusvalía del muerto.</li>
-              <li>Revisar cuándo conviene vender, mantener o traspasar.</li>
-            </ul>
-          </div>
-
-
-        </div>
-      </div>
-    </section>
-
-    <section class="section-soft">
-      <div class="container">
-        <div class="section-title center">
-          <span>Ventajas</span>
-          <h2>Qué puede aportar una buena estrategia de inversión</h2>
+        <div>
+          <div class="eyebrow">Fiscalidad de la inversión</div>
+          <h2>La fiscalidad también importa</h2>
           <p>
-            Una cartera bien planteada no busca acertar siempre, sino evitar errores graves, diversificar y mantener una estrategia coherente con tus objetivos.
+            En fondos de inversión, una ventaja importante es poder traspasar entre fondos sin tributar en ese momento. Se tributa cuando se reembolsa.
           </p>
-        </div>
 
-        <div class="grid-3">
-          <article class="card">
-            <div class="card-icon">📌</div>
-            <h3>Diversificación</h3>
-            <p>Repartir el dinero entre distintos activos ayuda a reducir la dependencia de una sola inversión.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">💧</div>
-            <h3>Liquidez</h3>
-            <p>Muchos productos de inversión permiten recuperar el dinero, aunque el valor puede variar según mercado.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">📈</div>
-            <h3>Crecimiento a largo plazo</h3>
-            <p>Invertir con horizonte suficiente permite asumir fluctuaciones y buscar rentabilidad de forma ordenada.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">🔁</div>
-            <h3>Flexibilidad</h3>
-            <p>Los fondos permiten cambiar de estrategia mediante traspasos, sin tributar hasta el reembolso.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">🧠</div>
-            <h3>Gestión profesional</h3>
-            <p>Los fondos están gestionados por profesionales que toman decisiones sobre la cartera.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">🧬</div>
-            <h3>Planificación hereditaria</h3>
-            <p>La inversión también puede formar parte de la organización patrimonial y sucesoria.</p>
-          </article>
+          <ul class="feature-list">
+            <li>Diferir el pago de impuestos hasta el reembolso.</li>
+            <li>Revisar cuándo conviene vender, mantener o traspasar.</li>
+            <li>Tener en cuenta costes, liquidez y plazo.</li>
+            <li>Planificar mejor decisiones patrimoniales y sucesorias.</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -950,11 +1024,11 @@
             <span>Antes de invertir</span>
             <h2>Qué conviene revisar</h2>
             <p>
-              No se trata solo de elegir productos. Hay que revisar el conjunto: ahorro disponible, patrimonio, edad, necesidades futuras, riesgo y fiscalidad.
+              Una inversión puede ser adecuada para una persona y no encajar con otra. Por eso revisamos el conjunto antes de recomendar.
             </p>
 
             <p class="review-intro">
-              Una inversión puede ser buena para una persona y mala para otra si no encaja con su situación.
+              La clave no es buscar “lo que más sube”, sino construir una estrategia que puedas mantener.
             </p>
 
             <div class="review-note">
@@ -966,8 +1040,8 @@
             <li class="review-item">
               <span class="review-number">01</span>
               <div>
-                <strong>Dinero disponible</strong>
-                <p>Antes de invertir, conviene mantener una parte líquida para imprevistos.</p>
+                <strong>Fondo de emergencia</strong>
+                <p>Antes de invertir, conviene mantener una parte disponible para imprevistos.</p>
               </div>
             </li>
 
@@ -975,7 +1049,7 @@
               <span class="review-number">02</span>
               <div>
                 <strong>Perfil de riesgo</strong>
-                <p>Hay que saber cuánto riesgo puedes asumir sin que las caídas te obliguen a vender en mal momento.</p>
+                <p>Hay que saber cuánto riesgo puedes asumir sin vender en mal momento.</p>
               </div>
             </li>
 
@@ -983,7 +1057,7 @@
               <span class="review-number">03</span>
               <div>
                 <strong>Horizonte temporal</strong>
-                <p>Las inversiones de más riesgo suelen necesitar más tiempo para tener sentido.</p>
+                <p>Cuanto mayor sea el riesgo, más importante suele ser el plazo.</p>
               </div>
             </li>
 
@@ -991,7 +1065,7 @@
               <span class="review-number">04</span>
               <div>
                 <strong>Costes</strong>
-                <p>Los costes reducen la rentabilidad final. Conviene saber qué se paga y por qué.</p>
+                <p>Los costes reducen la rentabilidad final. Conviene saber qué se paga.</p>
               </div>
             </li>
 
@@ -999,7 +1073,7 @@
               <span class="review-number">05</span>
               <div>
                 <strong>Fiscalidad</strong>
-                <p>Vender, traspasar, rescatar o heredar puede tener consecuencias fiscales distintas.</p>
+                <p>Vender, traspasar, rescatar o heredar puede tener impacto fiscal.</p>
               </div>
             </li>
 
@@ -1007,7 +1081,7 @@
               <span class="review-number">06</span>
               <div>
                 <strong>Diversificación</strong>
-                <p>Evita concentrar todo en un único producto, país, sector o tipo de activo.</p>
+                <p>Evita concentrar todo en un único producto, país, sector o activo.</p>
               </div>
             </li>
           </ol>
@@ -1018,24 +1092,20 @@
     <section class="section-soft">
       <div class="container">
         <div class="highlight" style="background: linear-gradient(135deg, #1f2933, #111827);">
-          <div class="highlight-grid">
-            <div>
-              <div class="eyebrow">Errores frecuentes</div>
-              <h2>Lo que conviene evitar al invertir</h2>
-              <p>
-                Muchos errores no vienen de un mal producto, sino de una mala decisión: invertir sin objetivo, vender con miedo o no entender el riesgo.
-              </p>
+          <div>
+            <div class="eyebrow">Errores frecuentes</div>
+            <h2>Lo que conviene evitar</h2>
+            <p>
+              Muchos errores vienen de invertir sin objetivo, elegir por rentabilidad pasada o no entender el riesgo.
+            </p>
 
-              <ul class="feature-list">
-                <li>Invertir todo el dinero disponible sin fondo de emergencia.</li>
-                <li>Elegir solo por la rentabilidad pasada.</li>
-                <li>No entender el riesgo real del producto.</li>
-                <li>Concentrar demasiado en una sola inversión.</li>
-                <li>Olvidar la fiscalidad antes de vender o rescatar.</li>
-              </ul>
-            </div>
-
-
+            <ul class="feature-list">
+              <li>Invertir todo el dinero sin dejar liquidez para imprevistos.</li>
+              <li>Elegir solo por lo que más ha subido.</li>
+              <li>No entender el riesgo real.</li>
+              <li>Vender con miedo en una caída.</li>
+              <li>No revisar fiscalidad, costes o plazo.</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -1053,37 +1123,37 @@
             <article class="faq-card">
               <div class="faq-number">01</div>
               <h3>¿Invertir es lo mismo que ahorrar?</h3>
-              <p>No. Ahorrar es guardar dinero. Invertir implica buscar rentabilidad asumiendo cierto nivel de riesgo.</p>
+              <p>No. Ahorrar es guardar dinero. Invertir implica buscar rentabilidad asumiendo riesgo.</p>
             </article>
 
             <article class="faq-card">
               <div class="faq-number">02</div>
-              <h3>¿Puedo perder dinero invirtiendo?</h3>
-              <p>Sí. Cualquier inversión con mercado puede subir o bajar. Por eso es importante diversificar y elegir bien el horizonte.</p>
+              <h3>¿Puedo perder dinero?</h3>
+              <p>Sí. Las inversiones pueden subir o bajar. Por eso importan el plazo y la diversificación.</p>
             </article>
 
             <article class="faq-card">
               <div class="faq-number">03</div>
-              <h3>¿Qué es el diferimiento fiscal?</h3>
-              <p>Es retrasar la tributación hasta el momento del reembolso, algo especialmente relevante en fondos de inversión.</p>
+              <h3>¿Qué perfil de riesgo tengo?</h3>
+              <p>Depende de tu situación, experiencia, plazo, objetivo y tolerancia a las caídas.</p>
             </article>
 
             <article class="faq-card">
               <div class="faq-number">04</div>
-              <h3>¿Qué es un traspaso entre fondos?</h3>
-              <p>Es mover el dinero de un fondo a otro. En España, normalmente no se tributa hasta que se reembolsa.</p>
+              <h3>¿Qué es el horizonte temporal?</h3>
+              <p>Es el tiempo durante el que puedes mantener la inversión sin necesitar ese dinero.</p>
             </article>
 
             <article class="faq-card">
               <div class="faq-number">05</div>
-              <h3>¿Qué perfil de riesgo tengo?</h3>
-              <p>Depende de tu edad, ingresos, patrimonio, experiencia, horizonte y tolerancia a las caídas.</p>
+              <h3>¿Qué es el diferimiento fiscal?</h3>
+              <p>Es retrasar la tributación hasta el reembolso, algo habitual en fondos de inversión.</p>
             </article>
 
             <article class="faq-card">
               <div class="faq-number">06</div>
-              <h3>¿Cuándo conviene revisar una cartera?</h3>
-              <p>Al menos una vez al año o cuando cambien tus objetivos, ingresos, gastos, familia o situación fiscal.</p>
+              <h3>¿Cuándo revisar una cartera?</h3>
+              <p>Al menos una vez al año o cuando cambien tus objetivos, ingresos o situación familiar.</p>
             </article>
           </div>
 
@@ -1100,7 +1170,7 @@
         <div class="cta-final">
           <h2>¿Quieres ordenar tus inversiones?</h2>
           <p>
-            Podemos ayudarte a revisar productos, riesgo, costes, fiscalidad y objetivos para que tu dinero esté organizado con sentido.
+            Podemos ayudarte a revisar tu perfil, plazo, productos actuales, riesgo, costes y fiscalidad.
           </p>
 
           <div class="hero-actions" style="justify-content:center;">
@@ -1161,7 +1231,7 @@
     }
 
     const revealElements = document.querySelectorAll(
-      ".section-title, .card, .highlight, .review-list, .faq-card, .cta-final"
+      ".section-title, .card, .highlight, .risk-alert, .table-wrap, .review-list, .faq-card, .cta-final"
     );
 
     if ("IntersectionObserver" in window) {
