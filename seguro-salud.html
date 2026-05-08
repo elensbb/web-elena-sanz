@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Seguro de salud | Elena Sanz Burgos</title>
-  <meta name="description" content="Seguro de salud para cuidar de ti y de los tuyos. Asistencia sanitaria, reembolso, hospitalización, salud dental, videoconsulta, cuadro médico y bienestar." />
+  <meta name="description" content="Seguro de salud para cuidar de ti y de los tuyos. Te ayudamos a elegir entre seguro con copago, sin copago, reembolso o dental según tus necesidades." />
 
   <style>
     :root {
@@ -72,38 +72,6 @@
       }
     }
 
-    .hero .eyebrow,
-    .hero h1,
-    .hero .lead,
-    .hero-actions,
-    .trust-line {
-      animation: fadeUp 0.7s ease both;
-    }
-
-    .hero h1 {
-      animation-delay: 0.08s;
-    }
-
-    .hero .lead {
-      animation-delay: 0.16s;
-    }
-
-    .hero-actions {
-      animation-delay: 0.24s;
-    }
-
-    .trust-line {
-      animation-delay: 0.32s;
-    }
-
-    .hero-card {
-      animation: fadeUp 0.8s ease 0.18s both;
-    }
-
-    .hero-card-icon {
-      animation: softFloat 4.5s ease-in-out infinite;
-    }
-
     .reveal {
       opacity: 0;
       transform: translateY(24px);
@@ -147,6 +115,7 @@
       place-items: center;
       font-weight: 800;
       letter-spacing: -0.03em;
+      flex-shrink: 0;
     }
 
     .brand-text strong {
@@ -200,12 +169,13 @@
       gap: 8px;
       border-radius: 999px;
       padding: 13px 20px;
-      font-weight: 700;
+      font-weight: 800;
       font-size: 0.95rem;
       border: 1px solid transparent;
       transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
       cursor: pointer;
       white-space: nowrap;
+      text-align: center;
     }
 
     .btn:hover {
@@ -229,7 +199,7 @@
     }
 
     .hero {
-      padding: 84px 0 56px;
+      padding: 78px 0 56px;
       position: relative;
       overflow: hidden;
     }
@@ -261,21 +231,35 @@
       border-radius: 999px;
       background: rgba(195, 0, 47, 0.08);
       color: var(--primary);
-      font-weight: 700;
+      font-weight: 800;
       font-size: 0.9rem;
       margin-bottom: 20px;
     }
 
     h1 {
-      font-size: clamp(2.45rem, 5vw, 4.7rem);
-      line-height: 0.98;
+      font-size: clamp(2.3rem, 5vw, 4.3rem);
+      line-height: 1;
       letter-spacing: -0.06em;
       max-width: 850px;
       margin-bottom: 22px;
     }
 
+    h2 {
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      line-height: 1.1;
+      letter-spacing: -0.045em;
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+
     .lead {
-      font-size: clamp(1.08rem, 2vw, 1.25rem);
+      font-size: clamp(1.05rem, 2vw, 1.22rem);
       color: #455363;
       max-width: 690px;
       margin-bottom: 28px;
@@ -298,7 +282,8 @@
       border: 1px solid var(--border);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      padding: 26px;
+      padding: 28px;
+      animation: fadeUp 0.8s ease both;
     }
 
     .hero-card-icon {
@@ -310,12 +295,12 @@
       place-items: center;
       font-size: 2rem;
       margin-bottom: 18px;
+      animation: softFloat 4.5s ease-in-out infinite;
     }
 
     .hero-card h2 {
       font-size: 1.45rem;
       margin-bottom: 12px;
-      letter-spacing: -0.03em;
     }
 
     .hero-card ul {
@@ -339,7 +324,7 @@
     }
 
     section {
-      padding: 72px 0;
+      padding: 66px 0;
     }
 
     .section-soft {
@@ -365,20 +350,6 @@
       margin-bottom: 8px;
     }
 
-    h2 {
-      font-size: clamp(2rem, 3vw, 3rem);
-      line-height: 1.08;
-      letter-spacing: -0.045em;
-      margin-bottom: 16px;
-    }
-
-    h3 {
-      font-size: 1.25rem;
-      line-height: 1.25;
-      letter-spacing: -0.02em;
-      margin-bottom: 10px;
-    }
-
     .section-title p,
     .text-muted {
       color: var(--muted);
@@ -395,12 +366,6 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 18px;
-    }
-
-    .grid-4 {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
     }
 
     .card {
@@ -434,6 +399,88 @@
       color: var(--muted);
     }
 
+    .table-wrap {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .simple-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .simple-table th,
+    .simple-table td {
+      padding: 20px 22px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .simple-table th {
+      background: rgba(195, 0, 47, 0.08);
+      color: var(--primary);
+      font-size: 0.92rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .simple-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .simple-table strong {
+      color: var(--text);
+    }
+
+    .simple-table td {
+      color: #455363;
+    }
+
+    .data-box {
+      margin-top: 28px;
+      background: linear-gradient(135deg, var(--primary), #8f0023);
+      color: var(--white);
+      border-radius: calc(var(--radius) + 6px);
+      padding: 34px;
+      box-shadow: var(--shadow);
+    }
+
+    .data-box h3 {
+      font-size: 1.55rem;
+      margin-bottom: 12px;
+    }
+
+    .data-box p {
+      color: rgba(255,255,255,.9);
+      margin-bottom: 18px;
+      max-width: 760px;
+    }
+
+    .data-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px 18px;
+    }
+
+    .data-list li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      color: rgba(255,255,255,.94);
+    }
+
+    .data-list li::before {
+      content: "✓";
+      font-weight: 900;
+      color: var(--white);
+      flex: 0 0 auto;
+    }
+
     .coverages {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -465,6 +512,7 @@
       display: grid;
       place-items: center;
       flex: 0 0 auto;
+      font-size: 1.2rem;
     }
 
     .coverage-card p {
@@ -472,310 +520,32 @@
       font-size: 0.98rem;
     }
 
-    .highlight {
-      background: linear-gradient(135deg, var(--primary), #8f0023);
-      color: var(--white);
-      border-radius: calc(var(--radius) + 6px);
-      padding: 38px;
-      box-shadow: var(--shadow);
-    }
-
-    .highlight-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 28px;
-      align-items: center;
-    }
-
-    .highlight p {
-      color: rgba(255, 255, 255, 0.85);
-    }
-
-    .highlight .eyebrow {
-      background: rgba(255, 255, 255, 0.12);
-      color: var(--white);
-      margin-bottom: 14px;
-    }
-
-    .feature-list {
-      list-style: none;
-      display: grid;
-      gap: 11px;
-      margin-top: 20px;
-    }
-
-    .feature-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      color: rgba(255, 255, 255, 0.92);
-    }
-
-    .feature-list li::before {
-      content: "✓";
-      font-weight: 900;
-      color: var(--white);
-    }
-
-    .pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 20px;
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      border-radius: 999px;
-      padding: 9px 13px;
-      background: rgba(195, 0, 47, 0.08);
-      color: var(--primary);
-      font-weight: 800;
-      font-size: 0.9rem;
-    }
-
-    .highlight .pill {
-      background: rgba(255, 255, 255, 0.14);
-      color: var(--white);
-    }
-
-    .review-block {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 34px;
-      align-items: start;
-    }
-
-    .review-intro {
-      color: var(--muted);
-      font-size: 1.04rem;
-      margin-top: 10px;
+    .review-box {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) + 4px);
+      padding: 34px;
+      box-shadow: 0 14px 34px rgba(31, 41, 51, 0.06);
     }
 
     .review-list {
       list-style: none;
       display: grid;
-      gap: 0;
-      background: var(--white);
-      border-radius: calc(var(--radius) + 4px);
-      border: 1px solid var(--border);
-      padding: 30px;
-      box-shadow: 0 14px 34px rgba(31, 41, 51, 0.06);
-    }
-
-    .review-item {
-      display: grid;
-      grid-template-columns: 46px 1fr;
       gap: 16px;
-      padding: 20px 0;
-      border-bottom: 1px solid var(--border);
     }
 
-    .review-item:first-child {
-      padding-top: 0;
-    }
-
-    .review-item:last-child {
-      padding-bottom: 0;
-      border-bottom: 0;
-    }
-
-    .review-number {
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      background: rgba(195, 0, 47, 0.08);
-      color: var(--primary);
-      display: grid;
-      place-items: center;
-      font-weight: 900;
-      font-size: 0.9rem;
-    }
-
-    .review-item strong {
-      display: block;
-      color: var(--text);
-      margin-bottom: 4px;
-      font-size: 1.02rem;
-    }
-
-    .review-item p {
-      color: var(--muted);
-      font-size: 0.97rem;
-    }
-
-    .review-note {
-      margin-top: 24px;
-      padding: 18px 20px;
-      border-radius: var(--radius-sm);
-      background: rgba(195, 0, 47, 0.06);
-      color: #455363;
-      font-size: 0.98rem;
-    }
-
-    .review-note strong {
-      color: var(--primary);
-    }
-
-    .mistakes-block {
-      max-width: 980px;
-      margin: 0 auto;
-    }
-
-    .mistakes-layout {
-      display: grid;
-      grid-template-columns: 0.85fr 1.15fr;
-      gap: 34px;
-      align-items: start;
-    }
-
-    .mistakes-side {
-      position: sticky;
-      top: 104px;
-    }
-
-    .mistakes-side p {
-      color: var(--muted);
-      font-size: 1.04rem;
-    }
-
-    .mistakes-list {
-      list-style: none;
-      display: grid;
-      gap: 0;
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: calc(var(--radius) + 4px);
-      padding: 30px;
-      box-shadow: 0 14px 34px rgba(31, 41, 51, 0.06);
-    }
-
-    .mistake-item {
-      display: grid;
-      grid-template-columns: 38px 1fr;
-      gap: 16px;
-      padding: 20px 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .mistake-item:first-child {
-      padding-top: 0;
-    }
-
-    .mistake-item:last-child {
-      padding-bottom: 0;
-      border-bottom: 0;
-    }
-
-    .mistake-mark {
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      background: rgba(195, 0, 47, 0.08);
-      color: var(--primary);
-      display: grid;
-      place-items: center;
-      font-weight: 900;
-      font-size: 1rem;
-    }
-
-    .mistake-item strong {
-      display: block;
-      color: var(--text);
-      margin-bottom: 4px;
-      font-size: 1.02rem;
-    }
-
-    .mistake-item p {
-      color: var(--muted);
-      font-size: 0.97rem;
-    }
-
-    .faq-carousel-wrap {
-      position: relative;
-      max-width: 1040px;
-      margin: 0 auto;
-    }
-
-    .faq-carousel {
-      display: grid;
-      grid-auto-flow: column;
-      grid-auto-columns: minmax(290px, 360px);
-      gap: 18px;
-      overflow-x: auto;
-      overscroll-behavior-x: contain;
-      scroll-snap-type: x mandatory;
-      scroll-padding: 4px;
-      padding: 6px 4px 18px;
-      scrollbar-width: thin;
-    }
-
-    .faq-card {
-      min-height: 285px;
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 24px;
-      box-shadow: 0 10px 24px rgba(31, 41, 51, 0.04);
-      scroll-snap-align: start;
+    .review-list li {
       display: flex;
-      flex-direction: column;
-      gap: 14px;
-      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+      gap: 12px;
+      align-items: flex-start;
+      color: #455363;
     }
 
-    .faq-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 42px rgba(31, 41, 51, 0.1);
-      border-color: rgba(195, 0, 47, 0.22);
-    }
-
-    .faq-number {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      background: rgba(195, 0, 47, 0.08);
+    .review-list li::before {
+      content: "✓";
       color: var(--primary);
-      display: grid;
-      place-items: center;
       font-weight: 900;
       flex: 0 0 auto;
-    }
-
-    .faq-card h3 {
-      margin-bottom: 0;
-    }
-
-    .faq-card p {
-      color: var(--muted);
-      font-size: 0.98rem;
-    }
-
-    .faq-controls {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 12px;
-    }
-
-    .faq-arrow {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      border: 1px solid rgba(195, 0, 47, 0.28);
-      background: var(--white);
-      color: var(--primary);
-      font-size: 1.2rem;
-      font-weight: 900;
-      cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-    }
-
-    .faq-arrow:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 28px rgba(31, 41, 51, 0.12);
-      background: rgba(195, 0, 47, 0.06);
     }
 
     .cta-final {
@@ -815,20 +585,6 @@
       flex-wrap: wrap;
     }
 
-    @media (max-width: 980px) {
-      .grid-4 {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .mistakes-layout {
-        grid-template-columns: 1fr;
-      }
-
-      .mistakes-side {
-        position: static;
-      }
-    }
-
     @media (max-width: 900px) {
       .nav-links,
       .nav-actions {
@@ -856,28 +612,119 @@
       }
 
       .hero-grid,
-      .highlight-grid,
-      .grid-2,
-      .review-block {
+      .grid-2 {
         grid-template-columns: 1fr;
       }
 
       .grid-3,
-      .grid-4,
-      .coverages {
+      .coverages,
+      .data-list {
         grid-template-columns: 1fr;
       }
 
-      .faq-carousel {
-        grid-auto-columns: minmax(260px, 86vw);
-      }
-
       .hero {
-        padding-top: 54px;
+        padding: 54px 0 48px;
       }
 
       section {
-        padding: 56px 0;
+        padding: 54px 0;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .simple-table,
+      .simple-table thead,
+      .simple-table tbody,
+      .simple-table th,
+      .simple-table td,
+      .simple-table tr {
+        display: block;
+        width: 100%;
+      }
+
+      .simple-table thead {
+        display: none;
+      }
+
+      .simple-table tr {
+        padding: 18px 20px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .simple-table tr:last-child {
+        border-bottom: 0;
+      }
+
+      .simple-table td {
+        border-bottom: 0;
+        padding: 0;
+      }
+
+      .simple-table td + td {
+        margin-top: 10px;
+      }
+
+      .simple-table td::before {
+        display: block;
+        font-size: 0.78rem;
+        font-weight: 900;
+        color: var(--primary);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        margin-bottom: 4px;
+      }
+
+      .simple-table td:first-child::before {
+        content: "Modalidad";
+      }
+
+      .simple-table td:last-child::before {
+        content: "Para quién";
+      }
+    }
+
+    @media (max-width: 520px) {
+      .container {
+        width: min(100% - 24px, var(--max));
+      }
+
+      .brand-text span {
+        font-size: 0.78rem;
+      }
+
+      h1 {
+        font-size: 2.35rem;
+        letter-spacing: -0.05em;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+      }
+
+      .hero-actions,
+      .cta-final .hero-actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+        min-height: 52px;
+      }
+
+      .hero-card,
+      .data-box,
+      .review-box,
+      .cta-final {
+        padding: 26px 20px;
+        border-radius: 20px;
+      }
+
+      .coverage-card {
+        padding: 20px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
       }
     }
 
@@ -894,41 +741,6 @@
       .reveal {
         opacity: 1;
         transform: none;
-      }
-    }
-
-    @media (max-width: 520px) {
-      .container {
-        width: min(100% - 24px, var(--max));
-      }
-
-      .hero-actions,
-      .cta-final .hero-actions {
-        flex-direction: column;
-      }
-
-      .btn {
-        width: 100%;
-      }
-
-      .highlight,
-      .cta-final {
-        padding: 28px 20px;
-      }
-
-      .review-list,
-      .mistakes-list {
-        padding: 24px 20px;
-      }
-
-      .review-item,
-      .mistake-item {
-        grid-template-columns: 38px 1fr;
-        gap: 12px;
-      }
-
-      h1 {
-        font-size: 2.45rem;
       }
     }
   </style>
@@ -984,27 +796,26 @@
           <h1>Seguro de salud para cuidar de ti y de los tuyos</h1>
 
           <p class="lead">
-            Un seguro de salud te permite acceder a atención médica privada, especialistas, pruebas diagnósticas, tratamientos, hospitalización, videoconsulta, salud dental y otros servicios pensados para cuidar mejor de tu bienestar.
+            Te ayudamos a elegir una modalidad de salud según tu edad, tu zona, el uso que haces del médico y si buscas cuadro médico, reembolso o dental.
           </p>
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="https://wa.me/34606067906?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20seguro%20de%20salud" target="_blank" rel="noopener">Hablar por WhatsApp</a>
             <a class="btn btn-outline" href="tel:+34917702311">Llamar a la oficina</a>
-            <a class="btn btn-outline" href="#coberturas">Ver coberturas</a>
+            <a class="btn btn-outline" href="#modalidades">Ver modalidades</a>
           </div>
 
-          <p class="trust-line">Respuesta rápida · Sin compromiso · Te explicamos todo de forma sencilla</p>
+          <p class="trust-line">Respuesta rápida · Sin compromiso · Te lo explicamos claro</p>
         </div>
 
         <aside class="hero-card" aria-label="Resumen del seguro de salud">
           <div class="hero-card-icon">🛡️</div>
-          <h2>¿Qué puede proteger?</h2>
+          <h2>¿Qué puede incluir?</h2>
           <ul>
-            <li>Acceso a médicos, especialistas y centros privados.</li>
-            <li>Pruebas diagnósticas, tratamientos y hospitalización.</li>
+            <li>Médicos, especialistas y centros privados.</li>
+            <li>Pruebas diagnósticas y hospitalización según modalidad.</li>
             <li>Videoconsulta, chat médico y orientación telefónica.</li>
-            <li>Salud dental, segunda opinión médica y asistencia en viaje.</li>
-            <li>Opciones con cuadro médico, reembolso, subsidio o bienestar.</li>
+            <li>Salud dental o reembolso, si lo contratas.</li>
           </ul>
         </aside>
       </div>
@@ -1013,142 +824,103 @@
     <section>
       <div class="container">
         <div class="section-title">
-          <span>Atención médica más cómoda</span>
-          <h2>Una forma más flexible de acceder a la sanidad privada</h2>
+          <span>Directo y sencillo</span>
+          <h2>No todos los seguros de salud funcionan igual</h2>
           <p>
-            No todos los seguros de salud funcionan igual. Hay personas que prefieren utilizar un cuadro médico concertado, otras que buscan libertad para elegir médico u hospital, y otras que solo quieren una ayuda económica si tienen que ingresar en un hospital.
+            Lo importante es elegir una modalidad que encaje con cuánto usas el médico, si quieres pagar menos cuota o si prefieres más libertad para elegir profesionales.
           </p>
         </div>
 
         <div class="grid-3">
           <article class="card">
             <div class="card-icon">🏥</div>
-            <h3>Asistencia médica privada</h3>
-            <p>Acceso a medicina general, pediatría, especialistas, pruebas, tratamientos, hospitalización y servicios concertados.</p>
+            <h3>Cuadro médico</h3>
+            <p>Para acudir a médicos y centros privados concertados.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">💳</div>
+            <h3>Copago o sin copago</h3>
+            <p>El copago permite pagar menos cuota y abonar una parte cuando usas servicios.</p>
           </article>
 
           <article class="card">
             <div class="card-icon">🌍</div>
-            <h3>Libertad de elección</h3>
-            <p>En modalidades de reembolso puedes acudir a médicos u hospitales fuera del cuadro y recuperar parte del gasto según límites.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">📱</div>
-            <h3>Servicios para el día a día</h3>
-            <p>Videoconsulta, chat médico, salud dental, segunda opinión médica, orientación telefónica y bienestar.</p>
+            <h3>Reembolso</h3>
+            <p>Para quienes quieren elegir médicos de fuera del cuadro médico.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section-soft">
-      <div class="container">
-        <div class="section-title center">
-          <span>Para distintas necesidades</span>
-          <h2>¿Para quién es recomendable?</h2>
-          <p>
-            El seguro de salud puede adaptarse a una persona, pareja o familia. La clave está en elegir una modalidad que encaje con la forma en la que quieres usar la sanidad privada.
-          </p>
-        </div>
-
-        <div class="grid-3">
-          <article class="card">
-            <div class="card-icon">👨‍👩‍👧‍👦</div>
-            <h3>Familias</h3>
-            <p>Para quienes quieren acceso cómodo a pediatría, especialistas, pruebas médicas y servicios digitales.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">🧑‍⚕️</div>
-            <h3>Personas que quieren especialistas</h3>
-            <p>Para acudir a especialistas médicos dentro del cuadro médico y reducir esperas en consultas o pruebas.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">🌐</div>
-            <h3>Quienes buscan libertad</h3>
-            <p>Para quienes quieren elegir médico u hospital fuera del cuadro mediante una modalidad de reembolso.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">🛏️</div>
-            <h3>Apoyo por hospitalización</h3>
-            <p>Para quienes quieren recibir una cantidad pactada si tienen que estar ingresados en un hospital.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">🦷</div>
-            <h3>Salud dental y bienestar</h3>
-            <p>Para personas que valoran servicios dentales, medicina preventiva, bienestar, óptica, podología o servicios complementarios.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">👵</div>
-            <h3>Personas sénior</h3>
-            <p>Para quienes quieren valorar servicios de bienestar, ayuda domiciliaria, teleasistencia o apoyo en convalecencia.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section>
+    <section id="modalidades" class="section-soft">
       <div class="container">
         <div class="section-title center">
           <span>Modalidades</span>
-          <h2>Opciones de seguro de salud</h2>
+          <h2>Qué modalidad puede encajar contigo</h2>
           <p>
-            Salud tiene varias formas de contratación. Te ayudamos a entenderlas para que no elijas solo por precio, sino por el uso real que vas a darle.
+            Esta tabla es orientativa. Lo ideal es revisar tu caso concreto antes de contratar.
           </p>
         </div>
 
-        <div class="grid-3">
-          <article class="card">
-            <div class="card-icon">🏥</div>
-            <h3>Asistencia sanitaria</h3>
-            <p>Acceso al cuadro médico para medicina general, especialistas, pruebas, tratamientos, hospitalización y servicios incluidos según modalidad.</p>
-          </article>
+        <div class="table-wrap">
+          <table class="simple-table">
+            <thead>
+              <tr>
+                <th>Modalidad</th>
+                <th>Para quién</th>
+              </tr>
+            </thead>
 
-          <article class="card">
-            <div class="card-icon">🔁</div>
-            <h3>Reembolso mixto</h3>
-            <p>Combina cuadro médico con reembolso de determinados gastos fuera del cuadro, según porcentajes, límites y condiciones.</p>
-          </article>
+            <tbody>
+              <tr>
+                <td><strong>Con copago</strong></td>
+                <td>Para quien usa poco el médico y quiere pagar menos cuota.</td>
+              </tr>
 
-          <article class="card">
-            <div class="card-icon">🌍</div>
-            <h3>Reembolso Prime</h3>
-            <p>Opción orientada a quienes quieren mayor libertad para escoger médico u hospital, incluso fuera del cuadro médico.</p>
-          </article>
+              <tr>
+                <td><strong>Sin copago</strong></td>
+                <td>Para familias o personas que usan más servicios médicos.</td>
+              </tr>
 
-          <article class="card">
-            <div class="card-icon">🛏️</div>
-            <h3>Subsidio por hospitalización</h3>
-            <p>Pago de una cantidad pactada por cada noche de ingreso hospitalario o intervención quirúrgica ambulatoria, según condiciones.</p>
-          </article>
+              <tr>
+                <td><strong>Reembolso</strong></td>
+                <td>Para quien quiere elegir médicos o centros de fuera del cuadro médico.</td>
+              </tr>
 
-          <article class="card">
-            <div class="card-icon">🌿</div>
-            <h3>Salud Bienestar</h3>
-            <p>Acceso a servicios médicos, dentales, asistenciales y de bienestar con precios preferentes o franquiciados.</p>
-          </article>
+              <tr>
+                <td><strong>Dental</strong></td>
+                <td>Como complemento. No siempre está incluido en todas las modalidades.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-          <article class="card">
-            <div class="card-icon">👵</div>
-            <h3>Bienestar Sénior</h3>
-            <p>Opción con servicios pensados para personas mayores, como atención domiciliaria, teleasistencia, dependencia o rehabilitación cardíaca.</p>
-          </article>
+        <div class="data-box">
+          <h3>Datos necesarios para obtener el precio de la póliza</h3>
+          <p>
+            Para calcular una propuesta de salud, necesitaremos algunos datos básicos:
+          </p>
+
+          <ul class="data-list">
+            <li>Edad de cada persona asegurada.</li>
+            <li>Código postal.</li>
+            <li>Número de personas que quieres incluir.</li>
+            <li>Modalidad deseada: copago, sin copago, reembolso o dental.</li>
+            <li>Si tienes póliza actual.</li>
+            <li>Si no es con Occident, con qué aseguradora la tienes.</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <section id="coberturas" class="section-soft">
+    <section id="coberturas">
       <div class="container">
         <div class="section-title">
           <span>Coberturas principales</span>
-          <h2>Qué puede cubrir un seguro de salud</h2>
+          <h2>Qué conviene revisar en un seguro de salud</h2>
           <p>
-            Las coberturas exactas dependen de la modalidad contratada, los límites, copagos, autorizaciones y periodos de carencia. Estas son algunas de las garantías que conviene revisar.
+            Las coberturas exactas dependen de la modalidad contratada, copagos, carencias y condiciones de la póliza.
           </p>
         </div>
 
@@ -1156,32 +928,8 @@
           <article class="coverage-card">
             <div class="mini-icon">👨‍⚕️</div>
             <div>
-              <h3>Medicina general</h3>
-              <p>Consultas de medicina primaria y atención básica para el seguimiento de tu salud.</p>
-            </div>
-          </article>
-
-          <article class="coverage-card">
-            <div class="mini-icon">👶</div>
-            <div>
-              <h3>Pediatría</h3>
-              <p>Atención médica para niños, revisiones y consultas pediátricas según modalidad.</p>
-            </div>
-          </article>
-
-          <article class="coverage-card">
-            <div class="mini-icon">🧑‍⚕️</div>
-            <div>
-              <h3>Especialistas médicos</h3>
-              <p>Dermatología, traumatología, ginecología, oftalmología, cardiología y otras especialidades.</p>
-            </div>
-          </article>
-
-          <article class="coverage-card">
-            <div class="mini-icon">🚑</div>
-            <div>
-              <h3>Urgencias</h3>
-              <p>Atención urgente en centros concertados o servicios de orientación asistencial según póliza.</p>
+              <h3>Medicina general y especialistas</h3>
+              <p>Consultas médicas y acceso a especialidades dentro del cuadro médico.</p>
             </div>
           </article>
 
@@ -1189,7 +937,7 @@
             <div class="mini-icon">🔬</div>
             <div>
               <h3>Pruebas diagnósticas</h3>
-              <p>Análisis, radiografías, ecografías, resonancias, TAC u otras pruebas según prescripción y autorización.</p>
+              <p>Análisis, radiografías, ecografías, resonancias u otras pruebas según modalidad.</p>
             </div>
           </article>
 
@@ -1197,39 +945,7 @@
             <div class="mini-icon">🏥</div>
             <div>
               <h3>Hospitalización</h3>
-              <p>Ingreso hospitalario médico, quirúrgico, pediátrico o psiquiátrico, según modalidad y límites.</p>
-            </div>
-          </article>
-
-          <article class="coverage-card">
-            <div class="mini-icon">🔪</div>
-            <div>
-              <h3>Intervenciones quirúrgicas</h3>
-              <p>Cirugías hospitalarias o extrahospitalarias con prescripción médica y autorización cuando proceda.</p>
-            </div>
-          </article>
-
-          <article class="coverage-card">
-            <div class="mini-icon">🧘</div>
-            <div>
-              <h3>Rehabilitación y fisioterapia</h3>
-              <p>Tratamientos de recuperación funcional, fisioterapia o rehabilitación según límites y condiciones.</p>
-            </div>
-          </article>
-
-          <article class="coverage-card">
-            <div class="mini-icon">🧠</div>
-            <div>
-              <h3>Psicología clínica</h3>
-              <p>Sesiones de psicología o apoyo psicológico, según modalidad, autorización y límites anuales.</p>
-            </div>
-          </article>
-
-          <article class="coverage-card">
-            <div class="mini-icon">🦷</div>
-            <div>
-              <h3>Salud dental</h3>
-              <p>Actos dentales gratuitos o franquiciados, limpieza dental, radiografías o servicios odontológicos según modalidad.</p>
+              <p>Ingreso hospitalario o intervención quirúrgica según las condiciones contratadas.</p>
             </div>
           </article>
 
@@ -1237,166 +953,24 @@
             <div class="mini-icon">📱</div>
             <div>
               <h3>Videoconsulta y chat médico</h3>
-              <p>Consultas digitales en medicina general, pediatría, nutrición, psicología, dermatología u otras especialidades disponibles.</p>
+              <p>Servicios digitales para consultas rápidas y orientación médica.</p>
             </div>
           </article>
 
           <article class="coverage-card">
-            <div class="mini-icon">🩺</div>
+            <div class="mini-icon">🦷</div>
             <div>
-              <h3>Segunda opinión médica</h3>
-              <p>Valoración médica adicional en enfermedades graves o intervenciones quirúrgicas, según condiciones.</p>
+              <h3>Salud dental</h3>
+              <p>Puede estar incluida o contratarse como complemento según modalidad.</p>
             </div>
           </article>
-        </div>
-      </div>
-    </section>
 
-    <section>
-      <div class="container highlight">
-        <div class="highlight-grid">
-          <div>
-            <div class="eyebrow">Cuadro médico</div>
-            <h2>Acceso sencillo a médicos, centros y hospitales concertados</h2>
-            <p>
-              En las modalidades de asistencia sanitaria, puedes utilizar el cuadro médico para elegir profesionales y centros disponibles. En muchas especialidades puedes pedir cita directamente con el profesional elegido dentro del cuadro médico.
-            </p>
-
-            <ul class="feature-list">
-              <li>Consulta del cuadro médico por zona o especialidad.</li>
-              <li>Elección de especialista dentro de la red concertada.</li>
-              <li>Uso de tarjeta sanitaria personal e intransferible.</li>
-              <li>Pruebas y tratamientos con autorización cuando proceda.</li>
-              <li>Orientación asistencial en caso de urgencia.</li>
-            </ul>
-          </div>
-
-
-        </div>
-      </div>
-    </section>
-
-    <section class="section-soft">
-      <div class="container">
-        <div class="highlight" style="background: linear-gradient(135deg, #1f2933, #111827);">
-          <div class="highlight-grid">
+          <article class="coverage-card">
+            <div class="mini-icon">🌍</div>
             <div>
-              <div class="eyebrow">Copagos</div>
-              <h2>Modalidades con o sin copago</h2>
-              <p>
-                El copago es la participación económica del asegurado cada vez que utiliza determinados servicios médicos. Elegir con o sin copago depende de cuánto vas a usar el seguro y de si prefieres pagar más prima o pagar algo cuando lo utilizas.
-              </p>
-
-              <ul class="feature-list">
-                <li>Copago 0: más tranquilidad si vas a usarlo con frecuencia.</li>
-                <li>Copago 5 o 20: prima más ajustada y pago por uso.</li>
-                <li>Advance: modalidad con contador de actos médicos.</li>
-                <li>Algunos actos pueden requerir autorización previa.</li>
-                <li>Los procesos hospitalarios suelen tener tratamiento específico.</li>
-              </ul>
+              <h3>Reembolso</h3>
+              <p>Permite acudir a médicos fuera del cuadro y recuperar parte del gasto según límites.</p>
             </div>
-
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container highlight">
-        <div class="highlight-grid">
-          <div>
-            <div class="eyebrow">Reembolso</div>
-            <h2>Libertad para elegir médico u hospital</h2>
-            <p>
-              Las modalidades de reembolso pueden interesarte si ya tienes médicos concretos, quieres acudir a especialistas fuera del cuadro o valoras tener más libertad para elegir centro médico u hospital.
-            </p>
-
-            <ul class="feature-list">
-              <li>Reembolso mixto: combina cuadro médico y reembolso.</li>
-              <li>Reembolso Prime: más orientado a libertad de elección.</li>
-              <li>Puede aplicarse en España y en el extranjero según condiciones.</li>
-              <li>Existen porcentajes y límites máximos de reembolso.</li>
-              <li>Hay que conservar facturas, informes y documentación médica.</li>
-            </ul>
-          </div>
-
-
-        </div>
-      </div>
-    </section>
-
-    <section class="section-soft">
-      <div class="container">
-        <div class="highlight" style="background: linear-gradient(135deg, #1f2933, #111827);">
-          <div class="highlight-grid">
-            <div>
-              <div class="eyebrow">Subsidio por hospitalización</div>
-              <h2>Una ayuda económica si tienes que ingresar</h2>
-              <p>
-                El subsidio por hospitalización no funciona igual que un seguro médico completo. Está pensado para recibir una cantidad pactada por cada noche de ingreso hospitalario o por determinadas intervenciones quirúrgicas ambulatorias.
-              </p>
-
-              <ul class="feature-list">
-                <li>Indemnización diaria por hospitalización.</li>
-                <li>Puede aplicarse con o sin cirugía, según condiciones.</li>
-                <li>Puede incluir subsidio domiciliario opcional.</li>
-                <li>Puede incluir indemnización por intervención quirúrgica.</li>
-                <li>Puede complementarse con salud dental, orientación médica o bienestar.</li>
-              </ul>
-            </div>
-
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <div class="section-title">
-          <span>Servicios útiles</span>
-          <h2>Salud digital, dental y bienestar</h2>
-          <p>
-            Además de las coberturas médicas principales, algunas modalidades pueden incluir servicios muy útiles para el día a día.
-          </p>
-        </div>
-
-        <div class="grid-3">
-          <article class="card">
-            <div class="card-icon">📱</div>
-            <h3>Videoconsulta médica</h3>
-            <p>Consulta online con medicina general, pediatría, nutrición, psicología, dermatología, ginecología u otras especialidades disponibles.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">💬</div>
-            <h3>Chat médico</h3>
-            <p>Canal digital para resolver dudas médicas o recibir orientación según los servicios incluidos.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">☎️</div>
-            <h3>Orientación telefónica</h3>
-            <p>Orientación médica, psicológica, pediátrica o asistencial según modalidad y disponibilidad.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">🦷</div>
-            <h3>Salud dental</h3>
-            <p>Actos gratuitos o franquiciados, limpieza dental, radiografías, revisiones y otros servicios odontológicos según modalidad.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">👁️</div>
-            <h3>Óptica y audición</h3>
-            <p>Algunas opciones de bienestar pueden incluir revisión optométrica y auditiva o acceso a servicios relacionados.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">🏡</div>
-            <h3>Atención domiciliaria</h3>
-            <p>En modalidades sénior o de bienestar puede haber servicios de ayuda a domicilio, convalecencia o dependencia.</p>
           </article>
         </div>
       </div>
@@ -1404,223 +978,25 @@
 
     <section class="section-soft">
       <div class="container">
-        <div class="review-block">
+        <div class="grid-2">
           <div class="section-title">
             <span>Antes de contratar</span>
-            <h2>Qué conviene revisar</h2>
+            <h2>Lo importante no es solo el precio</h2>
             <p>
-              Antes de elegir un seguro de salud, conviene revisar cómo lo vas a utilizar, qué médicos o centros te interesan, si quieres copago y qué límites tiene cada modalidad.
-            </p>
-
-            <p class="review-intro">
-              La mejor opción no siempre es la más barata ni la más completa: es la que encaja con tus médicos, tu zona, tu frecuencia de uso y tu presupuesto.
-            </p>
-
-            <div class="review-note">
-              <strong>Consejo:</strong> antes de contratar, revisa el cuadro médico, los copagos, las carencias y las autorizaciones. Ahí suelen estar las diferencias importantes.
-            </div>
-          </div>
-
-          <ol class="review-list">
-            <li class="review-item">
-              <span class="review-number">01</span>
-              <div>
-                <strong>Edad de los asegurados</strong>
-                <p>Conviene revisar si la póliza será individual, de pareja o familiar, y cómo afecta la edad de cada asegurado.</p>
-              </div>
-            </li>
-
-            <li class="review-item">
-              <span class="review-number">02</span>
-              <div>
-                <strong>Cuadro médico o libertad de elección</strong>
-                <p>Si quieres elegir médicos concretos fuera del cuadro, puede interesarte una modalidad con reembolso.</p>
-              </div>
-            </li>
-
-            <li class="review-item">
-              <span class="review-number">03</span>
-              <div>
-                <strong>Copago, sin copago o Advance</strong>
-                <p>La modalidad cambia mucho según prefieras pagar más prima fija o pagar una parte cuando usas servicios médicos.</p>
-              </div>
-            </li>
-
-            <li class="review-item">
-              <span class="review-number">04</span>
-              <div>
-                <strong>Hospitales, clínicas y especialistas</strong>
-                <p>Antes de contratar, es importante comprobar qué centros y profesionales están disponibles en tu zona.</p>
-              </div>
-            </li>
-
-            <li class="review-item">
-              <span class="review-number">05</span>
-              <div>
-                <strong>Carencias y preexistencias</strong>
-                <p>Algunas coberturas no se pueden usar desde el primer día y ciertas situaciones médicas previas pueden tener condiciones.</p>
-              </div>
-            </li>
-
-            <li class="review-item">
-              <span class="review-number">06</span>
-              <div>
-                <strong>Límites de reembolso</strong>
-                <p>Si eliges reembolso, hay que revisar porcentajes, importes máximos, facturas y documentación necesaria.</p>
-              </div>
-            </li>
-
-            <li class="review-item">
-              <span class="review-number">07</span>
-              <div>
-                <strong>Pruebas y autorizaciones</strong>
-                <p>Algunas pruebas diagnósticas, ingresos, cirugías o tratamientos pueden necesitar autorización previa.</p>
-              </div>
-            </li>
-
-            <li class="review-item">
-              <span class="review-number">08</span>
-              <div>
-                <strong>Servicios complementarios</strong>
-                <p>Salud dental, psicología, fisioterapia, embarazo, videoconsulta o asistencia en viaje pueden marcar la diferencia.</p>
-              </div>
-            </li>
-          </ol>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container mistakes-block">
-        <div class="mistakes-layout">
-          <div class="mistakes-side section-title">
-            <span>Errores frecuentes</span>
-            <h2>Errores habituales al contratar un seguro de salud</h2>
-            <p>
-              En salud, muchas diferencias se descubren cuando necesitas usar el seguro. Por eso conviene revisar bien estas cuestiones antes de decidir.
+              Hay que revisar si el cuadro médico te encaja, si prefieres copago o sin copago, si hay carencias y si necesitas dental o reembolso.
             </p>
           </div>
 
-          <ol class="mistakes-list">
-            <li class="mistake-item">
-              <span class="mistake-mark">!</span>
-              <div>
-                <strong>Elegir solo por precio</strong>
-                <p>Un seguro más barato puede tener más copagos, límites, carencias o menos servicios incluidos.</p>
-              </div>
-            </li>
-
-            <li class="mistake-item">
-              <span class="mistake-mark">!</span>
-              <div>
-                <strong>No revisar el cuadro médico</strong>
-                <p>Antes de contratar conviene comprobar médicos, clínicas y hospitales disponibles en tu zona.</p>
-              </div>
-            </li>
-
-            <li class="mistake-item">
-              <span class="mistake-mark">!</span>
-              <div>
-                <strong>No entender los copagos</strong>
-                <p>Hay que saber cuánto se paga por consulta, prueba, urgencia, hospitalización o tratamiento.</p>
-              </div>
-            </li>
-
-            <li class="mistake-item">
-              <span class="mistake-mark">!</span>
-              <div>
-                <strong>Olvidar las carencias</strong>
-                <p>Algunas coberturas pueden no estar disponibles desde el primer día.</p>
-              </div>
-            </li>
-
-            <li class="mistake-item">
-              <span class="mistake-mark">!</span>
-              <div>
-                <strong>Confundir asistencia y reembolso</strong>
-                <p>La asistencia funciona con cuadro médico. El reembolso permite más libertad, pero con porcentajes y límites.</p>
-              </div>
-            </li>
-
-            <li class="mistake-item">
-              <span class="mistake-mark">!</span>
-              <div>
-                <strong>Pensar que todo está incluido</strong>
-                <p>Estética, preexistencias, fertilidad, prótesis externas o ciertos tratamientos pueden estar excluidos o limitados.</p>
-              </div>
-            </li>
-          </ol>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-soft">
-      <div class="container">
-        <div class="section-title center">
-          <span>Preguntas frecuentes</span>
-          <h2>Dudas habituales sobre el seguro de salud</h2>
-        </div>
-
-        <div class="faq-carousel-wrap">
-          <div class="faq-carousel" id="faqCarousel" aria-label="Carrusel de preguntas frecuentes">
-            <article class="faq-card">
-              <div class="faq-number">01</div>
-              <h3>¿Qué diferencia hay entre cuadro médico y reembolso?</h3>
-              <p>El cuadro médico te permite acudir a profesionales y centros concertados. El reembolso permite acudir a médicos u hospitales fuera del cuadro y recuperar parte del gasto, según porcentaje y límites.</p>
-            </article>
-
-            <article class="faq-card">
-              <div class="faq-number">02</div>
-              <h3>¿Qué es el copago?</h3>
-              <p>Es una cantidad que paga el asegurado cuando utiliza determinados servicios médicos. Puede variar según la modalidad contratada y el tipo de acto médico.</p>
-            </article>
-
-            <article class="faq-card">
-              <div class="faq-number">03</div>
-              <h3>¿Qué es una carencia?</h3>
-              <p>Es el tiempo que debe pasar desde el alta en la póliza hasta poder usar determinadas coberturas. No todas las coberturas tienen la misma carencia.</p>
-            </article>
-
-            <article class="faq-card">
-              <div class="faq-number">04</div>
-              <h3>¿Puedo ir directamente al especialista?</h3>
-              <p>En muchas especialidades dentro del cuadro médico puedes elegir profesional y pedir cita directamente. Algunas pruebas o tratamientos sí pueden necesitar prescripción o autorización.</p>
-            </article>
-
-            <article class="faq-card">
-              <div class="faq-number">05</div>
-              <h3>¿Cuándo necesito autorización?</h3>
-              <p>Puede ser necesaria para pruebas diagnósticas avanzadas, tratamientos especiales, ingresos hospitalarios, intervenciones quirúrgicas o sesiones con límite anual.</p>
-            </article>
-
-            <article class="faq-card">
-              <div class="faq-number">06</div>
-              <h3>¿Incluye salud dental?</h3>
-              <p>Puede incluir salud dental con actos gratuitos y servicios franquiciados, dependiendo de la modalidad contratada.</p>
-            </article>
-
-            <article class="faq-card">
-              <div class="faq-number">07</div>
-              <h3>¿Incluye videoconsulta?</h3>
-              <p>Sí, algunas modalidades incluyen videoconsulta y chat médico en distintas especialidades, según disponibilidad y condiciones.</p>
-            </article>
-
-            <article class="faq-card">
-              <div class="faq-number">08</div>
-              <h3>¿Qué es el subsidio por hospitalización?</h3>
-              <p>Es una cantidad pactada que se recibe por cada noche de ingreso hospitalario o por determinadas intervenciones quirúrgicas ambulatorias, según la póliza.</p>
-            </article>
-
-            <article class="faq-card">
-              <div class="faq-number">09</div>
-              <h3>¿Puedo asegurar a mi familia?</h3>
-              <p>Sí. Se puede estudiar una opción individual, de pareja o familiar, revisando edades, necesidades médicas, copagos y modalidad más adecuada.</p>
-            </article>
-          </div>
-
-          <div class="faq-controls" aria-label="Controles del carrusel de preguntas frecuentes">
-            <button class="faq-arrow" type="button" data-faq-prev aria-label="Pregunta anterior">‹</button>
-            <button class="faq-arrow" type="button" data-faq-next aria-label="Pregunta siguiente">›</button>
+          <div class="review-box">
+            <h3>Nos fijamos en lo importante:</h3>
+            <ul class="review-list">
+              <li>Edad y número de asegurados.</li>
+              <li>Zona y cuadro médico disponible.</li>
+              <li>Frecuencia con la que usas el médico.</li>
+              <li>Copagos, carencias y autorizaciones.</li>
+              <li>Necesidad de dental o reembolso.</li>
+              <li>Si tienes póliza actual y quieres mejorarla.</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -1629,9 +1005,9 @@
     <section>
       <div class="container">
         <div class="cta-final">
-          <h2>¿Quieres saber qué seguro de salud encaja mejor contigo?</h2>
+          <h2>¿Quieres calcular tu seguro de salud?</h2>
           <p>
-            Podemos ayudarte a comparar modalidades, revisar cuadro médico, explicar copagos, valorar reembolso o ver si te interesa asistencia sanitaria, subsidio por hospitalización o bienestar.
+            Podemos ayudarte a comparar modalidades, revisar tu situación actual y explicarte qué opción puede encajar mejor contigo o con tu familia.
           </p>
 
           <div class="hero-actions" style="justify-content:center;">
@@ -1651,6 +1027,7 @@
   <footer class="footer">
     <div class="container footer-inner">
       <p>© Elena Sanz Burgos · Seguros y asesoramiento</p>
+
       <div class="footer-links">
         <a href="index.html">Inicio</a>
         <a href="seguros.html">Seguros</a>
@@ -1671,28 +1048,8 @@
       });
     }
 
-    const faqCarousel = document.querySelector("#faqCarousel");
-    const faqPrev = document.querySelector("[data-faq-prev]");
-    const faqNext = document.querySelector("[data-faq-next]");
-
-    if (faqCarousel && faqPrev && faqNext) {
-      const moveFaqCarousel = (direction) => {
-        const card = faqCarousel.querySelector(".faq-card");
-        const gap = 18;
-        const distance = card ? card.offsetWidth + gap : 340;
-
-        faqCarousel.scrollBy({
-          left: direction * distance,
-          behavior: "smooth"
-        });
-      };
-
-      faqPrev.addEventListener("click", () => moveFaqCarousel(-1));
-      faqNext.addEventListener("click", () => moveFaqCarousel(1));
-    }
-
     const revealElements = document.querySelectorAll(
-      ".section-title, .card, .coverage-card, .highlight, .review-list, .mistakes-list, .faq-card, .cta-final"
+      ".section-title, .card, .coverage-card, .table-wrap, .data-box, .review-box, .cta-final"
     );
 
     if ("IntersectionObserver" in window) {
