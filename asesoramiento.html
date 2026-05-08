@@ -409,6 +409,90 @@
       margin: 0 0 32px;
     }
 
+    .clarity-box {
+      background:
+        radial-gradient(circle at top right, rgba(185,28,28,.08), transparent 34%),
+        linear-gradient(135deg, #fffafa 0%, #ffffff 100%);
+      border: 1px solid rgba(240,202,202,.9);
+      border-radius: 26px;
+      padding: 38px;
+      box-shadow: 0 14px 34px rgba(0,0,0,.08);
+      animation: fadeUp .7s ease both;
+    }
+
+    .clarity-header {
+      max-width: 760px;
+      margin-bottom: 28px;
+    }
+
+    .clarity-header p {
+      color: #555;
+      font-size: 17px;
+      margin: 0;
+    }
+
+    .clarity-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .clarity-card {
+      background: white;
+      border: 1px solid rgba(244,204,204,.9);
+      border-radius: 20px;
+      padding: 22px;
+      box-shadow: 0 10px 24px rgba(0,0,0,.06);
+      transition: .25s ease;
+    }
+
+    .clarity-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 36px rgba(0,0,0,.10);
+      border-color: #eebcbc;
+    }
+
+    .clarity-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      background: #fff3f3;
+      color: #b91c1c;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 14px;
+      border: 1px solid #f4cccc;
+    }
+
+    .clarity-card h3 {
+      font-size: 19px;
+      margin-bottom: 10px;
+    }
+
+    .clarity-card p {
+      color: #555;
+      font-size: 15px;
+      margin: 0;
+      line-height: 1.55;
+    }
+
+    .risk-warning {
+      margin-top: 24px;
+      background: #fff3f3;
+      border: 1px solid #f4cccc;
+      border-radius: 18px;
+      padding: 20px;
+    }
+
+    .risk-warning p {
+      margin: 0;
+      color: #444;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
     .finance-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
@@ -907,6 +991,10 @@
       .quick-pages {
         grid-template-columns: repeat(2, 1fr);
       }
+
+      .clarity-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
     @media (max-width: 768px) {
@@ -988,6 +1076,25 @@
       .section-intro {
         font-size: 16px;
         margin-bottom: 28px;
+      }
+
+      .clarity-box {
+        padding: 26px 20px;
+        border-radius: 22px;
+      }
+
+      .clarity-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .clarity-header p,
+      .risk-warning p {
+        font-size: 16px;
+      }
+
+      .clarity-card {
+        padding: 22px 20px;
       }
 
       .finance-grid {
@@ -1120,121 +1227,119 @@
       transform: rotate(45deg);
     }
 
-    .card-open{
-  margin:24px -28px -28px;
-  border-top:1px solid #f0dede;
-  background:white;
-}
+    .card-open {
+      margin: 24px -28px -28px;
+      border-top: 1px solid #f0dede;
+      background: white;
+    }
 
-.card-open-header{
-  background:#f9f4f4;
-  color:#b13a3a;
-  padding:22px 34px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  font-weight:900;
-  font-size:18px;
-}
+    .card-open-header {
+      background: #f9f4f4;
+      color: #b13a3a;
+      padding: 22px 34px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 900;
+      font-size: 18px;
+    }
 
-.card-open-header span{
-  width:34px;
-  height:34px;
-  border-radius:50%;
-  background:#b13a3a;
-  color:white;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:26px;
-}
+    .card-open-header span {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #b13a3a;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+    }
 
-.card-open-body{
-  padding:34px;
-}
+    .card-open-body {
+      padding: 34px;
+    }
 
-.card-open-body ul{
-  margin-left:22px;
-  margin-bottom:30px;
-}
+    .card-open-body ul {
+      margin-left: 22px;
+      margin-bottom: 30px;
+    }
 
-.card-open-body li{
-  margin-bottom:12px;
-  font-size:17px;
-  line-height:1.6;
-}
+    .card-open-body li {
+      margin-bottom: 12px;
+      font-size: 17px;
+      line-height: 1.6;
+    }
 
-.ideal-box{
-  border-left:5px solid #c1121f;
-  background:#fff7f7;
-  border-radius:18px;
-  padding:22px;
-  margin-bottom:24px;
-  border-top:1px solid #f0dede;
-  border-right:1px solid #f0dede;
-  border-bottom:1px solid #f0dede;
-  font-size:17px;
-  line-height:1.5;
-}
+    .ideal-box {
+      border-left: 5px solid #c1121f;
+      background: #fff7f7;
+      border-radius: 18px;
+      padding: 22px;
+      margin-bottom: 24px;
+      border-top: 1px solid #f0dede;
+      border-right: 1px solid #f0dede;
+      border-bottom: 1px solid #f0dede;
+      font-size: 17px;
+      line-height: 1.5;
+    }
 
-.ideal-box strong{
-  font-weight:900;
-}
+    .ideal-box strong {
+      font-weight: 900;
+    }
 
-.more-info-btn{
-  width:100%;
-  min-height:58px;
-  border-radius:16px;
-  border:1px solid #f0caca;
-  color:#9f0000;
-  background:white;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:17px;
-  font-weight:900;
-  transition:.2s ease;
-  text-decoration:none;
-}
+    .more-info-btn {
+      width: 100%;
+      min-height: 58px;
+      border-radius: 16px;
+      border: 1px solid #f0caca;
+      color: #9f0000;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 17px;
+      font-weight: 900;
+      transition: .2s ease;
+      text-decoration: none;
+    }
 
-.more-info-btn:hover{
-  background:#fff2f2;
-  transform:translateY(-2px);
-}
+    .more-info-btn:hover {
+      background: #fff2f2;
+      transform: translateY(-2px);
+    }
 
-.card-calls{
-  display:flex;
-  justify-content:space-between;
-  gap:12px;
-  margin-top:20px;
-  flex-wrap:wrap;
-}
+    .card-calls {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
 
-.card-calls a{
-  color:#666;
-  text-decoration:underline;
-  font-weight:700;
-}
+    .card-calls a {
+      color: #666;
+      text-decoration: underline;
+      font-weight: 700;
+    }
 
-@media(max-width:768px){
+    @media(max-width:768px) {
+      .card-open {
+        margin: 22px -22px -22px;
+      }
 
-  .card-open{
-    margin:22px -22px -22px;
-  }
+      .card-open-header {
+        padding: 18px 22px;
+      }
 
-  .card-open-header{
-    padding:18px 22px;
-  }
+      .card-open-body {
+        padding: 24px 22px;
+      }
 
-  .card-open-body{
-    padding:24px 22px;
-  }
-
-  .card-open-body li{
-    font-size:16px;
-  }
-
-}
+      .card-open-body li {
+        font-size: 16px;
+      }
+    }
   </style>
 </head>
 
@@ -1336,6 +1441,65 @@
     </div>
   </section>
 
+  <!-- CLARIDAD SOBRE RIESGO Y RECOMENDACIÓN -->
+  <section class="section">
+    <div class="container">
+      <div class="clarity-box">
+
+        <div class="clarity-header">
+          <p class="eyebrow">Antes de recomendar nada</p>
+          <h2>No recomendamos lo mismo a todo el mundo</h2>
+          <p>
+            Cada persona tiene una situación, unos objetivos, un plazo y una forma distinta de asumir el riesgo. Por eso primero entendemos tu caso y después valoramos qué opciones pueden encajar.
+          </p>
+        </div>
+
+        <div class="clarity-grid">
+
+          <article class="clarity-card">
+            <div class="clarity-icon">👤</div>
+            <h3>Perfil de riesgo</h3>
+            <p>
+              Antes de hablar de productos, revisamos cómo te sientes ante posibles subidas y bajadas del mercado.
+            </p>
+          </article>
+
+          <article class="clarity-card">
+            <div class="clarity-icon">⏳</div>
+            <h3>Horizonte temporal</h3>
+            <p>
+              No es lo mismo invertir para dentro de 2 años que para dentro de 10 o para la jubilación.
+            </p>
+          </article>
+
+          <article class="clarity-card">
+            <div class="clarity-icon">🎯</div>
+            <h3>Objetivo concreto</h3>
+            <p>
+              Ahorrar para una casa, invertir a largo plazo o preparar la jubilación requiere enfoques diferentes.
+            </p>
+          </article>
+
+          <article class="clarity-card">
+            <div class="clarity-icon">⚠️</div>
+            <h3>Riesgo de inversión</h3>
+            <p>
+              Las inversiones pueden subir o bajar. Por eso es importante entender bien qué se está contratando.
+            </p>
+          </article>
+
+        </div>
+
+        <div class="risk-warning">
+          <p>
+            <strong>Importante:</strong> invertir siempre implica riesgo. Nuestro objetivo es ayudarte a entenderlo, valorar tu perfil y evitar decisiones improvisadas o productos que no encajen contigo.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- SOLUCIONES -->
   <section id="soluciones" class="section">
     <div class="container">
@@ -1347,195 +1511,195 @@
 
       <div class="finance-grid">
 
-  <!-- INVERSIONES -->
-  <div class="card">
+        <!-- INVERSIONES -->
+        <div class="card">
 
-    <div>
-      <div class="card-icon">↗</div>
+          <div>
+            <div class="card-icon">↗</div>
 
-      <h3>Inversiones</h3>
+            <h3>Inversiones</h3>
 
-      <p>
-        Te ayudamos a valorar opciones de inversión según tu perfil, tus objetivos y el plazo en el que quieres conseguirlos.
-      </p>
-    </div>
+            <p>
+              Te ayudamos a valorar opciones de inversión según tu perfil, tus objetivos y el plazo en el que quieres conseguirlos.
+            </p>
+          </div>
 
-    <details class="card-open">
+          <details class="card-open">
 
-      <summary class="card-open-header">
-        <strong>Ver coberturas</strong>
-        <span>+</span>
-      </summary>
+            <summary class="card-open-header">
+              <strong>Ver coberturas</strong>
+              <span>+</span>
+            </summary>
 
-      <div class="card-open-body">
+            <div class="card-open-body">
 
-        <ul>
-          <li>Revisión de tu perfil de riesgo.</li>
-          <li>Opciones de inversión según plazo y objetivo.</li>
-          <li>Planificación fiscal y patrimonial.</li>
-          <li>Acompañamiento para tomar decisiones con criterio.</li>
-        </ul>
+              <ul>
+                <li>Revisión de tu perfil de riesgo.</li>
+                <li>Opciones de inversión según plazo y objetivo.</li>
+                <li>Planificación fiscal y patrimonial.</li>
+                <li>Acompañamiento para tomar decisiones con criterio.</li>
+              </ul>
 
-        <div class="ideal-box">
-          <strong>Ideal si...</strong>
-          quieres invertir con más claridad y evitar decisiones improvisadas.
+              <div class="ideal-box">
+                <strong>Ideal si...</strong>
+                quieres invertir con más claridad y evitar decisiones improvisadas.
+              </div>
+
+              <a href="inversiones.html" class="more-info-btn">
+                Más información
+              </a>
+
+              <div class="card-calls">
+                <a href="tel:+34917702311">☎ Llamar oficina</a>
+                <a href="tel:+34606067906">☎ Llamar móvil</a>
+              </div>
+
+            </div>
+          </details>
         </div>
 
-        <a href="inversiones.html" class="more-info-btn">
-          Más información
-        </a>
+        <!-- FONDOS -->
+        <div class="card">
 
-        <div class="card-calls">
-          <a href="tel:+34917702311">☎ Llamar oficina</a>
-          <a href="tel:+34606067906">☎ Llamar móvil</a>
+          <div>
+            <div class="card-icon">🏦</div>
+
+            <h3>Fondos de inversión</h3>
+
+            <p>
+              Una forma de invertir con una visión más amplia, buscando crecimiento a medio y largo plazo.
+            </p>
+          </div>
+
+          <details class="card-open">
+
+            <summary class="card-open-header">
+              <strong>Ver coberturas</strong>
+              <span>+</span>
+            </summary>
+
+            <div class="card-open-body">
+
+              <ul>
+                <li>Fondos conservadores, mixtos y de renta variable.</li>
+                <li>Diversificación por mercados, sectores y activos.</li>
+                <li>Traspasos entre fondos sin tributar hasta el reembolso.</li>
+                <li>Revisión de riesgo, costes y horizonte recomendado.</li>
+              </ul>
+
+              <div class="ideal-box">
+                <strong>Ideal si...</strong>
+                quieres invertir de forma diversificada y con fiscalidad eficiente.
+              </div>
+
+              <a href="fondos-de-inversion.html" class="more-info-btn">
+                Más información
+              </a>
+
+              <div class="card-calls">
+                <a href="tel:+34917702311">☎ Llamar oficina</a>
+                <a href="tel:+34606067906">☎ Llamar móvil</a>
+              </div>
+
+            </div>
+          </details>
+        </div>
+
+        <!-- PLANES DE PENSIONES -->
+        <div class="card">
+
+          <div>
+            <div class="card-icon">◎</div>
+
+            <h3>Planes de pensiones</h3>
+
+            <p>
+              Te ayudamos a preparar tu jubilación para que puedas mirar al futuro con más tranquilidad.
+            </p>
+          </div>
+
+          <details class="card-open">
+
+            <summary class="card-open-header">
+              <strong>Ver coberturas</strong>
+              <span>+</span>
+            </summary>
+
+            <div class="card-open-body">
+
+              <ul>
+                <li>Planificación para complementar la jubilación.</li>
+                <li>PPA y fondos de pensiones según perfil.</li>
+                <li>Ventajas fiscales dentro de los límites legales.</li>
+                <li>Revisión de liquidez, rescate y forma de cobro.</li>
+              </ul>
+
+              <div class="ideal-box">
+                <strong>Ideal si...</strong>
+                quieres preparar tu jubilación con tiempo y ordenar tu previsión.
+              </div>
+
+              <a href="planes-de-pensiones.html" class="more-info-btn">
+                Más información
+              </a>
+
+              <div class="card-calls">
+                <a href="tel:+34917702311">☎ Llamar oficina</a>
+                <a href="tel:+34606067906">☎ Llamar móvil</a>
+              </div>
+
+            </div>
+          </details>
+        </div>
+
+        <!-- PLANES DE AHORRO -->
+        <div class="card">
+
+          <div>
+            <div class="card-icon">💼</div>
+
+            <h3>Planes de ahorro</h3>
+
+            <p>
+              Opciones para ahorrar poco a poco, con una planificación adaptada a tus posibilidades y objetivos.
+            </p>
+          </div>
+
+          <details class="card-open">
+
+            <summary class="card-open-header">
+              <strong>Ver coberturas</strong>
+              <span>+</span>
+            </summary>
+
+            <div class="card-open-body">
+
+              <ul>
+                <li>PIAS, SIALP, rentas y seguros de ahorro.</li>
+                <li>Ahorro periódico o mediante prima única.</li>
+                <li>Planificación fiscal según la forma de cobro.</li>
+                <li>Opciones para rentas vitalicias o temporales.</li>
+              </ul>
+
+              <div class="ideal-box">
+                <strong>Ideal si...</strong>
+                quieres ahorrar con orden y preparar objetivos futuros.
+              </div>
+
+              <a href="planes-de-ahorro.html" class="more-info-btn">
+                Más información
+              </a>
+
+              <div class="card-calls">
+                <a href="tel:+34917702311">☎ Llamar oficina</a>
+                <a href="tel:+34606067906">☎ Llamar móvil</a>
+              </div>
+
+            </div>
+          </details>
         </div>
 
       </div>
-    </details>
-  </div>
-
-  <!-- FONDOS -->
-  <div class="card">
-
-    <div>
-      <div class="card-icon">🏦</div>
-
-      <h3>Fondos de inversión</h3>
-
-      <p>
-        Una forma de invertir con una visión más amplia, buscando crecimiento a medio y largo plazo.
-      </p>
-    </div>
-
-    <details class="card-open">
-
-      <summary class="card-open-header">
-        <strong>Ver coberturas</strong>
-        <span>+</span>
-      </summary>
-
-      <div class="card-open-body">
-
-        <ul>
-          <li>Fondos conservadores, mixtos y de renta variable.</li>
-          <li>Diversificación por mercados, sectores y activos.</li>
-          <li>Traspasos entre fondos sin tributar hasta el reembolso.</li>
-          <li>Revisión de riesgo, costes y horizonte recomendado.</li>
-        </ul>
-
-        <div class="ideal-box">
-          <strong>Ideal si...</strong>
-          quieres invertir de forma diversificada y con fiscalidad eficiente.
-        </div>
-
-        <a href="fondos-de-inversion.html" class="more-info-btn">
-          Más información
-        </a>
-
-        <div class="card-calls">
-          <a href="tel:+34917702311">☎ Llamar oficina</a>
-          <a href="tel:+34606067906">☎ Llamar móvil</a>
-        </div>
-
-      </div>
-    </details>
-  </div>
-
-  <!-- PLANES DE PENSIONES -->
-  <div class="card">
-
-    <div>
-      <div class="card-icon">◎</div>
-
-      <h3>Planes de pensiones</h3>
-
-      <p>
-        Te ayudamos a preparar tu jubilación para que puedas mirar al futuro con más tranquilidad.
-      </p>
-    </div>
-
-    <details class="card-open">
-
-      <summary class="card-open-header">
-        <strong>Ver coberturas</strong>
-        <span>+</span>
-      </summary>
-
-      <div class="card-open-body">
-
-        <ul>
-          <li>Planificación para complementar la jubilación.</li>
-          <li>PPA y fondos de pensiones según perfil.</li>
-          <li>Ventajas fiscales dentro de los límites legales.</li>
-          <li>Revisión de liquidez, rescate y forma de cobro.</li>
-        </ul>
-
-        <div class="ideal-box">
-          <strong>Ideal si...</strong>
-          quieres preparar tu jubilación con tiempo y ordenar tu previsión.
-        </div>
-
-        <a href="planes-de-pensiones.html" class="more-info-btn">
-          Más información
-        </a>
-
-        <div class="card-calls">
-          <a href="tel:+34917702311">☎ Llamar oficina</a>
-          <a href="tel:+34606067906">☎ Llamar móvil</a>
-        </div>
-
-      </div>
-    </details>
-  </div>
-
-  <!-- PLANES DE AHORRO -->
-  <div class="card">
-
-    <div>
-      <div class="card-icon">💼</div>
-
-      <h3>Planes de ahorro</h3>
-
-      <p>
-        Opciones para ahorrar poco a poco, con una planificación adaptada a tus posibilidades y objetivos.
-      </p>
-    </div>
-
-    <details class="card-open">
-
-      <summary class="card-open-header">
-        <strong>Ver coberturas</strong>
-        <span>+</span>
-      </summary>
-
-      <div class="card-open-body">
-
-        <ul>
-          <li>PIAS, SIALP, rentas y seguros de ahorro.</li>
-          <li>Ahorro periódico o mediante prima única.</li>
-          <li>Planificación fiscal según la forma de cobro.</li>
-          <li>Opciones para rentas vitalicias o temporales.</li>
-        </ul>
-
-        <div class="ideal-box">
-          <strong>Ideal si...</strong>
-          quieres ahorrar con orden y preparar objetivos futuros.
-        </div>
-
-        <a href="planes-de-ahorro.html" class="more-info-btn">
-          Más información
-        </a>
-
-        <div class="card-calls">
-          <a href="tel:+34917702311">☎ Llamar oficina</a>
-          <a href="tel:+34606067906">☎ Llamar móvil</a>
-        </div>
-
-      </div>
-    </details>
-  </div>
-
-</div>
 
       <div class="highlight-box">
         <p>
