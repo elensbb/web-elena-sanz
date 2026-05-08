@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Planes de pensiones | Elena Sanz Burgos</title>
-  <meta name="description" content="Planes de pensiones, PPA y fondos de pensiones para preparar la jubilación, aprovechar ventajas fiscales y planificar el ahorro a largo plazo." />
+  <meta name="description" content="Planes de pensiones y PPA para preparar la jubilación. Información clara sobre ventajas fiscales, límites, condiciones de rescate y dudas frecuentes." />
 
   <style>
     :root {
@@ -23,8 +23,15 @@
       --max: 1120px;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -33,7 +40,10 @@
       line-height: 1.6;
     }
 
-    a { color: inherit; text-decoration: none; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
     .container {
       width: min(100% - 32px, var(--max));
@@ -41,29 +51,26 @@
     }
 
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(22px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     @keyframes softFloat {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-6px); }
-    }
+      0%, 100% {
+        transform: translateY(0);
+      }
 
-    .hero .eyebrow,
-    .hero h1,
-    .hero .lead,
-    .hero-actions,
-    .trust-line {
-      animation: fadeUp 0.7s ease both;
+      50% {
+        transform: translateY(-6px);
+      }
     }
-
-    .hero h1 { animation-delay: 0.08s; }
-    .hero .lead { animation-delay: 0.16s; }
-    .hero-actions { animation-delay: 0.24s; }
-    .trust-line { animation-delay: 0.32s; }
-    .hero-card { animation: fadeUp 0.8s ease 0.18s both; }
-    .hero-card-icon { animation: softFloat 4.5s ease-in-out infinite; }
 
     .reveal {
       opacity: 0;
@@ -108,6 +115,7 @@
       place-items: center;
       font-weight: 800;
       letter-spacing: -0.03em;
+      flex-shrink: 0;
     }
 
     .brand-text strong {
@@ -131,7 +139,9 @@
       color: var(--muted);
     }
 
-    .nav-links a:hover { color: var(--primary); }
+    .nav-links a:hover {
+      color: var(--primary);
+    }
 
     .nav-actions {
       display: flex;
@@ -148,7 +158,9 @@
       color: var(--text);
     }
 
-    .mobile-menu { display: none; }
+    .mobile-menu {
+      display: none;
+    }
 
     .btn {
       display: inline-flex;
@@ -157,12 +169,13 @@
       gap: 8px;
       border-radius: 999px;
       padding: 13px 20px;
-      font-weight: 700;
+      font-weight: 800;
       font-size: 0.95rem;
       border: 1px solid transparent;
       transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
       cursor: pointer;
       white-space: nowrap;
+      text-align: center;
     }
 
     .btn:hover {
@@ -175,7 +188,9 @@
       color: var(--white);
     }
 
-    .btn-primary:hover { background: var(--primary-dark); }
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
 
     .btn-outline {
       background: transparent;
@@ -184,7 +199,7 @@
     }
 
     .hero {
-      padding: 84px 0 56px;
+      padding: 78px 0 54px;
       position: relative;
       overflow: hidden;
     }
@@ -216,21 +231,35 @@
       border-radius: 999px;
       background: rgba(195, 0, 47, 0.08);
       color: var(--primary);
-      font-weight: 700;
+      font-weight: 800;
       font-size: 0.9rem;
       margin-bottom: 20px;
     }
 
     h1 {
-      font-size: clamp(2.45rem, 5vw, 4.7rem);
-      line-height: 0.98;
+      font-size: clamp(2.35rem, 5vw, 4.4rem);
+      line-height: 1;
       letter-spacing: -0.06em;
       max-width: 850px;
       margin-bottom: 22px;
     }
 
+    h2 {
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      line-height: 1.1;
+      letter-spacing: -0.045em;
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+
     .lead {
-      font-size: clamp(1.08rem, 2vw, 1.25rem);
+      font-size: clamp(1.05rem, 2vw, 1.22rem);
       color: #455363;
       max-width: 690px;
       margin-bottom: 28px;
@@ -253,7 +282,8 @@
       border: 1px solid var(--border);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      padding: 26px;
+      padding: 28px;
+      animation: fadeUp 0.8s ease both;
     }
 
     .hero-card-icon {
@@ -265,12 +295,12 @@
       place-items: center;
       font-size: 2rem;
       margin-bottom: 18px;
+      animation: softFloat 4.5s ease-in-out infinite;
     }
 
     .hero-card h2 {
       font-size: 1.45rem;
       margin-bottom: 12px;
-      letter-spacing: -0.03em;
     }
 
     .hero-card ul {
@@ -293,7 +323,9 @@
       flex: 0 0 auto;
     }
 
-    section { padding: 72px 0; }
+    section {
+      padding: 64px 0;
+    }
 
     .section-soft {
       background: var(--bg-soft);
@@ -316,20 +348,6 @@
       font-weight: 800;
       display: block;
       margin-bottom: 8px;
-    }
-
-    h2 {
-      font-size: clamp(2rem, 3vw, 3rem);
-      line-height: 1.08;
-      letter-spacing: -0.045em;
-      margin-bottom: 16px;
-    }
-
-    h3 {
-      font-size: 1.25rem;
-      line-height: 1.25;
-      letter-spacing: -0.02em;
-      margin-bottom: 10px;
     }
 
     .section-title p,
@@ -377,7 +395,100 @@
       margin-bottom: 18px;
     }
 
-    .card p { color: var(--muted); }
+    .card p {
+      color: var(--muted);
+    }
+
+    .notice-box {
+      background: linear-gradient(135deg, var(--primary), #8f0023);
+      color: var(--white);
+      border-radius: calc(var(--radius) + 6px);
+      padding: 36px;
+      box-shadow: var(--shadow);
+    }
+
+    .notice-box h2 {
+      margin-bottom: 12px;
+    }
+
+    .notice-box p {
+      color: rgba(255,255,255,.92);
+      max-width: 900px;
+      font-size: 1.08rem;
+    }
+
+    .notice-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .notice-list li {
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 16px;
+      padding: 18px;
+      color: rgba(255,255,255,.94);
+    }
+
+    .notice-list strong {
+      display: block;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+
+    .fund-table-wrap {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .fund-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .fund-table th,
+    .fund-table td {
+      text-align: left;
+      padding: 18px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    .fund-table th {
+      background: rgba(195, 0, 47, 0.08);
+      color: var(--primary);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .fund-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .fund-table strong {
+      color: var(--text);
+    }
+
+    .risk {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 46px;
+      min-height: 34px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(195, 0, 47, 0.08);
+      color: var(--primary);
+      font-weight: 900;
+      font-size: 0.86rem;
+    }
 
     .highlight {
       background: linear-gradient(135deg, var(--primary), #8f0023);
@@ -387,14 +498,9 @@
       box-shadow: var(--shadow);
     }
 
-    .highlight-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 28px;
-      align-items: center;
+    .highlight p {
+      color: rgba(255, 255, 255, 0.86);
     }
-
-    .highlight p { color: rgba(255, 255, 255, 0.85); }
 
     .highlight .eyebrow {
       background: rgba(255, 255, 255, 0.12);
@@ -420,69 +526,7 @@
       content: "✓";
       font-weight: 900;
       color: var(--white);
-    }
-
-    .pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 20px;
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      border-radius: 999px;
-      padding: 9px 13px;
-      background: rgba(195, 0, 47, 0.08);
-      color: var(--primary);
-      font-weight: 800;
-      font-size: 0.9rem;
-    }
-
-    .highlight .pill {
-      background: rgba(255, 255, 255, 0.14);
-      color: var(--white);
-    }
-
-    .fund-table {
-      width: 100%;
-      border-collapse: collapse;
-      background: var(--white);
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: 0 14px 34px rgba(31, 41, 51, 0.06);
-      border: 1px solid var(--border);
-    }
-
-    .fund-table th,
-    .fund-table td {
-      text-align: left;
-      padding: 18px;
-      border-bottom: 1px solid var(--border);
-      vertical-align: top;
-    }
-
-    .fund-table th {
-      background: rgba(195, 0, 47, 0.06);
-      color: var(--primary);
-      font-size: 0.92rem;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-
-    .fund-table tr:last-child td { border-bottom: 0; }
-
-    .risk {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 46px;
-      height: 34px;
-      border-radius: 999px;
-      background: rgba(195, 0, 47, 0.08);
-      color: var(--primary);
-      font-weight: 900;
+      flex: 0 0 auto;
     }
 
     .review-block {
@@ -511,8 +555,14 @@
       border-bottom: 1px solid var(--border);
     }
 
-    .review-item:first-child { padding-top: 0; }
-    .review-item:last-child { padding-bottom: 0; border-bottom: 0; }
+    .review-item:first-child {
+      padding-top: 0;
+    }
+
+    .review-item:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
 
     .review-number {
       width: 38px;
@@ -538,36 +588,24 @@
       font-size: 0.97rem;
     }
 
-    .faq-carousel {
+    .faq-grid {
       display: grid;
-      grid-auto-flow: column;
-      grid-auto-columns: minmax(290px, 360px);
-      gap: 18px;
-      overflow-x: auto;
-      overscroll-behavior-x: contain;
-      scroll-snap-type: x mandatory;
-      scroll-padding: 4px;
-      padding: 6px 4px 18px;
-      scrollbar-width: thin;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
     }
 
     .faq-card {
-      min-height: 260px;
       background: var(--white);
       border: 1px solid var(--border);
-      border-radius: var(--radius);
+      border-radius: var(--radius-sm);
       padding: 24px;
       box-shadow: 0 10px 24px rgba(31, 41, 51, 0.04);
-      scroll-snap-align: start;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
       transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
     }
 
     .faq-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 42px rgba(31, 41, 51, 0.1);
+      transform: translateY(-5px);
+      box-shadow: 0 18px 36px rgba(31, 41, 51, 0.09);
       border-color: rgba(195, 0, 47, 0.22);
     }
 
@@ -580,36 +618,12 @@
       display: grid;
       place-items: center;
       font-weight: 900;
-      flex: 0 0 auto;
+      margin-bottom: 14px;
     }
 
-    .faq-card h3 { margin-bottom: 0; }
-    .faq-card p { color: var(--muted); font-size: 0.98rem; }
-
-    .faq-controls {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 12px;
-    }
-
-    .faq-arrow {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      border: 1px solid rgba(195, 0, 47, 0.28);
-      background: var(--white);
-      color: var(--primary);
-      font-size: 1.2rem;
-      font-weight: 900;
-      cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-    }
-
-    .faq-arrow:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 28px rgba(31, 41, 51, 0.12);
-      background: rgba(195, 0, 47, 0.06);
+    .faq-card p {
+      color: var(--muted);
+      font-size: 0.98rem;
     }
 
     .cta-final {
@@ -650,15 +664,24 @@
     }
 
     @media (max-width: 980px) {
-      .grid-4 { grid-template-columns: repeat(2, 1fr); }
-      .fund-table { display: block; overflow-x: auto; white-space: nowrap; }
+      .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .notice-list {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 900px) {
       .nav-links,
-      .nav-actions { display: none; }
+      .nav-actions {
+        display: none;
+      }
 
-      .menu-toggle { display: block; }
+      .menu-toggle {
+        display: block;
+      }
 
       .mobile-menu {
         display: none;
@@ -677,23 +700,133 @@
       }
 
       .hero-grid,
-      .highlight-grid,
       .review-block {
         grid-template-columns: 1fr;
       }
 
       .grid-3,
-      .grid-4 {
+      .grid-4,
+      .faq-grid {
         grid-template-columns: 1fr;
       }
 
-      .faq-carousel {
-        grid-auto-columns: minmax(260px, 86vw);
+      .hero {
+        padding-top: 54px;
       }
 
-      .hero { padding-top: 54px; }
+      section {
+        padding: 54px 0;
+      }
+    }
 
-      section { padding: 56px 0; }
+    @media (max-width: 760px) {
+      .fund-table,
+      .fund-table thead,
+      .fund-table tbody,
+      .fund-table th,
+      .fund-table td,
+      .fund-table tr {
+        display: block;
+        width: 100%;
+      }
+
+      .fund-table thead {
+        display: none;
+      }
+
+      .fund-table tr {
+        padding: 18px 20px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .fund-table tr:last-child {
+        border-bottom: 0;
+      }
+
+      .fund-table td {
+        border-bottom: 0;
+        padding: 0;
+      }
+
+      .fund-table td + td {
+        margin-top: 10px;
+      }
+
+      .fund-table td::before {
+        display: block;
+        font-size: 0.78rem;
+        font-weight: 900;
+        color: var(--primary);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        margin-bottom: 4px;
+      }
+
+      .fund-table td:nth-child(1)::before {
+        content: "Producto";
+      }
+
+      .fund-table td:nth-child(2)::before {
+        content: "Tipo";
+      }
+
+      .fund-table td:nth-child(3)::before {
+        content: "Perfil";
+      }
+
+      .fund-table td:nth-child(4)::before {
+        content: "Liquidez";
+      }
+
+      .fund-table td:nth-child(5)::before {
+        content: "Uso principal";
+      }
+    }
+
+    @media (max-width: 520px) {
+      .container {
+        width: min(100% - 24px, var(--max));
+      }
+
+      .hero-actions,
+      .cta-final .hero-actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+        min-height: 52px;
+      }
+
+      .hero-card,
+      .highlight,
+      .notice-box,
+      .cta-final {
+        padding: 26px 20px;
+        border-radius: 20px;
+      }
+
+      .review-list {
+        padding: 24px 20px;
+      }
+
+      .review-item {
+        grid-template-columns: 38px 1fr;
+        gap: 12px;
+      }
+
+      h1 {
+        font-size: 2.35rem;
+        letter-spacing: -0.05em;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -710,31 +843,6 @@
         opacity: 1;
         transform: none;
       }
-    }
-
-    @media (max-width: 520px) {
-      .container { width: min(100% - 24px, var(--max)); }
-
-      .hero-actions,
-      .cta-final .hero-actions {
-        flex-direction: column;
-      }
-
-      .btn { width: 100%; }
-
-      .highlight,
-      .cta-final {
-        padding: 28px 20px;
-      }
-
-      .review-list { padding: 24px 20px; }
-
-      .review-item {
-        grid-template-columns: 38px 1fr;
-        gap: 12px;
-      }
-
-      h1 { font-size: 2.45rem; }
     }
   </style>
 </head>
@@ -786,16 +894,16 @@
         <div>
           <div class="eyebrow">🏦 Planes de pensiones</div>
 
-          <h1>Prepara tu jubilación con planificación y ventajas fiscales</h1>
+          <h1>Planes de pensiones para preparar la jubilación</h1>
 
           <p class="lead">
-            Los planes de pensiones y los planes de previsión asegurados ayudan a construir un ahorro para la jubilación, con una fiscalidad específica y distintos perfiles de inversión.
+            Te ayudamos a entender sus ventajas, límites, condiciones de rescate y fiscalidad antes de tomar una decisión.
           </p>
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="https://wa.me/34606067906?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20planes%20de%20pensiones" target="_blank" rel="noopener">Hablar por WhatsApp</a>
             <a class="btn btn-outline" href="tel:+34917702311">Llamar a la oficina</a>
-            <a class="btn btn-outline" href="#planes">Ver planes</a>
+            <a class="btn btn-outline" href="#faq">Ver preguntas frecuentes</a>
           </div>
 
           <p class="trust-line">Jubilación · Fiscalidad · Previsión a largo plazo</p>
@@ -803,15 +911,43 @@
 
         <aside class="hero-card" aria-label="Resumen de planes de pensiones">
           <div class="hero-card-icon">👵</div>
-          <h2>¿Para qué sirven?</h2>
+          <h2>Idea principal</h2>
           <ul>
-            <li>Complementar la pensión pública en el futuro.</li>
-            <li>Ahorrar con horizonte de jubilación.</li>
-            <li>Aprovechar posibles ventajas fiscales en IRPF.</li>
-            <li>Elegir entre perfiles conservadores o dinámicos.</li>
-            <li>Planificar contingencias como jubilación, incapacidad o fallecimiento.</li>
+            <li>Sirven para preparar la jubilación.</li>
+            <li>Pueden tener ventajas fiscales.</li>
+            <li>Tienen límites de aportación.</li>
+            <li>No se rescatan libremente en cualquier momento.</li>
+            <li>El rescate también tiene impacto fiscal.</li>
           </ul>
         </aside>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="notice-box">
+          <h2>Antes de aportar, conviene entender tres cosas</h2>
+          <p>
+            Sin entrar en asesoramiento personalizado, un plan de pensiones no se debe valorar solo por la desgravación. También hay que entender límites, condiciones de rescate y cómo tributa cuando se cobra.
+          </p>
+
+          <ul class="notice-list">
+            <li>
+              <strong>Ventajas</strong>
+              Puede ayudar a planificar la jubilación y reducir la base imponible dentro de los límites legales.
+            </li>
+
+            <li>
+              <strong>Límites</strong>
+              Las aportaciones tienen límites legales y no siempre compensa aportar lo mismo a todo el mundo.
+            </li>
+
+            <li>
+              <strong>Rescate</strong>
+              El dinero no se puede retirar libremente cuando quieras, salvo supuestos permitidos por normativa.
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -821,7 +957,7 @@
           <span>Previsión a largo plazo</span>
           <h2>Un producto pensado para la jubilación, no para el corto plazo</h2>
           <p>
-            Los planes de pensiones están diseñados para ahorrar a largo plazo. Su principal objetivo es acumular capital para la jubilación, aunque existen supuestos concretos de liquidez.
+            Su objetivo principal es acumular ahorro para complementar ingresos futuros. Por eso es importante revisar plazo, liquidez y fiscalidad antes de aportar.
           </p>
         </div>
 
@@ -829,19 +965,19 @@
           <article class="card">
             <div class="card-icon">🎯</div>
             <h3>Objetivo jubilación</h3>
-            <p>Sirven para construir un ahorro destinado principalmente a complementar ingresos futuros.</p>
+            <p>Está pensado para ahorrar a largo plazo y complementar la pensión pública.</p>
           </article>
 
           <article class="card">
             <div class="card-icon">🧾</div>
-            <h3>Fiscalidad específica</h3>
-            <p>Las aportaciones pueden reducir la base imponible del IRPF dentro de los límites legales.</p>
+            <h3>Fiscalidad</h3>
+            <p>Las aportaciones pueden reducir la base imponible dentro de los límites legales.</p>
           </article>
 
           <article class="card">
             <div class="card-icon">🔒</div>
             <h3>Liquidez limitada</h3>
-            <p>No son productos pensados para retirar el dinero en cualquier momento, salvo supuestos permitidos.</p>
+            <p>No es un producto para retirar el dinero libremente en cualquier momento.</p>
           </article>
         </div>
       </div>
@@ -853,33 +989,33 @@
           <span>Modalidades</span>
           <h2>Tipos de productos dentro de este bloque</h2>
           <p>
-            Dentro de planes de pensiones incluimos tanto fondos de pensiones como PPA, porque ambos están orientados a previsión y jubilación.
+            La diferencia principal está en cómo se invierte, qué garantías ofrece y para quién puede tener sentido.
           </p>
         </div>
 
         <div class="grid-4">
           <article class="card">
             <div class="card-icon">📈</div>
-            <h3>Fondos de pensiones</h3>
-            <p>Invierten en mercados financieros según una política de inversión y un perfil de riesgo.</p>
+            <h3>Plan de pensiones</h3>
+            <p>Producto de previsión para jubilación que invierte a través de un fondo de pensiones.</p>
           </article>
 
           <article class="card">
             <div class="card-icon">🛡️</div>
             <h3>PPA</h3>
-            <p>Plan de Previsión Asegurado, con garantía de tipo de interés y enfoque de jubilación.</p>
+            <p>Plan de Previsión Asegurado, con garantía de tipo de interés y enfoque conservador.</p>
           </article>
 
           <article class="card">
             <div class="card-icon">👥</div>
-            <h3>Planes de empleo</h3>
-            <p>Planes promovidos por empresas para sus trabajadores, dentro del sistema de empleo.</p>
+            <h3>Plan de empleo</h3>
+            <p>Promovido por una empresa para sus trabajadores, dentro del sistema de empleo.</p>
           </article>
 
           <article class="card">
             <div class="card-icon">🧑‍💼</div>
             <h3>Autónomos</h3>
-            <p>Soluciones de previsión para autónomos, especialmente cuando existe planificación a largo plazo.</p>
+            <p>Soluciones de previsión pensadas para profesionales que planifican su jubilación.</p>
           </article>
         </div>
       </div>
@@ -891,95 +1027,100 @@
           <span>Productos incluidos</span>
           <h2>Planes y fondos que encajan en este bloque</h2>
           <p>
-            Estos son los documentos/productos que has separado dentro del grupo de planes de pensiones y previsión.
+            Esta tabla es orientativa. Antes de elegir, conviene revisar perfil, riesgo, horizonte, liquidez y fiscalidad.
           </p>
         </div>
 
-        <table class="fund-table">
-          <thead>
-            <tr>
-              <th>Producto</th>
-              <th>Tipo</th>
-              <th>Perfil</th>
-              <th>Liquidez</th>
-              <th>Uso principal</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Ahorro PPA Prime</strong></td>
-              <td>Plan de Previsión Asegurado</td>
-              <td><span class="risk">Garantizado</span></td>
-              <td>Limitada por ley</td>
-              <td>Jubilación y previsión asegurada</td>
-            </tr>
-            <tr>
-              <td><strong>GCO Pensiones Colectivo</strong></td>
-              <td>Plan de pensiones de empleo</td>
-              <td><span class="risk">Empresa</span></td>
-              <td>Según normativa</td>
-              <td>Previsión para empleados</td>
-            </tr>
-            <tr>
-              <td><strong>Occident Pensiones Autónomos FP</strong></td>
-              <td>Fondo de pensiones</td>
-              <td><span class="risk">Moderado</span></td>
-              <td>Limitada por ley</td>
-              <td>Previsión autónomos</td>
-            </tr>
-            <tr>
-              <td><strong>Occident Pensiones Renta Fija FP</strong></td>
-              <td>Fondo de pensiones renta fija</td>
-              <td><span class="risk">Conservador</span></td>
-              <td>Limitada por ley</td>
-              <td>Jubilación con menor volatilidad</td>
-            </tr>
-            <tr>
-              <td><strong>Occident Pensiones Mixto Fijo FP</strong></td>
-              <td>Fondo mixto conservador</td>
-              <td><span class="risk">Conservador</span></td>
-              <td>Limitada por ley</td>
-              <td>Equilibrio prudente</td>
-            </tr>
-            <tr>
-              <td><strong>Occident Pensiones Mixto Variable FP</strong></td>
-              <td>Fondo mixto variable</td>
-              <td><span class="risk">Moderado</span></td>
-              <td>Limitada por ley</td>
-              <td>Crecimiento con riesgo medio</td>
-            </tr>
-            <tr>
-              <td><strong>Occident Pensiones Renta Variable FP</strong></td>
-              <td>Fondo renta variable</td>
-              <td><span class="risk">Dinámico</span></td>
-              <td>Limitada por ley</td>
-              <td>Crecimiento a largo plazo</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="fund-table-wrap">
+          <table class="fund-table">
+            <thead>
+              <tr>
+                <th>Producto</th>
+                <th>Tipo</th>
+                <th>Perfil</th>
+                <th>Liquidez</th>
+                <th>Uso principal</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td><strong>Ahorro PPA Prime</strong></td>
+                <td>Plan de Previsión Asegurado</td>
+                <td><span class="risk">Garantizado</span></td>
+                <td>Limitada por ley</td>
+                <td>Jubilación y previsión asegurada</td>
+              </tr>
+
+              <tr>
+                <td><strong>GCO Pensiones Colectivo</strong></td>
+                <td>Plan de pensiones de empleo</td>
+                <td><span class="risk">Empresa</span></td>
+                <td>Según normativa</td>
+                <td>Previsión para empleados</td>
+              </tr>
+
+              <tr>
+                <td><strong>Occident Pensiones Autónomos FP</strong></td>
+                <td>Fondo de pensiones</td>
+                <td><span class="risk">Moderado</span></td>
+                <td>Limitada por ley</td>
+                <td>Previsión autónomos</td>
+              </tr>
+
+              <tr>
+                <td><strong>Occident Pensiones Renta Fija FP</strong></td>
+                <td>Fondo de pensiones renta fija</td>
+                <td><span class="risk">Conservador</span></td>
+                <td>Limitada por ley</td>
+                <td>Jubilación con menor volatilidad</td>
+              </tr>
+
+              <tr>
+                <td><strong>Occident Pensiones Mixto Fijo FP</strong></td>
+                <td>Fondo mixto conservador</td>
+                <td><span class="risk">Conservador</span></td>
+                <td>Limitada por ley</td>
+                <td>Equilibrio prudente</td>
+              </tr>
+
+              <tr>
+                <td><strong>Occident Pensiones Mixto Variable FP</strong></td>
+                <td>Fondo mixto variable</td>
+                <td><span class="risk">Moderado</span></td>
+                <td>Limitada por ley</td>
+                <td>Crecimiento con riesgo medio</td>
+              </tr>
+
+              <tr>
+                <td><strong>Occident Pensiones Renta Variable FP</strong></td>
+                <td>Fondo renta variable</td>
+                <td><span class="risk">Dinámico</span></td>
+                <td>Limitada por ley</td>
+                <td>Crecimiento a largo plazo</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </section>
 
     <section class="section-soft">
-      <div class="container highlight">
-        <div class="highlight-grid">
-          <div>
-            <div class="eyebrow">Fiscalidad</div>
-            <h2>La fiscalidad es una de sus claves</h2>
-            <p>
-              Las aportaciones a planes de pensiones y PPA pueden reducir la base imponible del IRPF, siempre dentro de los límites legales vigentes. La prestación tributará cuando se cobre.
-            </p>
+      <div class="container">
+        <div class="highlight">
+          <div class="eyebrow">Fiscalidad</div>
+          <h2>La fiscalidad es una de sus claves</h2>
+          <p>
+            Las aportaciones pueden reducir la base imponible del IRPF dentro de los límites legales vigentes. Pero cuando se cobre el plan, la prestación también tributará.
+          </p>
 
-            <ul class="feature-list">
-              <li>Las aportaciones pueden reducir la base imponible.</li>
-              <li>La prestación tributa como rendimiento del trabajo.</li>
-              <li>Conviene planificar cómo y cuándo cobrarlo.</li>
-              <li>Puede cobrarse en capital, renta o forma mixta, según producto.</li>
-              <li>Es importante revisar límites, edad y situación fiscal.</li>
-            </ul>
-          </div>
-
-
+          <ul class="feature-list">
+            <li>Las aportaciones pueden reducir la base imponible.</li>
+            <li>La prestación tributa cuando se cobra.</li>
+            <li>Conviene planificar si cobrar en capital, renta o forma mixta.</li>
+            <li>No siempre conviene aportar lo mismo a todo el mundo.</li>
+            <li>Hay que revisar límites, edad, ingresos y situación fiscal.</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -988,10 +1129,10 @@
       <div class="container">
         <div class="review-block">
           <div class="section-title">
-            <span>Liquidez</span>
+            <span>Condiciones de rescate</span>
             <h2>Cuándo se puede disponer del dinero</h2>
             <p>
-              Los planes de pensiones y PPA tienen una liquidez restringida. Es fundamental entender cuándo puede recuperarse el dinero antes de aportar.
+              Los planes de pensiones y PPA tienen una liquidez restringida. Es fundamental entender esto antes de aportar.
             </p>
           </div>
 
@@ -1000,7 +1141,7 @@
               <span class="review-number">01</span>
               <div>
                 <strong>Jubilación</strong>
-                <p>Es la contingencia principal para la que se diseñan estos productos.</p>
+                <p>Es el supuesto principal para el que se diseñan estos productos.</p>
               </div>
             </li>
 
@@ -1008,7 +1149,7 @@
               <span class="review-number">02</span>
               <div>
                 <strong>Incapacidad</strong>
-                <p>Puede permitir el cobro si se reconoce una incapacidad según normativa aplicable.</p>
+                <p>Puede permitir el cobro si se reconoce una incapacidad según normativa.</p>
               </div>
             </li>
 
@@ -1024,31 +1165,23 @@
               <span class="review-number">04</span>
               <div>
                 <strong>Dependencia</strong>
-                <p>La dependencia severa o gran dependencia puede ser contingencia cubierta.</p>
+                <p>La dependencia severa o gran dependencia puede permitir el rescate.</p>
               </div>
             </li>
 
             <li class="review-item">
               <span class="review-number">05</span>
               <div>
-                <strong>Desempleo de larga duración</strong>
-                <p>Puede permitir disponer del ahorro si se cumplen los requisitos legales.</p>
+                <strong>Desempleo o enfermedad grave</strong>
+                <p>Puede haber supuestos excepcionales de liquidez si se cumplen requisitos legales.</p>
               </div>
             </li>
 
             <li class="review-item">
               <span class="review-number">06</span>
               <div>
-                <strong>Enfermedad grave</strong>
-                <p>Puede ser un supuesto excepcional de liquidez cuando se acredita correctamente.</p>
-              </div>
-            </li>
-
-            <li class="review-item">
-              <span class="review-number">07</span>
-              <div>
-                <strong>Aportaciones con antigüedad</strong>
-                <p>La normativa permite disponer de determinadas aportaciones con al menos diez años, según condiciones legales.</p>
+                <strong>Aportaciones antiguas</strong>
+                <p>La normativa permite rescatar determinadas aportaciones con suficiente antigüedad, según condiciones legales.</p>
               </div>
             </li>
           </ol>
@@ -1059,79 +1192,81 @@
     <section class="section-soft">
       <div class="container">
         <div class="highlight" style="background: linear-gradient(135deg, #1f2933, #111827);">
-          <div class="highlight-grid">
-            <div>
-              <div class="eyebrow">Antes de contratar</div>
-              <h2>Errores habituales con planes de pensiones</h2>
-              <p>
-                El error más frecuente es aportar solo por la deducción fiscal sin pensar en el cobro futuro, la liquidez o el perfil de inversión.
-              </p>
+          <div class="eyebrow">Antes de contratar</div>
+          <h2>Errores habituales con planes de pensiones</h2>
+          <p>
+            El error más frecuente es aportar solo por la desgravación sin pensar en el rescate, la liquidez o el perfil de inversión.
+          </p>
 
-              <ul class="feature-list">
-                <li>No revisar si la aportación fiscalmente compensa.</li>
-                <li>No tener claro cuándo se podrá rescatar.</li>
-                <li>Elegir un perfil demasiado conservador o demasiado arriesgado.</li>
-                <li>No planificar la forma de cobro en la jubilación.</li>
-                <li>Olvidar que el rescate tributa como rendimiento del trabajo.</li>
-              </ul>
-            </div>
-
-
-          </div>
+          <ul class="feature-list">
+            <li>No revisar si la aportación fiscalmente compensa.</li>
+            <li>No tener claro cuándo se podrá rescatar.</li>
+            <li>Elegir un perfil que no encaja con la edad o el plazo.</li>
+            <li>No planificar cómo tributará el cobro.</li>
+            <li>Olvidar que no es un producto de liquidez inmediata.</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <section>
+    <section id="faq">
       <div class="container">
         <div class="section-title center">
           <span>Preguntas frecuentes</span>
           <h2>Dudas habituales sobre planes de pensiones</h2>
+          <p>
+            Respuestas generales para entender mejor el producto antes de valorar si encaja contigo.
+          </p>
         </div>
 
-        <div class="faq-carousel-wrap">
-          <div class="faq-carousel" id="faqCarousel" aria-label="Carrusel de preguntas frecuentes">
-            <article class="faq-card">
-              <div class="faq-number">01</div>
-              <h3>¿Para qué sirve un plan de pensiones?</h3>
-              <p>Sirve para ahorrar a largo plazo con el objetivo principal de complementar la jubilación.</p>
-            </article>
+        <div class="faq-grid">
+          <article class="faq-card">
+            <div class="faq-number">01</div>
+            <h3>¿Cuándo puedo rescatarlo?</h3>
+            <p>
+              Principalmente en la jubilación. También puede rescatarse en supuestos concretos como incapacidad, fallecimiento, dependencia, enfermedad grave, desempleo de larga duración o aportaciones con antigüedad suficiente, según normativa.
+            </p>
+          </article>
 
-            <article class="faq-card">
-              <div class="faq-number">02</div>
-              <h3>¿Puedo sacar el dinero cuando quiera?</h3>
-              <p>No. La liquidez está limitada a contingencias y supuestos concretos previstos por la normativa.</p>
-            </article>
+          <article class="faq-card">
+            <div class="faq-number">02</div>
+            <h3>¿Me desgrava?</h3>
+            <p>
+              Las aportaciones pueden reducir la base imponible del IRPF dentro de los límites legales. Aun así, hay que revisar si fiscalmente compensa en cada caso.
+            </p>
+          </article>
 
-            <article class="faq-card">
-              <div class="faq-number">03</div>
-              <h3>¿Qué diferencia hay entre PPA y plan de pensiones?</h3>
-              <p>El PPA es un seguro de previsión asegurado con garantía de interés. El plan de pensiones invierte mediante un fondo de pensiones.</p>
-            </article>
+          <article class="faq-card">
+            <div class="faq-number">03</div>
+            <h3>¿Qué pasa si necesito el dinero antes?</h3>
+            <p>
+              No puedes disponer libremente del dinero como en una cuenta corriente. Solo se puede rescatar si se cumple alguno de los supuestos permitidos por la normativa.
+            </p>
+          </article>
 
-            <article class="faq-card">
-              <div class="faq-number">04</div>
-              <h3>¿Desgrava en la renta?</h3>
-              <p>Las aportaciones pueden reducir la base imponible del IRPF dentro de los límites legales aplicables.</p>
-            </article>
+          <article class="faq-card">
+            <div class="faq-number">04</div>
+            <h3>¿Conviene más un plan de pensiones o un fondo de pensiones?</h3>
+            <p>
+              No son exactamente lo mismo. El plan de pensiones es el producto que contratas y el fondo de pensiones es donde se invierte el dinero. Lo importante es revisar el perfil, riesgo, costes y política de inversión.
+            </p>
+          </article>
 
-            <article class="faq-card">
-              <div class="faq-number">05</div>
-              <h3>¿Cómo tributa al rescatarlo?</h3>
-              <p>La prestación suele tributar como rendimiento del trabajo, tanto si se cobra en capital como en renta.</p>
-            </article>
+          <article class="faq-card">
+            <div class="faq-number">05</div>
+            <h3>¿Cuánto debería aportar?</h3>
+            <p>
+              Depende de tus ingresos, edad, objetivo de jubilación, situación fiscal y capacidad de ahorro. No hay una cantidad igual para todo el mundo.
+            </p>
+          </article>
 
-            <article class="faq-card">
-              <div class="faq-number">06</div>
-              <h3>¿Qué perfil elegir?</h3>
-              <p>Depende de tu edad, años hasta la jubilación, tolerancia al riesgo y objetivo de ahorro.</p>
-            </article>
-          </div>
-
-          <div class="faq-controls" aria-label="Controles del carrusel de preguntas frecuentes">
-            <button class="faq-arrow" type="button" data-faq-prev aria-label="Pregunta anterior">‹</button>
-            <button class="faq-arrow" type="button" data-faq-next aria-label="Pregunta siguiente">›</button>
-          </div>
+          <article class="faq-card">
+            <div class="faq-number">06</div>
+            <h3>¿Qué pasa cuando lo rescato?</h3>
+            <p>
+              El rescate tributa como rendimiento del trabajo. Por eso conviene planificar si interesa cobrarlo en capital, en renta o de forma mixta.
+            </p>
+          </article>
         </div>
       </div>
     </section>
@@ -1141,7 +1276,7 @@
         <div class="cta-final">
           <h2>¿Quieres revisar tu planificación de jubilación?</h2>
           <p>
-            Podemos ayudarte a comparar PPA, fondos de pensiones, planes de empleo y alternativas de ahorro para preparar tu jubilación con sentido.
+            Podemos ayudarte a entender opciones, límites, condiciones de rescate y fiscalidad para valorar qué puede encajar mejor contigo.
           </p>
 
           <div class="hero-actions" style="justify-content:center;">
@@ -1161,6 +1296,7 @@
   <footer class="footer">
     <div class="container footer-inner">
       <p>© Elena Sanz Burgos · Seguros y asesoramiento</p>
+
       <div class="footer-links">
         <a href="index.html">Inicio</a>
         <a href="seguros.html">Seguros</a>
@@ -1181,28 +1317,8 @@
       });
     }
 
-    const faqCarousel = document.querySelector("#faqCarousel");
-    const faqPrev = document.querySelector("[data-faq-prev]");
-    const faqNext = document.querySelector("[data-faq-next]");
-
-    if (faqCarousel && faqPrev && faqNext) {
-      const moveFaqCarousel = (direction) => {
-        const card = faqCarousel.querySelector(".faq-card");
-        const gap = 18;
-        const distance = card ? card.offsetWidth + gap : 340;
-
-        faqCarousel.scrollBy({
-          left: direction * distance,
-          behavior: "smooth"
-        });
-      };
-
-      faqPrev.addEventListener("click", () => moveFaqCarousel(-1));
-      faqNext.addEventListener("click", () => moveFaqCarousel(1));
-    }
-
     const revealElements = document.querySelectorAll(
-      ".section-title, .card, .highlight, .review-list, .faq-card, .cta-final, .fund-table"
+      ".section-title, .card, .notice-box, .highlight, .review-list, .faq-card, .cta-final, .fund-table-wrap"
     );
 
     if ("IntersectionObserver" in window) {
