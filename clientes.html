@@ -779,6 +779,367 @@
         bottom: 75px;
       }
     }
+  
+    /* IDENTIDAD VISUAL PREMIUM - ELENA SANZ */
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap");
+
+    :root {
+      --brand-wine: #8f1f34;
+      --brand-wine-dark: #4a101d;
+      --brand-wine-soft: rgba(143,31,52,.12);
+      --brand-cream: #fffdfb;
+      --brand-cream-2: #fbf3ef;
+      --brand-stone: #6f6663;
+      --brand-text: #241f21;
+    }
+
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(126,28,46,0.10), transparent 35%),
+        radial-gradient(circle at bottom left, rgba(126,28,46,0.08), transparent 45%),
+        linear-gradient(135deg, #fffdfb 0%, #fbf3ef 52%, #f6ece7 100%);
+      color: var(--brand-text);
+      overflow-x: hidden;
+    }
+
+    ::selection {
+      background: rgba(143,31,52,.18);
+      color: var(--brand-wine-dark);
+    }
+
+    .topbar {
+      background: rgba(255,253,251,.94);
+      border-bottom: 1px solid rgba(143,31,52,.10);
+    }
+
+    .brand {
+      color: var(--brand-text);
+    }
+
+    .brand-logo {
+      background: var(--brand-wine);
+      box-shadow: 0 10px 24px rgba(143,31,52,.18);
+      font-family: 'Playfair Display', Georgia, serif;
+      letter-spacing: .4px;
+    }
+
+    .brand-text span {
+      color: var(--brand-stone);
+    }
+
+    .nav-links a {
+      color: #5f5755;
+    }
+
+    .nav-links a:hover {
+      color: var(--brand-wine);
+    }
+
+    .nav-phone,
+    .nav-whatsapp {
+      text-align: center;
+      line-height: 1.15;
+      letter-spacing: -.2px;
+    }
+
+    .nav-phone {
+      background: var(--brand-cream);
+      border: 1px solid rgba(143,31,52,.18);
+      color: var(--brand-wine);
+    }
+
+    .nav-whatsapp {
+      background: var(--brand-wine);
+      color: white;
+      box-shadow: 0 12px 28px rgba(143,31,52,.18);
+    }
+
+    .page-hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top right, rgba(143,31,52,.14), transparent 32%),
+        radial-gradient(circle at bottom left, rgba(143,31,52,.08), transparent 40%),
+        linear-gradient(135deg, #fffdfb 0%, #fbf3ef 58%, #ffffff 100%);
+      border-bottom: 1px solid rgba(143,31,52,.08);
+    }
+
+    .page-hero::before {
+      content: "";
+      position: absolute;
+      width: 330px;
+      height: 330px;
+      right: -120px;
+      top: 24px;
+      background: rgba(143,31,52,.08);
+      border-radius: 50%;
+      animation: floatShape 7s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .page-hero::after {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      left: -80px;
+      bottom: -90px;
+      background: rgba(143,31,52,.06);
+      border-radius: 50%;
+      animation: floatShape 8s ease-in-out infinite reverse;
+      pointer-events: none;
+    }
+
+    .page-hero .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      color: var(--brand-wine);
+      font-weight: 800;
+      letter-spacing: 1.4px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      color: var(--brand-text);
+      letter-spacing: -.5px;
+    }
+
+    h1 {
+      font-size: 46px;
+      letter-spacing: -1px;
+    }
+
+    .hero-text,
+    .intro-card p,
+    .quick-card p,
+    .review-box p,
+    .cta-box p,
+    .panel-header p,
+    .panel-note p {
+      color: #5f5755;
+    }
+
+    .private-badge {
+      background: rgba(255,253,251,.78);
+      color: var(--brand-wine);
+      border: 1px solid rgba(143,31,52,.18);
+      box-shadow: 0 10px 24px rgba(74,16,29,.07);
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-primary,
+    .cta-primary {
+      background: var(--brand-wine);
+      border: 1px solid var(--brand-wine);
+      border-radius: 999px;
+      color: white;
+      box-shadow: 0 12px 28px rgba(143,31,52,.22);
+    }
+
+    .hero-secondary,
+    .cta-secondary {
+      border-radius: 999px;
+      background: rgba(255,255,255,.66);
+      color: var(--brand-wine);
+      border: 1px solid rgba(143,31,52,.18);
+      backdrop-filter: blur(8px);
+    }
+
+    .intro-card,
+    .client-panel,
+    .review-box {
+      background: rgba(255,255,255,.95);
+      backdrop-filter: blur(8px);
+      border-radius: 30px;
+      box-shadow: 0 18px 44px rgba(74,16,29,.08);
+      border: 1px solid rgba(143,31,52,.13);
+    }
+
+    .intro-card {
+      border-left: 5px solid var(--brand-wine);
+    }
+
+    .panel-subtitle {
+      color: var(--brand-wine) !important;
+    }
+
+    .quick-card {
+      background: rgba(255,255,255,.96);
+      border: 1px solid rgba(143,31,52,.13);
+      border-radius: 28px;
+      box-shadow: 0 16px 38px rgba(74,16,29,.08);
+    }
+
+    .quick-card::before {
+      background:
+        radial-gradient(circle at top right, rgba(143,31,52,.075), transparent 42%),
+        linear-gradient(135deg, rgba(255,253,251,.55), transparent);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transform: none;
+    }
+
+    .quick-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 26px 58px rgba(74,16,29,.13);
+      border-color: rgba(143,31,52,.25);
+    }
+
+    .quick-icon {
+      width: 58px;
+      height: 58px;
+      background: linear-gradient(135deg, #fff7f3, #f6e7df);
+      color: var(--brand-wine);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      border: 1px solid rgba(143,31,52,.14);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.85);
+      transition: .25s ease;
+    }
+
+    .quick-icon svg {
+      width: 29px;
+      height: 29px;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .quick-card:hover .quick-icon {
+      transform: scale(1.08) rotate(-2deg);
+      box-shadow: 0 12px 26px rgba(143,31,52,.16);
+    }
+
+    .quick-card.primary-action span {
+      background: var(--brand-wine);
+      border: 1px solid var(--brand-wine);
+      border-radius: 999px;
+      box-shadow: 0 12px 28px rgba(143,31,52,.18);
+    }
+
+    .quick-card.secondary-action span {
+      background: rgba(143,31,52,.07);
+      color: var(--brand-wine);
+      border: 1px solid rgba(143,31,52,.18);
+      border-radius: 999px;
+    }
+
+    .quick-card.tertiary-action span {
+      color: var(--brand-wine-dark);
+    }
+
+    .claim-list {
+      color: #5f5755;
+    }
+
+    .panel-note {
+      background: linear-gradient(135deg, #fff7f3, #fffdfb);
+      border: 1px solid rgba(143,31,52,.14);
+      border-radius: 22px;
+    }
+
+    .review-badge {
+      background: rgba(143,31,52,.07);
+      color: var(--brand-wine);
+      border: 1px solid rgba(143,31,52,.18);
+    }
+
+    .review-stars {
+      color: var(--brand-wine);
+      letter-spacing: 4px;
+    }
+
+    .review-highlight {
+      color: var(--brand-text) !important;
+    }
+
+    .review-button {
+      color: var(--brand-wine);
+    }
+
+    .review-button:hover {
+      color: var(--brand-wine-dark);
+    }
+
+    .cta-box {
+      background:
+        radial-gradient(circle at top right, rgba(255,255,255,.20), transparent 30%),
+        radial-gradient(circle at bottom left, rgba(255,255,255,.10), transparent 34%),
+        linear-gradient(135deg, var(--brand-wine) 0%, var(--brand-wine-dark) 100%);
+      border-radius: 32px;
+      box-shadow: 0 22px 50px rgba(74,16,29,.26);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-box::before {
+      content: "";
+      position: absolute;
+      width: 210px;
+      height: 210px;
+      right: -70px;
+      top: -80px;
+      background: rgba(255,255,255,.12);
+      border-radius: 50%;
+      animation: floatShape 6s ease-in-out infinite;
+    }
+
+    .cta-box h2,
+    .cta-box p,
+    .cta-buttons {
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-box h2,
+    .cta-box p {
+      color: white;
+    }
+
+    .cta-link {
+      color: rgba(255,255,255,.82);
+    }
+
+    .cta-link:hover {
+      color: white;
+    }
+
+    @keyframes floatShape {
+      0% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-12px) scale(1.03); }
+      100% { transform: translateY(0) scale(1); }
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 33px;
+      }
+
+      .quick-icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 14px;
+      }
+
+      .quick-icon svg {
+        width: 25px;
+        height: 25px;
+      }
+    }
+
   </style>
 </head>
 
@@ -876,7 +1237,7 @@
 
           <a href="https://wa.me/34606067906?text=Hola,%20necesito%20ayuda%20con%20un%20siniestro" target="_blank" class="quick-card secondary-action">
             <div>
-              <div class="quick-icon">🚨</div>
+              <div class="quick-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 3.5 20.5h17L12 3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg></div>
               <h3>Siniestro</h3>
               <p>Te acompañamos paso a paso si has tenido una incidencia.</p>
             </div>
@@ -885,7 +1246,7 @@
 
           <a href="https://wa.me/34606067906?text=Hola,%20he%20tenido%20un%20siniestro%20y%20quiero%20saber%20qu%C3%A9%20datos%20tengo%20que%20preparar" target="_blank" class="quick-card secondary-action claim-guide-card">
             <div>
-              <div class="quick-icon">📋</div>
+              <div class="quick-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4h8l1 2h2v15H5V6h2l1-2Z"/><path d="M9 10h6"/><path d="M9 14h6"/><path d="M9 18h4"/></svg></div>
               <h3>Datos para comunicar un siniestro</h3>
               <p>
                 Si has tenido un siniestro, prepara la información básica para que podamos ayudarte más rápido.
@@ -906,7 +1267,7 @@
 
           <a href="https://wa.me/34606067906?text=Hola,%20quiero%20hacer%20una%20revisi%C3%B3n%20de%20mi%20p%C3%B3liza" target="_blank" class="quick-card primary-action">
             <div>
-              <div class="quick-icon">🔎</div>
+              <div class="quick-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="5.5"/><path d="m15 15 5 5"/><path d="M8.5 10.5h4"/></svg></div>
               <h3>Revisión de póliza</h3>
               <p>Revisamos tus coberturas para comprobar que siguen encajando contigo.</p>
             </div>
@@ -915,7 +1276,7 @@
 
           <a href="https://wa.me/34606067906?text=Hola,%20tengo%20una%20consulta%20sobre%20mi%20seguro" target="_blank" class="quick-card secondary-action">
             <div>
-              <div class="quick-icon">💬</div>
+              <div class="quick-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 6.5A3.5 3.5 0 0 1 8.5 3h7A3.5 3.5 0 0 1 19 6.5v5A3.5 3.5 0 0 1 15.5 15H11l-5 4v-4.7A3.5 3.5 0 0 1 5 11.5v-5Z"/><path d="M9 8h6"/><path d="M9 11h4"/></svg></div>
               <h3>Consulta</h3>
               <p>Resolvemos tus dudas de forma cercana, clara y sin complicaciones.</p>
             </div>
@@ -924,7 +1285,7 @@
 
           <a href="https://wa.me/34606067906?text=Hola,%20necesito%20modificar%20mis%20datos" target="_blank" class="quick-card tertiary-action">
             <div>
-              <div class="quick-icon">✏️</div>
+              <div class="quick-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 20 4.5-1 10-10a2.1 2.1 0 0 0-3-3l-10 10L4 20Z"/><path d="m13.5 6.5 4 4"/></svg></div>
               <h3>Modificar datos</h3>
               <p>Te ayudamos si necesitas actualizar datos personales o información de contacto.</p>
             </div>
