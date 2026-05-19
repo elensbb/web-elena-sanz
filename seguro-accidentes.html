@@ -8,18 +8,21 @@
   <meta name="description" content="Seguro de accidentes para protegerte ante caídas, invalidez, hospitalización, asistencia sanitaria y accidentes que puedan afectar a tu trabajo, ingresos o familia." />
 
   <style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap");
+
     :root {
-      --bg: #fbf7f1;
-      --bg-soft: #fffaf4;
+      --bg: #fffdfb;
+      --bg-soft: #fbf3ef;
       --white: #ffffff;
-      --text: #1f2933;
-      --muted: #64748b;
-      --primary: #c3002f;
-      --primary-dark: #9f0027;
-      --border: rgba(31, 41, 51, 0.12);
-      --shadow: 0 18px 45px rgba(31, 41, 51, 0.08);
-      --radius: 24px;
-      --radius-sm: 16px;
+      --text: #241f21;
+      --muted: #5f5755;
+      --primary: #8f1f34;
+      --primary-dark: #4a101d;
+      --cream: #f6ece7;
+      --border: rgba(143, 31, 52, 0.14);
+      --shadow: 0 20px 48px rgba(74, 16, 29, 0.09);
+      --radius: 28px;
+      --radius-sm: 22px;
       --max: 1120px;
     }
 
@@ -34,8 +37,12 @@
     }
 
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
+      font-family: 'Inter', Arial, sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(126,28,46,0.10), transparent 34%),
+        radial-gradient(circle at 8% 38%, rgba(126,28,46,0.045), transparent 32%),
+        radial-gradient(circle at bottom left, rgba(126,28,46,0.08), transparent 46%),
+        linear-gradient(135deg, #fffdfb 0%, #fbf3ef 52%, #f6ece7 100%);
       color: var(--text);
       line-height: 1.6;
     }
@@ -84,8 +91,9 @@
     }
 
     .topbar {
-      background: var(--white);
-      border-bottom: 1px solid var(--border);
+      background: rgba(255,253,251,.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(143,31,52,.10);
       position: sticky;
       top: 0;
       z-index: 50;
@@ -106,11 +114,12 @@
     }
 
     .brand-mark {
-      width: 42px;
-      height: 42px;
+      width: 52px;
+      height: 52px;
       border-radius: 50%;
       background: var(--primary);
       color: var(--white);
+      box-shadow: 0 10px 24px rgba(143,31,52,.18);
       display: grid;
       place-items: center;
       font-weight: 800;
@@ -214,7 +223,7 @@
     }
 
     .hero {
-      padding: 78px 0 56px;
+      padding: 86px 0 64px;
       position: relative;
       overflow: hidden;
     }
@@ -225,7 +234,7 @@
       width: 560px;
       height: 560px;
       border-radius: 50%;
-      background: rgba(195, 0, 47, 0.08);
+      background: rgba(143, 31, 52, 0.10);
       right: -220px;
       top: -220px;
       z-index: -1;
@@ -244,7 +253,7 @@
       gap: 8px;
       padding: 8px 13px;
       border-radius: 999px;
-      background: rgba(195, 0, 47, 0.08);
+      background: rgba(143, 31, 52, 0.10);
       color: var(--primary);
       font-weight: 800;
       font-size: 0.9rem;
@@ -252,6 +261,7 @@
     }
 
     h1 {
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: clamp(2.3rem, 5vw, 4.3rem);
       line-height: 1;
       letter-spacing: -0.06em;
@@ -260,6 +270,7 @@
     }
 
     h2 {
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: clamp(1.8rem, 3vw, 2.8rem);
       line-height: 1.1;
       letter-spacing: -0.045em;
@@ -267,6 +278,7 @@
     }
 
     h3 {
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.2rem;
       line-height: 1.25;
       letter-spacing: -0.02em;
@@ -305,7 +317,7 @@
       width: 74px;
       height: 74px;
       border-radius: 22px;
-      background: rgba(195, 0, 47, 0.08);
+      background: rgba(143, 31, 52, 0.10);
       display: grid;
       place-items: center;
       font-size: 2rem;
@@ -387,8 +399,8 @@
       background: var(--white);
       border: 1px solid var(--border);
       border-radius: var(--radius-sm);
-      padding: 24px;
-      box-shadow: 0 10px 24px rgba(31, 41, 51, 0.04);
+      padding: 26px;
+      box-shadow: 0 14px 34px rgba(74,16,29,.07);
       height: 100%;
       transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
     }
@@ -403,7 +415,7 @@
       width: 50px;
       height: 50px;
       border-radius: 16px;
-      background: rgba(195, 0, 47, 0.08);
+      background: rgba(143, 31, 52, 0.10);
       display: grid;
       place-items: center;
       font-size: 1.45rem;
@@ -413,6 +425,25 @@
     .card p {
       color: var(--muted);
     }
+
+    .card-icon svg,
+    .hero-card-icon svg,
+    .mini-icon svg,
+    .example-icon svg {
+      width: 28px;
+      height: 28px;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .hero-card-icon svg {
+      width: 36px;
+      height: 36px;
+    }
+
 
     .examples-grid {
       display: grid;
@@ -424,8 +455,8 @@
       background: var(--white);
       border: 1px solid var(--border);
       border-radius: var(--radius-sm);
-      padding: 22px;
-      box-shadow: 0 10px 24px rgba(31, 41, 51, 0.04);
+      padding: 24px;
+      box-shadow: 0 14px 34px rgba(74,16,29,.07);
       transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
     }
 
@@ -448,9 +479,11 @@
 
     .profile-box {
       margin-top: 28px;
-      background: linear-gradient(135deg, var(--primary), #8f0023);
+      background:
+        radial-gradient(circle at top right, rgba(255,255,255,.20), transparent 30%),
+        linear-gradient(135deg, var(--primary), var(--primary-dark));
       color: var(--white);
-      border-radius: calc(var(--radius) + 6px);
+      border-radius: 32px;
       padding: 34px;
       box-shadow: var(--shadow);
     }
@@ -514,7 +547,7 @@
       width: 42px;
       height: 42px;
       border-radius: 14px;
-      background: rgba(195, 0, 47, 0.08);
+      background: rgba(143, 31, 52, 0.10);
       display: grid;
       place-items: center;
       flex: 0 0 auto;
@@ -557,10 +590,13 @@
     .cta-final {
       background: var(--white);
       border: 1px solid var(--border);
-      border-radius: calc(var(--radius) + 8px);
-      padding: 42px;
+      border-radius: 32px;
+      padding: 48px 36px;
       text-align: center;
       box-shadow: var(--shadow);
+      background:
+        radial-gradient(circle at top right, rgba(143,31,52,.08), transparent 34%),
+        linear-gradient(135deg, #ffffff 0%, #fff7f3 100%);
     }
 
     .cta-final p {
@@ -735,7 +771,7 @@
           <a href="index.html">Inicio</a>
           <a href="seguros.html">Seguros</a>
           <a href="autonomos.html">Autónomos</a>
-          <a href="asesoramiento-financiero.html">Finanzas</a>
+          <a href="asesoramiento.html">Finanzas</a>
           <a href="clientes.html">Clientes</a>
         </div>
 
@@ -751,7 +787,7 @@
         <a href="index.html">Inicio</a>
         <a href="seguros.html">Seguros</a>
         <a href="autonomos.html">Autónomos</a>
-        <a href="asesoramiento-financiero.html">Finanzas</a>
+        <a href="asesoramiento.html">Finanzas</a>
         <a href="clientes.html">Clientes</a>
         <a class="btn btn-primary" href="https://wa.me/34606067906?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20seguro%20de%20accidentes" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
       </div>
@@ -763,7 +799,7 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <div class="eyebrow">🩹 Seguro de accidentes</div>
+          <div class="eyebrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 13.5 7.8 10.8a3 3 0 0 1 0-4.2l.8-.8a3 3 0 0 1 4.2 0l2.7 2.7"/><path d="m13.5 10.5 2.7 2.7a3 3 0 0 1 0 4.2l-.8.8a3 3 0 0 1-4.2 0l-2.7-2.7"/><path d="m9 15 6-6"/><path d="M9.5 9.5h.01"/><path d="M12 12h.01"/><path d="M14.5 14.5h.01"/></svg> Seguro de accidentes</div>
 
           <h1>Protección si un accidente cambia tu día a día</h1>
 
@@ -781,7 +817,7 @@
         </div>
 
         <aside class="hero-card" aria-label="Resumen del seguro de accidentes">
-          <div class="hero-card-icon">🛡️</div>
+          <div class="hero-card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5.5 5.4v5.5c0 4.2 2.6 7.9 6.5 10.1 3.9-2.2 6.5-5.9 6.5-10.1V5.4L12 3Z"/><path d="m9.5 12 1.8 1.8 3.7-4"/></svg></div>
           <h2>¿Qué puede proteger?</h2>
           <ul>
             <li>Invalidez por accidente.</li>
@@ -806,19 +842,19 @@
 
         <div class="grid-3">
           <article class="card">
-            <div class="card-icon">💼</div>
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 7V5.8C9 4.8 9.8 4 10.8 4h2.4c1 0 1.8.8 1.8 1.8V7"/><path d="M4.8 7h14.4c.9 0 1.6.7 1.6 1.6v9.1c0 .9-.7 1.6-1.6 1.6H4.8c-.9 0-1.6-.7-1.6-1.6V8.6C3.2 7.7 3.9 7 4.8 7Z"/><path d="M3.2 11.5h17.6"/><path d="M10 13h4"/></svg></div>
             <h3>Ingresos</h3>
             <p>Si el accidente te impide trabajar o afecta a tu actividad diaria.</p>
           </article>
 
           <article class="card">
-            <div class="card-icon">♿</div>
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/><path d="M10 6.5v5h5l3 5"/><path d="M7 9.5a6 6 0 1 0 7 7"/><path d="M10 11.5h4"/></svg></div>
             <h3>Invalidez</h3>
             <p>Si quedan secuelas permanentes tras un accidente cubierto.</p>
           </article>
 
           <article class="card">
-            <div class="card-icon">🏥</div>
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21V5.8C4 4.8 4.8 4 5.8 4h12.4c1 0 1.8.8 1.8 1.8V21"/><path d="M9 21v-5h6v5"/><path d="M12 8v5"/><path d="M9.5 10.5h5"/></svg></div>
             <h3>Recuperación</h3>
             <p>Asistencia sanitaria, hospitalización o rehabilitación según modalidad.</p>
           </article>
@@ -838,27 +874,27 @@
 
         <div class="examples-grid">
           <article class="example-card">
-            <div class="example-icon">🪜</div>
+            <div class="example-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 21 17 3"/><path d="M3 21 13 3"/><path d="M6 16h7"/><path d="M8 12h7"/><path d="M10 8h7"/></svg></div>
             <p>Me he caído por las escaleras y no puedo trabajar.</p>
           </article>
 
           <article class="example-card">
-            <div class="example-icon">♿</div>
+            <div class="example-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/><path d="M10 6.5v5h5l3 5"/><path d="M7 9.5a6 6 0 1 0 7 7"/><path d="M10 11.5h4"/></svg></div>
             <p>Tengo una invalidez por un accidente.</p>
           </article>
 
           <article class="example-card">
-            <div class="example-icon">🏥</div>
+            <div class="example-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21V5.8C4 4.8 4.8 4 5.8 4h12.4c1 0 1.8.8 1.8 1.8V21"/><path d="M9 21v-5h6v5"/><path d="M12 8v5"/><path d="M9.5 10.5h5"/></svg></div>
             <p>Necesito asistencia sanitaria tras un accidente.</p>
           </article>
 
           <article class="example-card">
-            <div class="example-icon">🚗</div>
+            <div class="example-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 1.4-4.2A2.6 2.6 0 0 1 8.9 6h6.2a2.6 2.6 0 0 1 2.5 1.8L19 12"/><path d="M4 12h16v5H4z"/><path d="M7 17v2"/><path d="M17 17v2"/><path d="M7.5 15h.01"/><path d="M16.5 15h.01"/></svg></div>
             <p>He tenido un accidente de tráfico y necesito apoyo económico.</p>
           </article>
 
           <article class="example-card">
-            <div class="example-icon">🦴</div>
+            <div class="example-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 9.5a3 3 0 1 1 4-4l8 8a3 3 0 1 1-4 4l-8-8Z"/><path d="M4.5 7.5 7 5"/><path d="m17 19 2.5-2.5"/></svg></div>
             <p>Me he fracturado un hueso y necesito recuperación o rehabilitación.</p>
           </article>
         </div>
@@ -893,7 +929,7 @@
 
         <div class="coverages">
           <article class="coverage-card">
-            <div class="mini-icon">♿</div>
+            <div class="mini-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/><path d="M10 6.5v5h5l3 5"/><path d="M7 9.5a6 6 0 1 0 7 7"/><path d="M10 11.5h4"/></svg></div>
             <div>
               <h3>Invalidez permanente</h3>
               <p>Indemnización si el accidente deja secuelas permanentes según baremo y capital contratado.</p>
@@ -901,7 +937,7 @@
           </article>
 
           <article class="coverage-card">
-            <div class="mini-icon">🏥</div>
+            <div class="mini-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21V5.8C4 4.8 4.8 4 5.8 4h12.4c1 0 1.8.8 1.8 1.8V21"/><path d="M9 21v-5h6v5"/><path d="M12 8v5"/><path d="M9.5 10.5h5"/></svg></div>
             <div>
               <h3>Hospitalización</h3>
               <p>Ayuda económica si el accidente requiere ingreso hospitalario, según modalidad.</p>
@@ -909,7 +945,7 @@
           </article>
 
           <article class="coverage-card">
-            <div class="mini-icon">🩺</div>
+            <div class="mini-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4v5a4 4 0 0 0 8 0V4"/><path d="M6 4H4"/><path d="M14 4h2"/><path d="M10 13v2a5 5 0 0 0 10 0v-1"/><path d="M20 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"/></svg></div>
             <div>
               <h3>Asistencia sanitaria</h3>
               <p>Gastos médicos, rehabilitación, traslados o asistencia derivados de un accidente.</p>
@@ -917,7 +953,7 @@
           </article>
 
           <article class="coverage-card">
-            <div class="mini-icon">🚗</div>
+            <div class="mini-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 1.4-4.2A2.6 2.6 0 0 1 8.9 6h6.2a2.6 2.6 0 0 1 2.5 1.8L19 12"/><path d="M4 12h16v5H4z"/><path d="M7 17v2"/><path d="M17 17v2"/><path d="M7.5 15h.01"/><path d="M16.5 15h.01"/></svg></div>
             <div>
               <h3>Accidente de circulación</h3>
               <p>Puede reforzar la protección si el accidente ocurre circulando o en desplazamientos.</p>
@@ -925,7 +961,7 @@
           </article>
 
           <article class="coverage-card">
-            <div class="mini-icon">❤️</div>
+            <div class="mini-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.3 5.8a5.2 5.2 0 0 0-7.4 0L12 6.7l-.9-.9a5.2 5.2 0 0 0-7.4 7.4L12 21l8.3-7.8a5.2 5.2 0 0 0 0-7.4Z"/></svg></div>
             <div>
               <h3>Fallecimiento por accidente</h3>
               <p>Capital para los beneficiarios si el asegurado fallece por un accidente cubierto.</p>
@@ -933,7 +969,7 @@
           </article>
 
           <article class="coverage-card">
-            <div class="mini-icon">🦷</div>
+            <div class="mini-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5.5c1.5-1 3.7-1.2 5 .1 2.2 2.2.8 6.8-.3 10.2-.5 1.6-1.1 3.2-2.1 3.2-1.3 0-1.2-3.8-2.6-3.8S10.7 19 9.4 19c-1 0-1.6-1.6-2.1-3.2C6.2 12.4 4.8 7.8 7 5.6c1.3-1.3 3.5-1.1 5-.1Z"/></svg></div>
             <div>
               <h3>Accidente dental</h3>
               <p>Puede incluir servicios dentales o cobertura ante accidentes dentales graves.</p>
@@ -973,19 +1009,19 @@
       <div class="container">
         <div class="grid-3">
           <article class="card">
-            <div class="card-icon">✅</div>
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/><path d="M21 12a9 9 0 1 1-5.3-8.2"/></svg></div>
             <h3>Accidentes esencial</h3>
             <p>Para quien busca una protección sencilla ante accidentes importantes.</p>
           </article>
 
           <article class="card">
-            <div class="card-icon">🛡️</div>
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5.5 5.4v5.5c0 4.2 2.6 7.9 6.5 10.1 3.9-2.2 6.5-5.9 6.5-10.1V5.4L12 3Z"/><path d="m9.5 12 1.8 1.8 3.7-4"/></svg></div>
             <h3>Accidentes integral</h3>
             <p>Para quien quiere más garantías, asistencia y protección económica.</p>
           </article>
 
           <article class="card">
-            <div class="card-icon">🦷</div>
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5.5c1.5-1 3.7-1.2 5 .1 2.2 2.2.8 6.8-.3 10.2-.5 1.6-1.1 3.2-2.1 3.2-1.3 0-1.2-3.8-2.6-3.8S10.7 19 9.4 19c-1 0-1.6-1.6-2.1-3.2C6.2 12.4 4.8 7.8 7 5.6c1.3-1.3 3.5-1.1 5-.1Z"/></svg></div>
             <h3>Accidentes dental</h3>
             <p>Para añadir apoyo dental o protección ante determinados accidentes dentales.</p>
           </article>
