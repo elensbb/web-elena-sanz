@@ -6,6 +6,8 @@
   <title>Asesoramiento financiero | Elena Sanz</title>
 
   <style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap");
+
     * {
       box-sizing: border-box;
     }
@@ -16,12 +18,13 @@
 
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Inter', Arial, sans-serif;
       background:
-        radial-gradient(circle at top right, rgba(80, 52, 44, .08), transparent 34%),
-        radial-gradient(circle at 8% 35%, rgba(120, 92, 72, .05), transparent 32%),
-        linear-gradient(135deg, #fbfaf8 0%, #f5f1ec 48%, #ffffff 100%);
-      color: #1f1f1f;
+        radial-gradient(circle at top right, rgba(126,28,46,0.10), transparent 34%),
+        radial-gradient(circle at 8% 35%, rgba(126,28,46,0.045), transparent 32%),
+        radial-gradient(circle at bottom left, rgba(126,28,46,0.08), transparent 46%),
+        linear-gradient(135deg, #fffdfb 0%, #fbf3ef 52%, #f6ece7 100%);
+      color: #241f21;
       overflow-x: hidden;
     }
 
@@ -29,14 +32,19 @@
       text-decoration: none;
     }
 
+    ::selection {
+      background: rgba(126,28,46,.18);
+      color: #4a101d;
+    }
+
     /* NAVBAR */
     .topbar {
       position: sticky;
       top: 0;
       z-index: 9999;
-      background: rgba(255,255,255,.94);
+      background: rgba(255,253,251,.94);
       backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(0,0,0,.06);
+      border-bottom: 1px solid rgba(126,28,46,.10);
     }
 
     .topbar-container {
@@ -53,20 +61,21 @@
       display: flex;
       align-items: center;
       gap: 14px;
-      color: #222;
+      color: #241f21;
     }
 
     .brand-logo {
       width: 52px;
       height: 52px;
       border-radius: 50%;
-      background: #d6003d;
+      background: #8f1f34;
       color: white;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: 900;
       font-size: 22px;
+      box-shadow: 0 10px 24px rgba(143,31,52,.18);
     }
 
     .brand-text {
@@ -81,7 +90,7 @@
 
     .brand-text span {
       font-size: 14px;
-      color: #666;
+      color: #6f6663;
     }
 
     .nav-links {
@@ -91,13 +100,13 @@
     }
 
     .nav-links a {
-      color: #555;
+      color: #5f5755;
       font-size: 17px;
       transition: .2s ease;
     }
 
     .nav-links a:hover {
-      color: #8a5f3d;
+      color: #8f1f34;
     }
 
     .nav-actions {
@@ -114,19 +123,22 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      text-align: center;
+      line-height: 1.15;
       font-weight: 800;
       font-size: 17px;
+      letter-spacing: -.2px;
       transition: .2s ease;
     }
 
     .nav-phone {
       background: white;
-      border: 1px solid #e6d8c8;
-      color: #7a4f31;
+      border: 1px solid rgba(143,31,52,.18);
+      color: #8f1f34;
     }
 
     .nav-whatsapp {
-      background: #d6003d;
+      background: #8f1f34;
       color: white;
     }
 
@@ -165,11 +177,11 @@
       position: relative;
       overflow: hidden;
       background:
-        radial-gradient(circle at top right, rgba(122,79,49,.16), transparent 32%),
+        radial-gradient(circle at top right, rgba(143,31,52,.16), transparent 32%),
         radial-gradient(circle at bottom left, rgba(40,40,40,.08), transparent 38%),
-        linear-gradient(135deg, #ffffff 0%, #f4efe8 58%, #fafafa 100%);
+        linear-gradient(135deg, #ffffff 0%, #fbf3ef 58%, #fafafa 100%);
       padding: 92px 0 74px;
-      border-bottom: 1px solid rgba(80,60,45,.08);
+      border-bottom: 1px solid rgba(126,28,46,.08);
     }
 
     .page-hero::before {
@@ -179,7 +191,7 @@
       top: 30px;
       width: 330px;
       height: 330px;
-      background: rgba(122,79,49,.08);
+      background: rgba(143,31,52,.08);
       border-radius: 50%;
       animation: floatShape 5s ease-in-out infinite;
     }
@@ -191,7 +203,7 @@
       bottom: 0;
       width: 100%;
       height: 110px;
-      background: linear-gradient(transparent, rgba(122,79,49,.06));
+      background: linear-gradient(transparent, rgba(143,31,52,.06));
       animation: floatLine 4s ease-in-out infinite;
     }
 
@@ -210,7 +222,7 @@
 
     .market-line {
       fill: none;
-      stroke: rgba(122,79,49,.32);
+      stroke: rgba(143,31,52,.32);
       stroke-width: 2;
       stroke-dasharray: 900;
       stroke-dashoffset: 900;
@@ -219,7 +231,7 @@
 
     .market-line-soft {
       fill: none;
-      stroke: rgba(122,79,49,.14);
+      stroke: rgba(143,31,52,.14);
       stroke-width: 2;
       stroke-dasharray: 8 10;
       animation: moveDash 10s linear infinite;
@@ -229,10 +241,10 @@
       position: absolute;
       width: 11px;
       height: 11px;
-      background: #7a4f31;
+      background: #8f1f34;
       border: 3px solid white;
       border-radius: 50%;
-      box-shadow: 0 6px 16px rgba(122,79,49,.24);
+      box-shadow: 0 6px 16px rgba(143,31,52,.24);
       z-index: 1;
       animation: nodePulse 2.5s ease-in-out infinite;
     }
@@ -248,7 +260,7 @@
     }
 
     .eyebrow {
-      color: #7a4f31;
+      color: #8f1f34;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -257,7 +269,8 @@
     }
 
     h1 {
-      font-size: 48px;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 50px;
       line-height: 1.1;
       margin: 0 0 22px;
       max-width: 900px;
@@ -266,7 +279,8 @@
     }
 
     h2 {
-      font-size: 32px;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 34px;
       line-height: 1.22;
       margin: 0 0 18px;
       color: #1d1d1d;
@@ -274,7 +288,8 @@
     }
 
     h3 {
-      font-size: 21px;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 22px;
       margin: 0 0 10px;
       color: #1f1f1f;
     }
@@ -311,17 +326,17 @@
     }
 
     .hero-primary {
-      background: #d6003d;
+      background: #8f1f34;
       color: white;
-      border: 1px solid #d6003d;
+      border: 1px solid #8f1f34;
       box-shadow: 0 14px 30px rgba(214,0,61,.20);
       animation: pulseButton 2.4s ease-in-out infinite;
     }
 
     .hero-secondary {
       background: rgba(255,255,255,.62);
-      color: #7a4f31;
-      border: 1px solid rgba(122,79,49,.22);
+      color: #8f1f34;
+      border: 1px solid rgba(143,31,52,.22);
       box-shadow: none;
       backdrop-filter: blur(8px);
     }
@@ -333,7 +348,7 @@
 
     .mini-trust {
       font-size: 14px;
-      color: #666;
+      color: #6f6663;
       margin-top: 16px;
     }
 
@@ -350,11 +365,11 @@
     .floating-card {
       position: absolute;
       background: rgba(255,255,255,.96);
-      border: 1px solid #eadbca;
+      border: 1px solid rgba(143,31,52,.16);
       border-radius: 18px;
       padding: 14px 18px;
       box-shadow: 0 14px 34px rgba(0,0,0,.10);
-      color: #7a4f31;
+      color: #8f1f34;
       font-weight: 900;
       animation: floatCard 4s ease-in-out infinite;
       backdrop-filter: blur(8px);
@@ -385,9 +400,9 @@
     .intro-card {
       background: rgba(255,255,255,.88);
       backdrop-filter: blur(8px);
-      border-radius: 28px;
+      border-radius: 30px;
       padding: 44px;
-      box-shadow: 0 18px 44px rgba(0,0,0,.06);
+      box-shadow: 0 18px 44px rgba(126,28,46,.10);
       border: 1px solid rgba(226,211,196,.8);
       animation: fadeUp .7s ease both;
     }
@@ -400,7 +415,7 @@
 
     .section-intro {
       max-width: 790px;
-      color: #555;
+      color: #5f5755;
       font-size: 17px;
       margin: 0 0 36px;
     }
@@ -414,10 +429,10 @@
     .card {
       background: rgba(255,255,255,.92);
       backdrop-filter: blur(8px);
-      border-radius: 28px;
+      border-radius: 30px;
       padding: 30px;
       min-height: 270px;
-      box-shadow: 0 16px 38px rgba(0,0,0,.06);
+      box-shadow: 0 16px 38px rgba(126,28,46,.10);
       border: 1px solid rgba(226,211,196,.86);
       display: flex;
       flex-direction: column;
@@ -433,7 +448,7 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(circle at top right, rgba(122,79,49,.07), transparent 42%),
+        radial-gradient(circle at top right, rgba(143,31,52,.07), transparent 42%),
         linear-gradient(135deg, rgba(255,255,255,.44), transparent);
       pointer-events: none;
     }
@@ -447,42 +462,52 @@
     .card:hover {
       transform: translateY(-8px);
       box-shadow: 0 22px 48px rgba(0,0,0,.11);
-      border-color: #d9c4ae;
+      border-color: rgba(143,31,52,.28);
       background: white;
     }
 
     .card:hover .card-icon {
       transform: scale(1.08) rotate(-2deg);
-      box-shadow: 0 10px 22px rgba(122,79,49,.16);
+      box-shadow: 0 10px 22px rgba(143,31,52,.16);
     }
 
     .card-icon {
-      width: 56px;
-      height: 56px;
-      background: #f5efe8;
-      color: #7a4f31;
-      border-radius: 18px;
+      width: 58px;
+      height: 58px;
+      background: linear-gradient(135deg, #fff7f3, #f6e7df);
+      color: #8f1f34;
+      border-radius: 20px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 27px;
       margin-bottom: 18px;
       transition: .25s ease;
-      border: 1px solid #eadbca;
+      border: 1px solid rgba(143,31,52,.14);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.85);
+    }
+
+    .card-icon svg {
+      width: 28px;
+      height: 28px;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
 
     .card p {
       margin: 0;
-      color: #555;
+      color: #5f5755;
       font-size: 16px;
     }
 
     .card-action {
       margin: 24px -30px -30px;
       padding: 18px 30px;
-      border-top: 1px solid #eadbca;
-      background: #faf6f1;
-      color: #7a4f31;
+      border-top: 1px solid rgba(143,31,52,.16);
+      background: #fff7f3;
+      color: #8f1f34;
       font-weight: 900;
       cursor: pointer;
       display: flex;
@@ -494,7 +519,7 @@
     }
 
     .card-action:hover {
-      background: #f5eee6;
+      background: #f6e7df;
       padding-left: 34px;
     }
 
@@ -512,7 +537,7 @@
 
     .card-extra p {
       font-size: 15px;
-      color: #555;
+      color: #5f5755;
       margin-bottom: 10px;
     }
 
@@ -524,7 +549,7 @@
       min-height: 46px;
       padding: 0 20px;
       border-radius: 999px;
-      background: #d6003d;
+      background: #8f1f34;
       color: white;
       font-weight: 900;
       font-size: 15px;
@@ -534,15 +559,15 @@
 
     .page-link:hover {
       transform: translateY(-2px);
-      background: #b91c1c;
+      background: #8f1f34;
     }
 
     .direct-page-link {
       margin: 24px -30px -30px;
       padding: 18px 30px;
-      border-top: 1px solid #eadbca;
-      background: #faf6f1;
-      color: #7a4f31;
+      border-top: 1px solid rgba(143,31,52,.16);
+      background: #fff7f3;
+      color: #8f1f34;
       font-weight: 900;
       display: flex;
       justify-content: space-between;
@@ -554,18 +579,18 @@
     }
 
     .direct-page-link:hover {
-      background: #f5eee6;
+      background: #f6e7df;
       padding-left: 34px;
     }
 
     .highlight-box {
       background:
-        radial-gradient(circle at top right, rgba(122,79,49,.08), transparent 34%),
-        linear-gradient(135deg, #f8f3ed 0%, #ffffff 100%);
-      border-radius: 24px;
+        radial-gradient(circle at top right, rgba(143,31,52,.08), transparent 34%),
+        linear-gradient(135deg, #fff7f3 0%, #ffffff 100%);
+      border-radius: 28px;
       padding: 34px;
       margin-top: 38px;
-      border: 1px solid #eadbca;
+      border: 1px solid rgba(143,31,52,.16);
       box-shadow: 0 14px 32px rgba(0,0,0,.05);
       animation: fadeUp .7s ease both;
     }
@@ -585,10 +610,10 @@
 
     .quick-page {
       background: rgba(255,255,255,.92);
-      border: 1px solid #eadbca;
+      border: 1px solid rgba(143,31,52,.16);
       border-radius: 22px;
       padding: 24px;
-      color: #222;
+      color: #241f21;
       box-shadow: 0 12px 28px rgba(0,0,0,.05);
       transition: .25s ease;
     }
@@ -596,12 +621,12 @@
     .quick-page:hover {
       transform: translateY(-6px);
       box-shadow: 0 18px 38px rgba(0,0,0,.10);
-      border-color: #d9c4ae;
+      border-color: rgba(143,31,52,.28);
     }
 
     .quick-page span {
       display: block;
-      color: #7a4f31;
+      color: #8f1f34;
       font-weight: 900;
       margin-bottom: 8px;
       letter-spacing: .4px;
@@ -614,7 +639,7 @@
     }
 
     .quick-page p {
-      color: #555;
+      color: #5f5755;
       font-size: 15px;
       margin: 0;
     }
@@ -640,17 +665,17 @@
       left: 8%;
       right: 8%;
       height: 2px;
-      background: linear-gradient(90deg, rgba(122,79,49,.12), rgba(122,79,49,.45), rgba(122,79,49,.12));
+      background: linear-gradient(90deg, rgba(143,31,52,.12), rgba(143,31,52,.45), rgba(143,31,52,.12));
       z-index: 0;
     }
 
     .process-step {
-      background: rgba(255,255,255,.94);
+      background: rgba(255,253,251,.94);
       backdrop-filter: blur(8px);
-      border-radius: 24px;
+      border-radius: 28px;
       padding: 26px 20px;
       text-align: center;
-      box-shadow: 0 14px 34px rgba(0,0,0,.06);
+      box-shadow: 0 14px 34px rgba(126,28,46,.10);
       border: 1px solid rgba(226,211,196,.9);
       transition: .25s ease;
       position: relative;
@@ -660,25 +685,25 @@
     .process-step:hover {
       transform: translateY(-6px);
       box-shadow: 0 20px 42px rgba(0,0,0,.11);
-      border-color: #d9c4ae;
+      border-color: rgba(143,31,52,.28);
     }
 
     .process-step span {
       display: inline-flex;
       width: 44px;
       height: 44px;
-      background: linear-gradient(135deg, #7a4f31 0%, #3d2c22 100%);
+      background: linear-gradient(135deg, #8f1f34 0%, #4a101d 100%);
       color: white;
       border-radius: 50%;
       font-weight: 900;
       align-items: center;
       justify-content: center;
       margin-bottom: 14px;
-      box-shadow: 0 10px 22px rgba(122,79,49,.28);
+      box-shadow: 0 10px 22px rgba(143,31,52,.28);
     }
 
     .process-step p {
-      color: #555;
+      color: #5f5755;
       font-size: 15px;
       margin: 0;
     }
@@ -686,9 +711,9 @@
     .closing-box {
       background: rgba(255,255,255,.90);
       backdrop-filter: blur(8px);
-      border-radius: 28px;
+      border-radius: 30px;
       padding: 42px;
-      box-shadow: 0 18px 44px rgba(0,0,0,.06);
+      box-shadow: 0 18px 44px rgba(126,28,46,.10);
       border: 1px solid rgba(226,211,196,.8);
       animation: fadeUp .7s ease both;
     }
@@ -703,14 +728,14 @@
       background:
         radial-gradient(circle at top right, rgba(255,255,255,.20), transparent 30%),
         radial-gradient(circle at bottom left, rgba(255,255,255,.10), transparent 34%),
-        linear-gradient(135deg, #2b241f 0%, #7a4f31 100%);
+        linear-gradient(135deg, #4a101d 0%, #8f1f34 100%);
       color: white;
-      border-radius: 32px;
+      border-radius: 30px;
       padding: 54px 32px;
       text-align: center;
       max-width: 900px;
       margin: 0 auto;
-      box-shadow: 0 22px 50px rgba(50,35,25,.26);
+      box-shadow: 0 22px 50px rgba(74,16,29,.26);
       animation: fadeUp .7s ease both;
       position: relative;
       overflow: hidden;
@@ -768,9 +793,9 @@
     }
 
     .cta-primary {
-      background: #d6003d;
+      background: #8f1f34;
       color: white;
-      border: 1px solid #d6003d;
+      border: 1px solid #8f1f34;
       box-shadow: 0 12px 28px rgba(214,0,61,.22);
     }
 
@@ -1117,13 +1142,13 @@
 
     .card-open {
       margin: 26px -30px -30px;
-      border-top: 1px solid #eadbca;
+      border-top: 1px solid rgba(143,31,52,.16);
       background: white;
     }
 
     .card-open-header {
-      background: #faf6f1;
-      color: #7a4f31;
+      background: #fff7f3;
+      color: #8f1f34;
       padding: 22px 34px;
       display: flex;
       justify-content: space-between;
@@ -1136,7 +1161,7 @@
       width: 34px;
       height: 34px;
       border-radius: 50%;
-      background: #7a4f31;
+      background: #8f1f34;
       color: white;
       display: flex;
       align-items: center;
@@ -1161,14 +1186,14 @@
     }
 
     .ideal-box {
-      border-left: 5px solid #7a4f31;
-      background: #faf6f1;
+      border-left: 5px solid #8f1f34;
+      background: #fff7f3;
       border-radius: 18px;
       padding: 22px;
       margin-bottom: 24px;
-      border-top: 1px solid #eadbca;
-      border-right: 1px solid #eadbca;
-      border-bottom: 1px solid #eadbca;
+      border-top: 1px solid rgba(143,31,52,.16);
+      border-right: 1px solid rgba(143,31,52,.16);
+      border-bottom: 1px solid rgba(143,31,52,.16);
       font-size: 17px;
       line-height: 1.5;
       color: #333;
@@ -1182,8 +1207,8 @@
       width: 100%;
       min-height: 58px;
       border-radius: 999px;
-      border: 1px solid #eadbca;
-      color: #7a4f31;
+      border: 1px solid rgba(143,31,52,.16);
+      color: #8f1f34;
       background: white;
       display: flex;
       align-items: center;
@@ -1195,7 +1220,7 @@
     }
 
     .more-info-btn:hover {
-      background: #faf6f1;
+      background: #fff7f3;
       transform: translateY(-2px);
     }
 
@@ -1208,7 +1233,7 @@
     }
 
     .card-calls a {
-      color: #666;
+      color: #6f6663;
       text-decoration: underline;
       font-weight: 700;
     }
@@ -1346,7 +1371,7 @@
         <div class="card">
 
           <div>
-            <div class="card-icon">↗</div>
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5"/><path d="M4 19h16"/><path d="m7 15 4-4 3 3 5-7"/><path d="M16 7h3v3"/></svg></div>
 
             <h3>Inversiones</h3>
 
@@ -1393,7 +1418,7 @@
         <div class="card">
 
           <div>
-            <div class="card-icon">🏦</div>
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9h18"/><path d="M5 9l7-5 7 5"/><path d="M6 10v8"/><path d="M10 10v8"/><path d="M14 10v8"/><path d="M18 10v8"/><path d="M4 18h16"/><path d="M3 21h18"/></svg></div>
 
             <h3>Fondos de inversión</h3>
 
@@ -1440,7 +1465,7 @@
         <div class="card">
 
           <div>
-            <div class="card-icon">◎</div>
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z"/><path d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z"/><path d="M12 13a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"/></svg></div>
 
             <h3>Planes de pensiones</h3>
 
@@ -1487,7 +1512,7 @@
         <div class="card">
 
           <div>
-            <div class="card-icon">💼</div>
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 7V5.8C9 4.8 9.8 4 10.8 4h2.4c1 0 1.8.8 1.8 1.8V7"/><path d="M4.8 7h14.4c.9 0 1.6.7 1.6 1.6v9.1c0 .9-.7 1.6-1.6 1.6H4.8c-.9 0-1.6-.7-1.6-1.6V8.6C3.2 7.7 3.9 7 4.8 7Z"/><path d="M3.2 11.5h17.6"/><path d="M10 13h4"/></svg></div>
 
             <h3>Planes de ahorro</h3>
 
