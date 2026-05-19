@@ -6,6 +6,8 @@
   <title>Autónomos | Elena Sanz</title>
 
   <style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap");
+
     * {
       box-sizing: border-box;
     }
@@ -16,13 +18,13 @@
 
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Inter', Arial, sans-serif;
       background:
-        radial-gradient(circle at top right, rgba(185,28,28,0.10), transparent 34%),
-        radial-gradient(circle at 8% 38%, rgba(185,28,28,0.05), transparent 32%),
-        radial-gradient(circle at bottom left, rgba(185,28,28,0.08), transparent 46%),
-        linear-gradient(135deg, #ffffff 0%, #fff4f4 52%, #f8eeee 100%);
-      color: #222;
+        radial-gradient(circle at top right, rgba(143,31,52,0.10), transparent 34%),
+        radial-gradient(circle at 8% 38%, rgba(143,31,52,0.05), transparent 32%),
+        radial-gradient(circle at bottom left, rgba(143,31,52,0.08), transparent 46%),
+        linear-gradient(135deg, #fffdfb 0%, #fbf3ef 52%, #f6ece7 100%);
+      color: #241f21;
       overflow-x: hidden;
     }
 
@@ -36,9 +38,9 @@
       position: sticky;
       top: 0;
       z-index: 9999;
-      background: rgba(255,255,255,.94);
+      background: rgba(255,253,251,.94);
       backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(0,0,0,.06);
+      border-bottom: 1px solid rgba(126,28,46,.10);
     }
 
     .topbar-container {
@@ -55,14 +57,14 @@
       display: flex;
       align-items: center;
       gap: 14px;
-      color: #222;
+      color: #241f21;
     }
 
     .brand-logo {
       width: 52px;
       height: 52px;
       border-radius: 50%;
-      background: #d6003d;
+      background: #8f1f34;
       color: white;
       display: flex;
       align-items: center;
@@ -83,7 +85,7 @@
 
     .brand-text span {
       font-size: 14px;
-      color: #666;
+      color: #6f6663;
     }
 
     .nav-links {
@@ -93,13 +95,13 @@
     }
 
     .nav-links a {
-      color: #555;
+      color: #5f5755;
       font-size: 17px;
       transition: .2s ease;
     }
 
     .nav-links a:hover {
-      color: #b91c1c;
+      color: #8f1f34;
     }
 
     .nav-actions {
@@ -116,19 +118,22 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      text-align: center;
+      line-height: 1.15;
       font-weight: 800;
       font-size: 17px;
+      letter-spacing: -.2px;
       transition: .2s ease;
     }
 
     .nav-phone {
       background: white;
-      border: 1px solid #efcaca;
-      color: #b91c1c;
+      border: 1px solid rgba(143,31,52,.18);
+      color: #8f1f34;
     }
 
     .nav-whatsapp {
-      background: #d6003d;
+      background: #8f1f34;
       color: white;
     }
 
@@ -168,7 +173,7 @@
       padding: 92px 0 72px;
       color: white;
       background:
-        linear-gradient(90deg, rgba(25,25,25,.86), rgba(185,28,28,.64)),
+        linear-gradient(90deg, rgba(25,25,25,.86), rgba(143,31,52,.64)),
         url("autonomos-fondo.jpg");
       background-size: cover;
       background-position: center;
@@ -204,7 +209,7 @@
     }
 
     .eyebrow {
-      color: #b91c1c;
+      color: #8f1f34;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: .6px;
@@ -217,20 +222,23 @@
     }
 
     h1 {
-      font-size: 46px;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 48px;
       line-height: 1.12;
       margin: 0 0 20px;
       max-width: 840px;
     }
 
     h2 {
-      font-size: 30px;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 32px;
       line-height: 1.25;
       margin: 0 0 18px;
     }
 
     h3 {
-      font-size: 21px;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 22px;
       margin: 0 0 10px;
     }
 
@@ -259,16 +267,16 @@
       justify-content: center;
       min-height: 56px;
       padding: 16px 30px;
-      border-radius: 15px;
+      border-radius: 999px;
       font-weight: 900;
       transition: .25s ease;
       font-size: 16px;
     }
 
     .hero-primary {
-      background: #d6003d;
+      background: #8f1f34;
       color: white;
-      border: 1px solid #d6003d;
+      border: 1px solid #8f1f34;
       box-shadow: 0 14px 32px rgba(214,0,61,.30);
       min-height: 58px;
       padding: 0 34px;
@@ -302,12 +310,12 @@
     }
 
     .intro-card {
-      background: rgba(255,255,255,.94);
+      background: rgba(255,253,251,.94);
       backdrop-filter: blur(8px);
-      border-radius: 24px;
+      border-radius: 30px;
       padding: 38px;
       box-shadow: 0 14px 34px rgba(0,0,0,.08);
-      border-left: 5px solid #b91c1c;
+      border-left: 5px solid #8f1f34;
       border-top: 1px solid rgba(240,202,202,.7);
       border-right: 1px solid rgba(240,202,202,.7);
       border-bottom: 1px solid rgba(240,202,202,.7);
@@ -322,7 +330,7 @@
 
     .section-intro {
       max-width: 760px;
-      color: #555;
+      color: #5f5755;
       font-size: 17px;
       margin: 0 0 32px;
     }
@@ -340,7 +348,7 @@
       content: "";
       height: 1px;
       flex: 1;
-      background: linear-gradient(90deg, transparent, rgba(185,28,28,.28), transparent);
+      background: linear-gradient(90deg, transparent, rgba(143,31,52,.28), transparent);
     }
 
     .visual-separator span {
@@ -348,13 +356,16 @@
       height: 42px;
       border-radius: 50%;
       background: white;
-      border: 1px solid #f0caca;
+      border: 1px solid rgba(143,31,52,.16);
       box-shadow: 0 8px 20px rgba(0,0,0,.06);
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      color: #b91c1c;
-      font-size: 20px;
+      color: #8f1f34;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: .4px;
       animation: softFloat 4s ease-in-out infinite;
     }
 
@@ -368,7 +379,7 @@
     .example-card {
       background: rgba(255,255,255,.96);
       backdrop-filter: blur(8px);
-      border-radius: 24px;
+      border-radius: 30px;
       padding: 28px;
       box-shadow: 0 14px 34px rgba(0,0,0,.08);
       border: 1px solid rgba(244,204,204,.9);
@@ -382,34 +393,34 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at top right, rgba(185,28,28,.06), transparent 42%);
+      background: radial-gradient(circle at top right, rgba(143,31,52,.06), transparent 42%);
       pointer-events: none;
     }
 
     .example-card:hover {
       transform: translateY(-8px);
       box-shadow: 0 22px 48px rgba(0,0,0,.13);
-      border-color: #eebcbc;
+      border-color: rgba(143,31,52,.25);
       background: white;
     }
 
     .example-card:hover .example-icon {
       transform: scale(1.08) rotate(-2deg);
-      box-shadow: 0 10px 22px rgba(185,28,28,.16);
+      box-shadow: 0 10px 22px rgba(143,31,52,.16);
     }
 
     .example-icon {
       width: 56px;
       height: 56px;
-      background: #fff3f3;
-      color: #b91c1c;
-      border-radius: 17px;
+      background: linear-gradient(135deg, #fff7f3, #f6e7df);
+      color: #8f1f34;
+      border-radius: 20px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 28px;
       margin-bottom: 16px;
-      border: 1px solid #f4cccc;
+      border: 1px solid rgba(143,31,52,.14);
       transition: .25s ease;
       position: relative;
       z-index: 1;
@@ -422,16 +433,16 @@
     }
 
     .example-card p {
-      color: #555;
+      color: #5f5755;
       margin: 0;
       font-size: 16px;
     }
 
     .profiles-section {
       background:
-        radial-gradient(circle at top right, rgba(185,28,28,.08), transparent 34%),
-        linear-gradient(135deg, #fffafa 0%, #ffffff 100%);
-      border-radius: 28px;
+        radial-gradient(circle at top right, rgba(143,31,52,.08), transparent 34%),
+        linear-gradient(135deg, #fffdfb 0%, #ffffff 100%);
+      border-radius: 32px;
       padding: 42px;
       border: 1px solid rgba(240,202,202,.8);
       box-shadow: 0 16px 38px rgba(0,0,0,.08);
@@ -444,7 +455,7 @@
     }
 
     .profiles-header p {
-      color: #555;
+      color: #5f5755;
       font-size: 17px;
       margin: 0;
     }
@@ -470,28 +481,28 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at top right, rgba(185,28,28,.06), transparent 42%);
+      background: radial-gradient(circle at top right, rgba(143,31,52,.06), transparent 42%);
       pointer-events: none;
     }
 
     .profile-card:hover {
       transform: translateY(-6px);
       box-shadow: 0 18px 38px rgba(0,0,0,.11);
-      border-color: #eebcbc;
+      border-color: rgba(143,31,52,.25);
     }
 
     .profile-icon {
       width: 48px;
       height: 48px;
       border-radius: 16px;
-      background: #fff3f3;
-      color: #b91c1c;
+      background: #fff7f3;
+      color: #8f1f34;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 25px;
       margin-bottom: 14px;
-      border: 1px solid #f4cccc;
+      border: 1px solid rgba(143,31,52,.14);
       position: relative;
       z-index: 1;
     }
@@ -513,8 +524,8 @@
       margin-bottom: 8px;
       padding: 6px 10px;
       border-radius: 999px;
-      background: rgba(185,28,28,.08);
-      color: #b91c1c;
+      background: rgba(143,31,52,.08);
+      color: #8f1f34;
       font-size: 12px;
       font-weight: 900;
       text-transform: uppercase;
@@ -522,7 +533,7 @@
     }
 
     .profile-card p {
-      color: #555;
+      color: #5f5755;
       font-size: 15px;
       margin: 0;
       line-height: 1.55;
@@ -530,8 +541,8 @@
 
     .profiles-note {
       margin-top: 24px;
-      background: #fff3f3;
-      border: 1px solid #f4cccc;
+      background: #fff7f3;
+      border: 1px solid rgba(143,31,52,.14);
       border-radius: 18px;
       padding: 20px;
     }
@@ -552,7 +563,7 @@
     .card {
       background: rgba(255,255,255,.96);
       backdrop-filter: blur(8px);
-      border-radius: 24px;
+      border-radius: 30px;
       padding: 28px;
       min-height: 250px;
       box-shadow: 0 14px 34px rgba(0,0,0,.08);
@@ -571,7 +582,7 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(circle at top right, rgba(185,28,28,.07), transparent 42%),
+        radial-gradient(circle at top right, rgba(143,31,52,.07), transparent 42%),
         linear-gradient(135deg, rgba(255,255,255,.4), transparent);
       pointer-events: none;
     }
@@ -584,33 +595,33 @@
     .card:hover {
       transform: translateY(-8px);
       box-shadow: 0 22px 48px rgba(0,0,0,.13);
-      border-color: #eebcbc;
+      border-color: rgba(143,31,52,.25);
       background: white;
     }
 
     .card:hover .card-icon {
       transform: scale(1.08) rotate(-2deg);
-      box-shadow: 0 10px 22px rgba(185,28,28,.16);
+      box-shadow: 0 10px 22px rgba(143,31,52,.16);
     }
 
     .card-icon {
       width: 56px;
       height: 56px;
-      background: #fff3f3;
-      color: #b91c1c;
-      border-radius: 17px;
+      background: linear-gradient(135deg, #fff7f3, #f6e7df);
+      color: #8f1f34;
+      border-radius: 20px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 28px;
       margin-bottom: 16px;
-      border: 1px solid #f4cccc;
+      border: 1px solid rgba(143,31,52,.14);
       transition: .25s ease;
     }
 
     .card p {
       margin: 0 0 10px;
-      color: #555;
+      color: #5f5755;
       font-size: 16px;
     }
 
@@ -618,14 +629,32 @@
       margin-bottom: 0;
     }
 
+
+    .example-icon svg,
+    .profile-icon svg,
+    .card-icon svg {
+      width: 28px;
+      height: 28px;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .profile-icon svg {
+      width: 25px;
+      height: 25px;
+    }
+
     .highlight-box {
       background:
-        radial-gradient(circle at top right, rgba(185,28,28,.08), transparent 34%),
-        linear-gradient(135deg, #fff3f3 0%, #ffffff 100%);
-      border-radius: 20px;
+        radial-gradient(circle at top right, rgba(143,31,52,.08), transparent 34%),
+        linear-gradient(135deg, #fff7f3 0%, #ffffff 100%);
+      border-radius: 24px;
       padding: 32px;
       margin-top: 34px;
-      border: 1px solid #f4cccc;
+      border: 1px solid rgba(143,31,52,.14);
       box-shadow: 0 12px 28px rgba(0,0,0,.06);
       animation: fadeUp .7s ease both;
     }
@@ -640,11 +669,11 @@
       background:
         radial-gradient(circle at top right, rgba(255,255,255,.24), transparent 30%),
         radial-gradient(circle at bottom left, rgba(255,255,255,.12), transparent 35%),
-        linear-gradient(135deg, #b91c1c 0%, #7f1d1d 100%);
+        linear-gradient(135deg, #8f1f34 0%, #4a101d 100%);
       color: white;
-      border-radius: 28px;
+      border-radius: 32px;
       padding: 44px;
-      box-shadow: 0 18px 46px rgba(185,28,28,.28);
+      box-shadow: 0 18px 46px rgba(143,31,52,.28);
       animation: fadeUp .7s ease both;
       position: relative;
       overflow: hidden;
@@ -679,9 +708,9 @@
     }
 
     .closing-box {
-      background: rgba(255,255,255,.94);
+      background: rgba(255,253,251,.94);
       backdrop-filter: blur(8px);
-      border-radius: 24px;
+      border-radius: 30px;
       padding: 36px;
       box-shadow: 0 14px 34px rgba(0,0,0,.08);
       border: 1px solid rgba(240,202,202,.7);
@@ -698,14 +727,14 @@
       background:
         radial-gradient(circle at top right, rgba(255,255,255,.20), transparent 30%),
         radial-gradient(circle at bottom left, rgba(255,255,255,.10), transparent 34%),
-        linear-gradient(135deg, #b91c1c 0%, #7f1d1d 100%);
+        linear-gradient(135deg, #8f1f34 0%, #4a101d 100%);
       color: white;
-      border-radius: 28px;
+      border-radius: 32px;
       padding: 50px 30px;
       text-align: center;
       max-width: 860px;
       margin: 0 auto;
-      box-shadow: 0 20px 48px rgba(185,28,28,.32);
+      box-shadow: 0 20px 48px rgba(143,31,52,.32);
       animation: fadeUp .7s ease both;
       position: relative;
       overflow: hidden;
@@ -751,7 +780,7 @@
       justify-content: center;
       min-height: 58px;
       padding: 16px 30px;
-      border-radius: 15px;
+      border-radius: 999px;
       font-weight: 900;
       transition: .2s ease;
       min-width: 250px;
@@ -759,9 +788,9 @@
     }
 
     .cta-primary {
-      background: #d6003d;
+      background: #8f1f34;
       color: white;
-      border: 1px solid #d6003d;
+      border: 1px solid #8f1f34;
       box-shadow: 0 12px 28px rgba(214,0,61,.22);
       min-height: 58px;
       padding: 0 34px;
@@ -991,7 +1020,7 @@
 
       .cta-box {
         padding: 34px 20px;
-        border-radius: 20px;
+        border-radius: 24px;
       }
 
       .cta-buttons {
@@ -1137,13 +1166,13 @@
       </p>
 
       <div class="visual-separator">
-        <span>💼</span>
+        <span>ES</span>
       </div>
 
       <div class="examples-grid">
 
         <div class="example-card">
-          <div class="example-icon">🏥</div>
+          <div class="example-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V7.5C5 6.1 6.1 5 7.5 5h9C17.9 5 19 6.1 19 7.5V20"/><path d="M3.5 20h17"/><path d="M12 8v7"/><path d="M8.5 11.5h7"/><path d="M8 20v-3h8v3"/></svg></div>
           <h3>Baja médica</h3>
           <p>
             Si no puedes trabajar durante un tiempo, tus ingresos pueden verse afectados desde el primer momento.
@@ -1151,7 +1180,7 @@
         </div>
 
         <div class="example-card">
-          <div class="example-icon">🚑</div>
+          <div class="example-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17V7.5C4 6.7 4.7 6 5.5 6H14v11"/><path d="M14 10h3.8l2.2 3v4h-6"/><path d="M6.5 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/><path d="M17.5 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/><path d="M8 9v4"/><path d="M6 11h4"/></svg></div>
           <h3>Accidente</h3>
           <p>
             Un accidente puede impedirte continuar con tu actividad y generar gastos o pérdidas inesperadas.
@@ -1159,7 +1188,7 @@
         </div>
 
         <div class="example-card">
-          <div class="example-icon">⚖️</div>
+          <div class="example-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16"/><path d="M5 20h14"/><path d="M6 7h12"/><path d="m7 7-3 6h6L7 7Z"/><path d="m17 7-3 6h6l-3-6Z"/></svg></div>
           <h3>Reclamación de cliente</h3>
           <p>
             Una reclamación o un daño a terceros puede afectar a tu patrimonio y a la continuidad de tu trabajo.
@@ -1186,7 +1215,7 @@
         <div class="profiles-grid">
 
           <article class="profile-card">
-            <div class="profile-icon">🧑‍💼</div>
+            <div class="profile-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"/><path d="M4.5 20.5c1.4-4.1 4.1-6.1 7.5-6.1s6.1 2 7.5 6.1"/><path d="M9 15.5l3 3 3-3"/></svg></div>
             <h3>Consultor o asesor</h3>
             <span class="risk-label">Riesgo principal</span>
             <p>
@@ -1195,7 +1224,7 @@
           </article>
 
           <article class="profile-card">
-            <div class="profile-icon">🩺</div>
+            <div class="profile-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4v5a4 4 0 0 0 8 0V4"/><path d="M6 4H4"/><path d="M14 4h2"/><path d="M10 13v2.5a4.5 4.5 0 0 0 9 0V14"/><path d="M19 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/></svg></div>
             <h3>Fisioterapeuta o sanitario</h3>
             <span class="risk-label">Riesgo principal</span>
             <p>
@@ -1204,7 +1233,7 @@
           </article>
 
           <article class="profile-card">
-            <div class="profile-icon">🏪</div>
+            <div class="profile-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10h16l-1.2-5.2A1 1 0 0 0 17.8 4H6.2a1 1 0 0 0-1 .8L4 10Z"/><path d="M5 10v10h14V10"/><path d="M9 20v-5h6v5"/><path d="M4 10c.5 1.3 2.5 1.3 3 0 .5 1.3 2.5 1.3 3 0 .5 1.3 2.5 1.3 3 0 .5 1.3 2.5 1.3 3 0 .5 1.3 2.5 1.3 3 0"/></svg></div>
             <h3>Comercio</h3>
             <span class="risk-label">Riesgo principal</span>
             <p>
@@ -1213,7 +1242,7 @@
           </article>
 
           <article class="profile-card">
-            <div class="profile-icon">🛠️</div>
+            <div class="profile-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14.7 6.3 3 3"/><path d="M5 19l8.8-8.8"/><path d="M15.5 5.5 18 3l3 3-2.5 2.5"/><path d="M4 14l6 6"/><path d="m7 17-3 3"/></svg></div>
             <h3>Reformas o instalaciones</h3>
             <span class="risk-label">Riesgo principal</span>
             <p>
@@ -1222,7 +1251,7 @@
           </article>
 
           <article class="profile-card">
-            <div class="profile-icon">💻</div>
+            <div class="profile-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14v10H5z"/><path d="M3 19h18"/><path d="M9 15v4"/><path d="M15 15v4"/></svg></div>
             <h3>Freelancer</h3>
             <span class="risk-label">Riesgo principal</span>
             <p>
@@ -1252,14 +1281,14 @@
       </p>
 
       <div class="visual-separator">
-        <span>🧾</span>
+        <span>ES</span>
       </div>
 
       <div class="autonomos-grid">
 
         <div class="card">
           <div>
-            <div class="card-icon">🏥</div>
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V7.5C5 6.1 6.1 5 7.5 5h9C17.9 5 19 6.1 19 7.5V20"/><path d="M3.5 20h17"/><path d="M12 8v7"/><path d="M8.5 11.5h7"/><path d="M8 20v-3h8v3"/></svg></div>
             <h3>Protección ante bajas laborales</h3>
             <p>
               Si no puedes trabajar, tu actividad y tus ingresos se ven afectados directamente.
@@ -1272,7 +1301,7 @@
 
         <div class="card">
           <div>
-            <div class="card-icon">🚑</div>
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17V7.5C4 6.7 4.7 6 5.5 6H14v11"/><path d="M14 10h3.8l2.2 3v4h-6"/><path d="M6.5 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/><path d="M17.5 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/><path d="M8 9v4"/><path d="M6 11h4"/></svg></div>
             <h3>Protección ante accidentes</h3>
             <p>
               Un accidente puede tener consecuencias importantes tanto a nivel personal como profesional.
@@ -1285,7 +1314,7 @@
 
         <div class="card">
           <div>
-            <div class="card-icon">⚖️</div>
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16"/><path d="M5 20h14"/><path d="M6 7h12"/><path d="m7 7-3 6h6L7 7Z"/><path d="m17 7-3 6h6l-3-6Z"/></svg></div>
             <h3>Responsabilidad civil</h3>
             <p>
               Un error, un daño a un cliente o una reclamación puede afectar directamente a tu patrimonio.
@@ -1298,7 +1327,7 @@
 
         <div class="card">
           <div>
-            <div class="card-icon">💶</div>
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 7.5A7 7 0 1 0 18 16.5"/><path d="M5 10h10"/><path d="M5 14h10"/></svg></div>
             <h3>Refuerzo de ingresos</h3>
             <p>
               En muchas ocasiones, lo que se recibe a nivel público no es suficiente para mantener estabilidad.
@@ -1311,7 +1340,7 @@
 
         <div class="card">
           <div>
-            <div class="card-icon">🏪</div>
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10h16l-1.2-5.2A1 1 0 0 0 17.8 4H6.2a1 1 0 0 0-1 .8L4 10Z"/><path d="M5 10v10h14V10"/><path d="M9 20v-5h6v5"/><path d="M4 10c.5 1.3 2.5 1.3 3 0 .5 1.3 2.5 1.3 3 0 .5 1.3 2.5 1.3 3 0 .5 1.3 2.5 1.3 3 0 .5 1.3 2.5 1.3 3 0"/></svg></div>
             <h3>Comercios y oficinas</h3>
             <p>
               Tu lugar de trabajo también necesita protección ante daños, robos o incidencias.
