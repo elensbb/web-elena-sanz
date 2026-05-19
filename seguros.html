@@ -6,6 +6,8 @@
   <title>Seguros | Elena Sanz</title>
 
   <style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap");
+
     * {
       box-sizing: border-box;
     }
@@ -16,13 +18,13 @@
 
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Inter', Arial, sans-serif;
       background:
-        radial-gradient(circle at top right, rgba(185,28,28,0.12), transparent 34%),
-        radial-gradient(circle at 8% 35%, rgba(185,28,28,0.06), transparent 32%),
-        radial-gradient(circle at bottom left, rgba(185,28,28,0.08), transparent 46%),
-        linear-gradient(135deg, #ffffff 0%, #fff4f4 52%, #f8eeee 100%);
-      color: #222;
+        radial-gradient(circle at top right, rgba(126,28,46,0.12), transparent 34%),
+        radial-gradient(circle at 8% 35%, rgba(126,28,46,0.055), transparent 32%),
+        radial-gradient(circle at bottom left, rgba(126,28,46,0.08), transparent 46%),
+        linear-gradient(135deg, #fffdfb 0%, #fbf3ef 52%, #f6ece7 100%);
+      color: #241f21;
       overflow-x: hidden;
     }
 
@@ -30,14 +32,23 @@
       text-decoration: none;
     }
 
+    ::selection {
+      background: rgba(126,28,46,.18);
+      color: #4a101d;
+    }
+
+    svg {
+      display: block;
+    }
+
     /* NAVBAR */
     .topbar {
       position: sticky;
       top: 0;
       z-index: 9999;
-      background: rgba(255,255,255,.94);
+      background: rgba(255,253,251,.94);
       backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(0,0,0,.06);
+      border-bottom: 1px solid rgba(126,28,46,.10);
     }
 
     .topbar-container {
@@ -54,14 +65,14 @@
       display: flex;
       align-items: center;
       gap: 14px;
-      color: #222;
+      color: #241f21;
     }
 
     .brand-logo {
       width: 52px;
       height: 52px;
       border-radius: 50%;
-      background: #d6003d;
+      background: #8f1f34;
       color: white;
       display: flex;
       align-items: center;
@@ -98,7 +109,7 @@
     }
 
     .nav-links a:hover {
-      color: #b91c1c;
+      color: #8f1f34;
     }
 
     .nav-actions {
@@ -115,6 +126,8 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      text-align: center;
+      line-height: 1.15;
       font-weight: 800;
       font-size: 17px;
       transition: .2s ease;
@@ -122,12 +135,12 @@
 
     .nav-phone {
       background: white;
-      border: 1px solid #efcaca;
-      color: #b91c1c;
+      border: 1px solid rgba(143,31,52,.18);
+      color: #8f1f34;
     }
 
     .nav-whatsapp {
-      background: #d6003d;
+      background: #8f1f34;
       color: white;
     }
 
@@ -169,7 +182,7 @@
       background:
         radial-gradient(circle at top right, rgba(185,28,28,.18), transparent 32%),
         radial-gradient(circle at bottom left, rgba(185,28,28,.08), transparent 38%),
-        linear-gradient(180deg, #ffffff 0%, #fff1f1 100%);
+        linear-gradient(180deg, #fffdfb 0%, #fbf3ef 100%);
       padding: 82px 0 62px;
     }
 
@@ -205,7 +218,7 @@
     }
 
     .eyebrow {
-      color: #b91c1c;
+      color: #8f1f34;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: .6px;
@@ -214,6 +227,7 @@
     }
 
     h1 {
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 44px;
       line-height: 1.15;
       margin: 0 0 20px;
@@ -221,12 +235,14 @@
     }
 
     h2 {
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 30px;
       line-height: 1.25;
       margin: 0 0 18px;
     }
 
     h3 {
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 21px;
       margin: 0 0 10px;
     }
@@ -256,22 +272,22 @@
       justify-content: center;
       min-height: 56px;
       padding: 0 30px;
-      border-radius: 15px;
+      border-radius: 999px;
       font-weight: 900;
       transition: .25s ease;
       font-size: 16px;
     }
 
     .hero-primary {
-      background: #d6003d;
+      background: #8f1f34;
       color: white;
-      border: 1px solid #d6003d;
+      border: 1px solid #8f1f34;
       box-shadow: 0 12px 28px rgba(214,0,61,.22);
     }
 
     .hero-secondary {
       background: transparent;
-      color: #991b1b;
+      color: #7e1c2e;
       border: 1px solid rgba(185,28,28,.24);
       box-shadow: none;
     }
@@ -293,12 +309,12 @@
     }
 
     .intro-card {
-      background: rgba(255,255,255,.94);
+      background: rgba(255,253,251,.94);
       backdrop-filter: blur(8px);
-      border-radius: 24px;
+      border-radius: 30px;
       padding: 38px;
-      box-shadow: 0 14px 34px rgba(0,0,0,.08);
-      border-left: 5px solid #b91c1c;
+      box-shadow: 0 18px 44px rgba(74,16,29,.08);
+      border-left: 5px solid #8f1f34;
       border-top: 1px solid rgba(240,202,202,.7);
       border-right: 1px solid rgba(240,202,202,.7);
       border-bottom: 1px solid rgba(240,202,202,.7);
@@ -339,13 +355,22 @@
       height: 42px;
       border-radius: 50%;
       background: white;
-      border: 1px solid #f0caca;
+      border: 1px solid rgba(143,31,52,.16);
       box-shadow: 0 8px 20px rgba(0,0,0,.06);
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      color: #b91c1c;
+      color: #8f1f34;
       font-size: 20px;
+    }
+
+
+
+    .brand-mark {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 15px !important;
+      font-weight: 800;
+      letter-spacing: .4px;
     }
 
     .insurance-block {
@@ -365,13 +390,13 @@
       width: 46px;
       height: 46px;
       background: white;
-      color: #b91c1c;
+      color: #8f1f34;
       border-radius: 16px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       font-size: 22px;
-      border: 1px solid #f4cccc;
+      border: 1px solid rgba(143,31,52,.14);
       flex-shrink: 0;
       box-shadow: 0 10px 24px rgba(0,0,0,.07);
       animation: softFloat 4s ease-in-out infinite;
@@ -391,9 +416,9 @@
     .insurance-card {
       background: rgba(255,255,255,.96);
       backdrop-filter: blur(8px);
-      border-radius: 24px;
+      border-radius: 30px;
       padding: 0;
-      box-shadow: 0 14px 34px rgba(0,0,0,.08);
+      box-shadow: 0 18px 44px rgba(74,16,29,.08);
       border: 1px solid rgba(244,204,204,.9);
       overflow: hidden;
       transition: .28s ease;
@@ -412,8 +437,8 @@
 
     .insurance-card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 22px 48px rgba(0,0,0,.13);
-      border-color: #eebcbc;
+      box-shadow: 0 26px 58px rgba(74,16,29,.13);
+      border-color: rgba(143,31,52,.25);
       background: white;
     }
 
@@ -431,8 +456,8 @@
     .card-icon {
       width: 56px;
       height: 56px;
-      background: #fff3f3;
-      color: #b91c1c;
+      background: #fff7f3;
+      color: #8f1f34;
       border-radius: 17px;
       display: flex;
       align-items: center;
@@ -440,7 +465,19 @@
       font-size: 28px;
       margin-bottom: 16px;
       transition: .25s ease;
-      border: 1px solid #f4cccc;
+      border: 1px solid rgba(143,31,52,.14);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.85);
+    }
+
+    .card-icon svg,
+    .insurance-block-title span svg {
+      width: 28px;
+      height: 28px;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
 
     .insurance-top p {
@@ -451,7 +488,7 @@
 
     details {
       border-top: 1px solid #f0f0f0;
-      background: #fffafa;
+      background: #fffdfb;
       position: relative;
       z-index: 1;
     }
@@ -460,7 +497,7 @@
       list-style: none;
       cursor: pointer;
       padding: 18px 26px;
-      color: #991b1b;
+      color: #7e1c2e;
       font-weight: 700;
       display: flex;
       align-items: center;
@@ -471,7 +508,7 @@
     }
 
     summary:hover {
-      background: #fff7f7;
+      background: #fff8f5;
       padding-left: 30px;
       opacity: 1;
     }
@@ -485,7 +522,7 @@
       width: 28px;
       height: 28px;
       border-radius: 50%;
-      background: #b91c1c;
+      background: #8f1f34;
       color: white;
       display: inline-flex;
       align-items: center;
@@ -498,7 +535,7 @@
 
     details[open] summary::after {
       content: "−";
-      background: #991b1b;
+      background: #7e1c2e;
       transform: rotate(180deg);
     }
 
@@ -519,13 +556,13 @@
     }
 
     .ideal-box {
-      background: #fff7f7;
+      background: #fff8f5;
       border-radius: 14px;
       padding: 15px 16px;
       margin-bottom: 18px;
       color: #444;
       font-size: 15px;
-      border-left: 4px solid #b91c1c;
+      border-left: 4px solid #8f1f34;
       box-shadow: inset 0 0 0 1px rgba(244,204,204,.45);
     }
 
@@ -552,7 +589,7 @@
       font-size: 14px;
       flex: 1 1 100%;
       background: transparent;
-      color: #991b1b;
+      color: #7e1c2e;
       border: 1px solid rgba(185,28,28,.24);
       box-shadow: none;
     }
@@ -573,19 +610,19 @@
 
     .call-office:hover {
       transform: translateY(-2px);
-      background: #fff7f7;
+      background: #fff8f5;
     }
 
     .call-mobile:hover {
       transform: none;
-      color: #b91c1c;
+      color: #8f1f34;
     }
 
     .help-choice {
       background:
         radial-gradient(circle at top right, rgba(255,255,255,.24), transparent 30%),
         radial-gradient(circle at bottom left, rgba(255,255,255,.12), transparent 35%),
-        linear-gradient(135deg, #b91c1c 0%, #7f1d1d 100%);
+        linear-gradient(135deg, #8f1f34 0%, #4a101d 100%);
       color: white;
       border-radius: 28px;
       padding: 44px;
@@ -645,12 +682,12 @@
     .help-choice-primary {
       min-height: 58px;
       padding: 0 30px;
-      border-radius: 15px;
+      border-radius: 999px;
       font-weight: 900;
       font-size: 16px;
-      background: #d6003d;
+      background: #8f1f34;
       color: white;
-      border: 1px solid #d6003d;
+      border: 1px solid #8f1f34;
       box-shadow: 0 12px 28px rgba(214,0,61,.22);
     }
 
@@ -677,11 +714,11 @@
     }
 
     .closing-box {
-      background: rgba(255,255,255,.94);
+      background: rgba(255,253,251,.94);
       backdrop-filter: blur(8px);
-      border-radius: 24px;
+      border-radius: 30px;
       padding: 36px;
-      box-shadow: 0 14px 34px rgba(0,0,0,.08);
+      box-shadow: 0 18px 44px rgba(74,16,29,.08);
       border: 1px solid rgba(240,202,202,.7);
       animation: fadeUp .7s ease both;
     }
@@ -695,7 +732,7 @@
     .cta-box {
       background:
         radial-gradient(circle at top right, rgba(255,255,255,.20), transparent 30%),
-        linear-gradient(135deg, #b91c1c 0%, #7f1d1d 100%);
+        linear-gradient(135deg, #8f1f34 0%, #4a101d 100%);
       color: white;
       border-radius: 26px;
       padding: 46px 28px;
@@ -732,12 +769,12 @@
     .cta-primary {
       min-height: 58px;
       padding: 0 34px;
-      border-radius: 15px;
+      border-radius: 999px;
       font-weight: 900;
       font-size: 17px;
-      background: #d6003d;
+      background: #8f1f34;
       color: white;
-      border: 1px solid #d6003d;
+      border: 1px solid #8f1f34;
       box-shadow: 0 12px 28px rgba(214,0,61,.22);
     }
 
@@ -1066,7 +1103,7 @@
       </nav>
 
       <div class="nav-actions">
-        <a href="tel:+34917702311" class="nav-phone">☎ Llamar oficina</a>
+        <a href="tel:+34917702311" class="nav-phone">Llamar oficina</a>
         <a href="https://wa.me/34606067906" target="_blank" class="nav-whatsapp">WhatsApp</a>
       </div>
 
@@ -1125,12 +1162,12 @@
       </p>
 
       <div class="visual-separator">
-        <span>⌄</span>
+        <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span>
       </div>
 
       <div class="insurance-block">
         <div class="insurance-block-title">
-          <span>👨‍👩‍👧</span>
+          <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/><path d="M17 12a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/><path d="M3.5 20c.9-3.8 3-5.7 5.5-5.7s4.6 1.9 5.5 5.7"/><path d="M13.8 17.5c.9-2.3 2.1-3.4 3.7-3.4 1.8 0 3 1.4 3.8 4.2"/></svg></span>
           <h3>Seguros para ti y tu familia</h3>
         </div>
 
@@ -1138,7 +1175,7 @@
 
           <div class="insurance-card">
             <div class="insurance-top">
-              <div class="card-icon">🏠</div>
+              <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 11.5 12 4l8.5 7.5"/><path d="M5.5 10.5V20h13v-9.5"/><path d="M9.5 20v-5h5v5"/></svg></div>
               <h3>Hogar</h3>
               <p>Protección para tu vivienda y para los imprevistos que pueden afectar a tu día a día.</p>
             </div>
@@ -1159,8 +1196,8 @@
 
                 <div class="call-actions">
   <a href="seguro-hogar.html" class="call-office">Más información</a>
-  <a href="tel:+34917702311" class="call-mobile">☎ Llamar oficina</a>
-  <a href="tel:+34606067906" class="call-mobile">☎ Llamar móvil</a>
+  <a href="tel:+34917702311" class="call-mobile">Llamar oficina</a>
+  <a href="tel:+34606067906" class="call-mobile">Llamar móvil</a>
 </div>
               </div>
             </details>
@@ -1168,7 +1205,7 @@
 
           <div class="insurance-card">
             <div class="insurance-top">
-              <div class="card-icon">🚗</div>
+              <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 16h14"/><path d="M6.5 16 8 10.5c.3-.9 1-1.5 2-1.5h4c1 0 1.7.6 2 1.5l1.5 5.5"/><path d="M7 18.5h.1"/><path d="M17 18.5h.1"/><path d="M5.5 16v3"/><path d="M18.5 16v3"/></svg></div>
               <h3>Automóviles</h3>
               <p>Coberturas adaptadas para circular con tranquilidad y proteger tu vehículo.</p>
             </div>
@@ -1189,8 +1226,8 @@
 
                <div class="call-actions">
   <a href="seguro-automóviles.html" class="call-office">Más información</a>
-  <a href="tel:+34917702311" class="call-mobile">☎ Llamar oficina</a>
-  <a href="tel:+34606067906" class="call-mobile">☎ Llamar móvil</a>
+  <a href="tel:+34917702311" class="call-mobile">Llamar oficina</a>
+  <a href="tel:+34606067906" class="call-mobile">Llamar móvil</a>
 </div>
               </div>
             </details>
@@ -1198,7 +1235,7 @@
 
           <div class="insurance-card">
             <div class="insurance-top">
-              <div class="card-icon">❤️</div>
+              <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.3 5.8a5.2 5.2 0 0 0-7.4 0L12 6.7l-.9-.9a5.2 5.2 0 0 0-7.4 7.4L12 21l8.3-7.8a5.2 5.2 0 0 0 0-7.4Z"/></svg></div>
               <h3>Seguro de vida</h3>
               <p>Una forma de proteger a quienes más importan ante situaciones difíciles.</p>
             </div>
@@ -1219,8 +1256,8 @@
 
                 <div class="call-actions">
   <a href="seguro-vida.html" class="call-office">Más información</a>
-  <a href="tel:+34917702311" class="call-mobile">☎ Llamar oficina</a>
-  <a href="tel:+34606067906" class="call-mobile">☎ Llamar móvil</a>
+  <a href="tel:+34917702311" class="call-mobile">Llamar oficina</a>
+  <a href="tel:+34606067906" class="call-mobile">Llamar móvil</a>
 </div>
               </div>
             </details>
@@ -1228,7 +1265,7 @@
 
           <div class="insurance-card">
             <div class="insurance-top">
-              <div class="card-icon">🏥</div>
+              <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V6.5C5 5.1 6.1 4 7.5 4h9C17.9 4 19 5.1 19 6.5V21"/><path d="M9 21v-5h6v5"/><path d="M12 8v5"/><path d="M9.5 10.5h5"/></svg></div>
               <h3>Salud</h3>
               <p>Opciones para cuidar tu bienestar y el de tu familia con mayor tranquilidad.</p>
             </div>
@@ -1249,8 +1286,8 @@
 
                 <div class="call-actions">
   <a href="seguro-salud.html" class="call-office">Más información</a>
-  <a href="tel:+34917702311" class="call-mobile">☎ Llamar oficina</a>
-  <a href="tel:+34606067906" class="call-mobile">☎ Llamar móvil</a>
+  <a href="tel:+34917702311" class="call-mobile">Llamar oficina</a>
+  <a href="tel:+34606067906" class="call-mobile">Llamar móvil</a>
 </div>
               </div>
             </details>
@@ -1258,7 +1295,7 @@
 
           <div class="insurance-card">
             <div class="insurance-top">
-              <div class="card-icon">🛡️</div>
+              <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5.5 5.4v5.5c0 4.2 2.6 7.9 6.5 10.1 3.9-2.2 6.5-5.9 6.5-10.1V5.4L12 3Z"/><path d="m9.5 12 1.8 1.8 3.7-4"/></svg></div>
               <h3>Accidentes</h3>
               <p>Protección para afrontar imprevistos personales con mayor respaldo.</p>
             </div>
@@ -1279,8 +1316,8 @@
 
                 <div class="call-actions">
   <a href="seguro-accidentes.html" class="call-office">Más información</a>
-  <a href="tel:+34917702311" class="call-mobile">☎ Llamar oficina</a>
-  <a href="tel:+34606067906" class="call-mobile">☎ Llamar móvil</a>
+  <a href="tel:+34917702311" class="call-mobile">Llamar oficina</a>
+  <a href="tel:+34606067906" class="call-mobile">Llamar móvil</a>
 </div>
               </div>
             </details>
@@ -1288,7 +1325,7 @@
 
 <div class="insurance-card">
   <div class="insurance-top">
-    <div class="card-icon">🐾</div>
+    <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 10.5c1 0 1.8-1 1.8-2.3S9.5 6 8.5 6 6.7 7 6.7 8.2s.8 2.3 1.8 2.3Z"/><path d="M15.5 10.5c1 0 1.8-1 1.8-2.3S16.5 6 15.5 6s-1.8 1-1.8 2.2.8 2.3 1.8 2.3Z"/><path d="M5.5 14.2c.8 0 1.5-.8 1.5-1.8s-.7-1.8-1.5-1.8S4 11.4 4 12.4s.7 1.8 1.5 1.8Z"/><path d="M18.5 14.2c.8 0 1.5-.8 1.5-1.8s-.7-1.8-1.5-1.8-1.5.8-1.5 1.8.7 1.8 1.5 1.8Z"/><path d="M8.5 16.7c.8-1.8 2-2.7 3.5-2.7s2.7.9 3.5 2.7c.7 1.5-.3 3.3-2 3.3h-3c-1.7 0-2.7-1.8-2-3.3Z"/></svg></div>
     <h3>Mascotas</h3>
     <p>Protección para perros y gatos, porque también forman parte de tu familia.</p>
   </div>
@@ -1311,8 +1348,8 @@
 
       <div class="call-actions">
   <a href="seguro-mascotas.html" class="call-office">Más información</a>
-  <a href="tel:+34917702311" class="call-mobile">☎ Llamar oficina</a>
-  <a href="tel:+34606067906" class="call-mobile">☎ Llamar móvil</a>
+  <a href="tel:+34917702311" class="call-mobile">Llamar oficina</a>
+  <a href="tel:+34606067906" class="call-mobile">Llamar móvil</a>
 </div>
     </div>
   </details>
@@ -1322,12 +1359,12 @@
       </div>
 
       <div class="visual-separator">
-        <span>✦</span>
+        <span>ES</span>
       </div>
 
       <div class="insurance-block">
         <div class="insurance-block-title">
-          <span>🏢</span>
+          <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21V5.5C4 4.7 4.7 4 5.5 4h8c.8 0 1.5.7 1.5 1.5V21"/><path d="M15 9h3.5c.8 0 1.5.7 1.5 1.5V21"/><path d="M7 8h2"/><path d="M10.5 8h2"/><path d="M7 12h2"/><path d="M10.5 12h2"/><path d="M7 16h2"/><path d="M10.5 16h2"/><path d="M3 21h18"/></svg></span>
           <h3>Seguros para tu negocio</h3>
         </div>
 
@@ -1335,7 +1372,7 @@
 
           <div class="insurance-card">
             <div class="insurance-top">
-              <div class="card-icon">🏪</div>
+              <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10h16"/><path d="M5 10l1-5h12l1 5"/><path d="M6 10v10h12V10"/><path d="M9 20v-6h6v6"/><path d="M7 5h10"/></svg></div>
               <h3>Negocios</h3>
               <p>Soluciones para proteger tu local, tu actividad y la continuidad de tu negocio.</p>
             </div>
@@ -1356,8 +1393,8 @@
 
                 <div class="call-actions">
   <a href="seguro-negocios.html" class="call-office">Más información</a>
-  <a href="tel:+34917702311" class="call-mobile">☎ Llamar oficina</a>
-  <a href="tel:+34606067906" class="call-mobile">☎ Llamar móvil</a>
+  <a href="tel:+34917702311" class="call-mobile">Llamar oficina</a>
+  <a href="tel:+34606067906" class="call-mobile">Llamar móvil</a>
 </div>
               </div>
             </details>
@@ -1365,7 +1402,7 @@
 
           <div class="insurance-card">
             <div class="insurance-top">
-              <div class="card-icon">⚖️</div>
+              <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v17"/><path d="M6 7h12"/><path d="M8 7l-4 7h8L8 7Z"/><path d="M16 7l-4 7h8l-4-7Z"/><path d="M9 21h6"/></svg></div>
               <h3>Responsabilidad civil</h3>
               <p>Protección frente a daños que puedas causar a terceros en tu actividad profesional.</p>
             </div>
@@ -1386,8 +1423,8 @@
 
                 <div class="call-actions">
   <a href="seguro-responsabilidad-civil.html" class="call-office">Más información</a>
-  <a href="tel:+34917702311" class="call-mobile">☎ Llamar oficina</a>
-  <a href="tel:+34606067906" class="call-mobile">☎ Llamar móvil</a>
+  <a href="tel:+34917702311" class="call-mobile">Llamar oficina</a>
+  <a href="tel:+34606067906" class="call-mobile">Llamar móvil</a>
 </div>
               </div>
             </details>
@@ -1395,7 +1432,7 @@
 
           <div class="insurance-card">
             <div class="insurance-top">
-              <div class="card-icon">👩‍💼</div>
+              <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"/><path d="M4.5 20.5c1.4-4.1 4.1-6.1 7.5-6.1s6.1 2 7.5 6.1"/><path d="M9 15.5l3 3 3-3"/></svg></div>
               <h3>Autónomos</h3>
               <p>Protección pensada para quienes trabajan por cuenta propia y necesitan respaldo.</p>
             </div>
@@ -1416,8 +1453,8 @@
 
                 <div class="call-actions">
   <a href="seguro-autónomos.html" class="call-office">Más información</a>
-  <a href="tel:+34917702311" class="call-mobile">☎ Llamar oficina</a>
-  <a href="tel:+34606067906" class="call-mobile">☎ Llamar móvil</a>
+  <a href="tel:+34917702311" class="call-mobile">Llamar oficina</a>
+  <a href="tel:+34606067906" class="call-mobile">Llamar móvil</a>
 </div>
               </div>
             </details>
@@ -1445,7 +1482,7 @@
           </a>
 
           <a href="tel:+34917702311" class="help-choice-secondary">
-            ☎ Llamar oficina
+            Llamar oficina
           </a>
         </div>
       </div>
@@ -1484,8 +1521,8 @@
 
         <div class="cta-buttons">
           <a href="https://wa.me/34606067906" target="_blank" class="cta-primary">Escríbenos por WhatsApp</a>
-          <a href="tel:+34917702311" class="cta-secondary">☎ Llamar oficina</a>
-          <a href="mailto:esanz@occident.com" class="cta-secondary">✉ Email</a>
+          <a href="tel:+34917702311" class="cta-secondary">Llamar oficina</a>
+          <a href="mailto:esanz@occident.com" class="cta-secondary">Email</a>
         </div>
       </div>
     </div>
