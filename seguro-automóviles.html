@@ -8,18 +8,21 @@
   <meta name="description" content="Seguro de automóviles para coche, vehículo eléctrico, furgón, autocaravana, camper y patinete eléctrico. Te ayudamos a elegir coberturas claras y adaptadas a tu forma de moverte." />
 
   <style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap");
+
     :root {
-      --bg: #fbf7f1;
-      --bg-soft: #fffaf4;
+      --bg: #fffdfb;
+      --bg-soft: #fbf3ef;
       --white: #ffffff;
-      --text: #1f2933;
-      --muted: #64748b;
-      --primary: #c3002f;
-      --primary-dark: #9f0027;
-      --border: rgba(31, 41, 51, 0.12);
-      --shadow: 0 18px 45px rgba(31, 41, 51, 0.08);
-      --radius: 24px;
-      --radius-sm: 16px;
+      --text: #241f21;
+      --muted: #5f5755;
+      --primary: #8f1f34;
+      --primary-dark: #4a101d;
+      --cream: #f6ece7;
+      --border: rgba(143, 31, 52, 0.14);
+      --shadow: 0 22px 52px rgba(74, 16, 29, 0.10);
+      --radius: 30px;
+      --radius-sm: 22px;
       --max: 1120px;
     }
 
@@ -34,10 +37,20 @@
     }
 
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(143,31,52,0.10), transparent 34%),
+        radial-gradient(circle at 8% 38%, rgba(143,31,52,0.045), transparent 32%),
+        radial-gradient(circle at bottom left, rgba(143,31,52,0.08), transparent 46%),
+        linear-gradient(135deg, #fffdfb 0%, #fbf3ef 52%, #f6ece7 100%);
       color: var(--text);
       line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    ::selection {
+      background: rgba(143,31,52,.18);
+      color: var(--primary-dark);
     }
 
     a {
@@ -84,8 +97,9 @@
     }
 
     .topbar {
-      background: var(--white);
-      border-bottom: 1px solid var(--border);
+      background: rgba(255,253,251,.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(143,31,52,.10);
       position: sticky;
       top: 0;
       z-index: 50;
@@ -111,6 +125,7 @@
       border-radius: 50%;
       background: var(--primary);
       color: var(--white);
+      box-shadow: 0 10px 24px rgba(143,31,52,.18);
       display: grid;
       place-items: center;
       font-weight: 800;
@@ -195,7 +210,7 @@
     .btn-outline {
       background: transparent;
       color: var(--primary);
-      border-color: rgba(195, 0, 47, 0.35);
+      border-color: rgba(143, 31, 52, 0.35);
     }
 
     .btn-tertiary {
@@ -209,7 +224,7 @@
 
     .btn-tertiary:hover {
       color: var(--primary);
-      background: rgba(195, 0, 47, 0.04);
+      background: rgba(143, 31, 52, 0.04);
       box-shadow: none;
     }
 
@@ -217,6 +232,10 @@
       padding: 78px 0 56px;
       position: relative;
       overflow: hidden;
+      background:
+        radial-gradient(circle at top right, rgba(143,31,52,.12), transparent 32%),
+        radial-gradient(circle at bottom left, rgba(143,31,52,.06), transparent 38%),
+        linear-gradient(135deg, #fffdfb 0%, #fbf3ef 58%, #fffdfb 100%);
     }
 
     .hero::before {
@@ -225,7 +244,7 @@
       width: 560px;
       height: 560px;
       border-radius: 50%;
-      background: rgba(195, 0, 47, 0.08);
+      background: rgba(143, 31, 52, 0.08);
       right: -220px;
       top: -220px;
       z-index: -1;
@@ -244,7 +263,7 @@
       gap: 8px;
       padding: 8px 13px;
       border-radius: 999px;
-      background: rgba(195, 0, 47, 0.08);
+      background: rgba(143, 31, 52, 0.08);
       color: var(--primary);
       font-weight: 800;
       font-size: 0.9rem;
@@ -252,22 +271,25 @@
     }
 
     h1 {
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: clamp(2.3rem, 5vw, 4.3rem);
-      line-height: 1;
-      letter-spacing: -0.06em;
+      line-height: 1.02;
+      letter-spacing: -0.05em;
       max-width: 850px;
       margin-bottom: 22px;
     }
 
     h2 {
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: clamp(1.8rem, 3vw, 2.8rem);
-      line-height: 1.1;
-      letter-spacing: -0.045em;
+      line-height: 1.12;
+      letter-spacing: -0.035em;
       margin-bottom: 16px;
     }
 
     h3 {
-      font-size: 1.2rem;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.22rem;
       line-height: 1.25;
       letter-spacing: -0.02em;
       margin-bottom: 10px;
@@ -304,12 +326,14 @@
     .hero-card-icon {
       width: 74px;
       height: 74px;
-      border-radius: 22px;
-      background: rgba(195, 0, 47, 0.08);
+      border-radius: 24px;
+      background: linear-gradient(135deg, #fff7f3, #f6e7df);
+      color: var(--primary);
       display: grid;
       place-items: center;
       font-size: 2rem;
       margin-bottom: 18px;
+      border: 1px solid rgba(143,31,52,.14);
       animation: softFloat 4.5s ease-in-out infinite;
     }
 
@@ -388,26 +412,45 @@
       border: 1px solid var(--border);
       border-radius: var(--radius-sm);
       padding: 24px;
-      box-shadow: 0 10px 24px rgba(31, 41, 51, 0.04);
+      box-shadow: 0 14px 34px rgba(74, 16, 29, 0.07);
       height: 100%;
       transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
     }
 
     .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 18px 36px rgba(31, 41, 51, 0.09);
-      border-color: rgba(195, 0, 47, 0.22);
+      box-shadow: 0 24px 48px rgba(74, 16, 29, 0.12);
+      border-color: rgba(143, 31, 52, 0.22);
     }
 
     .card-icon {
-      width: 50px;
-      height: 50px;
-      border-radius: 16px;
-      background: rgba(195, 0, 47, 0.08);
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #fff7f3, #f6e7df);
+      color: var(--primary);
       display: grid;
       place-items: center;
       font-size: 1.45rem;
       margin-bottom: 18px;
+      border: 1px solid rgba(143,31,52,.14);
+    }
+
+    .card-icon svg,
+    .mini-icon svg,
+    .hero-card-icon svg {
+      width: 28px;
+      height: 28px;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .hero-card-icon svg {
+      width: 34px;
+      height: 34px;
     }
 
     .card p {
@@ -436,7 +479,7 @@
     }
 
     .simple-table th {
-      background: rgba(195, 0, 47, 0.08);
+      background: rgba(143, 31, 52, 0.08);
       color: var(--primary);
       font-size: 0.92rem;
       text-transform: uppercase;
@@ -475,18 +518,20 @@
     .coverage-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 16px 32px rgba(31, 41, 51, 0.08);
-      border-color: rgba(195, 0, 47, 0.22);
+      border-color: rgba(143, 31, 52, 0.22);
     }
 
     .coverage-card .mini-icon {
-      width: 42px;
-      height: 42px;
-      border-radius: 14px;
-      background: rgba(195, 0, 47, 0.08);
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #fff7f3, #f6e7df);
+      color: var(--primary);
       display: grid;
       place-items: center;
       flex: 0 0 auto;
       font-size: 1.2rem;
+      border: 1px solid rgba(143,31,52,.14);
     }
 
     .coverage-card p {
@@ -495,7 +540,7 @@
     }
 
     .highlight {
-      background: linear-gradient(135deg, var(--primary), #8f0023);
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
       color: var(--white);
       border-radius: calc(var(--radius) + 6px);
       padding: 38px;
@@ -770,7 +815,7 @@
           <a href="index.html">Inicio</a>
           <a href="seguros.html">Seguros</a>
           <a href="autonomos.html">Autónomos</a>
-          <a href="asesoramiento-financiero.html">Finanzas</a>
+          <a href="asesoramiento.html">Finanzas</a>
           <a href="clientes.html">Clientes</a>
         </div>
 
@@ -786,7 +831,7 @@
         <a href="index.html">Inicio</a>
         <a href="seguros.html">Seguros</a>
         <a href="autonomos.html">Autónomos</a>
-        <a href="asesoramiento-financiero.html">Finanzas</a>
+        <a href="asesoramiento.html">Finanzas</a>
         <a href="clientes.html">Clientes</a>
         <a class="btn btn-primary" href="https://wa.me/34606067906?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20seguro%20de%20autom%C3%B3viles" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
       </div>
@@ -816,7 +861,7 @@
         </div>
 
         <aside class="hero-card" aria-label="Resumen del seguro de automóviles">
-          <div class="hero-card-icon">🛡️</div>
+          <div class="hero-card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5.5 5.4v5.5c0 4.2 2.6 7.9 6.5 10.1 3.9-2.2 6.5-5.9 6.5-10.1V5.4L12 3Z"/><path d="m9.5 12 1.8 1.8 3.7-4"/></svg></div>
           <h2>¿Qué puede proteger?</h2>
           <ul>
             <li>Tu responsabilidad frente a terceros.</li>
@@ -840,19 +885,19 @@
 
         <div class="grid-3">
           <article class="card">
-            <div class="card-icon">🚗</div>
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 11l1.4-4.2A2.6 2.6 0 0 1 8.9 5h6.2a2.6 2.6 0 0 1 2.5 1.8L19 11"/><path d="M4 11h16v6H4z"/><path d="M6.5 17v2"/><path d="M17.5 17v2"/><path d="M7 14h.01"/><path d="M17 14h.01"/></svg></div>
             <h3>Tu coche</h3>
             <p>Valor, antigüedad, estado y si es nuevo, usado o eléctrico.</p>
           </article>
 
           <article class="card">
-            <div class="card-icon">🧭</div>
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2.2 5-4.8 2 2.2-5 4.8-2Z"/></svg></div>
             <h3>Tu uso</h3>
             <p>No es lo mismo usarlo a diario que solo para trayectos puntuales.</p>
           </article>
 
           <article class="card">
-            <div class="card-icon">🛡️</div>
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5.5 5.4v5.5c0 4.2 2.6 7.9 6.5 10.1 3.9-2.2 6.5-5.9 6.5-10.1V5.4L12 3Z"/><path d="m9.5 12 1.8 1.8 3.7-4"/></svg></div>
             <h3>Tus coberturas</h3>
             <p>Asistencia, lunas, robo, incendio, daños propios o vehículo de sustitución.</p>
           </article>
@@ -917,7 +962,7 @@
 
         <div class="coverages">
           <article class="coverage-card">
-            <div class="mini-icon">🤝</div>
+            <div class="mini-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 12.5 10 10c1-1 2.4-1 3.4 0l.6.6"/><path d="m14 10.6 2.6 2.6c.8.8.8 2.1 0 2.9l-2.9 2.9c-.8.8-2.1.8-2.9 0L7.4 15.6"/><path d="M3 10.5 7.5 6l3 3"/><path d="M21 10.5 16.5 6l-3 3"/></svg></div>
             <div>
               <h3>Responsabilidad civil</h3>
               <p>Cubre daños personales o materiales causados a terceros con el vehículo asegurado.</p>
@@ -925,7 +970,7 @@
           </article>
 
           <article class="coverage-card">
-            <div class="mini-icon">🪟</div>
+            <div class="mini-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="M12 4v16"/><path d="M4 12h16"/></svg></div>
             <div>
               <h3>Lunas</h3>
               <p>Reparación o sustitución de lunas y cristales según modalidad.</p>
@@ -933,7 +978,7 @@
           </article>
 
           <article class="coverage-card">
-            <div class="mini-icon">🔐</div>
+            <div class="mini-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><path d="M12 14v2"/></svg></div>
             <div>
               <h3>Robo</h3>
               <p>Protección ante robo del vehículo o daños derivados del robo.</p>
@@ -941,7 +986,7 @@
           </article>
 
           <article class="coverage-card">
-            <div class="mini-icon">🔥</div>
+            <div class="mini-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21c3.5 0 6-2.4 6-5.8 0-2.5-1.4-4.2-3.1-5.8-.9 1.8-2.2 2.5-3.7 2.9.9-2.8.2-5.1-2.1-7.3C8.7 8 6 10.4 6 15.2 6 18.6 8.5 21 12 21Z"/></svg></div>
             <div>
               <h3>Incendio</h3>
               <p>Cobertura frente a incendio, explosión o daños relacionados.</p>
@@ -949,7 +994,7 @@
           </article>
 
           <article class="coverage-card">
-            <div class="mini-icon">🛠️</div>
+            <div class="mini-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0 3.8 5.4l-7.6 7.6a2.1 2.1 0 0 1-3-3l7.6-7.6a4 4 0 0 0-.8-2.4Z"/><path d="m6 18 2-2"/></svg></div>
             <div>
               <h3>Daños propios</h3>
               <p>Protección para daños materiales del vehículo, con o sin franquicia.</p>
@@ -957,7 +1002,7 @@
           </article>
 
           <article class="coverage-card">
-            <div class="mini-icon">🧭</div>
+            <div class="mini-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2.2 5-4.8 2 2.2-5 4.8-2Z"/></svg></div>
             <div>
               <h3>Asistencia en viaje</h3>
               <p>Ayuda en carretera ante avería, accidente o incidencia durante tus desplazamientos.</p>
@@ -965,7 +1010,7 @@
           </article>
 
           <article class="coverage-card">
-            <div class="mini-icon">🚘</div>
+            <div class="mini-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 13h12l-1.2-4.1A2.5 2.5 0 0 0 14.4 7H9.6a2.5 2.5 0 0 0-2.4 1.9L6 13Z"/><path d="M4 13h16v5H4z"/><path d="M7 18v2"/><path d="M17 18v2"/></svg></div>
             <div>
               <h3>Vehículo de sustitución</h3>
               <p>Puede ser clave si dependes del coche para trabajar o moverte a diario.</p>
@@ -973,7 +1018,7 @@
           </article>
 
           <article class="coverage-card">
-            <div class="mini-icon">⚖️</div>
+            <div class="mini-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18"/><path d="M5 6h14"/><path d="M7 6l-4 7h8L7 6Z"/><path d="M17 6l-4 7h8l-4-7Z"/><path d="M9 21h6"/></svg></div>
             <div>
               <h3>Defensa jurídica</h3>
               <p>Ayuda en reclamaciones y procedimientos derivados de un accidente.</p>
@@ -1040,19 +1085,19 @@
 
         <div class="grid-3">
           <article class="card">
-            <div class="card-icon">🚐</div>
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8h11v9H3z"/><path d="M14 11h3.5L21 14v3h-7z"/><circle cx="7" cy="18" r="1.5"/><circle cx="17" cy="18" r="1.5"/></svg></div>
             <h3>Furgones</h3>
             <p>Para uso profesional, reparto, transporte o actividad diaria.</p>
           </article>
 
           <article class="card">
-            <div class="card-icon">🏕️</div>
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20 12 4l9 16H3Z"/><path d="M12 4v16"/><path d="M9 20l3-6 3 6"/></svg></div>
             <h3>Campers y autocaravanas</h3>
             <p>Para viajar con tranquilidad y revisar coberturas adaptadas.</p>
           </article>
 
           <article class="card">
-            <div class="card-icon">🛴</div>
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 17h8a4 4 0 0 0 4-4V5"/><path d="M16 5h4"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg></div>
             <h3>Patinetes eléctricos</h3>
             <p>Para movilidad personal y responsabilidad frente a terceros.</p>
           </article>
