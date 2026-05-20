@@ -1058,7 +1058,6 @@
       }
     }
 
-    /* MEJORAS MÓVIL AÑADIDAS */
     .mobile-contact-bar {
       display: none;
     }
@@ -1389,6 +1388,275 @@
       }
     }
 
+    /* CAMBIOS PUNTO 3: MENOS BLOQUES REPETITIVOS */
+    .analysis-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .analysis-pill {
+      min-height: 92px;
+      border-radius: 22px;
+      background: rgba(255,255,255,.92);
+      border: 1px solid rgba(143,31,52,.13);
+      padding: 18px;
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      box-shadow: 0 10px 24px rgba(74,16,29,.05);
+    }
+
+    .analysis-pill span {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #fff1eb;
+      color: var(--primary);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+
+    .analysis-pill strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--text);
+    }
+
+    .analysis-pill p {
+      color: var(--muted);
+      font-size: .94rem;
+      line-height: 1.5;
+    }
+
+    .editorial-panel {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 34px;
+      align-items: stretch;
+    }
+
+    .editorial-main {
+      background:
+        radial-gradient(circle at top right, rgba(143,31,52,.09), transparent 36%),
+        linear-gradient(135deg, rgba(255,255,255,.96), rgba(255,247,243,.86));
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) + 4px);
+      padding: 34px;
+      box-shadow: var(--shadow);
+    }
+
+    .editorial-main .eyebrow {
+      margin-bottom: 16px;
+    }
+
+    .editorial-main p {
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .editorial-steps {
+      background: rgba(255,255,255,.88);
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) + 4px);
+      padding: 28px;
+      box-shadow: 0 14px 34px rgba(74,16,29,.07);
+    }
+
+    .editorial-step {
+      display: grid;
+      grid-template-columns: 46px 1fr;
+      gap: 16px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .editorial-step:first-child {
+      padding-top: 0;
+    }
+
+    .editorial-step:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .editorial-step span {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #8f1f34, #4a101d);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: .9rem;
+      box-shadow: 0 10px 22px rgba(143,31,52,.22);
+    }
+
+    .editorial-step strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--text);
+      font-size: 1.03rem;
+    }
+
+    .editorial-step p {
+      color: var(--muted);
+      font-size: .97rem;
+    }
+
+    .fund-route {
+      display: grid;
+      grid-template-columns: .82fr 1.18fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .fund-route-intro {
+      position: sticky;
+      top: 104px;
+      background:
+        radial-gradient(circle at top right, rgba(143,31,52,.09), transparent 36%),
+        rgba(255,255,255,.88);
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) + 4px);
+      padding: 32px;
+      box-shadow: 0 16px 38px rgba(74,16,29,.08);
+    }
+
+    .fund-route-intro p {
+      color: var(--muted);
+      margin-top: 12px;
+    }
+
+    .fund-route-list {
+      display: grid;
+      gap: 0;
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) + 4px);
+      overflow: hidden;
+      background: rgba(255,255,255,.92);
+      box-shadow: var(--shadow);
+    }
+
+    .fund-route-item {
+      display: grid;
+      grid-template-columns: 70px 1fr;
+      gap: 18px;
+      padding: 24px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(255,255,255,.74);
+      transition: background .22s ease;
+    }
+
+    .fund-route-item:last-child {
+      border-bottom: 0;
+    }
+
+    .fund-route-item:hover {
+      background: #fff7f3;
+    }
+
+    .fund-route-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #fff7f3, #f6e7df);
+      color: var(--primary);
+      border: 1px solid rgba(143,31,52,.14);
+      display: grid;
+      place-items: center;
+      font-size: 1.35rem;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.85);
+    }
+
+    .fund-route-item h3 {
+      margin-bottom: 8px;
+    }
+
+    .fund-route-item p {
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .fund-route-meta {
+      display: inline-flex;
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: rgba(143,31,52,.07);
+      color: var(--primary);
+      font-size: .9rem;
+      font-weight: 800;
+    }
+
+    .table-note-panel {
+      margin-top: 22px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 14px;
+    }
+
+    .table-note {
+      border-radius: 20px;
+      border: 1px solid rgba(143,31,52,.13);
+      background: rgba(255,255,255,.88);
+      padding: 18px;
+      box-shadow: 0 10px 24px rgba(74,16,29,.04);
+    }
+
+    .table-note strong {
+      display: block;
+      color: var(--primary);
+      margin-bottom: 5px;
+    }
+
+    .table-note p {
+      color: var(--muted);
+      font-size: .94rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 900px) {
+      .analysis-strip,
+      .editorial-panel,
+      .fund-route,
+      .table-note-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .fund-route-intro {
+        position: static;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .analysis-pill,
+      .editorial-main,
+      .editorial-steps,
+      .fund-route-intro,
+      .fund-route-item,
+      .table-note {
+        padding: 22px 18px;
+        border-radius: 22px;
+      }
+
+      .fund-route-item {
+        grid-template-columns: 54px 1fr;
+        gap: 14px;
+      }
+
+      .fund-route-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 15px;
+        font-size: 1.1rem;
+      }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       *,
       *::before,
@@ -1496,100 +1764,147 @@
 
     <section>
       <div class="container">
-        <div class="section-title">
-          <span>Nuestro enfoque</span>
-          <h2>No analizamos fondos de forma aislada: analizamos cómo encajan en tu cartera</h2>
-          <p>
-            Un fondo puede ser bueno y aun así no ser adecuado para ti. Por eso valoramos su composición, riesgo, horizonte recomendado, costes, comportamiento esperado y función dentro de tu estrategia financiera.
-          </p>
-        </div>
+        <div class="editorial-panel">
+          <div class="editorial-main">
+            <div class="eyebrow">🔎 Nuestro enfoque</div>
+            <h2>No analizamos fondos de forma aislada: analizamos cómo encajan en tu cartera</h2>
+            <p>
+              Un fondo puede ser bueno y aun así no ser adecuado para ti. Por eso valoramos su composición, riesgo, horizonte recomendado, costes, comportamiento esperado y función dentro de tu estrategia financiera.
+            </p>
 
-        <div class="grid-3">
-          <article class="card">
-            <div class="card-icon">🔎</div>
-            <h3>Análisis del fondo</h3>
-            <p>Revisamos qué activos tiene, qué riesgo asume, cómo está diversificado y qué papel puede cumplir en tu cartera.</p>
-          </article>
+            <div class="analysis-strip">
+              <div class="analysis-pill">
+                <span>1</span>
+                <div>
+                  <strong>Análisis</strong>
+                  <p>Qué tiene el fondo, cómo invierte y qué riesgo asume.</p>
+                </div>
+              </div>
 
-          <article class="card">
-            <div class="card-icon">⚖️</div>
-            <h3>Encaje con tu perfil</h3>
-            <p>Valoramos si el fondo encaja con tu tolerancia al riesgo, tu plazo y tus objetivos financieros.</p>
-          </article>
+              <div class="analysis-pill">
+                <span>2</span>
+                <div>
+                  <strong>Encaje</strong>
+                  <p>Si tiene sentido para tu perfil, plazo y objetivo.</p>
+                </div>
+              </div>
 
-          <article class="card">
-            <div class="card-icon">📌</div>
-            <h3>Seguimiento</h3>
-            <p>La elección no termina al contratar. Conviene revisar si la estrategia sigue teniendo sentido con el paso del tiempo.</p>
-          </article>
+              <div class="analysis-pill">
+                <span>3</span>
+                <div>
+                  <strong>Revisión</strong>
+                  <p>Si sigue cumpliendo su función con el tiempo.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="editorial-steps">
+            <div class="editorial-step">
+              <span>01</span>
+              <div>
+                <strong>Miramos la composición real del fondo</strong>
+                <p>Revisamos activos, mercados, sectores, nivel de concentración y exposición al riesgo.</p>
+              </div>
+            </div>
+
+            <div class="editorial-step">
+              <span>02</span>
+              <div>
+                <strong>Lo conectamos con tu perfil</strong>
+                <p>No todos los fondos sirven para todos los inversores. El plazo, la tolerancia a caídas y el objetivo cambian la recomendación.</p>
+              </div>
+            </div>
+
+            <div class="editorial-step">
+              <span>03</span>
+              <div>
+                <strong>Valoramos costes, fiscalidad y liquidez</strong>
+                <p>La rentabilidad no se mira sola: también importan los costes, los traspasos, la disponibilidad y el impacto fiscal.</p>
+              </div>
+            </div>
+
+            <div class="editorial-step">
+              <span>04</span>
+              <div>
+                <strong>Revisamos la estrategia en el tiempo</strong>
+                <p>La elección no termina al contratar. Conviene comprobar si la cartera sigue teniendo sentido cuando cambia el mercado o tus objetivos.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="tipos-fondos" class="section-soft">
       <div class="container">
-        <div class="section-title center">
-          <span>Análisis por estrategia</span>
-          <h2>No todos los fondos cumplen la misma función dentro de una cartera</h2>
-          <p>
-            Algunos fondos buscan estabilidad, otros crecimiento, otros diversificación global o exposición a sectores concretos. Lo importante es saber qué papel debe ocupar cada uno dentro de tu planificación.
-          </p>
-        </div>
+        <div class="fund-route">
+          <div class="fund-route-intro">
+            <span class="eyebrow">Análisis por estrategia</span>
+            <h2>No todos los fondos cumplen la misma función dentro de una cartera</h2>
+            <p>
+              Algunos fondos buscan estabilidad, otros crecimiento, otros diversificación global o exposición a sectores concretos. Lo importante es saber qué papel debe ocupar cada uno dentro de tu planificación.
+            </p>
+            <p>
+              Por eso esta parte se presenta como una ruta de decisión, no como seis tarjetas repetidas: primero se identifica la función del fondo y después se valora si encaja en la cartera.
+            </p>
+          </div>
 
-        <div class="grid-6">
-          <article class="fund-type-card">
-            <div class="fund-type-icon">💶</div>
-            <h3>Fondo monetario</h3>
-            <p>Puede tener sentido para una parte defensiva o de corto plazo, siempre revisando liquidez, riesgo y rentabilidad esperada.</p>
-            <div class="example-line">
-              <strong>Función:</strong> preservar estabilidad y mantener una parte del dinero relativamente disponible.
-            </div>
-          </article>
+          <div class="fund-route-list">
+            <article class="fund-route-item">
+              <div class="fund-route-icon">💶</div>
+              <div>
+                <h3>Fondo monetario</h3>
+                <p>Puede tener sentido para una parte defensiva o de corto plazo, siempre revisando liquidez, riesgo y rentabilidad esperada.</p>
+                <span class="fund-route-meta">Función: estabilidad y disponibilidad</span>
+              </div>
+            </article>
 
-          <article class="fund-type-card">
-            <div class="fund-type-icon">🏦</div>
-            <h3>Renta fija</h3>
-            <p>Puede aportar estabilidad dentro de una cartera, aunque también puede sufrir variaciones por tipos de interés y mercado.</p>
-            <div class="example-line">
-              <strong>Función:</strong> equilibrar riesgo y aportar una base más defensiva.
-            </div>
-          </article>
+            <article class="fund-route-item">
+              <div class="fund-route-icon">🏦</div>
+              <div>
+                <h3>Renta fija</h3>
+                <p>Puede aportar estabilidad dentro de una cartera, aunque también puede sufrir variaciones por tipos de interés y mercado.</p>
+                <span class="fund-route-meta">Función: base defensiva y equilibrio</span>
+              </div>
+            </article>
 
-          <article class="fund-type-card">
-            <div class="fund-type-icon">⚖️</div>
-            <h3>Mixta</h3>
-            <p>Combina renta fija y renta variable para buscar equilibrio entre prudencia y crecimiento.</p>
-            <div class="example-line">
-              <strong>Función:</strong> adaptar la inversión a perfiles que buscan equilibrio.
-            </div>
-          </article>
+            <article class="fund-route-item">
+              <div class="fund-route-icon">⚖️</div>
+              <div>
+                <h3>Mixta</h3>
+                <p>Combina renta fija y renta variable para buscar equilibrio entre prudencia y crecimiento.</p>
+                <span class="fund-route-meta">Función: equilibrio entre riesgo y crecimiento</span>
+              </div>
+            </article>
 
-          <article class="fund-type-card">
-            <div class="fund-type-icon">📈</div>
-            <h3>Renta variable</h3>
-            <p>Puede aportar mayor potencial de crecimiento, pero exige más horizonte temporal y tolerancia a la volatilidad.</p>
-            <div class="example-line">
-              <strong>Función:</strong> crecimiento a largo plazo dentro de una cartera diversificada.
-            </div>
-          </article>
+            <article class="fund-route-item">
+              <div class="fund-route-icon">📈</div>
+              <div>
+                <h3>Renta variable</h3>
+                <p>Puede aportar mayor potencial de crecimiento, pero exige más horizonte temporal y tolerancia a la volatilidad.</p>
+                <span class="fund-route-meta">Función: crecimiento a largo plazo</span>
+              </div>
+            </article>
 
-          <article class="fund-type-card">
-            <div class="fund-type-icon">🌐</div>
-            <h3>Global</h3>
-            <p>Permite diversificar por zonas geográficas, sectores y economías, reduciendo la dependencia de un único mercado.</p>
-            <div class="example-line">
-              <strong>Función:</strong> ampliar diversificación y repartir mejor el riesgo.
-            </div>
-          </article>
+            <article class="fund-route-item">
+              <div class="fund-route-icon">🌐</div>
+              <div>
+                <h3>Global</h3>
+                <p>Permite diversificar por zonas geográficas, sectores y economías, reduciendo la dependencia de un único mercado.</p>
+                <span class="fund-route-meta">Función: diversificación internacional</span>
+              </div>
+            </article>
 
-          <article class="fund-type-card">
-            <div class="fund-type-icon">🔬</div>
-            <h3>Sectorial</h3>
-            <p>Puede servir para tomar exposición a una temática concreta, pero suele implicar mayor concentración y riesgo específico.</p>
-            <div class="example-line">
-              <strong>Función:</strong> complementar una cartera, no sustituir una estrategia global.
-            </div>
-          </article>
+            <article class="fund-route-item">
+              <div class="fund-route-icon">🔬</div>
+              <div>
+                <h3>Sectorial</h3>
+                <p>Puede servir para tomar exposición a una temática concreta, pero suele implicar mayor concentración y riesgo específico.</p>
+                <span class="fund-route-meta">Función: complemento, no estrategia principal</span>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -1674,6 +1989,23 @@
               </tr>
             </tbody>
           </table>
+        </div>
+
+        <div class="table-note-panel">
+          <div class="table-note">
+            <strong>Riesgo</strong>
+            <p>El indicador es orientativo. También se revisa volatilidad, composición y posibles caídas.</p>
+          </div>
+
+          <div class="table-note">
+            <strong>Horizonte</strong>
+            <p>El plazo recomendado ayuda a evitar decisiones impulsivas en momentos de mercado complicados.</p>
+          </div>
+
+          <div class="table-note">
+            <strong>Perfil</strong>
+            <p>El fondo debe encajar con la persona, no solo con una rentabilidad pasada atractiva.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -1906,7 +2238,7 @@
     }
 
     const revealElements = document.querySelectorAll(
-      ".section-title, .card, .fund-type-card, .highlight, .warning-box, .review-list, .faq-card, .cta-final, .fund-table-wrap"
+      ".section-title, .card, .fund-type-card, .highlight, .warning-box, .review-list, .faq-card, .cta-final, .fund-table-wrap, .editorial-panel, .fund-route, .table-note"
     );
 
     if ("IntersectionObserver" in window) {
