@@ -1188,7 +1188,6 @@
       }
     }
 
-    /* MEJORAS MÓVIL AÑADIDAS */
     .mobile-contact-bar {
       display: none;
     }
@@ -1525,6 +1524,241 @@
       }
     }
 
+    /* CAMBIOS PUNTO 3: MENOS BLOQUES REPETITIVOS */
+    .retirement-panel {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 34px;
+      align-items: stretch;
+    }
+
+    .retirement-main {
+      background:
+        radial-gradient(circle at top right, rgba(143, 31, 52, 0.09), transparent 36%),
+        linear-gradient(145deg, rgba(255,255,255,.86), rgba(255,247,239,.68));
+      border: 1px solid rgba(143, 31, 52, 0.12);
+      border-radius: calc(var(--radius) + 4px);
+      padding: 34px;
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(12px);
+    }
+
+    .retirement-main p {
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .retirement-steps {
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(143, 31, 52, 0.12);
+      border-radius: calc(var(--radius) + 4px);
+      padding: 30px;
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(12px);
+    }
+
+    .retirement-step {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 16px;
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(74, 16, 29, 0.10);
+    }
+
+    .retirement-step:first-child {
+      padding-top: 0;
+    }
+
+    .retirement-step:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .retirement-step span {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(143, 31, 52, 0.09);
+      color: var(--primary);
+      border: 1px solid rgba(143,31,52,.10);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: .9rem;
+    }
+
+    .retirement-step strong {
+      display: block;
+      color: var(--primary-dark);
+      margin-bottom: 4px;
+      font-size: 1.02rem;
+    }
+
+    .retirement-step p {
+      color: var(--muted);
+      font-size: .97rem;
+    }
+
+    .pension-route {
+      display: grid;
+      grid-template-columns: 0.86fr 1.14fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .pension-route-intro {
+      position: sticky;
+      top: 104px;
+      background:
+        radial-gradient(circle at top right, rgba(143, 31, 52, 0.09), transparent 36%),
+        linear-gradient(145deg, rgba(255,255,255,.86), rgba(255,247,239,.68));
+      border: 1px solid rgba(143, 31, 52, 0.12);
+      border-radius: calc(var(--radius) + 4px);
+      padding: 34px;
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(12px);
+    }
+
+    .pension-route-intro p {
+      color: var(--muted);
+      margin-top: 12px;
+    }
+
+    .pension-route-list {
+      display: grid;
+      gap: 0;
+      border: 1px solid rgba(143, 31, 52, 0.12);
+      border-radius: calc(var(--radius) + 4px);
+      overflow: hidden;
+      background: rgba(255,255,255,.78);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+    }
+
+    .pension-route-item {
+      display: grid;
+      grid-template-columns: 64px 1fr;
+      gap: 18px;
+      padding: 24px;
+      border-bottom: 1px solid rgba(74, 16, 29, 0.10);
+      background: rgba(255,255,255,.48);
+      transition: background .22s ease;
+    }
+
+    .pension-route-item:last-child {
+      border-bottom: 0;
+    }
+
+    .pension-route-item:hover {
+      background: rgba(255, 247, 239, .86);
+    }
+
+    .pension-route-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #fff7ed, rgba(143, 31, 52, 0.13));
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-size: 1.25rem;
+      border: 1px solid rgba(143,31,52,.10);
+      box-shadow: 0 12px 26px rgba(74, 16, 29, 0.08);
+    }
+
+    .pension-route-item h3 {
+      margin-bottom: 8px;
+    }
+
+    .pension-route-item p {
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .pension-route-tag {
+      display: inline-flex;
+      padding: 9px 13px;
+      border-radius: 999px;
+      background: rgba(143,31,52,.08);
+      color: var(--primary);
+      font-size: .9rem;
+      font-weight: 800;
+      border: 1px solid rgba(143,31,52,.10);
+    }
+
+    .table-note-panel {
+      margin-top: 22px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .table-note {
+      border-radius: 20px;
+      border: 1px solid rgba(143,31,52,.13);
+      background: rgba(255,255,255,.74);
+      padding: 18px;
+      box-shadow: 0 10px 24px rgba(74,16,29,.05);
+      backdrop-filter: blur(10px);
+    }
+
+    .table-note strong {
+      display: block;
+      color: var(--primary);
+      margin-bottom: 5px;
+    }
+
+    .table-note p {
+      color: var(--muted);
+      font-size: .94rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 900px) {
+      .retirement-panel,
+      .pension-route,
+      .table-note-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .pension-route-intro {
+        position: static;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .retirement-main,
+      .retirement-steps,
+      .pension-route-intro,
+      .pension-route-item,
+      .table-note {
+        padding: 22px 18px;
+        border-radius: 22px;
+      }
+
+      .retirement-step {
+        grid-template-columns: 42px 1fr;
+        gap: 12px;
+      }
+
+      .retirement-step span {
+        width: 36px;
+        height: 36px;
+      }
+
+      .pension-route-item {
+        grid-template-columns: 52px 1fr;
+        gap: 14px;
+      }
+
+      .pension-route-icon {
+        width: 42px;
+        height: 42px;
+        border-radius: 15px;
+        font-size: 1.05rem;
+      }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       *,
       *::before,
@@ -1649,70 +1883,95 @@
 
     <section>
       <div class="container">
-        <div class="section-title">
-          <span>Previsión real a largo plazo</span>
-          <h2>No se trata solo de ahorrar para jubilarse, sino de planificar cómo quieres llegar</h2>
-          <p>
-            La planificación de jubilación debe tener en cuenta tu edad, ingresos, ahorro disponible, nivel de riesgo, fiscalidad y objetivos personales. No todas las personas necesitan la misma estrategia ni el mismo producto.
-          </p>
-        </div>
+        <div class="retirement-panel">
+          <div class="retirement-main">
+            <span class="eyebrow">Previsión real a largo plazo</span>
+            <h2>No se trata solo de ahorrar para jubilarse, sino de planificar cómo quieres llegar</h2>
+            <p>
+              La planificación de jubilación debe tener en cuenta tu edad, ingresos, ahorro disponible, nivel de riesgo, fiscalidad y objetivos personales. No todas las personas necesitan la misma estrategia ni el mismo producto.
+            </p>
+          </div>
 
-        <div class="grid-3">
-          <article class="card">
-            <div class="card-icon">🎯</div>
-            <h3>Objetivo de jubilación</h3>
-            <p>Definimos qué quieres complementar, qué ingresos futuros podrías necesitar y qué papel tendrá este ahorro.</p>
-          </article>
+          <div class="retirement-steps">
+            <div class="retirement-step">
+              <span>01</span>
+              <div>
+                <strong>Objetivo de jubilación</strong>
+                <p>Definimos qué quieres complementar, qué ingresos futuros podrías necesitar y qué papel tendrá este ahorro.</p>
+              </div>
+            </div>
 
-          <article class="card">
-            <div class="card-icon">🧾</div>
-            <h3>Estrategia fiscal</h3>
-            <p>Analizamos si las aportaciones pueden tener sentido fiscal y cómo podría tributar el rescate llegado el momento.</p>
-          </article>
+            <div class="retirement-step">
+              <span>02</span>
+              <div>
+                <strong>Estrategia fiscal</strong>
+                <p>Analizamos si las aportaciones pueden tener sentido fiscal y cómo podría tributar el rescate llegado el momento.</p>
+              </div>
+            </div>
 
-          <article class="card">
-            <div class="card-icon">🔒</div>
-            <h3>Liquidez y rescate</h3>
-            <p>Revisamos cuándo podrías disponer del dinero y qué limitaciones existen antes de tomar una decisión.</p>
-          </article>
+            <div class="retirement-step">
+              <span>03</span>
+              <div>
+                <strong>Liquidez y rescate</strong>
+                <p>Revisamos cuándo podrías disponer del dinero y qué limitaciones existen antes de tomar una decisión.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="section-soft">
       <div class="container">
-        <div class="section-title center">
-          <span>Herramientas de previsión</span>
-          <h2>Diferentes opciones para diferentes formas de planificar la jubilación</h2>
-          <p>
-            La diferencia no está solo en el nombre del producto, sino en cómo invierte, qué garantías ofrece, qué riesgo asume y qué función cumple dentro de tu planificación.
-          </p>
-        </div>
+        <div class="pension-route">
+          <div class="pension-route-intro">
+            <span class="eyebrow">Herramientas de previsión</span>
+            <h2>Diferentes opciones para diferentes formas de planificar la jubilación</h2>
+            <p>
+              La diferencia no está solo en el nombre del producto, sino en cómo invierte, qué garantías ofrece, qué riesgo asume y qué función cumple dentro de tu planificación.
+            </p>
+            <p>
+              Para evitar una sensación de tarjetas repetidas, esta sección funciona como una guía de herramientas: primero se entiende la función y después se valora si encaja.
+            </p>
+          </div>
 
-        <div class="grid-4">
-          <article class="card">
-            <div class="card-icon">📈</div>
-            <h3>Plan de pensiones</h3>
-            <p>Puede servir para construir ahorro a largo plazo orientado a complementar la jubilación, asumiendo distintos perfiles de inversión.</p>
-          </article>
+          <div class="pension-route-list">
+            <article class="pension-route-item">
+              <div class="pension-route-icon">📈</div>
+              <div>
+                <h3>Plan de pensiones</h3>
+                <p>Puede servir para construir ahorro a largo plazo orientado a complementar la jubilación, asumiendo distintos perfiles de inversión.</p>
+                <span class="pension-route-tag">Función: crecimiento y previsión</span>
+              </div>
+            </article>
 
-          <article class="card">
-            <div class="card-icon">🛡️</div>
-            <h3>PPA</h3>
-            <p>Puede encajar en perfiles que buscan un enfoque más conservador, con garantía de tipo de interés.</p>
-          </article>
+            <article class="pension-route-item">
+              <div class="pension-route-icon">🛡️</div>
+              <div>
+                <h3>PPA</h3>
+                <p>Puede encajar en perfiles que buscan un enfoque más conservador, con garantía de tipo de interés.</p>
+                <span class="pension-route-tag">Función: previsión asegurada</span>
+              </div>
+            </article>
 
-          <article class="card">
-            <div class="card-icon">👥</div>
-            <h3>Plan de empleo</h3>
-            <p>Herramienta promovida por una empresa para canalizar ahorro de previsión para sus trabajadores.</p>
-          </article>
+            <article class="pension-route-item">
+              <div class="pension-route-icon">👥</div>
+              <div>
+                <h3>Plan de empleo</h3>
+                <p>Herramienta promovida por una empresa para canalizar ahorro de previsión para sus trabajadores.</p>
+                <span class="pension-route-tag">Función: previsión colectiva</span>
+              </div>
+            </article>
 
-          <article class="card">
-            <div class="card-icon">🧑‍💼</div>
-            <h3>Autónomos</h3>
-            <p>Soluciones de previsión pensadas para profesionales que necesitan construir su jubilación con planificación propia.</p>
-          </article>
+            <article class="pension-route-item">
+              <div class="pension-route-icon">🧑‍💼</div>
+              <div>
+                <h3>Autónomos</h3>
+                <p>Soluciones de previsión pensadas para profesionales que necesitan construir su jubilación con planificación propia.</p>
+                <span class="pension-route-tag">Función: previsión profesional</span>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -1797,6 +2056,23 @@
               </tr>
             </tbody>
           </table>
+        </div>
+
+        <div class="table-note-panel">
+          <div class="table-note">
+            <strong>Perfil</strong>
+            <p>El perfil debe encajar con la edad, el horizonte hasta la jubilación y la tolerancia real al riesgo.</p>
+          </div>
+
+          <div class="table-note">
+            <strong>Liquidez</strong>
+            <p>No son productos para disponer libremente del dinero; antes de aportar hay que conocer los supuestos de rescate.</p>
+          </div>
+
+          <div class="table-note">
+            <strong>Uso principal</strong>
+            <p>La herramienta debe tener una función dentro de la estrategia global, no contratarse solo por fiscalidad.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -2047,7 +2323,7 @@
     }
 
     const revealElements = document.querySelectorAll(
-      ".section-title, .card, .notice-box, .highlight, .review-list, .faq-card, .cta-final, .fund-table-wrap"
+      ".section-title, .card, .notice-box, .highlight, .review-list, .faq-card, .cta-final, .fund-table-wrap, .retirement-panel, .pension-route, .table-note"
     );
 
     if ("IntersectionObserver" in window) {
