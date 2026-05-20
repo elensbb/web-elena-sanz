@@ -734,6 +734,235 @@
       color: var(--primary);
     }
 
+    /* CAMBIOS PUNTO 3: MENOS BLOQUES REPETITIVOS */
+    .health-guide {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 34px;
+      align-items: stretch;
+    }
+
+    .health-guide-main {
+      background:
+        radial-gradient(circle at top right, rgba(143,31,52,.08), transparent 36%),
+        rgba(255,255,255,.92);
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) + 4px);
+      padding: 34px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+    }
+
+    .health-guide-main p {
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .health-steps {
+      background: rgba(255,255,255,.86);
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) + 4px);
+      padding: 30px;
+      box-shadow: 0 14px 34px rgba(74,16,29,.07);
+    }
+
+    .health-step {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 16px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .health-step:first-child {
+      padding-top: 0;
+    }
+
+    .health-step:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .health-step span {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(143, 31, 52, 0.09);
+      color: var(--primary);
+      border: 1px solid rgba(143,31,52,.12);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: .9rem;
+    }
+
+    .health-step strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 4px;
+      font-size: 1.02rem;
+    }
+
+    .health-step p {
+      color: var(--muted);
+      font-size: .97rem;
+    }
+
+    .modality-route {
+      display: grid;
+      grid-template-columns: .86fr 1.14fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .modality-intro {
+      position: sticky;
+      top: 104px;
+      background:
+        radial-gradient(circle at top right, rgba(143,31,52,.08), transparent 36%),
+        rgba(255,255,255,.92);
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) + 4px);
+      padding: 34px;
+      box-shadow: 0 14px 34px rgba(74,16,29,.07);
+      backdrop-filter: blur(8px);
+    }
+
+    .modality-intro p {
+      color: var(--muted);
+      margin-top: 12px;
+    }
+
+    .modality-list {
+      display: grid;
+      gap: 0;
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) + 4px);
+      overflow: hidden;
+      background: rgba(255,255,255,.90);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+    }
+
+    .modality-item {
+      display: grid;
+      grid-template-columns: 64px 1fr;
+      gap: 18px;
+      padding: 24px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(255,255,255,.72);
+      transition: background .22s ease;
+    }
+
+    .modality-item:last-child {
+      border-bottom: 0;
+    }
+
+    .modality-item:hover {
+      background: #fff7f3;
+    }
+
+    .modality-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #fff7f3, #f6e7df);
+      color: var(--primary);
+      border: 1px solid rgba(143,31,52,.14);
+      display: grid;
+      place-items: center;
+      font-size: 1.25rem;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.85);
+    }
+
+    .modality-item h3 {
+      margin-bottom: 8px;
+    }
+
+    .modality-item p {
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .modality-tag {
+      display: inline-flex;
+      padding: 9px 13px;
+      border-radius: 999px;
+      background: rgba(143,31,52,.08);
+      color: var(--primary);
+      font-size: .9rem;
+      font-weight: 800;
+      border: 1px solid rgba(143,31,52,.10);
+    }
+
+    .coverage-route {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .coverage-route-main {
+      background:
+        radial-gradient(circle at top right, rgba(143,31,52,.08), transparent 36%),
+        rgba(255,255,255,.92);
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) + 4px);
+      padding: 34px;
+      box-shadow: 0 14px 34px rgba(74,16,29,.07);
+      backdrop-filter: blur(8px);
+    }
+
+    .coverage-route-main p {
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .coverage-lines {
+      display: grid;
+      gap: 0;
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) + 4px);
+      overflow: hidden;
+      background: rgba(255,255,255,.90);
+      box-shadow: var(--shadow);
+    }
+
+    .coverage-line {
+      display: grid;
+      grid-template-columns: 58px 1fr;
+      gap: 16px;
+      padding: 22px 24px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(255,255,255,.70);
+      transition: background .22s ease;
+    }
+
+    .coverage-line:last-child {
+      border-bottom: 0;
+    }
+
+    .coverage-line:hover {
+      background: #fff7f3;
+    }
+
+    .coverage-line .mini-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #fff7f3, #f6e7df);
+      color: var(--primary);
+      border: 1px solid rgba(143,31,52,.14);
+      display: grid;
+      place-items: center;
+      font-size: 1.15rem;
+    }
+
+    .coverage-line p {
+      color: var(--muted);
+      font-size: .98rem;
+    }
+
     @media (max-width: 900px) {
       .nav-links,
       .nav-actions {
@@ -765,8 +994,15 @@
       }
 
       .hero-grid,
-      .grid-2 {
+      .grid-2,
+      .health-guide,
+      .modality-route,
+      .coverage-route {
         grid-template-columns: 1fr;
+      }
+
+      .modality-intro {
+        position: static;
       }
 
       .grid-3,
@@ -867,9 +1103,21 @@
       .hero-card,
       .data-box,
       .review-box,
-      .cta-final {
+      .cta-final,
+      .health-guide-main,
+      .health-steps,
+      .modality-intro,
+      .modality-item,
+      .coverage-route-main,
+      .coverage-line {
         padding: 26px 20px;
         border-radius: 20px;
+      }
+
+      .modality-item,
+      .coverage-line,
+      .health-step {
+        grid-template-columns: 1fr;
       }
 
       .coverage-card {
@@ -1016,7 +1264,9 @@
       .section-title p,
       .text-muted,
       .data-box p,
-      .cta-final p {
+      .cta-final p,
+      .health-guide-main p,
+      .coverage-route-main p {
         font-size: 1rem;
         line-height: 1.6;
       }
@@ -1091,8 +1341,13 @@
 
       .data-box,
       .review-box,
-      .cta-final {
-        padding: 28px 20px;
+      .cta-final,
+      .health-guide-main,
+      .health-steps,
+      .modality-intro,
+      .modality-list,
+      .coverage-route-main,
+      .coverage-lines {
         border-radius: 22px;
       }
 
@@ -1293,77 +1548,95 @@
 
     <section>
       <div class="container">
-        <div class="section-title">
-          <span>Directo y sencillo</span>
-          <h2>No todos los seguros de salud funcionan igual</h2>
-          <p>
-            Lo importante es elegir una modalidad que encaje con cuánto usas el médico, si quieres pagar menos cuota o si prefieres más libertad para elegir profesionales.
-          </p>
-        </div>
+        <div class="health-guide">
+          <div class="health-guide-main">
+            <span class="eyebrow">Directo y sencillo</span>
+            <h2>No todos los seguros de salud funcionan igual</h2>
+            <p>
+              Lo importante es elegir una modalidad que encaje con cuánto usas el médico, si quieres pagar menos cuota o si prefieres más libertad para elegir profesionales.
+            </p>
+          </div>
 
-        <div class="grid-3">
-          <article class="card">
-            <div class="card-icon">🏥</div>
-            <h3>Cuadro médico</h3>
-            <p>Para acudir a médicos y centros privados concertados.</p>
-          </article>
+          <div class="health-steps">
+            <div class="health-step">
+              <span>01</span>
+              <div>
+                <strong>Cuadro médico</strong>
+                <p>Para acudir a médicos y centros privados concertados sin tener que buscar profesionales fuera de la red.</p>
+              </div>
+            </div>
 
-          <article class="card">
-            <div class="card-icon">💳</div>
-            <h3>Copago o sin copago</h3>
-            <p>El copago permite pagar menos cuota y abonar una parte cuando usas servicios.</p>
-          </article>
+            <div class="health-step">
+              <span>02</span>
+              <div>
+                <strong>Copago o sin copago</strong>
+                <p>El copago permite pagar menos cuota y abonar una parte cuando usas servicios. Sin copago da más previsibilidad.</p>
+              </div>
+            </div>
 
-          <article class="card">
-            <div class="card-icon">🌍</div>
-            <h3>Reembolso</h3>
-            <p>Para quienes quieren elegir médicos de fuera del cuadro médico.</p>
-          </article>
+            <div class="health-step">
+              <span>03</span>
+              <div>
+                <strong>Reembolso</strong>
+                <p>Para quienes quieren más libertad y poder elegir médicos de fuera del cuadro médico.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="modalidades" class="section-soft">
       <div class="container">
-        <div class="section-title center">
-          <span>Modalidades</span>
-          <h2>Qué modalidad puede encajar contigo</h2>
-          <p>
-            Esta tabla es orientativa. Lo ideal es revisar tu caso concreto antes de contratar.
-          </p>
-        </div>
+        <div class="modality-route">
+          <div class="modality-intro">
+            <span class="eyebrow">Modalidades</span>
+            <h2>Qué modalidad puede encajar contigo</h2>
+            <p>
+              Esta sección se organiza como una guía de decisión, no como una tabla fría. Primero vemos cómo usas el médico y después valoramos qué modalidad puede tener sentido.
+            </p>
+            <p>
+              Lo ideal es revisar tu caso concreto antes de contratar, especialmente si ya tienes póliza actual o quieres incluir a varias personas.
+            </p>
+          </div>
 
-        <div class="table-wrap">
-          <table class="simple-table">
-            <thead>
-              <tr>
-                <th>Modalidad</th>
-                <th>Para quién</th>
-              </tr>
-            </thead>
+          <div class="modality-list">
+            <article class="modality-item">
+              <div class="modality-icon">💳</div>
+              <div>
+                <h3>Con copago</h3>
+                <p>Para quien usa poco el médico y quiere pagar menos cuota mensual.</p>
+                <span class="modality-tag">Prioridad: cuota más ajustada</span>
+              </div>
+            </article>
 
-            <tbody>
-              <tr>
-                <td><strong>Con copago</strong></td>
-                <td>Para quien usa poco el médico y quiere pagar menos cuota.</td>
-              </tr>
+            <article class="modality-item">
+              <div class="modality-icon">✅</div>
+              <div>
+                <h3>Sin copago</h3>
+                <p>Para familias o personas que usan más servicios médicos y quieren más previsibilidad.</p>
+                <span class="modality-tag">Prioridad: tranquilidad de uso</span>
+              </div>
+            </article>
 
-              <tr>
-                <td><strong>Sin copago</strong></td>
-                <td>Para familias o personas que usan más servicios médicos.</td>
-              </tr>
+            <article class="modality-item">
+              <div class="modality-icon">🌍</div>
+              <div>
+                <h3>Reembolso</h3>
+                <p>Para quien quiere elegir médicos o centros de fuera del cuadro médico.</p>
+                <span class="modality-tag">Prioridad: libertad de elección</span>
+              </div>
+            </article>
 
-              <tr>
-                <td><strong>Reembolso</strong></td>
-                <td>Para quien quiere elegir médicos o centros de fuera del cuadro médico.</td>
-              </tr>
-
-              <tr>
-                <td><strong>Dental</strong></td>
-                <td>Como complemento. No siempre está incluido en todas las modalidades.</td>
-              </tr>
-            </tbody>
-          </table>
+            <article class="modality-item">
+              <div class="modality-icon">🦷</div>
+              <div>
+                <h3>Dental</h3>
+                <p>Como complemento. No siempre está incluido en todas las modalidades.</p>
+                <span class="modality-tag">Prioridad: cuidado dental</span>
+              </div>
+            </article>
+          </div>
         </div>
 
         <div class="data-box">
@@ -1386,62 +1659,64 @@
 
     <section id="coberturas">
       <div class="container">
-        <div class="section-title">
-          <span>Coberturas principales</span>
-          <h2>Qué conviene revisar en un seguro de salud</h2>
-          <p>
-            Las coberturas exactas dependen de la modalidad contratada, copagos, carencias y condiciones de la póliza.
-          </p>
-        </div>
+        <div class="coverage-route">
+          <div class="coverage-route-main">
+            <span class="eyebrow">Coberturas principales</span>
+            <h2>Qué conviene revisar en un seguro de salud</h2>
+            <p>
+              Las coberturas exactas dependen de la modalidad contratada, copagos, carencias y condiciones de la póliza. Por eso no basta con mirar el precio: hay que revisar cómo vas a usar realmente el seguro.
+            </p>
+          </div>
 
-        <div class="coverages">
-          <article class="coverage-card">
-            <div class="mini-icon">👨‍⚕️</div>
-            <div>
-              <h3>Medicina general y especialistas</h3>
-              <p>Consultas médicas y acceso a especialidades dentro del cuadro médico.</p>
-            </div>
-          </article>
+          <div class="coverage-lines">
+            <article class="coverage-line">
+              <div class="mini-icon">👨‍⚕️</div>
+              <div>
+                <h3>Medicina general y especialistas</h3>
+                <p>Consultas médicas y acceso a especialidades dentro del cuadro médico.</p>
+              </div>
+            </article>
 
-          <article class="coverage-card">
-            <div class="mini-icon">🔬</div>
-            <div>
-              <h3>Pruebas diagnósticas</h3>
-              <p>Análisis, radiografías, ecografías, resonancias u otras pruebas según modalidad.</p>
-            </div>
-          </article>
+            <article class="coverage-line">
+              <div class="mini-icon">🔬</div>
+              <div>
+                <h3>Pruebas diagnósticas</h3>
+                <p>Análisis, radiografías, ecografías, resonancias u otras pruebas según modalidad.</p>
+              </div>
+            </article>
 
-          <article class="coverage-card">
-            <div class="mini-icon">🏥</div>
-            <div>
-              <h3>Hospitalización</h3>
-              <p>Ingreso hospitalario o intervención quirúrgica según las condiciones contratadas.</p>
-            </div>
-          </article>
+            <article class="coverage-line">
+              <div class="mini-icon">🏥</div>
+              <div>
+                <h3>Hospitalización</h3>
+                <p>Ingreso hospitalario o intervención quirúrgica según las condiciones contratadas.</p>
+              </div>
+            </article>
 
-          <article class="coverage-card">
-            <div class="mini-icon">📱</div>
-            <div>
-              <h3>Videoconsulta y chat médico</h3>
-              <p>Servicios digitales para consultas rápidas y orientación médica.</p>
-            </div>
-          </article>
+            <article class="coverage-line">
+              <div class="mini-icon">📱</div>
+              <div>
+                <h3>Videoconsulta y chat médico</h3>
+                <p>Servicios digitales para consultas rápidas y orientación médica.</p>
+              </div>
+            </article>
 
-          <article class="coverage-card">
-            <div class="mini-icon">🦷</div>
-            <div>
-              <h3>Salud dental</h3>
-              <p>Puede estar incluida o contratarse como complemento según modalidad.</p>
-            </div>
-          </article>
+            <article class="coverage-line">
+              <div class="mini-icon">🦷</div>
+              <div>
+                <h3>Salud dental</h3>
+                <p>Puede estar incluida o contratarse como complemento según modalidad.</p>
+              </div>
+            </article>
 
-          <article class="coverage-card">
-            <div class="mini-icon">🌍</div>
-            <div>
-              <h3>Reembolso</h3>
-              <p>Permite acudir a médicos fuera del cuadro y recuperar parte del gasto según límites.</p>
-            </div>
-          </article>
+            <article class="coverage-line">
+              <div class="mini-icon">🌍</div>
+              <div>
+                <h3>Reembolso</h3>
+                <p>Permite acudir a médicos fuera del cuadro y recuperar parte del gasto según límites.</p>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -1524,7 +1799,7 @@
     }
 
     const revealElements = document.querySelectorAll(
-      ".section-title, .card, .coverage-card, .table-wrap, .data-box, .review-box, .cta-final"
+      ".section-title, .card, .coverage-card, .table-wrap, .data-box, .review-box, .cta-final, .health-guide, .modality-route, .coverage-route, .coverage-line, .modality-item"
     );
 
     if ("IntersectionObserver" in window) {
