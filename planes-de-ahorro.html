@@ -1209,7 +1209,6 @@
       }
     }
 
-    /* MEJORAS MÓVIL AÑADIDAS */
     .mobile-contact-bar {
       display: none;
     }
@@ -1549,6 +1548,315 @@
       }
     }
 
+    /* CAMBIOS PUNTO 3: MENOS BLOQUES REPETITIVOS */
+    .saving-route {
+      display: grid;
+      grid-template-columns: 0.86fr 1.14fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .saving-route-intro {
+      position: sticky;
+      top: 104px;
+      background:
+        radial-gradient(circle at top right, rgba(143, 31, 52, 0.09), transparent 36%),
+        linear-gradient(145deg, rgba(255,255,255,.86), rgba(255,247,239,.68));
+      border: 1px solid rgba(143, 31, 52, 0.12);
+      border-radius: calc(var(--radius) + 4px);
+      padding: 34px;
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(12px);
+    }
+
+    .saving-route-intro p {
+      color: var(--muted);
+      margin-top: 12px;
+    }
+
+    .saving-route-list {
+      display: grid;
+      gap: 0;
+      border: 1px solid rgba(143, 31, 52, 0.12);
+      border-radius: calc(var(--radius) + 4px);
+      overflow: hidden;
+      background: rgba(255,255,255,.78);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+    }
+
+    .saving-route-item {
+      display: grid;
+      grid-template-columns: 64px 1fr;
+      gap: 18px;
+      padding: 24px;
+      border-bottom: 1px solid rgba(74, 16, 29, 0.10);
+      background: rgba(255,255,255,.48);
+      transition: background .22s ease;
+    }
+
+    .saving-route-item:last-child {
+      border-bottom: 0;
+    }
+
+    .saving-route-item:hover {
+      background: rgba(255, 247, 239, .86);
+    }
+
+    .saving-route-number {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      box-shadow: 0 12px 26px rgba(74, 16, 29, 0.18);
+    }
+
+    .saving-route-item h3 {
+      margin-bottom: 8px;
+    }
+
+    .saving-route-item p {
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .saving-route-tag {
+      display: inline-flex;
+      padding: 9px 13px;
+      border-radius: 999px;
+      background: rgba(143,31,52,.08);
+      color: var(--primary);
+      font-size: .9rem;
+      font-weight: 800;
+      border: 1px solid rgba(143,31,52,.10);
+    }
+
+    .planning-panel {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 34px;
+      align-items: stretch;
+    }
+
+    .planning-main {
+      background:
+        radial-gradient(circle at top right, rgba(143,31,52,.09), transparent 36%),
+        linear-gradient(145deg, rgba(255,255,255,.86), rgba(255,247,239,.68));
+      border: 1px solid rgba(143, 31, 52, 0.12);
+      border-radius: calc(var(--radius) + 4px);
+      padding: 34px;
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(12px);
+    }
+
+    .planning-main p {
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .planning-steps {
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(143, 31, 52, 0.12);
+      border-radius: calc(var(--radius) + 4px);
+      padding: 30px;
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(12px);
+    }
+
+    .planning-step {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 16px;
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(74, 16, 29, 0.10);
+    }
+
+    .planning-step:first-child {
+      padding-top: 0;
+    }
+
+    .planning-step:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .planning-step span {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(143, 31, 52, 0.09);
+      color: var(--primary);
+      border: 1px solid rgba(143,31,52,.10);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: .9rem;
+    }
+
+    .planning-step strong {
+      display: block;
+      color: var(--primary-dark);
+      margin-bottom: 4px;
+      font-size: 1.02rem;
+    }
+
+    .planning-step p {
+      color: var(--muted);
+      font-size: .97rem;
+    }
+
+    .tool-route {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border: 1px solid rgba(143, 31, 52, 0.12);
+      border-radius: calc(var(--radius) + 4px);
+      overflow: hidden;
+      background: rgba(255,255,255,.78);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(12px);
+    }
+
+    .tool-route-item {
+      padding: 26px;
+      border-right: 1px solid rgba(74, 16, 29, 0.10);
+      background: rgba(255,255,255,.42);
+      transition: background .22s ease;
+    }
+
+    .tool-route-item:last-child {
+      border-right: 0;
+    }
+
+    .tool-route-item:hover {
+      background: rgba(255, 247, 239, .88);
+    }
+
+    .tool-route-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #fff7ed, rgba(143, 31, 52, 0.13));
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-size: 1.35rem;
+      margin-bottom: 18px;
+      border: 1px solid rgba(143,31,52,.10);
+      box-shadow: 0 12px 26px rgba(74, 16, 29, 0.08);
+    }
+
+    .tool-route-item p {
+      color: var(--muted);
+    }
+
+    .table-note-panel {
+      margin-top: 22px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .table-note {
+      border-radius: 20px;
+      border: 1px solid rgba(143,31,52,.13);
+      background: rgba(255,255,255,.74);
+      padding: 18px;
+      box-shadow: 0 10px 24px rgba(74,16,29,.05);
+      backdrop-filter: blur(10px);
+    }
+
+    .table-note strong {
+      display: block;
+      color: var(--primary);
+      margin-bottom: 5px;
+    }
+
+    .table-note p {
+      color: var(--muted);
+      font-size: .94rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 980px) {
+      .tool-route {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .tool-route-item:nth-child(2) {
+        border-right: 0;
+      }
+
+      .tool-route-item:nth-child(1),
+      .tool-route-item:nth-child(2) {
+        border-bottom: 1px solid rgba(74, 16, 29, 0.10);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .saving-route,
+      .planning-panel,
+      .table-note-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .saving-route-intro {
+        position: static;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .tool-route {
+        grid-template-columns: 1fr;
+      }
+
+      .tool-route-item,
+      .tool-route-item:nth-child(2) {
+        border-right: 0;
+        border-bottom: 1px solid rgba(74, 16, 29, 0.10);
+      }
+
+      .tool-route-item:last-child {
+        border-bottom: 0;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .saving-route-intro,
+      .saving-route-item,
+      .planning-main,
+      .planning-steps,
+      .tool-route-item,
+      .table-note {
+        padding: 22px 18px;
+        border-radius: 22px;
+      }
+
+      .saving-route-item {
+        grid-template-columns: 52px 1fr;
+        gap: 14px;
+      }
+
+      .saving-route-number {
+        width: 42px;
+        height: 42px;
+      }
+
+      .planning-step {
+        grid-template-columns: 42px 1fr;
+        gap: 12px;
+      }
+
+      .planning-step span {
+        width: 36px;
+        height: 36px;
+      }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       *,
       *::before,
@@ -1663,82 +1971,104 @@
 
     <section id="objetivos" class="section-soft">
       <div class="container">
-        <div class="section-title center">
-          <span>Objetivos financieros</span>
-          <h2>Cada objetivo financiero necesita una herramienta distinta</h2>
-          <p>
-            No todos los planes de ahorro sirven para lo mismo. Algunos están pensados para liquidez, otros para construir capital, otros para generar ingresos futuros y otros para proteger patrimonio familiar.
-          </p>
-        </div>
+        <div class="saving-route">
+          <div class="saving-route-intro">
+            <span class="eyebrow">Objetivos financieros</span>
+            <h2>Cada objetivo financiero necesita una herramienta distinta</h2>
+            <p>
+              No todos los planes de ahorro sirven para lo mismo. Algunos están pensados para liquidez, otros para construir capital, otros para generar ingresos futuros y otros para proteger patrimonio familiar.
+            </p>
+            <p>
+              Para que no se sienta como una tabla rígida de productos, lo organizamos como una ruta: primero se define el objetivo y después se valora qué enfoque puede encajar.
+            </p>
+          </div>
 
-        <div class="table-wrap">
-          <table class="simple-table">
-            <thead>
-              <tr>
-                <th>Objetivo</th>
-                <th>Herramienta / enfoque</th>
-              </tr>
-            </thead>
+          <div class="saving-route-list">
+            <article class="saving-route-item">
+              <span class="saving-route-number">01</span>
+              <div>
+                <h3>Crear un colchón de seguridad</h3>
+                <p>Soluciones con disponibilidad, bajo riesgo y claridad sobre cuándo puedes acceder al dinero.</p>
+                <span class="saving-route-tag">Prioridad: liquidez y seguridad</span>
+              </div>
+            </article>
 
-            <tbody>
-              <tr>
-                <td><strong>Crear un colchón de seguridad</strong></td>
-                <td>Soluciones con disponibilidad, bajo riesgo y claridad sobre cuándo puedes acceder al dinero.</td>
-              </tr>
+            <article class="saving-route-item">
+              <span class="saving-route-number">02</span>
+              <div>
+                <h3>Ahorrar para una etapa concreta</h3>
+                <p>Planificación por plazo: estudios, vivienda, proyecto familiar o cualquier objetivo con fecha aproximada.</p>
+                <span class="saving-route-tag">Prioridad: plazo y disciplina</span>
+              </div>
+            </article>
 
-              <tr>
-                <td><strong>Ahorrar para una etapa concreta</strong></td>
-                <td>Planificación por plazo: estudios, vivienda, proyecto familiar o cualquier objetivo con fecha aproximada.</td>
-              </tr>
+            <article class="saving-route-item">
+              <span class="saving-route-number">03</span>
+              <div>
+                <h3>Preparar ingresos futuros</h3>
+                <p>Herramientas orientadas a transformar ahorro acumulado en rentas periódicas.</p>
+                <span class="saving-route-tag">Prioridad: renta futura</span>
+              </div>
+            </article>
 
-              <tr>
-                <td><strong>Preparar ingresos futuros</strong></td>
-                <td>Herramientas orientadas a transformar ahorro acumulado en rentas periódicas.</td>
-              </tr>
+            <article class="saving-route-item">
+              <span class="saving-route-number">04</span>
+              <div>
+                <h3>Ahorrar de forma constante</h3>
+                <p>Aportaciones periódicas para construir capital poco a poco y mantener disciplina financiera.</p>
+                <span class="saving-route-tag">Prioridad: constancia</span>
+              </div>
+            </article>
 
-              <tr>
-                <td><strong>Ahorrar de forma constante</strong></td>
-                <td>Aportaciones periódicas para construir capital poco a poco y mantener disciplina financiera.</td>
-              </tr>
-
-              <tr>
-                <td><strong>Proteger patrimonio familiar</strong></td>
-                <td>Soluciones que combinan ahorro, beneficiarios, planificación sucesoria y protección económica.</td>
-              </tr>
-            </tbody>
-          </table>
+            <article class="saving-route-item">
+              <span class="saving-route-number">05</span>
+              <div>
+                <h3>Proteger patrimonio familiar</h3>
+                <p>Soluciones que combinan ahorro, beneficiarios, planificación sucesoria y protección económica.</p>
+                <span class="saving-route-tag">Prioridad: protección familiar</span>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
 
     <section>
       <div class="container">
-        <div class="section-title">
-          <span>Planificación del ahorro</span>
-          <h2>Antes de elegir una herramienta, conviene saber qué necesitas conseguir</h2>
-          <p>
-            El producto es solo el vehículo. La decisión importante es saber qué objetivo tiene ese dinero, durante cuánto tiempo puede estar planificado y qué nivel de liquidez o seguridad necesitas.
-          </p>
-        </div>
+        <div class="planning-panel">
+          <div class="planning-main">
+            <span class="eyebrow">Planificación del ahorro</span>
+            <h2>Antes de elegir una herramienta, conviene saber qué necesitas conseguir</h2>
+            <p>
+              El producto es solo el vehículo. La decisión importante es saber qué objetivo tiene ese dinero, durante cuánto tiempo puede estar planificado y qué nivel de liquidez o seguridad necesitas.
+            </p>
+          </div>
 
-        <div class="grid-3">
-          <article class="card">
-            <div class="card-icon">📆</div>
-            <h3>Ahorro periódico</h3>
-            <p>Para construir capital poco a poco con aportaciones mensuales, trimestrales o anuales vinculadas a un objetivo concreto.</p>
-          </article>
+          <div class="planning-steps">
+            <div class="planning-step">
+              <span>01</span>
+              <div>
+                <strong>Ahorro periódico</strong>
+                <p>Para construir capital poco a poco con aportaciones mensuales, trimestrales o anuales vinculadas a un objetivo concreto.</p>
+              </div>
+            </div>
 
-          <article class="card">
-            <div class="card-icon">💶</div>
-            <h3>Capital ya disponible</h3>
-            <p>Para dar una función concreta a un dinero que ya tienes ahorrado: seguridad, rentas futuras, fiscalidad o planificación familiar.</p>
-          </article>
+            <div class="planning-step">
+              <span>02</span>
+              <div>
+                <strong>Capital ya disponible</strong>
+                <p>Para dar una función concreta a un dinero que ya tienes ahorrado: seguridad, rentas futuras, fiscalidad o planificación familiar.</p>
+              </div>
+            </div>
 
-          <article class="card">
-            <div class="card-icon">🧾</div>
-            <h3>Fiscalidad y forma de cobro</h3>
-            <p>La fiscalidad puede cambiar mucho según cobres en capital, renta vitalicia o ingresos periódicos.</p>
-          </article>
+            <div class="planning-step">
+              <span>03</span>
+              <div>
+                <strong>Fiscalidad y forma de cobro</strong>
+                <p>La fiscalidad puede cambiar mucho según cobres en capital, renta vitalicia o ingresos periódicos.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1753,27 +2083,27 @@
           </p>
         </div>
 
-        <div class="grid-4">
-          <article class="card">
-            <div class="card-icon">🛡️</div>
+        <div class="tool-route">
+          <article class="tool-route-item">
+            <div class="tool-route-icon">🛡️</div>
             <h3>Estabilidad y seguridad</h3>
             <p>Para quienes priorizan proteger el capital, tener una planificación sencilla y reducir incertidumbre.</p>
           </article>
 
-          <article class="card">
-            <div class="card-icon">🌱</div>
+          <article class="tool-route-item">
+            <div class="tool-route-icon">🌱</div>
             <h3>Construcción de capital</h3>
             <p>Para ahorrar poco a poco con una finalidad concreta y mantener disciplina financiera en el tiempo.</p>
           </article>
 
-          <article class="card">
-            <div class="card-icon">🔒</div>
+          <article class="tool-route-item">
+            <div class="tool-route-icon">🔒</div>
             <h3>Optimización fiscal</h3>
             <p>Para valorar herramientas que pueden tener ventajas fiscales si se cumplen requisitos y plazos.</p>
           </article>
 
-          <article class="card">
-            <div class="card-icon">👵</div>
+          <article class="tool-route-item">
+            <div class="tool-route-icon">👵</div>
             <h3>Rentas futuras</h3>
             <p>Para transformar un capital en ingresos periódicos, ya sea durante un plazo concreto o de forma vitalicia.</p>
           </article>
@@ -1877,6 +2207,23 @@
               </tr>
             </tbody>
           </table>
+        </div>
+
+        <div class="table-note-panel">
+          <div class="table-note">
+            <strong>Función</strong>
+            <p>La herramienta debe responder a un objetivo concreto, no elegirse solo por el nombre del producto.</p>
+          </div>
+
+          <div class="table-note">
+            <strong>Liquidez</strong>
+            <p>Antes de contratar conviene saber cuándo podrías necesitar el dinero y qué condiciones de rescate existen.</p>
+          </div>
+
+          <div class="table-note">
+            <strong>Fiscalidad</strong>
+            <p>La forma de cobro puede cambiar el resultado final, especialmente en PIAS, SIALP y rentas.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -2112,7 +2459,7 @@
     }
 
     const revealElements = document.querySelectorAll(
-      ".section-title, .card, .key-box, .highlight, .review-list, .faq-card, .cta-final, .table-wrap"
+      ".section-title, .card, .key-box, .highlight, .review-list, .faq-card, .cta-final, .table-wrap, .saving-route, .planning-panel, .tool-route, .table-note"
     );
 
     if ("IntersectionObserver" in window) {
