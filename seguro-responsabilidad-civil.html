@@ -25,15 +25,9 @@
       --max: 1120px;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: "Inter", Arial, sans-serif;
@@ -47,10 +41,7 @@
       overflow-x: hidden;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
 
     .container {
       width: min(100% - 32px, var(--max));
@@ -58,25 +49,13 @@
     }
 
     @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(22px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(22px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     @keyframes softFloat {
-      0%, 100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-6px);
-      }
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
     }
 
     .reveal {
@@ -148,13 +127,8 @@
       color: var(--muted);
     }
 
-    .nav-links a {
-      transition: color .2s ease;
-    }
-
-    .nav-links a:hover {
-      color: var(--primary);
-    }
+    .nav-links a { transition: color .2s ease; }
+    .nav-links a:hover { color: var(--primary); }
 
     .nav-actions {
       display: flex;
@@ -171,13 +145,8 @@
       color: var(--text);
     }
 
-    .mobile-menu {
-      display: none;
-    }
-
-    .mobile-contact-bar {
-      display: none;
-    }
+    .mobile-menu { display: none; }
+    .mobile-contact-bar { display: none; }
 
     .btn {
       display: inline-flex;
@@ -206,9 +175,7 @@
       box-shadow: 0 12px 28px rgba(143,31,52,.22);
     }
 
-    .btn-primary:hover {
-      background: var(--primary-dark);
-    }
+    .btn-primary:hover { background: var(--primary-dark); }
 
     .btn-outline {
       background: rgba(255,255,255,.62);
@@ -282,9 +249,7 @@
       margin-bottom: 20px;
     }
 
-    h1,
-    h2,
-    h3 {
+    h1, h2, h3 {
       font-family: "Playfair Display", Georgia, serif;
       color: #241f21;
     }
@@ -397,9 +362,7 @@
       flex: 0 0 auto;
     }
 
-    section {
-      padding: 66px 0;
-    }
+    section { padding: 66px 0; }
 
     .section-soft {
       background: rgba(255,253,251,.55);
@@ -430,68 +393,10 @@
       font-size: 1.04rem;
     }
 
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
     .grid-2 {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 18px;
-    }
-
-    .card {
-      background: rgba(255,255,255,.96);
-      backdrop-filter: blur(8px);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: 24px;
-      box-shadow: 0 14px 34px rgba(74,16,29,.07);
-      height: 100%;
-      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at top right, rgba(143,31,52,.06), transparent 42%),
-        linear-gradient(135deg, rgba(255,253,251,.45), transparent);
-      pointer-events: none;
-    }
-
-    .card > * {
-      position: relative;
-      z-index: 1;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 22px 48px rgba(74,16,29,.12);
-      border-color: rgba(143, 31, 52, 0.24);
-    }
-
-    .card-icon {
-      width: 50px;
-      height: 50px;
-      border-radius: 16px;
-      background: linear-gradient(135deg, #fff7f3, #f6e7df);
-      color: #8f1f34;
-      border: 1px solid rgba(143,31,52,.14);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.85);
-      display: grid;
-      place-items: center;
-      font-size: 1.45rem;
-      margin-bottom: 18px;
-    }
-
-    .card p {
-      color: var(--muted);
     }
 
     .direct-box {
@@ -537,147 +442,190 @@
       max-width: 900px;
     }
 
-    .examples-grid {
+    .rc-guide {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 34px;
+      align-items: stretch;
     }
 
-    .example-card {
-      background: rgba(255,255,255,.96);
-      backdrop-filter: blur(8px);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: 22px;
-      box-shadow: 0 12px 28px rgba(74,16,29,.06);
-      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .example-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
+    .rc-guide-main {
       background:
-        radial-gradient(circle at top right, rgba(143,31,52,.06), transparent 42%),
-        linear-gradient(135deg, rgba(255,253,251,.45), transparent);
-      pointer-events: none;
-    }
-
-    .example-card > * {
-      position: relative;
-      z-index: 1;
-    }
-
-    .example-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 18px 36px rgba(74,16,29,.11);
-      border-color: rgba(143, 31, 52, 0.24);
-    }
-
-    .example-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 16px;
-      background: linear-gradient(135deg, #fff7f3, #f6e7df);
-      color: #8f1f34;
-      border: 1px solid rgba(143,31,52,.14);
-      display: grid;
-      place-items: center;
-      font-size: 1.45rem;
-      margin-bottom: 14px;
-    }
-
-    .example-card p {
-      color: var(--text);
-      font-weight: 750;
-      line-height: 1.45;
-    }
-
-    .table-wrap {
-      background: rgba(255,255,255,.96);
-      backdrop-filter: blur(8px);
+        radial-gradient(circle at top right, rgba(143,31,52,.08), transparent 36%),
+        rgba(255,255,255,.92);
       border: 1px solid var(--border);
-      border-radius: var(--radius);
+      border-radius: calc(var(--radius) + 4px);
+      padding: 34px;
       box-shadow: var(--shadow);
-      overflow: hidden;
+      backdrop-filter: blur(8px);
     }
 
-    .simple-table {
-      width: 100%;
-      border-collapse: collapse;
+    .rc-guide-main p {
+      color: var(--muted);
+      font-size: 1.04rem;
     }
 
-    .simple-table th,
-    .simple-table td {
-      padding: 20px 22px;
-      text-align: left;
-      vertical-align: top;
+    .rc-steps {
+      background: rgba(255,255,255,.86);
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) + 4px);
+      padding: 30px;
+      box-shadow: 0 14px 34px rgba(74,16,29,.07);
+    }
+
+    .rc-step {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 16px;
+      padding: 18px 0;
       border-bottom: 1px solid var(--border);
     }
 
-    .simple-table th {
-      background: rgba(143, 31, 52, 0.08);
+    .rc-step:first-child { padding-top: 0; }
+    .rc-step:last-child { padding-bottom: 0; border-bottom: 0; }
+
+    .rc-step span {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(143, 31, 52, 0.09);
       color: var(--primary);
-      font-size: 0.92rem;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
+      border: 1px solid rgba(143,31,52,.12);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: .9rem;
     }
 
-    .simple-table tr:last-child td {
+    .rc-step strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 4px;
+      font-size: 1.02rem;
+    }
+
+    .rc-step p {
+      color: var(--muted);
+      font-size: .97rem;
+    }
+
+    .scenario-route,
+    .type-route,
+    .profile-route,
+    .coverage-route {
+      display: grid;
+      grid-template-columns: .86fr 1.14fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .scenario-intro,
+    .type-intro,
+    .profile-intro,
+    .coverage-route-main {
+      position: sticky;
+      top: 104px;
+      background:
+        radial-gradient(circle at top right, rgba(143,31,52,.08), transparent 36%),
+        rgba(255,255,255,.92);
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) + 4px);
+      padding: 34px;
+      box-shadow: 0 14px 34px rgba(74,16,29,.07);
+      backdrop-filter: blur(8px);
+    }
+
+    .scenario-intro p,
+    .type-intro p,
+    .profile-intro p,
+    .coverage-route-main p {
+      color: var(--muted);
+      margin-top: 12px;
+    }
+
+    .scenario-list,
+    .type-list,
+    .profile-list,
+    .coverage-lines {
+      display: grid;
+      gap: 0;
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) + 4px);
+      overflow: hidden;
+      background: rgba(255,255,255,.90);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+    }
+
+    .scenario-item,
+    .type-item,
+    .profile-item,
+    .coverage-line {
+      display: grid;
+      grid-template-columns: 64px 1fr;
+      gap: 18px;
+      padding: 24px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(255,255,255,.72);
+      transition: background .22s ease;
+    }
+
+    .scenario-item:last-child,
+    .type-item:last-child,
+    .profile-item:last-child,
+    .coverage-line:last-child {
       border-bottom: 0;
     }
 
-    .simple-table strong {
-      color: var(--text);
+    .scenario-item:hover,
+    .type-item:hover,
+    .profile-item:hover,
+    .coverage-line:hover {
+      background: #fff7f3;
     }
 
-    .simple-table td {
-      color: #4f4744;
-    }
-
-    .coverages {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-    }
-
-    .coverage-card {
-      background: rgba(255,255,255,.96);
-      backdrop-filter: blur(8px);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: 22px;
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
-      box-shadow: 0 12px 28px rgba(74,16,29,.06);
-    }
-
-    .coverage-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 18px 38px rgba(74,16,29,.11);
-      border-color: rgba(143, 31, 52, 0.24);
-    }
-
-    .coverage-card .mini-icon {
-      width: 42px;
-      height: 42px;
-      border-radius: 14px;
+    .scenario-icon,
+    .type-icon,
+    .profile-icon,
+    .coverage-line .mini-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 18px;
       background: linear-gradient(135deg, #fff7f3, #f6e7df);
-      color: #8f1f34;
+      color: var(--primary);
       border: 1px solid rgba(143,31,52,.14);
       display: grid;
       place-items: center;
-      flex: 0 0 auto;
-      font-size: 1.2rem;
+      font-size: 1.25rem;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.85);
     }
 
-    .coverage-card p {
+    .scenario-item h3,
+    .type-item h3,
+    .profile-item h3,
+    .coverage-line h3 {
+      margin-bottom: 8px;
+    }
+
+    .scenario-item p,
+    .type-item p,
+    .profile-item p,
+    .coverage-line p {
       color: var(--muted);
-      font-size: 0.98rem;
+      margin-bottom: 12px;
+    }
+
+    .scenario-tag,
+    .type-tag,
+    .profile-tag {
+      display: inline-flex;
+      padding: 9px 13px;
+      border-radius: 999px;
+      background: rgba(143,31,52,.08);
+      color: var(--primary);
+      font-size: .9rem;
+      font-weight: 800;
+      border: 1px solid rgba(143,31,52,.10);
     }
 
     .review-box {
@@ -764,25 +712,13 @@
       flex-wrap: wrap;
     }
 
-    .footer-links a:hover {
-      color: var(--primary);
-    }
-
-    @media (max-width: 1000px) {
-      .examples-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
+    .footer-links a:hover { color: var(--primary); }
 
     @media (max-width: 900px) {
       .nav-links,
-      .nav-actions {
-        display: none;
-      }
+      .nav-actions { display: none; }
 
-      .menu-toggle {
-        display: block;
-      }
+      .menu-toggle { display: block; }
 
       .mobile-menu {
         display: none;
@@ -800,102 +736,40 @@
         color: var(--muted);
       }
 
-      .mobile-menu a:hover {
-        color: var(--primary);
-      }
+      .mobile-menu a:hover { color: var(--primary); }
 
       .hero-grid,
-      .grid-2 {
+      .grid-2,
+      .rc-guide,
+      .scenario-route,
+      .type-route,
+      .profile-route,
+      .coverage-route {
         grid-template-columns: 1fr;
       }
 
-      .grid-3,
-      .coverages {
-        grid-template-columns: 1fr;
+      .scenario-intro,
+      .type-intro,
+      .profile-intro,
+      .coverage-route-main {
+        position: static;
       }
 
-      .hero {
-        padding: 54px 0 48px;
-      }
-
-      section {
-        padding: 54px 0;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .simple-table,
-      .simple-table thead,
-      .simple-table tbody,
-      .simple-table th,
-      .simple-table td,
-      .simple-table tr {
-        display: block;
-        width: 100%;
-      }
-
-      .simple-table thead {
-        display: none;
-      }
-
-      .simple-table tr {
-        padding: 18px 20px;
-        border-bottom: 1px solid var(--border);
-      }
-
-      .simple-table tr:last-child {
-        border-bottom: 0;
-      }
-
-      .simple-table td {
-        border-bottom: 0;
-        padding: 0;
-      }
-
-      .simple-table td + td {
-        margin-top: 10px;
-      }
-
-      .simple-table td::before {
-        display: block;
-        font-size: 0.78rem;
-        font-weight: 900;
-        color: var(--primary);
-        text-transform: uppercase;
-        letter-spacing: 0.04em;
-        margin-bottom: 4px;
-      }
-
-      .simple-table td:nth-child(1)::before {
-        content: "Tipo";
-      }
-
-      .simple-table td:nth-child(2)::before {
-        content: "Qué significa";
-      }
-
-      .simple-table td:nth-child(3)::before {
-        content: "Ejemplo sencillo";
-      }
+      .hero { padding: 54px 0 48px; }
+      section { padding: 54px 0; }
     }
 
     @media (max-width: 520px) {
-      .container {
-        width: min(100% - 24px, var(--max));
-      }
+      .container { width: min(100% - 24px, var(--max)); }
 
-      .brand-text span {
-        font-size: 0.78rem;
-      }
+      .brand-text span { font-size: 0.78rem; }
 
       h1 {
         font-size: 2.35rem;
         letter-spacing: -0.035em;
       }
 
-      h2 {
-        font-size: 1.8rem;
-      }
+      h2 { font-size: 1.8rem; }
 
       .hero-actions,
       .cta-final .hero-actions {
@@ -910,22 +784,30 @@
       .hero-card,
       .direct-box,
       .review-box,
-      .cta-final {
+      .cta-final,
+      .rc-guide-main,
+      .rc-steps,
+      .scenario-intro,
+      .scenario-item,
+      .type-intro,
+      .type-item,
+      .profile-intro,
+      .profile-item,
+      .coverage-route-main,
+      .coverage-line {
         padding: 26px 20px;
         border-radius: 20px;
       }
 
-      .examples-grid {
+      .rc-step,
+      .scenario-item,
+      .type-item,
+      .profile-item,
+      .coverage-line {
         grid-template-columns: 1fr;
       }
 
-      .coverage-card {
-        padding: 20px;
-      }
-
-      .footer-inner {
-        flex-direction: column;
-      }
+      .footer-inner { flex-direction: column; }
     }
 
     /* MEJORAS MÓVIL AÑADIDAS */
@@ -935,9 +817,7 @@
         overflow-x: hidden;
       }
 
-      .topbar {
-        z-index: 9999;
-      }
+      .topbar { z-index: 9999; }
 
       .nav {
         min-height: 68px;
@@ -956,9 +836,7 @@
         flex-shrink: 0;
       }
 
-      .brand-text {
-        min-width: 0;
-      }
+      .brand-text { min-width: 0; }
 
       .brand-text strong {
         font-size: 0.95rem;
@@ -985,9 +863,7 @@
         box-shadow: 0 10px 24px rgba(74,16,29,.08);
       }
 
-      .mobile-menu {
-        padding: 14px 0 18px;
-      }
+      .mobile-menu { padding: 14px 0 18px; }
 
       .mobile-menu.active {
         display: grid;
@@ -1015,9 +891,7 @@
         color: var(--white);
       }
 
-      .hero {
-        padding: 50px 0 42px;
-      }
+      .hero { padding: 50px 0 42px; }
 
       .hero-grid,
       .grid-2 {
@@ -1055,15 +929,15 @@
         line-height: 1.16;
       }
 
-      h3 {
-        font-size: 1.18rem;
-      }
+      h3 { font-size: 1.18rem; }
 
       .lead,
       .section-title p,
       .text-muted,
       .direct-box p,
-      .cta-final p {
+      .cta-final p,
+      .rc-guide-main p,
+      .coverage-route-main p {
         font-size: 1rem;
         line-height: 1.6;
       }
@@ -1082,77 +956,31 @@
         font-size: 1rem;
       }
 
-      section {
-        padding: 46px 0;
-      }
+      section { padding: 46px 0; }
 
-      .section-title {
-        margin-bottom: 26px;
-      }
+      .section-title { margin-bottom: 26px; }
 
-      .section-title.center {
-        text-align: left;
-      }
-
-      .grid-3,
-      .coverages,
-      .examples-grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
-      }
-
-      .card,
-      .example-card,
-      .coverage-card {
-        padding: 24px 20px;
-        border-radius: 22px;
-      }
-
-      .card:hover,
-      .example-card:hover,
-      .coverage-card:hover {
-        transform: none;
-      }
-
-      .card-icon,
-      .example-icon {
-        width: 52px;
-        height: 52px;
-        border-radius: 18px;
-        font-size: 1.35rem;
-        margin-bottom: 14px;
-      }
-
-      .coverage-card {
-        display: grid;
-        grid-template-columns: 48px 1fr;
-        gap: 14px;
-      }
-
-      .coverage-card .mini-icon {
-        width: 48px;
-        height: 48px;
-        border-radius: 16px;
-      }
-
-      .table-wrap {
-        border-radius: 22px;
-      }
+      .section-title.center { text-align: left; }
 
       .direct-box,
       .review-box,
-      .cta-final {
-        padding: 28px 20px;
+      .cta-final,
+      .rc-guide-main,
+      .rc-steps,
+      .scenario-intro,
+      .scenario-list,
+      .type-intro,
+      .type-list,
+      .profile-intro,
+      .profile-list,
+      .coverage-route-main,
+      .coverage-lines {
         border-radius: 22px;
       }
 
-      .review-list {
-        gap: 14px;
-      }
+      .review-list { gap: 14px; }
 
-      .footer {
-        padding-bottom: 104px;
-      }
+      .footer { padding-bottom: 104px; }
 
       .footer-inner {
         flex-direction: column;
@@ -1205,38 +1033,18 @@
     }
 
     @media (max-width: 520px) {
-      .container {
-        width: min(100% - 32px, var(--max));
-      }
+      .container { width: min(100% - 32px, var(--max)); }
 
-      .brand-text span {
-        max-width: 180px;
-      }
+      .brand-text span { max-width: 180px; }
 
-      h1 {
-        font-size: 2.05rem;
-      }
-
-      h2 {
-        font-size: 1.62rem;
-      }
+      h1 { font-size: 2.05rem; }
+      h2 { font-size: 1.62rem; }
 
       .hero-card,
       .direct-box,
       .review-box,
-      .cta-final,
-      .card,
-      .example-card,
-      .coverage-card {
+      .cta-final {
         padding: 24px 18px;
-      }
-
-      .coverage-card {
-        grid-template-columns: 1fr;
-      }
-
-      .simple-table tr {
-        padding: 18px;
       }
 
       .trust-line {
@@ -1350,198 +1158,283 @@
       </div>
     </section>
 
+    <section>
+      <div class="container">
+        <div class="rc-guide">
+          <div class="rc-guide-main">
+            <span class="eyebrow">Directo al punto</span>
+            <h2>No se trata solo de “tener RC”, sino de tener la adecuada</h2>
+            <p>
+              Una responsabilidad civil debe coincidir con tu actividad real. No es lo mismo tener un local, trabajar en casa de clientes, prestar asesoramiento profesional o tener empleados.
+            </p>
+          </div>
+
+          <div class="rc-steps">
+            <div class="rc-step">
+              <span>01</span>
+              <div>
+                <strong>De dónde puede venir la reclamación</strong>
+                <p>Cliente, proveedor, empleado, vecino, tercero, local, obra, instalación o servicio profesional.</p>
+              </div>
+            </div>
+
+            <div class="rc-step">
+              <span>02</span>
+              <div>
+                <strong>Qué daño puede producirse</strong>
+                <p>Daño personal, material, perjuicio económico, error profesional o accidente durante la actividad.</p>
+              </div>
+            </div>
+
+            <div class="rc-step">
+              <span>03</span>
+              <div>
+                <strong>Qué límite necesitas</strong>
+                <p>El capital asegurado debe tener sentido con el tamaño de tu actividad y el tipo de reclamaciones posibles.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="ejemplos" class="section-soft">
       <div class="container">
-        <div class="section-title center">
-          <span>Ejemplos claros</span>
-          <h2>Situaciones en las que puede ayudarte</h2>
-          <p>
-            Estos son casos habituales donde una reclamación puede afectar directamente a tu negocio o actividad.
-          </p>
-        </div>
+        <div class="scenario-route">
+          <div class="scenario-intro">
+            <span class="eyebrow">Ejemplos claros</span>
+            <h2>Situaciones en las que puede ayudarte</h2>
+            <p>
+              Estos son casos habituales donde una reclamación puede afectar directamente a tu negocio o actividad.
+            </p>
+            <p>
+              Lo organizamos como una guía de escenarios para que se entienda mejor el riesgo real, no como tarjetas sueltas repetidas.
+            </p>
+          </div>
 
-        <div class="examples-grid">
-          <article class="example-card">
-            <div class="example-icon">🚶</div>
-            <p>Un cliente se cae en tu local.</p>
-          </article>
+          <div class="scenario-list">
+            <article class="scenario-item">
+              <div class="scenario-icon">🚶</div>
+              <div>
+                <h3>Un cliente se cae en tu local</h3>
+                <p>Puede haber una reclamación por daños personales si el accidente se vincula a la actividad o al espacio asegurado.</p>
+                <span class="scenario-tag">Riesgo: daños personales</span>
+              </div>
+            </article>
 
-          <article class="example-card">
-            <div class="example-icon">📄</div>
-            <p>Cometes un error profesional.</p>
-          </article>
+            <article class="scenario-item">
+              <div class="scenario-icon">📄</div>
+              <div>
+                <h3>Cometes un error profesional</h3>
+                <p>Puede haber una reclamación si un informe, gestión, asesoramiento o servicio causa un perjuicio económico.</p>
+                <span class="scenario-tag">Riesgo: perjuicio económico</span>
+              </div>
+            </article>
 
-          <article class="example-card">
-            <div class="example-icon">🏠</div>
-            <p>Un trabajo realizado ha causado daños en casa de un cliente.</p>
-          </article>
+            <article class="scenario-item">
+              <div class="scenario-icon">🏠</div>
+              <div>
+                <h3>Un trabajo causa daños en casa de un cliente</h3>
+                <p>Puede afectar a instaladores, reparadores, técnicos, reformas o servicios realizados fuera de tu local.</p>
+                <span class="scenario-tag">Riesgo: daños materiales</span>
+              </div>
+            </article>
 
-          <article class="example-card">
-            <div class="example-icon">👷</div>
-            <p>Un empleado de tu empresa provoca daños durante la actividad.</p>
-          </article>
+            <article class="scenario-item">
+              <div class="scenario-icon">👷</div>
+              <div>
+                <h3>Un empleado provoca daños durante la actividad</h3>
+                <p>Puede ser importante revisar si la póliza contempla actuación de empleados, colaboradores o subcontratas.</p>
+                <span class="scenario-tag">Riesgo: empleados y colaboradores</span>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="tipos">
       <div class="container">
-        <div class="section-title center">
-          <span>Tipos de RC</span>
-          <h2>Diferencias explicadas de forma sencilla</h2>
-          <p>
-            No todas las responsabilidades civiles cubren lo mismo. La clave está en saber de dónde viene la reclamación.
-          </p>
-        </div>
+        <div class="type-route">
+          <div class="type-intro">
+            <span class="eyebrow">Tipos de RC</span>
+            <h2>Diferencias explicadas de forma sencilla</h2>
+            <p>
+              No todas las responsabilidades civiles cubren lo mismo. La clave está en saber de dónde viene la reclamación y qué actividad se está asegurando.
+            </p>
+          </div>
 
-        <div class="table-wrap">
-          <table class="simple-table">
-            <thead>
-              <tr>
-                <th>Tipo</th>
-                <th>Qué significa</th>
-                <th>Ejemplo sencillo</th>
-              </tr>
-            </thead>
+          <div class="type-list">
+            <article class="type-item">
+              <div class="type-icon">🛡️</div>
+              <div>
+                <h3>Responsabilidad civil general</h3>
+                <p>Protege frente a daños que puedas causar a terceros de forma general dentro de la actividad asegurada.</p>
+                <span class="type-tag">Ejemplo: reclamación relacionada con tu negocio o servicio</span>
+              </div>
+            </article>
 
-            <tbody>
-              <tr>
-                <td><strong>Responsabilidad civil general</strong></td>
-                <td>Protege frente a daños que puedas causar a terceros de forma general dentro de la actividad asegurada.</td>
-                <td>Alguien reclama porque ha sufrido un daño relacionado con tu negocio o servicio.</td>
-              </tr>
+            <article class="type-item">
+              <div class="type-icon">📄</div>
+              <div>
+                <h3>Responsabilidad civil profesional</h3>
+                <p>Cubre reclamaciones por errores, fallos, negligencias o perjuicios derivados de tu trabajo profesional.</p>
+                <span class="type-tag">Ejemplo: error en asesoramiento, informe o gestión</span>
+              </div>
+            </article>
 
-              <tr>
-                <td><strong>Responsabilidad civil profesional</strong></td>
-                <td>Cubre reclamaciones por errores, fallos, negligencias o perjuicios derivados de tu trabajo profesional.</td>
-                <td>Cometes un error en un asesoramiento, informe, gestión o servicio profesional.</td>
-              </tr>
+            <article class="type-item">
+              <div class="type-icon">👷</div>
+              <div>
+                <h3>Responsabilidad civil patronal</h3>
+                <p>Protege frente a reclamaciones relacionadas con empleados que sufran daños durante el trabajo.</p>
+                <span class="type-tag">Ejemplo: accidente laboral con reclamación contra la empresa</span>
+              </div>
+            </article>
 
-              <tr>
-                <td><strong>Responsabilidad civil patronal</strong></td>
-                <td>Protege frente a reclamaciones relacionadas con empleados que sufran daños durante el trabajo.</td>
-                <td>Un trabajador tiene un accidente laboral y existe una reclamación contra la empresa.</td>
-              </tr>
-
-              <tr>
-                <td><strong>Responsabilidad civil de explotación</strong></td>
-                <td>Cubre daños causados a terceros durante el desarrollo normal de la actividad del negocio.</td>
-                <td>Un cliente se cae en tu local o se dañan bienes de un tercero durante un trabajo.</td>
-              </tr>
-            </tbody>
-          </table>
+            <article class="type-item">
+              <div class="type-icon">🏪</div>
+              <div>
+                <h3>Responsabilidad civil de explotación</h3>
+                <p>Cubre daños causados a terceros durante el desarrollo normal de la actividad del negocio.</p>
+                <span class="type-tag">Ejemplo: caída en local o daños durante un trabajo</span>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="section-soft">
       <div class="container">
-        <div class="section-title">
-          <span>Directo al punto</span>
-          <h2>¿Para quién puede ser importante?</h2>
-          <p>
-            La responsabilidad civil puede ser importante para cualquier persona o empresa que trabaje con clientes, proveedores, empleados, locales, viviendas de clientes o servicios profesionales.
-          </p>
-        </div>
+        <div class="profile-route">
+          <div class="profile-intro">
+            <span class="eyebrow">Directo al punto</span>
+            <h2>¿Para quién puede ser importante?</h2>
+            <p>
+              La responsabilidad civil puede ser importante para cualquier persona o empresa que trabaje con clientes, proveedores, empleados, locales, viviendas de clientes o servicios profesionales.
+            </p>
+          </div>
 
-        <div class="grid-3">
-          <article class="card">
-            <div class="card-icon">💼</div>
-            <h3>Autónomos</h3>
-            <p>Para proteger tu actividad si un cliente o tercero te reclama daños.</p>
-          </article>
+          <div class="profile-list">
+            <article class="profile-item">
+              <div class="profile-icon">💼</div>
+              <div>
+                <h3>Autónomos</h3>
+                <p>Para proteger tu actividad si un cliente o tercero te reclama daños.</p>
+                <span class="profile-tag">Revisar: actividad real y capital asegurado</span>
+              </div>
+            </article>
 
-          <article class="card">
-            <div class="card-icon">🏪</div>
-            <h3>Comercios y locales</h3>
-            <p>Para reclamaciones por caídas, daños o accidentes dentro del local.</p>
-          </article>
+            <article class="profile-item">
+              <div class="profile-icon">🏪</div>
+              <div>
+                <h3>Comercios y locales</h3>
+                <p>Para reclamaciones por caídas, daños o accidentes dentro del local.</p>
+                <span class="profile-tag">Revisar: local, aforo y atención al público</span>
+              </div>
+            </article>
 
-          <article class="card">
-            <div class="card-icon">🧑‍💼</div>
-            <h3>Profesionales</h3>
-            <p>Para errores profesionales, asesoramientos, informes o servicios prestados.</p>
-          </article>
+            <article class="profile-item">
+              <div class="profile-icon">🧑‍💼</div>
+              <div>
+                <h3>Profesionales</h3>
+                <p>Para errores profesionales, asesoramientos, informes o servicios prestados.</p>
+                <span class="profile-tag">Revisar: RC profesional específica</span>
+              </div>
+            </article>
 
-          <article class="card">
-            <div class="card-icon">👷</div>
-            <h3>Empresas con empleados</h3>
-            <p>Para revisar la RC patronal y posibles reclamaciones laborales.</p>
-          </article>
+            <article class="profile-item">
+              <div class="profile-icon">👷</div>
+              <div>
+                <h3>Empresas con empleados</h3>
+                <p>Para revisar la RC patronal y posibles reclamaciones laborales.</p>
+                <span class="profile-tag">Revisar: empleados y subcontratas</span>
+              </div>
+            </article>
 
-          <article class="card">
-            <div class="card-icon">🛠️</div>
-            <h3>Trabajos en casa de clientes</h3>
-            <p>Para daños causados durante instalaciones, reformas, reparaciones o servicios.</p>
-          </article>
+            <article class="profile-item">
+              <div class="profile-icon">🛠️</div>
+              <div>
+                <h3>Trabajos en casa de clientes</h3>
+                <p>Para daños causados durante instalaciones, reformas, reparaciones o servicios.</p>
+                <span class="profile-tag">Revisar: trabajos fuera del local</span>
+              </div>
+            </article>
 
-          <article class="card">
-            <div class="card-icon">📦</div>
-            <h3>Proveedores y servicios</h3>
-            <p>Para actividades donde interactúas con terceros, materiales o bienes ajenos.</p>
-          </article>
+            <article class="profile-item">
+              <div class="profile-icon">📦</div>
+              <div>
+                <h3>Proveedores y servicios</h3>
+                <p>Para actividades donde interactúas con terceros, materiales o bienes ajenos.</p>
+                <span class="profile-tag">Revisar: bienes de terceros</span>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="coberturas">
       <div class="container">
-        <div class="section-title">
-          <span>Coberturas principales</span>
-          <h2>Qué conviene revisar en una responsabilidad civil</h2>
-          <p>
-            Las coberturas exactas dependen de la actividad, modalidad, capital asegurado y condiciones de la póliza.
-          </p>
-        </div>
+        <div class="coverage-route">
+          <div class="coverage-route-main">
+            <span class="eyebrow">Coberturas principales</span>
+            <h2>Qué conviene revisar en una responsabilidad civil</h2>
+            <p>
+              Las coberturas exactas dependen de la actividad, modalidad, capital asegurado y condiciones de la póliza. Aquí se ordenan por función para que no parezca una lista de cajas repetidas.
+            </p>
+          </div>
 
-        <div class="coverages">
-          <article class="coverage-card">
-            <div class="mini-icon">🤝</div>
-            <div>
-              <h3>Daños a terceros</h3>
-              <p>Daños personales o materiales causados a clientes, proveedores u otras personas.</p>
-            </div>
-          </article>
+          <div class="coverage-lines">
+            <article class="coverage-line">
+              <div class="mini-icon">🤝</div>
+              <div>
+                <h3>Daños a terceros</h3>
+                <p>Daños personales o materiales causados a clientes, proveedores u otras personas.</p>
+              </div>
+            </article>
 
-          <article class="coverage-card">
-            <div class="mini-icon">⚖️</div>
-            <div>
-              <h3>Defensa jurídica</h3>
-              <p>Apoyo legal si recibes una reclamación cubierta por la póliza.</p>
-            </div>
-          </article>
+            <article class="coverage-line">
+              <div class="mini-icon">⚖️</div>
+              <div>
+                <h3>Defensa jurídica</h3>
+                <p>Apoyo legal si recibes una reclamación cubierta por la póliza.</p>
+              </div>
+            </article>
 
-          <article class="coverage-card">
-            <div class="mini-icon">📄</div>
-            <div>
-              <h3>Errores profesionales</h3>
-              <p>Reclamaciones por fallos, errores o negligencias en un servicio profesional.</p>
-            </div>
-          </article>
+            <article class="coverage-line">
+              <div class="mini-icon">📄</div>
+              <div>
+                <h3>Errores profesionales</h3>
+                <p>Reclamaciones por fallos, errores o negligencias en un servicio profesional.</p>
+              </div>
+            </article>
 
-          <article class="coverage-card">
-            <div class="mini-icon">🏪</div>
-            <div>
-              <h3>Actividad del negocio</h3>
-              <p>Daños ocurridos durante el desarrollo normal de la actividad asegurada.</p>
-            </div>
-          </article>
+            <article class="coverage-line">
+              <div class="mini-icon">🏪</div>
+              <div>
+                <h3>Actividad del negocio</h3>
+                <p>Daños ocurridos durante el desarrollo normal de la actividad asegurada.</p>
+              </div>
+            </article>
 
-          <article class="coverage-card">
-            <div class="mini-icon">👷</div>
-            <div>
-              <h3>Empleados</h3>
-              <p>Reclamaciones relacionadas con accidentes laborales, si se incluye RC patronal.</p>
-            </div>
-          </article>
+            <article class="coverage-line">
+              <div class="mini-icon">👷</div>
+              <div>
+                <h3>Empleados</h3>
+                <p>Reclamaciones relacionadas con accidentes laborales, si se incluye RC patronal.</p>
+              </div>
+            </article>
 
-          <article class="coverage-card">
-            <div class="mini-icon">💶</div>
-            <div>
-              <h3>Capital asegurado</h3>
-              <p>Límite máximo que puede responder la póliza ante una reclamación cubierta.</p>
-            </div>
-          </article>
+            <article class="coverage-line">
+              <div class="mini-icon">💶</div>
+              <div>
+                <h3>Capital asegurado</h3>
+                <p>Límite máximo que puede responder la póliza ante una reclamación cubierta.</p>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -1624,7 +1517,7 @@
     }
 
     const revealElements = document.querySelectorAll(
-      ".section-title, .card, .example-card, .table-wrap, .direct-box, .coverage-card, .review-box, .cta-final"
+      ".section-title, .direct-box, .review-box, .cta-final, .rc-guide, .scenario-route, .type-route, .profile-route, .coverage-route, .scenario-item, .type-item, .profile-item, .coverage-line"
     );
 
     if ("IntersectionObserver" in window) {
