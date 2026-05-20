@@ -100,6 +100,18 @@
       gap: 14px;
     }
 
+    .mobile-menu-toggle {
+      display: none;
+    }
+
+    .mobile-menu-button {
+      display: none;
+    }
+
+    .mobile-contact-bar {
+      display: none;
+    }
+
     .nav-phone,
     .nav-whatsapp {
       min-height: 56px;
@@ -1140,6 +1152,465 @@
       }
     }
 
+    /* MEJORAS MÓVIL AÑADIDAS */
+    @media (max-width: 768px) {
+      body {
+        padding-bottom: 76px;
+      }
+
+      .container {
+        padding: 0 18px;
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+      }
+
+      .topbar-container {
+        padding: 12px 16px;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0;
+      }
+
+      .brand {
+        width: auto;
+        max-width: calc(100% - 58px);
+        justify-content: flex-start;
+        gap: 10px;
+        flex: 1;
+        min-width: 0;
+      }
+
+      .brand-logo {
+        width: 44px;
+        height: 44px;
+        font-size: 17px;
+        flex-shrink: 0;
+      }
+
+      .brand-text {
+        min-width: 0;
+      }
+
+      .brand-text strong {
+        font-size: 15px;
+        white-space: nowrap;
+      }
+
+      .brand-text span {
+        font-size: 12px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 225px;
+      }
+
+      .mobile-menu-button {
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        border: 1px solid rgba(143,31,52,.18);
+        background: rgba(255,253,251,.96);
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        cursor: pointer;
+        box-shadow: 0 10px 24px rgba(74,16,29,.08);
+      }
+
+      .mobile-menu-button span {
+        width: 20px;
+        height: 2px;
+        border-radius: 999px;
+        background: #8f1f34;
+        transition: .2s ease;
+      }
+
+      .mobile-menu-toggle:checked + .mobile-menu-button span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+
+      .mobile-menu-toggle:checked + .mobile-menu-button span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .mobile-menu-toggle:checked + .mobile-menu-button span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+
+      .nav-links,
+      .nav-actions {
+        display: none;
+        width: 100%;
+      }
+
+      .mobile-menu-toggle:checked ~ .nav-links {
+        display: flex;
+      }
+
+      .mobile-menu-toggle:checked ~ .nav-actions {
+        display: flex;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        gap: 8px;
+        margin-top: 14px;
+        padding: 14px;
+        border-radius: 24px 24px 16px 16px;
+        background: rgba(255,253,251,.98);
+        border: 1px solid rgba(143,31,52,.12);
+        box-shadow: 0 18px 36px rgba(74,16,29,.10);
+      }
+
+      .nav-links a {
+        width: 100%;
+        padding: 13px 15px;
+        border-radius: 14px;
+        background: rgba(143,31,52,.045);
+        color: #4a101d;
+        font-size: 15px;
+        font-weight: 750;
+      }
+
+      .nav-links a:hover {
+        background: rgba(143,31,52,.10);
+      }
+
+      .nav-actions {
+        flex-direction: column;
+        gap: 9px;
+        padding: 0 14px 14px;
+        background: rgba(255,253,251,.98);
+        border-left: 1px solid rgba(143,31,52,.12);
+        border-right: 1px solid rgba(143,31,52,.12);
+        border-bottom: 1px solid rgba(143,31,52,.12);
+        border-radius: 0 0 24px 24px;
+        box-shadow: 0 18px 36px rgba(74,16,29,.10);
+      }
+
+      .nav-phone,
+      .nav-whatsapp {
+        width: 100%;
+        min-height: 50px;
+        padding: 0 18px;
+        font-size: 15px;
+      }
+
+      .page-hero {
+        padding: 50px 0 42px;
+        text-align: left;
+      }
+
+      .page-hero::before {
+        width: 210px;
+        height: 210px;
+        right: -90px;
+        top: 10px;
+      }
+
+      .page-hero::after {
+        width: 150px;
+        height: 150px;
+        left: -70px;
+        bottom: -70px;
+      }
+
+      .eyebrow {
+        font-size: 12px;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+      }
+
+      h1 {
+        font-size: 31px;
+        line-height: 1.14;
+        margin-bottom: 16px;
+        max-width: 100%;
+      }
+
+      h2 {
+        font-size: 26px;
+        line-height: 1.22;
+      }
+
+      h3 {
+        font-size: 20px;
+      }
+
+      .private-badge {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        border-radius: 18px;
+        margin-bottom: 16px;
+      }
+
+      .hero-text {
+        font-size: 16px;
+        line-height: 1.6;
+        margin: 0 0 12px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 22px;
+      }
+
+      .hero-primary,
+      .hero-secondary {
+        width: 100%;
+        min-height: 54px;
+        font-size: 16px;
+        padding: 0 18px;
+        text-align: center;
+        border-radius: 999px;
+      }
+
+      .mini-trust {
+        font-size: 13px;
+        line-height: 1.45;
+      }
+
+      .section {
+        padding: 46px 0;
+      }
+
+      .intro-card,
+      .client-panel,
+      .review-box,
+      .cta-box {
+        padding: 26px 20px;
+        border-radius: 22px;
+      }
+
+      .intro-card p,
+      .review-box p,
+      .cta-box p,
+      .panel-header p,
+      .panel-note p {
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      .panel-header {
+        text-align: left;
+        margin-bottom: 24px;
+      }
+
+      .panel-subtitle {
+        font-size: 15px;
+        line-height: 1.55;
+        margin-bottom: 20px !important;
+      }
+
+      .quick-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .quick-card {
+        padding: 24px 20px;
+        min-height: auto;
+        border-radius: 24px;
+      }
+
+      .quick-card:hover {
+        transform: none;
+      }
+
+      .quick-card.claim-guide-card {
+        grid-column: auto;
+      }
+
+      .quick-icon {
+        width: 52px;
+        height: 52px;
+        border-radius: 18px;
+        margin-bottom: 14px;
+      }
+
+      .quick-icon svg {
+        width: 25px;
+        height: 25px;
+      }
+
+      .quick-card h3 {
+        font-size: 21px;
+      }
+
+      .quick-card p {
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: 18px;
+      }
+
+      .quick-card span {
+        width: 100%;
+        min-height: 50px;
+        border-radius: 999px;
+        text-align: center;
+      }
+
+      .quick-card.tertiary-action span {
+        justify-content: center;
+        padding: 14px 20px;
+        border: 1px solid rgba(143,31,52,.18);
+        background: rgba(143,31,52,.06);
+        color: #8f1f34;
+        font-size: 15px;
+      }
+
+      .claim-list {
+        font-size: 15px;
+        line-height: 1.65;
+        margin: 14px 0 20px;
+      }
+
+      .panel-note {
+        text-align: left;
+        padding: 20px;
+        border-radius: 18px;
+      }
+
+      .review-box {
+        text-align: left;
+      }
+
+      .review-badge {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .review-stars {
+        font-size: 24px;
+        letter-spacing: 3px;
+      }
+
+      .review-highlight {
+        font-size: 17px !important;
+      }
+
+      .review-button {
+        width: 100%;
+        min-height: 54px;
+        border-radius: 999px;
+        background: rgba(143,31,52,.07);
+        border: 1px solid rgba(143,31,52,.18);
+        color: #8f1f34;
+        font-size: 15px;
+        text-align: center;
+        padding: 0 18px;
+      }
+
+      .review-mini {
+        font-size: 13px !important;
+        line-height: 1.45;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 22px;
+      }
+
+      .cta-primary,
+      .cta-secondary,
+      .cta-link {
+        width: 100%;
+        min-width: auto;
+        min-height: 54px;
+        font-size: 16px;
+        padding: 0 18px;
+        border-radius: 999px;
+      }
+
+      .cta-link {
+        border: 1px solid rgba(255,255,255,.22);
+        background: rgba(255,255,255,.08);
+        color: rgba(255,255,255,.90);
+        text-decoration: none;
+      }
+
+      .whatsapp-fijo {
+        display: none;
+      }
+
+      .mobile-contact-bar {
+        position: fixed;
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        z-index: 9999;
+        display: grid;
+        grid-template-columns: 1.15fr .85fr;
+        gap: 10px;
+        padding: 10px;
+        border-radius: 22px;
+        background: rgba(255,253,251,.96);
+        border: 1px solid rgba(143,31,52,.14);
+        box-shadow: 0 14px 34px rgba(0,0,0,.18);
+        backdrop-filter: blur(12px);
+      }
+
+      .mobile-contact-bar a {
+        min-height: 48px;
+        border-radius: 999px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 900;
+        font-size: 15px;
+      }
+
+      .mobile-contact-bar a:first-child {
+        background: #25D366;
+        color: white;
+        box-shadow: 0 10px 24px rgba(37,211,102,.26);
+      }
+
+      .mobile-contact-bar a:last-child {
+        background: #8f1f34;
+        color: white;
+        box-shadow: 0 10px 24px rgba(143,31,52,.20);
+      }
+    }
+
+    @media (max-width: 420px) {
+      .container {
+        padding: 0 16px;
+      }
+
+      .brand-text span {
+        max-width: 185px;
+      }
+
+      h1 {
+        font-size: 29px;
+      }
+
+      h2 {
+        font-size: 24px;
+      }
+
+      .intro-card,
+      .client-panel,
+      .review-box,
+      .cta-box,
+      .quick-card {
+        padding: 24px 18px;
+      }
+    }
+
   </style>
 </head>
 
@@ -1156,6 +1627,13 @@
           <span>Seguros y asesoramiento</span>
         </div>
       </a>
+
+      <input type="checkbox" id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Abrir menú móvil">
+      <label for="mobile-menu-toggle" class="mobile-menu-button" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
 
       <nav class="nav-links">
         <a href="index.html">Inicio</a>
@@ -1356,10 +1834,15 @@
     </div>
   </section>
 
+  <div class="mobile-contact-bar" aria-label="Contacto rápido">
+    <a href="https://wa.me/34606067906" target="_blank">WhatsApp</a>
+    <a href="tel:+34917702311">Llamar</a>
+  </div>
+
   <!-- BOTÓN FIJO WHATSAPP -->
   <a href="https://wa.me/34606067906" target="_blank" class="whatsapp-fijo" aria-label="WhatsApp">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="white">
-      <path d="M16.001 2.667c-7.363 0-13.334 5.97-13.334 13.334 0 2.35.615 4.648 1.782 6.68L2.667 29.333l6.85-1.748a13.25 13.25 0 0 0 6.484 1.672h.001c7.363 0 13.334-5.97 13.334-13.334S23.365 2.667 16.001 2.667zm0 24.334h-.001a10.95 10.95 0 0 1-5.58-1.523l-.4-.237-4.066 1.038 1.084-3.963-.26-.41a10.97 10.97 0 0 1-1.693-5.883c0-6.058 4.933-10.99 10.993-10.99 2.937 0 5.694 1.143 7.77 3.217a10.95 10.95 0 0 1 3.218 7.773c-.001 6.058-4.934 10.99-10.992 10.99zm6.06-8.24c-.33-.166-1.953-.963-2.255-1.073-.302-.11-.522-.166-.742.166-.22.33-.852 1.073-1.044 1.293-.193.22-.386.247-.715.083-.33-.166-1.39-.513-2.65-1.635-.98-.872-1.64-1.95-1.833-2.28-.193-.33-.02-.508.146-.674.15-.15.33-.386.495-.58.166-.193.22-.33.330-.55.11-.22.055-.413-.028-.58-.083-.166-.742-1.79-1.016-2.455-.267-.64-.538-.553-.742-.563l-.633-.010c-.22 0-.58.083-.883.413-.302.33-1.155 1.13-1.155 2.753 0 1.623 1.182 3.19 1.347 3.41.166.22 2.327 3.553 5.64 4.98.789.34 1.404.543 1.883.695.791.252 1.512.216 2.082.131.635-.095 1.953-.798 2.23-1.57.275-.77.275-1.43.193-1.57-.083-.14-.302-.22-.633-.386z"/>
+      <path d="M16.001 2.667c-7.363 0-13.334 5.97-13.334 13.334 0 2.35.615 4.648 1.782 6.68L2.667 29.333l6.85-1.748a13.25 13.25 0 0 0 6.484 1.672h.001c7.363 0 13.334-5.97 13.334-13.334S23.365 2.667 16.001 2.667zm0 24.334h-.001a10.95 10.95 0 0 1-5.58-1.523l-.4-.237-4.066 1.038 1.084-3.963-.26-.41a10.97 10.97 0 0 1-1.693-5.883c0-6.058 4.933-10.99 10.993-10.99 2.937 0 5.694 1.143 7.77 3.217a10.95 10.95 0 0 1 3.218 7.773c-.001 6.058-4.934 10.99-10.992 10.99zm6.06-8.24c-.33-.166-1.953-.963-2.255-1.073-.302-.11-.522-.166-.742.166-.22.33-.852 1.073-1.044 1.293-.193.22-.386.247-.715.083-.33-.166-1.39-.513-2.65-1.635-.98-.872-1.64-1.95-1.833-2.28-.193-.33-.02-.508.146-.674.15-.15.33-.386.495-.58.166-.193.22-.33.330-.55.11-.22.055-.413-.028-.58-.083-.166-.742-1.79-1.016-2.455-.267-.64-.538-.553-.742-.563l-.633-.010c-.22 0-.58.083-.883.413-.302.33-1.155 1.130-1.155 2.753 0 1.623 1.182 3.19 1.347 3.41.166.22 2.327 3.553 5.64 4.98.789.34 1.404.543 1.883.695.791.252 1.512.216 2.082.131.635-.095 1.953-.798 2.23-1.57.275-.77.275-1.43.193-1.57-.083-.14-.302-.22-.633-.386z"/>
     </svg>
   </a>
 
