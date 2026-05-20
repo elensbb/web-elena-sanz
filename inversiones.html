@@ -1493,6 +1493,291 @@
       }
     }
 
+
+    /* CAMBIOS PUNTO 3: MENOS BLOQUES REPETITIVOS */
+    .investment-route {
+      display: grid;
+      grid-template-columns: 0.86fr 1.14fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .investment-route-intro {
+      position: sticky;
+      top: 104px;
+      background:
+        radial-gradient(circle at top right, rgba(143, 31, 52, 0.09), transparent 36%),
+        linear-gradient(145deg, rgba(255,255,255,.86), rgba(255,247,239,.68));
+      border: 1px solid rgba(143, 31, 52, 0.12);
+      border-radius: calc(var(--radius) + 4px);
+      padding: 34px;
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(12px);
+    }
+
+    .investment-route-intro p {
+      color: var(--muted);
+      margin-top: 12px;
+    }
+
+    .investment-route-list {
+      display: grid;
+      gap: 0;
+      border: 1px solid rgba(143, 31, 52, 0.12);
+      border-radius: calc(var(--radius) + 4px);
+      overflow: hidden;
+      background: rgba(255,255,255,.78);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+    }
+
+    .investment-route-item {
+      display: grid;
+      grid-template-columns: 64px 1fr;
+      gap: 18px;
+      padding: 24px;
+      border-bottom: 1px solid rgba(74, 16, 29, 0.10);
+      background: rgba(255,255,255,.48);
+      transition: background .22s ease;
+    }
+
+    .investment-route-item:last-child {
+      border-bottom: 0;
+    }
+
+    .investment-route-item:hover {
+      background: rgba(255, 247, 239, .86);
+    }
+
+    .investment-route-number,
+    .investment-route-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #fff7ed, rgba(143, 31, 52, 0.13));
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 1.05rem;
+      border: 1px solid rgba(143,31,52,.10);
+      box-shadow: 0 12px 26px rgba(74, 16, 29, 0.08);
+    }
+
+    .investment-route-item h3 {
+      margin-bottom: 8px;
+    }
+
+    .investment-route-item p {
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .investment-route-tag {
+      display: inline-flex;
+      padding: 9px 13px;
+      border-radius: 999px;
+      background: rgba(143,31,52,.08);
+      color: var(--primary);
+      font-size: .9rem;
+      font-weight: 800;
+      border: 1px solid rgba(143,31,52,.10);
+    }
+
+    .planning-panel {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 34px;
+      align-items: stretch;
+    }
+
+    .planning-main {
+      background:
+        radial-gradient(circle at top right, rgba(143,31,52,.09), transparent 36%),
+        linear-gradient(145deg, rgba(255,255,255,.86), rgba(255,247,239,.68));
+      border: 1px solid rgba(143, 31, 52, 0.12);
+      border-radius: calc(var(--radius) + 4px);
+      padding: 34px;
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(12px);
+    }
+
+    .planning-main p {
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .planning-steps {
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(143, 31, 52, 0.12);
+      border-radius: calc(var(--radius) + 4px);
+      padding: 30px;
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(12px);
+    }
+
+    .planning-step {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 16px;
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(74, 16, 29, 0.10);
+    }
+
+    .planning-step:first-child {
+      padding-top: 0;
+    }
+
+    .planning-step:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .planning-step span {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(143, 31, 52, 0.09);
+      color: var(--primary);
+      border: 1px solid rgba(143,31,52,.10);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: .9rem;
+    }
+
+    .planning-step strong {
+      display: block;
+      color: var(--primary-dark);
+      margin-bottom: 4px;
+      font-size: 1.02rem;
+    }
+
+    .planning-step p {
+      color: var(--muted);
+      font-size: .97rem;
+    }
+
+    .portfolio-route {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border: 1px solid rgba(143, 31, 52, 0.12);
+      border-radius: calc(var(--radius) + 4px);
+      overflow: hidden;
+      background: rgba(255,255,255,.78);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(12px);
+    }
+
+    .portfolio-route-item {
+      padding: 26px;
+      border-right: 1px solid rgba(74, 16, 29, 0.10);
+      background: rgba(255,255,255,.42);
+      transition: background .22s ease;
+    }
+
+    .portfolio-route-item:last-child {
+      border-right: 0;
+    }
+
+    .portfolio-route-item:hover {
+      background: rgba(255, 247, 239, .88);
+    }
+
+    .portfolio-route-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #fff7ed, rgba(143, 31, 52, 0.13));
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-size: 1.35rem;
+      margin-bottom: 18px;
+      border: 1px solid rgba(143,31,52,.10);
+      box-shadow: 0 12px 26px rgba(74, 16, 29, 0.08);
+    }
+
+    .portfolio-route-item p {
+      color: var(--muted);
+    }
+
+    @media (max-width: 980px) {
+      .portfolio-route {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .portfolio-route-item:nth-child(2) {
+        border-right: 0;
+      }
+
+      .portfolio-route-item:nth-child(1),
+      .portfolio-route-item:nth-child(2) {
+        border-bottom: 1px solid rgba(74, 16, 29, 0.10);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .investment-route,
+      .planning-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .investment-route-intro {
+        position: static;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .portfolio-route {
+        grid-template-columns: 1fr;
+      }
+
+      .portfolio-route-item,
+      .portfolio-route-item:nth-child(2) {
+        border-right: 0;
+        border-bottom: 1px solid rgba(74, 16, 29, 0.10);
+      }
+
+      .portfolio-route-item:last-child {
+        border-bottom: 0;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .investment-route-intro,
+      .investment-route-item,
+      .planning-main,
+      .planning-steps,
+      .portfolio-route-item {
+        padding: 22px 18px;
+        border-radius: 22px;
+      }
+
+      .investment-route-item {
+        grid-template-columns: 52px 1fr;
+        gap: 14px;
+      }
+
+      .investment-route-number,
+      .investment-route-icon {
+        width: 42px;
+        height: 42px;
+        border-radius: 15px;
+      }
+
+      .planning-step {
+        grid-template-columns: 42px 1fr;
+        gap: 12px;
+      }
+
+      .planning-step span {
+        width: 36px;
+        height: 36px;
+      }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       *,
       *::before,
@@ -1600,72 +1885,86 @@
 
     <section id="perfiles" class="section-soft">
       <div class="container">
-        <div class="section-title center">
-          <span>Perfil de inversión</span>
-          <h2>Cada perfil necesita una estrategia distinta</h2>
-          <p>
-            La inversión adecuada no es la misma para todos. Depende de tu patrimonio, tus objetivos, tu plazo, tu experiencia y tu forma de asumir las subidas y bajadas del mercado.
-          </p>
-        </div>
+        <div class="investment-route">
+          <div class="investment-route-intro">
+            <span class="eyebrow">Perfil de inversión</span>
+            <h2>Cada perfil necesita una estrategia distinta</h2>
+            <p>
+              La inversión adecuada no es la misma para todos. Depende de tu patrimonio, tus objetivos, tu plazo, tu experiencia y tu forma de asumir las subidas y bajadas del mercado.
+            </p>
+            <p>
+              Para que la página no se sienta como una tabla fría, esta sección se organiza como una ruta de decisión: primero se identifica el perfil y después se define el enfoque estratégico.
+            </p>
+          </div>
 
-        <div class="table-wrap">
-          <table class="simple-table">
-            <thead>
-              <tr>
-                <th>Perfil</th>
-                <th>Enfoque estratégico</th>
-              </tr>
-            </thead>
+          <div class="investment-route-list">
+            <article class="investment-route-item">
+              <span class="investment-route-number">01</span>
+              <div>
+                <h3>Conservador</h3>
+                <p>Priorizar la preservación del capital, controlar la volatilidad y mantener liquidez suficiente para imprevistos.</p>
+                <span class="investment-route-tag">Enfoque: estabilidad y control del riesgo</span>
+              </div>
+            </article>
 
-            <tbody>
-              <tr>
-                <td><strong>Conservador</strong></td>
-                <td>Priorizar la preservación del capital, controlar la volatilidad y mantener liquidez suficiente para imprevistos.</td>
-              </tr>
+            <article class="investment-route-item">
+              <span class="investment-route-number">02</span>
+              <div>
+                <h3>Moderado</h3>
+                <p>Buscar equilibrio entre estabilidad y crecimiento, combinando activos defensivos con exposición gradual a mercado.</p>
+                <span class="investment-route-tag">Enfoque: equilibrio y crecimiento progresivo</span>
+              </div>
+            </article>
 
-              <tr>
-                <td><strong>Moderado</strong></td>
-                <td>Buscar equilibrio entre estabilidad y crecimiento, combinando activos defensivos con exposición gradual a mercado.</td>
-              </tr>
-
-              <tr>
-                <td><strong>Dinámico</strong></td>
-                <td>Aceptar mayor volatilidad a cambio de mayor potencial de crecimiento, siempre con horizonte temporal suficiente y diversificación.</td>
-              </tr>
-            </tbody>
-          </table>
+            <article class="investment-route-item">
+              <span class="investment-route-number">03</span>
+              <div>
+                <h3>Dinámico</h3>
+                <p>Aceptar mayor volatilidad a cambio de mayor potencial de crecimiento, siempre con horizonte temporal suficiente y diversificación.</p>
+                <span class="investment-route-tag">Enfoque: crecimiento a largo plazo</span>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
 
     <section>
       <div class="container">
-        <div class="section-title">
-          <span>Planificación patrimonial</span>
-          <h2>Invertir empieza por saber qué quieres construir</h2>
-          <p>
-            No es lo mismo invertir para proteger ahorro, comprar una vivienda, preparar la jubilación, generar patrimonio familiar o buscar crecimiento a largo plazo.
-          </p>
-        </div>
+        <div class="planning-panel">
+          <div class="planning-main">
+            <span class="eyebrow">Planificación patrimonial</span>
+            <h2>Invertir empieza por saber qué quieres construir</h2>
+            <p>
+              No es lo mismo invertir para proteger ahorro, comprar una vivienda, preparar la jubilación, generar patrimonio familiar o buscar crecimiento a largo plazo. Antes de elegir vehículos, ordenamos objetivo, plazo y riesgo.
+            </p>
+          </div>
 
-        <div class="grid-3">
-          <article class="card">
-            <div class="card-icon">🎯</div>
-            <h3>Objetivos financieros</h3>
-            <p>Definimos qué quieres conseguir y qué papel tiene cada inversión dentro de tu planificación global.</p>
-          </article>
+          <div class="planning-steps">
+            <div class="planning-step">
+              <span>01</span>
+              <div>
+                <strong>Objetivos financieros</strong>
+                <p>Definimos qué quieres conseguir y qué papel tiene cada inversión dentro de tu planificación global.</p>
+              </div>
+            </div>
 
-          <article class="card">
-            <div class="card-icon">⏳</div>
-            <h3>Horizonte temporal</h3>
-            <p>El plazo marca qué nivel de riesgo tiene sentido asumir y qué estrategia puede ser más adecuada.</p>
-          </article>
+            <div class="planning-step">
+              <span>02</span>
+              <div>
+                <strong>Horizonte temporal</strong>
+                <p>El plazo marca qué nivel de riesgo tiene sentido asumir y qué estrategia puede ser más adecuada.</p>
+              </div>
+            </div>
 
-          <article class="card">
-            <div class="card-icon">⚖️</div>
-            <h3>Gestión del riesgo</h3>
-            <p>Analizamos qué volatilidad puedes tolerar para evitar decisiones emocionales en momentos de caída.</p>
-          </article>
+            <div class="planning-step">
+              <span>03</span>
+              <div>
+                <strong>Gestión del riesgo</strong>
+                <p>Analizamos qué volatilidad puedes tolerar para evitar decisiones emocionales en momentos de caída.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1680,27 +1979,27 @@
           </p>
         </div>
 
-        <div class="grid-4">
-          <article class="card">
-            <div class="card-icon">📊</div>
+        <div class="portfolio-route">
+          <article class="portfolio-route-item">
+            <div class="portfolio-route-icon">📊</div>
             <h3>Fondos de inversión</h3>
             <p>Permiten acceder a una gestión profesional, diversificación y flexibilidad fiscal según el caso.</p>
           </article>
 
-          <article class="card">
-            <div class="card-icon">🌍</div>
+          <article class="portfolio-route-item">
+            <div class="portfolio-route-icon">🌍</div>
             <h3>Diversificación global</h3>
             <p>Evita depender de un solo país, sector, empresa o tipo de activo.</p>
           </article>
 
-          <article class="card">
-            <div class="card-icon">🛡️</div>
+          <article class="portfolio-route-item">
+            <div class="portfolio-route-icon">🛡️</div>
             <h3>Protección patrimonial</h3>
             <p>Buscamos que la estrategia tenga sentido también en escenarios de incertidumbre o necesidad de liquidez.</p>
           </article>
 
-          <article class="card">
-            <div class="card-icon">🏦</div>
+          <article class="portfolio-route-item">
+            <div class="portfolio-route-icon">🏦</div>
             <h3>Fiscalidad y costes</h3>
             <p>La rentabilidad final también depende de impuestos, comisiones, traspasos y forma de rescate.</p>
           </article>
@@ -1946,7 +2245,7 @@
     }
 
     const revealElements = document.querySelectorAll(
-      ".section-title, .card, .highlight, .risk-alert, .table-wrap, .review-list, .faq-card, .cta-final"
+      ".section-title, .card, .highlight, .risk-alert, .table-wrap, .review-list, .faq-card, .cta-final, .investment-route, .planning-panel, .portfolio-route"
     );
 
     if ("IntersectionObserver" in window) {
