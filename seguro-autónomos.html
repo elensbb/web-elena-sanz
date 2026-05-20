@@ -879,6 +879,298 @@
       flex-wrap: wrap;
     }
 
+    /* CAMBIOS PUNTO 3: MENOS BLOQUES REPETITIVOS */
+    .autonomo-guide {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 34px;
+      align-items: stretch;
+    }
+
+    .autonomo-guide-main {
+      background:
+        radial-gradient(circle at top right, rgba(143,31,52,.08), transparent 36%),
+        rgba(255,255,255,.92);
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) + 4px);
+      padding: 34px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+    }
+
+    .autonomo-guide-main p {
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .autonomo-steps {
+      background: rgba(255,255,255,.86);
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) + 4px);
+      padding: 30px;
+      box-shadow: 0 14px 34px rgba(74,16,29,.07);
+    }
+
+    .autonomo-step {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 16px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .autonomo-step:first-child {
+      padding-top: 0;
+    }
+
+    .autonomo-step:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .autonomo-step span {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(143, 31, 52, 0.09);
+      color: var(--primary);
+      border: 1px solid rgba(143,31,52,.12);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: .9rem;
+    }
+
+    .autonomo-step strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 4px;
+      font-size: 1.02rem;
+    }
+
+    .autonomo-step p {
+      color: var(--muted);
+      font-size: .97rem;
+    }
+
+    .profile-route {
+      display: grid;
+      grid-template-columns: .86fr 1.14fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .profile-intro {
+      position: sticky;
+      top: 104px;
+      background:
+        radial-gradient(circle at top right, rgba(143,31,52,.08), transparent 36%),
+        rgba(255,255,255,.92);
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) + 4px);
+      padding: 34px;
+      box-shadow: 0 14px 34px rgba(74,16,29,.07);
+      backdrop-filter: blur(8px);
+    }
+
+    .profile-intro p {
+      color: var(--muted);
+      margin-top: 12px;
+    }
+
+    .profile-list,
+    .insurance-list,
+    .coverage-lines {
+      display: grid;
+      gap: 0;
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) + 4px);
+      overflow: hidden;
+      background: rgba(255,255,255,.90);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+    }
+
+    .profile-item,
+    .insurance-item,
+    .coverage-line {
+      display: grid;
+      grid-template-columns: 64px 1fr;
+      gap: 18px;
+      padding: 24px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(255,255,255,.72);
+      transition: background .22s ease;
+    }
+
+    .profile-item:last-child,
+    .insurance-item:last-child,
+    .coverage-line:last-child {
+      border-bottom: 0;
+    }
+
+    .profile-item:hover,
+    .insurance-item:hover,
+    .coverage-line:hover {
+      background: #fff7f3;
+    }
+
+    .profile-icon,
+    .insurance-icon,
+    .coverage-line .mini-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #fff7f3, #f6e7df);
+      color: var(--primary);
+      border: 1px solid rgba(143,31,52,.14);
+      display: grid;
+      place-items: center;
+      font-size: 1.25rem;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.85);
+    }
+
+    .profile-item h3,
+    .insurance-item h3,
+    .coverage-line h3 {
+      margin-bottom: 8px;
+    }
+
+    .profile-item p,
+    .insurance-item p,
+    .coverage-line p {
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .profile-tag,
+    .insurance-tag {
+      display: inline-flex;
+      padding: 9px 13px;
+      border-radius: 999px;
+      background: rgba(143,31,52,.08);
+      color: var(--primary);
+      font-size: .9rem;
+      font-weight: 800;
+      border: 1px solid rgba(143,31,52,.10);
+    }
+
+    .insurance-route {
+      display: grid;
+      grid-template-columns: .86fr 1.14fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .insurance-intro {
+      position: sticky;
+      top: 104px;
+      background:
+        radial-gradient(circle at top right, rgba(143,31,52,.08), transparent 36%),
+        rgba(255,255,255,.92);
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) + 4px);
+      padding: 34px;
+      box-shadow: 0 14px 34px rgba(74,16,29,.07);
+      backdrop-filter: blur(8px);
+    }
+
+    .insurance-intro p {
+      color: var(--muted);
+      margin-top: 12px;
+    }
+
+    .coverage-route {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .coverage-route-main {
+      background:
+        radial-gradient(circle at top right, rgba(143,31,52,.08), transparent 36%),
+        rgba(255,255,255,.92);
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) + 4px);
+      padding: 34px;
+      box-shadow: 0 14px 34px rgba(74,16,29,.07);
+      backdrop-filter: blur(8px);
+    }
+
+    .coverage-route-main p {
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .mobility-route {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .mobility-main {
+      background:
+        radial-gradient(circle at top right, rgba(143,31,52,.08), transparent 36%),
+        rgba(255,255,255,.92);
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) + 4px);
+      padding: 34px;
+      box-shadow: 0 14px 34px rgba(74,16,29,.07);
+      backdrop-filter: blur(8px);
+    }
+
+    .mobility-main p {
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .mobility-list {
+      display: grid;
+      gap: 0;
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) + 4px);
+      overflow: hidden;
+      background: rgba(255,255,255,.90);
+      box-shadow: var(--shadow);
+    }
+
+    .mobility-item {
+      display: grid;
+      grid-template-columns: 58px 1fr;
+      gap: 16px;
+      padding: 22px 24px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(255,255,255,.70);
+      transition: background .22s ease;
+    }
+
+    .mobility-item:last-child {
+      border-bottom: 0;
+    }
+
+    .mobility-item:hover {
+      background: #fff7f3;
+    }
+
+    .mobility-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #fff7f3, #f6e7df);
+      color: var(--primary);
+      border: 1px solid rgba(143,31,52,.14);
+      display: grid;
+      place-items: center;
+      font-size: 1.15rem;
+    }
+
+    .mobility-item p {
+      color: var(--muted);
+      font-size: .98rem;
+    }
+
     @media (max-width: 980px) {
       .grid-4 {
         grid-template-columns: repeat(2, 1fr);
@@ -922,8 +1214,18 @@
       .hero-grid,
       .highlight-grid,
       .grid-2,
-      .review-block {
+      .review-block,
+      .autonomo-guide,
+      .profile-route,
+      .insurance-route,
+      .coverage-route,
+      .mobility-route {
         grid-template-columns: 1fr;
+      }
+
+      .profile-intro,
+      .insurance-intro {
+        position: static;
       }
 
       .grid-3,
@@ -960,8 +1262,27 @@
       }
 
       .highlight,
-      .cta-final {
+      .cta-final,
+      .autonomo-guide-main,
+      .autonomo-steps,
+      .profile-intro,
+      .profile-item,
+      .insurance-intro,
+      .insurance-item,
+      .coverage-route-main,
+      .coverage-line,
+      .mobility-main,
+      .mobility-item {
         padding: 28px 20px;
+        border-radius: 20px;
+      }
+
+      .profile-item,
+      .insurance-item,
+      .coverage-line,
+      .mobility-item,
+      .autonomo-step {
+        grid-template-columns: 1fr;
       }
 
       .review-list,
@@ -1120,7 +1441,10 @@
       .cta-final p,
       .review-intro,
       .review-note,
-      .mistakes-side p {
+      .mistakes-side p,
+      .autonomo-guide-main p,
+      .coverage-route-main p,
+      .mobility-main p {
         font-size: 1rem;
         line-height: 1.6;
       }
@@ -1193,8 +1517,17 @@
       }
 
       .highlight,
-      .cta-final {
-        padding: 28px 20px;
+      .cta-final,
+      .autonomo-guide-main,
+      .autonomo-steps,
+      .profile-intro,
+      .profile-list,
+      .insurance-intro,
+      .insurance-list,
+      .coverage-route-main,
+      .coverage-lines,
+      .mobility-main,
+      .mobility-list {
         border-radius: 22px;
       }
 
@@ -1432,144 +1765,204 @@
 
     <section>
       <div class="container">
-        <div class="section-title">
-          <span>Protección para trabajar con más seguridad</span>
-          <h2>Cuando trabajas por cuenta propia, conviene revisar todo en conjunto</h2>
-          <p>
-            Un autónomo no siempre necesita contratar muchos seguros, pero sí necesita saber qué riesgos pueden afectar a su actividad. Una baja, una reclamación, un accidente, una avería del vehículo o un problema en el lugar desde donde trabajas pueden tener impacto directo en tus ingresos.
-          </p>
-        </div>
+        <div class="autonomo-guide">
+          <div class="autonomo-guide-main">
+            <span class="eyebrow">Protección para trabajar con más seguridad</span>
+            <h2>Cuando trabajas por cuenta propia, conviene revisar todo en conjunto</h2>
+            <p>
+              Un autónomo no siempre necesita contratar muchos seguros, pero sí necesita saber qué riesgos pueden afectar a su actividad. Una baja, una reclamación, un accidente, una avería del vehículo o un problema en el lugar desde donde trabajas pueden tener impacto directo en tus ingresos.
+            </p>
+          </div>
 
-        <div class="grid-3">
-          <article class="card">
-            <div class="card-icon">💶</div>
-            <h3>Tus ingresos</h3>
-            <p>Protección ante situaciones que pueden impedirte trabajar temporalmente, como una baja por accidente o enfermedad.</p>
-          </article>
+          <div class="autonomo-steps">
+            <div class="autonomo-step">
+              <span>01</span>
+              <div>
+                <strong>Tus ingresos</strong>
+                <p>Protección ante situaciones que pueden impedirte trabajar temporalmente, como una baja por accidente o enfermedad.</p>
+              </div>
+            </div>
 
-          <article class="card">
-            <div class="card-icon">⚖️</div>
-            <h3>Tu responsabilidad</h3>
-            <p>Cobertura ante reclamaciones de terceros por daños personales, materiales o perjuicios derivados de tu actividad.</p>
-          </article>
+            <div class="autonomo-step">
+              <span>02</span>
+              <div>
+                <strong>Tu responsabilidad</strong>
+                <p>Cobertura ante reclamaciones de terceros por daños personales, materiales o perjuicios derivados de tu actividad.</p>
+              </div>
+            </div>
 
-          <article class="card">
-            <div class="card-icon">🧰</div>
-            <h3>Tu medio de trabajo</h3>
-            <p>Vehículo profesional, herramientas, equipos, oficina en casa o local desde el que desarrollas tu actividad.</p>
-          </article>
+            <div class="autonomo-step">
+              <span>03</span>
+              <div>
+                <strong>Tu medio de trabajo</strong>
+                <p>Vehículo profesional, herramientas, equipos, oficina en casa o local desde el que desarrollas tu actividad.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="section-soft">
       <div class="container">
-        <div class="section-title center">
-          <span>Para distintos tipos de autónomos</span>
-          <h2>¿Para quién es recomendable esta revisión?</h2>
-          <p>
-            No necesita lo mismo un profesional que trabaja desde casa, un instalador, un repartidor, un consultor, un autónomo con furgoneta o alguien que atiende clientes de forma presencial.
-          </p>
-        </div>
+        <div class="profile-route">
+          <div class="profile-intro">
+            <span class="eyebrow">Para distintos tipos de autónomos</span>
+            <h2>¿Para quién es recomendable esta revisión?</h2>
+            <p>
+              No necesita lo mismo un profesional que trabaja desde casa, un instalador, un repartidor, un consultor, un autónomo con furgoneta o alguien que atiende clientes de forma presencial.
+            </p>
+            <p>
+              Por eso lo organizamos como perfiles de actividad, no como tarjetas repetidas: primero entendemos cómo trabajas y después revisamos qué protección puede encajar.
+            </p>
+          </div>
 
-        <div class="grid-3">
-          <article class="card">
-            <div class="card-icon">💻</div>
-            <h3>Profesionales que trabajan desde casa</h3>
-            <p>Para quienes tienen oficina en casa, ordenador, equipos profesionales o reciben clientes puntualmente.</p>
-          </article>
+          <div class="profile-list">
+            <article class="profile-item">
+              <div class="profile-icon">💻</div>
+              <div>
+                <h3>Profesionales que trabajan desde casa</h3>
+                <p>Para quienes tienen oficina en casa, ordenador, equipos profesionales o reciben clientes puntualmente.</p>
+                <span class="profile-tag">Riesgo principal: equipos y hogar profesional</span>
+              </div>
+            </article>
 
-          <article class="card">
-            <div class="card-icon">🧑‍🔧</div>
-            <h3>Instaladores y oficios</h3>
-            <p>Para profesionales que trabajan en viviendas, locales u obras y pueden causar daños a terceros durante su actividad.</p>
-          </article>
+            <article class="profile-item">
+              <div class="profile-icon">🧑‍🔧</div>
+              <div>
+                <h3>Instaladores y oficios</h3>
+                <p>Para profesionales que trabajan en viviendas, locales u obras y pueden causar daños a terceros durante su actividad.</p>
+                <span class="profile-tag">Riesgo principal: responsabilidad civil</span>
+              </div>
+            </article>
 
-          <article class="card">
-            <div class="card-icon">🚐</div>
-            <h3>Autónomos con vehículo</h3>
-            <p>Para quienes dependen de una furgoneta, vehículo profesional o herramienta móvil para trabajar a diario.</p>
-          </article>
+            <article class="profile-item">
+              <div class="profile-icon">🚐</div>
+              <div>
+                <h3>Autónomos con vehículo</h3>
+                <p>Para quienes dependen de una furgoneta, vehículo profesional o herramienta móvil para trabajar a diario.</p>
+                <span class="profile-tag">Riesgo principal: vehículo y continuidad</span>
+              </div>
+            </article>
 
-          <article class="card">
-            <div class="card-icon">🧾</div>
-            <h3>Profesionales con clientes</h3>
-            <p>Para asesores, técnicos, consultores o profesionales que pueden recibir reclamaciones por errores, daños o perjuicios.</p>
-          </article>
+            <article class="profile-item">
+              <div class="profile-icon">🧾</div>
+              <div>
+                <h3>Profesionales con clientes</h3>
+                <p>Para asesores, técnicos, consultores o profesionales que pueden recibir reclamaciones por errores, daños o perjuicios.</p>
+                <span class="profile-tag">Riesgo principal: reclamaciones</span>
+              </div>
+            </article>
 
-          <article class="card">
-            <div class="card-icon">🏠</div>
-            <h3>Actividad en vivienda habitual</h3>
-            <p>Para quienes desarrollan parte de su actividad profesional en su lugar de residencia.</p>
-          </article>
+            <article class="profile-item">
+              <div class="profile-icon">🏠</div>
+              <div>
+                <h3>Actividad en vivienda habitual</h3>
+                <p>Para quienes desarrollan parte de su actividad profesional en su lugar de residencia.</p>
+                <span class="profile-tag">Riesgo principal: actividad en casa</span>
+              </div>
+            </article>
 
-          <article class="card">
-            <div class="card-icon">👥</div>
-            <h3>Autónomos con colaboradores</h3>
-            <p>Para quienes trabajan con empleados, subcontratas o colaboradores y necesitan revisar responsabilidades adicionales.</p>
-          </article>
+            <article class="profile-item">
+              <div class="profile-icon">👥</div>
+              <div>
+                <h3>Autónomos con colaboradores</h3>
+                <p>Para quienes trabajan con empleados, subcontratas o colaboradores y necesitan revisar responsabilidades adicionales.</p>
+                <span class="profile-tag">Riesgo principal: responsabilidad ampliada</span>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="coberturas">
       <div class="container">
-        <div class="section-title center">
-          <span>Opciones principales</span>
-          <h2>Seguros que puede necesitar un autónomo</h2>
-          <p>
-            Esta página reúne las opciones más habituales para autónomos. Después podemos ampliar cada una en páginas específicas si quieres desarrollar más contenido.
-          </p>
-        </div>
+        <div class="insurance-route">
+          <div class="insurance-intro">
+            <span class="eyebrow">Opciones principales</span>
+            <h2>Seguros que puede necesitar un autónomo</h2>
+            <p>
+              Esta página reúne las opciones más habituales para autónomos. La clave no es contratarlo todo, sino entender qué función cumple cada seguro dentro de tu actividad.
+            </p>
+            <p>
+              Después podemos ampliar cada una en páginas específicas si quieres desarrollar más contenido.
+            </p>
+          </div>
 
-        <div class="grid-4">
-          <article class="card">
-            <div class="card-icon">⚖️</div>
-            <h3>Responsabilidad civil</h3>
-            <p>Para protegerte ante reclamaciones por daños causados a terceros durante el desarrollo de tu actividad.</p>
-          </article>
+          <div class="insurance-list">
+            <article class="insurance-item">
+              <div class="insurance-icon">⚖️</div>
+              <div>
+                <h3>Responsabilidad civil</h3>
+                <p>Para protegerte ante reclamaciones por daños causados a terceros durante el desarrollo de tu actividad.</p>
+                <span class="insurance-tag">Función: proteger tu patrimonio profesional</span>
+              </div>
+            </article>
 
-          <article class="card">
-            <div class="card-icon">🛏️</div>
-            <h3>Baja laboral</h3>
-            <p>Ayuda económica si una enfermedad o accidente te impide trabajar temporalmente.</p>
-          </article>
+            <article class="insurance-item">
+              <div class="insurance-icon">🛏️</div>
+              <div>
+                <h3>Baja laboral</h3>
+                <p>Ayuda económica si una enfermedad o accidente te impide trabajar temporalmente.</p>
+                <span class="insurance-tag">Función: proteger ingresos</span>
+              </div>
+            </article>
 
-          <article class="card">
-            <div class="card-icon">🩹</div>
-            <h3>Accidentes autónomos</h3>
-            <p>Protección ante fallecimiento, invalidez, hospitalización o lesiones derivadas de un accidente.</p>
-          </article>
+            <article class="insurance-item">
+              <div class="insurance-icon">🩹</div>
+              <div>
+                <h3>Accidentes autónomos</h3>
+                <p>Protección ante fallecimiento, invalidez, hospitalización o lesiones derivadas de un accidente.</p>
+                <span class="insurance-tag">Función: cubrir situaciones graves</span>
+              </div>
+            </article>
 
-          <article class="card">
-            <div class="card-icon">🩺</div>
-            <h3>Salud autónomos</h3>
-            <p>Asistencia sanitaria privada, reembolso, hospitalización, salud dental y servicios digitales.</p>
-          </article>
+            <article class="insurance-item">
+              <div class="insurance-icon">🩺</div>
+              <div>
+                <h3>Salud autónomos</h3>
+                <p>Asistencia sanitaria privada, reembolso, hospitalización, salud dental y servicios digitales.</p>
+                <span class="insurance-tag">Función: cuidar tu continuidad</span>
+              </div>
+            </article>
 
-          <article class="card">
-            <div class="card-icon">❤️</div>
-            <h3>Vida autónomos</h3>
-            <p>Para proteger a tu familia, tus deudas o tu estabilidad económica si ocurre algo grave.</p>
-          </article>
+            <article class="insurance-item">
+              <div class="insurance-icon">❤️</div>
+              <div>
+                <h3>Vida autónomos</h3>
+                <p>Para proteger a tu familia, tus deudas o tu estabilidad económica si ocurre algo grave.</p>
+                <span class="insurance-tag">Función: proteger a los tuyos</span>
+              </div>
+            </article>
 
-          <article class="card">
-            <div class="card-icon">🏠</div>
-            <h3>Hogar profesional</h3>
-            <p>Para autónomos que realizan su actividad desde su vivienda y necesitan proteger casa y actividad.</p>
-          </article>
+            <article class="insurance-item">
+              <div class="insurance-icon">🏠</div>
+              <div>
+                <h3>Hogar profesional</h3>
+                <p>Para autónomos que realizan su actividad desde su vivienda y necesitan proteger casa y actividad.</p>
+                <span class="insurance-tag">Función: cubrir vivienda y actividad</span>
+              </div>
+            </article>
 
-          <article class="card">
-            <div class="card-icon">🚐</div>
-            <h3>Furgonetas y vehículos</h3>
-            <p>Para quienes dependen de un vehículo profesional para desplazarse, transportar herramientas o trabajar.</p>
-          </article>
+            <article class="insurance-item">
+              <div class="insurance-icon">🚐</div>
+              <div>
+                <h3>Furgonetas y vehículos</h3>
+                <p>Para quienes dependen de un vehículo profesional para desplazarse, transportar herramientas o trabajar.</p>
+                <span class="insurance-tag">Función: mantener la movilidad</span>
+              </div>
+            </article>
 
-          <article class="card">
-            <div class="card-icon">📄</div>
-            <h3>Protección jurídica</h3>
-            <p>Asesoramiento jurídico y defensa ante conflictos relacionados con tu actividad o tu permiso de conducir.</p>
-          </article>
+            <article class="insurance-item">
+              <div class="insurance-icon">📄</div>
+              <div>
+                <h3>Protección jurídica</h3>
+                <p>Asesoramiento jurídico y defensa ante conflictos relacionados con tu actividad o tu permiso de conducir.</p>
+                <span class="insurance-tag">Función: apoyo legal</span>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -1620,110 +2013,112 @@
 
     <section class="section-soft">
       <div class="container">
-        <div class="section-title">
-          <span>Coberturas que conviene revisar</span>
-          <h2>Qué puede incluir una protección para autónomos</h2>
-          <p>
-            Las coberturas concretas dependen de la modalidad contratada, tu actividad, los límites, franquicias, carencias y condiciones de cada póliza.
-          </p>
-        </div>
+        <div class="coverage-route">
+          <div class="coverage-route-main">
+            <span class="eyebrow">Coberturas que conviene revisar</span>
+            <h2>Qué puede incluir una protección para autónomos</h2>
+            <p>
+              Las coberturas concretas dependen de la modalidad contratada, tu actividad, los límites, franquicias, carencias y condiciones de cada póliza. Aquí las ordenamos por función para que no se sienta como una lista interminable de cajas.
+            </p>
+          </div>
 
-        <div class="coverages">
-          <article class="coverage-card">
-            <div class="mini-icon">⚖️</div>
-            <div>
-              <h3>Indemnizaciones a terceros</h3>
-              <p>Pago de indemnizaciones por daños personales o materiales causados durante tu actividad profesional.</p>
-            </div>
-          </article>
+          <div class="coverage-lines">
+            <article class="coverage-line">
+              <div class="mini-icon">⚖️</div>
+              <div>
+                <h3>Indemnizaciones a terceros</h3>
+                <p>Pago de indemnizaciones por daños personales o materiales causados durante tu actividad profesional.</p>
+              </div>
+            </article>
 
-          <article class="coverage-card">
-            <div class="mini-icon">📄</div>
-            <div>
-              <h3>Defensa jurídica y fianzas</h3>
-              <p>Defensa civil o penal, costas, gastos judiciales y constitución de fianzas según modalidad.</p>
-            </div>
-          </article>
+            <article class="coverage-line">
+              <div class="mini-icon">📄</div>
+              <div>
+                <h3>Defensa jurídica y fianzas</h3>
+                <p>Defensa civil o penal, costas, gastos judiciales y constitución de fianzas según modalidad.</p>
+              </div>
+            </article>
 
-          <article class="coverage-card">
-            <div class="mini-icon">🛏️</div>
-            <div>
-              <h3>Incapacidad temporal</h3>
-              <p>Ayuda económica si una baja por accidente o enfermedad te impide trabajar temporalmente.</p>
-            </div>
-          </article>
+            <article class="coverage-line">
+              <div class="mini-icon">🛏️</div>
+              <div>
+                <h3>Incapacidad temporal</h3>
+                <p>Ayuda económica si una baja por accidente o enfermedad te impide trabajar temporalmente.</p>
+              </div>
+            </article>
 
-          <article class="coverage-card">
-            <div class="mini-icon">💶</div>
-            <div>
-              <h3>Cuota de autónomo</h3>
-              <p>Reembolso de la cuota mensual del RETA o régimen asimilado en determinados supuestos cubiertos.</p>
-            </div>
-          </article>
+            <article class="coverage-line">
+              <div class="mini-icon">💶</div>
+              <div>
+                <h3>Cuota de autónomo</h3>
+                <p>Reembolso de la cuota mensual del RETA o régimen asimilado en determinados supuestos cubiertos.</p>
+              </div>
+            </article>
 
-          <article class="coverage-card">
-            <div class="mini-icon">♿</div>
-            <div>
-              <h3>Invalidez permanente</h3>
-              <p>Indemnización si un accidente deja secuelas permanentes, según baremo y capital contratado.</p>
-            </div>
-          </article>
+            <article class="coverage-line">
+              <div class="mini-icon">♿</div>
+              <div>
+                <h3>Invalidez permanente</h3>
+                <p>Indemnización si un accidente deja secuelas permanentes, según baremo y capital contratado.</p>
+              </div>
+            </article>
 
-          <article class="coverage-card">
-            <div class="mini-icon">❤️</div>
-            <div>
-              <h3>Fallecimiento o vida riesgo</h3>
-              <p>Protección económica para beneficiarios, familia, préstamos o hipoteca si ocurre una situación grave.</p>
-            </div>
-          </article>
+            <article class="coverage-line">
+              <div class="mini-icon">❤️</div>
+              <div>
+                <h3>Fallecimiento o vida riesgo</h3>
+                <p>Protección económica para beneficiarios, familia, préstamos o hipoteca si ocurre una situación grave.</p>
+              </div>
+            </article>
 
-          <article class="coverage-card">
-            <div class="mini-icon">🩺</div>
-            <div>
-              <h3>Salud privada</h3>
-              <p>Asistencia médica privada, especialistas, hospitalización, videoconsulta, segunda opinión médica y salud dental.</p>
-            </div>
-          </article>
+            <article class="coverage-line">
+              <div class="mini-icon">🩺</div>
+              <div>
+                <h3>Salud privada</h3>
+                <p>Asistencia médica privada, especialistas, hospitalización, videoconsulta, segunda opinión médica y salud dental.</p>
+              </div>
+            </article>
 
-          <article class="coverage-card">
-            <div class="mini-icon">🛏️</div>
-            <div>
-              <h3>Subsidio por hospitalización</h3>
-              <p>Cantidad pactada por ingreso hospitalario o intervención, según condiciones contratadas.</p>
-            </div>
-          </article>
+            <article class="coverage-line">
+              <div class="mini-icon">🏥</div>
+              <div>
+                <h3>Subsidio por hospitalización</h3>
+                <p>Cantidad pactada por ingreso hospitalario o intervención, según condiciones contratadas.</p>
+              </div>
+            </article>
 
-          <article class="coverage-card">
-            <div class="mini-icon">🏠</div>
-            <div>
-              <h3>Hogar profesional</h3>
-              <p>Protección para autónomos que desarrollan su actividad profesional desde su vivienda.</p>
-            </div>
-          </article>
+            <article class="coverage-line">
+              <div class="mini-icon">🏠</div>
+              <div>
+                <h3>Hogar profesional</h3>
+                <p>Protección para autónomos que desarrollan su actividad profesional desde su vivienda.</p>
+              </div>
+            </article>
 
-          <article class="coverage-card">
-            <div class="mini-icon">💻</div>
-            <div>
-              <h3>Equipos profesionales</h3>
-              <p>Ordenadores, herramientas, material profesional o equipos necesarios para tu actividad.</p>
-            </div>
-          </article>
+            <article class="coverage-line">
+              <div class="mini-icon">💻</div>
+              <div>
+                <h3>Equipos profesionales</h3>
+                <p>Ordenadores, herramientas, material profesional o equipos necesarios para tu actividad.</p>
+              </div>
+            </article>
 
-          <article class="coverage-card">
-            <div class="mini-icon">🚐</div>
-            <div>
-              <h3>Vehículo profesional</h3>
-              <p>Furgonetas, asistencia en carretera, defensa en multas y servicios relacionados con el vehículo de trabajo.</p>
-            </div>
-          </article>
+            <article class="coverage-line">
+              <div class="mini-icon">🚐</div>
+              <div>
+                <h3>Vehículo profesional</h3>
+                <p>Furgonetas, asistencia en carretera, defensa en multas y servicios relacionados con el vehículo de trabajo.</p>
+              </div>
+            </article>
 
-          <article class="coverage-card">
-            <div class="mini-icon">📈</div>
-            <div>
-              <h3>Ahorro y jubilación</h3>
-              <p>Opciones de previsión para complementar tu planificación futura como trabajador por cuenta propia.</p>
-            </div>
-          </article>
+            <article class="coverage-line">
+              <div class="mini-icon">📈</div>
+              <div>
+                <h3>Ahorro y jubilación</h3>
+                <p>Opciones de previsión para complementar tu planificación futura como trabajador por cuenta propia.</p>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -1776,50 +2171,64 @@
 
     <section>
       <div class="container">
-        <div class="section-title">
-          <span>Vehículos y movilidad</span>
-          <h2>Si tu vehículo es parte de tu trabajo, también conviene revisarlo</h2>
-          <p>
-            Algunos autónomos dependen de una furgoneta o vehículo profesional para acudir a clientes, transportar herramientas, repartir productos o realizar servicios. En esos casos, la asistencia en carretera, la defensa en multas y la cobertura adecuada del vehículo pueden ser clave.
-          </p>
-        </div>
+        <div class="mobility-route">
+          <div class="mobility-main">
+            <span class="eyebrow">Vehículos y movilidad</span>
+            <h2>Si tu vehículo es parte de tu trabajo, también conviene revisarlo</h2>
+            <p>
+              Algunos autónomos dependen de una furgoneta o vehículo profesional para acudir a clientes, transportar herramientas, repartir productos o realizar servicios. En esos casos, la asistencia en carretera, la defensa en multas y la cobertura adecuada del vehículo pueden ser clave.
+            </p>
+          </div>
 
-        <div class="grid-3">
-          <article class="card">
-            <div class="card-icon">🚐</div>
-            <h3>Furgonetas</h3>
-            <p>Para autónomos que usan una furgoneta como herramienta principal de trabajo.</p>
-          </article>
+          <div class="mobility-list">
+            <article class="mobility-item">
+              <div class="mobility-icon">🚐</div>
+              <div>
+                <h3>Furgonetas</h3>
+                <p>Para autónomos que usan una furgoneta como herramienta principal de trabajo.</p>
+              </div>
+            </article>
 
-          <article class="card">
-            <div class="card-icon">🧰</div>
-            <h3>Herramientas y material</h3>
-            <p>Conviene revisar si transportas herramientas, maquinaria, mercancía o equipos profesionales.</p>
-          </article>
+            <article class="mobility-item">
+              <div class="mobility-icon">🧰</div>
+              <div>
+                <h3>Herramientas y material</h3>
+                <p>Conviene revisar si transportas herramientas, maquinaria, mercancía o equipos profesionales.</p>
+              </div>
+            </article>
 
-          <article class="card">
-            <div class="card-icon">🧭</div>
-            <h3>Asistencia en carretera</h3>
-            <p>Servicio importante si dependes del vehículo para llegar a clientes o prestar tus servicios.</p>
-          </article>
+            <article class="mobility-item">
+              <div class="mobility-icon">🧭</div>
+              <div>
+                <h3>Asistencia en carretera</h3>
+                <p>Servicio importante si dependes del vehículo para llegar a clientes o prestar tus servicios.</p>
+              </div>
+            </article>
 
-          <article class="card">
-            <div class="card-icon">📩</div>
-            <h3>Defensa en multas</h3>
-            <p>Puede ayudarte a gestionar sanciones relacionadas con la conducción profesional.</p>
-          </article>
+            <article class="mobility-item">
+              <div class="mobility-icon">📩</div>
+              <div>
+                <h3>Defensa en multas</h3>
+                <p>Puede ayudarte a gestionar sanciones relacionadas con la conducción profesional.</p>
+              </div>
+            </article>
 
-          <article class="card">
-            <div class="card-icon">🚜</div>
-            <h3>Vehículos agrarios</h3>
-            <p>Para actividades que utilizan maquinaria o vehículos vinculados al entorno agrario.</p>
-          </article>
+            <article class="mobility-item">
+              <div class="mobility-icon">🚜</div>
+              <div>
+                <h3>Vehículos agrarios</h3>
+                <p>Para actividades que utilizan maquinaria o vehículos vinculados al entorno agrario.</p>
+              </div>
+            </article>
 
-          <article class="card">
-            <div class="card-icon">🪪</div>
-            <h3>Retirada de carnet</h3>
-            <p>Puede ser importante si tu permiso de conducir es imprescindible para trabajar.</p>
-          </article>
+            <article class="mobility-item">
+              <div class="mobility-icon">🪪</div>
+              <div>
+                <h3>Retirada de carnet</h3>
+                <p>Puede ser importante si tu permiso de conducir es imprescindible para trabajar.</p>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -2135,7 +2544,7 @@
     }
 
     const revealElements = document.querySelectorAll(
-      ".section-title, .card, .coverage-card, .highlight, .review-list, .mistakes-list, .faq-card, .cta-final"
+      ".section-title, .card, .coverage-card, .highlight, .review-list, .mistakes-list, .faq-card, .cta-final, .autonomo-guide, .profile-route, .insurance-route, .coverage-route, .mobility-route, .profile-item, .insurance-item, .coverage-line, .mobility-item"
     );
 
     if ("IntersectionObserver" in window) {
