@@ -430,131 +430,192 @@
       font-size: 1.04rem;
     }
 
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
     .grid-2 {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 18px;
     }
 
-    .business-grid {
+    .business-guide {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 34px;
+      align-items: stretch;
     }
 
-    .card,
-    .business-card {
-      background: rgba(255,255,255,.96);
-      backdrop-filter: blur(8px);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: 24px;
-      box-shadow: 0 14px 34px rgba(74,16,29,.07);
-      height: 100%;
-      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .card::before,
-    .business-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
+    .business-guide-main {
       background:
-        radial-gradient(circle at top right, rgba(143,31,52,.06), transparent 42%),
-        linear-gradient(135deg, rgba(255,253,251,.45), transparent);
-      pointer-events: none;
-    }
-
-    .card > *,
-    .business-card > * {
-      position: relative;
-      z-index: 1;
-    }
-
-    .card:hover,
-    .business-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 22px 48px rgba(74,16,29,.12);
-      border-color: rgba(143, 31, 52, 0.24);
-    }
-
-    .card-icon,
-    .business-icon {
-      width: 50px;
-      height: 50px;
-      border-radius: 16px;
-      background: linear-gradient(135deg, #fff7f3, #f6e7df);
-      color: #8f1f34;
-      border: 1px solid rgba(143,31,52,.14);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.85);
-      display: grid;
-      place-items: center;
-      font-size: 1.45rem;
-      margin-bottom: 18px;
-    }
-
-    .card p,
-    .business-card p {
-      color: var(--muted);
-    }
-
-    .business-card h3 {
-      font-size: 1.08rem;
-    }
-
-    .business-card p {
-      font-size: 0.96rem;
-    }
-
-    .coverages {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-    }
-
-    .coverage-card {
-      background: rgba(255,255,255,.96);
-      backdrop-filter: blur(8px);
+        radial-gradient(circle at top right, rgba(143,31,52,.08), transparent 36%),
+        rgba(255,255,255,.92);
       border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: 22px;
-      display: flex;
+      border-radius: calc(var(--radius) + 4px);
+      padding: 34px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+    }
+
+    .business-guide-main p {
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .business-steps {
+      background: rgba(255,255,255,.86);
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) + 4px);
+      padding: 30px;
+      box-shadow: 0 14px 34px rgba(74,16,29,.07);
+    }
+
+    .business-step {
+      display: grid;
+      grid-template-columns: 48px 1fr;
       gap: 16px;
-      align-items: flex-start;
-      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
-      box-shadow: 0 12px 28px rgba(74,16,29,.06);
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
     }
 
-    .coverage-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 18px 38px rgba(74,16,29,.11);
-      border-color: rgba(143, 31, 52, 0.24);
+    .business-step:first-child {
+      padding-top: 0;
     }
 
-    .coverage-card .mini-icon {
-      width: 42px;
-      height: 42px;
-      border-radius: 14px;
+    .business-step:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .business-step span {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(143, 31, 52, 0.09);
+      color: var(--primary);
+      border: 1px solid rgba(143,31,52,.12);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: .9rem;
+    }
+
+    .business-step strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 4px;
+      font-size: 1.02rem;
+    }
+
+    .business-step p {
+      color: var(--muted);
+      font-size: .97rem;
+    }
+
+    .activity-route,
+    .coverage-route,
+    .budget-route {
+      display: grid;
+      grid-template-columns: .86fr 1.14fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .activity-intro,
+    .coverage-route-main,
+    .budget-intro {
+      position: sticky;
+      top: 104px;
+      background:
+        radial-gradient(circle at top right, rgba(143,31,52,.08), transparent 36%),
+        rgba(255,255,255,.92);
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) + 4px);
+      padding: 34px;
+      box-shadow: 0 14px 34px rgba(74,16,29,.07);
+      backdrop-filter: blur(8px);
+    }
+
+    .activity-intro p,
+    .coverage-route-main p,
+    .budget-intro p {
+      color: var(--muted);
+      margin-top: 12px;
+    }
+
+    .activity-list,
+    .coverage-lines,
+    .budget-list {
+      display: grid;
+      gap: 0;
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) + 4px);
+      overflow: hidden;
+      background: rgba(255,255,255,.90);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+    }
+
+    .activity-item,
+    .coverage-line,
+    .budget-item {
+      display: grid;
+      grid-template-columns: 64px 1fr;
+      gap: 18px;
+      padding: 24px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(255,255,255,.72);
+      transition: background .22s ease;
+    }
+
+    .activity-item:last-child,
+    .coverage-line:last-child,
+    .budget-item:last-child {
+      border-bottom: 0;
+    }
+
+    .activity-item:hover,
+    .coverage-line:hover,
+    .budget-item:hover {
+      background: #fff7f3;
+    }
+
+    .activity-icon,
+    .coverage-line .mini-icon,
+    .budget-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 18px;
       background: linear-gradient(135deg, #fff7f3, #f6e7df);
-      color: #8f1f34;
+      color: var(--primary);
       border: 1px solid rgba(143,31,52,.14);
       display: grid;
       place-items: center;
-      flex: 0 0 auto;
-      font-size: 1.2rem;
+      font-size: 1.25rem;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.85);
     }
 
-    .coverage-card p {
+    .activity-item h3,
+    .coverage-line h3,
+    .budget-item h3 {
+      margin-bottom: 8px;
+    }
+
+    .activity-item p,
+    .coverage-line p,
+    .budget-item p {
       color: var(--muted);
-      font-size: 0.98rem;
+      margin-bottom: 12px;
+    }
+
+    .activity-tag,
+    .coverage-tag,
+    .budget-tag {
+      display: inline-flex;
+      padding: 9px 13px;
+      border-radius: 999px;
+      background: rgba(143,31,52,.08);
+      color: var(--primary);
+      font-size: .9rem;
+      font-weight: 800;
+      border: 1px solid rgba(143,31,52,.10);
     }
 
     .data-box {
@@ -711,12 +772,6 @@
       color: var(--primary);
     }
 
-    @media (max-width: 1000px) {
-      .business-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
     @media (max-width: 900px) {
       .nav-links,
       .nav-actions {
@@ -748,12 +803,20 @@
       }
 
       .hero-grid,
-      .grid-2 {
+      .grid-2,
+      .business-guide,
+      .activity-route,
+      .coverage-route,
+      .budget-route {
         grid-template-columns: 1fr;
       }
 
-      .grid-3,
-      .coverages,
+      .activity-intro,
+      .coverage-route-main,
+      .budget-intro {
+        position: static;
+      }
+
       .data-list {
         grid-template-columns: 1fr;
       }
@@ -791,22 +854,27 @@
         min-height: 52px;
       }
 
-      .business-grid {
-        grid-template-columns: 1fr;
-      }
-
       .hero-card,
       .data-box,
       .review-box,
-      .cta-final {
+      .cta-final,
+      .business-guide-main,
+      .business-steps,
+      .activity-intro,
+      .activity-item,
+      .coverage-route-main,
+      .coverage-line,
+      .budget-intro,
+      .budget-item {
         padding: 26px 20px;
         border-radius: 20px;
       }
 
-      .card,
-      .business-card,
-      .coverage-card {
-        padding: 20px;
+      .business-step,
+      .activity-item,
+      .coverage-line,
+      .budget-item {
+        grid-template-columns: 1fr;
       }
 
       .footer-inner {
@@ -949,7 +1017,10 @@
       .section-title p,
       .text-muted,
       .data-box p,
-      .cta-final p {
+      .cta-final p,
+      .business-guide-main p,
+      .coverage-route-main p,
+      .budget-intro p {
         font-size: 1rem;
         line-height: 1.6;
       }
@@ -980,52 +1051,17 @@
         text-align: left;
       }
 
-      .grid-3,
-      .coverages,
-      .data-list,
-      .business-grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
-      }
-
-      .card,
-      .business-card,
-      .coverage-card {
-        padding: 24px 20px;
-        border-radius: 22px;
-      }
-
-      .card:hover,
-      .business-card:hover,
-      .coverage-card:hover {
-        transform: none;
-      }
-
-      .card-icon,
-      .business-icon {
-        width: 52px;
-        height: 52px;
-        border-radius: 18px;
-        font-size: 1.35rem;
-        margin-bottom: 14px;
-      }
-
-      .coverage-card {
-        display: grid;
-        grid-template-columns: 48px 1fr;
-        gap: 14px;
-      }
-
-      .coverage-card .mini-icon {
-        width: 48px;
-        height: 48px;
-        border-radius: 16px;
-      }
-
       .data-box,
       .review-box,
-      .cta-final {
-        padding: 28px 20px;
+      .cta-final,
+      .business-guide-main,
+      .business-steps,
+      .activity-intro,
+      .activity-list,
+      .coverage-route-main,
+      .coverage-lines,
+      .budget-intro,
+      .budget-list {
         border-radius: 22px;
       }
 
@@ -1111,15 +1147,8 @@
       .hero-card,
       .data-box,
       .review-box,
-      .cta-final,
-      .card,
-      .business-card,
-      .coverage-card {
+      .cta-final {
         padding: 24px 18px;
-      }
-
-      .coverage-card {
-        grid-template-columns: 1fr;
       }
 
       .trust-line {
@@ -1224,182 +1253,277 @@
 
     <section>
       <div class="container">
-        <div class="section-title">
-          <span>Directo y sencillo</span>
-          <h2>Cada negocio tiene riesgos diferentes</h2>
-          <p>
-            No necesita lo mismo una peluquería que una oficina, una clínica, un bar o un almacén. Lo importante es adaptar la póliza a tu actividad real.
-          </p>
-        </div>
+        <div class="business-guide">
+          <div class="business-guide-main">
+            <span class="eyebrow">Directo y sencillo</span>
+            <h2>Cada negocio tiene riesgos diferentes</h2>
+            <p>
+              No necesita lo mismo una peluquería que una oficina, una clínica, un bar o un almacén. Lo importante es adaptar la póliza a tu actividad real, no contratar una cobertura genérica.
+            </p>
+          </div>
 
-        <div class="grid-3">
-          <article class="card">
-            <div class="card-icon">🏢</div>
-            <h3>Local</h3>
-            <p>Instalaciones, cristales, rótulos, mobiliario, maquinaria, mejoras y elementos necesarios para trabajar.</p>
-          </article>
+          <div class="business-steps">
+            <div class="business-step">
+              <span>01</span>
+              <div>
+                <strong>El local</strong>
+                <p>Instalaciones, cristales, rótulos, mobiliario, maquinaria, mejoras y elementos necesarios para trabajar.</p>
+              </div>
+            </div>
 
-          <article class="card">
-            <div class="card-icon">📦</div>
-            <h3>Contenido y mercancía</h3>
-            <p>Stock, productos, herramientas, equipos informáticos, maquinaria o bienes almacenados.</p>
-          </article>
+            <div class="business-step">
+              <span>02</span>
+              <div>
+                <strong>El contenido y la mercancía</strong>
+                <p>Stock, productos, herramientas, equipos informáticos, maquinaria o bienes almacenados.</p>
+              </div>
+            </div>
 
-          <article class="card">
-            <div class="card-icon">⚖️</div>
-            <h3>Responsabilidad civil</h3>
-            <p>Daños a clientes, proveedores, empleados o terceros relacionados con tu actividad.</p>
-          </article>
+            <div class="business-step">
+              <span>03</span>
+              <div>
+                <strong>La responsabilidad civil</strong>
+                <p>Daños a clientes, proveedores, empleados o terceros relacionados con tu actividad.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="section-soft">
       <div class="container">
-        <div class="section-title center">
-          <span>Ejemplos por tipo de negocio</span>
-          <h2>¿Qué puede necesitar tu negocio?</h2>
-          <p>
-            Estos ejemplos sirven para que el cliente se identifique rápido con su actividad.
-          </p>
-        </div>
+        <div class="activity-route">
+          <div class="activity-intro">
+            <span class="eyebrow">Ejemplos por tipo de negocio</span>
+            <h2>Qué puede necesitar tu negocio según la actividad</h2>
+            <p>
+              Estos ejemplos sirven para identificar rápido los riesgos principales de cada tipo de negocio.
+            </p>
+            <p>
+              Lo mostramos como una ruta por actividad para evitar una sensación de tarjetas repetidas y hacer más fácil la lectura.
+            </p>
+          </div>
 
-        <div class="business-grid">
-          <article class="business-card">
-            <div class="business-icon">💇</div>
-            <h3>Peluquería o estética</h3>
-            <p>Local, mobiliario, aparatología, daños a clientes, robo, incendio, agua y responsabilidad civil.</p>
-          </article>
+          <div class="activity-list">
+            <article class="activity-item">
+              <div class="activity-icon">💇</div>
+              <div>
+                <h3>Peluquería o estética</h3>
+                <p>Local, mobiliario, aparatología, daños a clientes, robo, incendio, agua y responsabilidad civil.</p>
+                <span class="activity-tag">Riesgo principal: atención al público y aparatología</span>
+              </div>
+            </article>
 
-          <article class="business-card">
-            <div class="business-icon">🛍️</div>
-            <h3>Tienda o comercio</h3>
-            <p>Mercancía, escaparate, rótulo, robo, daños por agua, incendio y paralización de actividad.</p>
-          </article>
+            <article class="activity-item">
+              <div class="activity-icon">🛍️</div>
+              <div>
+                <h3>Tienda o comercio</h3>
+                <p>Mercancía, escaparate, rótulo, robo, daños por agua, incendio y paralización de actividad.</p>
+                <span class="activity-tag">Riesgo principal: stock y escaparate</span>
+              </div>
+            </article>
 
-          <article class="business-card">
-            <div class="business-icon">💼</div>
-            <h3>Oficina</h3>
-            <p>Equipos informáticos, mobiliario, responsabilidad civil, daños eléctricos y protección del local.</p>
-          </article>
+            <article class="activity-item">
+              <div class="activity-icon">💼</div>
+              <div>
+                <h3>Oficina</h3>
+                <p>Equipos informáticos, mobiliario, responsabilidad civil, daños eléctricos y protección del local.</p>
+                <span class="activity-tag">Riesgo principal: equipos y continuidad</span>
+              </div>
+            </article>
 
-          <article class="business-card">
-            <div class="business-icon">🩺</div>
-            <h3>Clínica o centro sanitario</h3>
-            <p>Aparatos, camillas, equipos, responsabilidad civil, daños en el local y continuidad del servicio.</p>
-          </article>
+            <article class="activity-item">
+              <div class="activity-icon">🩺</div>
+              <div>
+                <h3>Clínica o centro sanitario</h3>
+                <p>Aparatos, camillas, equipos, responsabilidad civil, daños en el local y continuidad del servicio.</p>
+                <span class="activity-tag">Riesgo principal: equipos y responsabilidad</span>
+              </div>
+            </article>
 
-          <article class="business-card">
-            <div class="business-icon">🍽️</div>
-            <h3>Bar o restaurante</h3>
-            <p>Cocina, cámaras, alimentos, terraza, responsabilidad civil, incendio, agua, robo y asistencia urgente.</p>
-          </article>
+            <article class="activity-item">
+              <div class="activity-icon">🍽️</div>
+              <div>
+                <h3>Bar o restaurante</h3>
+                <p>Cocina, cámaras, alimentos, terraza, responsabilidad civil, incendio, agua, robo y asistencia urgente.</p>
+                <span class="activity-tag">Riesgo principal: cocina, clientes y actividad diaria</span>
+              </div>
+            </article>
 
-          <article class="business-card">
-            <div class="business-icon">📦</div>
-            <h3>Almacén</h3>
-            <p>Mercancía, existencias, maquinaria, incendios, robos, daños por agua y sistemas de seguridad.</p>
-          </article>
+            <article class="activity-item">
+              <div class="activity-icon">📦</div>
+              <div>
+                <h3>Almacén</h3>
+                <p>Mercancía, existencias, maquinaria, incendios, robos, daños por agua y sistemas de seguridad.</p>
+                <span class="activity-tag">Riesgo principal: existencias y seguridad</span>
+              </div>
+            </article>
 
-          <article class="business-card">
-            <div class="business-icon">🔧</div>
-            <h3>Taller o servicio técnico</h3>
-            <p>Herramientas, maquinaria, vehículos o bienes de clientes, responsabilidad civil y robo.</p>
-          </article>
+            <article class="activity-item">
+              <div class="activity-icon">🔧</div>
+              <div>
+                <h3>Taller o servicio técnico</h3>
+                <p>Herramientas, maquinaria, vehículos o bienes de clientes, responsabilidad civil y robo.</p>
+                <span class="activity-tag">Riesgo principal: herramientas y bienes de clientes</span>
+              </div>
+            </article>
 
-          <article class="business-card">
-            <div class="business-icon">🏭</div>
-            <h3>Pyme o actividad industrial</h3>
-            <p>Maquinaria, producto, almacén, empleados, responsabilidad civil y paralización de actividad.</p>
-          </article>
+            <article class="activity-item">
+              <div class="activity-icon">🏭</div>
+              <div>
+                <h3>Pyme o actividad industrial</h3>
+                <p>Maquinaria, producto, almacén, empleados, responsabilidad civil y paralización de actividad.</p>
+                <span class="activity-tag">Riesgo principal: maquinaria, empleados y producción</span>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="coberturas">
       <div class="container">
-        <div class="section-title">
-          <span>Coberturas principales</span>
-          <h2>Qué conviene revisar en un seguro de negocio</h2>
-          <p>
-            Las coberturas exactas dependen de la actividad, del local y de los capitales asegurados.
-          </p>
-        </div>
+        <div class="coverage-route">
+          <div class="coverage-route-main">
+            <span class="eyebrow">Coberturas principales</span>
+            <h2>Qué conviene revisar en un seguro de negocio</h2>
+            <p>
+              Las coberturas exactas dependen de la actividad, del local y de los capitales asegurados. Aquí se ordenan por función para que se entienda qué protege cada bloque.
+            </p>
+          </div>
 
-        <div class="coverages">
-          <article class="coverage-card">
-            <div class="mini-icon">🔥</div>
-            <div>
-              <h3>Incendio y explosión</h3>
-              <p>Daños en local, mobiliario, maquinaria o mercancía por incendio, rayo o explosión.</p>
-            </div>
-          </article>
+          <div class="coverage-lines">
+            <article class="coverage-line">
+              <div class="mini-icon">🔥</div>
+              <div>
+                <h3>Incendio y explosión</h3>
+                <p>Daños en local, mobiliario, maquinaria o mercancía por incendio, rayo o explosión.</p>
+                <span class="coverage-tag">Función: proteger estructura y contenido</span>
+              </div>
+            </article>
 
-          <article class="coverage-card">
-            <div class="mini-icon">💧</div>
-            <div>
-              <h3>Daños por agua</h3>
-              <p>Fugas, escapes, roturas o daños por agua que afecten al local o contenido.</p>
-            </div>
-          </article>
+            <article class="coverage-line">
+              <div class="mini-icon">💧</div>
+              <div>
+                <h3>Daños por agua</h3>
+                <p>Fugas, escapes, roturas o daños por agua que afecten al local o contenido.</p>
+                <span class="coverage-tag">Función: cubrir incidencias frecuentes</span>
+              </div>
+            </article>
 
-          <article class="coverage-card">
-            <div class="mini-icon">🔐</div>
-            <div>
-              <h3>Robo</h3>
-              <p>Robo de mercancía, mobiliario, maquinaria, dinero o desperfectos derivados.</p>
-            </div>
-          </article>
+            <article class="coverage-line">
+              <div class="mini-icon">🔐</div>
+              <div>
+                <h3>Robo</h3>
+                <p>Robo de mercancía, mobiliario, maquinaria, dinero o desperfectos derivados.</p>
+                <span class="coverage-tag">Función: proteger stock y bienes</span>
+              </div>
+            </article>
 
-          <article class="coverage-card">
-            <div class="mini-icon">🪟</div>
-            <div>
-              <h3>Roturas</h3>
-              <p>Cristales, escaparates, rótulos, lunas, sanitarios u otros elementos asegurados.</p>
-            </div>
-          </article>
+            <article class="coverage-line">
+              <div class="mini-icon">🪟</div>
+              <div>
+                <h3>Roturas</h3>
+                <p>Cristales, escaparates, rótulos, lunas, sanitarios u otros elementos asegurados.</p>
+                <span class="coverage-tag">Función: proteger imagen y elementos visibles</span>
+              </div>
+            </article>
 
-          <article class="coverage-card">
-            <div class="mini-icon">⚡</div>
-            <div>
-              <h3>Daños eléctricos</h3>
-              <p>Instalaciones, equipos informáticos, cámaras, maquinaria o aparatos conectados.</p>
-            </div>
-          </article>
+            <article class="coverage-line">
+              <div class="mini-icon">⚡</div>
+              <div>
+                <h3>Daños eléctricos</h3>
+                <p>Instalaciones, equipos informáticos, cámaras, maquinaria o aparatos conectados.</p>
+                <span class="coverage-tag">Función: proteger equipos de trabajo</span>
+              </div>
+            </article>
 
-          <article class="coverage-card">
-            <div class="mini-icon">⚖️</div>
-            <div>
-              <h3>Responsabilidad civil</h3>
-              <p>Reclamaciones de clientes, proveedores, empleados o terceros por daños causados.</p>
-            </div>
-          </article>
+            <article class="coverage-line">
+              <div class="mini-icon">⚖️</div>
+              <div>
+                <h3>Responsabilidad civil</h3>
+                <p>Reclamaciones de clientes, proveedores, empleados o terceros por daños causados.</p>
+                <span class="coverage-tag">Función: proteger frente a reclamaciones</span>
+              </div>
+            </article>
 
-          <article class="coverage-card">
-            <div class="mini-icon">⏸️</div>
-            <div>
-              <h3>Paralización de actividad</h3>
-              <p>Ayuda si un siniestro cubierto te impide abrir o trabajar con normalidad.</p>
-            </div>
-          </article>
+            <article class="coverage-line">
+              <div class="mini-icon">⏸️</div>
+              <div>
+                <h3>Paralización de actividad</h3>
+                <p>Ayuda si un siniestro cubierto te impide abrir o trabajar con normalidad.</p>
+                <span class="coverage-tag">Función: proteger continuidad económica</span>
+              </div>
+            </article>
 
-          <article class="coverage-card">
-            <div class="mini-icon">🚨</div>
-            <div>
-              <h3>Asistencia urgente</h3>
-              <p>Servicios para resolver incidencias urgentes en el local o negocio.</p>
-            </div>
-          </article>
+            <article class="coverage-line">
+              <div class="mini-icon">🚨</div>
+              <div>
+                <h3>Asistencia urgente</h3>
+                <p>Servicios para resolver incidencias urgentes en el local o negocio.</p>
+                <span class="coverage-tag">Función: respuesta rápida ante incidencias</span>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="presupuesto" class="section-soft">
       <div class="container">
-        <div class="data-box">
-          <h2>Datos necesarios para darte presupuesto</h2>
+        <div class="budget-route">
+          <div class="budget-intro">
+            <span class="eyebrow">Presupuesto ajustado</span>
+            <h2>Datos necesarios para darte presupuesto</h2>
+            <p>
+              Para preparar una propuesta ajustada, necesitaremos conocer algunos datos básicos del negocio. Cuanto más concreta sea la información, mejor podremos ajustar capitales y coberturas.
+            </p>
+          </div>
+
+          <div class="budget-list">
+            <article class="budget-item">
+              <div class="budget-icon">🏪</div>
+              <div>
+                <h3>Actividad y ubicación</h3>
+                <p>Actividad exacta del negocio, ubicación y metros del local, almacén u oficina.</p>
+                <span class="budget-tag">Base del presupuesto</span>
+              </div>
+            </article>
+
+            <article class="budget-item">
+              <div class="budget-icon">💶</div>
+              <div>
+                <h3>Facturación y empleados</h3>
+                <p>Facturación aproximada, si hay empleados a tu cargo y cuántos empleados tienes.</p>
+                <span class="budget-tag">Responsabilidad y dimensión del negocio</span>
+              </div>
+            </article>
+
+            <article class="budget-item">
+              <div class="budget-icon">📦</div>
+              <div>
+                <h3>Contenido y mercancía</h3>
+                <p>Valor del contenido, mobiliario, maquinaria, equipos, herramientas o mercancía.</p>
+                <span class="budget-tag">Capitales asegurados</span>
+              </div>
+            </article>
+
+            <article class="budget-item">
+              <div class="budget-icon">📄</div>
+              <div>
+                <h3>Póliza actual</h3>
+                <p>Si tienes póliza actual, con qué aseguradora está contratada o si actualmente no tienes seguro.</p>
+                <span class="budget-tag">Comparativa y mejora</span>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="data-box" style="margin-top:28px;">
+          <h2>Resumen de datos que te pediremos</h2>
           <p>
-            Para preparar una propuesta ajustada, necesitaremos conocer algunos datos básicos del negocio.
+            Esta lista sirve para preparar la información antes de solicitar una propuesta.
           </p>
 
           <ul class="data-list">
@@ -1496,7 +1620,7 @@
     }
 
     const revealElements = document.querySelectorAll(
-      ".section-title, .card, .business-card, .coverage-card, .data-box, .review-box, .cta-final"
+      ".section-title, .data-box, .review-box, .cta-final, .business-guide, .activity-route, .coverage-route, .budget-route, .activity-item, .coverage-line, .budget-item"
     );
 
     if ("IntersectionObserver" in window) {
