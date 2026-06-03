@@ -1176,6 +1176,270 @@
       }
     }
 
+    .review-block {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .review-intro {
+      color: var(--muted);
+      font-size: 1.04rem;
+      margin-top: 10px;
+    }
+
+    .review-list-numbered {
+      list-style: none;
+      display: grid;
+      gap: 0;
+      background: rgba(255,255,255,.96);
+      backdrop-filter: blur(8px);
+      border-radius: calc(var(--radius) + 4px);
+      border: 1px solid var(--border);
+      padding: 30px;
+      box-shadow: 0 14px 34px rgba(74,16,29,.07);
+    }
+
+    .review-item {
+      display: grid;
+      grid-template-columns: 46px 1fr;
+      gap: 16px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .review-item:first-child {
+      padding-top: 0;
+    }
+
+    .review-item:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .review-number {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #fff7f3, #f6e7df);
+      color: var(--primary);
+      border: 1px solid rgba(143,31,52,.14);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 0.9rem;
+    }
+
+    .review-item strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 4px;
+      font-size: 1.02rem;
+    }
+
+    .review-item p {
+      color: var(--muted);
+      font-size: 0.97rem;
+    }
+
+    .info-panel {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .info-panel-side {
+      position: sticky;
+      top: 104px;
+    }
+
+    .info-panel-side p {
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .info-list {
+      list-style: none;
+      display: grid;
+      gap: 0;
+      background: rgba(255,255,255,.96);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) + 4px);
+      padding: 30px;
+      box-shadow: 0 14px 34px rgba(74,16,29,.07);
+    }
+
+    .info-item {
+      display: grid;
+      grid-template-columns: 38px 1fr;
+      gap: 16px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .info-item:first-child {
+      padding-top: 0;
+    }
+
+    .info-item:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .info-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #fff7f3, #f6e7df);
+      color: var(--primary);
+      border: 1px solid rgba(143,31,52,.14);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+    }
+
+    .info-item strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .info-item p {
+      color: var(--muted);
+      font-size: .97rem;
+    }
+
+    .faq-carousel-wrap {
+      position: relative;
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+
+    .faq-carousel {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(290px, 360px);
+      gap: 18px;
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      scroll-snap-type: x mandatory;
+      scroll-padding: 4px;
+      padding: 6px 4px 18px;
+      scrollbar-width: thin;
+    }
+
+    .faq-card {
+      min-height: 285px;
+      background: rgba(255,255,255,.96);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 12px 28px rgba(74,16,29,.06);
+      scroll-snap-align: start;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    }
+
+    .faq-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 42px rgba(74,16,29,.11);
+      border-color: rgba(143, 31, 52, 0.24);
+    }
+
+    .faq-number {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #fff7f3, #f6e7df);
+      color: var(--primary);
+      border: 1px solid rgba(143,31,52,.14);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      flex: 0 0 auto;
+    }
+
+    .faq-card h3 {
+      margin-bottom: 0;
+    }
+
+    .faq-card p {
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .faq-controls {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .faq-arrow {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid rgba(143, 31, 52, 0.28);
+      background: var(--white);
+      color: var(--primary);
+      font-size: 1.2rem;
+      font-weight: 900;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .faq-arrow:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(74,16,29,.12);
+      background: rgba(143, 31, 52, 0.06);
+    }
+
+    @media (max-width: 900px) {
+      .review-block,
+      .info-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .info-panel-side {
+        position: static;
+      }
+
+      .faq-carousel {
+        grid-auto-columns: minmax(270px, 88vw);
+        gap: 14px;
+        padding-bottom: 16px;
+      }
+
+      .faq-card:hover {
+        transform: none;
+      }
+
+      .faq-controls {
+        display: none;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .review-list-numbered,
+      .info-list,
+      .faq-card {
+        padding: 24px 18px;
+        border-radius: 22px;
+      }
+
+      .review-item,
+      .info-item {
+        grid-template-columns: 38px 1fr;
+        gap: 12px;
+      }
+    }
+
   </style>
 </head>
 
@@ -1226,29 +1490,30 @@
         <div>
           <div class="eyebrow">🐾 Seguro de mascotas</div>
 
-          <h1>Seguro de mascotas para cuidar a tu perro o gato</h1>
+          <h1>Protege a tu mascota y evita imprevistos innecesarios</h1>
 
           <p class="lead">
-            Te ayudamos a diferenciar entre responsabilidad civil y asistencia veterinaria para que sepas qué necesita realmente tu mascota.
+            Te ayudamos a revisar qué seguro puede encajar con tu perro o gato, diferenciando de forma clara entre responsabilidad civil, asistencia veterinaria y otras coberturas útiles.
           </p>
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="https://wa.me/34606067906?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20seguro%20de%20mascotas" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
             <a class="btn btn-outline" href="tel:+34917702311">Llamar oficina</a>
-            <a class="btn btn-tertiary" href="#conceptos">Ver diferencias</a>
+            <a class="btn btn-tertiary" href="#coberturas">Ver coberturas</a>
           </div>
 
-          <p class="trust-line">Respuesta rápida · Sin compromiso · Te lo explicamos claro</p>
+          <p class="trust-line">Perros y gatos · Responsabilidad civil · Veterinario · Sin compromiso</p>
         </div>
 
         <aside class="hero-card" aria-label="Resumen del seguro de mascotas">
           <div class="hero-card-icon">🛡️</div>
-          <h2>¿Qué puede incluir?</h2>
+          <h2>Antes de elegir, revisamos</h2>
           <ul>
-            <li>Responsabilidad civil frente a terceros.</li>
-            <li>Consultas, pruebas o urgencias veterinarias.</li>
-            <li>Accidentes, enfermedad, robo o extravío.</li>
-            <li>Orientación veterinaria y defensa jurídica.</li>
+            <li>Si necesitas responsabilidad civil.</li>
+            <li>Si quieres asistencia veterinaria.</li>
+            <li>Edad, raza, especie y estado de salud.</li>
+            <li>Posibles exclusiones, límites y carencias.</li>
+            <li>Si ya tienes alguna cobertura en tu seguro de hogar.</li>
           </ul>
         </aside>
       </div>
@@ -1257,84 +1522,42 @@
     <section>
       <div class="container">
         <div class="section-title">
-          <span>Directo y sencillo</span>
-          <h2>No todas las coberturas sirven para lo mismo</h2>
+          <span>Qué protege</span>
+          <h2>Un seguro de mascotas puede ayudarte en tres situaciones principales</h2>
           <p>
-            Lo importante es saber si buscas protegerte frente a daños que pueda causar tu mascota o si quieres ayuda con gastos veterinarios.
+            No todas las pólizas cubren lo mismo. Por eso conviene separar bien la protección frente a terceros, la atención veterinaria y otros imprevistos relacionados con tu mascota.
           </p>
         </div>
 
         <div class="grid-3">
           <article class="card">
             <div class="card-icon">🤝</div>
-            <h3>Responsabilidad civil</h3>
-            <p>Para daños que tu mascota pueda causar a otras personas, animales o bienes.</p>
+            <h3>Daños a terceros</h3>
+            <p>Responsabilidad civil si tu mascota causa daños a personas, animales, objetos, vecinos u otros bienes.</p>
           </article>
 
           <article class="card">
             <div class="card-icon">🩺</div>
-            <h3>Veterinario</h3>
-            <p>Para consultas, pruebas, urgencias, cirugías o tratamientos según modalidad.</p>
+            <h3>Gastos veterinarios</h3>
+            <p>Ayuda ante consultas, pruebas, urgencias, tratamientos, accidentes o enfermedades, según modalidad.</p>
           </article>
 
           <article class="card">
             <div class="card-icon">🔎</div>
-            <h3>Imprevistos</h3>
-            <p>Robo, extravío, defensa jurídica u otros servicios complementarios.</p>
+            <h3>Otros imprevistos</h3>
+            <p>Robo, extravío, defensa jurídica, orientación veterinaria o servicios complementarios.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="conceptos" class="section-soft">
-      <div class="container">
-        <div class="section-title center">
-          <span>Diferencia clave</span>
-          <h2>Responsabilidad civil y asistencia veterinaria no son lo mismo</h2>
-          <p>
-            Esta diferencia es importante para elegir bien y no pensar que una cobertura sustituye a la otra.
-          </p>
-        </div>
-
-        <div class="table-wrap">
-          <table class="simple-table">
-            <thead>
-              <tr>
-                <th>Concepto</th>
-                <th>Qué espera el cliente</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr>
-                <td><strong>Responsabilidad civil (RC)</strong></td>
-                <td>Daños que cause o pueda causar tu mascota a terceros: personas, animales, objetos, vecinos u otros bienes.</td>
-              </tr>
-
-              <tr>
-                <td><strong>Asistencia veterinaria</strong></td>
-                <td>Consultas, pruebas, urgencias, cirugías, hospitalización, tratamientos o asistencia por accidente/enfermedad, según modalidad.</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="alert-box">
-          <h3>Alerta importante sobre la responsabilidad civil</h3>
-          <p>
-            En algunos lugares o casos, la responsabilidad civil puede ser especialmente importante. Por eso conviene revisar si tu mascota necesita esta cobertura, qué capital incluye y si ya tienes algo cubierto en otra póliza, como el seguro de hogar.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="coberturas">
+    <section id="coberturas" class="section-soft">
       <div class="container">
         <div class="section-title">
           <span>Coberturas principales</span>
-          <h2>Qué conviene revisar en un seguro de mascotas</h2>
+          <h2>Coberturas que conviene revisar en un seguro de mascotas</h2>
           <p>
-            Las coberturas exactas dependen de la modalidad contratada, la edad, raza, estado de salud y condiciones de la póliza.
+            Las coberturas exactas dependen de la modalidad, la edad, la raza, el estado de salud de la mascota y las condiciones de la póliza.
           </p>
         </div>
 
@@ -1351,7 +1574,7 @@
             <div class="mini-icon">🩺</div>
             <div>
               <h3>Asistencia veterinaria</h3>
-              <p>Consultas, pruebas, tratamientos, urgencias o cirugías según modalidad.</p>
+              <p>Consultas, pruebas, urgencias, tratamientos, hospitalización o cirugías según modalidad.</p>
             </div>
           </article>
 
@@ -1359,7 +1582,7 @@
             <div class="mini-icon">📞</div>
             <div>
               <h3>Orientación veterinaria</h3>
-              <p>Consulta telefónica para dudas sobre salud, alimentación o cuidados.</p>
+              <p>Ayuda telefónica o digital para resolver dudas sobre salud, alimentación o cuidados.</p>
             </div>
           </article>
 
@@ -1367,7 +1590,7 @@
             <div class="mini-icon">🔎</div>
             <div>
               <h3>Extravío</h3>
-              <p>Ayuda para gastos de localización si la mascota se pierde.</p>
+              <p>Apoyo para gastos de localización si la mascota se pierde.</p>
             </div>
           </article>
 
@@ -1375,7 +1598,7 @@
             <div class="mini-icon">🔐</div>
             <div>
               <h3>Robo</h3>
-              <p>Indemnización en caso de robo, siempre según requisitos y denuncia.</p>
+              <p>Indemnización o ayuda en caso de robo, siempre según requisitos y denuncia.</p>
             </div>
           </article>
 
@@ -1383,56 +1606,47 @@
             <div class="mini-icon">⚖️</div>
             <div>
               <h3>Defensa jurídica</h3>
-              <p>Apoyo legal ante reclamaciones relacionadas con la mascota.</p>
+              <p>Apoyo legal ante reclamaciones o conflictos relacionados con la mascota.</p>
             </div>
           </article>
         </div>
-      </div>
-    </section>
 
-    <section class="section-soft">
-      <div class="container">
-        <div class="grid-3">
-          <article class="card">
-            <div class="card-icon">🐶</div>
-            <h3>Perros</h3>
-            <p>Para revisar RC, asistencia veterinaria y posibles obligaciones según el caso.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">🐱</div>
-            <h3>Gatos</h3>
-            <p>Para asistencia veterinaria, enfermedad, accidente o imprevistos.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">📋</div>
-            <h3>Datos necesarios</h3>
-            <p>Edad, raza, especie, microchip, estado de salud y cobertura que quieres revisar.</p>
-          </article>
+        <div class="alert-box">
+          <h3>Importante: responsabilidad civil y veterinario no son lo mismo</h3>
+          <p>
+            La responsabilidad civil cubre daños que pueda causar tu mascota a terceros. La asistencia veterinaria está pensada para ayudarte con gastos de salud de tu perro o gato. Pueden contratarse juntas o por separado, según el caso.
+          </p>
         </div>
       </div>
     </section>
 
     <section>
       <div class="container">
+        <div class="section-title center">
+          <span>Para quién es</span>
+          <h2>Este seguro puede interesarte si...</h2>
+          <p>
+            La necesidad cambia según el tipo de mascota, el estilo de vida, las obligaciones legales y el nivel de protección que quieras tener.
+          </p>
+        </div>
+
         <div class="grid-3">
           <article class="card">
-            <div class="card-icon">🏥</div>
-            <h3>Si quieres cubrir veterinario</h3>
-            <p>Revisa límites, carencias, exclusiones y si cubre enfermedad, accidente o ambos.</p>
+            <div class="card-icon">🐶</div>
+            <h3>Tienes perro</h3>
+            <p>Para revisar responsabilidad civil, asistencia veterinaria y posibles obligaciones según tu caso.</p>
           </article>
 
           <article class="card">
-            <div class="card-icon">📄</div>
-            <h3>Si necesitas RC</h3>
-            <p>Revisa el capital asegurado y si necesitas acreditar la cobertura.</p>
+            <div class="card-icon">🐱</div>
+            <h3>Tienes gato</h3>
+            <p>Para valorar asistencia veterinaria, enfermedad, accidente, orientación veterinaria o imprevistos.</p>
           </article>
 
           <article class="card">
             <div class="card-icon">🏠</div>
-            <h3>Si ya tienes hogar</h3>
-            <p>Puede ser útil comprobar si tu seguro de hogar incluye algo relacionado con mascotas.</p>
+            <h3>Ya tienes seguro de hogar</h3>
+            <p>Conviene comprobar si tu póliza actual incluye alguna cobertura relacionada con mascotas.</p>
           </article>
         </div>
       </div>
@@ -1440,10 +1654,181 @@
 
     <section class="section-soft">
       <div class="container">
+        <div class="review-block">
+          <div class="section-title">
+            <span>Qué revisamos contigo</span>
+            <h2>Antes de contratar, revisamos lo que realmente necesitas</h2>
+            <p>
+              La clave no es contratar más, sino elegir bien. Revisamos los puntos importantes para evitar coberturas duplicadas, límites bajos o exclusiones que no esperabas.
+            </p>
+
+            <p class="review-intro">
+              Así puedes entender qué opción encaja con tu mascota sin tecnicismos y sin presión.
+            </p>
+          </div>
+
+          <ol class="review-list-numbered">
+            <li class="review-item">
+              <span class="review-number">01</span>
+              <div>
+                <strong>Tipo de mascota</strong>
+                <p>Revisamos si es perro o gato, edad, raza, microchip, estado de salud y hábitos.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">02</span>
+              <div>
+                <strong>Responsabilidad civil</strong>
+                <p>Comprobamos si necesitas RC, qué capital tendría sentido y si ya aparece cubierta en otra póliza.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">03</span>
+              <div>
+                <strong>Asistencia veterinaria</strong>
+                <p>Valoramos si te interesa cubrir consultas, pruebas, urgencias, cirugías, accidente o enfermedad.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">04</span>
+              <div>
+                <strong>Límites, carencias y exclusiones</strong>
+                <p>Revisamos desde cuándo cubre, cuánto cubre y qué situaciones pueden quedar fuera.</p>
+              </div>
+            </li>
+
+            <li class="review-item">
+              <span class="review-number">05</span>
+              <div>
+                <strong>Documentación necesaria</strong>
+                <p>Te indicamos qué datos conviene tener preparados para estudiar la opción más adecuada.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container info-panel">
+        <div class="info-panel-side section-title">
+          <span>Información útil</span>
+          <h2>Datos que conviene preparar</h2>
+          <p>
+            Este bloque no es una llamada a la acción. Es solo una guía para que el cliente tenga preparada la información antes de pedir presupuesto, consultar una cobertura o comunicar una incidencia.
+          </p>
+        </div>
+
+        <ol class="info-list">
+          <li class="info-item">
+            <span class="info-mark">1</span>
+            <div>
+              <strong>Datos de la mascota</strong>
+              <p>Nombre, especie, raza, edad, peso aproximado y número de microchip si lo tienes a mano.</p>
+            </div>
+          </li>
+
+          <li class="info-item">
+            <span class="info-mark">2</span>
+            <div>
+              <strong>Situación sanitaria</strong>
+              <p>Vacunas, enfermedades previas, tratamientos actuales o antecedentes relevantes.</p>
+            </div>
+          </li>
+
+          <li class="info-item">
+            <span class="info-mark">3</span>
+            <div>
+              <strong>Cobertura que quieres revisar</strong>
+              <p>Responsabilidad civil, asistencia veterinaria, accidente, enfermedad, robo, extravío o defensa jurídica.</p>
+            </div>
+          </li>
+
+          <li class="info-item">
+            <span class="info-mark">4</span>
+            <div>
+              <strong>Si ya tienes otro seguro</strong>
+              <p>Especialmente seguro de hogar, porque algunas pólizas pueden incluir responsabilidad civil de mascotas.</p>
+            </div>
+          </li>
+
+          <li class="info-item">
+            <span class="info-mark">5</span>
+            <div>
+              <strong>En caso de incidencia</strong>
+              <p>Fecha, lugar, descripción de lo ocurrido, fotos si las hay, facturas, informe veterinario o denuncia si procede.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section-soft" id="faq">
+      <div class="container">
+        <div class="section-title center">
+          <span>Dudas habituales</span>
+          <h2>Preguntas frecuentes sobre seguros de mascotas</h2>
+          <p>
+            Respuestas generales para entender mejor qué puede incluir una póliza antes de decidir.
+          </p>
+        </div>
+
+        <div class="faq-carousel-wrap">
+          <div class="faq-carousel" id="faqCarousel" aria-label="Carrusel de preguntas frecuentes">
+            <article class="faq-card">
+              <div class="faq-number">01</div>
+              <h3>¿La responsabilidad civil cubre al veterinario?</h3>
+              <p>No. La responsabilidad civil cubre daños a terceros. Para gastos veterinarios hay que revisar una cobertura o modalidad veterinaria.</p>
+            </article>
+
+            <article class="faq-card">
+              <div class="faq-number">02</div>
+              <h3>¿Es obligatorio tener seguro para mascotas?</h3>
+              <p>Depende del caso, la normativa aplicable y el tipo de animal. En perros, la responsabilidad civil puede ser especialmente importante y conviene revisarla.</p>
+            </article>
+
+            <article class="faq-card">
+              <div class="faq-number">03</div>
+              <h3>¿Cubre enfermedades anteriores?</h3>
+              <p>Normalmente las enfermedades previas pueden tener limitaciones o exclusiones. Hay que revisar las condiciones concretas.</p>
+            </article>
+
+            <article class="faq-card">
+              <div class="faq-number">04</div>
+              <h3>¿Puedo asegurar a un gato?</h3>
+              <p>Sí, se pueden valorar opciones para gatos, especialmente asistencia veterinaria, accidente, enfermedad u orientación veterinaria.</p>
+            </article>
+
+            <article class="faq-card">
+              <div class="faq-number">05</div>
+              <h3>¿Qué pasa si mi mascota causa daños?</h3>
+              <p>Puede intervenir la responsabilidad civil si la póliza la incluye y se cumplen las condiciones contratadas.</p>
+            </article>
+
+            <article class="faq-card">
+              <div class="faq-number">06</div>
+              <h3>¿Podéis revisar si ya tengo algo cubierto?</h3>
+              <p>Sí. Podemos comprobar si tu seguro de hogar u otra póliza incluye alguna protección relacionada con mascotas.</p>
+            </article>
+          </div>
+
+          <div class="faq-controls" aria-label="Controles del carrusel de preguntas frecuentes">
+            <button class="faq-arrow" type="button" data-faq-prev aria-label="Pregunta anterior">‹</button>
+            <button class="faq-arrow" type="button" data-faq-next aria-label="Pregunta siguiente">›</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
         <div class="cta-final">
           <h2>¿Quieres saber qué seguro encaja con tu mascota?</h2>
           <p>
-            Podemos ayudarte a revisar si necesitas responsabilidad civil, asistencia veterinaria o ambas coberturas.
+            Podemos ayudarte a revisar si necesitas responsabilidad civil, asistencia veterinaria o ambas coberturas, teniendo en cuenta tu perro o gato y lo que realmente quieres proteger.
           </p>
 
           <div class="hero-actions" style="justify-content:center;">
@@ -1489,8 +1874,28 @@
       });
     }
 
+    const faqCarousel = document.querySelector("#faqCarousel");
+    const faqPrev = document.querySelector("[data-faq-prev]");
+    const faqNext = document.querySelector("[data-faq-next]");
+
+    if (faqCarousel && faqPrev && faqNext) {
+      const moveFaqCarousel = (direction) => {
+        const card = faqCarousel.querySelector(".faq-card");
+        const gap = 18;
+        const distance = card ? card.offsetWidth + gap : 340;
+
+        faqCarousel.scrollBy({
+          left: direction * distance,
+          behavior: "smooth"
+        });
+      };
+
+      faqPrev.addEventListener("click", () => moveFaqCarousel(-1));
+      faqNext.addEventListener("click", () => moveFaqCarousel(1));
+    }
+
     const revealElements = document.querySelectorAll(
-      ".section-title, .card, .coverage-card, .table-wrap, .alert-box, .cta-final"
+      ".section-title, .card, .coverage-card, .table-wrap, .alert-box, .cta-final, .review-list-numbered, .review-item, .info-list, .info-item, .faq-card"
     );
 
     if ("IntersectionObserver" in window) {
