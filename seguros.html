@@ -579,54 +579,45 @@
     }
 
     .call-actions {
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr;
       gap: 10px;
-      flex-wrap: wrap;
     }
 
     .call-office,
     .call-mobile {
+      min-height: 46px;
+      padding: 12px 16px;
+      border-radius: 999px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       transition: .2s ease;
       text-align: center;
+      font-weight: 850;
+      font-size: 14px;
     }
 
     .call-office {
-      min-height: 46px;
-      padding: 12px 16px;
-      border-radius: 12px;
-      font-weight: 800;
-      font-size: 14px;
-      flex: 1 1 100%;
-      background: transparent;
-      color: #7e1c2e;
-      border: 1px solid rgba(185,28,28,.24);
-      box-shadow: none;
+      background: #8f1f34;
+      color: white;
+      border: 1px solid #8f1f34;
+      box-shadow: 0 10px 22px rgba(143,31,52,.18);
     }
 
     .call-mobile {
-      min-height: auto;
-      padding: 4px 2px;
-      border-radius: 0;
-      font-weight: 700;
-      font-size: 13px;
-      flex: 1;
-      background: transparent;
-      color: #777;
-      border: none;
-      text-decoration: underline;
-      text-underline-offset: 3px;
+      background: #fff8f5;
+      color: #7e1c2e;
+      border: 1px solid rgba(185,28,28,.24);
     }
 
-    .call-office:hover {
+    .call-office:hover,
+    .call-mobile:hover {
       transform: translateY(-2px);
-      background: #fff8f5;
     }
 
     .call-mobile:hover {
-      transform: none;
+      background: white;
       color: #8f1f34;
     }
 
@@ -791,16 +782,16 @@
     }
 
     .cta-secondary {
-      min-height: auto;
-      padding: 5px 0;
-      border-radius: 0;
-      font-weight: 700;
-      font-size: 14px;
-      background: transparent;
-      color: rgba(255,255,255,.82);
-      border: none;
-      text-decoration: underline;
-      text-underline-offset: 4px;
+      min-height: 58px;
+      padding: 0 26px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 15px;
+      background: rgba(255,255,255,.10);
+      color: white;
+      border: 1px solid rgba(255,255,255,.28);
+      text-decoration: none;
+      backdrop-filter: blur(6px);
     }
 
     .cta-primary:hover {
@@ -808,7 +799,8 @@
     }
 
     .cta-secondary:hover {
-      transform: none;
+      transform: translateY(-2px);
+      background: rgba(255,255,255,.16);
       color: white;
     }
 
@@ -1206,31 +1198,15 @@
       }
 
       .call-actions {
-        flex-direction: column;
+        grid-template-columns: 1fr;
         gap: 9px;
       }
 
-      .call-office {
-        width: 100%;
-        flex: auto;
-        min-height: 50px;
-        font-size: 15px;
-        border-radius: 999px;
-        background: #8f1f34;
-        color: white;
-        border-color: #8f1f34;
-      }
-
+      .call-office,
       .call-mobile {
         width: 100%;
-        flex: auto;
-        min-height: 46px;
-        font-size: 14px;
-        border-radius: 999px;
-        border: 1px solid rgba(143,31,52,.18);
-        text-decoration: none;
-        color: #7e1c2e;
-        background: #fff8f5;
+        min-height: 50px;
+        font-size: 15px;
       }
 
       .help-choice {
@@ -1448,7 +1424,7 @@
       <h2>¿Qué seguros podemos revisar contigo?</h2>
 
       <p class="section-intro">
-        Analizamos tu caso y te ayudamos a entender qué coberturas tienen sentido para ti. Pulsa en “Ver coberturas” para desplegar la información principal de cada seguro.
+        Analizamos tu caso y te ayudamos a entender qué coberturas tienen sentido para ti. Hemos separado los seguros en dos bloques para que encuentres antes lo que necesitas: protección personal/familiar y protección profesional.
       </p>
 
       <div class="visual-separator">
@@ -1458,7 +1434,7 @@
       <div class="insurance-block">
         <div class="insurance-block-title">
           <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/><path d="M17 12a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/><path d="M3.5 20c.9-3.8 3-5.7 5.5-5.7s4.6 1.9 5.5 5.7"/><path d="M13.8 17.5c.9-2.3 2.1-3.4 3.7-3.4 1.8 0 3 1.4 3.8 4.2"/></svg></span>
-          <h3>Seguros para ti y tu familia</h3>
+          <h3>Seguros personales</h3>
         </div>
 
         <div class="insurance-grid">
@@ -1485,10 +1461,9 @@
                 </div>
 
                 <div class="call-actions">
-  <a href="seguro-hogar.html" class="call-office">Más información</a>
-  <a href="tel:+34917702311" class="call-mobile">Llamar oficina</a>
-  <a href="tel:+34606067906" class="call-mobile">Llamar móvil</a>
-</div>
+                  <a href="seguro-hogar.html" class="call-office">Más información</a>
+                  <a href="https://wa.me/34606067906?text=Hola,%20quiero%20consultar%20informaci%C3%B3n%20sobre%20Seguro%20de%20hogar" target="_blank" class="call-mobile">Consultar por WhatsApp</a>
+                </div>
               </div>
             </details>
           </div>
@@ -1515,10 +1490,9 @@
                 </div>
 
                <div class="call-actions">
-  <a href="seguro-automóviles.html" class="call-office">Más información</a>
-  <a href="tel:+34917702311" class="call-mobile">Llamar oficina</a>
-  <a href="tel:+34606067906" class="call-mobile">Llamar móvil</a>
-</div>
+                  <a href="seguro-automóviles.html" class="call-office">Más información</a>
+                  <a href="https://wa.me/34606067906?text=Hola,%20quiero%20consultar%20informaci%C3%B3n%20sobre%20Seguro%20de%20autom%C3%B3vil" target="_blank" class="call-mobile">Consultar por WhatsApp</a>
+                </div>
               </div>
             </details>
           </div>
@@ -1545,10 +1519,9 @@
                 </div>
 
                 <div class="call-actions">
-  <a href="seguro-vida.html" class="call-office">Más información</a>
-  <a href="tel:+34917702311" class="call-mobile">Llamar oficina</a>
-  <a href="tel:+34606067906" class="call-mobile">Llamar móvil</a>
-</div>
+                  <a href="seguro-vida.html" class="call-office">Más información</a>
+                  <a href="https://wa.me/34606067906?text=Hola,%20quiero%20consultar%20informaci%C3%B3n%20sobre%20Seguro%20de%20vida" target="_blank" class="call-mobile">Consultar por WhatsApp</a>
+                </div>
               </div>
             </details>
           </div>
@@ -1575,10 +1548,9 @@
                 </div>
 
                 <div class="call-actions">
-  <a href="seguro-salud.html" class="call-office">Más información</a>
-  <a href="tel:+34917702311" class="call-mobile">Llamar oficina</a>
-  <a href="tel:+34606067906" class="call-mobile">Llamar móvil</a>
-</div>
+                  <a href="seguro-salud.html" class="call-office">Más información</a>
+                  <a href="https://wa.me/34606067906?text=Hola,%20quiero%20consultar%20informaci%C3%B3n%20sobre%20Seguro%20de%20salud" target="_blank" class="call-mobile">Consultar por WhatsApp</a>
+                </div>
               </div>
             </details>
           </div>
@@ -1605,10 +1577,9 @@
                 </div>
 
                 <div class="call-actions">
-  <a href="seguro-accidentes.html" class="call-office">Más información</a>
-  <a href="tel:+34917702311" class="call-mobile">Llamar oficina</a>
-  <a href="tel:+34606067906" class="call-mobile">Llamar móvil</a>
-</div>
+                  <a href="seguro-accidentes.html" class="call-office">Más información</a>
+                  <a href="https://wa.me/34606067906?text=Hola,%20quiero%20consultar%20informaci%C3%B3n%20sobre%20Seguro%20de%20accidentes" target="_blank" class="call-mobile">Consultar por WhatsApp</a>
+                </div>
               </div>
             </details>
           </div>
@@ -1637,10 +1608,9 @@
       </div>
 
       <div class="call-actions">
-  <a href="seguro-mascotas.html" class="call-office">Más información</a>
-  <a href="tel:+34917702311" class="call-mobile">Llamar oficina</a>
-  <a href="tel:+34606067906" class="call-mobile">Llamar móvil</a>
-</div>
+                  <a href="seguro-mascotas.html" class="call-office">Más información</a>
+                  <a href="https://wa.me/34606067906?text=Hola,%20quiero%20consultar%20informaci%C3%B3n%20sobre%20Seguro%20de%20mascotas" target="_blank" class="call-mobile">Consultar por WhatsApp</a>
+                </div>
     </div>
   </details>
 </div>
@@ -1655,7 +1625,7 @@
       <div class="insurance-block">
         <div class="insurance-block-title">
           <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21V5.5C4 4.7 4.7 4 5.5 4h8c.8 0 1.5.7 1.5 1.5V21"/><path d="M15 9h3.5c.8 0 1.5.7 1.5 1.5V21"/><path d="M7 8h2"/><path d="M10.5 8h2"/><path d="M7 12h2"/><path d="M10.5 12h2"/><path d="M7 16h2"/><path d="M10.5 16h2"/><path d="M3 21h18"/></svg></span>
-          <h3>Seguros para tu negocio</h3>
+          <h3>Seguros profesionales</h3>
         </div>
 
         <div class="insurance-grid">
@@ -1682,10 +1652,9 @@
                 </div>
 
                 <div class="call-actions">
-  <a href="seguro-negocios.html" class="call-office">Más información</a>
-  <a href="tel:+34917702311" class="call-mobile">Llamar oficina</a>
-  <a href="tel:+34606067906" class="call-mobile">Llamar móvil</a>
-</div>
+                  <a href="seguro-negocios.html" class="call-office">Más información</a>
+                  <a href="https://wa.me/34606067906?text=Hola,%20quiero%20consultar%20informaci%C3%B3n%20sobre%20Seguro%20de%20negocios" target="_blank" class="call-mobile">Consultar por WhatsApp</a>
+                </div>
               </div>
             </details>
           </div>
@@ -1712,10 +1681,9 @@
                 </div>
 
                 <div class="call-actions">
-  <a href="seguro-responsabilidad-civil.html" class="call-office">Más información</a>
-  <a href="tel:+34917702311" class="call-mobile">Llamar oficina</a>
-  <a href="tel:+34606067906" class="call-mobile">Llamar móvil</a>
-</div>
+                  <a href="seguro-responsabilidad-civil.html" class="call-office">Más información</a>
+                  <a href="https://wa.me/34606067906?text=Hola,%20quiero%20consultar%20informaci%C3%B3n%20sobre%20Seguro%20de%20responsabilidad%20civil" target="_blank" class="call-mobile">Consultar por WhatsApp</a>
+                </div>
               </div>
             </details>
           </div>
@@ -1724,7 +1692,7 @@
             <div class="insurance-top">
               <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"/><path d="M4.5 20.5c1.4-4.1 4.1-6.1 7.5-6.1s6.1 2 7.5 6.1"/><path d="M9 15.5l3 3 3-3"/></svg></div>
               <h3>Autónomos</h3>
-              <p>Protección pensada para quienes trabajan por cuenta propia y necesitan respaldo.</p>
+              <p>Protección pensada para quienes trabajan por cuenta propia y necesitan respaldo personal y profesional.</p>
             </div>
 
             <details>
@@ -1742,10 +1710,9 @@
                 </div>
 
                 <div class="call-actions">
-  <a href="seguro-autónomos.html" class="call-office">Más información</a>
-  <a href="tel:+34917702311" class="call-mobile">Llamar oficina</a>
-  <a href="tel:+34606067906" class="call-mobile">Llamar móvil</a>
-</div>
+                  <a href="seguro-autónomos.html" class="call-office">Más información</a>
+                  <a href="https://wa.me/34606067906?text=Hola,%20quiero%20consultar%20informaci%C3%B3n%20sobre%20Seguro%20para%20aut%C3%B3nomos" target="_blank" class="call-mobile">Consultar por WhatsApp</a>
+                </div>
               </div>
             </details>
           </div>
@@ -1768,7 +1735,7 @@
 
         <div class="help-choice-actions">
           <a href="https://wa.me/34606067906?text=Hola,%20no%20s%C3%A9%20qu%C3%A9%20seguro%20necesito%20y%20me%20gustar%C3%ADa%20que%20me%20orientarais" target="_blank" class="help-choice-primary">
-            Ayúdame a elegir
+            Consultar por WhatsApp
           </a>
 
           <a href="tel:+34917702311" class="help-choice-secondary">
@@ -1812,7 +1779,8 @@
         <div class="cta-buttons">
           <a href="https://wa.me/34606067906" target="_blank" class="cta-primary">Escríbenos por WhatsApp</a>
           <a href="tel:+34917702311" class="cta-secondary">Llamar oficina</a>
-          <a href="mailto:esanz@occident.com" class="cta-secondary">Email</a>
+          <a href="tel:+34606067906" class="cta-secondary">Llamar móvil</a>
+          <a href="mailto:esanz@occident.com" class="cta-secondary">Enviar email</a>
         </div>
       </div>
     </div>
