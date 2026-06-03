@@ -1611,6 +1611,384 @@
       }
     }
 
+
+    /* PANEL DE ACCIONES RÁPIDAS - CLIENTES */
+    .page-hero {
+      text-align: left;
+    }
+
+    .page-hero .container {
+      max-width: 1120px;
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .hero-copy h1 {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .hero-copy .hero-text {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .hero-copy .hero-buttons {
+      justify-content: flex-start;
+    }
+
+    .hero-status-card {
+      background: rgba(255,253,251,.88);
+      border: 1px solid rgba(143,31,52,.14);
+      border-radius: 30px;
+      padding: 30px;
+      box-shadow: 0 20px 46px rgba(74,16,29,.10);
+      backdrop-filter: blur(10px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-status-card::before {
+      content: "";
+      position: absolute;
+      width: 160px;
+      height: 160px;
+      right: -65px;
+      top: -65px;
+      border-radius: 50%;
+      background: rgba(143,31,52,.09);
+    }
+
+    .hero-status-card > * {
+      position: relative;
+      z-index: 1;  <!-- HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="hero-layout">
+        <div class="hero-copy">
+          <p class="eyebrow">Área de clientes</p>
+
+          <h1>Tu zona rápida para gestiones y consultas</h1>
+
+          <p class="private-badge">Acceso pensado para clientes</p>
+
+          <p class="hero-text">
+            Un espacio claro para resolver dudas, comunicar un siniestro, revisar tu póliza o contactar con nosotras sin perder tiempo.
+          </p>
+
+          <p class="hero-text">
+            Elige la gestión que necesitas y te atenderemos de forma cercana y sencilla.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#gestiones" class="hero-primary">Ir al panel de acciones</a>
+            <a href="https://wa.me/34606067906" target="_blank" class="hero-secondary">Escríbenos por WhatsApp</a>
+          </div>
+
+          <p class="mini-trust">Respuesta rápida · Atención cercana · Gestión sencilla</p>
+        </div>
+
+        <div class="hero-status-card">
+          <p class="status-kicker">Atención posterior a la contratación</p>
+          <p class="status-title">Seguimos contigo cuando necesitas hacer una gestión.</p>
+
+          <div class="status-list">
+            <div class="status-item">
+              <span class="status-dot">1</span>
+              <span><strong>Elige tu gestión.</strong><br>Selecciona siniestro, consulta, revisión o modificación.</span>
+            </div>
+
+            <div class="status-item">
+              <span class="status-dot">2</span>
+              <span><strong>Contacta de forma directa.</strong><br>El mensaje llega preparado para atenderte mejor.</span>
+            </div>
+
+            <div class="status-item">
+              <span class="status-dot">3</span>
+              <span><strong>Te orientamos paso a paso.</strong><br>Sin complicaciones ni vueltas innecesarias.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUE INFORMATIVO -->
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Información útil</p>
+        <h2>Una página pensada para ayudarte rápido</h2>
+        <p>
+          Esta zona está separada en dos partes: primero tienes el panel de acción rápida para hacer gestiones, y después bloques informativos con datos útiles para preparar mejor tu consulta.
+        </p>
+      </div>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>No desaparecemos después de contratar</h3>
+          <p>
+            Cuando surge una duda, un cambio o un siniestro, necesitas saber que hay alguien al otro lado. Por eso seguimos cerca de ti después de contratar.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>Gestiones más claras</h3>
+          <p>
+            Hemos organizado las opciones principales para que puedas elegir directamente qué necesitas y evitar botones o pasos innecesarios.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PANEL DE ACCESO RÁPIDO -->
+  <section id="gestiones" class="section">
+    <div class="container">
+
+      <div class="client-panel">
+        <div class="panel-top">
+          <div class="panel-header">
+            <p class="eyebrow">Panel de acción rápida</p>
+            <h2>¿Qué necesitas hacer?</h2>
+            <p>
+              Elige una opción y se abrirá WhatsApp con el mensaje preparado. Así podemos atenderte mejor desde el primer momento.
+            </p>
+
+            <p class="panel-subtitle">
+              Gestiones principales para clientes, ordenadas de forma rápida y directa.
+            </p>
+          </div>
+        </div>
+
+        <div class="quick-grid">
+
+          <a href="https://wa.me/34606067906?text=Hola,%20he%20tenido%20un%20siniestro%20y%20necesito%20ayuda" target="_blank" class="quick-card featured-action">
+            <div class="quick-content">
+              <div class="quick-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 3.5 20.5h17L12 3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg></div>
+              <h3>He tenido un siniestro</h3>
+              <p>Te acompañamos paso a paso si has tenido una incidencia y necesitas saber cómo actuar.</p>
+            </div>
+            <span>Comunicar siniestro</span>
+          </a>
+
+          <a href="https://wa.me/34606067906?text=Hola,%20quiero%20hacer%20una%20revisi%C3%B3n%20de%20mi%20p%C3%B3liza" target="_blank" class="quick-card primary-action">
+            <div>
+              <div class="quick-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="5.5"/><path d="m15 15 5 5"/><path d="M8.5 10.5h4"/></svg></div>
+              <h3>Revisar mi póliza</h3>
+              <p>Comprobamos si tus coberturas siguen encajando contigo y con tu situación actual.</p>
+            </div>
+            <span>Solicitar revisión</span>
+          </a>
+
+          <a href="https://wa.me/34606067906?text=Hola,%20tengo%20una%20consulta%20sobre%20mi%20seguro" target="_blank" class="quick-card secondary-action">
+            <div>
+              <div class="quick-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 6.5A3.5 3.5 0 0 1 8.5 3h7A3.5 3.5 0 0 1 19 6.5v5A3.5 3.5 0 0 1 15.5 15H11l-5 4v-4.7A3.5 3.5 0 0 1 5 11.5v-5Z"/><path d="M9 8h6"/><path d="M9 11h4"/></svg></div>
+              <h3>Hacer una consulta</h3>
+              <p>Resolvemos tus dudas sobre coberturas, recibos, cambios o cualquier gestión relacionada.</p>
+            </div>
+            <span>Hacer consulta</span>
+          </a>
+
+          <a href="https://wa.me/34606067906?text=Hola,%20necesito%20modificar%20mis%20datos%20personales%20o%20de%20contacto" target="_blank" class="quick-card tertiary-action">
+            <div>
+              <div class="quick-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 20 4.5-1 10-10a2.1 2.1 0 0 0-3-3l-10 10L4 20Z"/><path d="m13.5 6.5 4 4"/></svg></div>
+              <h3>Modificar mis datos</h3>
+              <p>Te ayudamos a actualizar datos personales, información de contacto o datos vinculados a tu póliza.</p>
+            </div>
+            <span>Modificar datos</span>
+          </a>
+
+          <a href="https://wa.me/34606067906?text=Hola,%20quiero%20enviar%20documentaci%C3%B3n%20relacionada%20con%20mi%20seguro" target="_blank" class="quick-card secondary-action">
+            <div>
+              <div class="quick-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6V3Z"/><path d="M14 3v5h5"/><path d="M9 13h6"/><path d="M9 17h4"/></svg></div>
+              <h3>Enviar documentación</h3>
+              <p>Utiliza esta opción si necesitas mandar documentos, fotos, partes o información adicional.</p>
+            </div>
+            <span>Enviar documentación</span>
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BLOQUES INFORMATIVOS DE APOYO -->
+  <section class="section support-section">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Antes de escribirnos</p>
+        <h2>Información que puede ayudarte</h2>
+        <p>
+          Estos bloques no son acciones principales: son una guía para que sepas qué preparar y cómo podemos ayudarte.
+        </p>
+      </div>
+
+      <div class="support-grid">
+        <div class="claim-guide-box">
+          <h2>Datos útiles para comunicar un siniestro</h2>
+          <p>
+            Si has tenido un siniestro, tener esta información preparada puede agilizar mucho la gestión.
+          </p>
+
+          <ul class="claim-list">
+            <li>Número de póliza o DNI del tomador.</li>
+            <li>Matrícula, si es un siniestro de coche o moto.</li>
+            <li>Fecha y lugar del siniestro.</li>
+            <li>Descripción breve de lo ocurrido.</li>
+            <li>Fotos de los daños, si las tienes.</li>
+            <li>Parte amistoso o documentación adicional, si aplica.</li>
+          </ul>
+        </div>
+
+        <div class="support-note-box">
+          <h2>Cómo te acompañamos</h2>
+          <p>
+            La página está pensada para que no tengas que buscar entre muchos botones. Cada acción te lleva directamente a la gestión que necesitas.
+          </p>
+
+          <div class="support-mini-list">
+            <div class="support-mini-item">
+              <strong>Atención clara</strong>
+              Te explicamos los siguientes pasos de forma sencilla.
+            </div>
+
+            <div class="support-mini-item">
+              <strong>Seguimiento cercano</strong>
+              Te acompañamos durante la gestión, no solo al contratar.
+            </div>
+
+            <div class="support-mini-item">
+              <strong>Contacto directo</strong>
+              WhatsApp queda como canal principal para gestiones rápidas.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEÑA GOOGLE -->
+  <section class="section">
+    <div class="container">
+      <div class="review-box">
+        <div class="review-visual">
+          <div class="review-badge">Reseñas de clientes</div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-mini">
+            Solo te llevará 1 minuto.
+          </p>
+        </div>
+
+        <div>
+          <h2>¿Nos ayudas con tu reseña?</h2>
+
+          <p class="review-highlight">
+            Tu opinión ayuda a otras personas a confiar y a saber que estarán bien acompañadas.
+          </p>
+
+          <p>
+            Si ya has trabajado con nosotras, nos encantará conocer tu experiencia.
+          </p>
+
+          <a href="https://g.page/r/CSvgKd1502pqEBM/review" target="_blank" rel="noopener" class="review-button">
+            Dejar reseña en Google
+          </a>
+
+          <p class="review-mini">
+            Se abrirá Google para que puedas escribir tu valoración directamente.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-box">
+        <h2>Contacto general</h2>
+
+        <p>
+          Si tu consulta no encaja en ninguna de las acciones anteriores, puedes contactar con nosotras por el canal que prefieras.
+        </p>
+
+        <p>
+          Respuesta rápida y atención cercana.
+        </p>
+
+        <div class="cta-buttons">
+          <a href="https://wa.me/34606067906" target="_blank" class="cta-primary">Escríbenos por WhatsApp</a>
+          <a href="tel:+34917702311" class="cta-link">Llamar oficina</a>
+          <a href="mailto:esanz@occident.com" class="cta-link">Enviar email</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+action span {
+        width: 100%;
+        min-width: auto;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .page-hero {
+        text-align: left;
+      }
+
+      .hero-status-card {
+        padding: 24px 20px;
+        border-radius: 24px;
+      }
+
+      .status-title {
+        font-size: 22px;
+      }
+
+      .info-grid {
+        gap: 16px;
+      }
+
+      .info-card {
+        padding: 24px 20px;
+        border-radius: 22px;
+      }
+
+      .panel-top {
+        padding: 26px 20px 22px;
+      }
+
+      .quick-grid {
+        padding: 22px 20px 26px;
+        grid-template-columns: 1fr;
+      }
+
+      .quick-card.featured-action {
+        grid-column: auto;
+      }
+
+      .claim-guide-box,
+      .support-note-box {
+        padding: 26px 20px;
+        border-radius: 22px;
+      }
+
+      .review-box {
+        display: block;
+      }
+
+      .review-visual {
+        margin-bottom: 20px;
+      }
+    }
+
   </style>
 </head>
 
