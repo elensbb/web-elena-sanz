@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Elena Sanz | Seguros y asesoramiento</title>
+  <title>Elena Sanz | Seguros y planificación financiera en Madrid</title>
 
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap");
@@ -155,6 +155,15 @@
     }
 
     @media (max-width: 1050px) {
+      .hero-layout {
+        grid-template-columns: 1fr;
+        gap: 34px;
+      }
+
+      .hero-proof-card {
+        max-width: 720px;
+      }
+
       .topbar-container {
         flex-wrap: wrap;
         justify-content: center;
@@ -257,15 +266,120 @@
 
     .hero-layout {
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: minmax(0, 1.08fr) minmax(320px, .72fr);
       align-items: center;
-      gap: 48px;
+      gap: 54px;
       padding: 82px 0;
     }
 
     .hero-content {
-      max-width: 680px;
+      max-width: 760px;
       animation: fadeUp .8s ease both;
+    }
+
+    .hero-proof-card {
+      background: rgba(255,255,255,.94);
+      color: #241f21;
+      border: 1px solid rgba(255,255,255,.62);
+      border-radius: 32px;
+      padding: 32px;
+      box-shadow: 0 24px 62px rgba(0,0,0,.24);
+      backdrop-filter: blur(12px);
+      animation: fadeUp .9s ease both;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-proof-card::before {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      right: -70px;
+      top: -70px;
+      border-radius: 50%;
+      background: rgba(143,31,52,.10);
+      pointer-events: none;
+    }
+
+    .hero-proof-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-proof-kicker {
+      color: #8f1f34;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      margin: 0 0 10px;
+    }
+
+    .hero-proof-card h2 {
+      font-size: 29px;
+      margin-bottom: 16px;
+      color: #241f21;
+    }
+
+    .hero-proof-card p {
+      color: #5f5755;
+      margin: 0 0 18px;
+      font-size: 16px;
+    }
+
+    .hero-proof-list {
+      display: grid;
+      gap: 12px;
+      margin: 22px 0 0;
+    }
+
+    .hero-proof-item {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 14px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #fff7f3, #fffdfb);
+      border: 1px solid rgba(143,31,52,.12);
+    }
+
+    .hero-proof-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 15px;
+      background: #8f1f34;
+      color: white;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 17px;
+      box-shadow: 0 10px 22px rgba(143,31,52,.20);
+    }
+
+    .hero-proof-item strong {
+      display: block;
+      color: #241f21;
+      font-size: 15px;
+      margin-bottom: 3px;
+    }
+
+    .hero-proof-item span {
+      display: block;
+      color: #6f6663;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .hero-mini-cta {
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(143,31,52,.14);
+      color: #4a101d;
+      font-size: 15px;
+      font-weight: 800;
     }
 
     .eyebrow {
@@ -316,7 +430,15 @@
       font-size: 20px;
       color: rgba(255,255,255,.94);
       margin: 0 0 16px;
-      max-width: 660px;
+      max-width: 700px;
+    }
+
+    .text-support {
+      font-size: 18px;
+      color: rgba(255,255,255,.86);
+      margin: 0;
+      max-width: 690px;
+      line-height: 1.6;
     }
 
     .hero-buttons {
@@ -923,8 +1045,38 @@
 
       .hero-layout {
         grid-template-columns: 1fr;
-        gap: 28px;
+        gap: 26px;
         padding: 58px 0 54px;
+      }
+
+      .hero-proof-card {
+        padding: 24px 20px;
+        border-radius: 24px;
+        box-shadow: 0 18px 42px rgba(0,0,0,.18);
+      }
+
+      .hero-proof-card h2 {
+        font-size: 24px;
+      }
+
+      .hero-proof-list {
+        gap: 10px;
+      }
+
+      .hero-proof-item {
+        grid-template-columns: 38px 1fr;
+        padding: 13px;
+      }
+
+      .hero-proof-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 14px;
+        font-size: 15px;
+      }
+
+      .hero-mini-cta {
+        font-size: 14px;
       }
 
       .hero-content {
@@ -963,6 +1115,11 @@
       .text-main {
         font-size: 16px;
         margin-bottom: 12px;
+        max-width: 100%;
+      }
+
+      .text-support {
+        font-size: 15px;
         max-width: 100%;
       }
 
@@ -1304,7 +1461,7 @@
       <div class="hero-layout">
 
         <div class="hero-content">
-          <p class="eyebrow">Seguros, finanzas y planificación</p>
+          <p class="eyebrow">Seguros y planificación financiera en Madrid</p>
 
           <h1>
             Y si mañana pasa algo,
@@ -1312,20 +1469,62 @@
           </h1>
 
           <p class="text-main">
-            Te ayudamos a entender, elegir y proteger lo que realmente importa, con un trato cercano, claro y sin tecnicismos.
+            Te ayudamos a revisar tus seguros, cuidar tu hogar, tu familia, tu negocio y planificar tu futuro financiero con soluciones adaptadas a ti.
+          </p>
+
+          <p class="text-support">
+            Para particulares, familias, autónomos y pequeños negocios que quieren tomar decisiones con tranquilidad y sin complicarse.
           </p>
 
           <div class="hero-buttons">
-            <a href="https://wa.me/34606067906" target="_blank" class="button-primary">Escríbenos por WhatsApp</a>
-            <a href="#servicios" class="button-secondary">Ver seguros y gestiones</a>
+            <a href="https://wa.me/34606067906?text=Hola,%20quiero%20revisar%20mis%20seguros%20o%20mi%20planificaci%C3%B3n%20financiera" target="_blank" class="button-primary">Revisar mi caso por WhatsApp</a>
+            <a href="#servicios" class="button-secondary">Ver seguros y planificación</a>
           </div>
 
           <div class="trust-badges">
             <div class="trust-badge">✔ +25 años de experiencia</div>
-            <div class="trust-badge">✔ Atención personal</div>
+            <div class="trust-badge">✔ Atención personal en Madrid</div>
             <div class="trust-badge">✔ Primera consulta sin compromiso</div>
           </div>
         </div>
+
+        <aside class="hero-proof-card" aria-label="Resumen de confianza">
+          <p class="hero-proof-kicker">En 3 segundos</p>
+          <h2>Qué hacemos por ti</h2>
+          <p>
+            Revisamos tu situación y te orientamos para que sepas qué proteger, qué mejorar y cuál es el siguiente paso.
+          </p>
+
+          <div class="hero-proof-list">
+            <div class="hero-proof-item">
+              <div class="hero-proof-icon">1</div>
+              <div>
+                <strong>Seguros</strong>
+                <span>Hogar, coche, vida, salud, accidentes, mascotas, autónomos y negocios.</span>
+              </div>
+            </div>
+
+            <div class="hero-proof-item">
+              <div class="hero-proof-icon">2</div>
+              <div>
+                <strong>Planificación financiera</strong>
+                <span>Ahorro, inversión, planes de pensiones y decisiones a medio/largo plazo.</span>
+              </div>
+            </div>
+
+            <div class="hero-proof-item">
+              <div class="hero-proof-icon">3</div>
+              <div>
+                <strong>Acompañamiento real</strong>
+                <span>Te explicamos las opciones y seguimos contigo después de contratar.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-mini-cta">
+            Siguiente paso: cuéntanos tu caso y lo revisamos contigo.
+          </div>
+        </aside>
 
       </div>
     </div>
