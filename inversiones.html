@@ -5,31 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Inversiones | Elena Sanz Burgos</title>
-  <meta name="description" content="Estrategias de inversión, construcción de patrimonio, gestión del riesgo, diversificación, horizonte temporal y asesoramiento financiero personalizado." />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <meta name="description" content="Asesoramiento en inversiones: planificación financiera, objetivos, perfil de riesgo, horizonte temporal, diversificación y acompañamiento personalizado." />
 
   <style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap");
+
     :root {
-      --bg: #fbf4ec;
-      --bg-soft: #fff9f1;
-      --bg-cream: #f7eadc;
+      --bg: #fffdfb;
+      --bg-soft: #fbf3ef;
       --white: #ffffff;
-      --glass: rgba(255, 255, 255, 0.72);
-      --text: #241820;
-      --muted: #786b70;
+      --text: #241f21;
+      --muted: #6f6663;
       --primary: #8f1f34;
       --primary-dark: #4a101d;
-      --primary-soft: rgba(143, 31, 52, 0.10);
-      --primary-softer: rgba(143, 31, 52, 0.06);
-      --border: rgba(74, 16, 29, 0.13);
-      --border-strong: rgba(143, 31, 52, 0.22);
-      --shadow: 0 22px 60px rgba(74, 16, 29, 0.12);
-      --shadow-soft: 0 16px 42px rgba(74, 16, 29, 0.08);
+      --border: rgba(143, 31, 52, 0.14);
+      --shadow: 0 20px 48px rgba(74, 16, 29, 0.10);
       --radius: 30px;
-      --radius-sm: 20px;
+      --radius-sm: 24px;
       --max: 1120px;
     }
 
@@ -44,25 +36,15 @@
     }
 
     body {
-      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: "Inter", Arial, sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(143, 31, 52, 0.12), transparent 34%),
-        radial-gradient(circle at 85% 12%, rgba(74, 16, 29, 0.10), transparent 32%),
-        linear-gradient(135deg, #fff8f0 0%, #fbf0e7 42%, #f8eadf 100%);
+        radial-gradient(circle at top right, rgba(143,31,52,0.10), transparent 34%),
+        radial-gradient(circle at 8% 38%, rgba(143,31,52,0.045), transparent 32%),
+        radial-gradient(circle at bottom left, rgba(143,31,52,0.08), transparent 46%),
+        linear-gradient(135deg, #fffdfb 0%, #fbf3ef 52%, #f6ece7 100%);
       color: var(--text);
       line-height: 1.6;
       overflow-x: hidden;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background:
-        radial-gradient(circle at 18% 25%, rgba(143, 31, 52, 0.05), transparent 22%),
-        radial-gradient(circle at 78% 68%, rgba(74, 16, 29, 0.06), transparent 26%);
-      z-index: -2;
     }
 
     a {
@@ -78,7 +60,7 @@
     @keyframes fadeUp {
       from {
         opacity: 0;
-        transform: translateY(24px);
+        transform: translateY(22px);
       }
 
       to {
@@ -93,24 +75,14 @@
       }
 
       50% {
-        transform: translateY(-7px);
-      }
-    }
-
-    @keyframes pulseGlow {
-      0%, 100% {
-        box-shadow: 0 22px 60px rgba(74, 16, 29, 0.12);
-      }
-
-      50% {
-        box-shadow: 0 28px 80px rgba(143, 31, 52, 0.18);
+        transform: translateY(-6px);
       }
     }
 
     .reveal {
       opacity: 0;
-      transform: translateY(26px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
+      transform: translateY(24px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
     }
 
     .reveal.in-view {
@@ -119,16 +91,16 @@
     }
 
     .topbar {
-      background: rgba(255, 250, 244, 0.84);
-      backdrop-filter: blur(18px);
-      border-bottom: 1px solid rgba(74, 16, 29, 0.10);
+      background: rgba(255,253,251,.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
       z-index: 50;
     }
 
     .nav {
-      min-height: 78px;
+      min-height: 76px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -142,26 +114,23 @@
     }
 
     .brand-mark {
-      width: 44px;
-      height: 44px;
+      width: 42px;
+      height: 42px;
       border-radius: 50%;
-      background:
-        linear-gradient(135deg, var(--primary), var(--primary-dark));
+      background: var(--primary);
       color: var(--white);
       display: grid;
       place-items: center;
       font-weight: 800;
-      letter-spacing: -0.04em;
+      letter-spacing: -0.03em;
       flex-shrink: 0;
-      box-shadow: 0 14px 30px rgba(74, 16, 29, 0.20);
+      box-shadow: 0 10px 24px rgba(143,31,52,.18);
     }
 
     .brand-text strong {
       display: block;
-      font-family: "Playfair Display", Georgia, serif;
-      font-size: 1.08rem;
+      font-size: 1rem;
       line-height: 1.1;
-      letter-spacing: -0.02em;
     }
 
     .brand-text span {
@@ -177,31 +146,14 @@
       gap: 18px;
       font-size: 0.95rem;
       color: var(--muted);
-      font-weight: 600;
     }
 
     .nav-links a {
-      position: relative;
-      transition: color 0.2s ease;
-    }
-
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -7px;
-      width: 0;
-      height: 1px;
-      background: var(--primary);
-      transition: width 0.25s ease;
+      transition: color .2s ease;
     }
 
     .nav-links a:hover {
       color: var(--primary);
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
     }
 
     .nav-actions {
@@ -214,9 +166,9 @@
       display: none;
       border: 0;
       background: transparent;
-      font-size: 1.9rem;
+      font-size: 1.8rem;
       cursor: pointer;
-      color: var(--primary-dark);
+      color: var(--text);
     }
 
     .mobile-menu {
@@ -229,11 +181,11 @@
       justify-content: center;
       gap: 8px;
       border-radius: 999px;
-      padding: 13px 21px;
+      padding: 13px 20px;
       font-weight: 800;
-      font-size: 0.94rem;
+      font-size: 0.95rem;
       border: 1px solid transparent;
-      transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease, border-color 0.22s ease, color 0.22s ease;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color .2s ease;
       cursor: pointer;
       white-space: nowrap;
       text-align: center;
@@ -241,51 +193,43 @@
 
     .btn:hover {
       transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(74, 16, 29, 0.12);
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      background: var(--primary);
       color: var(--white);
-      box-shadow: 0 16px 34px rgba(74, 16, 29, 0.24);
+      box-shadow: 0 12px 28px rgba(143,31,52,.22);
     }
 
     .btn-primary:hover {
-      background: linear-gradient(135deg, #7c1a2d, #350b15);
-      box-shadow: 0 22px 44px rgba(74, 16, 29, 0.30);
+      background: var(--primary-dark);
     }
 
     .btn-outline {
-      background: rgba(255, 255, 255, 0.48);
+      background: rgba(255,255,255,.62);
       color: var(--primary);
-      border-color: rgba(143, 31, 52, 0.26);
-      backdrop-filter: blur(12px);
-    }
-
-    .btn-outline:hover {
-      background: rgba(255, 255, 255, 0.72);
-      border-color: rgba(143, 31, 52, 0.42);
-      box-shadow: 0 14px 28px rgba(74, 16, 29, 0.10);
+      border-color: rgba(143, 31, 52, 0.28);
+      backdrop-filter: blur(8px);
     }
 
     .btn-tertiary {
       background: transparent;
-      color: var(--primary-dark);
+      color: var(--muted);
       border-color: transparent;
       text-decoration: underline;
-      text-decoration-thickness: 1px;
-      text-underline-offset: 5px;
+      text-underline-offset: 4px;
       box-shadow: none;
-      padding-inline: 10px;
     }
 
     .btn-tertiary:hover {
       color: var(--primary);
-      background: rgba(143, 31, 52, 0.05);
+      background: rgba(143, 31, 52, 0.04);
       box-shadow: none;
     }
 
     .hero {
-      padding: 92px 0 64px;
+      padding: 78px 0 54px;
       position: relative;
       overflow: hidden;
     }
@@ -293,33 +237,31 @@
     .hero::before {
       content: "";
       position: absolute;
-      width: 620px;
-      height: 620px;
+      width: 560px;
+      height: 560px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(143, 31, 52, 0.15), transparent 68%);
-      right: -230px;
-      top: -260px;
-      filter: blur(4px);
+      background: rgba(143, 31, 52, 0.08);
+      right: -220px;
+      top: -220px;
       z-index: -1;
     }
 
     .hero::after {
       content: "";
       position: absolute;
-      width: 420px;
-      height: 420px;
+      width: 260px;
+      height: 260px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(255, 255, 255, 0.55), transparent 68%);
-      left: -160px;
-      bottom: -180px;
-      filter: blur(6px);
+      background: rgba(143, 31, 52, 0.045);
+      left: -120px;
+      bottom: -120px;
       z-index: -1;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
-      gap: 46px;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 42px;
       align-items: center;
     }
 
@@ -327,50 +269,49 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 8px 14px;
+      padding: 8px 13px;
       border-radius: 999px;
-      background: rgba(143, 31, 52, 0.09);
+      background: rgba(143, 31, 52, 0.08);
       color: var(--primary);
       font-weight: 800;
       font-size: 0.9rem;
-      margin-bottom: 22px;
-      border: 1px solid rgba(143, 31, 52, 0.11);
+      margin-bottom: 20px;
     }
 
     h1,
     h2,
     h3 {
       font-family: "Playfair Display", Georgia, serif;
-      color: var(--primary-dark);
+      color: #241f21;
     }
 
     h1 {
-      font-size: clamp(2.6rem, 5.4vw, 4.8rem);
-      line-height: 0.98;
-      letter-spacing: -0.055em;
-      max-width: 870px;
-      margin-bottom: 24px;
+      font-size: clamp(2.35rem, 5vw, 4.4rem);
+      line-height: 1;
+      letter-spacing: -0.04em;
+      max-width: 850px;
+      margin-bottom: 22px;
     }
 
     h2 {
-      font-size: clamp(1.95rem, 3vw, 3rem);
-      line-height: 1.08;
-      letter-spacing: -0.04em;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      line-height: 1.1;
+      letter-spacing: -0.025em;
       margin-bottom: 16px;
     }
 
     h3 {
-      font-size: 1.28rem;
-      line-height: 1.22;
-      letter-spacing: -0.025em;
+      font-size: 1.2rem;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
       margin-bottom: 10px;
     }
 
     .lead {
-      font-size: clamp(1.06rem, 2vw, 1.22rem);
-      color: #5f5358;
-      max-width: 710px;
-      margin-bottom: 30px;
+      font-size: clamp(1.05rem, 2vw, 1.22rem);
+      color: #4f4744;
+      max-width: 690px;
+      margin-bottom: 28px;
     }
 
     .hero-actions {
@@ -383,43 +324,28 @@
     .trust-line {
       color: var(--muted);
       font-size: 0.98rem;
-      font-weight: 500;
     }
 
     .hero-card {
-      position: relative;
-      background:
-        linear-gradient(145deg, rgba(255, 255, 255, 0.78), rgba(255, 246, 237, 0.56));
-      border: 1px solid rgba(255, 255, 255, 0.62);
+      background: rgba(255,255,255,.96);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--border);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      padding: 32px;
-      backdrop-filter: blur(18px);
-      animation: fadeUp 0.8s ease both, pulseGlow 5s ease-in-out infinite;
+      padding: 28px;
+      animation: fadeUp 0.8s ease both;
+      position: relative;
       overflow: hidden;
     }
 
     .hero-card::before {
       content: "";
       position: absolute;
-      width: 170px;
-      height: 170px;
-      right: -70px;
-      top: -70px;
-      border-radius: 50%;
-      background: rgba(143, 31, 52, 0.10);
-      filter: blur(2px);
-    }
-
-    .hero-card::after {
-      content: "";
-      position: absolute;
-      width: 110px;
-      height: 110px;
-      left: -42px;
-      bottom: -42px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.72);
+      inset: 0;
+      background:
+        radial-gradient(circle at top right, rgba(143,31,52,.075), transparent 42%),
+        linear-gradient(135deg, rgba(255,253,251,.55), transparent);
+      pointer-events: none;
     }
 
     .hero-card > * {
@@ -428,31 +354,30 @@
     }
 
     .hero-card-icon {
-      width: 86px;
-      height: 86px;
-      border-radius: 26px;
-      background:
-        linear-gradient(135deg, #fff7ed, rgba(143, 31, 52, 0.18));
-      color: var(--primary);
+      width: 74px;
+      height: 74px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, #fff7f3, #f6e7df);
+      color: #8f1f34;
+      border: 1px solid rgba(143,31,52,.14);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.85);
       display: grid;
       place-items: center;
-      font-size: 2.25rem;
-      margin-bottom: 20px;
+      font-size: 2rem;
+      margin-bottom: 18px;
       animation: softFloat 4.5s ease-in-out infinite;
-      border: 1px solid rgba(143, 31, 52, 0.10);
-      box-shadow: 0 16px 34px rgba(74, 16, 29, 0.10);
     }
 
     .hero-card h2 {
-      font-size: 1.55rem;
-      margin-bottom: 14px;
+      font-size: 1.45rem;
+      margin-bottom: 12px;
     }
 
     .hero-card ul {
       list-style: none;
       display: grid;
-      gap: 11px;
-      color: #5f5358;
+      gap: 10px;
+      color: #4f4744;
     }
 
     .hero-card li {
@@ -469,21 +394,18 @@
     }
 
     section {
-      padding: 68px 0;
-      position: relative;
+      padding: 64px 0;
     }
 
     .section-soft {
-      background:
-        radial-gradient(circle at 12% 18%, rgba(143, 31, 52, 0.06), transparent 28%),
-        linear-gradient(135deg, rgba(255, 250, 244, 0.86), rgba(247, 234, 220, 0.62));
-      border-top: 1px solid rgba(74, 16, 29, 0.08);
-      border-bottom: 1px solid rgba(74, 16, 29, 0.08);
+      background: rgba(255,253,251,.55);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
     }
 
     .section-title {
-      max-width: 790px;
-      margin-bottom: 36px;
+      max-width: 780px;
+      margin-bottom: 34px;
     }
 
     .section-title.center {
@@ -496,7 +418,6 @@
       font-weight: 800;
       display: block;
       margin-bottom: 8px;
-      letter-spacing: 0.02em;
     }
 
     .section-title p,
@@ -517,196 +438,161 @@
       gap: 16px;
     }
 
-    .card {
-      position: relative;
-      background:
-        linear-gradient(145deg, rgba(255, 255, 255, 0.82), rgba(255, 247, 239, 0.68));
-      border: 1px solid rgba(143, 31, 52, 0.10);
+    .grid-6 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .card,
+    .fund-type-card {
+      background: rgba(255,255,255,.96);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--border);
       border-radius: var(--radius-sm);
-      padding: 25px;
-      box-shadow: var(--shadow-soft);
+      padding: 24px;
+      box-shadow: 0 14px 34px rgba(74,16,29,.07);
       height: 100%;
-      backdrop-filter: blur(12px);
       transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+      position: relative;
       overflow: hidden;
     }
 
-    .card::before {
+    .card::before,
+    .fund-type-card::before {
       content: "";
       position: absolute;
-      width: 110px;
-      height: 110px;
-      border-radius: 50%;
-      background: rgba(143, 31, 52, 0.05);
-      right: -48px;
-      top: -50px;
+      inset: 0;
+      background:
+        radial-gradient(circle at top right, rgba(143,31,52,.06), transparent 42%),
+        linear-gradient(135deg, rgba(255,253,251,.45), transparent);
+      pointer-events: none;
     }
 
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 24px 54px rgba(74, 16, 29, 0.14);
+    .card > *,
+    .fund-type-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .card:hover,
+    .fund-type-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 22px 48px rgba(74,16,29,.12);
       border-color: rgba(143, 31, 52, 0.24);
     }
 
-    .card > * {
-      position: relative;
-      z-index: 1;
-    }
-
-    .card-icon {
-      width: 54px;
-      height: 54px;
-      border-radius: 18px;
-      background: linear-gradient(135deg, #fff7ed, rgba(143, 31, 52, 0.13));
-      color: var(--primary);
+    .card-icon,
+    .fund-type-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #fff7f3, #f6e7df);
+      color: #8f1f34;
+      border: 1px solid rgba(143,31,52,.14);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.85);
       display: grid;
       place-items: center;
-      font-size: 1.5rem;
+      font-size: 1.45rem;
       margin-bottom: 18px;
-      border: 1px solid rgba(143, 31, 52, 0.10);
-      box-shadow: 0 12px 26px rgba(74, 16, 29, 0.08);
     }
 
-    .card p {
+    .card p,
+    .fund-type-card p {
       color: var(--muted);
     }
 
-    .risk-alert {
-      position: relative;
+    .example-line {
+      margin-top: 14px;
+      background: rgba(143, 31, 52, 0.06);
+      border: 1px solid rgba(143, 31, 52, 0.12);
+      border-radius: 14px;
+      padding: 12px 14px;
+      color: #4f4744;
+      font-size: 0.94rem;
+    }
+
+    .example-line strong {
+      color: var(--primary);
+    }
+
+    .warning-box {
       background:
-        radial-gradient(circle at 88% 18%, rgba(255, 255, 255, 0.12), transparent 26%),
-        linear-gradient(135deg, var(--primary), var(--primary-dark));
+        radial-gradient(circle at top right, rgba(255,255,255,.18), transparent 30%),
+        radial-gradient(circle at bottom left, rgba(255,255,255,.10), transparent 34%),
+        linear-gradient(135deg, #8f1f34 0%, #4a101d 100%);
       color: var(--white);
-      border-radius: calc(var(--radius) + 8px);
-      padding: 38px;
-      box-shadow: 0 28px 72px rgba(74, 16, 29, 0.22);
+      border-radius: calc(var(--radius) + 6px);
+      padding: 34px;
+      box-shadow: var(--shadow);
+      position: relative;
       overflow: hidden;
     }
 
-    .risk-alert::before {
+    .warning-box::before {
       content: "";
       position: absolute;
-      width: 210px;
-      height: 210px;
+      width: 190px;
+      height: 190px;
+      right: -60px;
+      top: -70px;
+      background: rgba(255,255,255,.12);
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.10);
-      right: -80px;
-      top: -90px;
+      animation: softFloat 5s ease-in-out infinite;
     }
 
-    .risk-alert::after {
-      content: "";
-      position: absolute;
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.08);
-      left: -60px;
-      bottom: -70px;
-    }
-
-    .risk-alert h2,
-    .risk-alert p {
+    .warning-box h2,
+    .warning-box p {
       position: relative;
       z-index: 1;
     }
 
-    .risk-alert h2 {
+    .warning-box h2 {
       margin-bottom: 12px;
-      color: var(--white);
+      color: white;
     }
 
-    .risk-alert p {
-      color: rgba(255,255,255,.88);
+    .warning-box p {
+      color: rgba(255,255,255,.92);
       font-size: 1.08rem;
-      max-width: 890px;
-    }
-
-    .table-wrap {
-      background: rgba(255, 255, 255, 0.76);
-      border: 1px solid rgba(143, 31, 52, 0.13);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      backdrop-filter: blur(14px);
-    }
-
-    .simple-table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    .simple-table th,
-    .simple-table td {
-      padding: 22px 24px;
-      text-align: left;
-      vertical-align: top;
-      border-bottom: 1px solid rgba(74, 16, 29, 0.10);
-    }
-
-    .simple-table th {
-      background:
-        linear-gradient(135deg, rgba(143, 31, 52, 0.13), rgba(143, 31, 52, 0.06));
-      color: var(--primary-dark);
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .simple-table tr:last-child td {
-      border-bottom: 0;
-    }
-
-    .simple-table strong {
-      color: var(--primary-dark);
-    }
-
-    .simple-table td {
-      color: #5f5358;
+      max-width: 900px;
     }
 
     .highlight {
-      position: relative;
       background:
-        radial-gradient(circle at 88% 16%, rgba(255, 255, 255, 0.12), transparent 26%),
-        radial-gradient(circle at 4% 88%, rgba(255, 255, 255, 0.10), transparent 28%),
-        linear-gradient(135deg, var(--primary), var(--primary-dark));
+        radial-gradient(circle at top right, rgba(255,255,255,.18), transparent 30%),
+        radial-gradient(circle at bottom left, rgba(255,255,255,.10), transparent 34%),
+        linear-gradient(135deg, #8f1f34 0%, #4a101d 100%);
       color: var(--white);
-      border-radius: calc(var(--radius) + 8px);
-      padding: 42px;
-      box-shadow: 0 28px 72px rgba(74, 16, 29, 0.22);
+      border-radius: calc(var(--radius) + 6px);
+      padding: 38px;
+      box-shadow: var(--shadow);
+      position: relative;
       overflow: hidden;
     }
 
     .highlight::before {
       content: "";
       position: absolute;
-      width: 190px;
-      height: 190px;
-      right: -75px;
-      top: -85px;
+      width: 210px;
+      height: 210px;
+      right: -70px;
+      top: -80px;
+      background: rgba(255,255,255,.12);
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.10);
+      animation: softFloat 5s ease-in-out infinite;
     }
 
-    .highlight::after {
-      content: "";
-      position: absolute;
-      width: 130px;
-      height: 130px;
-      left: -45px;
-      bottom: -55px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.08);
-    }
-
-    .highlight > * {
+    .highlight h2,
+    .highlight p,
+    .highlight .eyebrow,
+    .feature-list {
       position: relative;
       z-index: 1;
     }
 
     .highlight h2 {
-      color: var(--white);
+      color: white;
     }
 
     .highlight p {
@@ -714,17 +600,16 @@
     }
 
     .highlight .eyebrow {
-      background: rgba(255, 255, 255, 0.13);
+      background: rgba(255, 255, 255, 0.12);
       color: var(--white);
       margin-bottom: 14px;
-      border-color: rgba(255, 255, 255, 0.16);
     }
 
     .feature-list {
       list-style: none;
       display: grid;
-      gap: 12px;
-      margin-top: 22px;
+      gap: 11px;
+      margin-top: 20px;
     }
 
     .feature-list li {
@@ -738,40 +623,88 @@
       content: "✓";
       font-weight: 900;
       color: var(--white);
+      flex: 0 0 auto;
+    }
+
+    .fund-table-wrap {
+      background: rgba(255,255,255,.96);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .fund-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .fund-table th,
+    .fund-table td {
+      text-align: left;
+      padding: 18px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    .fund-table th {
+      background: rgba(143, 31, 52, 0.08);
+      color: var(--primary);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .fund-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .fund-table strong {
+      color: var(--text);
+    }
+
+    .fund-table td {
+      color: #4f4744;
+    }
+
+    .risk {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 46px;
+      height: 34px;
+      border-radius: 999px;
+      background: rgba(143, 31, 52, 0.08);
+      color: var(--primary);
+      font-weight: 900;
     }
 
     .review-block {
       display: grid;
       grid-template-columns: 0.9fr 1.1fr;
-      gap: 36px;
+      gap: 34px;
       align-items: start;
-    }
-
-    .review-intro {
-      color: var(--muted);
-      font-size: 1.04rem;
-      margin-top: 10px;
     }
 
     .review-list {
       list-style: none;
       display: grid;
       gap: 0;
-      background:
-        linear-gradient(145deg, rgba(255, 255, 255, 0.82), rgba(255, 247, 239, 0.68));
+      background: rgba(255,255,255,.96);
+      backdrop-filter: blur(8px);
       border-radius: calc(var(--radius) + 4px);
-      border: 1px solid rgba(143, 31, 52, 0.12);
-      padding: 32px;
-      box-shadow: var(--shadow-soft);
-      backdrop-filter: blur(12px);
+      border: 1px solid var(--border);
+      padding: 30px;
+      box-shadow: 0 14px 34px rgba(74,16,29,.07);
     }
 
     .review-item {
       display: grid;
-      grid-template-columns: 48px 1fr;
+      grid-template-columns: 46px 1fr;
       gap: 16px;
       padding: 20px 0;
-      border-bottom: 1px solid rgba(74, 16, 29, 0.10);
+      border-bottom: 1px solid var(--border);
     }
 
     .review-item:first-child {
@@ -784,21 +717,21 @@
     }
 
     .review-number {
-      width: 40px;
-      height: 40px;
+      width: 38px;
+      height: 38px;
       border-radius: 50%;
-      background: rgba(143, 31, 52, 0.09);
+      background: linear-gradient(135deg, #fff7f3, #f6e7df);
       color: var(--primary);
+      border: 1px solid rgba(143,31,52,.14);
       display: grid;
       place-items: center;
       font-weight: 900;
       font-size: 0.9rem;
-      border: 1px solid rgba(143, 31, 52, 0.10);
     }
 
     .review-item strong {
       display: block;
-      color: var(--primary-dark);
+      color: var(--text);
       margin-bottom: 4px;
       font-size: 1.02rem;
     }
@@ -808,70 +741,51 @@
       font-size: 0.97rem;
     }
 
-    .review-note {
-      margin-top: 24px;
-      padding: 18px 20px;
-      border-radius: var(--radius-sm);
-      background: rgba(143, 31, 52, 0.07);
-      color: #5f5358;
-      font-size: 0.98rem;
-      border: 1px solid rgba(143, 31, 52, 0.09);
-    }
-
-    .review-note strong {
-      color: var(--primary);
-    }
-
-    .faq-carousel-wrap {
-      position: relative;
-    }
-
     .faq-carousel {
       display: grid;
       grid-auto-flow: column;
-      grid-auto-columns: minmax(300px, 365px);
+      grid-auto-columns: minmax(290px, 360px);
       gap: 18px;
       overflow-x: auto;
       overscroll-behavior-x: contain;
       scroll-snap-type: x mandatory;
       scroll-padding: 4px;
-      padding: 8px 4px 20px;
+      padding: 6px 4px 18px;
       scrollbar-width: thin;
     }
 
     .faq-card {
-      min-height: 250px;
-      background:
-        linear-gradient(145deg, rgba(255, 255, 255, 0.82), rgba(255, 247, 239, 0.68));
-      border: 1px solid rgba(143, 31, 52, 0.12);
+      min-height: 245px;
+      background: rgba(255,255,255,.96);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 26px;
-      box-shadow: var(--shadow-soft);
+      padding: 24px;
+      box-shadow: 0 14px 34px rgba(74,16,29,.07);
       scroll-snap-align: start;
       display: flex;
       flex-direction: column;
       gap: 14px;
       transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
-      backdrop-filter: blur(12px);
     }
 
     .faq-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 24px 54px rgba(74, 16, 29, 0.14);
+      box-shadow: 0 22px 48px rgba(74,16,29,.12);
       border-color: rgba(143, 31, 52, 0.24);
     }
 
     .faq-number {
-      width: 44px;
-      height: 44px;
+      width: 42px;
+      height: 42px;
       border-radius: 50%;
-      background: rgba(143, 31, 52, 0.09);
+      background: linear-gradient(135deg, #fff7f3, #f6e7df);
       color: var(--primary);
+      border: 1px solid rgba(143,31,52,.14);
       display: grid;
       place-items: center;
       font-weight: 900;
       flex: 0 0 auto;
-      border: 1px solid rgba(143, 31, 52, 0.10);
     }
 
     .faq-card h3 {
@@ -887,64 +801,48 @@
       display: flex;
       justify-content: center;
       gap: 10px;
-      margin-top: 14px;
+      margin-top: 12px;
     }
 
     .faq-arrow {
-      width: 46px;
-      height: 46px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
-      border: 1px solid rgba(143, 31, 52, 0.24);
-      background: rgba(255, 255, 255, 0.62);
+      border: 1px solid rgba(143, 31, 52, 0.28);
+      background: var(--white);
       color: var(--primary);
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       font-weight: 900;
       cursor: pointer;
-      backdrop-filter: blur(12px);
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
     }
 
     .faq-arrow:hover {
       transform: translateY(-2px);
-      box-shadow: 0 14px 30px rgba(74, 16, 29, 0.12);
-      background: rgba(255, 255, 255, 0.82);
-      border-color: rgba(143, 31, 52, 0.42);
+      box-shadow: 0 12px 28px rgba(74,16,29,.12);
+      background: rgba(143, 31, 52, 0.06);
     }
 
     .cta-final {
-      position: relative;
-      background:
-        radial-gradient(circle at 85% 10%, rgba(143, 31, 52, 0.08), transparent 28%),
-        linear-gradient(145deg, rgba(255, 255, 255, 0.84), rgba(255, 247, 239, 0.72));
-      border: 1px solid rgba(143, 31, 52, 0.13);
-      border-radius: calc(var(--radius) + 10px);
-      padding: 46px;
+      background: rgba(255,255,255,.96);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) + 8px);
+      padding: 42px;
       text-align: center;
       box-shadow: var(--shadow);
-      backdrop-filter: blur(14px);
+      position: relative;
       overflow: hidden;
     }
 
     .cta-final::before {
       content: "";
       position: absolute;
-      width: 210px;
-      height: 210px;
-      right: -90px;
-      top: -100px;
-      border-radius: 50%;
-      background: rgba(143, 31, 52, 0.07);
-    }
-
-    .cta-final::after {
-      content: "";
-      position: absolute;
-      width: 140px;
-      height: 140px;
-      left: -55px;
-      bottom: -65px;
-      border-radius: 50%;
-      background: rgba(143, 31, 52, 0.05);
+      inset: 0;
+      background:
+        radial-gradient(circle at top right, rgba(143,31,52,.07), transparent 40%),
+        linear-gradient(135deg, rgba(255,253,251,.45), transparent);
+      pointer-events: none;
     }
 
     .cta-final > * {
@@ -953,7 +851,7 @@
     }
 
     .cta-final p {
-      max-width: 730px;
+      max-width: 720px;
       margin: 0 auto 24px;
       color: var(--muted);
       font-size: 1.08rem;
@@ -961,9 +859,8 @@
 
     .footer {
       padding: 34px 0;
-      border-top: 1px solid rgba(74, 16, 29, 0.10);
-      background: rgba(255, 250, 244, 0.86);
-      backdrop-filter: blur(14px);
+      border-top: 1px solid var(--border);
+      background: rgba(255,253,251,.94);
       color: var(--muted);
       font-size: 0.94rem;
     }
@@ -981,12 +878,14 @@
       flex-wrap: wrap;
     }
 
-    .footer a {
-      transition: color 0.2s ease;
+    .footer-links a:hover {
+      color: var(--primary);
     }
 
-    .footer a:hover {
-      color: var(--primary);
+    @media (max-width: 1000px) {
+      .grid-6 {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
     @media (max-width: 980px) {
@@ -1007,7 +906,7 @@
 
       .mobile-menu {
         display: none;
-        border-top: 1px solid rgba(74, 16, 29, 0.10);
+        border-top: 1px solid var(--border);
         padding: 16px 0 22px;
       }
 
@@ -1019,11 +918,10 @@
       .mobile-menu a {
         padding: 10px 0;
         color: var(--muted);
-        font-weight: 600;
       }
 
-      .mobile-menu .btn {
-        color: var(--white);
+      .mobile-menu a:hover {
+        color: var(--primary);
       }
 
       .hero-grid,
@@ -1032,73 +930,85 @@
       }
 
       .grid-3,
-      .grid-4 {
+      .grid-4,
+      .grid-6 {
         grid-template-columns: 1fr;
       }
 
       .faq-carousel {
-        grid-auto-columns: minmax(270px, 86vw);
+        grid-auto-columns: minmax(260px, 86vw);
       }
 
       .hero {
-        padding-top: 58px;
+        padding-top: 54px;
       }
 
       section {
-        padding: 56px 0;
+        padding: 54px 0;
       }
     }
 
-    @media (max-width: 640px) {
-      .simple-table,
-      .simple-table thead,
-      .simple-table tbody,
-      .simple-table th,
-      .simple-table td,
-      .simple-table tr {
+    @media (max-width: 760px) {
+      .fund-table,
+      .fund-table thead,
+      .fund-table tbody,
+      .fund-table th,
+      .fund-table td,
+      .fund-table tr {
         display: block;
         width: 100%;
       }
 
-      .simple-table thead {
+      .fund-table thead {
         display: none;
       }
 
-      .simple-table tr {
-        padding: 20px;
-        border-bottom: 1px solid rgba(74, 16, 29, 0.10);
-        background: rgba(255, 255, 255, 0.38);
+      .fund-table tr {
+        padding: 18px 20px;
+        border-bottom: 1px solid var(--border);
       }
 
-      .simple-table tr:last-child {
+      .fund-table tr:last-child {
         border-bottom: 0;
       }
 
-      .simple-table td {
+      .fund-table td {
         border-bottom: 0;
         padding: 0;
       }
 
-      .simple-table td + td {
-        margin-top: 12px;
+      .fund-table td + td {
+        margin-top: 10px;
       }
 
-      .simple-table td::before {
+      .fund-table td::before {
         display: block;
         font-size: 0.78rem;
         font-weight: 900;
         color: var(--primary);
         text-transform: uppercase;
-        letter-spacing: 0.05em;
+        letter-spacing: 0.04em;
         margin-bottom: 4px;
       }
 
-      .simple-table td:first-child::before {
-        content: "Perfil";
+      .fund-table td:nth-child(1)::before {
+        content: "Fondo";
       }
 
-      .simple-table td:last-child::before {
-        content: "Enfoque estratégico";
+      .fund-table td:nth-child(2)::before {
+        content: "Tipo";
+      }
+
+      .fund-table td:nth-child(3)::before {
+        content: "Riesgo";
+      }
+
+      .fund-table td:nth-child(4)::before {
+        content: "Horizonte";
+      }
+
+      .fund-table td:nth-child(5)::before {
+        content: "Perfil";
       }
     }
 
@@ -1117,16 +1027,12 @@
         min-height: 52px;
       }
 
-      .btn-tertiary {
-        width: 100%;
-      }
-
       .hero-card,
       .highlight,
-      .risk-alert,
+      .warning-box,
       .cta-final {
-        padding: 28px 20px;
-        border-radius: 24px;
+        padding: 26px 20px;
+        border-radius: 20px;
       }
 
       .review-list {
@@ -1134,25 +1040,17 @@
       }
 
       .review-item {
-        grid-template-columns: 40px 1fr;
+        grid-template-columns: 38px 1fr;
         gap: 12px;
       }
 
       h1 {
-        font-size: 2.45rem;
-        letter-spacing: -0.045em;
+        font-size: 2.35rem;
+        letter-spacing: -0.035em;
       }
 
       h2 {
-        font-size: 1.9rem;
-      }
-
-      h3 {
-        font-size: 1.2rem;
-      }
-
-      .lead {
-        font-size: 1.04rem;
+        font-size: 1.8rem;
       }
 
       .footer-inner {
@@ -1160,7 +1058,6 @@
       }
     }
 
-    /* MEJORAS MÓVIL AÑADIDAS */
     .mobile-contact-bar {
       display: none;
     }
@@ -1211,7 +1108,7 @@
         height: 46px;
         border-radius: 50%;
         border: 1px solid rgba(143,31,52,.18);
-        background: rgba(255,250,244,.96);
+        background: rgba(255,253,251,.96);
         color: var(--primary);
         display: inline-flex;
         align-items: center;
@@ -1295,11 +1192,9 @@
       .lead,
       .section-title p,
       .text-muted,
-      .risk-alert p,
+      .warning-box p,
       .highlight p,
-      .cta-final p,
-      .review-intro,
-      .review-note {
+      .cta-final p {
         font-size: 1rem;
         line-height: 1.6;
       }
@@ -1331,22 +1226,26 @@
       }
 
       .grid-3,
-      .grid-4 {
+      .grid-4,
+      .grid-6 {
         grid-template-columns: 1fr;
         gap: 16px;
       }
 
-      .card {
+      .card,
+      .fund-type-card {
         padding: 24px 20px;
         border-radius: 22px;
       }
 
       .card:hover,
+      .fund-type-card:hover,
       .faq-card:hover {
         transform: none;
       }
 
-      .card-icon {
+      .card-icon,
+      .fund-type-icon {
         width: 52px;
         height: 52px;
         border-radius: 18px;
@@ -1354,14 +1253,14 @@
         margin-bottom: 14px;
       }
 
-      .risk-alert,
+      .warning-box,
       .highlight,
       .cta-final {
         padding: 28px 20px;
         border-radius: 22px;
       }
 
-      .table-wrap {
+      .fund-table-wrap {
         border-radius: 22px;
       }
 
@@ -1379,11 +1278,6 @@
       .review-number {
         width: 36px;
         height: 36px;
-      }
-
-      .review-note {
-        padding: 16px 18px;
-        border-radius: 18px;
       }
 
       .faq-carousel {
@@ -1427,7 +1321,7 @@
         gap: 10px;
         padding: 10px;
         border-radius: 22px;
-        background: rgba(255,250,244,.96);
+        background: rgba(255,253,251,.96);
         border: 1px solid rgba(143,31,52,.14);
         box-shadow: 0 14px 34px rgba(0,0,0,.18);
         backdrop-filter: blur(12px);
@@ -1475,15 +1369,16 @@
 
       .hero-card,
       .highlight,
-      .risk-alert,
+      .warning-box,
       .cta-final,
       .card,
+      .fund-type-card,
       .review-list,
       .faq-card {
         padding: 24px 18px;
       }
 
-      .simple-table tr {
+      .fund-table tr {
         padding: 18px;
       }
 
@@ -1493,288 +1388,272 @@
       }
     }
 
-
     /* CAMBIOS PUNTO 3: MENOS BLOQUES REPETITIVOS */
-    .investment-route {
+    .analysis-strip {
       display: grid;
-      grid-template-columns: 0.86fr 1.14fr;
-      gap: 34px;
-      align-items: start;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 14px;
+      margin-top: 26px;
     }
 
-    .investment-route-intro {
-      position: sticky;
-      top: 104px;
-      background:
-        radial-gradient(circle at top right, rgba(143, 31, 52, 0.09), transparent 36%),
-        linear-gradient(145deg, rgba(255,255,255,.86), rgba(255,247,239,.68));
-      border: 1px solid rgba(143, 31, 52, 0.12);
-      border-radius: calc(var(--radius) + 4px);
-      padding: 34px;
-      box-shadow: var(--shadow-soft);
-      backdrop-filter: blur(12px);
+    .analysis-pill {
+      min-height: 92px;
+      border-radius: 22px;
+      background: rgba(255,255,255,.92);
+      border: 1px solid rgba(143,31,52,.13);
+      padding: 18px;
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      box-shadow: 0 10px 24px rgba(74,16,29,.05);
     }
 
-    .investment-route-intro p {
-      color: var(--muted);
-      margin-top: 12px;
-    }
-
-    .investment-route-list {
-      display: grid;
-      gap: 0;
-      border: 1px solid rgba(143, 31, 52, 0.12);
-      border-radius: calc(var(--radius) + 4px);
-      overflow: hidden;
-      background: rgba(255,255,255,.78);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(12px);
-    }
-
-    .investment-route-item {
-      display: grid;
-      grid-template-columns: 64px 1fr;
-      gap: 18px;
-      padding: 24px;
-      border-bottom: 1px solid rgba(74, 16, 29, 0.10);
-      background: rgba(255,255,255,.48);
-      transition: background .22s ease;
-    }
-
-    .investment-route-item:last-child {
-      border-bottom: 0;
-    }
-
-    .investment-route-item:hover {
-      background: rgba(255, 247, 239, .86);
-    }
-
-    .investment-route-number,
-    .investment-route-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 18px;
-      background: linear-gradient(135deg, #fff7ed, rgba(143, 31, 52, 0.13));
+    .analysis-pill span {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #fff1eb;
       color: var(--primary);
-      display: grid;
-      place-items: center;
-      font-weight: 900;
-      font-size: 1.05rem;
-      border: 1px solid rgba(143,31,52,.10);
-      box-shadow: 0 12px 26px rgba(74, 16, 29, 0.08);
-    }
-
-    .investment-route-item h3 {
-      margin-bottom: 8px;
-    }
-
-    .investment-route-item p {
-      color: var(--muted);
-      margin-bottom: 12px;
-    }
-
-    .investment-route-tag {
       display: inline-flex;
-      padding: 9px 13px;
-      border-radius: 999px;
-      background: rgba(143,31,52,.08);
-      color: var(--primary);
-      font-size: .9rem;
-      font-weight: 800;
-      border: 1px solid rgba(143,31,52,.10);
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      flex-shrink: 0;
     }
 
-    .planning-panel {
+    .analysis-pill strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--text);
+    }
+
+    .analysis-pill p {
+      color: var(--muted);
+      font-size: .94rem;
+      line-height: 1.5;
+    }
+
+    .editorial-panel {
       display: grid;
       grid-template-columns: .9fr 1.1fr;
       gap: 34px;
       align-items: stretch;
     }
 
-    .planning-main {
+    .editorial-main {
       background:
         radial-gradient(circle at top right, rgba(143,31,52,.09), transparent 36%),
-        linear-gradient(145deg, rgba(255,255,255,.86), rgba(255,247,239,.68));
-      border: 1px solid rgba(143, 31, 52, 0.12);
+        linear-gradient(135deg, rgba(255,255,255,.96), rgba(255,247,243,.86));
+      border: 1px solid var(--border);
       border-radius: calc(var(--radius) + 4px);
       padding: 34px;
-      box-shadow: var(--shadow-soft);
-      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow);
     }
 
-    .planning-main p {
+    .editorial-main .eyebrow {
+      margin-bottom: 16px;
+    }
+
+    .editorial-main p {
       color: var(--muted);
       font-size: 1.04rem;
     }
 
-    .planning-steps {
-      background: rgba(255,255,255,.78);
-      border: 1px solid rgba(143, 31, 52, 0.12);
+    .editorial-steps {
+      background: rgba(255,255,255,.88);
+      border: 1px solid var(--border);
       border-radius: calc(var(--radius) + 4px);
-      padding: 30px;
-      box-shadow: var(--shadow-soft);
-      backdrop-filter: blur(12px);
+      padding: 28px;
+      box-shadow: 0 14px 34px rgba(74,16,29,.07);
     }
 
-    .planning-step {
+    .editorial-step {
       display: grid;
-      grid-template-columns: 48px 1fr;
+      grid-template-columns: 46px 1fr;
       gap: 16px;
       padding: 18px 0;
-      border-bottom: 1px solid rgba(74, 16, 29, 0.10);
+      border-bottom: 1px solid var(--border);
     }
 
-    .planning-step:first-child {
+    .editorial-step:first-child {
       padding-top: 0;
     }
 
-    .planning-step:last-child {
+    .editorial-step:last-child {
       padding-bottom: 0;
       border-bottom: 0;
     }
 
-    .planning-step span {
-      width: 40px;
-      height: 40px;
+    .editorial-step span {
+      width: 38px;
+      height: 38px;
       border-radius: 50%;
-      background: rgba(143, 31, 52, 0.09);
-      color: var(--primary);
-      border: 1px solid rgba(143,31,52,.10);
+      background: linear-gradient(135deg, #8f1f34, #4a101d);
+      color: white;
       display: grid;
       place-items: center;
       font-weight: 900;
       font-size: .9rem;
+      box-shadow: 0 10px 22px rgba(143,31,52,.22);
     }
 
-    .planning-step strong {
+    .editorial-step strong {
       display: block;
-      color: var(--primary-dark);
       margin-bottom: 4px;
-      font-size: 1.02rem;
+      color: var(--text);
+      font-size: 1.03rem;
     }
 
-    .planning-step p {
+    .editorial-step p {
       color: var(--muted);
       font-size: .97rem;
     }
 
-    .portfolio-route {
+    .fund-route {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0;
-      border: 1px solid rgba(143, 31, 52, 0.12);
-      border-radius: calc(var(--radius) + 4px);
-      overflow: hidden;
-      background: rgba(255,255,255,.78);
-      box-shadow: var(--shadow-soft);
-      backdrop-filter: blur(12px);
+      grid-template-columns: .82fr 1.18fr;
+      gap: 34px;
+      align-items: start;
     }
 
-    .portfolio-route-item {
-      padding: 26px;
-      border-right: 1px solid rgba(74, 16, 29, 0.10);
-      background: rgba(255,255,255,.42);
+    .fund-route-intro {
+      position: sticky;
+      top: 104px;
+      background:
+        radial-gradient(circle at top right, rgba(143,31,52,.09), transparent 36%),
+        rgba(255,255,255,.88);
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) + 4px);
+      padding: 32px;
+      box-shadow: 0 16px 38px rgba(74,16,29,.08);
+    }
+
+    .fund-route-intro p {
+      color: var(--muted);
+      margin-top: 12px;
+    }
+
+    .fund-route-list {
+      display: grid;
+      gap: 0;
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) + 4px);
+      overflow: hidden;
+      background: rgba(255,255,255,.92);
+      box-shadow: var(--shadow);
+    }
+
+    .fund-route-item {
+      display: grid;
+      grid-template-columns: 70px 1fr;
+      gap: 18px;
+      padding: 24px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(255,255,255,.74);
       transition: background .22s ease;
     }
 
-    .portfolio-route-item:last-child {
-      border-right: 0;
+    .fund-route-item:last-child {
+      border-bottom: 0;
     }
 
-    .portfolio-route-item:hover {
-      background: rgba(255, 247, 239, .88);
+    .fund-route-item:hover {
+      background: #fff7f3;
     }
 
-    .portfolio-route-icon {
+    .fund-route-icon {
       width: 52px;
       height: 52px;
       border-radius: 18px;
-      background: linear-gradient(135deg, #fff7ed, rgba(143, 31, 52, 0.13));
+      background: linear-gradient(135deg, #fff7f3, #f6e7df);
       color: var(--primary);
+      border: 1px solid rgba(143,31,52,.14);
       display: grid;
       place-items: center;
       font-size: 1.35rem;
-      margin-bottom: 18px;
-      border: 1px solid rgba(143,31,52,.10);
-      box-shadow: 0 12px 26px rgba(74, 16, 29, 0.08);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.85);
     }
 
-    .portfolio-route-item p {
+    .fund-route-item h3 {
+      margin-bottom: 8px;
+    }
+
+    .fund-route-item p {
       color: var(--muted);
+      margin-bottom: 12px;
     }
 
-    @media (max-width: 980px) {
-      .portfolio-route {
-        grid-template-columns: repeat(2, 1fr);
-      }
+    .fund-route-meta {
+      display: inline-flex;
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: rgba(143,31,52,.07);
+      color: var(--primary);
+      font-size: .9rem;
+      font-weight: 800;
+    }
 
-      .portfolio-route-item:nth-child(2) {
-        border-right: 0;
-      }
+    .table-note-panel {
+      margin-top: 22px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 14px;
+    }
 
-      .portfolio-route-item:nth-child(1),
-      .portfolio-route-item:nth-child(2) {
-        border-bottom: 1px solid rgba(74, 16, 29, 0.10);
-      }
+    .table-note {
+      border-radius: 20px;
+      border: 1px solid rgba(143,31,52,.13);
+      background: rgba(255,255,255,.88);
+      padding: 18px;
+      box-shadow: 0 10px 24px rgba(74,16,29,.04);
+    }
+
+    .table-note strong {
+      display: block;
+      color: var(--primary);
+      margin-bottom: 5px;
+    }
+
+    .table-note p {
+      color: var(--muted);
+      font-size: .94rem;
+      line-height: 1.5;
     }
 
     @media (max-width: 900px) {
-      .investment-route,
-      .planning-panel {
+      .analysis-strip,
+      .editorial-panel,
+      .fund-route,
+      .table-note-panel {
         grid-template-columns: 1fr;
       }
 
-      .investment-route-intro {
+      .fund-route-intro {
         position: static;
       }
     }
 
-    @media (max-width: 620px) {
-      .portfolio-route {
-        grid-template-columns: 1fr;
-      }
-
-      .portfolio-route-item,
-      .portfolio-route-item:nth-child(2) {
-        border-right: 0;
-        border-bottom: 1px solid rgba(74, 16, 29, 0.10);
-      }
-
-      .portfolio-route-item:last-child {
-        border-bottom: 0;
-      }
-    }
-
     @media (max-width: 520px) {
-      .investment-route-intro,
-      .investment-route-item,
-      .planning-main,
-      .planning-steps,
-      .portfolio-route-item {
+      .analysis-pill,
+      .editorial-main,
+      .editorial-steps,
+      .fund-route-intro,
+      .fund-route-item,
+      .table-note {
         padding: 22px 18px;
         border-radius: 22px;
       }
 
-      .investment-route-item {
-        grid-template-columns: 52px 1fr;
+      .fund-route-item {
+        grid-template-columns: 54px 1fr;
         gap: 14px;
       }
 
-      .investment-route-number,
-      .investment-route-icon {
-        width: 42px;
-        height: 42px;
+      .fund-route-icon {
+        width: 44px;
+        height: 44px;
         border-radius: 15px;
-      }
-
-      .planning-step {
-        grid-template-columns: 42px 1fr;
-        gap: 12px;
-      }
-
-      .planning-step span {
-        width: 36px;
-        height: 36px;
+        font-size: 1.1rem;
       }
     }
 
@@ -1836,261 +1715,165 @@
     </div>
   </header>
 
+
   <main>
 
+    <!-- 1. HERO DE PLANIFICACIÓN -->
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <div class="eyebrow">📈 Estrategia de inversión</div>
+          <div class="eyebrow">Planificación financiera</div>
 
-          <h1>Construye patrimonio con una estrategia clara, no con decisiones impulsivas</h1>
+          <h1>Inversiones para construir patrimonio con una estrategia clara</h1>
 
           <p class="lead">
-            Invertir no va solo de elegir productos. Va de definir objetivos, gestionar el riesgo, respetar el horizonte temporal y tomar decisiones racionales incluso cuando el mercado se mueve.
+            Te ayudamos a valorar cómo invertir de forma ordenada, teniendo en cuenta tus objetivos, tu plazo, tu perfil de riesgo y la parte de dinero que necesitas mantener disponible.
           </p>
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="https://wa.me/34606067906?text=Hola%2C%20quiero%20asesoramiento%20sobre%20inversiones" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
-            <a class="btn btn-outline" href="tel:+34917702311">Llamar oficina</a>
-            <a class="btn btn-tertiary" href="#perfiles">Ver estrategia</a>
+            <a class="btn btn-outline" href="#para-que-sirve">Ver cómo funciona</a>
           </div>
 
-          <p class="trust-line">Construcción patrimonial · Gestión del riesgo · Diversificación · Seguimiento personalizado</p>
+          <p class="trust-line">Asesoramiento personalizado · Explicaciones claras · Sin compromiso</p>
         </div>
 
-        <aside class="hero-card" aria-label="Resumen de inversiones">
-          <div class="hero-card-icon">💼</div>
-          <h2>Antes de invertir analizamos</h2>
+        <aside class="hero-card" aria-label="Resumen de planificación de inversiones">
+          <div class="hero-card-icon">📈</div>
+          <h2>Antes de invertir, revisamos contigo</h2>
           <ul>
             <li>Qué objetivo tiene ese dinero.</li>
             <li>Cuánto tiempo puedes mantener la inversión.</li>
-            <li>Qué riesgo puedes asumir con tranquilidad.</li>
-            <li>Qué parte debe mantenerse líquida.</li>
-            <li>Cómo diversificar y evitar concentraciones innecesarias.</li>
+            <li>Qué nivel de riesgo puedes asumir con tranquilidad.</li>
+            <li>Qué parte conviene mantener disponible.</li>
+            <li>Qué estrategia puede encajar mejor con tu situación.</li>
           </ul>
         </aside>
       </div>
     </section>
 
-    <section>
-      <div class="container">
-        <div class="risk-alert">
-          <h2>Invertir bien no consiste en adivinar el mercado</h2>
-          <p>
-            La clave no está en perseguir lo que más ha subido, sino en construir una estrategia coherente con tu situación, tu plazo y tu tolerancia al riesgo. Una buena planificación ayuda a evitar decisiones precipitadas en momentos de incertidumbre.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="perfiles" class="section-soft">
-      <div class="container">
-        <div class="investment-route">
-          <div class="investment-route-intro">
-            <span class="eyebrow">Perfil de inversión</span>
-            <h2>Cada perfil necesita una estrategia distinta</h2>
-            <p>
-              La inversión adecuada no es la misma para todos. Depende de tu patrimonio, tus objetivos, tu plazo, tu experiencia y tu forma de asumir las subidas y bajadas del mercado.
-            </p>
-            <p>
-              Para que la página no se sienta como una tabla fría, esta sección se organiza como una ruta de decisión: primero se identifica el perfil y después se define el enfoque estratégico.
-            </p>
-          </div>
-
-          <div class="investment-route-list">
-            <article class="investment-route-item">
-              <span class="investment-route-number">01</span>
-              <div>
-                <h3>Conservador</h3>
-                <p>Priorizar la preservación del capital, controlar la volatilidad y mantener liquidez suficiente para imprevistos.</p>
-                <span class="investment-route-tag">Enfoque: estabilidad y control del riesgo</span>
-              </div>
-            </article>
-
-            <article class="investment-route-item">
-              <span class="investment-route-number">02</span>
-              <div>
-                <h3>Moderado</h3>
-                <p>Buscar equilibrio entre estabilidad y crecimiento, combinando activos defensivos con exposición gradual a mercado.</p>
-                <span class="investment-route-tag">Enfoque: equilibrio y crecimiento progresivo</span>
-              </div>
-            </article>
-
-            <article class="investment-route-item">
-              <span class="investment-route-number">03</span>
-              <div>
-                <h3>Dinámico</h3>
-                <p>Aceptar mayor volatilidad a cambio de mayor potencial de crecimiento, siempre con horizonte temporal suficiente y diversificación.</p>
-                <span class="investment-route-tag">Enfoque: crecimiento a largo plazo</span>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <div class="planning-panel">
-          <div class="planning-main">
-            <span class="eyebrow">Planificación patrimonial</span>
-            <h2>Invertir empieza por saber qué quieres construir</h2>
-            <p>
-              No es lo mismo invertir para proteger ahorro, comprar una vivienda, preparar la jubilación, generar patrimonio familiar o buscar crecimiento a largo plazo. Antes de elegir vehículos, ordenamos objetivo, plazo y riesgo.
-            </p>
-          </div>
-
-          <div class="planning-steps">
-            <div class="planning-step">
-              <span>01</span>
-              <div>
-                <strong>Objetivos financieros</strong>
-                <p>Definimos qué quieres conseguir y qué papel tiene cada inversión dentro de tu planificación global.</p>
-              </div>
-            </div>
-
-            <div class="planning-step">
-              <span>02</span>
-              <div>
-                <strong>Horizonte temporal</strong>
-                <p>El plazo marca qué nivel de riesgo tiene sentido asumir y qué estrategia puede ser más adecuada.</p>
-              </div>
-            </div>
-
-            <div class="planning-step">
-              <span>03</span>
-              <div>
-                <strong>Gestión del riesgo</strong>
-                <p>Analizamos qué volatilidad puedes tolerar para evitar decisiones emocionales en momentos de caída.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-soft">
+    <!-- 2. PARA QUÉ SIRVE -->
+    <section id="para-que-sirve">
       <div class="container">
         <div class="section-title center">
-          <span>Construcción de cartera</span>
-          <h2>La diversificación es una parte clave de la estrategia</h2>
+          <span>Para qué sirve</span>
+          <h2>Invertir puede ayudarte a organizar tu dinero y darle una dirección</h2>
           <p>
-            Una cartera bien construida no depende de una única idea. Reparte el riesgo entre distintos activos, zonas, sectores y plazos para buscar mayor equilibrio.
+            No se trata de invertir por moda ni de buscar “la mejor oportunidad”. La idea es decidir qué quieres conseguir y construir una estrategia que puedas mantener en el tiempo.
           </p>
         </div>
 
-        <div class="portfolio-route">
-          <article class="portfolio-route-item">
-            <div class="portfolio-route-icon">📊</div>
-            <h3>Fondos de inversión</h3>
-            <p>Permiten acceder a una gestión profesional, diversificación y flexibilidad fiscal según el caso.</p>
+        <div class="grid-3">
+          <article class="card">
+            <div class="card-icon">💶</div>
+            <h3>Ordenar tu ahorro</h3>
+            <p>Diferenciamos el dinero que necesitas tener disponible del que puedes planificar a medio o largo plazo.</p>
           </article>
 
-          <article class="portfolio-route-item">
-            <div class="portfolio-route-icon">🌍</div>
-            <h3>Diversificación global</h3>
-            <p>Evita depender de un solo país, sector, empresa o tipo de activo.</p>
+          <article class="card">
+            <div class="card-icon">🌱</div>
+            <h3>Buscar crecimiento</h3>
+            <p>Valoramos cómo intentar que parte de tu patrimonio crezca, siempre entendiendo el riesgo y el plazo necesario.</p>
           </article>
 
-          <article class="portfolio-route-item">
-            <div class="portfolio-route-icon">🛡️</div>
-            <h3>Protección patrimonial</h3>
-            <p>Buscamos que la estrategia tenga sentido también en escenarios de incertidumbre o necesidad de liquidez.</p>
-          </article>
-
-          <article class="portfolio-route-item">
-            <div class="portfolio-route-icon">🏦</div>
-            <h3>Fiscalidad y costes</h3>
-            <p>La rentabilidad final también depende de impuestos, comisiones, traspasos y forma de rescate.</p>
+          <article class="card">
+            <div class="card-icon">🧭</div>
+            <h3>Tomar decisiones con criterio</h3>
+            <p>Te ayudamos a evitar decisiones impulsivas por miedo, por euforia o por recomendaciones que no encajan contigo.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="fiscalidad">
-      <div class="container highlight">
-        <div>
-          <div class="eyebrow">Fiscalidad de la inversión</div>
-          <h2>Una buena estrategia también tiene en cuenta la fiscalidad</h2>
+    <!-- 3. OBJETIVOS POSIBLES -->
+    <section class="section-soft">
+      <div class="container">
+        <div class="section-title">
+          <span>Objetivos posibles</span>
+          <h2>La estrategia cambia según lo que quieras conseguir</h2>
           <p>
-            No basta con mirar la rentabilidad. También conviene valorar cuándo vender, cuándo mantener, cuándo traspasar y qué impacto fiscal puede tener cada decisión.
+            No todas las personas invierten por el mismo motivo. Por eso primero aclaramos el objetivo y después valoramos qué enfoque puede tener sentido.
           </p>
+        </div>
 
-          <ul class="feature-list">
-            <li>Diferir la tributación en determinados vehículos, como los fondos de inversión.</li>
-            <li>Evitar decisiones precipitadas que puedan generar costes fiscales innecesarios.</li>
-            <li>Revisar liquidez, plazo, fiscalidad y objetivos antes de mover el dinero.</li>
-            <li>Integrar la inversión dentro de una planificación patrimonial más amplia.</li>
-          </ul>
+        <div class="grid-4">
+          <article class="card">
+            <div class="card-icon">🏦</div>
+            <h3>Conservar patrimonio</h3>
+            <p>Para quienes priorizan estabilidad, control del riesgo y disponibilidad parcial del dinero.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">📆</div>
+            <h3>Planificar a medio plazo</h3>
+            <p>Para objetivos que no son inmediatos y permiten organizar el dinero con algo más de margen.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">📈</div>
+            <h3>Crecimiento a largo plazo</h3>
+            <p>Para quienes pueden mantener la inversión más tiempo y aceptar subidas y bajadas.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🧩</div>
+            <h3>Diversificar</h3>
+            <p>Para no concentrar todo el patrimonio en una sola opción, sector, país o tipo de activo.</p>
+          </article>
         </div>
       </div>
     </section>
 
+    <!-- 4. QUÉ ANALIZAMOS CONTIGO -->
     <section>
       <div class="container">
         <div class="review-block">
           <div class="section-title">
-            <span>Antes de invertir</span>
-            <h2>Qué conviene revisar para tomar decisiones racionales</h2>
+            <span>Qué analizamos contigo</span>
+            <h2>Antes de recomendar nada, revisamos tu situación</h2>
             <p>
-              Una inversión puede parecer atractiva y aun así no encajar contigo. Por eso revisamos el conjunto antes de recomendar una estrategia.
+              Esta parte es la más importante: no te presentamos inversiones de forma aislada, sino que analizamos si tienen sentido para ti y para tu planificación.
             </p>
-
-            <p class="review-intro">
-              La clave no es buscar “la inversión perfecta”, sino construir una estrategia que puedas mantener en el tiempo.
-            </p>
-
-            <div class="review-note">
-              <strong>Consejo:</strong> revisa tu estrategia al menos una vez al año o cuando cambien tus ingresos, gastos, objetivos, situación familiar o tolerancia al riesgo.
-            </div>
           </div>
 
           <ol class="review-list">
             <li class="review-item">
               <span class="review-number">01</span>
               <div>
-                <strong>Liquidez disponible</strong>
-                <p>Antes de invertir, conviene mantener una parte accesible para imprevistos y necesidades a corto plazo.</p>
+                <strong>Tu objetivo</strong>
+                <p>Conservar ahorro, invertir a largo plazo, preparar el futuro, diversificar o construir patrimonio progresivamente.</p>
               </div>
             </li>
 
             <li class="review-item">
               <span class="review-number">02</span>
               <div>
-                <strong>Perfil de riesgo</strong>
-                <p>Hay que saber qué nivel de pérdidas temporales podrías asumir sin tomar decisiones emocionales.</p>
+                <strong>Tu plazo</strong>
+                <p>No es lo mismo invertir dinero que puedes necesitar pronto que dinero que puedes mantener varios años.</p>
               </div>
             </li>
 
             <li class="review-item">
               <span class="review-number">03</span>
               <div>
-                <strong>Horizonte temporal</strong>
-                <p>El plazo es fundamental: cuanto más riesgo asumes, más importante suele ser mantener la inversión en el tiempo.</p>
+                <strong>Tu perfil de riesgo</strong>
+                <p>Valoramos qué nivel de subidas y bajadas podrías asumir sin tomar decisiones precipitadas.</p>
               </div>
             </li>
 
             <li class="review-item">
               <span class="review-number">04</span>
               <div>
-                <strong>Diversificación</strong>
-                <p>Evita concentrar todo el patrimonio en un único producto, empresa, sector, país o tipo de activo.</p>
+                <strong>Tu liquidez</strong>
+                <p>Antes de invertir, revisamos qué parte del dinero conviene mantener accesible para imprevistos o gastos próximos.</p>
               </div>
             </li>
 
             <li class="review-item">
               <span class="review-number">05</span>
               <div>
-                <strong>Costes y comisiones</strong>
-                <p>Los costes reducen la rentabilidad final. Conviene conocerlos antes de tomar una decisión.</p>
-              </div>
-            </li>
-
-            <li class="review-item">
-              <span class="review-number">06</span>
-              <div>
-                <strong>Fiscalidad</strong>
-                <p>Vender, traspasar, rescatar o mantener una inversión puede tener consecuencias fiscales diferentes.</p>
+                <strong>La estrategia adecuada</strong>
+                <p>Te explicamos las alternativas con claridad para que puedas decidir con tranquilidad y sin presión.</p>
               </div>
             </li>
           </ol>
@@ -2098,88 +1881,115 @@
       </div>
     </section>
 
-    <section class="section-soft">
-      <div class="container">
-        <div class="highlight" style="background: radial-gradient(circle at 86% 14%, rgba(255, 255, 255, 0.12), transparent 28%), linear-gradient(135deg, #4a101d, #1f0a10);">
-          <div>
-            <div class="eyebrow">Errores frecuentes</div>
-            <h2>Lo que conviene evitar al construir patrimonio</h2>
-            <p>
-              Muchos errores no vienen de invertir, sino de hacerlo sin método: sin objetivo, sin plazo, sin diversificación o dejándose llevar por el miedo y la euforia.
-            </p>
-
-            <ul class="feature-list">
-              <li>Invertir dinero que puedes necesitar a corto plazo.</li>
-              <li>Elegir solo por rentabilidad pasada o por recomendaciones de terceros.</li>
-              <li>Concentrar demasiado patrimonio en una sola inversión.</li>
-              <li>Vender por miedo en momentos de caída.</li>
-              <li>No revisar costes, fiscalidad, riesgo y horizonte temporal.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
+    <!-- 5. OPCIONES DISPONIBLES -->
+    <section id="opciones" class="section-soft">
       <div class="container">
         <div class="section-title center">
-          <span>Preguntas frecuentes</span>
-          <h2>Dudas habituales sobre inversión y patrimonio</h2>
+          <span>Opciones disponibles</span>
+          <h2>Enfoques de inversión que pueden valorarse según tu perfil</h2>
+          <p>
+            La elección depende de tu objetivo, tu plazo y tu tolerancia al riesgo. Estas opciones son orientativas y deben estudiarse dentro de una planificación personalizada.
+          </p>
         </div>
 
-        <div class="faq-carousel-wrap">
-          <div class="faq-carousel" id="faqCarousel" aria-label="Carrusel de preguntas frecuentes">
-            <article class="faq-card">
-              <div class="faq-number">01</div>
-              <h3>¿Invertir es solo buscar rentabilidad?</h3>
-              <p>No. También implica gestionar riesgo, plazo, liquidez, fiscalidad y objetivos patrimoniales.</p>
-            </article>
+        <div class="grid-3">
+          <article class="fund-type-card">
+            <div class="fund-type-icon">🛡️</div>
+            <h3>Enfoque conservador</h3>
+            <p>Busca mayor estabilidad y control del riesgo, pensado para personas que priorizan tranquilidad.</p>
+            <div class="example-line"><strong>Puede encajar si:</strong> prefieres asumir pocas variaciones.</div>
+          </article>
 
-            <article class="faq-card">
-              <div class="faq-number">02</div>
-              <h3>¿Puedo perder dinero?</h3>
-              <p>Sí. Las inversiones pueden subir o bajar. Por eso es importante invertir según tu perfil y horizonte temporal.</p>
-            </article>
+          <article class="fund-type-card">
+            <div class="fund-type-icon">⚖️</div>
+            <h3>Enfoque moderado</h3>
+            <p>Combina prudencia y crecimiento, intentando equilibrar seguridad, plazo y potencial de rentabilidad.</p>
+            <div class="example-line"><strong>Puede encajar si:</strong> quieres equilibrio sin asumir todo el riesgo de mercado.</div>
+          </article>
 
-            <article class="faq-card">
-              <div class="faq-number">03</div>
-              <h3>¿Por qué es importante diversificar?</h3>
-              <p>Porque reduce la dependencia de una sola inversión y ayuda a equilibrar el riesgo de la cartera.</p>
-            </article>
+          <article class="fund-type-card">
+            <div class="fund-type-icon">📈</div>
+            <h3>Enfoque dinámico</h3>
+            <p>Busca más crecimiento a largo plazo, aceptando mayores subidas y bajadas en el camino.</p>
+            <div class="example-line"><strong>Puede encajar si:</strong> tienes plazo suficiente y tolerancia al riesgo.</div>
+          </article>
 
-            <article class="faq-card">
-              <div class="faq-number">04</div>
-              <h3>¿Qué es el horizonte temporal?</h3>
-              <p>Es el tiempo durante el que puedes mantener la inversión sin necesitar ese dinero.</p>
-            </article>
+          <article class="fund-type-card">
+            <div class="fund-type-icon">🌐</div>
+            <h3>Diversificación global</h3>
+            <p>Permite repartir el patrimonio entre diferentes zonas, sectores y tipos de inversión.</p>
+            <div class="example-line"><strong>Puede encajar si:</strong> no quieres depender de una sola idea.</div>
+          </article>
 
-            <article class="faq-card">
-              <div class="faq-number">05</div>
-              <h3>¿Cuándo conviene revisar una estrategia?</h3>
-              <p>Al menos una vez al año o cuando cambien tus objetivos, ingresos, situación familiar o tolerancia al riesgo.</p>
-            </article>
+          <article class="fund-type-card">
+            <div class="fund-type-icon">💼</div>
+            <h3>Cartera por objetivos</h3>
+            <p>Separa el dinero según su finalidad: corto plazo, medio plazo, largo plazo o futuro familiar.</p>
+            <div class="example-line"><strong>Puede encajar si:</strong> quieres ordenar tu patrimonio por metas.</div>
+          </article>
 
-            <article class="faq-card">
-              <div class="faq-number">06</div>
-              <h3>¿Qué papel tiene la fiscalidad?</h3>
-              <p>Puede influir mucho en la rentabilidad final y en la forma de mover o rescatar una inversión.</p>
-            </article>
-          </div>
-
-          <div class="faq-controls" aria-label="Controles del carrusel de preguntas frecuentes">
-            <button class="faq-arrow" type="button" data-faq-prev aria-label="Pregunta anterior">‹</button>
-            <button class="faq-arrow" type="button" data-faq-next aria-label="Pregunta siguiente">›</button>
-          </div>
+          <article class="fund-type-card">
+            <div class="fund-type-icon">🧾</div>
+            <h3>Planificación fiscal</h3>
+            <p>También valoramos costes, impuestos, traspasos y momento adecuado para mover o retirar el dinero.</p>
+            <div class="example-line"><strong>Puede encajar si:</strong> quieres decidir sin improvisar.</div>
+          </article>
         </div>
       </div>
     </section>
 
+    <!-- 6. IMPORTANCIA DEL ACOMPAÑAMIENTO -->
+    <section>
+      <div class="container">
+        <div class="highlight">
+          <div class="eyebrow">Acompañamiento</div>
+          <h2>No tienes que decidirlo sola/o ni entenderlo todo desde el principio</h2>
+          <p>
+            Nuestro trabajo es ayudarte a traducir la información financiera a decisiones claras: qué estrategia puede tener sentido, qué riesgo implica y cuándo conviene revisar la inversión.
+          </p>
+
+          <ul class="feature-list">
+            <li>Te explicamos las opciones con lenguaje claro.</li>
+            <li>Revisamos si la estrategia sigue encajando con tus objetivos.</li>
+            <li>Te ayudamos a evitar decisiones impulsivas por miedo o por moda.</li>
+            <li>Valoramos contigo cambios importantes en tu situación personal o familiar.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOQUE DE CONFIANZA -->
     <section class="section-soft">
       <div class="container">
+        <div class="grid-3">
+          <article class="card">
+            <div class="card-icon">🤝</div>
+            <h3>Atención personal</h3>
+            <p>Te atendemos de forma cercana para entender tu caso antes de plantear opciones.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">💬</div>
+            <h3>Explicaciones claras</h3>
+            <p>Evitamos tecnicismos innecesarios y te ayudamos a entender cada decisión.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🔁</div>
+            <h3>Seguimiento</h3>
+            <p>La planificación no termina al invertir. Conviene revisar la estrategia con el tiempo.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. CTA FINAL -->
+    <section>
+      <div class="container">
         <div class="cta-final">
-          <h2>¿Quieres construir una estrategia de inversión con sentido?</h2>
+          <h2>¿Quieres que revisemos qué estrategia de inversión encaja contigo?</h2>
           <p>
-            Podemos revisar tu situación, objetivos, horizonte temporal, nivel de riesgo, liquidez, costes y fiscalidad para valorar una estrategia adaptada a ti.
+            Cuéntanos tu situación y te ayudamos a valorar tus objetivos, tu plazo, tu liquidez y tu perfil de riesgo para orientarte de forma clara y sin compromiso.
           </p>
 
           <div class="hero-actions" style="justify-content:center;">
@@ -2189,12 +1999,13 @@
             <a class="btn btn-tertiary" href="asesoramiento.html">Volver a finanzas</a>
           </div>
 
-          <p class="trust-line">Sin compromiso · Estrategia personalizada · Asesoramiento cercano y profesional</p>
+          <p class="trust-line">Sin compromiso · Asesoramiento personalizado · Atención cercana en Madrid</p>
         </div>
       </div>
     </section>
 
   </main>
+
 
   <div class="mobile-contact-bar" aria-label="Contacto rápido">
     <a href="https://wa.me/34606067906?text=Hola%2C%20quiero%20asesoramiento%20sobre%20inversiones" target="_blank" rel="noopener">WhatsApp</a>
@@ -2232,7 +2043,7 @@
       const moveFaqCarousel = (direction) => {
         const card = faqCarousel.querySelector(".faq-card");
         const gap = 18;
-        const distance = card ? card.offsetWidth + gap : 350;
+        const distance = card ? card.offsetWidth + gap : 340;
 
         faqCarousel.scrollBy({
           left: direction * distance,
@@ -2245,7 +2056,7 @@
     }
 
     const revealElements = document.querySelectorAll(
-      ".section-title, .card, .highlight, .risk-alert, .table-wrap, .review-list, .faq-card, .cta-final, .investment-route, .planning-panel, .portfolio-route"
+      ".section-title, .card, .fund-type-card, .highlight, .warning-box, .review-list, .faq-card, .cta-final, .fund-table-wrap, .editorial-panel, .fund-route, .table-note"
     );
 
     if ("IntersectionObserver" in window) {
