@@ -1089,6 +1089,164 @@
         transform: none;
       }
     }
+
+
+    /* ESTRUCTURA PREMIUM SEGUROS INDIVIDUALES */
+    .premium-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .premium-pill {
+      background: rgba(255,255,255,.72);
+      border: 1px solid rgba(143,31,52,.13);
+      border-radius: 999px;
+      padding: 12px 14px;
+      color: var(--primary-dark);
+      font-size: .92rem;
+      font-weight: 850;
+      text-align: center;
+      box-shadow: 0 10px 24px rgba(74,16,29,.05);
+    }
+
+    .summary-panel {
+      background:
+        radial-gradient(circle at top right, rgba(143,31,52,.09), transparent 36%),
+        linear-gradient(135deg, rgba(255,255,255,.96), rgba(255,247,243,.86));
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) + 4px);
+      padding: 36px;
+      box-shadow: var(--shadow);
+    }
+
+    .summary-panel p {
+      color: var(--muted);
+      font-size: 1.06rem;
+      max-width: 920px;
+    }
+
+    .info-panel {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 28px;
+      align-items: start;
+      background: rgba(255,255,255,.88);
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) + 4px);
+      padding: 34px;
+      box-shadow: 0 14px 34px rgba(74,16,29,.07);
+    }
+
+    .info-panel p {
+      color: var(--muted);
+    }
+
+    .info-list {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .info-list li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      color: var(--muted);
+      background: rgba(143,31,52,.045);
+      border: 1px solid rgba(143,31,52,.10);
+      border-radius: 16px;
+      padding: 14px 16px;
+    }
+
+    .info-list li::before {
+      content: "✓";
+      color: var(--primary);
+      font-weight: 900;
+      flex: 0 0 auto;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .faq-card {
+      background: rgba(255,255,255,.96);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 24px;
+      box-shadow: 0 14px 34px rgba(74,16,29,.07);
+      min-height: 210px;
+    }
+
+    .faq-number {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(143,31,52,.10);
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      margin-bottom: 16px;
+      border: 1px solid rgba(143,31,52,.12);
+    }
+
+    .faq-card p {
+      color: var(--muted);
+    }
+
+    .cta-final.premium-cta {
+      background:
+        radial-gradient(circle at top right, rgba(255,255,255,.18), transparent 30%),
+        radial-gradient(circle at bottom left, rgba(255,255,255,.10), transparent 34%),
+        linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .cta-final.premium-cta::before {
+      content: "";
+      position: absolute;
+      width: 230px;
+      height: 230px;
+      right: -80px;
+      top: -90px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.12);
+      pointer-events: none;
+    }
+
+    .cta-final.premium-cta > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-final.premium-cta h2,
+    .cta-final.premium-cta p {
+      color: white;
+    }
+
+    .cta-final.premium-cta .btn-outline,
+    .cta-final.premium-cta .btn-tertiary {
+      color: rgba(255,255,255,.92);
+      border-color: rgba(255,255,255,.26);
+      background: rgba(255,255,255,.09);
+      text-decoration: none;
+    }
+
+    @media (max-width: 900px) {
+      .premium-strip,
+      .faq-grid,
+      .info-panel {
+        grid-template-columns: 1fr;
+      }
+    }
+
   </style>
 </head>
 
@@ -1134,143 +1292,102 @@
 
   <main>
 
+    <!-- 1. HERO DEL SEGURO -->
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <div class="eyebrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 13.5 7.8 10.8a3 3 0 0 1 0-4.2l.8-.8a3 3 0 0 1 4.2 0l2.7 2.7"/><path d="m13.5 10.5 2.7 2.7a3 3 0 0 1 0 4.2l-.8.8a3 3 0 0 1-4.2 0l-2.7-2.7"/><path d="m9 15 6-6"/><path d="M9.5 9.5h.01"/><path d="M12 12h.01"/><path d="M14.5 14.5h.01"/></svg> Seguro de accidentes</div>
+          <div class="eyebrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 13.5 7.8 10.8a3 3 0 0 1 0-4.2l.8-.8a3 3 0 0 1 4.2 0l2.7 2.7"/><path d="m13.5 10.5 2.7 2.7a3 3 0 0 1 0 4.2l-.8.8a3 3 0 0 1-4.2 0l-2.7-2.7"/><path d="m9 15 6-6"/></svg> Seguro de accidentes</div>
 
-          <h1>Protección si un accidente cambia tu día a día</h1>
+          <h1>Seguro de accidentes para proteger tu tranquilidad si algo pasa</h1>
 
           <p class="lead">
-            Un seguro de accidentes puede ayudarte económicamente si sufres una caída, lesión, invalidez, hospitalización o necesitas asistencia sanitaria tras un accidente.
+            Un accidente puede afectar a tu movilidad, tu trabajo, tus ingresos o tu familia. Revisamos contigo qué protección tendría sentido para que sepas qué cubres y qué podrías necesitar.
           </p>
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="https://wa.me/34606067906?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20seguro%20de%20accidentes" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
-            <a class="btn btn-outline" href="tel:+34917702311">Llamar oficina</a>
-            <a class="btn btn-tertiary" href="#ejemplos">Ver ejemplos</a>
+            <a class="btn btn-outline" href="#coberturas">Ver coberturas</a>
+            <a class="btn btn-tertiary" href="#revision">Qué revisamos contigo</a>
           </div>
 
-          <p class="trust-line">Respuesta rápida · Sin compromiso · Te lo explicamos claro</p>
+          <p class="trust-line">Atención cercana · Explicación clara · Sin compromiso · En Madrid</p>
+
+          <div class="premium-strip" aria-label="Resumen rápido del seguro">
+            <div class="premium-pill">Invalidez</div>
+            <div class="premium-pill">Hospitalización</div>
+            <div class="premium-pill">Asistencia sanitaria</div>
+            <div class="premium-pill">Accidente de circulación</div>
+          </div>
         </div>
 
         <aside class="hero-card" aria-label="Resumen del seguro de accidentes">
           <div class="hero-card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5.5 5.4v5.5c0 4.2 2.6 7.9 6.5 10.1 3.9-2.2 6.5-5.9 6.5-10.1V5.4L12 3Z"/><path d="m9.5 12 1.8 1.8 3.7-4"/></svg></div>
-          <h2>¿Qué puede proteger?</h2>
+          <h2>En esta página verás</h2>
           <ul>
-            <li>Invalidez por accidente.</li>
-            <li>Hospitalización tras un accidente.</li>
-            <li>Asistencia sanitaria y recuperación.</li>
-            <li>Fallecimiento por accidente.</li>
-            <li>Accidentes de circulación.</li>
+            <li>Qué protege un seguro de accidentes.</li>
+            <li>Qué coberturas conviene revisar.</li>
+            <li>Para qué perfiles puede ser útil.</li>
+            <li>Qué datos preparar si tienes un siniestro.</li>
+            <li>Cómo podemos ayudarte a elegir.</li>
           </ul>
         </aside>
       </div>
     </section>
 
+    <!-- 2. QUÉ PROTEGE -->
     <section>
       <div class="container">
-        <div class="section-title">
-          <span>Directo y sencillo</span>
-          <h2>Una ayuda cuando un accidente afecta a tu vida o a tus ingresos</h2>
+        <div class="summary-panel">
+          <span class="eyebrow">Qué protege</span>
+          <h2>Una ayuda económica y práctica cuando un accidente afecta a tu vida diaria</h2>
           <p>
-            No se trata solo de “tener una lesión”. Se trata de qué pasa si no puedes trabajar, necesitas tratamiento o quedan secuelas.
+            Este seguro está pensado para darte apoyo si un accidente provoca una lesión, una hospitalización, una invalidez o una situación que pueda afectar a tu trabajo, tus ingresos o tu familia. No se trata solo de sufrir un golpe o una caída, sino de estar preparado para las consecuencias que puede tener.
           </p>
         </div>
+      </div>
+    </section>
 
+    <section class="section-soft">
+      <div class="container">
         <div class="grid-3">
           <article class="card">
-            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 7V5.8C9 4.8 9.8 4 10.8 4h2.4c1 0 1.8.8 1.8 1.8V7"/><path d="M4.8 7h14.4c.9 0 1.6.7 1.6 1.6v9.1c0 .9-.7 1.6-1.6 1.6H4.8c-.9 0-1.6-.7-1.6-1.6V8.6C3.2 7.7 3.9 7 4.8 7Z"/><path d="M3.2 11.5h17.6"/><path d="M10 13h4"/></svg></div>
-            <h3>Ingresos</h3>
-            <p>Si el accidente te impide trabajar o afecta a tu actividad diaria.</p>
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 7V5.8C9 4.8 9.8 4 10.8 4h2.4c1 0 1.8.8 1.8 1.8V7"/><path d="M4.8 7h14.4c.9 0 1.6.7 1.6 1.6v9.1c0 .9-.7 1.6-1.6 1.6H4.8c-.9 0-1.6-.7-1.6-1.6V8.6C3.2 7.7 3.9 7 4.8 7Z"/><path d="M3.2 11.5h17.6"/></svg></div>
+            <h3>Ingresos y actividad diaria</h3>
+            <p>Puede ayudarte si el accidente afecta a tu capacidad para trabajar o continuar con tu rutina habitual.</p>
           </article>
 
           <article class="card">
-            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/><path d="M10 6.5v5h5l3 5"/><path d="M7 9.5a6 6 0 1 0 7 7"/><path d="M10 11.5h4"/></svg></div>
-            <h3>Invalidez</h3>
-            <p>Si quedan secuelas permanentes tras un accidente cubierto.</p>
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/><path d="M10 6.5v5h5l3 5"/><path d="M7 9.5a6 6 0 1 0 7 7"/></svg></div>
+            <h3>Secuelas o invalidez</h3>
+            <p>Puede contemplar indemnización si el accidente deja consecuencias permanentes, según capitales y baremos contratados.</p>
           </article>
 
           <article class="card">
             <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21V5.8C4 4.8 4.8 4 5.8 4h12.4c1 0 1.8.8 1.8 1.8V21"/><path d="M9 21v-5h6v5"/><path d="M12 8v5"/><path d="M9.5 10.5h5"/></svg></div>
-            <h3>Recuperación</h3>
-            <p>Asistencia sanitaria, hospitalización o rehabilitación según modalidad.</p>
+            <h3>Tratamiento y recuperación</h3>
+            <p>Según la modalidad, puede incluir asistencia sanitaria, hospitalización, rehabilitación o gastos derivados del accidente.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="ejemplos" class="section-soft">
-      <div class="container">
-        <div class="section-title center">
-          <span>Ejemplos reales</span>
-          <h2>Situaciones en las que puede ayudarte</h2>
-          <p>
-            Estos son casos fáciles de entender donde conviene saber qué protección tienes.
-          </p>
-        </div>
-
-        <div class="examples-grid">
-          <article class="example-card">
-            <div class="example-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 21 17 3"/><path d="M3 21 13 3"/><path d="M6 16h7"/><path d="M8 12h7"/><path d="M10 8h7"/></svg></div>
-            <p>Me he caído por las escaleras y no puedo trabajar.</p>
-          </article>
-
-          <article class="example-card">
-            <div class="example-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/><path d="M10 6.5v5h5l3 5"/><path d="M7 9.5a6 6 0 1 0 7 7"/><path d="M10 11.5h4"/></svg></div>
-            <p>Tengo una invalidez por un accidente.</p>
-          </article>
-
-          <article class="example-card">
-            <div class="example-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21V5.8C4 4.8 4.8 4 5.8 4h12.4c1 0 1.8.8 1.8 1.8V21"/><path d="M9 21v-5h6v5"/><path d="M12 8v5"/><path d="M9.5 10.5h5"/></svg></div>
-            <p>Necesito asistencia sanitaria tras un accidente.</p>
-          </article>
-
-          <article class="example-card">
-            <div class="example-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 1.4-4.2A2.6 2.6 0 0 1 8.9 6h6.2a2.6 2.6 0 0 1 2.5 1.8L19 12"/><path d="M4 12h16v5H4z"/><path d="M7 17v2"/><path d="M17 17v2"/><path d="M7.5 15h.01"/><path d="M16.5 15h.01"/></svg></div>
-            <p>He tenido un accidente de tráfico y necesito apoyo económico.</p>
-          </article>
-
-          <article class="example-card">
-            <div class="example-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 9.5a3 3 0 1 1 4-4l8 8a3 3 0 1 1-4 4l-8-8Z"/><path d="M4.5 7.5 7 5"/><path d="m17 19 2.5-2.5"/></svg></div>
-            <p>Me he fracturado un hueso y necesito recuperación o rehabilitación.</p>
-          </article>
-        </div>
-
-        <div class="profile-box">
-          <h3>Perfiles para los que puede ser especialmente útil</h3>
-          <p>
-            El seguro de accidentes puede encajar con personas que dependen de su cuerpo, su movilidad o sus ingresos para mantener su día a día.
-          </p>
-
-          <ul class="profile-list">
-            <li>Autónomos que necesitan proteger sus ingresos.</li>
-            <li>Deportistas no profesionales o personas activas.</li>
-            <li>Personas con trabajos físicos o manuales.</li>
-            <li>Familias con hijos o personas a cargo.</li>
-            <li>Personas que conducen o se desplazan con frecuencia.</li>
-            <li>Quienes quieren complementar su seguro de vida o salud.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
+    <!-- 3. COBERTURAS PRINCIPALES -->
     <section id="coberturas">
       <div class="container">
         <div class="section-title">
           <span>Coberturas principales</span>
-          <h2>Qué puede cubrir un seguro de accidentes</h2>
+          <h2>Qué conviene revisar en un seguro de accidentes</h2>
           <p>
-            Las coberturas dependen de la modalidad contratada, pero estas son las más importantes que conviene revisar.
+            Las coberturas concretas dependen de la modalidad contratada, pero estas son las partes más importantes que conviene entender antes de decidir.
           </p>
         </div>
 
         <div class="coverages">
           <article class="coverage-card">
-            <div class="mini-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/><path d="M10 6.5v5h5l3 5"/><path d="M7 9.5a6 6 0 1 0 7 7"/><path d="M10 11.5h4"/></svg></div>
+            <div class="mini-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/><path d="M10 6.5v5h5l3 5"/><path d="M7 9.5a6 6 0 1 0 7 7"/></svg></div>
             <div>
               <h3>Invalidez permanente</h3>
-              <p>Indemnización si el accidente deja secuelas permanentes según baremo y capital contratado.</p>
+              <p>Capital económico si quedan secuelas permanentes tras un accidente cubierto.</p>
             </div>
           </article>
 
@@ -1278,7 +1395,7 @@
             <div class="mini-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21V5.8C4 4.8 4.8 4 5.8 4h12.4c1 0 1.8.8 1.8 1.8V21"/><path d="M9 21v-5h6v5"/><path d="M12 8v5"/><path d="M9.5 10.5h5"/></svg></div>
             <div>
               <h3>Hospitalización</h3>
-              <p>Ayuda económica si el accidente requiere ingreso hospitalario, según modalidad.</p>
+              <p>Ayuda económica si el accidente requiere ingreso hospitalario, según condiciones.</p>
             </div>
           </article>
 
@@ -1286,15 +1403,15 @@
             <div class="mini-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4v5a4 4 0 0 0 8 0V4"/><path d="M6 4H4"/><path d="M14 4h2"/><path d="M10 13v2a5 5 0 0 0 10 0v-1"/><path d="M20 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"/></svg></div>
             <div>
               <h3>Asistencia sanitaria</h3>
-              <p>Gastos médicos, rehabilitación, traslados o asistencia derivados de un accidente.</p>
+              <p>Gastos médicos, rehabilitación, traslados o asistencia derivados del accidente.</p>
             </div>
           </article>
 
           <article class="coverage-card">
-            <div class="mini-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 1.4-4.2A2.6 2.6 0 0 1 8.9 6h6.2a2.6 2.6 0 0 1 2.5 1.8L19 12"/><path d="M4 12h16v5H4z"/><path d="M7 17v2"/><path d="M17 17v2"/><path d="M7.5 15h.01"/><path d="M16.5 15h.01"/></svg></div>
+            <div class="mini-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 1.4-4.2A2.6 2.6 0 0 1 8.9 6h6.2a2.6 2.6 0 0 1 2.5 1.8L19 12"/><path d="M4 12h16v5H4z"/><path d="M7 17v2"/><path d="M17 17v2"/></svg></div>
             <div>
               <h3>Accidente de circulación</h3>
-              <p>Puede reforzar la protección si el accidente ocurre circulando o en desplazamientos.</p>
+              <p>Refuerzo de protección si el accidente ocurre circulando o durante desplazamientos.</p>
             </div>
           </article>
 
@@ -1302,7 +1419,7 @@
             <div class="mini-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.3 5.8a5.2 5.2 0 0 0-7.4 0L12 6.7l-.9-.9a5.2 5.2 0 0 0-7.4 7.4L12 21l8.3-7.8a5.2 5.2 0 0 0 0-7.4Z"/></svg></div>
             <div>
               <h3>Fallecimiento por accidente</h3>
-              <p>Capital para los beneficiarios si el asegurado fallece por un accidente cubierto.</p>
+              <p>Capital para beneficiarios si el asegurado fallece por un accidente cubierto.</p>
             </div>
           </article>
 
@@ -1310,69 +1427,152 @@
             <div class="mini-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5.5c1.5-1 3.7-1.2 5 .1 2.2 2.2.8 6.8-.3 10.2-.5 1.6-1.1 3.2-2.1 3.2-1.3 0-1.2-3.8-2.6-3.8S10.7 19 9.4 19c-1 0-1.6-1.6-2.1-3.2C6.2 12.4 4.8 7.8 7 5.6c1.3-1.3 3.5-1.1 5-.1Z"/></svg></div>
             <div>
               <h3>Accidente dental</h3>
-              <p>Puede incluir servicios dentales o cobertura ante accidentes dentales graves.</p>
+              <p>Puede incluir servicios o cobertura específica ante determinados accidentes dentales.</p>
             </div>
           </article>
         </div>
       </div>
     </section>
 
+    <!-- 4. PARA QUIÉN ES -->
     <section class="section-soft">
+      <div class="container">
+        <div class="section-title center">
+          <span>Para quién es</span>
+          <h2>Puede interesarte si dependes de tu movilidad, tu trabajo o tus ingresos</h2>
+          <p>
+            No todas las personas necesitan la misma protección. Por eso revisamos tu actividad diaria, tu situación familiar y el impacto económico que podría tener un accidente.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 7V5.8C9 4.8 9.8 4 10.8 4h2.4c1 0 1.8.8 1.8 1.8V7"/><path d="M4.8 7h14.4c.9 0 1.6.7 1.6 1.6v9.1c0 .9-.7 1.6-1.6 1.6H4.8c-.9 0-1.6-.7-1.6-1.6V8.6C3.2 7.7 3.9 7 4.8 7Z"/></svg></div>
+            <h3>Autónomos y profesionales</h3>
+            <p>Si una lesión puede afectar directamente a tus ingresos o a tu actividad.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.4-7-10a7 7 0 0 1 14 0c0 5.6-7 10-7 10Z"/><path d="M9.5 10.5h5"/><path d="M12 8v5"/></svg></div>
+            <h3>Personas activas</h3>
+            <p>Si haces deporte, te desplazas a menudo o tienes una rutina con exposición a accidentes.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.3 5.8a5.2 5.2 0 0 0-7.4 0L12 6.7l-.9-.9a5.2 5.2 0 0 0-7.4 7.4L12 21l8.3-7.8a5.2 5.2 0 0 0 0-7.4Z"/></svg></div>
+            <h3>Familias o personas a cargo</h3>
+            <p>Si quieres dejar un apoyo económico si un accidente grave cambia la situación familiar.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. QUÉ REVISAMOS CONTIGO -->
+    <section id="revision">
       <div class="container">
         <div class="grid-2">
           <div class="section-title">
-            <span>Antes de contratar</span>
-            <h2>Lo importante no es solo el precio</h2>
+            <span>Qué revisamos contigo</span>
+            <h2>Antes de recomendarte nada, miramos tu caso real</h2>
             <p>
-              Hay que revisar capitales, invalidez, asistencia sanitaria, exclusiones y si tu actividad diaria o deporte queda bien contemplado.
+              El objetivo no es contratar por contratar, sino saber si este seguro tiene sentido para ti y qué coberturas deberías priorizar.
             </p>
           </div>
 
           <div class="review-box">
-            <h3>Nos fijamos en lo importante:</h3>
+            <h3>Nos fijamos en:</h3>
             <ul class="review-list">
-              <li>Capital asegurado por fallecimiento o invalidez.</li>
-              <li>Si cubre accidentes de circulación.</li>
-              <li>Asistencia sanitaria y rehabilitación incluida.</li>
-              <li>Hospitalización o ayudas económicas.</li>
+              <li>Tu actividad diaria, profesión y desplazamientos habituales.</li>
+              <li>Si tienes personas que dependen económicamente de ti.</li>
+              <li>Capitales por invalidez, fallecimiento y hospitalización.</li>
+              <li>Asistencia sanitaria, rehabilitación y límites de cobertura.</li>
               <li>Deportes, trabajos físicos o actividades especiales.</li>
-              <li>Exclusiones, límites y baremo de indemnización.</li>
+              <li>Exclusiones, baremos, franquicias o condiciones importantes.</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- BLOQUE INFORMATIVO SEPARADO: DATOS PARA SINIESTRO -->
+    <section class="section-soft">
+      <div class="container">
+        <div class="info-panel">
+          <div>
+            <span class="eyebrow">Información útil para clientes</span>
+            <h2>Si ya has tenido un accidente, prepara estos datos</h2>
+            <p>
+              Este bloque es solo informativo, para que puedas tenerlo todo preparado antes de contactar. No sustituye la revisión del caso, pero ayuda a agilizar la gestión.
+            </p>
+          </div>
+
+          <ul class="info-list">
+            <li>DNI o datos del tomador y asegurado.</li>
+            <li>Número de póliza, si lo tienes localizado.</li>
+            <li>Fecha, hora y lugar del accidente.</li>
+            <li>Descripción breve de lo ocurrido.</li>
+            <li>Informes médicos, parte de urgencias o justificantes.</li>
+            <li>Fotos, testigos o documentación adicional, si existe.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. DUDAS HABITUALES -->
     <section>
       <div class="container">
-        <div class="grid-3">
-          <article class="card">
-            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/><path d="M21 12a9 9 0 1 1-5.3-8.2"/></svg></div>
-            <h3>Accidentes esencial</h3>
-            <p>Para quien busca una protección sencilla ante accidentes importantes.</p>
+        <div class="section-title center">
+          <span>Dudas habituales</span>
+          <h2>Preguntas frecuentes sobre el seguro de accidentes</h2>
+        </div>
+
+        <div class="faq-grid">
+          <article class="faq-card">
+            <div class="faq-number">01</div>
+            <h3>¿Es lo mismo que un seguro de vida?</h3>
+            <p>No. El seguro de accidentes se centra en situaciones derivadas de un accidente. El seguro de vida suele tener un enfoque más amplio.</p>
           </article>
 
-          <article class="card">
-            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5.5 5.4v5.5c0 4.2 2.6 7.9 6.5 10.1 3.9-2.2 6.5-5.9 6.5-10.1V5.4L12 3Z"/><path d="m9.5 12 1.8 1.8 3.7-4"/></svg></div>
-            <h3>Accidentes integral</h3>
-            <p>Para quien quiere más garantías, asistencia y protección económica.</p>
+          <article class="faq-card">
+            <div class="faq-number">02</div>
+            <h3>¿Cubre cualquier accidente?</h3>
+            <p>Depende de la modalidad y de las exclusiones. Por eso es importante revisar bien condiciones, límites y actividades cubiertas.</p>
           </article>
 
-          <article class="card">
-            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5.5c1.5-1 3.7-1.2 5 .1 2.2 2.2.8 6.8-.3 10.2-.5 1.6-1.1 3.2-2.1 3.2-1.3 0-1.2-3.8-2.6-3.8S10.7 19 9.4 19c-1 0-1.6-1.6-2.1-3.2C6.2 12.4 4.8 7.8 7 5.6c1.3-1.3 3.5-1.1 5-.1Z"/></svg></div>
-            <h3>Accidentes dental</h3>
-            <p>Para añadir apoyo dental o protección ante determinados accidentes dentales.</p>
+          <article class="faq-card">
+            <div class="faq-number">03</div>
+            <h3>¿Me interesa si ya tengo seguro de salud?</h3>
+            <p>Puede complementarlo. Salud se centra en asistencia médica; accidentes puede aportar indemnización o apoyo económico según el caso.</p>
+          </article>
+
+          <article class="faq-card">
+            <div class="faq-number">04</div>
+            <h3>¿Es útil para autónomos?</h3>
+            <p>Sí, especialmente si una lesión puede afectar a la actividad profesional o generar pérdida de ingresos.</p>
+          </article>
+
+          <article class="faq-card">
+            <div class="faq-number">05</div>
+            <h3>¿Qué capital debería contratar?</h3>
+            <p>Depende de ingresos, responsabilidades familiares, actividad, deudas y nivel de protección que quieras cubrir.</p>
+          </article>
+
+          <article class="faq-card">
+            <div class="faq-number">06</div>
+            <h3>¿Puedo consultarlo sin compromiso?</h3>
+            <p>Sí. Podemos revisar tu situación y explicarte si este seguro encaja contigo antes de contratar nada.</p>
           </article>
         </div>
       </div>
     </section>
 
+    <!-- 7. CTA FINAL -->
     <section class="section-soft">
       <div class="container">
-        <div class="cta-final">
-          <h2>¿Quieres saber si este seguro encaja contigo?</h2>
+        <div class="cta-final premium-cta">
+          <h2>¿Quieres revisar si necesitas un seguro de accidentes?</h2>
           <p>
-            Podemos revisar tu situación, tu actividad diaria y qué protección tendría sentido en tu caso.
+            Cuéntanos tu situación y te ayudamos a valorar si esta protección encaja contigo, qué coberturas deberías revisar y qué opción podría tener más sentido.
           </p>
 
           <div class="hero-actions" style="justify-content:center;">
@@ -1382,7 +1582,7 @@
             <a class="btn btn-tertiary" href="seguros.html">Volver a seguros</a>
           </div>
 
-          <p class="trust-line">Sin compromiso · Sin tecnicismos · Sin presión</p>
+          <p class="trust-line">Sin compromiso · Explicación clara · Atención cercana</p>
         </div>
       </div>
     </section>
@@ -1419,7 +1619,7 @@
     }
 
     const revealElements = document.querySelectorAll(
-      ".section-title, .card, .example-card, .profile-box, .coverage-card, .review-box, .cta-final"
+      ".section-title, .card, .summary-panel, .coverage-card, .review-box, .info-panel, .faq-card, .cta-final"
     );
 
     if ("IntersectionObserver" in window) {
